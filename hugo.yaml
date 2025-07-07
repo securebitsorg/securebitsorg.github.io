@@ -1,4 +1,4 @@
-baseURL:  https://securebitsorg.github.io
+baseURL:  https://securebitsorg.github.io/
 
 languageCode: de-de
 title: "SecureBits Blog by Marcel Dellmann"
@@ -51,7 +51,7 @@ markup:
     parser:
       attribute:
         block: true
-actions/deploy-pages@
+
 
 
 # At least HTML and JSON are required for the main HTML content and
