@@ -13,7 +13,7 @@ customMenus:
   showOnFooter: true
 
 - name: Kontakt
-  url: /pages/kontakt/
+  url: mailto:ticket@secure-bits.org
   hideFromNavbar: false
   showOnFooter: true
 # Meta description for your site.  This will help the search engines to find your site.
