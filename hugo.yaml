@@ -83,7 +83,7 @@ params:
 
 
   # GitHub repo URL of your site
-  gitRepo: https://github.com/securebitsorg/securebits.github.io
+  #gitRepo: https://github.com/securebitsorg/securebits.github.io
   
   
   
