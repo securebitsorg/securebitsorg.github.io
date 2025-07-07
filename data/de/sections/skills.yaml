@@ -15,7 +15,7 @@ skills:
   logo: /images/skills/linux.png
   summary: "- Die Fähigkeit zur sicheren Administration von Linux-Server sowie Linux-Desktop
 - Automatisierung von IT-Landschaften"
-  # url: "https://kubernetes.io/"
+  
 
 - name: Windows - Server / Desktop
   logo: /images/skills/Microsoft.svg
