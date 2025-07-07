@@ -10,7 +10,7 @@ customMenus:
   showOnFooter: true
 
 - name: Contact
-  url: /pages/kontakt/
+  url: mailto:ticket@secure-bits.org
   hideFromNavbar: false
   showOnFooter: true
 
