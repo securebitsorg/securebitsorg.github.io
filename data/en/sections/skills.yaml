@@ -1,0 +1,40 @@
+# section information
+section:
+  name: Skills
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: false
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Linux - Server / Endpoints
+  logo: /images/skills/linux.png
+  summary: "- The skill to safely manage Linux servers and Linux desktops
+- Automating IT environments"
+  # url: "https://kubernetes.io/"
+
+- name: Windows - Server / Endpoints
+  logo: /images/skills/Microsoft.svg
+  summary: "- The skill to safely manage Windows Server and Windows Desktop - Active Directory / Domain Controller / DNS / Group Policy, etc."
+
+- name: Scripting
+  logo: /images/skills/bash.svg
+  summary: "- Bash-Scripting / Ansible / Terraform / openTofu / Python-Scripting"
+
+- name: Cloud Computing
+  logo: /images/skills/cloud.png
+  summary: "- Virtualization and containerization with Proxmox - Containerization with Docker"
+
+- name: Networks
+  # logo: /images/skills/git.png
+  summary: "- Network administration (firewall, switches, IPS/IDS, etc.) – SD-WAN – VPN – ZeroTrust – SSO – Radius – Network infrastructure planning"
+
+
+
+- name: IT-Security
+  # logo: /images/skills/python.svg
+  summary: "- SOC-Analyst - CIA-Triade - SIEM - EDR - XDR - MDM - IPAM - SOAR - Pentest"

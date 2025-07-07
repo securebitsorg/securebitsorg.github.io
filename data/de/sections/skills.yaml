@@ -1,0 +1,40 @@
+# section information
+section:
+  name: Fähigkeiten
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: false
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Linux - Server / Desktop
+  logo: /images/skills/linux.png
+  summary: "- Die Fähigkeit zur sicheren Administration von Linux-Server sowie Linux-Desktop
+- Automatisierung von IT-Landschaften"
+  # url: "https://kubernetes.io/"
+
+- name: Windows - Server / Desktop
+  logo: /images/skills/Microsoft.svg
+  summary: "- Die Fähigkeit zur sicheren Administration von Windows-Server und Windows Desktop - Active Directory / Domain-Controller / DNS / Gruppenrichtlinien, etc."
+
+- name: Scripting
+  logo: /images/skills/bash.svg
+  summary: "- Bash-Scripting / Ansible / Terraform / openTofu / Python-Scripting"
+
+- name: Cloud Computing
+  logo: /images/skills/cloud.png
+  summary: "- Virtualisierung und Containersierung mit Proxmox - Containersierung mit Docker"
+
+- name: Networks
+  # logo: /images/skills/git.png
+  summary: "- Administration von Netzwerken (Firewall, Switches, IPS / IDS, etc) - SD-WAN - VPN - ZeroTrust - SSO - Radius - Planung von Netzwerk-Infrastrukturen"
+
+
+
+- name: IT-Security
+  # logo: /images/skills/python.svg
+  summary: "- SOC-Analyst - CIA-Triade - SIEM - EDR - XDR - MDM - IPAM - SOAR - Pentest"

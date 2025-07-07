@@ -1,0 +1,47 @@
+section:
+  name: Certifications
+  id: accomplishments
+  enable: true
+  weight: 9
+  showOnNavbar: true
+
+accomplishments:
+- name: CompTIA Security+
+  timeline: "Februar 2025 - Februar 2028"
+  organization:
+    name: CompTIA
+    url: https://www.comptia.org
+  courseOverview: This course covers the fundamental principles of network security and risk management, including threats.
+  certificateURL: "https://www.credly.com/badges/43149c06-69d6-42dc-842e-6612718bdc5a/linked_in_profile"
+
+- name: CompTIA Network+
+  timeline: "Januar 2025 - Januar 2028"
+  organization:
+    name: CompTIA
+    url: https://www.comptia.org
+  courseOverview: This course provides knowledge about network technologies, installations, and configurations, including the management of network services.
+  certificateURL: "https://www.credly.com/badges/4ee67958-f7ed-45c7-a857-0522fb7cc6ca"
+
+- name: IT-Sicherheitsbeauftragter (TÜV Rheinland)
+  timeline: "April 2025 - April 2028"
+  organization:
+    name: TÜV Rheinland
+    url: https://www.tuv.com
+  courseOverview: This course provides knowledge about the role of the IT security officer, including the implementation of security policies and procedures.
+  certificateURL: "https://perscert-tuv.certif-id.com/certificate-view/549b73691bb873ba3a90b691e824cbbb25b33691e8fc6c2cd14ca8050810e28b"
+
+- name: IT-Sicherheitsmanager (TÜV Rheinland)
+  timeline: "Mai 2025 - Mai 2028"
+  organization:
+    name: TÜV Rheinland
+    url: https://www.tuv.com
+  courseOverview: This course provides advanced knowledge in IT security management, including the development and implementation of security strategies.
+  certificateURL: "https://perscert-tuv.certif-id.com/certificate-view/549b73691bb873ba3a90b691e824cbbb25b33691e8fc6c2cd14ca8050810e28b"
+
+- name: CompTIA Cybersecurity Analyst (CySA+)
+  timeline: "März 2025 - März 2028"
+  organization:
+    name: CompTIA
+    url: https://www.comptia.org
+  courseOverview: This course covers the analysis of threats and vulnerabilities in IT systems, including the implementation of security measures.
+  certificateURL: "https://www.credly.com/badges/4ee67958-f7ed-45c7-a857-0522fb7cc6ca/linked_in_profile"

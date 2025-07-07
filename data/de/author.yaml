@@ -1,0 +1,18 @@
+# some information about you
+name: "Marcel Dellmann"
+nickname: "'marci'"
+# greeting message before your name. it will default to "Hi! I am" if not provided
+greeting: "Hallo mein Name ist Marcel! Spitzname: "
+image: "images/author.jpg"
+# give your some contact information. they will be used in the footer
+contactInfo:
+  email: "service@secure-bits.org"
+  phone: "+49152 59422774"
+  github: securebitsorg
+  linkedin: securebits
+
+# some summary about what you do
+summary:
+- Ich bin IT-Security-Spezialist und IT-Sicherheits-Manager
+- Ich liebe das Thema IT-Security
+- Ich arbeite bei einigen Open-Source Projekten mit
