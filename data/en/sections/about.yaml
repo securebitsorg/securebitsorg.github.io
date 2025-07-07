@@ -8,14 +8,14 @@ section:
   template: sections/about.html
 
 # your designation
-designation: IT-Security-Administrator / IT-Sicherheitsbeauftragter / SOC-Analyst
+designation: IT-Security-Administrator / IT-Security-Officer / SOC-Analyst
 # your company information
 company:
   name: SecureBits
   url: "https://secure-bits.org"
 
 # your resume. this file path should be relative to you "static" directory
-resume: "files/Lebenslauf.pdf"
+#resume: "files/Lebenslauf.pdf"
 
 # a summary about you
 summary: 'I am a passionate IT-Security-Specialist with 20 years of working experience. Sometimes, I work on some fun projects such as writing a bash-script, ansible, terraform, python, etc.'
