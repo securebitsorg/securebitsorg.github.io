@@ -3,12 +3,12 @@ copyright: © 2017 - 2025 Copyright SecureBits.
 
 customMenus:
 - name: Impressum
-  url: #
+  url: /sites/impressum
   hideFromNavbar: true
   showOnFooter: true
 
 - name: Datenschutz
-  url: #
+  url: /sites/datenschutz
   hideFromNavbar: true
   showOnFooter: true
 

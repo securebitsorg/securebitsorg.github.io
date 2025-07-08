@@ -1,6 +1,6 @@
 ---
 title: "Secure Linux SSH"
-date: 2025-02-18T06:00:20+06:00
+date: 2025-02-18
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:

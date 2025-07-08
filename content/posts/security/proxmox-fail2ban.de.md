@@ -1,6 +1,6 @@
 ---
 title: "Post2"
-date: 2025-02-18T06:00:20+06:00
+date: 2025-02-18
 draft: true
 #hero: /posts/linux/hero.svg
 menu:
