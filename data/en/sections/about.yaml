@@ -8,7 +8,7 @@ section:
   template: sections/about.html
 
 # your designation
-designation: IT-Security-Administrator / IT-Security-Officer / SOC-Analyst
+designation: IT-Security-Administrator / IT-Security-Officer / SOC-Analyst / IT-Security-Manager 
 # your company information
 company:
   name: SecureBits
@@ -18,14 +18,13 @@ company:
 #resume: "files/Lebenslauf.pdf"
 
 # a summary about you
-summary: 'I am a passionate IT-Security-Specialist with 20 years of working experience. Sometimes, I work on some fun projects such as writing a bash-script, ansible, terraform, python, etc.'
-
+summary: I am a passionate IT security specialist with over 20 years of professional experience. Sometimes I work on exciting projects such as writing **Bash scripts, Ansible, Terraform, Python**, and **supporting open source projects**. But above all, I devote myself to **my favorite project, “Helping Hands,”** which **helps people with mental health issues**. I believe that technology is not only there to solve problems, but also to improve people's lives. That's why I am passionate about using my skills and knowledge to help others and make the world a little bit better.
 # your social links
 # give as many as you want. use font-awesome for the icons.
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
-  url: "support@secure-bits.org"
+  url: "ticket@secure-bits.org"
 
 - name: Github
   icon: "fab fa-github"

@@ -108,6 +108,7 @@ params:
         linkedin: true
         youtube: true
         email: true
+        whatsapp: true
 
     notes:
       enable: false
