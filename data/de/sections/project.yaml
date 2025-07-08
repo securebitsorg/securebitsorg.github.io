@@ -45,5 +45,5 @@ projects:
   timeline: "August 2024 - Heute"
   #repo: https://github.com/securebitsorg/ansible-desktop-server-auto-install-config
   url: "https://github.com/securebitsorg/ansible-desktop-server-auto-install-config"
-  summary: Ansible-Scripting zur automatischen Konfiguration und Bereitstellung von Server, Workstations und Laptop's.
+  summary: Ansible / opentofu / Terraform-Scripting zur automatischen Konfiguration und Bereitstellung von Server, Workstations und Laptop's.
   tags: ["professional", "linux", "coding"]

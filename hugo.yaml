@@ -35,6 +35,12 @@ languages:
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 DefaultContentLanguage: de
 
+# permalink
+permalinks:
+  section: /:section/:title/
+  post: /:section/:year/:month/:day/:slug/
+  page: /:section/:title/
+
 privacy:
   youTube:
     disable: false
@@ -62,7 +68,12 @@ outputs:
   - RSS
   - JSON
 
-# Enable global emoji support
+# Enable global emoji supportimaging:
+  anchor: Smart
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
 enableEmoji: true
 
 # Site parameters
@@ -71,6 +82,11 @@ params:
 
   # Background image of the landing page
   background: "images/back.jpg"
+  anchor: Smart
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
 
