@@ -70,7 +70,7 @@ enableEmoji: true
 params:
 
   # Background image of the landing page
-  background: "images/back1.jpg"
+  background: "images/back.jpg"
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
 
@@ -106,6 +106,7 @@ params:
       showAuthor: true
       shareButtons:
         linkedin: true
+        youtube: true
         email: true
 
     notes:

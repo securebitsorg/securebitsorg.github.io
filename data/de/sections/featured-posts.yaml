@@ -10,6 +10,6 @@ section:
 
 # posts to feature
 posts:
-  - linux-ssh
-  - proxmox-fail2ban
+  - Security
+  
   
