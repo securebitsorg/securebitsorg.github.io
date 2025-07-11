@@ -10,5 +10,7 @@ menu:
     identifier: post2
     parent: security
     weight: 20
+tags: ["linux", "security", "video"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 ---
 ### Der vollständige Beitrag folgt in Kürze...

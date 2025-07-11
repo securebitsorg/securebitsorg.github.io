@@ -9,8 +9,8 @@ menu:
     identifier: linux-ssh
     parent: linux
     weight: 10
-tags: ["Linux", "Security"]
-categories: ["Tutorials"]
+tags: ["linux", "security", "video", "debian"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 ---
 ## Securing Linux SSH access correctly
 

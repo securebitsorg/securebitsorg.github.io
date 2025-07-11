@@ -10,7 +10,7 @@ menu:
     identifier: proxmox-fail2ban
     parent: linux
     weight: 10
-tags: ["Linux", "Security", "Proxmox"]
-categories: ["Tutorials"]
+tags: ["linux", "security", "proxmox", "video"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 ---
 ### Complete Post Coming Soon...

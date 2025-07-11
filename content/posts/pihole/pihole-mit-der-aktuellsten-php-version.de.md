@@ -9,16 +9,16 @@ menu:
     identifier: pihole-php
     parent: pihole
 categories:   
-    - "hardware"
-    - "linux"
-    - "netzwerk"
-    - "tutorials"
-    - "video"
+    - "Hardware"
+    - "Linux"
+    - "Netzwerk"
+    - "Tutorials"
+    - "Video"
 tags:   
   - "it-security"
   - "netzwerk"
   - "pi-hole"
-  - "tipps-tutorials"
+  - "tutorials"
   - "video"
 
 ---

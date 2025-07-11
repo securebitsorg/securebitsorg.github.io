@@ -9,8 +9,8 @@ menu:
     identifier: proxmox-fail2ban
     parent: linux
     weight: 10
-tags: ["Linux", "Security", "Proxmox"]
-categories: ["Tutorials"]
+tags: ["linux", "security", "proxmox", "video"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 ---
 ## Proxmox VE basierend auf Debian 12 mit fail2ban absichern
 

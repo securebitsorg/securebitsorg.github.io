@@ -9,5 +9,7 @@ menu:
     identifier: post1
     parent: security
     weight: 10
+tags: ["linux", "security", "video"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 ---
 ### Complete Post Coming Soon...

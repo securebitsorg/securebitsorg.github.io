@@ -9,16 +9,16 @@ menu:
     identifier: pihole-unbound
     parent: pihole
 categories: 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - "Linux"
+  - "Netzwerk"
+  - "Security"
+  - "Tutorials"
+  - "Video"
 tags: 
   - "netzwerk"
   - "pi-hole"
   - "security"
-  - "tipps-tutorials"
+  - "tutorials"
   - "video"
 ---
 

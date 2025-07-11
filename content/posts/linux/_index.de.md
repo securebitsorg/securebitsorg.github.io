@@ -6,6 +6,6 @@ menu:
     name: Linux
     identifier: linux
     weight: 300
-tags: ["Linux"]
+tags: ["linux"]
 categories: ["Tutorials"]
 ---

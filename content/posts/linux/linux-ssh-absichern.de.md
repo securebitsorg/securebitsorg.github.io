@@ -8,8 +8,8 @@ menu:
     name: Linux SSH-Zugang absichern
     identifier: linux-ssh
     parent: linux
-tags: ["Linux", "Security"]
-categories: ["Tutorials"]
+tags: ["linux", "security", "video", "debian"]
+categories: ["Tutorials", "Linux", "Video", "Security"]
 
 ---
 ## Linux SSH Zugang richtig absichern

@@ -9,16 +9,16 @@ menu:
     identifier: pihole-vpn
     parent: pihole
 categories: 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - "Linux"
+  - "Netzwerk"
+  - "Security"
+  - "Tutorials"
+  - "Video"
 tags: 
   - "linux"
   - "pi-hole"
   - "security"
-  - "tipps-tutorials"
+  - "tutorials"
   - "video"
 
 ---
