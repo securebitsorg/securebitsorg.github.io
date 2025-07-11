@@ -1,6 +1,7 @@
 ---
 title: "Post 2"
 date: 2025-02-18
+descripton:
 draft: true
 #hero: /posts/linux/hero.svg
 menu:

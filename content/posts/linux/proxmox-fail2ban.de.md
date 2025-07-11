@@ -1,6 +1,7 @@
 ---
 title: "Proxmox VE mit fail2ban absichern"
 date: 2025-02-18
+descripton: "Erfahre in diesem Tutorial, wie du deine Proxmox VE Instanz basierend auf Debian 12 mit fail2ban vor Brute Force-Attacken absichern kannst." 
 hero: /images/posts/proxmox-fail2ban/proxmox_und_fail2ban.png
 menu:
   sidebar:

@@ -1,6 +1,7 @@
 ---
 title: "Secure Linux SSH"
 date: 2025-02-18
+descripton: "Tutorial | Secure Linux SSH now / hardening | In this tutorial, I will show you how to secure SSH access correctly and, above all, securely."
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:
@@ -11,7 +12,7 @@ menu:
 tags: ["Linux", "Security"]
 categories: ["Tutorials"]
 ---
-# Securing Linux SSH access correctly
+## Securing Linux SSH access correctly
 
 When operating a Linux server, it is usually necessary for administration purposes to establish secure access via SSH.
 

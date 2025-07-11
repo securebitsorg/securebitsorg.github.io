@@ -1,6 +1,7 @@
 ---
 title: "Linux SSH-Zugang absichern"
 date: 2025-07-05
+descripton: "Tutorial | Jetzt Linux SSH absichern / hardening | In diesem Tutorial zeige ich euch, wie ihr einen SSH-Zugang richtig und vor allem sicher absichert."
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:
