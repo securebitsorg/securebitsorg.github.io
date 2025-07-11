@@ -6,6 +6,7 @@ menu:
     name: Windows
     identifier: windows
     weight: 300
-tags: ["windows"]
-categories: ["Tutorials"]
+tags: ["windows", "tutorials"]
+categories: ["Tutorials", "Windows"]
 ---
+## Tips and tutorials on the topic of **Windows**

@@ -45,8 +45,9 @@ To change the default SSH port, you need to modify it in the SSH service's confi
 To do this, open the configuration file located at ‘/etc/ssh/sshd_config’ with the ‘Nano’ editor, as shown in this example.
 
 ---
-> :warning:
+
 > **IMPORTANT! Adjust firewall rules!**
+>
 > If you have already activated firewall rules on your server, you must add this rule to your selected port! Otherwise, you will lock yourself out and **no longer have access** via SSH!
 ---
 

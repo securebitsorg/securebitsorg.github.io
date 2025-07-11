@@ -45,8 +45,8 @@ Um den Standard-SSH-Port ändern zu können, ist es erforderlich diesen in der C
 Hierzu öffnet ihr wie in diesem Beispiel mit dem Editor ‚Nano‘ die Konfigurationsdatei die sich auf dem Pfad ‚/etc/ssh/sshd_config‚ befindet.
 
 ---
-> :warning:
 > **WICHTIG! Firewall-Regeln anpassen!**
+>
 > Solltet ihr schon Firewall-Regeln auf eurem Server aktiviert haben, müsst ihr diese entsprechend eurem gewählten Port um diese Regel ergänzen! Ansonsten sperrt ihr euch aus und **habt keinen Zugriff** mehr via SSH!
 ---
 

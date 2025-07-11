@@ -6,6 +6,6 @@ menu:
     name: Pi-hole
     identifier: pihole
     weight: 300
-tags: ["pihole", "linux"]
+tags: ["pihole", "linux", "video"]
 categories: ["Tutorials", "Video"]
 ---

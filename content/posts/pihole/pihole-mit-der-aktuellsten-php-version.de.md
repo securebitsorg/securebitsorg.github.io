@@ -25,7 +25,7 @@ tags:
 
 ## Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren
 
-In diesem Tutorial '**Pihole mit PHP 8.3 installieren**' möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könnt.
+In diesem Tutorial '**Pihole mit PHP 8.3 installieren**' möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könE-Hat für Raspberry Pi 5nt.
 
 ### Hintergrund von diesem Tutorial
 
@@ -47,7 +47,7 @@ Wie gewohnt, habe ich auch ein Video-Tutorial zu diesem Thema auf meinem YouTube
 
 ## Installation von Pihole auf einem Raspberry Pi
 
-Vorab erstmal eine Aufstellung der Voraussetzungen die wir für die Installation brauchen und falls nötig, die nötigen Amazon-Links dazu ;-) :
+Vorab erstmal eine Aufstellung der Voraussetzungen die wir für die Installation brauchen:
 
 - **Raspberry Pi mit Netzteil, SD-Karte und Gehäuse**
 
@@ -56,8 +56,6 @@ Vorab erstmal eine Aufstellung der Voraussetzungen die wir für die Installation
 - **SD-Karte mit Adapter | Meine Empfehlung**
 
 - **Raspberry Pi PoE+ HAT für Rapberry Pi 4**
-
-- **PoE-Hat für Raspberry Pi 5**
 
 ### Raspberry Pi Imager installieren
 
