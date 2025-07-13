@@ -1,7 +1,7 @@
 ---
-title: "Pihole Unbound jetzt richtig installieren in 2024"
+title: "Pihole Unbound jetzt richtig installieren"
 date: 2023-10-12
-description: "Pihole Unbound jetzt richtig installieren in 2023 | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert."
+description: "Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert."
 hero: /images/posts/pihole/Video-Pi-hole-und-Unbound.png
 menu:
   sidebar:

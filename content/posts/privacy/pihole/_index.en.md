@@ -5,7 +5,8 @@ menu:
   sidebar:
     name: Pi-hole
     identifier: pihole
-    weight: 300
-tags: ["pihole", "linux", "video"]
-categories: ["Tutorials", "Video"]
+    parent: privacy
+    weight: 200
+tags: ["pihole", "linux", "video", "privacy"]
+categories: ["Tutorials", "Video", "Privacy"]
 ---

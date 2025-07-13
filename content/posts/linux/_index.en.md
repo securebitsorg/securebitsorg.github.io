@@ -5,7 +5,7 @@ menu:
   sidebar:
     name: Linux
     identifier: linux
-    weight: 300
+    weight: 100
 tags: ["linux"]
 categories: ["Tutorials"]
 ---

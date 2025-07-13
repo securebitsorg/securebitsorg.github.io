@@ -47,6 +47,12 @@ module:
   - source: static
     target: assets
 
+# media types
+image/gif:
+    delimiter: .
+    suffixes:
+    - gif
+
 # Manage languages
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
