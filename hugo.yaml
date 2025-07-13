@@ -186,23 +186,7 @@ params:
 
     
 
-    flowchart:
-      enable: true
-      services:
-        katex:
-          delimiters:
-          - left: $$
-            right: $$
-            display: true
-          - left: \\[
-            right: \\]
-            display: true
-          - left: $
-            right: $
-            display: false
-          - left: \\(
-            right: \\)
-            display: false
+    
 # Site parameters
 
     
@@ -226,7 +210,7 @@ params:
       changeFreq: "daily"
       disable: false
       filename: sitemap.xml
-      priority: -1
+      priority: 0.5
 
 
     tags:
