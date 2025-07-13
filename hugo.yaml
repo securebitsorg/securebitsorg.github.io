@@ -3,6 +3,7 @@ baseURL:  https://securebitsorg.github.io/
 languageCode: de-de
 title: "SecureBits Blog by Marcel Dellmann"
 
+
 caches:
   images:
     dir: :cacheDir/images
