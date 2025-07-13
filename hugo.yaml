@@ -93,15 +93,37 @@ outputs:
   - JSON
 
 # Enable global emoji supportimaging:
+enableEmoji: true
+anchor: Smart
+bgColor: '#ffffff'
+hint: photo
+quality: 75
+resampleFilter: box
+
+
+imaging:
   anchor: Smart
   bgColor: '#ffffff'
   hint: photo
   quality: 75
   resampleFilter: box
-enableEmoji: true
+
+lazyload:
+  enable: true
+  # Use the native lazy loading feature of the browser
+  native: true
+  # Use the native lazy loading feature of the browser for images
+  images:
+    native: true
+    # Use the native lazy loading feature of the browser for iframes
+    iframes: true
+  # Use the native lazy loading feature of the browser for videos
+  videos:
+    native: true
+
 
 # Site parameters
-# public_key unter Linux und macOS auf einen Remote-Server kopieren
+
 params:
 
   # Background image of the landing page
@@ -113,6 +135,14 @@ params:
   resampleFilter: box
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
+
+  analytics:
+    enabled: false
+    services:
+      matomo:
+        instance: https://analytics.securebits.org
+        siteID: 1
+        
 
   # Provide logos for your site. The inverted logo will be used in the initial
   # transparent navbar and the main logo will be used in the non-transparent navbar.
@@ -165,7 +195,7 @@ params:
       enable: false
 
     flowchart:
-      enable: false
+      enable: true
       services:
         katex:
           delimiters:
@@ -184,7 +214,7 @@ params:
 # Site parameters
 
     videoPlayer:
-      enable: true
+      enable: false
       services:
         # convert .js-player class into video player via https://plyr.io/
         # Can play HTML5 Video, Audio, Youtube, Vimeo.
@@ -236,3 +266,5 @@ params:
 
     newsletter:
       enable: false
+
+    

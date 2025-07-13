@@ -5,7 +5,7 @@ hero: /images/posts/pihole/pihole-raspberry-php.png
 date: 2024-03-06
 menu:
   sidebar:
-    name: Pi-hole mit der aktuellsten PHP-Version installieren
+    name: Pihole always with the latest PHP version
     identifier: pihole-php
     parent: pihole
 categories:   
