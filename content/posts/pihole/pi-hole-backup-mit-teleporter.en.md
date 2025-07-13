@@ -2,7 +2,6 @@
 title: "Pi-hole Backup mit Teleporter"
 hero: /images/posts/pihole/Video-Pi-hole-Backup.png
 date: 2023-09-12
-draft: true
 descirpton: "Pi-hole backup with Teleporter | In this tutorial video, I show you how to create a Pihole backup using Teleporter."
 menu:
   sidebar:
@@ -11,7 +10,6 @@ menu:
     parent: pihole
 categories: 
   - "linux"
-  - "netzwerk"
   - "tutorials"
   - "video"
 tags: 
@@ -21,22 +19,17 @@ tags:
   - "video"
 ---
 
-## Pi-hole Backup sichern und wiederherstellen
-
-In diesem Video-Tutorial 'Pi-hole Backup - Pi-hole Sichern und Wiederherstellen', zeige ich euch, wie ihr mit der Hilfe von dem Tool 'Teleporter' ein Backup von eurer Pi-hole-Installation durchführen könnt und dieses Backup auf einer anderen Pi-hole Instanz, wiederherstellen könnt.
-
-### Video-Tutorial Pi-hole Backup
-
+## Backing up and restoring Pi-hole
+In this video tutorial, “Pi-hole Backup – Backing up and restoring Pi-hole,” I show you how to use the Teleporter tool to back up your Pi-hole installation and restore it to another Pi-hole instance.
+### Video tutorial Pi-hole backup
 {{< youtube JPVtLvRtQE0 >}}
-
-### Genutzte Befehle im Video
-
+### Commands used in the video
 ```bash
-# Pi-hole-Backup in der Shell ausführen
+# Run Pi-hole backup in the shell
 
 pihole -a -t
 
-# Die Backup-Datei findet ihr dann in dem Verzeichnis in dem ihr euch bei der Ausführung des oben genannten Kommando befindet.
+# You will find the backup file in the directory where you are located when you execute the above command.
 ```
 
 

@@ -6,7 +6,7 @@ menu:
   sidebar:
     name: Raspberry Pi absichern von A - Z
     identifier: raspberry-absichern
-    parent: pihole
+    parent: security
 date: 2023-02-08
 categories: 
   - "linux"

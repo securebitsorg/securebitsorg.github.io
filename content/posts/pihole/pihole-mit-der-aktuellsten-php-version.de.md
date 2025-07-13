@@ -57,7 +57,7 @@ Vorab erstmal eine Aufstellung der Voraussetzungen die wir für die Installation
 
 - **Raspberry Pi PoE+ HAT für Rapberry Pi 4**
 
-### Raspberry Pi Imager installieren
+### Raspberry Pi Imager installierenClick here for the tutorial ‘
 
 **Die Software 'Raspberry Pi Imager'**
 
@@ -79,11 +79,11 @@ sudo apt install rpi-imager
 
 In dem unteren Gif seht ihr die Konfiguration des Raspberry Pi Imager für ein Raspberry Pi OS auf einem Raspberry Pi 3. Bitte immer die Raspberry Pi OS 32bit lite Version für das Schreiben auf die SD-Karte auswählen! So wird das OS in einer Minimalversion installiert, da das für den Betrieb von Pihole vollkommen ausreicht.
 
-### Kleiner Tipp bei Raspberry Pi 3B-Modellen
-
-**Möchtet ihr Debian 12 "bookworm" mit inkludierten PHP 8.2 auf euren Raspberry Pi 3B installieren, dann bitte unter 'Raspberry Pi Modell' den Raspberry Pi 4 auswählen. Hier könnt ihr dann Raspberry OS basierend auf Debian 12 auswählen. Debian 12 ist laut Raspberry Pi mit dem Modell 3B kompatibel und ich kann das auch bestätigen.**
-
-**Bei der Modell-Auswahl wird unter dem Modell Raspberry Pi 3B nur die Debian-Version 11 "bullseye" aufgeführt.**
+> ### Kleiner Tipp bei Raspberry Pi 3B-Modellen
+>
+> **Möchtet ihr Debian 12 "bookworm" mit inkludierten PHP 8.2 auf euren Raspberry Pi 3B installieren, dann bitte unter 'Raspberry Pi Modell' den Raspberry Pi 4 auswählen. Hier könnt ihr dann Raspberry OS basierend auf Debian 12 auswählen. Debian 12 ist laut Raspberry Pi mit dem Modell 3B kompatibel und ich kann das auch bestätigen.**
+>
+> **Bei der Modell-Auswahl wird unter dem Modell Raspberry Pi 3B nur die Debian-Version 11 "bullseye" aufgeführt.**
 
 > ### Bitte beachten!
 >
