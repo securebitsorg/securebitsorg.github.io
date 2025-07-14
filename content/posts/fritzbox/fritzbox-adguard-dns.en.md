@@ -4,10 +4,10 @@ descripton: “FritzBox / AdGuard DNS | In this video, I show you how to run you
 hero: /images/posts/fritzbox/Thumbnail-AdGuard-DNS.png
 date: 2023-01-12
 menu:
-sidebar:
-name: Fritzbox and AdGuard DNS
-identifier: fritzbox-adguarddns
-parent: fritzbox
+    sidebar:
+        name: Fritzbox and AdGuard DNS
+        identifier: fritzbox-adguarddns
+        parent: fritzbox
 categories:
 - “Network”
 - “Security” 
