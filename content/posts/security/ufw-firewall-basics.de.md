@@ -1,5 +1,5 @@
 ---
-title: "UFW-Firewall - Grundlagen"
+title: "UFW-Firewall - Grundlagen | Teil 1"
 descripton: "UFW-Firewall - Grundlagen | In diesem Video zeige ich euch, die Grundlagen der UFW-Firewall"
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-1-Grundlagen.png
 date: 2022-10-06
@@ -21,6 +21,7 @@ tags:
   - "security"
   - "tutorials"
   - "video"
+  - "raspberry pi"
 ---
 
 ## Grundlagen zur UFW-Firewall Installation und Einrichtung

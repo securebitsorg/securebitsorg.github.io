@@ -1,7 +1,7 @@
 ---
-title: “UFW Firewall - Basics”
+title: “UFW Firewall - Basics | Part 1”
 description: “UFW Firewall - Basics | In this video, I will show you the basics of the UFW firewall.”
-hero: /images/posts/it-security/UFW-Firewall-Setup-Part-1-Basics.png
+hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-1-Grundlagen.png
 date: 2022-10-06
 menu:
   sidebar:
@@ -21,6 +21,7 @@ tags:
 - “security”
 - "tutorials"
 - “video”
+- "raspberry pi"
 ---
 ## Basics of UFW Firewall Installation and Setup
 In this video tutorial, I will show you how to install and set up the UFW firewall (Uncomplicated Firewall) on your Linux distribution.
