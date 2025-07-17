@@ -54,7 +54,7 @@ Finally, click on the ‘gear icon (settings)’ to configure some settings for 
 - Disable telemetry
 - Eject media after completion
 Once all settings have been made, click on ‘Save’.
-![Configure Raspberry OS](/images/posts/adguard/rpi-imager_0Hhavk9E8r.gif)
+
 ### Step 6:
 After completing the previous steps, you can now click on ‘Write’ to write the Raspberry Pi OS image to the SD card. This process may take a while.
 ### Step 7:

@@ -77,7 +77,6 @@ Zu guter Letzt muss noch auf das 'Zahnrad-Symbol (Einstellungen)' geklickt werde
 - Medien nach Beenden auswerfen  
 Sind alle Einstellungen vorgenommen worden, dann auf 'Speichern' klicken.
 
-![Raspberry OS konfigurieren](/images/posts/adguard/rpi-imager_0Hhavk9E8r.gif)
 
 ### Schritt 6:
 
