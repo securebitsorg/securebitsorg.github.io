@@ -97,7 +97,7 @@ ssh Benutzername@IP-Adresse des Pi
 
 Nach der erfolgreichen Anmeldung sollte der Inhalt des Terminal-Fenster wie auf dem folgenden Bild aussehen.
 
-{{< img src="/images/posts/it-security/Terminal-ssh-Verbindung.png" title="Anmeldung via SSH" >}}
+![Terminal SSH-Verbindung](/images/posts/it-security/Terminal-ssh-Verbindung.png)
 
 ### UFW Firewall Raspberry Pi installieren
 
@@ -203,7 +203,7 @@ Im unteren Bild seht ihr die Datei in der die Services der UFW-Firewall aufgefü
 
 Diese Datei könnt ihr durch den Befehl '**nano /etc/services**' anschauen.
 
-{{< img src="/images/posts/it-security/WindowsTerminal_ufw-firewall-services.png" title="Auflistung der Services unter Debain" >}}
+![Auflistung der Services unter Debain](/images/posts/it-security/WindowsTerminal_ufw-firewall-services.png)
 
 
 ### Firewall-Regeln mittels Apps definieren - UFW-Firewall Raspberry Pi
@@ -222,7 +222,7 @@ sudo ufw app list
 # Beispielausgabe siehe unteres Bild
 ```
 
-{{< img src="/images/posts/it-security/sudo-ufw-app-list.png" title="APP-Liste der UFW-Firewall" >}}
+![APP-Liste der UFW-Firewall](/images/posts/it-security/sudo-ufw-app-list.png)
 
 #### App-Profil einer Applikation in der UFW-Firewall anzeigen
 
@@ -239,7 +239,7 @@ sudo ufw app info IMAPS
 
 # Ausgabe: Siehe unteres Bild
 ```
-
+![App-Profil mittels UFW-Firewall anzeigen](/images/posts/it-security/sudo-ufw-app-info.png)
 
 #### Firewall-Regel mittels App-Profil definieren
 
@@ -324,7 +324,7 @@ sudo ufw status verbose
 
 #### Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils
 
-
+![Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils](/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png)
 
 ### Mehrere Ports als Regel definieren
 

@@ -24,7 +24,9 @@ tags:
 - “video”
 ---
 ## Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi
+
 In this post, '**UFW Firewall Raspberry Pi Installation**', I would like to show you how to install and set up this firewall or command line interface for **iptables** on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the **Raspberry Pi**, but can also be used on all other Linux-based distros.
+
 In keeping with the tutorial ‘Installing AdGuard on the Raspberry Pi’ (https://secure-bits.org/adguard-raspberry-pi-installation-2022/)', it makes sense to install the [UFW firewall](https://wiki.ubuntuusers.de/ufw/) on the Raspberry Pi with **AdGuard Home**. This will protect the AdGuard DNS server from unauthorized access from the network.
 ### UFW firewall rules for AdGuard on the Raspberry Pi
 You can find the rules I suggest for the UFW firewall further down in this post. But first, make sure you read the whole post so you don't lock yourself out of the Raspberry Pi.
@@ -42,20 +44,29 @@ This extension is available for the following distributions:
 - openSuse
 - archlinux
 - salix
+
 ### Note on the listed commands | UFW firewall Raspberry Pi
 All commands listed here work not only on a Raspberry Pi, but also on any other Linux-based distribution such as Ubuntu, Debian, archLinux, and many other systems.
+
 ### Basic instructions for handling a firewall rule
 With the UFW firewall, as well as other firewalls I am familiar with, there are three methods that regulate the processing of data packets in network traffic. Understanding these methods is the absolute basis for a secure firewall configuration.
+
 #### Method ‘allow or pass’
+
+
 With the ‘allow’ or ‘pass’ method, data packets are allowed during network requests. This method is usually the default for rules created for outgoing network traffic.
 Incoming network traffic is only explicitly allowed via ‘allow or pass’.
 #### ‘reject’ method
-The ‘reject’ method, on the other hand, allows data packets in network traffic to be discarded and immediately sends feedback to the sender of the network request.
+
+The ‘**reject**’ method, on the other hand, allows data packets in network traffic to be discarded and immediately sends feedback to the sender of the network request.
 Because the feedback about the rejected request to the sender is often misused for denial of service attacks, this method of handling requests is not particularly advantageous for a firewall and is therefore not used for this purpose.
 ‘**reject**’ is used, for example, in communication between network components to avoid a potentially high network load.
+
 #### Method ‘deny or drop’
+
 Unlike the ‘**reject**’ method, the ‘**deny** **or drop**’ method also rejects the network request immediately, but the sender does not receive any direct feedback and the requests are effectively ignored.
 However, the disadvantage of this method is that it can result in a higher network load. **Nevertheless, this method of handling requests on a firewall is clearly preferable.**
+
 ## Installing the UFW firewall on Raspberry Pi
 To begin installing the UFW firewall, you must first connect to the Raspberry Pi via SSH in the terminal window.
 ```shell
@@ -65,7 +76,9 @@ ssh username@IP address of the Pi
 # Then enter your assigned password.
 ```
 After successfully logging in, the contents of the terminal window should look like the following image.
-{{< img src="/images/posts/it-security/Terminal-ssh-connection.png" title="Logging in via SSH" >}}
+
+![Login in via SSH](/images/posts/it-security/Terminal-ssh-Verbindung.png)
+
 ### Install UFW firewall on Raspberry Pi
 You can install the UFW firewall on the Raspberry Pi with the following command:
 ```shell
@@ -124,10 +137,12 @@ sudo ufw limit 22/tcp
 ```
 ### Known services of the UFW firewall
 The UFW firewall also recognizes some ‘**services**’ by default. Services include ‘**ssh**’ for **port 22**, for example.
+
 These ‘**services**’ can also be addressed directly when creating new firewall rules.
 The image below shows the file in which the services of the UFW firewall are listed.
 You can view this file using the command ‘**nano /etc/services**’.
-{{< img src="/images/posts/it-security/WindowsTerminal_ufw-firewall-services.png" title="List of services under Debian" >}}
+
+![List of services under Debian](/images/posts/it-security/WindowsTerminal_ufw-firewall-services.png)
 
 ### Defining firewall rules using apps – UFW firewall Raspberry Pi
 Another method of defining the firewall rules is to use ‘**App**’ as a definition for handling data packets.
@@ -138,7 +153,8 @@ Another method of defining the firewall rules is to use ‘**App**’ as a defin
 sudo ufw app list
 # See the image below for an example output
 ```
-{{< img src="/images/posts/it-security/sudo-ufw-app-list.png" title="APP list of the UFW firewall" >}}
+![APP list of the UFW firewall](/images/posts/it-security/sudo-ufw-app-list.png)
+
 #### Display the app profile of an application in the UFW firewall
 As mentioned in the previous paragraph, the ports used by an application are specified in the app profile of an installed application. To display this profile, enter the following command in your terminal window.
 ```shell
@@ -157,6 +173,11 @@ sudo ufw allow/deny APP profile
 # Example for IMAPS
 sudo ufw allow IMAPS
 ```
+---
+
+![App-Profil mittels UFW-Firewall anzeigen](/images/posts/it-security/sudo-ufw-app-info.png)
+
+---
 ### Define your own firewall profiles - UFW firewall Raspberry Pi
 Of course, you also have the option of creating your own APP profiles (similar to the ‘alias’ in OPNsense) and assigning multiple ports to your own profile. Then, when creating rules for the UFW firewall, you only need to name this profile.
 These app profiles are saved under the following path:
@@ -200,6 +221,8 @@ sudo ufw status verbose
 # Output see image below
 ```
 #### Checking the UFW firewall rules after creating your own profile
+
+![Checking the UFW firewall rules after creating your own profile](/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png)
 
 ### Defining multiple ports as a rule
 If you want to create a firewall rule for several ports at the same time according to protocol definition (UDP or TCP), there are two options.
@@ -272,7 +295,7 @@ If you have made changes to the firewall rules, you must notify the firewall.
 sudo ufw reload
 ```
 ## Video tutorial - Securing AdGuard with UFW firewall on Raspberry Pi
-A video tutorial on ‘Securing AdGuard installation on a Raspberry Pi using UFW firewall’ will also be available soon on my YouTube channel (https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q).
+A video tutorial on ‘Securing AdGuard installation on a Raspberry Pi using UFW firewall’ will also be available soon on my [YouTube channel](https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q).
 https://youtu.be/Dh3A1Idktmg
 So it's best to [subscribe](https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q) to my channel right away so you don't miss any videos.
 ## Rules for AdGuard | UFW firewall Raspberry Pi
@@ -305,7 +328,7 @@ sudo ufw allow 853/udp
 # Allow ports for DHCP service
 sudo ufw allow 67/tcp
 sudo ufw allow 67/udp
-sudo ufw allow 68/tcp
+sudo ufw allow 68/tcp![Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils](/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png)
 sudo ufw allow 68/udp
 # Ports for https and http
 sudo ufw allow 80/tcp
