@@ -1,6 +1,6 @@
 ---
 title: “Understanding Man-in-the-Middle Attacks”
-description: “”
+description: “Man-in-the-middle attack – definition | This attack tactic is often mentioned in the press and other publications. But what exactly is it and how does it work?”
 draft: true
 hero: /images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg
 date: 2021-01-25
@@ -23,7 +23,7 @@ Today's post is about **man-in-the-middle attacks**. This attack tactic is often
 
 > If anything is unclear or you have further questions on this topic, please leave a comment or contact me via the [contact form](mailto:ticket@secure-bits.org).
 
-{{< img src="/images/posts/it-security/ManintheMiddle-Sniffing.png" >}}    
+![Man in the Middle Sniffing](/images/posts/it-security/ManintheMiddle-Sniffing.png)    
 
 ### What is a man-in-the-middle attack?
 A man-in-the-middle attack is a scenario in which a communication path (see image above) between two communication partners is intercepted by a third party or the data stream is redirected via the third party's attack computer.
@@ -36,7 +36,7 @@ There are basically two types of attack scenarios. In these scenarios, the attac
 - **Method 2 refers to redirecting a communication path to, for example, an attacker's computer.**
 ### Method 1 – Eavesdropping/recording a communication path (sniffing)
 
-{{< img src="/images/posts/it-security/ManintheMiddle-Umleitung" >}}    
+![Man in the Middle Bypass](/images/posts/it-security/ManintheMiddle-Umleitung)     
 
 In sniffing, a network sniffer or mirror port is used to record or eavesdrop on the communication between two communication partners on the communication path.
 By using a software tool such as **[Wireshark](https://www.wireshark.org/)** (there are countless other software tools available), the data stream of the communication path can be compromised. To do this, the attacker must compromise a network point (end device, network device, or server) in the communication path using the sniffing tool. Furthermore, a mirror port can be used on the switch to mirror the port and thus the data packets of the connected computer to be compromised to the attacker's computer.
@@ -50,7 +50,7 @@ In this case, the hacker's point of attack (e.g., proxy server) pretends to be t
 As already mentioned, several methods can be used for this purpose. The most common methods are the following.
 On the one hand, the user device is redirected to the attacker's device and forwarded to the other endpoint of the communication path (web server, end device, etc.). On the other hand, the redirection is not routed via the network's intended standard gateway, but via a proxy server or by redirection to the other communication partner (see Figures 1 and 2 below).
 
-{{< img src="images/posts/it-security/ManintheMiddle-Umleitung-proxy.png" >}}
+![Man in the Middle Proxy](/images/posts/it-security/ManintheMiddle-Umleitung-proxy.png)
 
 One disadvantage of this active method is that it is easier to detect, as it actively interferes with the communication path.
 In contrast to sniffing, not only can data packets or the communication of participants be intercepted/collected, but the communication can also be intercepted/modified so that the other participant is unaware of this. This means that the problems are more diverse and can cause massive damage.

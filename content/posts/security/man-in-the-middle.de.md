@@ -1,6 +1,6 @@
 ---
 title: "Man in the Middle Angriffe verstehen"
-descripton: ""
+descripton: "Man in the Middle Angriff - Definition | Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert?"
 hero: /images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg
 date: 2021-01-25
 menu:
@@ -25,7 +25,7 @@ In dem heutigen Beitrag geht es um das Thema eines **Man in the Middle Angriffs*
 > Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so hinterlasst einfach einen Kommentar oder kontaktiert mich über das [Kontaktformular](mailto:ticket@secure-bits.org).
 
 
-{{< img src="/images/posts/it-security/ManintheMiddle-Sniffing.png" >}}    
+![Man in the Middle Sniffing](/images/posts/it-security/ManintheMiddle-Sniffing.png)    
 
 ### Was ist ein Man in the Middle Angriff?
 
@@ -48,7 +48,7 @@ Grundlegend gibt es zwei Arten von Angriffsszenarien. Bei diesen Szenarien werde
 ### Methode 1 – Abhören / Mitschneiden einer Kommunikationspfad (Sniffing)
 
 
-{{< img src="/images/posts/it-security/ManintheMiddle-Umleitung" >}}    
+![Man in the Middle Umleitung](/images/posts/it-security/ManintheMiddle-Umleitung)    
 
 Bei dem sogenannten Sniffing wird per Netzwerk-Sniffer oder Mirror-Port die Kommunikation auf dem Kommunikationspfad zweier Kommunikationspartner mitgeschnitten beziehungsweise abgehört.
 
@@ -71,7 +71,7 @@ Wie schon erwähnt, kommen hierfür mehrere Verfahren in Betracht. Die hier gebr
 Zum einen die Umleitung von Nutzer-Device auf das Angreifer-Device sowie die Weiterleitung zum anderen Endpunkt des Kommunikationspfads (Webserver, Endgerät, etc.) und zum anderen, die Umleitung nicht über das vorgesehene Standard-Gateway des Netzwerks, sondern über einen Proxy-Server oder per Redirection zum anderen Kommunikationspartner geleitet wird (siehe untere Bilder 1 und 2).
 
 
-{{< img src="images/posts/it-security/ManintheMiddle-Umleitung-proxy.png" >}}
+![Man in the Middle Proxy](/images/posts/it-security/ManintheMiddle-Umleitung-proxy.png)
 
 Nachteil dieser aktiven Methode ist unter anderem, dass diese Angriffsmethode leichter zu entdecken ist, da hier aktiv in die Kommunikation des Kommunikationspfad eingegriffen wird.
 
