@@ -5,7 +5,7 @@ descripton: “Simple tips and tricks on how to protect yourself against man-in-
 menu:
   sidebar:
     name: Protection against man-in-the-middle attacks
-    identifier: schutz-man-in-the-middle
+    identifier: secure-man-in-the-middle
     parent: security
 date: 2021-01-27
 categories: 
