@@ -1,0 +1,9 @@
+name = "securebitsblog"
+comnpatibility-date = "2025-07-21"
+
+[build]
+command = "./build.sh"
+
+[assets]
+directory = "./public"
+not-found-handling = "404-page"
