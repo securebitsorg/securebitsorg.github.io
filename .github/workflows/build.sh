@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
-main() {
-  Hugo_VERSION="0.148.1"
-  DART_SASS_VERSION="1.89.2"
+#------------------------------------------------------------------------------
+# @file
+# Builds a Hugo site hosted on a Cloudflare Worker.
+#
+# The Cloudflare Worker build image already includes Go, Hugo (an old version),
+# and Node js. Set the desired Dart Sass and Hugo versions below.
+#
+# The Cloudflare Worker automatically installs Node.js dependencies.
+#------------------------------------------------------------------------------
 
-  export TZ="Europe/Berlin"
+main() {
+
+  DART_SASS_VERSION=1.89.2
+  HUGO_VERSION=0.148.0
+
+  export TZ=Europe/Oslo
 
   # Install Dart Sass
   echo "Installing Dart Sass v${DART_SASS_VERSION}..."
@@ -20,25 +31,26 @@ main() {
   cp hugo /opt/buildhome
   rm LICENSE README.md hugo_extended_${HUGO_VERSION}_linux-amd64.tar.gz
 
-
   # Set PATH
   echo "Setting the PATH environment variable..."
   export PATH=/opt/buildhome:/opt/buildhome/dart-sass:$PATH
 
-  echo "Hugo version $Hugo_VERSION installed successfully."
+  # Verify installed versions
+  echo "Verifying installations..."
   echo Dart Sass: "$(sass --version)"
-  echo Go: "${go version}"
-  echo "Hugo version: $(hugo version)"
-  echo Node.js version: "$(node -v)"    
-  echo NPM version: "$(npm -v)"
+  echo Go: "$(go version)"
+  echo Hugo: "$(hugo version)"
+  echo Node.js: "$(node --version)"
 
   # https://gohugo.io/methods/page/gitinfo/#hosting-considerations
   git fetch --recurse-submodules --unshallow
 
+  # https://github.com/gohugoio/hugo/issues/9810
   git config core.quotepath false
 
-  echo "Building site..."
+  # Build the site.
   hugo --gc --minify
+
 }
 
 set -euo pipefail
