@@ -21,7 +21,7 @@ tags:
 ## Man-in-the-middle attack – definition
 Today's post is about **man-in-the-middle attacks**. This attack tactic is often mentioned in the press and other publications. But in this article, I would like to explain exactly what it is and how it works.
 
-> If anything is unclear or you have further questions on this topic, please leave a comment or contact me via the [contact form](mailto:ticket@secure-bits.org).
+> If anything is unclear or you have further questions on this topic, please contact me via the [contact form](mailto:ticket@secure-bits.org).
 
 ![Man in the Middle Sniffing](/images/posts/it-security/ManintheMiddle-Sniffing.png)    
 

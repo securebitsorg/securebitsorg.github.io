@@ -22,7 +22,7 @@ tags:
 
 In dem heutigen Beitrag geht es um das Thema eines **Man in the Middle Angriffs**. Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert, möchte ich euch gerne in diesem Artikel näher erläutern.
 
-> Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so hinterlasst einfach einen Kommentar oder kontaktiert mich über das [Kontaktformular](mailto:ticket@secure-bits.org).
+> Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so kontaktiert mich über das [Kontaktformular](mailto:ticket@secure-bits.org).
 
 
 ![Man in the Middle Sniffing](/images/posts/it-security/ManintheMiddle-Sniffing.png)    
