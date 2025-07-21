@@ -1,5 +1,5 @@
 name = 'securebitsblog'
-comnpatibility_date = "2025-07-20"
+compatibility_date = "2025-07-20"
 
 [build]
 command = "./build.sh"
