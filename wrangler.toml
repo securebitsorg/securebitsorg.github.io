@@ -1,9 +1,9 @@
-name = "securebitsblog"
-comnpatibility-date = "2025-07-21"
+name = 'securebitsblog'
+comnpatibility_date = "2025-07-20"
 
 [build]
 command = "./build.sh"
 
 [assets]
 directory = "./public"
-not-found-handling = "404-page"
+not_found_handling = "404-page"
