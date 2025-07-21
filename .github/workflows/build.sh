@@ -1,4 +1,4 @@
-#1/usr/bin/env bash
+#!/usr/bin/env bash
 
 main() {
   Hugo_VERSION="0.148.1"
