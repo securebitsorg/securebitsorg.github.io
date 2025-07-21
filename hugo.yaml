@@ -1,4 +1,4 @@
-baseURL:  https://securebitsorg.github.io/
+baseURL:  $CF_PAGES_URL
 
 languageCode: de-de
 title: "SecureBits Blog by Marcel Dellmann"
