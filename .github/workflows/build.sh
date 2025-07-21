@@ -15,7 +15,8 @@ main() {
   echo "Hugo version $Hugo_VERSION installed successfully."
   echo Go: "${go version}"
   echo "Hugo version: $(hugo version)"
-  echo Node.js version: "$(node -v)"
+  echo Node.js version: "$(node -v)"    
+  echo NPM version: "$(npm -v)"
 
   echo "Clone Toha theme..."
   git submodule update --init --recursive
