@@ -89,6 +89,15 @@ markup:
       attribute:
         block: true
 
+markup:
+  highlight:
+    style: xcode-light
+    lineNos: false
+    lineNumbersInTable: true
+
+  
+    
+
 
 
 # At least HTML and JSON are required for the main HTML content and
@@ -100,7 +109,7 @@ outputs:
   - JSON
 
 # Enable global emoji supportimaging:
-enableEmoji: true
+enableEmoji: false
 anchor: Smart
 bgColor: '#ffffff'
 hint: photo
