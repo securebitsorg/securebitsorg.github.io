@@ -95,10 +95,6 @@ markup:
     lineNos: false
     lineNumbersInTable: true
 
-  
-    
-
-
 
 # At least HTML and JSON are required for the main HTML content and
 # client-side JavaScript search
