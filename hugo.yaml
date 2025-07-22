@@ -88,11 +88,22 @@ security:
     - (?i)GET|POST
     urls:
     - .*
+
+headers:
+- for: /**
+  values:
+    Content-Security-Policy: script-src secure-bits.org
+    Referrer-Policy: strict-origin-when-cross-origin
+    X-Content-Type-Options: nosniff
+    X-Frame-Options: DENY
+    X-XSS-Protection: 1; mode=block
 # permalink
 permalinks:
   section: /:section/:title/
   post: /:section/:year/:month/:day/:slug/
   page: /:section/:title/
+
+
 
 privacy:
   youTube:
