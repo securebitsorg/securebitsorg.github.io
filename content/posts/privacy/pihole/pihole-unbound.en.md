@@ -1,7 +1,7 @@
 ---
-title: “Install Pihole Unbound correctly”
+title: Install Pihole Unbound correctly
 date: 2023-10-12
-description: “Install Pihole Unbound correctly | In this tutorial, I will show you how to install and configure Unbound correctly for Pihole.”
+description: Install Pihole Unbound correctly | In this tutorial, I will show you how to install and configure Unbound correctly for Pihole.
 hero: /images/posts/pihole/Video-Pi-hole-und-Unbound.png
 menu:
    sidebar:

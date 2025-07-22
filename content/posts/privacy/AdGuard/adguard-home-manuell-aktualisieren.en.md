@@ -1,6 +1,6 @@
 ---
-title: “Update AdGuard Home manually”
-description: “Update AdGuard Home manually | In this tutorial, I will show you how to update AdGuard Home manually.”
+title: Update AdGuard Home manually
+description: Update AdGuard Home manually | In this tutorial, I will show you how to update AdGuard Home manually.
 hero: /images/posts/adguard/Thumbnail-AdGuard-Home-Update.png
 description:
 date: 2022-11-21

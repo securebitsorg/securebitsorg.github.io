@@ -1,6 +1,6 @@
 ---
-title: “All CMD commands for Windows at a glance 2025”
-description: “”
+title: All CMD commands for Windows at a glance 2025
+description: You can find a list of the most important CMD commands in this article. You can also download all CMD commands at the end of this overview as a PDF file.
 hero: /images/posts/windows/Eingabeaufforderung_logo.jpg
 date: 2025-03-12
 menu:

@@ -1,6 +1,6 @@
 ---
-title: "Tipp - Fritzbox Portfreigabe richtig einrichten"
-descripton: "Fritzbox Portfreigabe richtig einrichten | In diesem Video zeige ich, wie ihr eine Freigabe / Portweiterleitung in der Fritzbox konfiguriert."
+title: Tipp - Fritzbox Portfreigabe richtig einrichten
+descripton: Fritzbox Portfreigabe richtig einrichten | In diesem Video zeige ich, wie ihr eine Freigabe / Portweiterleitung in der Fritzbox konfiguriert.
 hero: /images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 date: 2022-03-19
 menu:

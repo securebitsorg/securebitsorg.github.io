@@ -1,7 +1,7 @@
 ---
-title: “Use Pihole VPN with Wireguard in 2024”
+title: Use Pihole VPN with Wireguard in 2024
 date: 2024-02-27
-descripton: “Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.”
+descripton: Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.
 hero: /images/posts/pihole/pihole-raspberry-vpn.png
 menu:
   sidebar:

@@ -1,7 +1,7 @@
 ---
-title: "AdGuard Home manuell aktualisieren"
-descripton: "AdGuard Home manuell aktualisieren | In diesem Tutorial zeige ich euch, wie ihr AdGuard Home manuell aktualisieren könnt."
-hero: "/images/posts/adguard/Thumbnail-AdGuard-Home-Update.png"
+title: AdGuard Home manuell aktualisieren
+descripton: AdGuard Home manuell aktualisieren | In diesem Tutorial zeige ich euch, wie ihr AdGuard Home manuell aktualisieren könnt.
+hero: /images/posts/adguard/Thumbnail-AdGuard-Home-Update.png
 descripton: 
 date: 2022-11-21
 menu:

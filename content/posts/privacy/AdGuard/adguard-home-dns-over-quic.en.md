@@ -1,6 +1,6 @@
 ---
-title: “AdGuard Home DNS encryption”
-description: “AdGuard Home DNS encryption | In this video, I'll show you how to set up DNS over Quic.”
+title: AdGuard Home DNS encryption
+description: AdGuard Home DNS encryption | In this video, I'll show you how to set up DNS over Quic.
 hero: /images/posts/adguard/Video-AdGuard-Raspberry-Pi-Installation.png
 date: 2022-12-27
 menu:

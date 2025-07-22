@@ -1,6 +1,6 @@
 ---
-title: "Jetzt alle CMD-Befehle für Windows im Überblick 2025"
-descripton: ""
+title: Jetzt alle CMD-Befehle für Windows im Überblick 2025
+descripton: Eine Liste mit den wichtigsten CMD-Befehle findet ihr in diesem Beitrag. Weiterhin könnt ihr auch alle CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
 hero: /images/posts/windows/Eingabeaufforderung_logo.jpg
 date: 2025-03-12
 menu:

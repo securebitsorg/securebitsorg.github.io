@@ -1,6 +1,6 @@
 ---
-title: “Tip - Setting up Fritzbox port forwarding correctly”
-descripton: “Setting up port forwarding correctly on Fritzbox | In this video, I show you how to configure port forwarding on Fritzbox.”
+title: Tip - Setting up Fritzbox port forwarding correctly
+descripton: Setting up port forwarding correctly on Fritzbox | In this video, I show you how to configure port forwarding on Fritzbox.
 hero: /images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 date: 2022-03-19
 menu:

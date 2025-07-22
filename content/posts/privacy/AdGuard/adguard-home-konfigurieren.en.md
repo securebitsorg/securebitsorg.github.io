@@ -1,6 +1,6 @@
 ---
-title: “AdGuardHome Setup - Basic Configuration”
-descripton: “AdGuardHome Setup | Configure and set up AdGuardHome correctly to protect your network.”
+title: AdGuardHome Setup - Basic Configuration
+descripton: AdGuardHome Setup | Configure and set up AdGuardHome correctly to protect your network.
 hero: /images/posts/adguard/Thumbnail.png
 date: 2022-09-19
 menu:

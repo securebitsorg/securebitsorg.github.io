@@ -1,6 +1,6 @@
 ---
-title: “FritzBox + Pihole | Configuring FritzBox”
-descriton: "Configure Fritzbox + Pihole correctly so that all end devices are served via an internal DNS server (Pihole, AdGuardHome, etc.)."
+title: FritzBox + Pihole | Configuring FritzBox
+descriton: Configure Fritzbox + Pihole correctly so that all end devices are served via an internal DNS server (Pihole, AdGuardHome, etc.).
 date: 2023-02-06
 hero: /images/posts/pihole/Video-Pi-hole-alles-ueber-Pi-hole.png
 menu:

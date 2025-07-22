@@ -1,6 +1,6 @@
 ---
 title: Windows
-descripton: "Tutorials on the topic of Windows"
+descripton: Tutorials on the topic of Windows
 menu:
   sidebar:
     name: Windows

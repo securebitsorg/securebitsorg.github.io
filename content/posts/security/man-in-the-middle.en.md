@@ -1,6 +1,6 @@
 ---
-title: “Understanding Man-in-the-Middle Attacks”
-description: “Man-in-the-middle attack – definition | This attack tactic is often mentioned in the press and other publications. But what exactly is it and how does it work?”
+title: Understanding Man-in-the-Middle Attacks
+description: Man-in-the-middle attack – definition | This attack tactic is often mentioned in the press and other publications. But what exactly is it and how does it work?
 draft: true
 hero: /images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg
 date: 2021-01-25

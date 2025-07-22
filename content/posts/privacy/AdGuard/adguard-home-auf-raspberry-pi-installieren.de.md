@@ -1,6 +1,6 @@
 ---
-title: "AdGuard Home Raspberry Pi Installation"
-descripton: "AdGuard Home Raspberry Pi Installation | In diesem Tutorialziege ich euch, wie ihr AdGuard Home auf einem Raspberry Pi installiert."
+title: AdGuard Home Raspberry Pi Installation
+descripton: AdGuard Home Raspberry Pi Installation | In diesem Tutorialziege ich euch, wie ihr AdGuard Home auf einem Raspberry Pi installiert.
 hero: /images/posts/adguard/Video-Thumbnail.png
 date: 2022-08-23
 menu:

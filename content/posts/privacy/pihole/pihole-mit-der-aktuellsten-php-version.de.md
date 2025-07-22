@@ -1,6 +1,6 @@
 ---
-title: "Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version"
-descripton: "Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version | In diesem Tutorial zeige ich, wie ihr, Pihole mit einer aktuellen PHP - Version installiert"
+title: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version
+descripton: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version | In diesem Tutorial zeige ich, wie ihr, Pihole mit einer aktuellen PHP - Version installiert
 hero: /images/posts/pihole/pihole-raspberry-php.png
 date: 2024-03-06
 menu:

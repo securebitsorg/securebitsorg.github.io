@@ -1,6 +1,6 @@
 ---
-title: “FritzBox / AdGuard DNS - Block ads, tracking, and phishing”
-descripton: “FritzBox / AdGuard DNS | In this video, I show you how to run your own public DNS server (AdGuard DNS)”
+title: FritzBox / AdGuard DNS - Block ads, tracking, and phishing
+descripton: FritzBox / AdGuard DNS | In this video, I show you how to run your own public DNS server (AdGuard DNS)
 hero: /images/posts/fritzbox/Thumbnail-AdGuard-DNS.png
 date: 2023-01-12
 menu:

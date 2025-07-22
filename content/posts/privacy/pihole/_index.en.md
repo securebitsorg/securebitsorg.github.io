@@ -1,6 +1,6 @@
 ---
 title: Pi-hole
-descripton: "Tutorials on the topic of Pi-hole"
+descripton: Tutorials on the topic of Pi-hole
 menu:
   sidebar:
     name: Pi-hole

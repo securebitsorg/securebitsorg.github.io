@@ -1,6 +1,6 @@
 ---
-title: "UFW-Firewall - Application Profiles erstellen | Teil 3| Uncomplicated Firewall"
-descripton: "UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren"
+title: UFW-Firewall - Application Profiles erstellen | Teil 3| Uncomplicated Firewall
+descripton: UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren
 date: 2022-10-06
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-3-App-Profile.png
 menu:

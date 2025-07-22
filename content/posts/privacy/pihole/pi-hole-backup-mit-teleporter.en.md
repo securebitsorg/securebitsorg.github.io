@@ -1,8 +1,8 @@
 ---
-title: "Pi-hole Backup mit Teleporter"
+title: Pi-hole Backup mit Teleporter
 hero: /images/posts/pihole/Video-Pi-hole-Backup.png
 date: 2023-09-12
-descirpton: "Pi-hole backup with Teleporter | In this tutorial video, I show you how to create a Pihole backup using Teleporter."
+descirpton: Pi-hole backup with Teleporter | In this tutorial video, I show you how to create a Pihole backup using Teleporter.
 menu:
   sidebar:
     name: Pi-hole-Backup with teleporter

@@ -1,7 +1,7 @@
 ---
-title: "FritzBox DNS Server ändern"
+title: FritzBox DNS Server ändern
 hero: /images/posts/fritzbox/Video-FritzBox-Teil-3.png
-descripton: "FritzBox DNS Server ändern | In diesem Video zeige ich euch, wie ihr den öffentlichen DNS-Server einer Fritzbox ändern könnt."
+descripton: FritzBox DNS Server ändern | In diesem Video zeige ich euch, wie ihr den öffentlichen DNS-Server einer Fritzbox ändern könnt.
 menu:
   sidebar:
     name: Fritzbox den öffentlichen DNS-Server / Resolver ändern

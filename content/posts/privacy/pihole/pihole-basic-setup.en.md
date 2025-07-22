@@ -1,7 +1,7 @@
 ---
-title: "Pihole setup"
+title: Pihole setup
 date: 2023-05-05
-descripton: "Setup / configure Pihole | In this video, I show you how to set up and configure Pihole correctly."
+descripton: Setup / configure Pihole | In this video, I show you how to set up and configure Pihole correctly.
 hero: /images/posts/pihole/Video-Pi-hole-Basis-Konfiguration.png
 menu:
   sidebar:

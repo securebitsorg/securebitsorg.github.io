@@ -1,5 +1,5 @@
 ---
-title: "UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben"
+title: UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben
 descripton: UFW-Firewall Portbereiche, Dienste konfigurieren | In diesem Video zeige ich euch, wie ihr die erweiterten Einstellungen konfiguriert.
 date: 2022-10-06
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-2-Erweiterte-Regeln-2.png

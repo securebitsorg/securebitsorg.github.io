@@ -1,6 +1,6 @@
 ---
-title: “FritzBox - Setting up AdGuard Home”
-description: “Configuring AdGuard Home and Fritzbox | In this video, I'll show you how to set up AdGuard Home with a Fritzbox.”
+title: FritzBox - Setting up AdGuard Home
+description: Configuring AdGuard Home and Fritzbox | In this video, I'll show you how to set up AdGuard Home with a Fritzbox.
 hero: /images/posts/adguard/AdGuard-FritzBox-DNS-Server.png
 date: 2022-10-22
 menu:

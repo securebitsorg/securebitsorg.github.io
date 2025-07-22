@@ -1,6 +1,6 @@
 ---
-title: “UFW Firewall - Basics | Part 1”
-description: “UFW Firewall - Basics | In this video, I will show you the basics of the UFW firewall.”
+title: UFW Firewall - Basics | Part 1
+description: UFW Firewall - Basics | In this video, I will show you the basics of the UFW firewall.
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-1-Grundlagen.png
 date: 2022-10-06
 menu:

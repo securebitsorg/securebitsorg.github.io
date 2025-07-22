@@ -1,7 +1,7 @@
 ---
-title: "Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen"
+title: Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen
 date: 2024-02-27
-descripton: "Pihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt"
+descripton: Pihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt
 hero: /images/posts/pihole/pihole-raspberry-vpn.png
 menu:
   sidebar:
@@ -31,16 +31,16 @@ Wie das alles funktioniert, zeige ich euch in meinem Video auf meinem YouTube-Ka
 
 Inhaltsverzeichnis
 
-- [Pihole VPN - Keine Werbung auf dem Smartphone](#pihole-vpn-keine-werbung-auf-dem-smartphone)
-    - [Voraussetzungen für dieses Tutorial](#voraussetzungen-fur-dieses-tutorial)
-    - [Hinweis](#hinweis)
+- [Pihole VPN - Keine Werbung auf dem Smartphone](#pihole-vpn---keine-werbung-auf-dem-smartphone)
+  - [Voraussetzungen für dieses Tutorial](#voraussetzungen-für-dieses-tutorial)
+  - [Hinweis](#hinweis)
 - [Video-Tutorial zum Thema 'pihole VPN mit Wireguard'.](#video-tutorial-zum-thema-pihole-vpn-mit-wireguard)
-- [Befehle zum Einrichten von Pi-hole, PiVPN und WireGuard](#befehle-zum-einrichten-von-pi-hole-pi-vpn-und-wire-guard)
-    - [Bitte beachten!](#bitte-beachten)
-    - [Pihole VPN - Installation der UFW-Firewall](#pihole-vpn-installation-der-ufw-firewall)
-    - [Pihole VPN - Installation und Einrichtung von PiVPN auf dem Raspberry Pi](#pihole-vpn-installation-und-einrichtung-von-pi-vpn-auf-dem-raspberry-pi)
-        - [PiVPN WireGuard - Befehlsliste](#pi-vpn-wire-guard-befehlsliste)
-    - [Zusätzliche Informationen zum Thema 'Pi-hole VPN'](#zusatzliche-informationen-zum-thema-pi-hole-vpn)
+- [Befehle zum Einrichten von Pi-hole, PiVPN und WireGuard](#befehle-zum-einrichten-von-pi-hole-pivpn-und-wireguard)
+  - [Bitte beachten!](#bitte-beachten)
+  - [Pihole VPN - Installation der UFW-Firewall](#pihole-vpn---installation-der-ufw-firewall)
+  - [Pihole VPN - Installation und Einrichtung von PiVPN auf dem Raspberry Pi](#pihole-vpn---installation-und-einrichtung-von-pivpn-auf-dem-raspberry-pi)
+    - [PiVPN WireGuard - Befehlsliste](#pivpn-wireguard---befehlsliste)
+  - [Zusätzliche Informationen zum Thema 'Pi-hole VPN'](#zusätzliche-informationen-zum-thema-pi-hole-vpn)
 
 ### Voraussetzungen für dieses Tutorial
 

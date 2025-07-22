@@ -1,7 +1,7 @@
 ---
-title: "Secure Linux SSH"
+title: Secure Linux SSH
 date: 2025-02-18
-descripton: "Tutorial | Secure Linux SSH now / hardening | In this tutorial, I will show you how to secure SSH access correctly and, above all, securely."
+descripton: Tutorial | Secure Linux SSH now / hardening | In this tutorial, I will show you how to secure SSH access correctly and, above all, securely.
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:

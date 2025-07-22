@@ -1,7 +1,7 @@
 ---
-title: "Pihole einrichten / konfigurieren"
+title: Pihole einrichten / konfigurieren
 date: 2023-05-05
-descripton: "Pihole einrichten / konfigurieren | In diesem Video zeige ich euch, wie ihr Pihole richtig einrichtet und konfigurieren müsst"
+descripton: Pihole einrichten / konfigurieren | In diesem Video zeige ich euch, wie ihr Pihole richtig einrichtet und konfigurieren müsst
 hero: /images/posts/pihole/Video-Pi-hole-Basis-Konfiguration.png
 menu:
   sidebar:

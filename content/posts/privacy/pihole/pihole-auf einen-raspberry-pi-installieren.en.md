@@ -1,8 +1,8 @@
 ---
-title: “Pi-hole Raspberry Pi Installation”
+title: Pi-hole Raspberry Pi Installation
 date: 2022-03-30
 hero: /images/posts/pihole/pi-hole-installation.png
-descripton: “Pi-hole Raspberry Pi | In this tutorial, we will install Pihole on a Raspberry Pi”
+descripton: Pi-hole Raspberry Pi | In this tutorial, we will install Pihole on a Raspberry Pi
 menu:
   sidebar:
     name: Install Pihole on a Raspberry Pi

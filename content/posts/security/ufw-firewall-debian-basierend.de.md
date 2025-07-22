@@ -1,6 +1,6 @@
 ---
-title: "UFW-Firewall Raspberry Pi Installation"
-descripton: "UFW-Firewall Raspberry Pi | In diesem Tutorial zeige ich euch, wie ihr euren Raspberry Pi mit der UFW-Firewall absichern könnt."
+title: UFW-Firewall Raspberry Pi Installation
+descripton: UFW-Firewall Raspberry Pi | In diesem Tutorial zeige ich euch, wie ihr euren Raspberry Pi mit der UFW-Firewall absichern könnt.
 hero: /images/posts/it-security/Thumbnail-1.png
 menu:
   sidebar:

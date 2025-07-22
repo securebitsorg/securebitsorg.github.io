@@ -1,5 +1,5 @@
 ---
-title: “UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2”
+title: UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2
 description: Configuring UFW firewall port ranges and services | In this video, I will show you how to configure the advanced settings.
 date: 2022-10-06
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-2-Erweiterte-Regeln-2.png

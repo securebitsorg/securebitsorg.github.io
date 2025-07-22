@@ -1,6 +1,6 @@
 ---
 title: Linux
-descripton: "Tutorials rund um das Thema Linux" 
+descripton: Tutorials rund um das Thema Linux
 menu:
   sidebar:
     name: Linux

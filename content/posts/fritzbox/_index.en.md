@@ -1,6 +1,6 @@
 ---
 title: Fritzbox
-descripton: "Tutorials on the topic of Fritzbox" 
+descripton: Tutorials on the topic of Fritzbox
 menu:
   sidebar:
     name: Fritzbox
