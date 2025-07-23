@@ -5,23 +5,25 @@ date: 2022-10-06
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-2-Erweiterte-Regeln-2.png
 menu:
   sidebar:
-    name: UFW-Firewall Application Profiles
+    name: UFW-Firewall Portbereiche und Dienste
     identifier: ufw-firewall-teil-2
     parent: security
-categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-tags: 
-  - "firewall"
-  - "it-security"
-  - "linux"
-  - "netzwerk"
-  - "tutorials"
-  - "video"
-  - "raspberry pi"
+categories:
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
+tags:
+  - firewall
+  - it-security
+  - linux
+  - netzwerk
+  - tutorials
+  - video
+  - raspberry pi
+keywords:
+  - ufw portbereich
 ---
 
 ## UFW-Firewall - Erweiterte Regeln für Portbereiche

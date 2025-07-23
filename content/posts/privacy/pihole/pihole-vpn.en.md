@@ -1,7 +1,6 @@
 ---
 title: Use Pihole VPN with Wireguard in 2024
 date: 2024-02-27
-descripton: Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.
 hero: /images/posts/pihole/pihole-raspberry-vpn.png
 menu:
   sidebar:
@@ -9,17 +8,20 @@ menu:
     identifier: pihole-vpn
     parent: pihole
 categories:
-- “Linux”
-- ‘Network’
-- “Security”
-- “Tutorials”
-- “Video”
+  - “Linux”
+  - ‘Network’
+  - “Security”
+  - “Tutorials”
+  - “Video”
 tags:
-- “linux”
-- “pi-hole”
-- “security”
-- ‘tutorials’
-- “video”
+  - “linux”
+  - “pi-hole”
+  - “security”
+  - ‘tutorials’
+  - “video”
+description: Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.
+keywords:
+  - pihole vpn
 ---
 ## Pihole VPN - No ads on your smartphone
 In this tutorial, ‘**pihole VPN with Wireguard**’, I would like to show you how you can use the ‘**PiVPN**’ application to access your **Pihole** on your **smartphone, tablet, or laptop** and thus enjoy the benefits of Pihole, namely surfing without annoying ads, even when you're **on the go**.
@@ -69,7 +71,7 @@ sudo ufw enable
 ```
 ### Pihole VPN - Installing and setting up PiVPN on the Raspberry Pi
 Here are the commands for installing PiVPN on the Raspberry Pi.
-```bash
+```bashPihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt
 # Command to install PiVPN
 sudo curl -L https://install.pivpn.io | bash
 ```

@@ -9,19 +9,21 @@ menu:
     identifier: ufw-firewall-part-2
     parent: security
 categories:
-- “Linux”
-- “Network”
-- “Security”
-- “Tutorials”
-- “Video”
+  - “Linux”
+  - “Network”
+  - “Security”
+  - “Tutorials”
+  - “Video”
 tags:
-- “firewall”
-- “it-security”
-- “linux”
-- "network"
-- “tutorials”
-- “video”
-- "raspberry pi"
+  - “firewall”
+  - “it-security”
+  - “linux”
+  - network
+  - “tutorials”
+  - “video”
+  - raspberry pi
+keywords:
+  - ufw application
 ---
 ## UFW Firewall - Advanced Rules for Port Ranges
 In this video, I'll show you how to enable multiple ports, port ranges, and services simultaneously with the UFW firewall.

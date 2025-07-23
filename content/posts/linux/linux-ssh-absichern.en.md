@@ -1,7 +1,6 @@
 ---
 title: Secure Linux SSH
 date: 2025-02-18
-descripton: Tutorial | Secure Linux SSH now / hardening | In this tutorial, I will show you how to secure SSH access correctly and, above all, securely.
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:
@@ -9,8 +8,20 @@ menu:
     identifier: linux-ssh
     parent: linux
     weight: 10
-tags: ["linux", "security", "video", "debian"]
-categories: ["Tutorials", "Linux", "Video", "Security"]
+tags:
+  - linux
+  - security
+  - video
+  - debian
+categories:
+  - Tutorials
+  - Linux
+  - Video
+  - Security
+description: Tutorial | Secure Linux SSH now / hardening | In this tutorial, I will show you how to secure SSH access correctly and, above all, securely.
+preview: ../../../assets/images/posts/linux-ssh/SSH-absichern.png
+keywords:
+  - linux ssh
 ---
 ## Securing Linux SSH access correctly
 

@@ -1,26 +1,27 @@
 ---
 title: Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen
 date: 2024-02-27
-descripton: Pihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt
 hero: /images/posts/pihole/pihole-raspberry-vpn.png
 menu:
   sidebar:
     name: Pi-hole mit WireGuard und piVPN
     identifier: pihole-vpn
     parent: pihole
-categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-tags: 
-  - "linux"
-  - "pi-hole"
-  - "security"
-  - "tutorials"
-  - "video"
-
+categories:
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
+tags:
+  - linux
+  - pi-hole
+  - security
+  - tutorials
+  - video
+description: Pihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt
+keywords:
+  - pihole vpn
 ---
 
 ## Pihole VPN - Keine Werbung auf dem Smartphone

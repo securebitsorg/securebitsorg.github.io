@@ -1,24 +1,26 @@
 ---
 title: Pihole setup
 date: 2023-05-05
-descripton: Setup / configure Pihole | In this video, I show you how to set up and configure Pihole correctly.
 hero: /images/posts/pihole/Video-Pi-hole-Basis-Konfiguration.png
 menu:
   sidebar:
     name: Pi-hole setup
     identifier: pihole-setup
     parent: pihole
-categories: 
-  - "network"
-  - "security"
-  - "tutorials"
-  - "video"
-tags: 
-  - "network"
-  - "pi-hole"
-  - "security"
-  - "tutorials"
-  - "video"
+categories:
+  - network
+  - security
+  - tutorials
+  - video
+tags:
+  - network
+  - pi-hole
+  - security
+  - tutorials
+  - video
+description: Setup / configure Pihole | In this video, I show you how to set up and configure Pihole correctly.
+keywords:
+  - pihole setup
 ---
 
 ## Setting up Pihole – Basic configuration

@@ -1,6 +1,5 @@
 ---
-title: UFW-Firewall - Application Profiles erstellen | Teil 3| Uncomplicated Firewall
-descripton: UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren
+title: "UFW-Firewall - Application Profiles erstellen "
 date: 2022-10-06
 hero: /images/posts/it-security/UFW-Firewall-Einrichten-Teil-3-App-Profile.png
 menu:
@@ -8,20 +7,23 @@ menu:
     name: UFW-Firewall Application Profiles
     identifier: ufw-firewall-teil-3
     parent: security
-categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-tags: 
-- "raspberry pi"
-- "firewall"
-- "linux"
-- "netzwerk"
-- "security"
-- "tutorials"
-- "video"
+categories:
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
+tags:
+  - raspberry pi
+  - firewall
+  - linux
+  - netzwerk
+  - security
+  - tutorials
+  - video
+descripton: UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren
+keywords:
+  - ufw application
 ---
 
 ## UFW-Firewall - Profile für Applikationen anlegen

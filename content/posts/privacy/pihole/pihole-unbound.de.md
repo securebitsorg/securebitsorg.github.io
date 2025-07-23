@@ -1,25 +1,27 @@
 ---
 title: Pihole Unbound jetzt richtig installieren
 date: 2023-10-12
-description: Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.
 hero: /images/posts/pihole/Video-Pi-hole-und-Unbound.png
 menu:
-  sidebar:
-    name: Pi-hole und unbound installieren
-    identifier: pihole-unbound
-    parent: pihole
-categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-tags: 
-  - "netzwerk"
-  - "pi-hole"
-  - "security"
-  - "tutorials"
-  - "video"
+   sidebar:
+      name: Pi-hole und unbound installieren
+      identifier: pihole-unbound
+      parent: pihole
+categories:
+   - Linux
+   - Netzwerk
+   - Security
+   - Tutorials
+   - Video
+tags:
+   - netzwerk
+   - pi-hole
+   - security
+   - tutorials
+   - video
+description: Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.
+keywords:
+   - pihole unbound
 ---
 
 ## Pihole Unbound und DNS-Verschlüsselung - Für mehr Sicherheit im Netzwerk
@@ -56,7 +58,7 @@ sudo apt update && apt upgrade -y
 
 Nach der Aktualisierung sollte das System neu gestartet werden.
 
-### Pi-hole Unbound | Abrufen der root.hints
+### Pihole Unbound | Abrufen der root.hints
 
 Jetzt kann die Installation von Unbound und der Liste der aktuellen root.hints (Root-Namansserver, diese werden alle 6 Monate aktualisiert) erfolgen.
 
@@ -71,7 +73,7 @@ sudo wget -O /etc/unbound/root.hints https://www.internic.net/domain/named.root
 sudo wget -O /var/lib/unbound/root.hints https://www.internic.net/domain/named.root
 ```
 
-### Liste der Root-Nameserver (root.hints) automatisch Aktualisieren | Pi-hole Unbound
+### Liste der Root-Nameserver (root.hints) automatisch Aktualisieren | Pihole Unbound
 
 Um die Liste der root.hints automatisch alle 6 Monate zu aktualisieren, legen wir einen Cronjob an, der diese Aufgabe für uns automatisiert. Um diese Automatisierung einzurichten, gehen wir wie folgt vor.
 
@@ -150,7 +152,7 @@ Jan 19 06:57:01 piholetest cron[3866]: (CRON) INFO (pidfile fd = 3)
 Jan 19 06:57:01 piholetest cron[3866]: (CRON) INFO (Skipping @reboot jobs -- not system startup)
 ```
 
-### Pi-hole Unbound - Unbound-Config-Datei anlegen
+### Pihole Unbound - Unbound-Config-Datei anlegen
 
 Als nächstes müssen wir eine Config-Datei für Unbound anlegen, in der wir dann im nächsten Schritt, die Konfiguration für das Zusammenspiel von Unbound und Pi-hole eintragen.
 
@@ -163,7 +165,7 @@ sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 # und Speichern die Config-Datei mit STRG+O ab und Verlassen den Editor mit STRG+x
 ```
 
-### Inhalt der Pi-hole Unbound Config-Datei
+### Inhalt der Pihole Unbound Config-Datei
 
 Hier findet ihr den Inhalt der Config-Datei dir ihr für den Betrieb von Pi-hole und Unbound eintragen müsst.
 
@@ -195,7 +197,7 @@ port: 5335
 do-ip4: yes
 do-udp: yes
 do-tcp: yes
-
+Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.
 # Kann auf ja gesetzt werden, wenn du IPv6-Konnektivität hast
 
 do-ip6: no
@@ -314,7 +316,7 @@ sudo nano /etc/dnsmasq.d/99-edns.conf
 
 edns-packet-max=1232
 
-# Und speichern die Conf-Datei mit STRG+O und STRG+X ab
+# Und speichern die ConfPihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.-Datei mit STRG+O und STRG+X ab
 ```
 
 ### Unbound neustarten
@@ -343,12 +345,12 @@ sudo systemctl status unbound.service
       Tasks: 2 (limit: 38124)
      Memory: 4.8M
         CPU: 92ms
-     CGroup: /system.slice/unbound.service
+     CGroup: /system.sliPihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.ce/unbound.service
              `-3196 /usr/sbin/unbound -d -p
 
 Oct 06 08:29:59 piholetest2 systemd[1]: Starting Unbound DNS server...
 Oct 06 08:29:59 piholetest2 unbound[3196]: Oct 06 08:29:59 unbound[3196:0] error: Could not open logfile /var/log/unbound.>
-Oct 06 08:29:59 piholetest2 systemd[1]: Started Unbound DNS server.
+Oct 06 08:29:59 piholetest2 systemd[1]: Started Unbound DNS server.Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.
 Oct 06 08:29:59 piholetest2 unbound[3196]: Oct 06 08:29:59 unbound[3196:0] info: start of service (unbound 1.13.1).
 lines 1-17/17 (END)
 ```
@@ -407,7 +409,7 @@ sudo chown unbound:unbound /var/log/unbound.log
 sudo systemctl restart unbound.service
 ```
 
-### Einrichtung von Pi-hole Unbound
+### Einrichtung von Pihole Unbound
 
 Zu guter Letzt müssen wir Pi-hole noch konfigurieren, dass dieser Unbound als Upstream-DNS-Server nutzt.
 

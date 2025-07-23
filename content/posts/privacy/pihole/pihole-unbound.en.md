@@ -9,17 +9,18 @@ menu:
       identifier: pihole-unbound
       parent: pihole
 categories:
-- “Linux”
-- ‘Network’
-- “Security” 
-- “Tutorials”
-  - “Video”
+   - “Linux”
+   - ‘Network’
+   - “Security”
+   - “Tutorials” - “Video”
 tags:
-- “network”
-- “pi-hole”
-- “security”
-- ‘tutorials’
-- “video”
+   - “network”
+   - “pi-hole”
+   - “security”
+   - ‘tutorials’
+   - “video”
+keywords:
+   - pihole unbound
 ---
 ## Pihole Unbound and DNS encryption - For more network security
 In today's video tutorial, ‘**Pi-hole Unbound**’, I would like to show you how you can use the additional tool ‘**Unbound**’ to ensure greater security for your DNS queries on the network.
@@ -33,7 +34,7 @@ Table of contents for Pihole Unbound
 > This tutorial refers to the previous tutorials on ‘Installing Pi-Hole on a Raspberry Pi’ and uses this configuration as the basis for this article.
 In this tutorial, I will start from the basics that you will have learned after completing the tutorial '**[Installing Pi-Hole + Firewall on a Raspberry Pi](https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/)**' on your Raspberry Pi. If this is not the case, please feel free to go through the installation tutorial first.
 Of course, the installation of **Unbound** should also work on other Linux-based systems!
-## Video tutorial on ‘Installing Pi-hole Unbound’
+## Video tutorial on ‘Installing Pihole Unbound’
 {{< youtube TdL_3iB9SiU >}}
 ## Installing Unbound
 First, we always need to update the operating system to the latest version.
@@ -43,7 +44,7 @@ sudo apt update && apt upgrade -y
 ```
 After the update, the system should be restarted.
 
-### Pi-hole Unbound | Retrieving the root.hints
+### Pihole Unbound | Retrieving the root.hints
 Now you can install Unbound and the list of current root.hints (root name servers, which are updated every 6 months).
 ```bash
 # Installation of Unbound
@@ -105,7 +106,7 @@ Jan 19 06:57:01 piholetest systemd[1]: Started Regular background program proces
 Jan 19 06:57:01 piholetest cron[3866]: (CRON) INFO (pidfile fd = 3)
 Jan 19 06:57:01 piholetest cron[3866]: (CRON) INFO (Skipping @reboot jobs -- not system startup)
 ```
-### Pi-hole Unbound - Create Unbound configuration file
+### Pihole Unbound - Create Unbound configuration file
 Next, we need to create a configuration file for Unbound, in which we will then enter the configuration for the interaction between Unbound and Pi-hole in the next step.
 ```bash
 # Create Unbound config file
@@ -113,7 +114,7 @@ sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 # In this file, we enter the configuration described in the next paragraph
 # and save the config file with CTRL+O and exit the editor with CTRL+x
 ```
-### Contents of the Pi-hole Unbound configuration file
+### Contents of the Pihole Unbound configuration file
 Here you will find the contents of the configuration file that you must enter for Pi-hole and Unbound to work.
 I have made some adjustments to this configuration file so that external DNS queries are encrypted and configured some other privacy settings.
 Descriptions of the individual Unbound configurations are always provided as comments above the instructions in the Unbound config file.
@@ -279,8 +280,8 @@ sudo chown unbound:unbound /var/log/unbound.log
 # Restart Unbound
 sudo systemctl restart unbound.service
 ```
-### Setting up Pi-hole Unbound
-Last but not least, we need to configure Pi-hole to use Unbound as its upstream DNS server.
+### Setting up Pihole Unbound
+Last but not least, we need to configure Pihole to use Unbound as its upstream DNS server.
 To do this, log in to Pi-Hole, go to ‘**Settings->DNS**’ and enter the following entry under ‘**Custom 1 (IPv4)**’: '**127.0.0.1#5335**‘.
 On the left side, under ’**Upstream DNS Servers**‘, uncheck the boxes for the upstream DNS servers you have been using, as they are no longer needed.
 **Important!** - Once all entries have been adjusted, please scroll down and click ’**SAVE**' to save the changes.

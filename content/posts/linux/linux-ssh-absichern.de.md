@@ -1,16 +1,26 @@
 ---
 title: Linux SSH-Zugang absichern
 date: 2025-07-05
-descripton: Tutorial | Jetzt Linux SSH absichern / hardening | In diesem Tutorial zeige ich euch, wie ihr einen SSH-Zugang richtig und vor allem sicher absichert.
 hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:
     name: Linux SSH-Zugang absichern
     identifier: linux-ssh
     parent: linux
-tags: ["linux", "security", "video", "debian"]
-categories: ["Tutorials", "Linux", "Video", "Security"]
-
+tags:
+  - linux
+  - security
+  - video
+  - debian
+categories:
+  - Tutorials
+  - Linux
+  - Video
+  - Security
+description: Tutorial | Jetzt Linux SSH absichern / hardening | In diesem Tutorial zeige ich euch, wie ihr einen SSH-Zugang richtig und vor allem sicher absichert.
+preview: ../../../assets/images/posts/linux-ssh/SSH-absichern.png
+keywords:
+  - linux ssh
 ---
 ## Linux SSH Zugang richtig absichern
 
@@ -20,7 +30,7 @@ Dieses Tutorial soll euch helfen, den Linux SSH Zugriff erfolgreich gegen Angrif
 
 Natürlich ist das Absichern des SSH-Zugangs nur ein Modul, um euren Server vor Angriffe zu schützen. Weitere Möglichkeiten findet ihr im Tutorial „Raspberry Pi absichern von A-Z“ welches ich hier im Blog veröffentlicht habe.
 
-## Video-Tutorial zum Thema ‚Linux SSH absichern‘
+## Video-Tutorial zum Thema ‚Linux SSH absichern‘Tutorial | Jetzt Linux SSH absichern / hardening | In diesem Tutorial zeige ich euch, wie ihr einen SSH-Zugang richtig und vor allem sicher absichert.
 
 {{< youtube iCPRIR6FDW0 >}}
 
