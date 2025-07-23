@@ -21,7 +21,7 @@ preview: ../../../assets/images/posts/windows/Eingabeaufforderung_logo.jpg
 keywords:
   - cmd
 ---
-
+<link rel="canonical" href="https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/" />
 **Update - Neues von Microsoft | CMD - Befehle PDF**  
 Microsoft hat jetzt endlich mal selbst eine umfassende Dokumentation über die Funktionsweise der einzelnen **CMD Befehle** zur Verfügung gestellt. Daher möchte ich euch natürlich diese nicht vorenthalten.  
 Weiter unten im Beitrag könnt ihr die Dokumentation nun ebenfalls herunterladen.
