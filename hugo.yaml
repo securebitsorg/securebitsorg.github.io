@@ -1,6 +1,6 @@
 baseURL:  "https://secure-bits.org/"
 
-languageCode: de-de
+languageCode: de
 title: "SecureBits Blog by Marcel Dellmann"
 
 
@@ -36,7 +36,7 @@ module:
   mounts:
   - source: static/files
     target: static/files
-  - source: ./node_modules/flag-icon-css/flags
+  - source: ./node_modules/flag-icon/flags
     target: static/flags
   - source: ./node_modules/@fontsource/mulish/files
     target: static/files
@@ -46,6 +46,17 @@ module:
     target: assets
   - source: static
     target: assets
+
+flags:
+  enable: true
+  flagsOverride:
+    - languageCode: en
+      countryCode: GB
+      flag: gb
+
+  # Use the flag icons from flag-icon-css
+
+enableEmoji: true
 
 # media types
 image/gif:
@@ -58,9 +69,11 @@ image/gif:
 languages:
   de:
     languageName: Deutsch
+    languageCode: de
     weight: 1
   en:
     languageName: English
+    languageCode: en
     weight: 2
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
@@ -117,9 +130,12 @@ markup:
 
 markup:
   highlight:
-    style: xcode-light
-    lineNos: false
-    lineNumbersInTable: true
+    codeFences: true
+    style: fruity # dracula # catppuccin-mocha 
+    lineNos: true
+    lineNumbersInTable: false
+    wrapperclass: highlight
+    guessSyntax: true
 
 
 # At least HTML and JSON are required for the main HTML content and
@@ -129,15 +145,6 @@ outputs:
   - HTML
   - RSS
   - JSON
-
-# Enable global emoji supportimaging:
-enableEmoji: false
-anchor: Smart
-bgColor: '#ffffff'
-hint: photo
-quality: 75
-resampleFilter: box
-
 
 imaging:
   anchor: Smart
