@@ -1,24 +1,28 @@
 ---
 title: Jetzt alle CMD-Befehle für Windows im Überblick 2025
-descripton: Eine Liste mit den wichtigsten CMD-Befehle findet ihr in diesem Beitrag. Weiterhin könnt ihr auch alle CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
 hero: /images/posts/windows/Eingabeaufforderung_logo.jpg
 date: 2025-03-12
 menu:
   sidebar:
-    name: CMD-Befehle Übersicht für Windows 
+    name: CMD-Befehle Übersicht für Windows
     identifier: cmd
     parent: windows
-categories: 
-  - "Tutorials"
-  - "Windows"
-tags: 
-  - "cmd"
-  - "powershell"
-  - "tutorials"
-  - "windows"
+categories:
+  - Tutorials
+  - Windows
+  - Netzwerk
+tags:
+  - cmd
+  - powershell
+  - tutorials
+  - windows
+description: Eine Liste mit den CMD-Befehle findet ihr in diesem Beitrag. Weiterhin könnt ihr auch alle CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
+preview: ../../../assets/images/posts/windows/Eingabeaufforderung_logo.jpg
+keywords:
+  - cmd
 ---
 
-**Update - Neues von Microsoft**  
+**Update - Neues von Microsoft | CMD - Befehle PDF**  
 Microsoft hat jetzt endlich mal selbst eine umfassende Dokumentation über die Funktionsweise der einzelnen **CMD Befehle** zur Verfügung gestellt. Daher möchte ich euch natürlich diese nicht vorenthalten.  
 Weiter unten im Beitrag könnt ihr die Dokumentation nun ebenfalls herunterladen.
 

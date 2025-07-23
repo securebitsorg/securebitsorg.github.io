@@ -9,13 +9,17 @@ menu:
     identifier: cmd
     parent: windows
 categories:
-- “Tutorials”
-- “Windows”
+  - “Tutorials”
+  - “Windows”
+  - Network
 tags:
-- “cmd”
-- “powershell”
-- ‘tutorials’
-- “windows”
+  - “cmd”
+  - “powershell”
+  - ‘tutorials’
+  - “windows”
+keywords:
+  - cmd
+preview: ../../../assets/images/posts/windows/Eingabeaufforderung_logo.jpg
 ---
 **Update - News from Microsoft**
 Microsoft has finally provided comprehensive documentation on how the individual **CMD commands** work. So, of course, I don't want to keep this from you.
@@ -23,7 +27,7 @@ You can now download the documentation further down in this post.
 ## CMD commands - Not just for nerds!
 Many tasks can be performed more easily or exclusively using the CMD command line tool in Windows. In this article, I would like to provide you with an overview of the most important CMD commands for the command line.
 I have divided these commands into different subject areas further down in this article so that you can get a quick overview.
-  
+  CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
 I have already introduced some of these commands for working or gathering information on the network in **[this article](https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/)** or in the article on what you can do with the **[Netstat command](https://secure-bits.org/netstat-unter-windows/)** can do everything.
 This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tables!
 ## All CMD commands to take with you
