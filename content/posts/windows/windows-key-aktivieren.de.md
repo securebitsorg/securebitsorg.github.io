@@ -20,6 +20,7 @@ menu:
     parent: windows
 keywords:
   - windows product key
+slug: windows-product-key-aktivieren
 ---
 > ### Andere Windows Versionen
 > 
@@ -64,8 +65,10 @@ Slmgr.vbs /ipk "Euren Product Key" (von eurer Windows-Version)
 Slmgr.vbs /ipk NKJFK-GPHP7-G8C3J-P6JXR-HQRJR (Pro-Version)
 Slmgr.vbs /ipk "Euren Product Key" (von eurer Windows-Version)
 ```
+---
 ![windows product key aendern](/images/posts/windows/Befehl_Key_aendern.jpg)
 
+---
 Nun sollte Windows den Product Key auf den von dir eingegebenen Product Key aktualisiert haben.
 
 ## Windows Product Key aktivieren
@@ -75,6 +78,10 @@ Nach dem Tausch des Produkt Key muss dieser noch aktiviert werden. Diese Aktivie
 ```msdos
 slmgr.vbs /ato
 ```
-![Windows Product Key aktivieren](../../../assets/images/posts/windows/Befehl_Aktivierung.jpg)
+
+---
+![Windows Product Key aktivieren](/images/posts/windows/Befehl_Aktivierung.jpg)
+
+---
 
 Nach der Eingabe des oben genannten Befehls, wird nach kurzer Zeit Windows aktiviert und nun kannst du durch die Eingabe des Befehls ‚Exit‘ die Kommandokonsole verlassen.
