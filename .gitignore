@@ -10,3 +10,8 @@ hugo.exe
 hugo.darwin
 hugo.linux
 /.hugo_build.lock
+front-matter.json
+/.hugo_cache/
+/.hugo_deps/
+.vscode
+.frontmatter/database
