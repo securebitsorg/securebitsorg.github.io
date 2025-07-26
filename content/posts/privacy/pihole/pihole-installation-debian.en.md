@@ -1,429 +1,280 @@
 ---
-title: Pi-hole Installation - Schütze dein Heimnetzwerk
+title: Pihole Installation Debian - Protect your home network
 date: 2021-03-07
 categories:
-  - linux
-  - netzwerk
-  - security
-  - tutorials
-  - video
+  - Linux
+  - Privacy
+  - Tutorials
+  - Network
 tags:
   - linux
-  - netzwerk
-  - pi-hole
-  - security
-  - tipps-tutorials
-  - video
-coverImage: pi-hole-installation.png
-draft: true
+  - network
+  - pihole
+  - privacy
+  - tutorials
+keywords:
+  - pihole installation debian
+description: In this tutorial, we will install and set up Pihole on Debian
+menu:
+  sidebar:
+    name: Pihole Installation on Debian-based operating systems
+    identifier: pihole-debian
+    parent: pihole
+preview: ../../../../assets/images/posts/pihole/pi-hole-installation-beendet.jpg
+hero: /images/posts/pihole/pi-hole-installation-beendet.jpg
 ---
+## Pihole Installation Debian - Protect your network from tracking and advertising
+> **PLEASE NOTE!!!**
+>
+> These instructions refer to the installation of Pihole version **5** and not the current version **6**.
+>
+> **The differences between VERSION 5 and VERSION 6** are not really different in terms of the process. Version 6 is no longer based on PHP and does not use a lighthtp instance.
+>
+> I will also publish a tutorial for version 6 of Pihole here soon.
+If you want to declare war on trackers, in-app advertising, and advertising messages on your home network, you should take a look at Pihole.
+Of course, some of you will now think, “I use an ad blocker when surfing, so why do I need an extra device for such services?!” I can understand this question, but the answer is quite simple.
+A Pihole installation Debian / Server protects you centrally from advertising and trackers, as Pi-hole acts as a central DNS server in the network and thus not only protects computers from annoying snooping tools, but also other devices in the network. For example, smart TVs, advertising in apps on your smartphone, and it also functions as a “parental control.” This ensures that your children are protected when surfing the Internet.
+### How does Pihole work?
+This system provides a DNS server in the home network, which can be used to resolve domain queries from the connected devices in the network.
+  
+Based on exclusion lists (blacklists) of domains known as tracking or advertising domains, if there is a positive match, the requesting device on the network is given an unusable IP address. This means that the unusable IP address cannot be resolved and the device cannot resolve the domain.
+  
+Furthermore, the Pi-hole DNS server also allows you to track the history of visited domains, which is a data protection decision that each user must make for themselves.
+The use of blacklists also limits this system. By processing this list, only the domains contained therein can be checked. Other domains not included in the list cannot be checked due to the lack of content analysis functionality and can therefore be accessed.  
+Furthermore, the check only takes place using the domain check mentioned above. Access via direct entry of the domain's IP address is not checked.
+### Who is a Pihole Debian installation intended for?
+A Pihole installation Debian is ideal for anyone who wants to centrally protect their home network from advertising on end devices and trackers.
+The installation effort is minimal and operation with a Raspberry Pi is economical in terms of power consumption.
+## Hardware requirements for Pihole installation Debian
+As mentioned, the requirements are minimal and affordable for any budget.
+You can install Pi-hole either in a permanent virtual environment, on a single-board computer such as the Raspberry Pi, or on other mini-computers. You are also welcome to use my favorite board, APU4D4, for this task. You can find a post about this board here.
+### Hardware requirements
+- Minimum 512 MB RAM, preferably 1 GB
+- Minimum 2 GB free hard disk space, preferably 4 GB
+### Supported operating systems
+- As a Docker container
+Or as an installation on the following supported operating systems:
 
-## Pi-hole Installation - Schütze dein Netzwerk vor Tracking und Werbung
-
-Wer in seinem Heimnetzwerk Trackern, In-App-Werbung und Werbe-Botschaften den Kampf ansagen möchte, der sollte sich mit pi-hole ein wenig beschäftigen.
-
-Natürlich werden jetzt einige denken, ich nutze doch beim Surfen einen AD-Blocker, warum dann noch ein extra Gerät für solche Dienste?! Diese Frage kann ich nachvollziehen, doch ist die Antwort ganz einfach.
-
-Eine **Pi-hole Installation / Server** schützt euch zentral vor Werbung und Trackern, da pi-hole als zentraler DNS-Server im Netzwerk fungiert und somit nicht nur Computer vor den lästigen Schnüffelwerkzeugen schützt, sondern auch andere Geräte im Netzwerk. So zum Beispiel Smart-TV´s, Werbung in Apps auf euren Smartphone und funktioniert gleichzeitig auch als "Kindersicherung". So dass euer Nachwuchs beim Surfen im Internet geschützt ist.
-
-### Wie funktioniert Pi-hole?
-
-Dieses System stellt einen DNS-Server im Heimnetzwerk zu Verfügung, mit dessen Hilfe, Domainabfragen der eingebunden Endgeräte im Netzwerk aufzulösen.  
-Hierbei wird auf der Basis von Ausschlusslisten (Blacklist) von Domains die als Tracking- oder Werbedomains bekannt sind, bei einem positiven Treffer, dem anfragenden Endgerät im Netzwerk eine unbrauchbare IP-Adresse mitgeteilt. Somit kann durch die Übergabe der unbrauchbaren IP-Adresse diese nicht aufgelöst werden und damit das Endgerät diese Domain nicht auflösen.  
-Weiterhin ist es auch mit dem Pi-hole-DNS-Server möglich, die Verlaufsliste der besuchten Domains nachzuverfolgen, was wiederum Datenschutz-Technisch jeder für sich selbst entscheiden muss.  
-Durch die Nutzung von Blacklists ist diesem System auch Grenzen gesetzt. Durch die Abarbeitung dieser Liste, kann folglich auch nur die darin enthaltenen Domains überprüft werden. Andere nicht enthaltende Domains können Aufgrund nicht vorhandener Funktion der Inhaltsanalyse, nicht überprüft werden und sind daher aufrufbar.  
-Weiterhin findet die Überprüfung nur mittels der genannten Domain-Überprüfung statt. Zugriffe über direkte Eingabe der IP-Adresse der Domain werden nicht überprüft.
-
-### Für wen ist eine Pi-hole Installation gedacht?
-
-Eine pi-hole Installation bietet sich für alle diejenigen an, die ihr Heimnetzwerk zentral vor Werbung auf Endgeräten sowie Trackern schützen möchten.  
-Der Aufwand für die Installation ist gering und der Betrieb mit einem Raspberry Pi ist sparsam im Verbrauch.
-
-## Hardware-Anforderung für die Pi-hole Installation
-
-Wie geschrieben, sind die Anforderungen minimal und für jeden Geldbeutel realisierbar.
-
-Ihr könnt die pi-hole Installation entweder in einer dauerhaft virtuellen Umgebung, auf einem Einplatinen-Rechner wie den Raspberry-Pi, oder auf andere Mini-Computer. Ebenso könnt ihr auch hier gerne mein Lieblingsboard APU4D4 für diese Aufgabe verwenden. Einen Beitrag zu diesem Board findet ihr hier.
-
-### Hardware-Anforderungen
-
-- Minimum 512 MB Arbeitsspeicher, besser 1 GB
-
-- Minimum 2 GB freier Festplattenspeicher, besser 4 GB
-
-### Unterstützte Betriebssysteme
-
-- Als Docker-Container
-
-Oder als Installation bei den folgenden unterstützten Betriebssystemen:
-
-<figure>
-
-| **Distribution** | **Version**        | **Architektur**      |
+| **Distribution** | **Version**        | **Architecture**      |
 | ---------------- | ------------------ | -------------------- |
-| Raspberry Pi OS  | Stretch / Buster   | ARM                  |
-| Ubuntu           | 16.x / 18.x / 20.x | ARM / x86\_64        |
-| Debian           | 9 / 10             | ARM / x86\_64 / i386 |
-| Fedora           | 31 / 32            | ARM / x86\_64        |
-| CentOS           | 7 / 8              | x86\_64              |
+| Raspberry Pi OS  | Bullseye / Bookworm | ARM                  |
+| Ubuntu           | 23.x / 24.x / 25.x | ARM / x86\_64        |
+| Debian           | 11 / 12            | ARM / x86\_64 / i386 |
+---
+Selection of supported Debian-based operating systems
 
-<figcaption>
+## HowTo - Pihole Installation Debian
+In this HowTo, I will show you how to install the Pi-hole DNS server on a virtual Debian 9 instance. The installation shown here is the same as the installation on a Raspberry Pi.
+**Now let's move on to the installation of our little Pi-hole DNS server.**
+### Prerequisites - Pihole Installation Debian
+The prerequisite for this is a virtual instance of Debian 11 or 12 in a virtual environment, in my case on a Proxmox server. Other virtualizations such as VMWare, Virtual-Box, etc. work just as well.
+**You can find out how to install Pi-Hole on a Raspberry Pi in this tutorial:**
+[Go to tutorial](/posts/privacy/pihole/install-pihole-on-a-raspberry-pi/)
+#### Required tools and prerequisites:
+- putty or other SSH client
+- Debian-based OS
+### Step 1 - Pihole installation Debian:
+![Install Pihole Debian Image 1](/images/posts/pihole/pi-hole-Bild-1.jpg)
 
-Unterstützte Betriebssysteme Pi-hole
 
-</figcaption>
+Install Pihole Debian - Image 1
 
-</figure>
+---
+![pihole Installation Debian Image 2](/images/posts/pihole/pi-hole-Bild-2.jpg)
 
-### Meine empfohlene Hardware für den Betrieb eines Pi-hole-DNS-Server in eurem Netzwerk
 
-Für den Betrieb des DNS-Server in eurem Heimnetzwerk würde ich euch einen Raspberry-Pi-Einplatinen-Computer empfehlen. Dieser ist sparsam im Gebrauch und für wohl die meisten Netzwerke bei euch Zuhause von der Leistung her, mehr als ausreichend.
+Install Pihole Debian - Image 2
 
-#### Hier meine Empfehlung die ihr für den Betrieb braucht:
+---
+![pihole Installation Image 3](/images/posts/pihole/pi-hole-Bild-3.jpg)
 
-**Empfehlung 1:**
 
-Dies ist das von mir genutzte Raspberry-Pi-Kit und hat einige zusätzliche Features dabei und ist auch für andere Projekte durch einen zusätzlichen Lüfter, drei unterschiedliche Kupfer-Kühlkörper, Netzteil mit Ein- / Ausschalter, 64 GB SD-Karte und 4 GB RAM Arbeitsspeicher, bestens geeignet.
+Pihole Installation Debian Image 3
 
-\[amazon box="B09B9M7TPP"/\]
+---
+![pi-hole Installation Image 4](/images/posts/pihole/pi-hole-Bild-4.jpg)
 
-**Empfehlung 2:**
 
-Wer es noch ein wenig performanter braucht, dem sei dieses Raspberry-Pi-Kit ans Herz gelegt. Dieses Kit bietet 8 GB RAM Arbeitsspeicher.
+Pihole installation Debian image 4
 
-\[amazon box="B09B9PLZ3R"/\]
+---
+Connect the SSH client to your Debian instance as a user with root privileges and then enter the following command in your terminal window.
 
-## HowTo - Pi-hole Installation
 
-In diesem HowTo werde ich euch zeigen, wie ihr den Pi-hole DNS-Server auf einer virtuellen Debian 9-Intanz installiert. Diese hier gezeigte Installation ist gleich mit der Installation auf einem Raspberry Pi.
-
-**Nun kommen wir zu der Installation von unserem kleinen Pi-hole DNS-Server.**
-
-### Voraussetzungen - Pi-hole Installation
-
-Vorgabe ist hierfür eine virtuelle Instanz von Debian 9 oder 10 in einer virtuellen Umgebung, in meinem Fall auf einem Proxmox-Server. Genauso gut funktionieren auch andere Virtualisierungen wie VMWare, Virtual-Box usw.  
-
-Wie ihr Pi-Hole auf einen Raspberry Pi installieren könnt, erfahrt ihr in diesem Tutorial:
-
-[Zum Tutorial](https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/)
-
-#### Benötigte Tools und Voraussetzungen:
-
-- putty oder anderer SSH-Client
-
-- Debain 9 oder 10
-
-### Schritt 1:
-
-<figure>
-
-<figure>
-
-![pi-hole Installation Bild 1](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-1.jpg)
-
-<figcaption>
-
-Bild 1
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-![pi-hole Installation Bild 2](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-2.jpg)
-
-<figcaption>
-
-Bild 2
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-![pi-hole Installation Bild 3](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-3.jpg)
-
-<figcaption>
-
-Bild 3
-
-</figcaption>
-
-</figure>
-
-<figure>
-
-![pi-hole Installation Bild 4](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-4.jpg)
-
-<figcaption>
-
-Bild 4
-
-</figcaption>
-
-</figure>
-
-</figure>
-
-Verbindet den SSH-Client mit euer Debain-Instanz als User mit root-Rechten und gibt dann das folgende Kommando in euer Terminal-Fenster ein.
-
-```
+```sh
+sudo -s root@<IP address instance>
 wget -O basic-install.sh https://install.pi-hole.net
 ```
 
-danach gibt ihr noch das folgende Kommando ein:
-
-```
+Then enter the following command:
+```sh
 bash basic-install.sh
 ```
 
-Solltet ihr bei den Kommandos eine Fehlermeldung bekommen, dass ihr nicht die nötigen Rechte habt, so seid ihr nicht als root-User angemeldet.  
-Dann stellt bitte den Befehl "sudo" dem Kommando "bash basic-install.sh voran.  
-Sollte dann so aussehen:
 
-```
+If you receive an error message stating that you do not have the necessary rights, you are not logged in as root user.
+Then please precede the command “bash basic-install.sh” with the command “sudo”.
+It should then look like this:
+```sh
 sudo bash basic-install.sh
 ```
 
-Ist die Installation von Pi-Hole erfolgreich ausgeführt worden, so solltet euch wie in dem folgenden Bild, die GUI der Installationsroutine von Pi-Hole angezeigt werden.
 
-<figure>
+If the Pi-Hole installation was successful, you should see the Pi-Hole installation routine GUI as shown in the following image.
 
-![pi-hole Installation Bild 5](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-5.jpg)
 
-<figcaption>
+![pi-hole Installation Image 5](/images/posts/pihole/pi-hole-Bild-5.jpg)
 
-GUI Pi-hole Installation
 
-</figcaption>
+GUI Pihole Installation Debian
 
-</figure>
+---
+### Step 2 - Pihole Installation Debian:
+In this step, we will configure the Pihole installation DebianPiHole DNS server. This configuration is done entirely through the GUI installation routine.
+Here, we need to specify which external DNS server your Internet provider uses, which IP address your Pi-hole should listen to later, and the configuration of the default gateway used.
+#### Default gateway
+In most cases, the default gateway should be the router provided to you by your Internet provider. Therefore, you must enter the IP address of your router as the IP address for the default gateway. For most routers, this should be 192.168.178.1 (Fritz-Box) or 192.168.2.1 (Telekom).
+  
+If you have a hardware firewall between your internet provider's router and your network, you will need to enter the IP address of your hardware firewall.
 
-### Schritt 2:
+![pi-hole installation image 6](/images/posts/pihole/pi-hole-Bild-6.jpg)
 
-Bei diesem Schritt werden wir die Konfiguration der Pi-Hole-DNS-Server erstellen. Diese Konfiguration wird komplett über die GUI-Installationsroutine durchgeführt.
 
-Hierbei müssen wir angeben, welchen externe DNS-Server euer Internetprovider nutzt, auf welche IP-Adresse euer Pi-hole später lauschen soll und die Konfiguration des genutzten Standard-Gateway.
+(Image 7) Select the external DNS server for this by simply entering the IP address of your router, as this is usually responsible for the external resolution of external domains.
 
-#### Standard-Gateway
+![pi-hole installation image 7](/images/posts/pihole/pi-hole-Bild-7.jpg)
 
-In den meisten Fällen sollte es sich bei dem Standard-Gateway um den Router der euch von eurem Internetprovider zu Verfügung gestellt wurde. Daher müsst ihr bei der IP-Adresse für den Standard-Gateway dann die IP-Adresse eures Routers eingeben. Bei den meisten Routern dürften dass die IP-Adressen 192.168.178.1 (Fritz-Box) oder 192.168.2.1 (Telekom).  
-Solltet ihr eine Hardware-Firewall zwischen Router des Internetproviders und eurem Netzwerk zwischengeschaltet haben, so müsst ihr dann die IP-Adresse eurer Hardware-Firewall eingeben.
 
-<figure>
+Image 7 - **Select external DNS server**
 
-[![pi-hole Installation Bild 6](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-6.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-6.jpg)
+---
+(Image 8) Select the blacklist based on ads and tracking codes to be blocked. These lists can be replaced or edited after installation.
 
-<figure>
 
-[![pi-hole Installation Bild 7](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-7.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-7.jpg)
+![pi-hole Installation Image 8](/images/posts/pihole/pi-hole-Bild-8.jpg)
 
-<figcaption>
 
-Bild 9 - **Auswahl externer DNS-Server**
+Image 8 - **Selecting the blacklist (can also be replaced by others after installation)**
 
-</figcaption>
 
-</figure>
+---
+(Image 9) Select the IP protocols (IPv4, IPv6) for which ads and tracking codes are to be blocked. It is best to select both protocol types here.
 
-<figure>
 
-[![pi-hole Installation Bild 8](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-8.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-8.jpg)
+![pihole Installation Image 9](/images/posts/pihole/pi-hole-Bild-9.jpg)
 
-<figcaption>
 
-Bild 10 - **Auswahl der Blacklist (kann nach der Installation auch durch andere ersetzt werden)**
+Image 9 - **Select the protocol in which ads should be blocked**
 
-</figcaption>
+---
+(Image 10) In the next step, you will see the current IP configuration that has been assigned to your Pi-hole installation and which you can now adjust according to your requirements. Please be sure to use a static IP address for this, as you will then need to store this in the DNS assignment for your clients in the network, which will then use Pi-hole for DNS resolution. If this IP address does not match the IP address assigned to the Pi-hole DNS server, you will encounter massive DNS resolution problems later during operation and will not be able to access any domains on the Internet.
 
-</figure>
 
-<figure>
+![pi-hole Installation Image 10](/images/posts/pihole/pi-hole-Bild-10.jpg)
 
-[![pi-hole Installation Bild 9](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-9.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-9.jpg)
 
-<figcaption>
+Image 10 - **Overview of the current IP configuration of the Pi-hole DNS server**
 
-Bild 11 - **Auswahl im welchen Protokoll Ads geblockt werden sollen**
+---
+(Image 11) We can leave the preselection for installing the Pi-hole web interface as it is. This allows you to access the web interface via your favorite browser by entering the Pi-hole IP address / pi-hole (example http://172.16.16.61/admin) or http://pi-hole/admin, so that you can conveniently carry out further configurations.
 
-</figcaption>
 
-</figure>
+![pi-hole installation image 11](/images/posts/pihole/pi-hole-Bild-11.jpg)
 
-<figure>
 
-[![pi-hole Installation Bild 10](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-10.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-10.jpg)
+Image 11 - **Confirm installation of the Pihole web interface**
 
-<figcaption>
+### Step 3:
+(Image 12) Confirm the preselection to install a lighttpd server, as you will need this for the Pihole web interface.
 
-Bild 12 - **Übersicht aktuelle IP-Konfiguration des Pi-hole DNS-Server**
 
-</figcaption>
+![pi-hole Installation Image 12](/images/posts/pihole/pi-hole-Bild-12.jpg)
 
-</figure>
 
-</figure>
+Image 12 - **Confirm installation of the lighttpd server**
 
-In den oben gezeigten Bildern seht ihr die ersten Schritte der GUI-Installationsroutine, die sich wie folgt beschreiben lassen:
+---
+(Image 13) In the next step, I would also recommend that you enable log queries to be recorded. These are used later during operation to store violations, for example, and make it easier for you to make adjustments to the configuration.
 
-1. (Bild 9) Auswahl des externen DNS-Server hierfür gibt ihr einfach die IP-Adresse eures Routers ein da dieser ja in den meisten Fällen für die externe Auflösung von externen Domains zuständig ist. .
 
-2. (Bild 10) Auswahl der Blacklist aufgrund Ads und Tracking-Codes geblockt werden. Diese Listen können nach der Installation ausgetauscht oder bearbeitet werden.
+![pi-hole installation image 13](/images/posts/pihole/pi-hole-Bild-13.jpg)
 
-3. (Bild 11) Auswahl der IP-Protokolle (IPv4, IPv6) bei denen Ads und Tracking-Codes geblockt werden sollen. Lasst hier am besten beide Protokoll-Arten ausgewählt.
 
-4. (Bild 12) Im nächsten Schritt seht ihr die aktuelle IP-Konfiguration die eurer Pi-hole Installation zugewiesen wurde und die ihr jetzt nach euren Erfordernissen anpassen könnt. Bitte nutzt hierfür auf jeden Fall eine statische IP-Adresse, da ihr diese dann bei der DNS-Zuweisung für eure Clients im Netzwerk hinterlegen müsst und diese dadurch den Pi-hole für die DNS-Auflösung nutzen werden. Sollte diese IP-Adresse nicht mit der vergebenen IP-Adresse des Pi-hole-DNS-Server übereinstimmen, so werdet ihr später im Betrieb massive DNS-Auflösungsprobleme bekommen und könnt somit keine Domains im Internet aufrufen.
+Image 13 - **Enable Pihole logging**
 
-### Schritt 3:
 
-<figure>
+---
+(Image 14) - Pihole offers several options for logging the domains and IP addresses visited. You can decide for yourself which logging level you want to select here.
 
-<figure>
 
-[![pi-hole Installation Bild 11](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-11.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-11.jpg)
+![pi-hole Installation Image 14](/images/posts/pihole/pi-hole-Bild-14.jpg)
 
-<figcaption>
 
-Bild 13
+Image 14 - **‘Privacy mode’ setting**
 
-</figcaption>
+---
+(Images 15, 16, and 17) In the next window, you will now find an overview of your configuration, the IP address you can use to log in (if you change the IP address, you must restart the instance), and the password for logging in to the web interface. You can change this password later. More on this in the next step.
 
-</figure>
 
-<figure>
+![pi-hole installation image 15](/images/posts/pihole/pi-hole-Bild-15.jpg)
 
-[![pi-hole Installation Bild 12](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-12.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-12.jpg)
 
-<figcaption>
+Image 15 - **Notification that the Pihole installation is complete**
 
-Bild 14
+---
 
-</figcaption>
+![pi-hole installation image 16](/images/posts/pihole/pi-hole-Bild-16.jpg)
 
-</figure>
 
-<figure>
+Image 16 - **Display of the password for logging into the web interface**
 
-[![pi-hole Installation Bild 13](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-13.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-13.jpg)
+---
+### Step 4 - Pihole installation Debian :
 
-<figcaption>
+(Image 17) Now open your browser and enter the IP address displayed earlier followed by /admin in the browser address bar and press Enter. The login screen of your Pi-hole DNS server's web interface should now be displayed. Enter the password you entered earlier to log in and you will be welcomed by the Pihole dashboard.
 
-Bild 15
 
-</figcaption>
+![Dashboard / Pihole web interface](/images/posts/pihole/pi-hole-installation-beendet.jpg)
 
-</figure>
 
-<figure>
+Image 17 - **Pihole dashboard** | Pihole installation Debian 
 
-[![pi-hole Installation Bild 14](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-14.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-14.jpg)
+---
+### Step 5 - Pihole installation Debian:
+In the last step, you must ensure that all devices can use the Pi-hole DNS server for DNS resolution on the Internet.
+To do this, simply log in to your router, provided that it is also responsible for DHCP on your network, and enter the IP address of your Pi-hole DNS server in the network settings (DHCP server settings) under “DNS server.”
+However, the newly assigned DNS server will only be used after the DHCP lease has been renewed and will therefore not be noticed by the clients on their own. The easiest way is to disconnect your device from the network and reconnect it. The new configuration will then be loaded and the devices should appear in the device overview in Pi-hole.
 
-<figcaption>
 
-Bild 16
+> **How a domain query works in conjunction with Pi-hole in this example:**
+>
+> Client (end device) -> Pi-hole -> Router
+> **INFO**
+>
+> In this scenario, only the end devices use Pi-hole as the DNS server, but **not** the router itself.
 
-</figcaption>
 
-</figure>
+## Important commands for your PiHole installation Debian :
+### Change Pihole password:
+To do this, you must be logged in as superuser in the terminal and then enter the following command:
 
-<figure>
 
-[![pi-hole Installation Bild 15](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-15.jpg)](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-15.jpg)
-
-<figcaption>
-
-Bild 17
-
-</figcaption>
-
-</figure>
-
-</figure>
-
-1. (Bild 13) Die Vorauswahl, das dass Web-Interface des Pi-hole auch installiert werden soll, können wir so ausgewählt lassen. So kann später durch die Eingabe der Pi-hole-IP-Adresse / pi-hole (Beispiel http://172.16.16.61/admin) oder http://pi-hole/admin, das Web-Interface über euren favorisierten Browser aufgerufen werden, damit ihr so bequem die weiteren Konfigurationen vornehmen könnt.
-
-2. (Bild 14) In den meisten Fällen müsst ihr den im nächsten Fenster vorausgewählten Vorschlag, den Webserver zu installieren, ausgewählt lassen, da ansonsten kein Webserver-Instanz betrieben werden kann und ihr so keinen Zugriff auf das Web-Interface haben wird.
-
-3. (Bild 15) Im nächsten Schritt würde ich euch auch empfehlen, das log-queries mit aufgezeichnet werden sollen. Diese dienen dazu, später im Betrieb zum Beispiel Verstöße zu speichern und ihr dann auch leichter Anpassungen an der Konfiguration vornehmen könnt.
-
-4. (Bild 16) Welche Daten ihr an das Projekt weitergeben möchtet, könnt ihr im nächsten Fenster bestimmen. In meinem Fall habe ich hier die Weitergabe von Daten in der anonymisierten Form zugestimmt.
-
-5. (Bild 17) Im nächsten Fenster findet ihr nun eine Übersicht über eure Konfiguration, die IP-Adresse unter der ihr euch anmelden könnt (bei Änderung der IP-Adresse, müsst ihr die Instanz neu starten) **sowie das Passwort für die Anmeldung im Web-Interface**. Dieses Passwort könnt ihr dann später noch ändern. Dazu aber gleich mehr im nächsten Schritt.
-
-### Schritt 4:
-
-<figure>
-
-<figure>
-
-[![pi-hole Installation Bild 16](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-16.jpg)](https://secure-bits.org/pi-hole-installation/pi-hole-bild-16/)
-
-<figcaption>
-
-Bild 18
-
-</figcaption>
-
-</figure>
-
-[![pi-hole Installation Bild 17](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-Bild-17.jpg)](https://secure-bits.org/pi-hole-installation/pi-hole-bild-17/)
-
-<figure>
-
-[![pi-hole Installation Bild 18](https://secure-bits.org/wp-content/uploads/2021/03/pi-hole-installation-beendet-674x520.jpg)](https://secure-bits.org/pi-hole-installation/pi-hole-installation-beendet/)
-
-<figcaption>
-
-Bild 20
-
-</figcaption>
-
-</figure>
-
-</figure>
-
-1. (Bild 18) Im Terminal-Fenster seht ihr nun eine Übersicht über die aktiven Dienste, IP-Adresse des Pi-hole-DNS-Server und wie ihr euch dort anmelden könnt. Hier steht auch beschrieben, wie ihr das automatisch vergebene Passwort ändern könnt, was ich euch am Ende von Schritt 4 noch zeigen werde.
-
-2. (Bild 20) Öffnet jetzt euren Browser und gibt die vorab angezeigte IP-Adresse gefolgt von /admin in die Browser-Eingabezeile ein und ruft diese per Enter auf. Jetzt sollte der Anmelde-Bildschirm vom Web-Interface eures Pi-hole-DNS-Servers angezeigt werden.
-
-#### Wichtige Befehle für eure Pi-Hole Installation:
-
-##### Pi-hole-Passwort ändern:
-
-Hierfür müsst ihr als superuser im Terminal angemeldet sein und gibt dann den folgenden Befehl ein:
-
-```
+```sh
 pi-hole -a -p
 ```
 
-##### Pi-hole Installation Update durchführen:
+### Pihole installation Debian - Perform update:
+To do this, you must be logged in as superuser in the terminal and then enter the following command:
 
-Hierfür müsst ihr als superuser im Terminal angemeldet sein und gibt dann den folgenden Befehl ein:
 
-```
+```sh
 pi-hole -up
 ```
 
-### Schritt 5:
+![pi-hole installation Debian - Image 17](/images/posts/pihole/pi-hole-Bild-17.jpg)
 
-Im letzten Schritt müsst ihr natürlich dafür Sorgen, dass alle Geräte den Pi-hole-DNS-Server auch für die DNS-Auflösung im Internet nutzen können.
 
-Dafür meldet euch einfach bei eurem Router an, vorausgesetzt dieser ist auch bei euch als DHCP-Server verantwortlich und gibt hier in den Netzwerk-Einstellungen (DHCP-Server-Einstellungen) unter dem Punkt "DNS-Server", die IP-Adresse eures Pi-hole-DNS-Server ein.
+### More on Pihole
+You can find illustrated instructions on setting up a FritzBox and configuring other types of Pi-hole installations in the Pi-hole project documentation.
 
-Der nun neue vergebene DNS-Server wird aber erst nach Erneuerung der DHCP-Lease genutzt und wird von den Clients daher nicht eigenmächtig bemerkt. Am einfachsten, ihr trennt die Netzwerkverbindung von eurem Endgerät und bei dem erneuten Verbinden, wird dann die neue Konfiguration geladen und die Geräte sollten im Geräte-Übersicht im Pi-hole angezeigt werden.
-
-**Funktionsweise einer Domainabfrage in Verbindung mit Pi-hole in diesem Beispiel:**
-
-Client (Endgerät) -> Pi-hole -> Router  
-
-In diesem Szenario nutzen nur die Endgeräte den Pi-hole als DNS-Server aber **nicht** der Router selbst.
-
-### Noch mehr zum Thema Pi-hole
-
-Eine bebilderte Anleitung über die Einrichtung einer FritzBox und auch die Konfiguration für andere Arten der Nutzung der Pi-hole Installation findet ihr auch in der Dokumentation vom Pi-hole-Projekt.
-
-[Webseite besuchen](https://docs.pi-hole.net/routers/fritzbox-de/)
-
-# 
+[Visit website pihole.net](https://docs.pi-hole.net/routers/fritzbox-de/)
