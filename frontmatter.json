@@ -84,6 +84,11 @@
           "choices": [
             "ipconfig"
           ]
+        },
+        {
+          "title": "lastmode",
+          "name": "lastmode",
+          "type": "datetime"
         }
       ]
     }

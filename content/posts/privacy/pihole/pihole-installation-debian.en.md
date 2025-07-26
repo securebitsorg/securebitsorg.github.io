@@ -22,6 +22,7 @@ menu:
     parent: pihole
 preview: ../../../../assets/images/posts/pihole/pi-hole-installation-beendet.jpg
 hero: /images/posts/pihole/pi-hole-installation-beendet.jpg
+lastmode: 2025-07-26T07:51:27.040Z
 ---
 ## Pihole Installation Debian - Protect your network from tracking and advertising
 > **PLEASE NOTE!!!**
