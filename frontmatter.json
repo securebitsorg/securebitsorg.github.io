@@ -85,7 +85,6 @@
             "ipconfig"
           ]
         }
-        
       ]
     }
   ],
@@ -163,5 +162,29 @@
     }
   ],
   "frontMatter.website.host": "https://secure-bits.org",
-  "frontMatter.git.commitMessage": "update new md"
+  "frontMatter.git.commitMessage": "update new md",
+  "frontMatter.content.snippets": {
+    "Visit Help-page": {
+      "description": "",
+      "body": [
+        "> ## Questions and answers",
+        "> ",
+        "> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.",
+        ">",
+        "> [**Visit the Help-page**](https://ticket.secure-bits.org/help)"
+      ],
+      "fields": []
+    },
+    "Help deutsch": {
+      "description": "",
+      "body": [
+        "> ## Fragen und Antworten",
+        ">",
+        "> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.",
+        ">",
+        "> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)"
+      ],
+      "fields": []
+    }
+  }
 }

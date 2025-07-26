@@ -300,4 +300,12 @@ pi-hole -up
 
 Eine bebilderte Anleitung über die Einrichtung einer FritzBox und auch die Konfiguration für andere Arten der Nutzung der Pi-hole Installation findet ihr auch in der Dokumentation vom Pi-hole-Projekt.
 
-[Webseite besuchen](https://docs.pi-hole.net/routers/fritzbox-de/)
+[Webseite besuchen pihole.net](https://docs.pi-hole.net/routers/fritzbox-de/)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

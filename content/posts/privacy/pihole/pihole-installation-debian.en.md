@@ -278,3 +278,9 @@ pi-hole -up
 You can find illustrated instructions on setting up a FritzBox and configuring other types of Pi-hole installations in the Pi-hole project documentation.
 
 [Visit website pihole.net](https://docs.pi-hole.net/routers/fritzbox-de/)
+
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
