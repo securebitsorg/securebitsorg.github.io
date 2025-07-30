@@ -1,0 +1,1421 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Netstat unter Windows</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Wie funktioniert Netstat unter Windows? Netstat-Befehle einfach erklärt" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/windows/netstat">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/windows/netstat">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/windows/netstat-help.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Sonntag, 27. Juli 2025 | 5 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Netstat unter Windows</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="mit-netstat-tcp-verbindungen-ports-unter-windows-anzeigen">Mit netstat TCP Verbindungen, Ports unter Windows anzeigen</h2>
+<p>In diesem Artikel möchte ich euch den Befehl / Werkzeug <strong>netstat</strong> unter Windows vorstellen und euch zeigen wie ihr mit diesem Befehl aktive TCP-Verbindungen, offene Ports sowie andere Statistiken wie zum Beispiel eine IPv4 Übersicht der Internetprotokolle IP, TCP, ICMP und UDP-Protokolle überprüfen beziehungsweise anzeigen lassen.</p>
+<h3 id="wozu-nutze-ich-die-netstat-befehle">Wozu nutze ich die Netstat-Befehle?</h3>
+<p>Für die Analyse der Sicherheit eines Betriebssystems ist es natürlich wichtig zu wissen, welche Verbindungen das Betriebssystem beziehungsweise die installierte Software zu Diensten im Internet aufbaut. Des Weiteren kann mit der Anzeige von lauschenden Ports auch schnell Malware erkannt werden. Um nun diese Verbindungen und lauschenden Ports aufzulisten kann der Befehl netstat genutzt werden.</p>
+<h3 id="was-kann-ich-nun-mit-dem-befehl-netstat-anstellen">Was kann ich nun mit dem Befehl Netstat anstellen?</h3>
+<p>Diese dann gewonnenen Erkenntnisse könnt ihr natürlich auch nutzen, um Verbindungsprobleme zu analysieren die von eurer Firewall, Server-Instanz oder UTM verursacht werden. Denn auch legitime Programme brauchen für verschiedene Dienste eine Verbindung mit dem Internet, werden zum Beispiel aber von eurer Soft- / Hardware-Firewall blockiert.<br>
+Wichtig ist für die Beurteilung über die Sicherheit eines Systems zu wissen, dass die meisten Angriffe auf ein System über die Erstellung einer Reverse Shell durchgeführt werden. Da die meisten Standard-Firewalls nur den Verkehr / Anfragen von außen nach innen überwachen und Verbindungen von innen nach außen grundsätzlich Vertrauen, ist der Angriff über eine Reverse Shell einer der meist genutzten Angriffsszenarien.</p>
+<h3 id="wie-funktioniert-netstat">Wie funktioniert netstat?</h3>
+<p>Um <strong>netstat</strong> nutzen zu können müsst ihr zuerst entweder die Kommandozeile öffnen oder aber eine Powershell Instanz starten.</p>
+<h4 id="kommandozeile-öffnen">Kommandozeile öffnen:</h4>
+<p>Die Kommandozeile öffnet ihr, indem ihr unter Windows die <code>Windows-Taste + s</code> drückt, in das Suchfeld „<strong>cmd</strong>“ eingibt, <strong>dann mit dem Mauszeiger + Rechtsklick</strong> auf die Auswahl „Eingabeauforderung“ geht und hier mit „<strong>Als Administrator ausführen</strong>“ auswählt.</p>
+<h4 id="powershell-öffnen">Powershell öffnen:</h4>
+<p>Um die Powershell-Konsole zu öffnen nutzt ihr auch die Tastenkombination <code>Windows-Taste + s</code> und gibt dann „<strong>powershell</strong>“ ein und wählt dann hier auch per Rechtsklick die App „<strong>Powershell als Administrator</strong>&quot; ausführen aus.</p>
+<h2 id="übersicht-der-funktionen-von-netstat">Übersicht der Funktionen von <strong>netstat</strong></h2>
+<p>Eine Übersicht der Funktionen und Parameter von <strong>netstat</strong> erhaltet ihr durch die Eingabe in das Konsolenfenster des folgenden Befehls:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>netstat help
+</span></span></code></pre></div><p><img src="/images/posts/windows/netstat-help.png" alt="netstat help">
+netstat help</p>
+<p>In der Übersicht seht ihr nun die zu verfügend stehenden Funktionen und Parameter die mit <strong>netstat</strong> kombiniert werden können. Die Parameter können auch miteinander kombiniert werden.</p>
+<h3 id="aktive-verbindungen-anzeigen-lassen">Aktive Verbindungen anzeigen lassen</h3>
+<p>Nach dem Öffnen eurer Konsole könnt ihr durch die Eingabe das Befehls,</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>netstat -a
+</span></span></code></pre></div><p>alle aktiven Verbindungen eures Rechners anzeigen lassen.</p>
+<p><img src="/images/posts/windows/netstat.png" alt="netstat windows"></p>
+<p>netstat windows</p>
+<p>Die Tabellenansicht ist hier in vier Spalten aufgeteilt.</p>
+<h4 id="protokoll">Protokoll</h4>
+<p>Die erste Spalte zeigt das verwendete Protokoll der Verbindung an.</p>
+<h4 id="ip-adresse-lokal">IP-Adresse lokal</h4>
+<p>Die zweite Spalte zeigt die lokal verwendete IP-Adresse und den verwendeten Port an, wobei hier die Adresse 127.0.0.1 für lokale Prozesse (auf dem gleichen Rechner) steht, die auf interne Verbindungen lauscht und externe Verbindungen (Internet und andere externe Netzwerke) ausschließt.<br>
+Die IP-Adresse 0.0.0.0 in Verbindung mit einem angezeigten Port lauscht auf alle Anfragen aller Netzwerk-Schnittstellen und akzeptiert diese Verbindungen.</p>
+<h4 id="ip-adresse-remote">IP-Adresse Remote</h4>
+<p>In der dritten Spalte wird euch wiederum die IP-Adresse und der genutzte Port der Remote-Adresse angezeigt.</p>
+<h4 id="status">Status</h4>
+<p>Zu guter Letzt wird euch in der vierten Spalte der aktuelle Status dieser Verbindung angezeigt. Dieser Status wird in den Zuständen „ABHÖREN, WARTEND, HERGESTELLT und SCHLIESSEN_WARTEN“ angezeigt.</p>
+<h3 id="routing-tabellen-anzeigen">Routing-Tabellen anzeigen</h3>
+<p>Ebenso wichtig ist es, dass Routing von IP-Paketen nachvollziehen zu können.
+Mit dem folgenden Befehl ist es möglich, euch die konfigurierte Routing-Tabelle anzeigen zu lassen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>netstat -r
+</span></span></code></pre></div><p>So habt ihr eine Übersicht, in welche Subnetze IP-Pakete zum Beispiel von eurem Rechner genutzten Subnet, in andere Subnets (z.B. andere Subdomains, Internet-Gateway, etc.) geroutet werden können.</p>
+<h3 id="netzwerk-schnittstellen-anzeigen">Netzwerk-Schnittstellen anzeigen</h3>
+<p>Hier habt ihr die Möglichkeit, die einzelnen vorhandenen Netzwerk-Schnittstellen von eurem Windows-Gerät anzeigen zu lassen und zum Beispiel ob und welche Schnittstelle aktiv ist (Status).</p>
+<p>Im Kommandozeilen-Fenster kannst du dann unter der ausgabe &ldquo;OA3xOriginalProductKey&rdquo; den hinterlegten 25-stelligen Produkt Key ansehen.</p>
+<p>Um das Beschriebene nun anzeigen zu lassen, nutzt ihr diesen Befehl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>netstat -i
+</span></span></code></pre></div><h2 id="übersicht-netstat-befehle-unter-windows">Übersicht: netstat-Befehle unter Windows</h2>
+<!-- raw HTML omitted -->
+<table>
+  <thead>
+      <tr>
+          <th>Befehl</th>
+          <th>Beschreibung</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>netstat</td>
+          <td>Zeigt alle aktiven TCP-Verbindungen an</td>
+      </tr>
+      <tr>
+          <td>netstat -a</td>
+          <td>Zeigt alle aktiven TCP-Verbindungen und die TCP/UDP-Ports, auf denen der Rechner lauscht</td>
+      </tr>
+      <tr>
+          <td>netstat -n</td>
+          <td>Gibt Verbindungen mit numerischen IP-Adressen und Ports aus, ohne Namensauflösung</td>
+      </tr>
+      <tr>
+          <td>netstat -o</td>
+          <td>Zeigt aktive TCP-Verbindungen inkl. Prozess-ID (PID)</td>
+      </tr>
+      <tr>
+          <td>netstat -e</td>
+          <td>Zeigt Ethernet-Statistiken wie Bytes und Pakete gesendet/empfangen</td>
+      </tr>
+      <tr>
+          <td>netstat -s</td>
+          <td>Zeigt Statistiken je Protokoll (z.B. TCP, UDP, ICMP, IP)</td>
+      </tr>
+      <tr>
+          <td>netstat -p <!-- raw HTML omitted --></td>
+          <td>Zeigt Verbindungen für das angegebene Protokoll (z.B. TCP, UDP, ICMP)</td>
+      </tr>
+      <tr>
+          <td>netstat -r</td>
+          <td>Zeigt die Routing-Tabelle an (ähnlich wie „route print“)</td>
+      </tr>
+      <tr>
+          <td>netstat -b</td>
+          <td>Zeigt die ausgehenden/incoming Verbindungen und zugehörige Programme/Dateipfade</td>
+      </tr>
+      <tr>
+          <td>netstat -f</td>
+          <td>Zeigt vollständige Domänennamen für Fremdadressen</td>
+      </tr>
+  </tbody>
+</table>
+<p>Im Kommandozeilen-Fenster kannst du dann unter der ausgabe &ldquo;OA3xOriginalProductKey&rdquo; den hinterlegten 25-stelligen Produkt Key ansehen.</p>
+<p>| netstat -x                | Zeigt NetworkDirect-Verbindungen (Windows-spezifisch)                                     |
+| netstat -q                | Zeigt abhörende und nicht abhörende Ports                                                 |
+| netstat -t                | Zeigt den Offload-Status der aktuellen Verbindungen                                       |
+| netstat -y                | Zeigt Verbindungs-Template-Informationen                                                  |
+| netstat /?                | Zeigt alle verfügbaren Parameter und eine Hilfeübersicht                                   |
+| netstat [Intervall]       | Wiederholt die Anzeige im angegebenen Sekundenintervall (z.B. netstat -n 5)               |
+<!-- raw HTML omitted --></p>
+<blockquote>
+<ul>
+<li>
+<p>Viele Parameter können <strong>kombiniert</strong> werden, z.B. <code>netstat -ano</code> zeigt alle Verbindungen mit PID und ohne Namensauflösung.</p>
+</li>
+<li>
+<p>Einige Optionen sind spezifisch für bestimmte Protokolle oder Netzwerkumgebungen; für Details empfiehlt sich die Hilfeseite (<code>netstat /?</code>).</p>
+</li>
+</ul></blockquote>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwindows%2fnetstat%2f&title=Netstat%20unter%20Windows" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Netstat%20unter%20Windows&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fwindows%2fnetstat%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/windows/ipconfig-befehl/" title="ipconfig-befehl" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">ipconfig-befehl</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/windows/windows-passwort-aendern/" title="Jetzt einfach Windows Passwort ändern" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Jetzt einfach Windows Passwort ändern</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mit-netstat-tcp-verbindungen-ports-unter-windows-anzeigen">Mit netstat TCP Verbindungen, Ports unter Windows anzeigen</a>
+      <ul>
+        <li><a href="#wozu-nutze-ich-die-netstat-befehle">Wozu nutze ich die Netstat-Befehle?</a></li>
+        <li><a href="#was-kann-ich-nun-mit-dem-befehl-netstat-anstellen">Was kann ich nun mit dem Befehl Netstat anstellen?</a></li>
+        <li><a href="#wie-funktioniert-netstat">Wie funktioniert netstat?</a></li>
+      </ul>
+    </li>
+    <li><a href="#übersicht-der-funktionen-von-netstat">Übersicht der Funktionen von <strong>netstat</strong></a>
+      <ul>
+        <li><a href="#aktive-verbindungen-anzeigen-lassen">Aktive Verbindungen anzeigen lassen</a></li>
+        <li><a href="#routing-tabellen-anzeigen">Routing-Tabellen anzeigen</a></li>
+        <li><a href="#netzwerk-schnittstellen-anzeigen">Netzwerk-Schnittstellen anzeigen</a></li>
+      </ul>
+    </li>
+    <li><a href="#übersicht-netstat-befehle-unter-windows">Übersicht: netstat-Befehle unter Windows</a></li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

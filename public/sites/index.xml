@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sites on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/sites/</link>
+    <description>Recent content in Sites on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language><atom:link href="http://localhost:1313/sites/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Datenschutzerklärung</title>
+      <link>http://localhost:1313/sites/datenschutz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/datenschutz/</guid>
+      <description>&lt;p&gt;Datenschutzerklärung&lt;/p&gt;
+&lt;p&gt;Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.&lt;/p&gt;
+&lt;p&gt;Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Impressum</title>
+      <link>http://localhost:1313/sites/impressum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/impressum/</guid>
+      <description>&lt;p&gt;Lindental 8d
+94032 Passau&lt;/p&gt;
+&lt;p&gt;Telefon: 0851 20 95 50 63
+E-Mail: &lt;a href=&#34;mailto:ticktet@secure-bits.org&#34;&gt;ticktet@secure-bits.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV):
+Marcel Dellmann, Lindental 8d, 94032 Passau&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bildrechte:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;pixabay.com&lt;/p&gt;
+&lt;h3 id=&#34;hinweis-auf-eu-streitschlichtung&#34;&gt;Hinweis auf EU-Streitschlichtung&lt;/h3&gt;
+&lt;p&gt;Zur außergerichtlichen Beilegung von verbraucherrechtlichen Streitigkeiten hat die Europäische Union eine Online-Plattform (“OS-Plattform”) eingerichtet, an die Sie sich wenden können. Die Plattform finden Sie unter &lt;a href=&#34;https://ec.europa.eu/consumers/odr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ec.europa.eu/consumers/odr/&lt;/a&gt;. Unsere Emailadresse lautet: &lt;a href=&#34;mailto:support@secure-bits.org&#34;&gt;support@secure-bits.org&lt;/a&gt;
+Disclaimer – rechtliche Hinweise&lt;/p&gt;
+&lt;h3 id=&#34;-1-warnhinweis-zu-inhalten&#34;&gt;§ 1 Warnhinweis zu Inhalten&lt;/h3&gt;
+&lt;p&gt;Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfa&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Privacy-Police</title>
+      <link>http://localhost:1313/sites/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/privacy/</guid>
+      <description>&lt;p&gt;Privacy Policy&lt;/p&gt;
+&lt;p&gt;Personal data (usually referred to just as „data“ below) will only be processed by us to the extent necessary and for the purpose of providing a functional and user-friendly website, including its contents, and the services offered there.&lt;/p&gt;
+&lt;p&gt;Per Art. 4 No. 1 of Regulation (EU) 2016/679, i.e. the General Data Protection Regulation (hereinafter referred to as the „GDPR“), „processing“ refers to any operation or set of operations such as collection, recording, organization, structuring, storage, adaptation, alteration, retrieval, consultation, use, disclosure by transmission, dissemination, or otherwise making available, alignment, or combination, restriction, erasure, or destruction performed on personal data, whether by automated means or not.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

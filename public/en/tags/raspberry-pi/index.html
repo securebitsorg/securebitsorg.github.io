@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>“Raspberry Pi”</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/en/tags/raspberry-pi/index.xml" title="SecureBits Blog by Marcel Dellmann">
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+     
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-tags kind-term" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  
+  
+    
+  
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/tags" data-filter="all">Tags</a></li>
+            <div class="subtree taxonomy-terms">
+              
+              
+
+
+
+  
+  
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/adguard/" data-taxonomy-term="adguard"><span class="taxonomy-label">Adguard</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/cmd/" data-taxonomy-term="cmd"><span class="taxonomy-label">Cmd</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/debian/" data-taxonomy-term="debian"><span class="taxonomy-label">Debian</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/firewall/" data-taxonomy-term="firewall"><span class="taxonomy-label">Firewall</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/fritzbox/" data-taxonomy-term="fritzbox"><span class="taxonomy-label">Fritzbox</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/info/" data-taxonomy-term="info"><span class="taxonomy-label">Info</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/linux/" data-taxonomy-term="linux"><span class="taxonomy-label">Linux</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/network/" data-taxonomy-term="network"><span class="taxonomy-label">Network</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/pi-hole/" data-taxonomy-term="pi-hole"><span class="taxonomy-label">Pi-Hole</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/pihole/" data-taxonomy-term="pihole"><span class="taxonomy-label">Pihole</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/powershell/" data-taxonomy-term="powershell"><span class="taxonomy-label">Powershell</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/privacy/" data-taxonomy-term="privacy"><span class="taxonomy-label">Privacy</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/raspberry-pi/" data-taxonomy-term="raspberry-pi"><span class="taxonomy-label">Raspberry Pi</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/security/" data-taxonomy-term="security"><span class="taxonomy-label">Security</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/software/" data-taxonomy-term="software"><span class="taxonomy-label">Software</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/tutorial/" data-taxonomy-term="tutorial"><span class="taxonomy-label">Tutorial</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">Tutorials</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/video/" data-taxonomy-term="video"><span class="taxonomy-label">Video</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/windows/" data-taxonomy-term="windows"><span class="taxonomy-label">Windows</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/linux/" data-taxonomy-term="linux"><span class="taxonomy-label">‘Linux’</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/network/" data-taxonomy-term="network"><span class="taxonomy-label">‘Network’</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/security/" data-taxonomy-term="security"><span class="taxonomy-label">‘Security’</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">‘Tutorials’</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/video/" data-taxonomy-term="video"><span class="taxonomy-label">‘Video’</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/adguard/" data-taxonomy-term="adguard"><span class="taxonomy-label">“Adguard”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/cmd/" data-taxonomy-term="cmd"><span class="taxonomy-label">“Cmd”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/firewall/" data-taxonomy-term="firewall"><span class="taxonomy-label">“Firewall”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/fritzbox/" data-taxonomy-term="fritzbox"><span class="taxonomy-label">“Fritzbox”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/it-security/" data-taxonomy-term="it-security"><span class="taxonomy-label">“It-Security”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/linux/" data-taxonomy-term="linux"><span class="taxonomy-label">“Linux”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/network/" data-taxonomy-term="network"><span class="taxonomy-label">“Network”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/pi-hole/" data-taxonomy-term="pi-hole"><span class="taxonomy-label">“Pi-Hole”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/powershell/" data-taxonomy-term="powershell"><span class="taxonomy-label">“Powershell”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/proxmox/" data-taxonomy-term="proxmox"><span class="taxonomy-label">“Proxmox”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term active" href="http://localhost:1313/en/tags/raspberry-pi/" data-taxonomy-term="raspberry-pi"><span class="taxonomy-label">“Raspberry Pi”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/security/" data-taxonomy-term="security"><span class="taxonomy-label">“Security”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">“Tutorials”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/video/" data-taxonomy-term="video"><span class="taxonomy-label">“Video”</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/en/tags/windows/" data-taxonomy-term="windows"><span class="taxonomy-label">“Windows”</span></a></li>
+        
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      
+      
+      
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/en/posts/security/ufw-firewall-debian-based/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/it-security/Thumbnail-1.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/en/posts/security/ufw-firewall-debian-based/" class="post-card-link">
+        <h5 class="card-title">UFW Firewall Raspberry Pi Installation</h5>
+        <p class="card-text post-summary">Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi In this post, &lsquo;UFW Firewall Raspberry Pi Installation&rsquo;, I would like to show you how to install and set up this firewall or command line interface for iptables on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the Raspberry Pi, but can also be used on all other Linux-based distros.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/raspberry-pi/" class="btn btn-sm btn-info">“raspberry pi”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/firewall/" class="btn btn-sm btn-info">“firewall”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/linux/" class="btn btn-sm btn-info">“linux”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">“security”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/video/" class="btn btn-sm btn-info">“video”</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, September 20, 2022
+           | 12 minutes </span>
+      <a
+      href="/en/posts/security/ufw-firewall-debian-based/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" class="post-card-link">
+        <h5 class="card-title">AdGuard Home Raspberry Pi Installation</h5>
+        <p class="card-text post-summary">Protect your network from ads and trackers with AdGuard In today&rsquo;s tutorial, ‘AdGuard Raspberry Pi Installation’, I would like to show you how to install the AdGuard DNS server on a Raspberry Pi version 3 or higher. With this DNS server, similar to the pihole DNS server (click here for the tutorial), you can ban most ads and data trackers from your home network. If you still need hardware for your AdGuard DNS server, take a look at the end of this post. I&rsquo;ve put together a short list there.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/adguard/" class="btn btn-sm btn-info">“adguard”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/network/" class="btn btn-sm btn-info">“network”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">“security”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">“tutorials”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/raspberry-pi/" class="btn btn-sm btn-info">“raspberry pi”</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Tuesday, August 23, 2022
+           | 7 minutes </span>
+      <a
+      href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/pihole/pi-hole-installation.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" class="post-card-link">
+        <h5 class="card-title">Pi-hole Raspberry Pi Installation</h5>
+        <p class="card-text post-summary">Install and set up Pi-hole on a Raspberry Pi In this tutorial, ‘Install Pi-hole on a Raspberry Pi’, I will show you how to install the Pi-hole DNS server and set up a recursive DNS server with Unbound. The step-by-step installation is fohttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpghtly on a Raspberry Pi in this tutorial. In another tutorial here on SecureBits (https://secure-bits.org/pi-hole-installation/), I already showed you how to install it on a Debian system in a virtual machine and explained why and how you should use a Pi-Hole DNS server.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">“security”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/linux/" class="btn btn-sm btn-info">“linux”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/network/" class="btn btn-sm btn-info">‘network’</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/pi-hole/" class="btn btn-sm btn-info">“pi-hole”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/raspberry-pi/" class="btn btn-sm btn-info">“raspberry pi”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/video/" class="btn btn-sm btn-info">“video”</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Wednesday, March 30, 2022
+           | 9 minutes </span>
+      <a
+      href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/"
+      class="float-end btn btn-outline-info btn-sm">Read</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+    </div>
+    <div class="paginator">
+      
+    </div>
+  </div>
+</section>
+
+
+      
+       
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

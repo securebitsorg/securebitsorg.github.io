@@ -1,0 +1,1083 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Man in the Middle Angriffe verstehen</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.f6b26f00359f69d139362842b17c7dfc9ca8494f7098b1bd91f77cba6bc8b679.css" integrity="sha256-9rJvADWfadE5NihCsXx9/JyoSU9wmLG9kfd8umvItnk=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_747a7a60fc165ddd.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und persönlicher Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Man in the Middle Angriffe verstehen" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_fb1c622aecba328f.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/" title="Windows">Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_2d70f447e066a834.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Montag, 25. Januar 2021 | 5 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Man in the Middle Angriffe verstehen</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/penetrationstesting/" class="btn btn-sm btn-info">penetrationstesting</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="man-in-the-middle-angriff---definition">Man in the Middle Angriff - Definition</h2>
+<p>In dem heutigen Beitrag geht es um das Thema eines <strong>Man in the Middle Angriffs</strong>. Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert, möchte ich euch gerne in diesem Artikel näher erläutern.</p>
+<p>Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so hinterlasst einfach einen Kommentar oder kontaktiert mich über das <a href="https://secure-bits.org/kontakt/" target="_blank" rel="noopener">Kontaktformular</a>.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<!-- raw HTML omitted -->
+<p><a href="https://secure-bits.org/wp-content/uploads/2018/09/ManintheMiddle-e1611569035900.png" target="_blank" rel="noopener"><img src="https://secure-bits.org/wp-content/uploads/2018/09/ManintheMiddle-e1611569035900-945x520.png" alt="man in the middle"></a></p>
+<!-- raw HTML omitted -->
+<p>Schema eines Man-in-the-Middle-Angriffs</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h3 id="was-ist-ein-man-in-the-middle-angriff">Was ist ein Man in the Middle Angriff?</h3>
+<p>Als Man in the Middle Angriff bezeichnet man ein Szenario, bei dem ein Kommunikationspfad (siehe oberes Bild) zwischen zwei Kommunikationspartnern durch einen Dritten abgehört beziehungsweise, der Datenstrom über den Angriffsrechner des Dritten umgeleitet wird.<br>
+Dieses Szenario kann an verschiedenen Punkten im Netzwerk des Kommunikationspfad durchgeführt werden. Bei den Netzwerk-Punkten kann es sich zum Beispiel um kompromittierte Netzwerk- oder Nutzergeräte handeln.<br>
+Berühmte Vertreter solcher Angriffe sind zum Beispiel der sogenannte Bundestrojaner, der wieder in aller Munde ist durch die Debatte des Aufhebelns der Verschlüsselung der verschlüsselten Messenger-Dienste, sowie das Abhören der Knotenpunkte der Internet-Serviceprovider durch die Freunde der <a href="https://de.wikipedia.org/wiki/National_Security_Agency" target="_blank" rel="noopener">National Security Agency – Wikipedia</a>, die durch die Snowden-Leaks der breiten Masse bekannt wurden.</p>
+<h3 id="wie-funktioniert-ein-man-in-the-middle-angriff">Wie funktioniert ein Man in the Middle Angriff?</h3>
+<p>Grundlegend gibt es zwei Arten von Angriffsszenarien. Bei diesen Szenarien werden die Angriffe auf zwei Methoden unterteilt.<br>
+Methode 1 bezeichnet das Mithören / Mitschneiden des Kommunikationspfad<br>
+ <br>
+Methode 2 bezeichnet man das Umleiten eines Kommunikationspfad auf zum Beispiel den Rechner eines Angreifers.</p>
+<h3 id="methode-1--abhören--mitschneiden-einer-kommunikationspfad-sniffing">Methode 1 – Abhören / Mitschneiden einer Kommunikationspfad (Sniffing)</h3>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<!-- raw HTML omitted -->
+<p><a href="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Sniffing.png" target="_blank" rel="noopener"><img src="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Sniffing-976x520.png" alt="Man in the Middle Sniffing"></a></p>
+<!-- raw HTML omitted -->
+<p>Man in the Middle per Sniffing</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Bei dem sogenannten Sniffing wird per Netzwerk-Sniffer oder Mirror-Port die Kommunikation auf dem Kommunikationspfad zweier Kommunikationspartner mitgeschnitten beziehungsweise abgehört.</p>
+<p>Durch Nutzung eines Software-Tools wie zum Beispiel „<strong><a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a></strong>“ (gibt hier auch noch unzählige andere Software-Tools), kann so der Datenstrom des Kommunikationspfads kompromittiert werden. Hierzu muss der Angreifer einen Netzwerk-Punkt (Endgerät, Netzwerkgerät oder Server) in der Kommunikationsstrecke durch den Einsatz des Sniffing-Tools kompromittieren. Des Weiteren kann auch der <strong>Einsatz eines Mirror-Ports</strong> auf dem Switch durchgeführt werden, mit dessen Hilfe, der Port und somit die Datenpakete des angeschlossen zu kompromittierenden Rechners zu dem Rechner des Angreifers gespiegelt werden.</p>
+<p>Durch das Abhören können so genutzte Ports, IP-Adressen, Protokolle und Kommunikationsformen genaustens analysiert werden und daher wird diese Methode sehr häufig zum Auskundschaften sowie Vorbereiten eines Angriffs genutzt.</p>
+<p>Art der Angriffe sind hier unter anderem Passwortattacken, feststellen unerlaubte Kommunikation zweier Kommunikationspartner, Art der genutzten Applikationen auf den Kommunikation-Devices / Formen für spätere Angriffe durch Sicherheitslücken sowie die Abschöpfung von Zugangsdaten.</p>
+<p>Vorteil dieser passiven Abhörmethode ist es, dass diese schwer zu entdecken ist und dadurch schlecht abgewehrt werden kann.</p>
+<h4 id="beitrag-zum-thema-netzwerk-sniffing">Beitrag zum Thema Netzwerk-Sniffing</h4>
+<h3 id="methode-2--umleiten-der-datenpakete--klassische-man-in-the-middle-attacke">Methode 2 – Umleiten der Datenpakete / klassische Man in the Middle Attacke</h3>
+<p>Bei dieser Methode nutzt der Angreifer verschiedene Methoden der Umleitung, um den Datentransfer nicht über den vorgesehenen Kommunikationspfad zu senden, sondern die Datenpakete umzuleiten.</p>
+<p>Hierbei gibt sich der Angriffspunkt des Hackers (z.B. Proxy-Server), bei einer Kommunikation zweier Endpunkte, als der jeweilige andere Kommunikationspartner aus und kann so die Verbindung kompromittieren.</p>
+<p>Wie schon erwähnt, kommen hierfür mehrere Verfahren in Betracht. Die hier gebräuchlichsten Verfahren sind die folgenden.</p>
+<p>Zum einen die Umleitung von Nutzer-Device auf das Angreifer-Device sowie die Weiterleitung zum anderen Endpunkt des Kommunikationspfads (Webserver, Endgerät, etc.) und zum anderen, die Umleitung nicht über das vorgesehene Standard-Gateway des Netzwerks, sondern über einen Proxy-Server oder per Redirection zum anderen Kommunikationspartner geleitet wird (siehe untere Bilder 1 und 2).</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<!-- raw HTML omitted -->
+<p><a href="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Umleitung.png" target="_blank" rel="noopener"><img src="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Umleitung-976x520.png" alt="Man in the Middle Umleitung Bild 1"></a></p>
+<!-- raw HTML omitted -->
+<p>Umleitung des Kommunikationspfad mittels Man in the Middle Attacke - Bild 1</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+<li>
+<!-- raw HTML omitted -->
+<p><a href="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Umleitung-proxy.png" target="_blank" rel="noopener"><img src="https://secure-bits.org/wp-content/uploads/2021/01/ManintheMiddle-Umleitung-proxy-976x520.png" alt="Man in the Middle Mithilfe eine Proxy Server"></a></p>
+<!-- raw HTML omitted -->
+<p>Man in the Middle Mithilfe eine Proxy Server - Bild 2</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<p>Nachteil dieser aktiven Methode ist unter anderem, dass diese Angriffsmethode leichter zu entdecken ist, da hier aktiv in die Kommunikation des Kommunikationspfad eingegriffen wird.</p>
+<p>Im Gegensatz zum Sniffing, können hierbei nicht nur Datenpakete beziehungsweise die Kommunikation von Teilnehmern abgehöhrt / gesammelt werden, sondern kann die Kommunikation abgefangen / verändert werden, so dass der andere Teilnehmer nichts davon mitbekommt. Somit sind hier auch die Probleme vielfältiger und können massiven Schaden verursachen.</p>
+<p><strong>Als Beispiel sind hier zu nennen:</strong></p>
+<ul>
+<li>Diebstahl von Zugangsdaten</li>
+<li>Abfangen von Token wie zum Beispiel TAN für das Onlinebanking</li>
+<li>Austausch von Informationen, um zum Beispiel Bank-Überweisungen auf eine andere Bankverbindung zu leiten</li>
+<li>Entwenden von Kreditkartendaten</li>
+<li>Und noch viele andere Szenarien</li>
+</ul>
+<h2 id="fazit-zu-man-in-the-middle-angriffe">Fazit zu Man in the Middle Angriffe</h2>
+<p>Dieser Beitrag ist nur ein erster Einblick über die Funktionsweise einer Man in the Middle Attacke, da dieses Thema doch sehr umfassend ist.</p>
+<p>Dieses Thema werde ich in zukünftigen Beiträgen weiter vertiefen und euch so einen noch tieferen Einblick in dieses Thema ermöglichen.</p>
+<p>Eines möchte ich aber vorab schon einmal loswerden – Bitte achtet in Zukunft bei eurer Kommunikation darauf, dass diese bei euch nur in einer verschlüsselten Weise stattfindet. Diese Verschlüsselung sollte nicht nur bei der Kommunikation im Internet via Protokoll 443 oder 8443 (https://) gelten, sondern auch bei anderen Arten der Kommunikation.</p>
+<p>Hier sind als Beispiel zu nennen Messenger (Signal, Matrix, Threema), Dateiaustausch via sftp oder ssh, Nutzung von verschlüsselten VPN-Verbindungen und so weiter…</p>
+<p>Da ja dank der Covid-Pandemie die Debatte über die Grundrechte ein großes Gehör findet, sollten auch alle ihr Recht auf „digitale Selbstbestimmung“ wahrnehmen und mal über ihren Umgang mit den digitalen Medien überdenken beziehungsweise anpassen.</p>
+<h2 id="schutz-vor-man-in-the-middle-angriffe">Schutz vor Man-in-the-Middle-Angriffe</h2>
+<p>Wie ihr euch und euer Netzwerk vor solchen Attacken schützen könnt, erfahrt ihr im nächsten Artikel.</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fman-in-the-middle.de-kopie%2f&title=Man%20in%20the%20Middle%20Angriffe%20verstehen" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Man%20in%20the%20Middle%20Angriffe%20verstehen http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fman-in-the-middle.de-kopie%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Man%20in%20the%20Middle%20Angriffe%20verstehen&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fman-in-the-middle.de-kopie%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#man-in-the-middle-angriff---definition">Man in the Middle Angriff - Definition</a>
+      <ul>
+        <li><a href="#was-ist-ein-man-in-the-middle-angriff">Was ist ein Man in the Middle Angriff?</a></li>
+        <li><a href="#wie-funktioniert-ein-man-in-the-middle-angriff">Wie funktioniert ein Man in the Middle Angriff?</a></li>
+        <li><a href="#methode-1--abhören--mitschneiden-einer-kommunikationspfad-sniffing">Methode 1 – Abhören / Mitschneiden einer Kommunikationspfad (Sniffing)</a></li>
+        <li><a href="#methode-2--umleiten-der-datenpakete--klassische-man-in-the-middle-attacke">Methode 2 – Umleiten der Datenpakete / klassische Man in the Middle Attacke</a></li>
+      </ul>
+    </li>
+    <li><a href="#fazit-zu-man-in-the-middle-angriffe">Fazit zu Man in the Middle Angriffe</a></li>
+    <li><a href="#schutz-vor-man-in-the-middle-angriffe">Schutz vor Man-in-the-Middle-Angriffe</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.078db4cf4ca5e5a2d96c8a4588af6140c4576ab967c200b58241fe0f8ea8fbfd.js" integrity="sha256-B420z0yl5aLZbIpFiK9hQMRXarlnwgC1gkH&#43;D46o&#43;/0=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

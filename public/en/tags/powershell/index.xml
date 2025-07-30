@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Powershell” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/powershell/</link>
+    <description>Recent content in “Powershell” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 12 Mar 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/powershell/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>All CMD commands for Windows at a glance 2025</title>
+      <link>http://localhost:1313/en/posts/windows/cmd-befehle-im-ueberblick/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/cmd-befehle-im-ueberblick/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update - News from Microsoft&lt;/strong&gt;
+Microsoft has finally provided comprehensive documentation on how the individual &lt;strong&gt;CMD commands&lt;/strong&gt; work. So, of course, I don&amp;rsquo;t want to keep this from you.
+You can now download the documentation further down in this post.&lt;/p&gt;
+&lt;h2 id=&#34;cmd-commands---not-just-for-nerds&#34;&gt;CMD commands - Not just for nerds!&lt;/h2&gt;
+&lt;p&gt;Many tasks can be performed more easily or exclusively using the CMD command line tool in Windows. In this article, I would like to provide you with an overview of the most important CMD commands for the command line.
+I have divided these commands into different subject areas further down in this article so that you can get a quick overview.
+CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
+I have already introduced some of these commands for working or gathering information on the network in &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this article&lt;/a&gt;&lt;/strong&gt; or in the article on what you can do with the &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/netstat-unter-windows/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netstat command&lt;/a&gt;&lt;/strong&gt; can do everything.
+This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tablehttps://cloud.secure-bits.org/s/qnZ2H8FJCFYTsBzs!&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

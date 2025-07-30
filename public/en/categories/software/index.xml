@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/software/</link>
+    <description>Recent content in Software on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Change your Windows password now</title>
+      <link>http://localhost:1313/en/posts/windows/change-windows-password/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/change-windows-password/</guid>
+      <description>&lt;h2 id=&#34;change-your-password-in-windows&#34;&gt;Change your password in Windows&lt;/h2&gt;
+&lt;p&gt;Today, in this article, “Change Windows password,” I would like to show you how to change your password in the Windows 10 system settings, as well as how to do this via the CMD command line or PowerShell. This option is a quick and easy way for administrators to change user passwords on a Windows computer or even across a domain.&lt;/p&gt;
+&lt;h2 id=&#34;option-1--change-windows-password-company-computer-in-a-domain&#34;&gt;Option 1 – Change Windows password (company computer in a domain)&lt;/h2&gt;
+&lt;p&gt;For anyone who has a Windows company computer that is part of a domain, the password can be changed as follows.
+Simply press the following key combination:
+&lt;strong&gt;CTRL + ALT + DEL&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

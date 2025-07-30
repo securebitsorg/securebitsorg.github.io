@@ -1,0 +1,1498 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Pihole Installation Debian - Schütze dein Heimnetzwerk</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="In diesem Tutorial, werden wir Pihole unter Debian installieren und einrichten" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/privacy/pihole/pihole-installation-debian">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/privacy/pihole/pihole-installation-debian">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/pihole/pi-hole-installation-beendet.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Sonntag, 7. März 2021 | 8 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Pihole Installation Debian - Schütze dein Heimnetzwerk</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/pihole/" class="btn btn-sm btn-info">pihole</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/privacy/" class="btn btn-sm btn-info">privacy</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="pihole-installation-debian---schütze-dein-netzwerk-vor-tracking-und-werbung">Pihole Installation Debian - Schütze dein Netzwerk vor Tracking und Werbung</h2>
+<blockquote>
+<p><strong>BITTE BEACHTEN!!!</strong></p>
+<p>Diese Anleitung bezieht sich auf die Installation von Pihole in der Version bis <strong>5</strong> und nicht auf die aktuelle Version <strong>6</strong>.</p>
+<p><strong>Die Unterschiede von VERSION 5 zu VERSION 6</strong> sind vom Prozess her, nicht wirklich anders. Version 6 basiert halt nicht mehr auf PHP und nutzt auch keine lighthtp-Instanz.</p>
+<p>Demnächst werde ich auch für die Version 6 von Pihole hier ein Tutorial veröffentlichen.</p></blockquote>
+<p>Wer in seinem Heimnetzwerk Trackern, In-App-Werbung und Werbe-Botschaften den Kampf ansagen möchte, der sollte sich mit Pihole ein wenig beschäftigen.</p>
+<p>Natürlich werden jetzt einige denken, ich nutze doch beim Surfen einen AD-Blocker, warum dann noch ein extra Gerät für solche Dienste?! Diese Frage kann ich nachvollziehen, doch ist die Antwort ganz einfach.</p>
+<p>Eine <strong>Pihole Installation Debian / Server</strong> schützt euch zentral vor Werbung und Trackern, da pi-hole als zentraler DNS-Server im Netzwerk fungiert und somit nicht nur Computer vor den lästigen Schnüffelwerkzeugen schützt, sondern auch andere Geräte im Netzwerk. So zum Beispiel Smart-TV´s, Werbung in Apps auf euren Smartphone und funktioniert gleichzeitig auch als &ldquo;Kindersicherung&rdquo;. So dass euer Nachwuchs beim Surfen im Internet geschützt ist.</p>
+<h3 id="wie-funktioniert-pihole">Wie funktioniert Pihole?</h3>
+<p>Dieses System stellt einen DNS-Server im Heimnetzwerk zu Verfügung, mit dessen Hilfe, Domainabfragen der eingebunden Endgeräte im Netzwerk aufzulösen.<br>
+Hierbei wird auf der Basis von Ausschlusslisten (Blacklist) von Domains die als Tracking- oder Werbedomains bekannt sind, bei einem positiven Treffer, dem anfragenden Endgerät im Netzwerk eine unbrauchbare IP-Adresse mitgeteilt. Somit kann durch die Übergabe der unbrauchbaren IP-Adresse diese nicht aufgelöst werden und damit das Endgerät diese Domain nicht auflösen.<br>
+Weiterhin ist es auch mit dem Pi-hole-DNS-Server möglich, die Verlaufsliste der besuchten Domains nachzuverfolgen, was wiederum Datenschutz-Technisch jeder für sich selbst entscheiden muss.<br>
+Durch die Nutzung von Blacklists ist diesem System auch Grenzen gesetzt. Durch die Abarbeitung dieser Liste, kann folglich auch nur die darin enthaltenen Domains überprüft werden. Andere nicht enthaltende Domains können Aufgrund nicht vorhandener Funktion der Inhaltsanalyse, nicht überprüft werden und sind daher aufrufbar.<br>
+Weiterhin findet die Überprüfung nur mittels der genannten Domain-Überprüfung statt. Zugriffe über direkte Eingabe der IP-Adresse der Domain werden nicht überprüft.</p>
+<h3 id="für-wen-ist-eine-pihole-installation-debian-gedacht">Für wen ist eine Pihole Installation Debian gedacht?</h3>
+<p>Eine pihole Installation Debian bietet sich für alle diejenigen an, die ihr Heimnetzwerk zentral vor Werbung auf Endgeräten sowie Trackern schützen möchten.<br>
+Der Aufwand für die Installation ist gering und der Betrieb mit einem Raspberry Pi ist sparsam im Verbrauch.</p>
+<h2 id="hardware-anforderung-für-die-pihole-installation-debian">Hardware-Anforderung für die Pihole Installation Debian</h2>
+<p>Wie geschrieben, sind die Anforderungen minimal und für jeden Geldbeutel realisierbar.</p>
+<p>Ihr könnt die pi-hole Installation entweder in einer dauerhaft virtuellen Umgebung, auf einem Einplatinen-Rechner wie den Raspberry-Pi, oder auf andere Mini-Computer. Ebenso könnt ihr auch hier gerne mein Lieblingsboard APU4D4 für diese Aufgabe verwenden. Einen Beitrag zu diesem Board findet ihr hier.</p>
+<h3 id="hardware-anforderungen">Hardware-Anforderungen</h3>
+<ul>
+<li>
+<p>Minimum 512 MB Arbeitsspeicher, besser 1 GB</p>
+</li>
+<li>
+<p>Minimum 2 GB freier Festplattenspeicher, besser 4 GB</p>
+</li>
+</ul>
+<h3 id="unterstützte-betriebssysteme">Unterstützte Betriebssysteme</h3>
+<ul>
+<li>Als Docker-Container</li>
+</ul>
+<p>Oder als Installation bei den folgenden unterstützten Betriebssystemen:</p>
+<table>
+  <thead>
+      <tr>
+          <th><strong>Distribution</strong></th>
+          <th><strong>Version</strong></th>
+          <th><strong>Architektur</strong></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Raspberry Pi OS</td>
+          <td>Bullseye / Bookworm</td>
+          <td>ARM</td>
+      </tr>
+      <tr>
+          <td>Ubuntu</td>
+          <td>23.x / 24.x / 25.x</td>
+          <td>ARM / x86_64</td>
+      </tr>
+      <tr>
+          <td>Debian</td>
+          <td>11 / 12</td>
+          <td>ARM / x86_64 / i386</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<p>Auswahl unterstützter debian-basierende Betriebssysteme</p>
+<h2 id="howto---pihole-installation-debian">HowTo - Pihole Installation Debian</h2>
+<p>In diesem HowTo werde ich euch zeigen, wie ihr den Pi-hole DNS-Server auf einer virtuellen Debian 9-Intanz installiert. Diese hier gezeigte Installation ist gleich mit der Installation auf einem Raspberry Pi.</p>
+<p><strong>Nun kommen wir zu der Installation von unserem kleinen Pi-hole DNS-Server.</strong></p>
+<h3 id="voraussetzungen---pihole-installation-debian">Voraussetzungen - Pihole Installation Debian</h3>
+<p>Vorgabe ist hierfür eine virtuelle Instanz von Debian 11 oder 12 in einer virtuellen Umgebung, in meinem Fall auf einem Proxmox-Server. Genauso gut funktionieren auch andere Virtualisierungen wie VMWare, Virtual-Box usw.</p>
+<p><strong>Wie ihr Pi-Hole auf einen Raspberry Pi installieren könnt, erfahrt ihr in diesem Tutorial:</strong></p>
+<p><a href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/">Zum Tutorial</a></p>
+<h4 id="benötigte-tools-und-voraussetzungen">Benötigte Tools und Voraussetzungen:</h4>
+<ul>
+<li>
+<p>putty oder anderer SSH-Client</p>
+</li>
+<li>
+<p>Debain-basierendes OS</p>
+</li>
+</ul>
+<h3 id="schritt-1---pihole-installation-debian-">Schritt 1 - Pihole Installation Debian :</h3>
+<p><img src="/images/posts/pihole/pi-hole-Bild-1.jpg" alt="Pihole installieren Debian Bild 1"></p>
+<p>Pihole installieren Debian - Bild 1</p>
+<hr>
+<p><img src="/images/posts/pihole/pi-hole-Bild-2.jpg" alt="pihole Installation Debian Bild 2"></p>
+<p>Pihole installieren Debian - Bild 2</p>
+<hr>
+<p><img src="/images/posts/pihole/pi-hole-Bild-3.jpg" alt="pihole Installation Bild 3"></p>
+<p>Pihole Installation Debian Bild 3</p>
+<hr>
+<p><img src="/images/posts/pihole/pi-hole-Bild-4.jpg" alt="pi-hole Installation Bild 4"></p>
+<p>Pihole Installation Debian Bild 4</p>
+<hr>
+<p>Verbindet den SSH-Client mit euer Debain-Instanz als User mit root-Rechten und gibt dann das folgende Kommando in euer Terminal-Fenster ein.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo -s root@&lt;IP-Adresse-Instanz&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>wget -O basic-install.sh https://install.pi-hole.net
+</span></span></code></pre></div><p>danach gibt ihr noch das folgende Kommando ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>bash basic-install.sh
+</span></span></code></pre></div><p>Solltet ihr bei den Kommandos eine Fehlermeldung bekommen, dass ihr nicht die nötigen Rechte habt, so seid ihr nicht als root-User angemeldet.<br>
+Dann stellt bitte den Befehl &ldquo;sudo&rdquo; dem Kommando &ldquo;bash basic-install.sh voran.<br>
+Sollte dann so aussehen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo bash basic-install.sh
+</span></span></code></pre></div><p>Ist die Installation von Pi-Hole erfolgreich ausgeführt worden, so solltet euch wie in dem folgenden Bild, die GUI der Installationsroutine von Pi-Hole angezeigt werden.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-5.jpg" alt="pi-hole Installation Bild 5"></p>
+<p>GUI Pihole Installation Debian</p>
+<hr>
+<h3 id="schritt-2---pihole-installation-debian-">Schritt 2 - Pihole Installation Debian :</h3>
+<p>Bei diesem Schritt werden wir die Konfiguration der Pihole Installation DebianPiHole-DNS-Server erstellen. Diese Konfiguration wird komplett über die GUI-Installationsroutine durchgeführt.</p>
+<p>Hierbei müssen wir angeben, welchen externe DNS-Server euer Internetprovider nutzt, auf welche IP-Adresse euer Pi-hole später lauschen soll und die Konfiguration des genutzten Standard-Gateway.</p>
+<h4 id="standard-gateway">Standard-Gateway</h4>
+<p>In den meisten Fällen sollte es sich bei dem Standard-Gateway um den Router der euch von eurem Internetprovider zu Verfügung gestellt wurde. Daher müsst ihr bei der IP-Adresse für den Standard-Gateway dann die IP-Adresse eures Routers eingeben. Bei den meisten Routern dürften dass die IP-Adressen 192.168.178.1 (Fritz-Box) oder 192.168.2.1 (Telekom).<br>
+Solltet ihr eine Hardware-Firewall zwischen Router des Internetproviders und eurem Netzwerk zwischengeschaltet haben, so müsst ihr dann die IP-Adresse eurer Hardware-Firewall eingeben.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-6.jpg" alt="pi-hole Installation Bild 6"></p>
+<p>(Bild 7) Auswahl des externen DNS-Server hierfür gibt ihr einfach die IP-Adresse eures Routers ein da dieser ja in den meisten Fällen für die externe Auflösung von externen Domains zuständig ist.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-7.jpg" alt="pi-hole Installation Bild 7"></p>
+<p>Bild 7 - <strong>Auswahl externer DNS-Server</strong></p>
+<hr>
+<p>(Bild 8) Auswahl der Blacklist aufgrund Ads und Tracking-Codes geblockt werden. Diese Listen können nach der Installation ausgetauscht oder bearbeitet werden.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-8.jpg" alt="pi-hole Installation Bild 8"></p>
+<p>Bild 8 - <strong>Auswahl der Blacklist (kann nach der Installation auch durch andere ersetzt werden)</strong></p>
+<hr>
+<p>(Bild 9) Auswahl der IP-Protokolle (IPv4, IPv6) bei denen Ads und Tracking-Codes geblockt werden sollen. Lasst hier am besten beide Protokoll-Arten ausgewählt.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-9.jpg" alt="pihole Installation Bild 9"></p>
+<p>Bild 9 - <strong>Auswahl im welchen Protokoll Ads geblockt werden sollen</strong></p>
+<hr>
+<p>(Bild 10) Im nächsten Schritt seht ihr die aktuelle IP-Konfiguration die eurer Pi-hole Installation zugewiesen wurde und die ihr jetzt nach euren Erfordernissen anpassen könnt. Bitte nutzt hierfür auf jeden Fall eine statische IP-Adresse, da ihr diese dann bei der DNS-Zuweisung für eure Clients im Netzwerk hinterlegen müsst und diese dadurch den Pi-hole für die DNS-Auflösung nutzen werden. Sollte diese IP-Adresse nicht mit der vergebenen IP-Adresse des Pi-hole-DNS-Server übereinstimmen, so werdet ihr später im Betrieb massive DNS-Auflösungsprobleme bekommen und könnt somit keine Domains im Internet aufrufen.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-10.jpg" alt="pi-hole Installation Bild 10"></p>
+<p>Bild 10 - <strong>Übersicht aktuelle IP-Konfiguration des Pi-hole DNS-Server</strong></p>
+<hr>
+<p>(Bild 11) Die Vorauswahl, das dass Web-Interface des Pi-hole auch installiert werden soll, können wir so ausgewählt lassen. So kann später durch die Eingabe der Pi-hole-IP-Adresse / pi-hole (Beispiel http://172.16.16.61/admin) oder http://pi-hole/admin, das Web-Interface über euren favorisierten Browser aufgerufen werden, damit ihr so bequem die weiteren Konfigurationen vornehmen könnt.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-11.jpg" alt="pi-hole Installation Bild 11"></p>
+<p>Bild 11 - <strong>Installation des Pihole-Webinterface bestätigen</strong></p>
+<h3 id="schritt-3">Schritt 3:</h3>
+<p>(Bild 12) Die Vorauswahl, das ein lighttpd-Server installiert werden soll, bestætigen, da ihr diesen für das Webinterface des Pihole benötigt.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-12.jpg" alt="pi-hole Installation Bild 12"></p>
+<p>Bild 12 - <strong>Installation des lighttpd-Server bestätigen</strong></p>
+<hr>
+<p>(Bild 13) Im nächsten Schritt würde ich euch auch empfehlen, das log-queries mit aufgezeichnet werden sollen. Diese dienen dazu, später im Betrieb zum Beispiel Verstöße zu speichern und ihr dann auch leichter Anpassungen an der Konfiguration vornehmen könnt.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-13.jpg" alt="pi-hole Installation Bild 13"></p>
+<p>Bild 13 - <strong>Pihole Logging aktivieren</strong></p>
+<hr>
+<p>(Bild 14) - Pihole bietet mehrere Möglichkeiten, die Aufzeichnung der besuchten Domains sowie IP-Adressen zu protokollieren. Welche Protokoll-Stufe ihr hier auswählt, müsst ihr selbst entscheiden.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-14.jpg" alt="pi-hole Installation Bild 14"></p>
+<p>Bild 14 - <strong>Einstellung &lsquo;Privacy mode&rsquo;</strong></p>
+<hr>
+<p>(Bild 15, 16 und 17) Im nächsten Fenster findet ihr nun eine Übersicht über eure Konfiguration, die IP-Adresse unter der ihr euch anmelden könnt (bei Änderung der IP-Adresse, müsst ihr die Instanz neu starten) <strong>sowie das Passwort für die Anmeldung im Web-Interface</strong>. Dieses Passwort könnt ihr dann später noch ändern. Dazu aber gleich mehr im nächsten Schritt.</p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-15.jpg" alt="pi-hole Installation Bild 15"></p>
+<p>Bild 15 - <strong>Benachrichtigung über die Fertigstellung der Pihole-Installation</strong></p>
+<p><img src="/images/posts/pihole/pi-hole-Bild-16.jpg" alt="pi-hole Installation Bild 16"></p>
+<p>Bild 16 - <strong>Anzeige des Passworts für die Anmeldung im Webinterface</strong></p>
+<h3 id="schritt-4---pihole-installation-debian-">Schritt 4 - Pihole Installation Debian :</h3>
+<p>(Bild 17) Öffnet jetzt euren Browser und gibt die vorab angezeigte IP-Adresse gefolgt von /admin in die Browser-Eingabezeile ein und ruft diese per Enter auf. Jetzt sollte der Anmelde-Bildschirm vom Web-Interface eures Pi-hole-DNS-Servers angezeigt werden. Hier gibt ihr eurer vorher angezeigtes Passwort zur Anmeldung ein und werdet dann vom Dashboard von Pihole begrüßt.</p>
+<p><img src="/images/posts/pihole/pi-hole-installation-beendet.jpg" alt="Dashboard / Webinterface Pihole"></p>
+<p>Bild 17 - <strong>Dashboard von Pihole</strong> | Pihole Installation Debian Bild 4</p>
+<h3 id="schritt-5---pihole-installation-debian-">Schritt 5 - Pihole Installation Debian :</h3>
+<p>Im letzten Schritt müsst ihr natürlich dafür Sorgen, dass alle Geräte den Pi-hole-DNS-Server auch für die DNS-Auflösung im Internet nutzen können.</p>
+<p>Dafür meldet euch einfach bei eurem Router an, vorausgesetzt dieser ist auch bei euch als DHCP-Server verantwortlich und gibt hier in den Netzwerk-Einstellungen (DHCP-Server-Einstellungen) unter dem Punkt &ldquo;DNS-Server&rdquo;, die IP-Adresse eures Pi-hole-DNS-Server ein.</p>
+<p>Der nun neue vergebene DNS-Server wird aber erst nach Erneuerung der DHCP-Lease genutzt und wird von den Clients daher nicht eigenmächtig bemerkt. Am einfachsten, ihr trennt die Netzwerkverbindung von eurem Endgerät und bei dem erneuten Verbinden, wird dann die neue Konfiguration geladen und die Geräte sollten im Geräte-Übersicht im Pi-hole angezeigt werden.</p>
+<blockquote>
+<p><strong>Funktionsweise einer Domainabfrage in Verbindung mit Pi-hole in diesem Beispiel:</strong></p>
+<p>Client (Endgerät) -&gt; Pi-hole -&gt; Router</p></blockquote>
+<blockquote>
+<p><strong>INFO</strong></p>
+<p>In diesem Szenario nutzen nur die Endgeräte den Pi-hole als DNS-Server aber <strong>nicht</strong> der Router selbst.</p></blockquote>
+<h2 id="wichtige-befehle-für-eure-pihole-installation-debian-">Wichtige Befehle für eure PiHole Installation Debian :</h2>
+<h3 id="pihole-passwort-ändern">Pihole-Passwort ändern:</h3>
+<p>Hierfür müsst ihr als superuser im Terminal angemeldet sein und gibt dann den folgenden Befehl ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pi-hole -a -p
+</span></span></code></pre></div><h3 id="pihole-installation-debian---update-durchführen">Pihole Installation Debian - Update durchführen:</h3>
+<p>Hierfür müsst ihr als superuser im Terminal angemeldet sein und gibt dann den folgenden Befehl ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pi-hole -up
+</span></span></code></pre></div><p><img src="/images/posts/pihole/pi-hole-Bild-17.jpg" alt="pi-hole Installation Debian - Bild 17"></p>
+<h3 id="noch-mehr-zum-thema-pihole">Noch mehr zum Thema Pihole</h3>
+<p>Eine bebilderte Anleitung über die Einrichtung einer FritzBox und auch die Konfiguration für andere Arten der Nutzung der Pi-hole Installation findet ihr auch in der Dokumentation vom Pi-hole-Projekt.</p>
+<p><a href="https://docs.pi-hole.net/routers/fritzbox-de/" target="_blank" rel="noopener">Webseite besuchen pihole.net</a></p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fpihole%2fpihole-installation-debian%2f&title=Pihole%20Installation%20Debian%20-%20Sch%c3%bctze%20dein%20Heimnetzwerk" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Pihole%20Installation%20Debian%20-%20Sch%c3%bctze%20dein%20Heimnetzwerk&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fpihole%2fpihole-installation-debian%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pi-hole Raspberry Pi Installation" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Pi-hole Raspberry Pi Installation</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/windows/cmd-befehle-im-ueberblick/" title="Jetzt alle CMD-Befehle für Windows im Überblick 2025" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Jetzt alle CMD-Befehle für Windows im Überblick 2025</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pihole-installation-debian---schütze-dein-netzwerk-vor-tracking-und-werbung">Pihole Installation Debian - Schütze dein Netzwerk vor Tracking und Werbung</a>
+      <ul>
+        <li><a href="#wie-funktioniert-pihole">Wie funktioniert Pihole?</a></li>
+        <li><a href="#für-wen-ist-eine-pihole-installation-debian-gedacht">Für wen ist eine Pihole Installation Debian gedacht?</a></li>
+      </ul>
+    </li>
+    <li><a href="#hardware-anforderung-für-die-pihole-installation-debian">Hardware-Anforderung für die Pihole Installation Debian</a>
+      <ul>
+        <li><a href="#hardware-anforderungen">Hardware-Anforderungen</a></li>
+        <li><a href="#unterstützte-betriebssysteme">Unterstützte Betriebssysteme</a></li>
+      </ul>
+    </li>
+    <li><a href="#howto---pihole-installation-debian">HowTo - Pihole Installation Debian</a>
+      <ul>
+        <li><a href="#voraussetzungen---pihole-installation-debian">Voraussetzungen - Pihole Installation Debian</a></li>
+        <li><a href="#schritt-1---pihole-installation-debian-">Schritt 1 - Pihole Installation Debian :</a></li>
+        <li><a href="#schritt-2---pihole-installation-debian-">Schritt 2 - Pihole Installation Debian :</a></li>
+        <li><a href="#schritt-3">Schritt 3:</a></li>
+        <li><a href="#schritt-4---pihole-installation-debian-">Schritt 4 - Pihole Installation Debian :</a></li>
+        <li><a href="#schritt-5---pihole-installation-debian-">Schritt 5 - Pihole Installation Debian :</a></li>
+      </ul>
+    </li>
+    <li><a href="#wichtige-befehle-für-eure-pihole-installation-debian-">Wichtige Befehle für eure PiHole Installation Debian :</a>
+      <ul>
+        <li><a href="#pihole-passwort-ändern">Pihole-Passwort ändern:</a></li>
+        <li><a href="#pihole-installation-debian---update-durchführen">Pihole Installation Debian - Update durchführen:</a></li>
+        <li><a href="#noch-mehr-zum-thema-pihole">Noch mehr zum Thema Pihole</a></li>
+      </ul>
+    </li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

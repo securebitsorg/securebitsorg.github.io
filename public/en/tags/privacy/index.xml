@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Privacy on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/privacy/</link>
+    <description>Recent content in Privacy on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/privacy/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole Installation Debian - Protect your home network</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-installation-debian/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-installation-debian/</guid>
+      <description>&lt;h2 id=&#34;pihole-installation-debian---protect-your-network-from-tracking-and-advertising&#34;&gt;Pihole Installation Debian - Protect your network from tracking and advertising&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PLEASE NOTE!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;These instructions refer to the installation of Pihole version &lt;strong&gt;5&lt;/strong&gt; and not the current version &lt;strong&gt;6&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The differences between VERSION 5 and VERSION 6&lt;/strong&gt; are not really different in terms of the process. Version 6 is no longer based on PHP and does not use a lighthtp instance.&lt;/p&gt;
+&lt;p&gt;I will also publish a tutorial for version 6 of Pihole here soon.
+If you want to declare war on trackers, in-app advertising, and advertising messages on your home network, you should take a look at Pihole.
+Of course, some of you will now think, “I use an ad blocker when surfing, so why do I need an extra device for such services?!” I can understand this question, but the answer is quite simple.
+A Pihole installation Debian / Server protects you centrally from advertising and trackers, as Pi-hole acts as a central DNS server in the network and thus not only protects computers from annoying snooping tools, but also other devices in the network. For example, smart TVs, advertising in apps on your smartphone, and it also functions as a “parental control.” This ensures that your children are protected when surfing the Internet.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

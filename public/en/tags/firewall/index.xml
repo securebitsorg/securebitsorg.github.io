@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Firewall” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/firewall/</link>
+    <description>Recent content in “Firewall” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 06 Oct 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/firewall/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>UFW Firewall - Basics | Part 1</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-basics/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-basics/</guid>
+      <description>&lt;h2 id=&#34;basics-of-ufw-firewall-installation-and-setup&#34;&gt;Basics of UFW Firewall Installation and Setup&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, I will show you how to install and set up the UFW firewall (Uncomplicated Firewall) on your Linux distribution.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/BumaXOYey1c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall - Creating Application Profiles | Part 3 | Uncomplicated Firewall</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-application-profiles/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-application-profiles/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---creating-profiles-for-applications&#34;&gt;UFW Firewall - Creating Profiles for Applications&lt;/h2&gt;
+&lt;p&gt;In this video, I will show you how to use an application profile in the UFW firewall to combine multiple ports for an application in an app profile, allowing you to create multiple ports with a single firewall rule.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/TDKaLgWd12A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-mehrere-ports/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-mehrere-ports/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---advanced-rules-for-port-ranges&#34;&gt;UFW Firewall - Advanced Rules for Port Ranges&lt;/h2&gt;
+&lt;p&gt;In this video, I&amp;rsquo;ll show you how to enable multiple ports, port ranges, and services simultaneously with the UFW firewall.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Gwbq6F1N3xo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</guid>
+      <description>&lt;h2 id=&#34;installing-ufw-firewall-uncomplicated-firewall-on-a-raspberry-pi&#34;&gt;Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this post, &amp;lsquo;&lt;strong&gt;UFW Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo;, I would like to show you how to install and set up this firewall or command line interface for &lt;strong&gt;iptables&lt;/strong&gt; on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the &lt;strong&gt;Raspberry Pi&lt;/strong&gt;, but can also be used on all other Linux-based distros.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Change FritzBox DNS server</title>
+      <link>http://localhost:1313/en/posts/fritzbox/fritzbox-dns-server-aendern/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/fritzbox/fritzbox-dns-server-aendern/</guid>
+      <description>&lt;h2 id=&#34;video-tutorial---protect-your-privacy-with-the-fritzbox&#34;&gt;Video tutorial - Protect your privacy with the FritzBox&lt;/h2&gt;
+&lt;p&gt;In this video, “&lt;strong&gt;Change FritzBox DNS server&lt;/strong&gt;,” I show you how you can prevent your internet provider from tracking your internet usage by using public DNS servers that comply with data protection regulations.
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Q2b0VrDqluY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+Feel free to subscribe to my YouTube channel so you don&amp;rsquo;t miss any new content.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Understanding Man-in-the-Middle Attacks</title>
+      <link>http://localhost:1313/en/posts/security/man-in-the-middle/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/man-in-the-middle/</guid>
+      <description>&lt;h2 id=&#34;man-in-the-middle-attack--definition&#34;&gt;Man-in-the-middle attack – definition&lt;/h2&gt;
+&lt;p&gt;Today&amp;rsquo;s post is about &lt;strong&gt;man-in-the-middle attacks&lt;/strong&gt;. This attack tactic is often mentioned in the press and other publications. But in this article, I would like to explain exactly what it is and how it works.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;If anything is unclear or you have further questions on this topic, please contact me via the &lt;a href=&#34;mailto:ticket@secure-bits.org&#34;&gt;contact form&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;&lt;img src=&#34;http://localhost:1313/images/posts/it-security/ManintheMiddle-Sniffing.png&#34; alt=&#34;Man in the Middle Sniffing&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;what-is-a-man-in-the-middle-attack&#34;&gt;What is a man-in-the-middle attack?&lt;/h3&gt;
+&lt;p&gt;A man-in-the-middle attack is a scenario in which a communication path (see image above) between two communication partners is intercepted by a third party or the data stream is redirected via the third party&amp;rsquo;s attack computer.
+This scenario can be carried out at various points in the communication path&amp;rsquo;s network. The network points can be compromised network or user devices, for example.&lt;br&gt;
+Famous examples of such attacks include the so-called Bundestrojaner, which is once again the talk of the town due to the debate about breaking the encryption of encrypted messenger services, and the interception of Internet service provider nodes by the friends of the National Security Agency (Wikipedia) (&lt;a href=&#34;https://de.wikipedia.org/wiki/National_Security_Agency%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://de.wikipedia.org/wiki/National_Security_Agency)&lt;/a&gt;, which became known to the general public through the Snowden leaks.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

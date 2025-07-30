@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hardware on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/hardware/</link>
+    <description>Recent content in Hardware on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/hardware/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole PHP | Pihole immer mit der aktuellsten PHP-Version</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</guid>
+      <description>&lt;h2 id=&#34;pihole-mit-php-83-auf-dem-raspberry-pi-os-installieren&#34;&gt;Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pihole mit PHP 8.3 installieren&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könE-Hat für Raspberry Pi 5nt.&lt;/p&gt;
+&lt;h3 id=&#34;hintergrund-von-diesem-tutorial&#34;&gt;Hintergrund von diesem Tutorial&lt;/h3&gt;
+&lt;p&gt;Bei einer Testinstallation von &lt;strong&gt;Pihole mit Debian 11&lt;/strong&gt; auf meinem Raspberry Pi, ist mir beim Installationsprozess aufgefallen, dass die Installationsroutine auf dem &lt;strong&gt;Raspberry Pi OS lite, ein PHP-7.4 installiert&lt;/strong&gt;, welches schon seit &lt;strong&gt;Mitte 2023 nicht mehr mit Sicherheitsupdates&lt;/strong&gt; versorgt wird und somit &lt;strong&gt;EOL (End of life)&lt;/strong&gt; ist.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi&#34;&gt;UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;UFW-Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für &lt;strong&gt;iptables&lt;/strong&gt; auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den &lt;strong&gt;Raspberry Pi&lt;/strong&gt; beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.&lt;/p&gt;
+&lt;p&gt;Passend zum Tutorial &amp;lsquo;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AdGuard auf dem Raspberry Pi installieren&lt;/a&gt;&amp;rsquo;. bietet sich natürlich an, dass wir die &lt;a href=&#34;https://wiki.ubuntuusers.de/ufw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall&lt;/a&gt; auch auf den Raspberry Pi mit &lt;strong&gt;AdGuard Home&lt;/strong&gt; drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;pi-hole-auf-einen-raspberry-pi-installieren-und-einrichten&#34;&gt;Pi-hole auf einen Raspberry Pi installieren und einrichten&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pi-hole auf einen Raspberry Pi installieren&lt;/strong&gt;&amp;rsquo; zeige ich euch, wie ihr den Pi-hole DNS-Server installieren und mit Unbound einen rekursiven DNS-Server einrichten könnt.&lt;/p&gt;
+&lt;p&gt;Die Schritt für Schritt-Installation geschiehttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpght bei diesem Tutorial auf einen Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;In einem &lt;a href=&#34;https://secure-bits.org/pi-hole-installation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;anderen Tutorial hier auf SecureBits&lt;/a&gt;, habe ich euch ja schon die &lt;strong&gt;Installation auf einem Debian-System in einer virtuellen Maschine&lt;/strong&gt; gezeigt und aufgeführt, sowie warum und wofür ihr einen Pi-Hole DNS-Server einsetzen solltet.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tipp - Fritzbox Portfreigabe richtig einrichten</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</guid>
+      <description>&lt;h2 id=&#34;fritzbox-portfreigabe-einrichten&#34;&gt;FritzBox Portfreigabe einrichten&lt;/h2&gt;
+&lt;p&gt;Im heutigen Beitrag geht es darum, wie ihr eine &lt;strong&gt;FritzBox Portfreigabe&lt;/strong&gt; richtig einrichtet, wofür ihr diese verwenden könnt und welche Risiken durch den Einsatz dieser Portfreigabe entstehen.&lt;/p&gt;
+&lt;p&gt;Folge der unteren Schritt für Schritt-Anleitung um eine Portfreigabe in deiner FritzBox einzurichten.&lt;/p&gt;
+&lt;p&gt;Für Alle unter euch, die das Ganze lieber in einer Video-Anleitung anschauen möchten, gibt es das Video &amp;ldquo;FritzBox Portfreigabe einrichten&amp;rdquo; auf meinem YouTube-Kanal.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zum-thema-fritzbox-portfreigabe-einrichten&#34;&gt;Video-Tutorial zum Thema &amp;lsquo;FritzBox Portfreigabe einrichten&amp;rsquo;&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/dUuABciDCWs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;tutorial---fritzbox-portfreigabe-einrichten&#34;&gt;Tutorial - FritzBox Portfreigabe einrichten&lt;/h3&gt;
+&lt;p&gt;In dieser Schritt für Schritt-Anleitungen zeige ich euch, wie ihr eine Portfreigabe bei einer FritzBox einrichtet.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

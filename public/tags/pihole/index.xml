@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pihole on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/pihole/</link>
+    <description>Recent content in Pihole on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/pihole/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole Installation Debian - Schütze dein Heimnetzwerk</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-installation-debian/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-installation-debian/</guid>
+      <description>&lt;h2 id=&#34;pihole-installation-debian---schütze-dein-netzwerk-vor-tracking-und-werbung&#34;&gt;Pihole Installation Debian - Schütze dein Netzwerk vor Tracking und Werbung&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;BITTE BEACHTEN!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Diese Anleitung bezieht sich auf die Installation von Pihole in der Version bis &lt;strong&gt;5&lt;/strong&gt; und nicht auf die aktuelle Version &lt;strong&gt;6&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Die Unterschiede von VERSION 5 zu VERSION 6&lt;/strong&gt; sind vom Prozess her, nicht wirklich anders. Version 6 basiert halt nicht mehr auf PHP und nutzt auch keine lighthtp-Instanz.&lt;/p&gt;
+&lt;p&gt;Demnächst werde ich auch für die Version 6 von Pihole hier ein Tutorial veröffentlichen.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

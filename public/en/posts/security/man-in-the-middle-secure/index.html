@@ -1,0 +1,1380 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Protect yourself against man-in-the-middle attacks</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Protect yourself against man-in-the-middle attacks" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/info/"> Information</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/info/information/" title="Information about this blog and YouTube channel">Information about this blog and YouTube channel</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="The Linux IP configuration command &#39;ip&#39;">The Linux IP configuration command &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-traceroute-befehl-unter-linux/" title="The traceroute command in Linux with omprehensive instructions and examples">The traceroute command in Linux with omprehensive instructions and examples</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-debian-based/" title="Configuring the UFW Firewall using a Raspberry Pi as an example">Configuring the UFW Firewall using a Raspberry Pi as an example</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/wie-funktioniert-eine-firewall/" title="How do firewalls work and what different types are there?">How do firewalls work and what different types are there?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Comprehensive guide for IT security managers">Nmap (Network Mapper) - Comprehensive guide for IT security managers</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/en/posts/security/man-in-the-middle-secure/" title="Protection against man-in-the-middle attacks">Protection against man-in-the-middle attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-mehrere-ports/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-application-profiles/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-basics/" title="UFW Firewall Basics">UFW Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle/" title="Understanding Man-in-the-Middle Attacks">Understanding Man-in-the-Middle Attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/mac-adresse/" title="What is a MAC address and what is it used for?">What is a MAC address and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-ein-proxy-server/" title="What is a proxy server and what is it used for?">What is a proxy server and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/what-is-a-unified-threat-management-firewall/" title="What is a UTM firewall?">What is a UTM firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-sniffing/" title="What is network sniffing?">What is network sniffing?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS encryption with DNS over QUIC">AdGuard DNS encryption with DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome Setup – Basic Configuration">AdGuardHome Setup – Basic Configuration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/" title="Configure Fritzbox with AdGuard Home">Configure Fritzbox with AdGuard Home</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="Install AdGuardHome on a Raspberry Pi">Install AdGuardHome on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="Manually update AdGuard Home">Manually update AdGuard Home</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Install Pihole on a Raspberry Pi">Install Pihole on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-basic-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-fritzbox-setup/" title="Pi-hole-/-Fritzbox-configure">Pi-hole-/-Fritzbox-configure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation on Debian-based operating systems">Pihole Installation on Debian-based operating systems</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-product-key-activate/" title="Activate Windows Product Key">Activate Windows Product Key</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/change-windows-password/" title="Change your Windows password easily via the terminal">Change your Windows password easily via the terminal</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/cmd-befehle-im-ueberblick/" title="CMD commands overview for Windows">CMD commands overview for Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/netstat/" title="Netstat on Windows at a glance">Netstat on Windows at a glance</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/ipconfig-command/" title="The ipconfig command overview">The ipconfig command overview</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-dns-server-aendern/" title="Change the public DNS server/resolver on a Fritzbox">Change the public DNS server/resolver on a Fritzbox</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox and AdGuard DNS">Fritzbox and AdGuard DNS</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-portfreigabe/" title="Set up Fritzbox port forwarding">Set up Fritzbox port forwarding</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href=""> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-powershell/" title="Install Windows Powershell on Linux and Windows">Install Windows Powershell on Linux and Windows</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Wednesday, January 27, 2021 | 6 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Protect yourself against man-in-the-middle attacks</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="protection-against-man-in-the-middle-attacks">Protection against man-in-the-middle attacks</h2>
+<p>In my last post - <a href="https://secure-bits.org/man-in-the-middle/" target="_blank" rel="noopener">Understanding Man-in-the-Middle Attacks</a> - I explained what Man-in-the-Middle attacks are and what exactly they mean. In this post, I would like to give you some tips and tricks to help you protect yourself against such attacks.</p>
+<p>It should be noted that the protective measures presented here cannot be implemented in their entirety by you, as they naturally depend on the infrastructure you use. This means, for example, whether you have your own domain or which hardware components you use in your network.</p>
+<p>In general, I can only advise you to invest a few dollars in a few components to protect your network not only from man-in-the-middle attacks, but also from other types of threats.
+I have listed some components that you may want to purchase at the end of this article.</p>
+<p>Even though some of these links are affiliate links, they are not intended to enrich me with a commission from products you purchase (the sales price remains the same for you and you support this blog), but rather reflect a clear recommendation on my part as additional protection against attacks.</p>
+<blockquote>
+<p><strong>I only recommend what I use myself in the same or a similar form!</strong></p></blockquote>
+<h2 id="protection-against-man-in-the-middle-attacks--protective-measures">Protection against man-in-the-middle attacks | Protective measures</h2>
+<p><img src="/images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg" alt="Protection against man-in-the-middle attacks"></p>
+<h3 id="protection-of-active-network-components-firewall-switch-etc">Protection of active network components (firewall, switch, etc.)</h3>
+<h4 id="access-control-for-components">Access control for components</h4>
+<ul>
+<li>Replace standard user data with secure passwords</li>
+<li>Make physical access to network components more difficult (lockable room or network cabinet)</li>
+<li>Mechanical locking of ports</li>
+</ul>
+<h4 id="protection-of-endpoints-such-as-pcs-mobile-devices-etc">Protection of endpoints such as PCs, mobile devices, etc.</h4>
+<ul>
+<li>Antivirus protection</li>
+<li>Set up device locks for mobile devices</li>
+<li>Correctly configured firewall</li>
+<li>Correctly configured managed switch</li>
+<li>Patch management for endpoints, servers, and active network components</li>
+<li>Grant access rights as much as necessary and as little as possible</li>
+<li>No use of standard passwords</li>
+<li>Only enable or provide server services and services in general that are really necessary</li>
+<li>Protect unused USB ports</li>
+</ul>
+<h3 id="protection-for-passive-network-components">Protection for passive network components</h3>
+<ul>
+<li>Mechanical locking of ports</li>
+<li>Access control where possible</li>
+</ul>
+<h3 id="additional-extended-protection-against-man-in-the-middle-attacks">Additional extended protection against man-in-the-middle attacks</h3>
+<h4 id="protection-against-attacks-on-switches">Protection against attacks on switches</h4>
+<ul>
+<li>Replace unmanaged switches with managed switches</li>
+<li>Divide the network into individual virtual subnetworks (VLANs)</li>
+<li>Use dynamic ARP inspection against MAC flooding and ARP poisoning</li>
+<li>Bind ports to specific MAC addresses</li>
+<li>Disable switch ports that are not needed</li>
+</ul>
+<h4 id="securing-endpoints">Securing endpoints</h4>
+<ul>
+<li>Setting static ARP entries for the default gateway</li>
+</ul>
+<h4 id="firewall-configuration">Firewall configuration</h4>
+<ul>
+<li>Blocking ICMP type 5 redirect messages</li>
+<li><a href="https://de.wikipedia.org/wiki/Domain_Name_System_Security_Extensions#:~:text=Die%20Domain%20Name%20System%20Security,und%20Integrit%C3%A4t%20der%20Daten%20erweitern." target="_blank" rel="noopener">Set up DNSSEC</a></li>
+</ul>
+<h2 id="protection-against-man-in-the-middle-attacks--general-network-protection-measures">Protection against man-in-the-middle attacks | General network protection measures</h2>
+<ul>
+<li>Secure network traffic with encrypted connections</li>
+<li>Use authentication (Radius server, Active Directory, etc.)</li>
+<li>Do not simply ignore certificate errors and accept them without hesitation</li>
+</ul>
+<h3 id="important-for-internal-network-domains">Important for internal network domains</h3>
+<ul>
+<li>Only use publicly resolvable top-level domain names for internal domains, as otherwise no certificates can be issued for internal domains that are certified by a public certification authority and will therefore always display a certificate error when an internal https domain is called up.title: &ldquo;Schutz vor Man-in-the-Middle-Angriffe erhalten&rdquo;</li>
+</ul>
+<hr>
+<h2 id="man-in-the-middle-attacks---my-tips-for-security-enhancements-for-your-network">Man-in-the-middle attacks - My tips for security enhancements for your network</h2>
+<p>In this list (* affiliate links - this helps support this blog), I have compiled a list of components that I use myself and therefore consider useful.
+Of course, everyone has to decide for themselves an</p>
+<p>d adapt to their own requirements! I would like to point out that not everyone uses 19&quot; components in their network or wants to spend so much money on certain things.</p>
+<h3 id="tools-for-mechanical-protection-of-network-components-and-end-devices">Tools for mechanical protection of network components and end devices</h3>
+<ul>
+<li><a href="https://amzn.to/4lzR1mG" target="_blank" rel="noopener">Mechanical protection to prevent unauthorized connection of network cables to open RJ45 ports on network components.</a></li>
+<li><a href="https://amzn.to/4kGzVCp" target="_blank" rel="noopener">Mechanical security to protect open USB ports from unauthorized use</a></li>
+</ul>
+<blockquote>
+<p><strong>IMPORTANT!!!</strong></p>
+<p>An absolute must before using manipulated USB sticks and modified charging cables from mobile devices. The use of such sticks and cables is the most common way to gain access to a network!!!</p></blockquote>
+<ul>
+<li><a href="https://amzn.to/3GWI4om" target="_blank" rel="noopener">For anyone who uses 19&quot; components in their network infrastructure or wants to store such components in a lockable manner and prefers a clean, tidy solution.</a></li>
+</ul>
+<blockquote>
+<p>I personally use this network cabinet with a depth of 600 mm and 16U and am very satisfied with it, as the manufacturer also offers a wide range of accessories.</p></blockquote>
+<h3 id="protection-of-active-network-components">Protection of active network components</h3>
+<h4 id="managed-switch">Managed switch</h4>
+<ul>
+<li><a href="https://amzn.to/46hwXko" target="_blank" rel="noopener">TP-Link TL-SG2428P 24-port Gigabit Managed PoE Switch with 4 SFP slots</a>
+Unlike switches from Ubiquiti, for example, this switch offers excellent configuration options for setting up security-related settings to protect against the attack scenarios described above.
+You also have the option of operating this switch standalone, i.e. without SDN.
+<strong>This switch is also available in a cheaper version without POE support.</strong></li>
+<li><a href="https://amzn.to/3IxMiU1" target="_blank" rel="noopener">TP-Link TL-SG3428 24-port Gigabit L2 Managed Network LAN Switch with 4 SFP slots</a></li>
+</ul>
+<h4 id="my-access-points">My access points</h4>
+<p>Not required!!! These are just to give you an idea of which network components I am currently using, as I am often asked about this.</p>
+<ul>
+<li><a href="https://amzn.to/4f2uJYA" target="_blank" rel="noopener">TP-Link Access Point EAP683 UR</a>
+I have used these access points throughout my house and outdoors. I run Unifi Controller as a virtual machine on my Proxmox server.
+What I like about these access points is that they can also be installed outdoors, making them an inexpensive alternative to the usually more expensive ACs from other manufacturers that offer comparable features.
+Furthermore, the support with new and up-to-date firmware has been really great so far.
+Before these access points found their way to me, I was using access points from Sophos. However, their proprietary use (only usable with Sophos firewall products) was a thorn in my side and they were simply too expensive for my requirements (including outdoor use).</li>
+</ul>
+<h4 id="hardware-firewall-used">Hardware firewall used</h4>
+<p>For me, using a hardware firewall is a clear “<strong>yes, it&rsquo;s a must</strong>.”
+For anyone who uses smart home technology, KNX, or a home office and takes security seriously, there is no way around this component.
+I also live in a “smart home,” but everything is neatly separated in terms of network technology, and I can disconnect services that are homesick for their manufacturer,8iiiiiiiiii.</p>
+<blockquote>
+<p>In my professional consulting work, including for larger projects in the construction industry (electrical engineering), I have seen technical electrical installations using KNX that were unsecured and located on the same network as the IT infrastructure, meaning that any attacker could have gained access to the building control system.</p></blockquote>
+<p>Personally, I use the hardware linked below and have been using <strong>OPNsense</strong> as my firewall distro for years.</p>
+<ul>
+<li><a href="https://amzn.to/3IPrirQ" target="_blank" rel="noopener">Protectli Vault V1610 – 6 ports, micro appliance/mini PC – Intel N6005, 6X 2.5G NICs, 16 GB LPDDR RAM</a></li>
+</ul>
+<hr>
+<h2 id="conclusion-on-protection-against-man-in-the-middle-attacks">Conclusion on protection against man-in-the-middle attacks</h2>
+<p>As you have read, there are many ways to protect yourself against man-in-the-middle attacks.
+With these tips and tricks, you and your network are well protected, not only against sniffing and man-in-the-middle attacks, but also against other attacks on your network.
+This list of measures is quite comprehensive, but it is not exhaustive. However, other measures would require extensive knowledge of IT networks and security, so I have deliberately omitted them, as I believe these tips are sufficient for home use and in most companies.
+As always, I would love to hear your feedback!</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fman-in-the-middle-secure%2f&title=Protect%20yourself%20against%20man-in-the-middle%20attacks" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Protect%20yourself%20against%20man-in-the-middle%20attacks&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fman-in-the-middle-secure%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/en/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper)" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Nmap (Network Mapper)</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/en/posts/security/ufw-firewall-mehrere-ports/" title="UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2" class="btn filled-button">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#protection-against-man-in-the-middle-attacks">Protection against man-in-the-middle attacks</a></li>
+    <li><a href="#protection-against-man-in-the-middle-attacks--protective-measures">Protection against man-in-the-middle attacks | Protective measures</a>
+      <ul>
+        <li><a href="#protection-of-active-network-components-firewall-switch-etc">Protection of active network components (firewall, switch, etc.)</a></li>
+        <li><a href="#protection-for-passive-network-components">Protection for passive network components</a></li>
+        <li><a href="#additional-extended-protection-against-man-in-the-middle-attacks">Additional extended protection against man-in-the-middle attacks</a></li>
+      </ul>
+    </li>
+    <li><a href="#protection-against-man-in-the-middle-attacks--general-network-protection-measures">Protection against man-in-the-middle attacks | General network protection measures</a>
+      <ul>
+        <li><a href="#important-for-internal-network-domains">Important for internal network domains</a></li>
+      </ul>
+    </li>
+    <li><a href="#man-in-the-middle-attacks---my-tips-for-security-enhancements-for-your-network">Man-in-the-middle attacks - My tips for security enhancements for your network</a>
+      <ul>
+        <li><a href="#tools-for-mechanical-protection-of-network-components-and-end-devices">Tools for mechanical protection of network components and end devices</a></li>
+        <li><a href="#protection-of-active-network-components">Protection of active network components</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion-on-protection-against-man-in-the-middle-attacks">Conclusion on protection against man-in-the-middle attacks</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

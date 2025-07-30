@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Video on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/video/</link>
+    <description>Recent content in Video on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 29 Jul 2025 12:03:19 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/video/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Secure Linux SSH</title>
+      <link>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</guid>
+      <description>&lt;h2 id=&#34;securing-linux-ssh-access-correctly&#34;&gt;Securing Linux SSH access correctly&lt;/h2&gt;
+&lt;p&gt;When operating a Linux server, it is usually necessary for administration purposes to establish secure access via SSH.&lt;/p&gt;
+&lt;p&gt;This tutorial is designed to help you successfully protect Linux SSH access against attacks.&lt;/p&gt;
+&lt;p&gt;Of course, securing SSH access is only one way of protecting your server against attacks. You can find more options in the tutorial “Securing Raspberry Pi from A to Z” that I published here in the blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole PHP 8.3 | Pihole always with the latest PHP version</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-with-the-latest-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-with-the-latest-php-version/</guid>
+      <description>&lt;h2 id=&#34;installing-pihole-with-php-83-on-raspberry-pi-os&#34;&gt;Installing Pihole with PHP 8.3 on Raspberry Pi OS&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;Installing Pihole with PHP 8.3&lt;/strong&gt;’, I would like to show you how to securely install a Pihole DNS server with the latest version of PHP on your Raspberry Pi in 2024.&lt;/p&gt;
+&lt;h3 id=&#34;background-to-this-tutorial&#34;&gt;Background to this tutorial&lt;/h3&gt;
+&lt;p&gt;During a test installation of Pihole with Debian 11 on my Raspberry Pi, I noticed during the installation process that the installation routine on the Raspberry Pi OS lite installs PHP 7.4, which has not been provided with security updates since mid-2023 and is therefore EOL (end of life).
+Further information on support for individual PHP versions can be found here:
+&lt;a href=&#34;https://www.php.net/supported-versions.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.php.net/supported-versions.php&lt;/a&gt;
+Therefore, I thought I would create a new and updated tutorial (&lt;a href=&#34;https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my last one was from 2022&lt;/a&gt;) so that the PHP installation used is always provided with the latest security updates.
+I will also show you how to install and set up a firewall for the Raspberry Pi. And how to automatically update the system with new updates.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Backup mit Teleporter</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</guid>
+      <description>&lt;h2 id=&#34;backing-up-and-restoring-pi-hole&#34;&gt;Backing up and restoring Pi-hole&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, “Pi-hole Backup – Backing up and restoring Pi-hole,” I show you how to use the Teleporter tool to back up your Pi-hole installation and restore it to another Pi-hole instance.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-pi-hole-backup&#34;&gt;Video tutorial Pi-hole backup&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/JPVtLvRtQE0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;commands-used-in-the-video&#34;&gt;Commands used in the video&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#080;background-color:#0f140f;font-style:italic&#34;&gt;# Run Pi-hole backup in the shell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span&gt;pihole -a -t
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#080;background-color:#0f140f;font-style:italic&#34;&gt;# You will find the backup file in the directory where you are located when you execute the above command.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole setup</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-basic-setup/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-basic-setup/</guid>
+      <description>&lt;h2 id=&#34;setting-up-pihole--basic-configuration&#34;&gt;Setting up Pihole – Basic configuration&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, “Pi-hole Basic Configuration,” I will walk you through the setup of the Pi-hole DNS server step by step and explain what the individual functions/menu items mean.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/IMYnydNM3rk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;If you have any questions on this topic, just leave a comment either below the video on YouTube or here under this blog post.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

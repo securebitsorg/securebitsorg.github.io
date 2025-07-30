@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Video” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/video/</link>
+    <description>Recent content in “Video” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/video/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Secure Proxmox VE with fail2ban</title>
+      <link>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</guid>
+      <description>&lt;h2 id=&#34;secure-proxmox-ve-based-on-debian-12-with-fail2ban&#34;&gt;Secure Proxmox VE based on Debian 12 with fail2ban&lt;/h2&gt;
+&lt;p&gt;One way to secure a public Proxmox server against brute force attacks is to use the tool ‘fail2ban’.
+In this short tutorial, I will show you how to use fail2ban to secure access to the ‘SSH’ service and port ‘8006’ of the dashboard.
+Starting point
+In this scenario, we are dealing with a Proxmox server that is hosted as a dedicated server at Hetzner and can be reached via the public Internet using an IPv4 and IPv6 address.
+In general, the use of fail2ban should only be considered as part of a set of security measures to secure your server. Feel free to consult further security measures here on my blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Use Pihole VPN with Wireguard in 2024</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-vpn/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-vpn/</guid>
+      <description>&lt;h2 id=&#34;pihole-vpn---no-ads-on-your-smartphone&#34;&gt;Pihole VPN - No ads on your smartphone&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;pihole VPN with Wireguard&lt;/strong&gt;’, I would like to show you how you can use the ‘&lt;strong&gt;PiVPN&lt;/strong&gt;’ application to access your &lt;strong&gt;Pihole&lt;/strong&gt; on your &lt;strong&gt;smartphone, tablet, or laptop&lt;/strong&gt; and thus enjoy the benefits of Pihole, namely surfing without annoying ads, even when you&amp;rsquo;re &lt;strong&gt;on the go&lt;/strong&gt;.
+I&amp;rsquo;ll show you how it all works in my video on my YouTube channel!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Pihole Unbound correctly</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-unbound/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-unbound/</guid>
+      <description>&lt;h2 id=&#34;pihole-unbound-and-dns-encryption---for-more-network-security&#34;&gt;Pihole Unbound and DNS encryption - For more network security&lt;/h2&gt;
+&lt;p&gt;In today&amp;rsquo;s video tutorial, ‘&lt;strong&gt;Pi-hole Unbound&lt;/strong&gt;’, I would like to show you how you can use the additional tool ‘&lt;strong&gt;Unbound&lt;/strong&gt;’ to ensure greater security for your DNS queries on the network.
+You will also find all the commands you need to install and configure Unbound alongside Pi-hole.
+Table of contents for Pihole Unbound&lt;/p&gt;
+&lt;h3 id=&#34;requirements-for-installing-pihole-unbound&#34;&gt;Requirements for installing Pihole Unbound&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;note&#34;&gt;Note&lt;/h3&gt;
+&lt;p&gt;These instructions for installing and setting up &lt;strong&gt;Unbound&lt;/strong&gt; are for &lt;strong&gt;Debian-based distributions such as Debian, Ubuntu, Raspberry Pi OS, etc.&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox / AdGuard DNS - Block ads, tracking, and phishing</title>
+      <link>http://localhost:1313/en/posts/fritzbox/fritzbox-adguard-dns/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/fritzbox/fritzbox-adguard-dns/</guid>
+      <description>&lt;h2 id=&#34;setting-up-fritzbox--adguard-dns&#34;&gt;Setting up FritzBox / AdGuard DNS&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://adguard-dns.io/?aid=33604&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/posts/fritzbox/logo_adguard.png&#34; alt=&#34;logo adguard dns&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In this video, I&amp;rsquo;ll show you how you can use AdGuard DNS to protect devices in your home network from ads, tracking, phishing, and malware.
+This video tutorial will show you how to properly configure AdGuard DNS and your FritzBox or other routers.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Obcd2OLgl64?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;what-does-fritzbox--adguard-dns-offer&#34;&gt;What does FritzBox / AdGuard DNS offer?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;AdGuard DNS is “your personal” public recursive DNS server&lt;/strong&gt; that you can customize to your individual needs with block lists, application control, parental controls, and time profiles.
+You also have the option of encrypting your public DNS queries using various encryption protocols (DNS over TLS, DNS over HTTPS, DNS over Quic, and DNSCrypt), giving you one more building block to protect your personal data.
+Another advantage is that you can also use your AdGuard DNS server when you are on the move, so you are always protected.
+&lt;strong&gt;Further information and free access to AdGuard DNS can be found here:&lt;/strong&gt;
+&lt;a href=&#34;https://adguard-dns.io?aid=33604&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;https://adguard-dns.io&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home DNS encryption</title>
+      <link>http://localhost:1313/en/posts/privacy/adguard/adguard-home-dns-over-quic/</link>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/adguard/adguard-home-dns-over-quic/</guid>
+      <description>&lt;h2 id=&#34;adguard-home-dns-encryption-with-dns-over-quic&#34;&gt;AdGuard Home DNS encryption with DNS over QUIC&lt;/h2&gt;
+&lt;p&gt;In this video tutorial on &lt;a href=&#34;https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;my YouTube channel&lt;/strong&gt;&lt;/a&gt;, I show you step by step how you can encrypt external DNS requests from AdGuard Home using the “new” encryption protocol ‘&lt;strong&gt;DNS over QUIC&lt;/strong&gt;’.&lt;/p&gt;
+&lt;h3 id=&#34;adguard-home-dns-encryption---video&#34;&gt;AdGuard Home DNS encryption - Video&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/mog1eFUUc3Y?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;installing-adguard-home&#34;&gt;Installing AdGuard Home&lt;/h3&gt;
+&lt;p&gt;If you want to know how to install AdGuard Home on a Raspberry Pi, for example, you can check out this &lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;guide&lt;/strong&gt;&lt;/a&gt; or this &lt;a href=&#34;https://youtu.be/PF2WH2llwSg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;video&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Update AdGuard Home manually</title>
+      <link>http://localhost:1313/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</guid>
+      <description>&lt;h2 id=&#34;if-the-automatic-adguard-home-update-fails&#34;&gt;If the automatic AdGuard Home update fails&lt;/h2&gt;
+&lt;p&gt;In this post, ‘&lt;strong&gt;Update AdGuard Home manually&lt;/strong&gt;’, and the accompanying video tutorial, I will show you how to perform a manual update on an AdGuard Home instance.&lt;/p&gt;
+&lt;h3 id=&#34;why-update-adguard-home-manually&#34;&gt;Why update AdGuard Home manually?&lt;/h3&gt;
+&lt;p&gt;Some AdGuard Home updates fail to update automatically, for example, version “&lt;strong&gt;AdGuard Home v0.107.17&lt;/strong&gt;.” Therefore, it is necessary to perform a manual update via the command line.&lt;/p&gt;
+&lt;h2 id=&#34;video-tutorial-on-updating-adguard-home-manually&#34;&gt;Video tutorial on ‘Updating AdGuard Home manually’&lt;/h2&gt;
+&lt;p&gt;I have also published a video tutorial on my &lt;a href=&#34;https://www.youtube.com/@secure_bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YouTube channel&lt;/a&gt;.
+In this video, I show you step by step how to perform a manual update on a Linux-based AdGuard Home installation.
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/T4Dp8DDVjHM?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox - Setting up AdGuard Home</title>
+      <link>http://localhost:1313/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/</guid>
+      <description>&lt;h2 id=&#34;block-advertising-and-tracking-with-adguard-home&#34;&gt;Block advertising and tracking with AdGuard Home&lt;/h2&gt;
+&lt;p&gt;In this video, I&amp;rsquo;ll show you how you can block and avoid advertising, tracking, and malware in your home network using an AdGuard DNS server and a FritzBox (also works with Speedport, etc.).&lt;/p&gt;
+&lt;h3 id=&#34;configure-adguard-home&#34;&gt;Configure AdGuard Home&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/i4UODIMb65g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;more-videos-on-adguard&#34;&gt;More videos on AdGuard&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall - Basics | Part 1</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-basics/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-basics/</guid>
+      <description>&lt;h2 id=&#34;basics-of-ufw-firewall-installation-and-setup&#34;&gt;Basics of UFW Firewall Installation and Setup&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, I will show you how to install and set up the UFW firewall (Uncomplicated Firewall) on your Linux distribution.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/BumaXOYey1c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall - Creating Application Profiles | Part 3 | Uncomplicated Firewall</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-application-profiles/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-application-profiles/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---creating-profiles-for-applications&#34;&gt;UFW Firewall - Creating Profiles for Applications&lt;/h2&gt;
+&lt;p&gt;In this video, I will show you how to use an application profile in the UFW firewall to combine multiple ports for an application in an app profile, allowing you to create multiple ports with a single firewall rule.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/TDKaLgWd12A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall - Enabling multiple ports, port ranges, and services | Part 2</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-mehrere-ports/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-mehrere-ports/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---advanced-rules-for-port-ranges&#34;&gt;UFW Firewall - Advanced Rules for Port Ranges&lt;/h2&gt;
+&lt;p&gt;In this video, I&amp;rsquo;ll show you how to enable multiple ports, port ranges, and services simultaneously with the UFW firewall.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-on-the-basics-of-the-ufw-firewall&#34;&gt;Video tutorial on the basics of the UFW firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Gwbq6F1N3xo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;terminal-commands-used-in-the-video&#34;&gt;Terminal commands used in the video&lt;/h3&gt;
+&lt;p&gt;All terminal commands used in this video tutorial can be found in the article ‘&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW firewall Raspberry Pi installation&lt;/a&gt;&lt;/strong&gt;’ here on SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</guid>
+      <description>&lt;h2 id=&#34;installing-ufw-firewall-uncomplicated-firewall-on-a-raspberry-pi&#34;&gt;Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this post, &amp;lsquo;&lt;strong&gt;UFW Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo;, I would like to show you how to install and set up this firewall or command line interface for &lt;strong&gt;iptables&lt;/strong&gt; on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the &lt;strong&gt;Raspberry Pi&lt;/strong&gt;, but can also be used on all other Linux-based distros.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuardHome Setup - Basic Configuration</title>
+      <link>http://localhost:1313/en/posts/privacy/adguard/adguard-home-konfigurieren/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/adguard/adguard-home-konfigurieren/</guid>
+      <description>&lt;h2 id=&#34;adguardhome-setup---configure-to-protect-your-network-from-ads-and-trackers&#34;&gt;AdGuardHome Setup - Configure to protect your network from ads and trackers&lt;/h2&gt;
+&lt;p&gt;In today&amp;rsquo;s tutorial, ‘&lt;strong&gt;Configuring AdGuard&lt;/strong&gt;’, I would like to show you how to perform the &lt;strong&gt;basic AdGuard configuration&lt;/strong&gt; on your Raspberry Pi after installing AdGuard (&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;here for instructions&lt;/a&gt;).
+In this tutorial video, I will show you how to configure the following settings.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Configure DNS&lt;/li&gt;
+&lt;li&gt;Create block lists&lt;/li&gt;
+&lt;li&gt;Network-wide blocking of applications (social networks and other services)&lt;/li&gt;
+&lt;li&gt;Understand protocols&lt;/li&gt;
+&lt;li&gt;And much more&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;video-tutorial---configuring-adguardhome-setup--basic-configuration&#34;&gt;Video tutorial - Configuring AdGuardHome setup | Basic configuration&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;You can watch the video tutorial on my YouTube channel here.&lt;/strong&gt;
+&lt;strong&gt;Just click on the image below.&lt;/strong&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/M-O00xQ23mk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Change FritzBox DNS server</title>
+      <link>http://localhost:1313/en/posts/fritzbox/fritzbox-dns-server-aendern/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/fritzbox/fritzbox-dns-server-aendern/</guid>
+      <description>&lt;h2 id=&#34;video-tutorial---protect-your-privacy-with-the-fritzbox&#34;&gt;Video tutorial - Protect your privacy with the FritzBox&lt;/h2&gt;
+&lt;p&gt;In this video, “&lt;strong&gt;Change FritzBox DNS server&lt;/strong&gt;,” I show you how you can prevent your internet provider from tracking your internet usage by using public DNS servers that comply with data protection regulations.
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Q2b0VrDqluY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+Feel free to subscribe to my YouTube channel so you don&amp;rsquo;t miss any new content.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;install-and-set-up-pi-hole-on-a-raspberry-pi&#34;&gt;Install and set up Pi-hole on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;Install Pi-hole on a Raspberry Pi&lt;/strong&gt;’, I will show you how to install the Pi-hole DNS server and set up a recursive DNS server with Unbound.
+The step-by-step installation is fohttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpghtly on a Raspberry Pi in this tutorial.
+In another tutorial here on SecureBits (&lt;a href=&#34;https://secure-bits.org/pi-hole-installation/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/pi-hole-installation/)&lt;/a&gt;, I already showed you how to install it on a Debian system in a virtual machine and explained why and how you should use a Pi-Hole DNS server.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tip - Setting up Fritzbox port forwarding correctly</title>
+      <link>http://localhost:1313/en/posts/fritzbox/fritzbox-portfreigabe/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/fritzbox/fritzbox-portfreigabe/</guid>
+      <description>&lt;h2 id=&#34;setting-up-fritzbox-port-forwarding&#34;&gt;Setting up FritzBox port forwarding&lt;/h2&gt;
+&lt;p&gt;Today&amp;rsquo;s post is about how to set up &lt;strong&gt;FritzBox port forwarding&lt;/strong&gt; correctly, what you can use it for, and what risks arise from using port forwarding.
+Follow the step-by-step instructions below to set up port forwarding in your FritzBox.
+For those of you who would prefer to watch a video tutorial, there is a video entitled “Setting up port forwarding on a FritzBox” on my YouTube channel.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

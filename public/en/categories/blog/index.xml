@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Blog on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/blog/</link>
+    <description>Recent content in Blog on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/blog/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>UFW-Firewall Raspberry Pi Installation 2023</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi&#34;&gt;UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;UFW-Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für &lt;strong&gt;iptables&lt;/strong&gt; auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den &lt;strong&gt;Raspberry Pi&lt;/strong&gt; beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.&lt;/p&gt;
+&lt;p&gt;Passend zum Tutorial &amp;lsquo;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AdGuard auf dem Raspberry Pi installieren&lt;/a&gt;&amp;rsquo;. bietet sich natürlich an, dass wir die &lt;a href=&#34;https://wiki.ubuntuusers.de/ufw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall&lt;/a&gt; auch auf den Raspberry Pi mit &lt;strong&gt;AdGuard Home&lt;/strong&gt; drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

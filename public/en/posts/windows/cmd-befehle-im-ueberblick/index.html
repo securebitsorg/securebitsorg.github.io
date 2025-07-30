@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>All CMD commands for Windows at a glance 2025</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="You can find a list of the most important CMD commands in this article. You can also download all CMD commands at the end of this overview as a PDF file." />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-gb"></span>
+        
+        English
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/windows/cmd-befehle-im-ueberblick">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/windows/cmd-befehle-im-ueberblick">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/info/"> Information</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/info/information/" title="Information about this blog and YouTube channel">Information about this blog and YouTube channel</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="The Linux IP configuration command &#39;ip&#39;">The Linux IP configuration command &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-traceroute-befehl-unter-linux/" title="The traceroute command in Linux with omprehensive instructions and examples">The traceroute command in Linux with omprehensive instructions and examples</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-debian-based/" title="Configuring the UFW Firewall using a Raspberry Pi as an example">Configuring the UFW Firewall using a Raspberry Pi as an example</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/wie-funktioniert-eine-firewall/" title="How do firewalls work and what different types are there?">How do firewalls work and what different types are there?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Comprehensive guide for IT security managers">Nmap (Network Mapper) - Comprehensive guide for IT security managers</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle-secure/" title="Protection against man-in-the-middle attacks">Protection against man-in-the-middle attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-mehrere-ports/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-application-profiles/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-basics/" title="UFW Firewall Basics">UFW Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle/" title="Understanding Man-in-the-Middle Attacks">Understanding Man-in-the-Middle Attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/mac-adresse/" title="What is a MAC address and what is it used for?">What is a MAC address and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-ein-proxy-server/" title="What is a proxy server and what is it used for?">What is a proxy server and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/what-is-a-unified-threat-management-firewall/" title="What is a UTM firewall?">What is a UTM firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-sniffing/" title="What is network sniffing?">What is network sniffing?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS encryption with DNS over QUIC">AdGuard DNS encryption with DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome Setup – Basic Configuration">AdGuardHome Setup – Basic Configuration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/" title="Configure Fritzbox with AdGuard Home">Configure Fritzbox with AdGuard Home</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="Install AdGuardHome on a Raspberry Pi">Install AdGuardHome on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="Manually update AdGuard Home">Manually update AdGuard Home</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Install Pihole on a Raspberry Pi">Install Pihole on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-basic-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-fritzbox-setup/" title="Pi-hole-/-Fritzbox-configure">Pi-hole-/-Fritzbox-configure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation on Debian-based operating systems">Pihole Installation on Debian-based operating systems</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/windows/"> Windows</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-product-key-activate/" title="Activate Windows Product Key">Activate Windows Product Key</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/change-windows-password/" title="Change your Windows password easily via the terminal">Change your Windows password easily via the terminal</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/en/posts/windows/cmd-befehle-im-ueberblick/" title="CMD commands overview for Windows">CMD commands overview for Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/netstat/" title="Netstat on Windows at a glance">Netstat on Windows at a glance</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/ipconfig-command/" title="The ipconfig command overview">The ipconfig command overview</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-dns-server-aendern/" title="Change the public DNS server/resolver on a Fritzbox">Change the public DNS server/resolver on a Fritzbox</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox and AdGuard DNS">Fritzbox and AdGuard DNS</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-portfreigabe/" title="Set up Fritzbox port forwarding">Set up Fritzbox port forwarding</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href=""> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-powershell/" title="Install Windows Powershell on Linux and Windows">Install Windows Powershell on Linux and Windows</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/windows/Eingabeaufforderung_logo.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Wednesday, March 12, 2025 | 4 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>All CMD commands for Windows at a glance 2025</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/cmd/" class="btn btn-sm btn-info">“cmd”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/powershell/" class="btn btn-sm btn-info">“powershell”</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">‘tutorials’</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/windows/" class="btn btn-sm btn-info">“windows”</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <p><strong>Update - News from Microsoft</strong>
+Microsoft has finally provided comprehensive documentation on how the individual <strong>CMD commands</strong> work. So, of course, I don&rsquo;t want to keep this from you.
+You can now download the documentation further down in this post.</p>
+<h2 id="cmd-commands---not-just-for-nerds">CMD commands - Not just for nerds!</h2>
+<p>Many tasks can be performed more easily or exclusively using the CMD command line tool in Windows. In this article, I would like to provide you with an overview of the most important CMD commands for the command line.
+I have divided these commands into different subject areas further down in this article so that you can get a quick overview.
+CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
+I have already introduced some of these commands for working or gathering information on the network in <strong><a href="https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/" target="_blank" rel="noopener">this article</a></strong> or in the article on what you can do with the <strong><a href="https://secure-bits.org/netstat-unter-windows/" target="_blank" rel="noopener">Netstat command</a></strong> can do everything.
+This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tablehttps://cloud.secure-bits.org/s/qnZ2H8FJCFYTsBzs!</p>
+<h2 id="all-cmd-commands-to-take-with-you">All CMD commands to take with you</h2>
+<p>If you often work with the CMD command line, you will of course need a list of the CMD commands presented here to take with you. This way, you can use this CMD command list at work, for example, and don&rsquo;t have to keep coming back to this blog, which I am of course very happy about. So I&rsquo;ve created a list of CMD commands for you to download as a PDF. That way, you can always have it with you and access the list. You can also download the command list from Microsoft, which contains all the commands in a PDF document.</p>
+<h3 id="what-cmd-commands-are-there">What CMD commands are there?</h3>
+<p>You can find a list of the most important CMD commands in this article. You can also download <strong>all</strong> CMD commands as a PDF at the end of this overview.</p>
+<h3 id="cmd-commands--basics">CMD commands – basics</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CMD commands – the basics</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>call</strong></td>
+          <td>calls a batch file from another batch file</td>
+      </tr>
+      <tr>
+          <td><strong>cd</strong></td>
+          <td>change directory</td>
+      </tr>
+      <tr>
+          <td><strong>cls</strong></td>
+          <td>clear screen output</td>
+      </tr>
+      <tr>
+          <td><strong>color</strong></td>
+          <td>change console color</td>
+      </tr>
+      <tr>
+          <td><strong>date</strong></td>
+          <td>display/change date</td>
+      </tr>
+      <tr>
+          <td><strong>dir</strong></td>
+          <td>display directory contents</td>
+      </tr>
+      <tr>
+          <td><strong>echo</strong></td>
+          <td>Text output</td>
+      </tr>
+      <tr>
+          <td><strong>exit</strong></td>
+          <td>Exit command prompt</td>
+      </tr>
+      <tr>
+          <td><strong>find</strong></td>
+          <td>Search command</td>
+      </tr>
+      <tr>
+          <td><strong>hostname</strong></td>
+          <td>Display computer name</td>
+      </tr>
+      <tr>
+          <td><strong>pause</strong></td>
+          <td>Stop execution of a batch file</td>
+      </tr>
+      <tr>
+          <td><strong>runas</strong></td>
+          <td>Start a program as another user</td>
+      </tr>
+      <tr>
+          <td><strong>shutdown</strong></td>
+          <td>Shut down the PC</td>
+      </tr>
+      <tr>
+          <td><strong>sort</strong></td>
+          <td>Sort output</td>
+      </tr>
+      <tr>
+          <td><strong>start</strong></td>
+          <td>Start program or window</td>
+      </tr>
+      <tr>
+          <td><strong>taskkill</strong></td>
+          <td>End processes</td>
+      </tr>
+      <tr>
+          <td><strong>tasklist</strong></td>
+          <td>Display applications and their tasks</td>
+      </tr>
+      <tr>
+          <td><strong>time</strong></td>
+          <td>Display time</td>
+      </tr>
+      <tr>
+          <td>timeout</td>
+          <td>Wait time in a batch file</td>
+      </tr>
+      <tr>
+          <td>title</td>
+          <td>Command prompt - Change the title</td>
+      </tr>
+      <tr>
+          <td>ver</td>
+          <td>Display the version of the operating system</td>
+      </tr>
+      <tr>
+          <td>for</td>
+          <td>The command for can be executed multiple times in succession</td>
+      </tr>
+      <tr>
+          <td>prompt</td>
+          <td>Change the input</td>
+      </tr>
+      <tr>
+          <td>w32tm</td>
+          <td>Display or change time server / time synchronization / time zone</td>
+      </tr>
+      <tr>
+          <td>gpupdate</td>
+          <td>Update group policies</td>
+      </tr>
+      <tr>
+          <td>gpresult</td>
+          <td>Display all group policies that are currently active</td>
+      </tr>
+      <tr>
+          <td>reg</td>
+          <td>Display, import, add, and export registry entries</td>
+      </tr>
+      <tr>
+          <td>perform**</td>
+          <td>Start the performance monitor</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="cmd-commands---network">CMD commands - Network</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CMD commands - Network</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>NCAP.CPL**</td>
+          <td>Open the network connections GUI</td>
+      </tr>
+      <tr>
+          <td>ipconfig /all**</td>
+          <td>Status of network connections</td>
+      </tr>
+      <tr>
+          <td>ftp**</td>
+          <td>Transfer data using the FTP protocol</td>
+      </tr>
+      <tr>
+          <td>netsh**</td>
+          <td>Configure and display network components</td>
+      </tr>
+      <tr>
+          <td>nslookup**</td>
+          <td>Display the DNS server used</td>
+      </tr>
+      <tr>
+          <td>ping**</td>
+          <td>Send a ping query to a host to check whether it is accessible</td>
+      </tr>
+      <tr>
+          <td><strong>route</strong></td>
+          <td>List all commands for the <strong>route</strong> command</td>
+      </tr>
+      <tr>
+          <td><strong>tracert</strong></td>
+          <td>Command for route tracing</td>
+      </tr>
+      <tr>
+          <td><strong>systeminfo</strong></td>
+          <td>Query the network interface  <!-- raw HTML omitted -->General system information  <!-- raw HTML omitted -->Display installed hotfix components</td>
+      </tr>
+      <tr>
+          <td><strong>telnet</strong></td>
+          <td>Establish a Telnet connection</td>
+      </tr>
+      <tr>
+          <td><strong>pathping</strong></td>
+          <td>Display individual hops to the destination address</td>
+      </tr>
+      <tr>
+          <td><strong>netstat</strong></td>
+          <td>Retrieve TCP connections and display their status</td>
+      </tr>
+      <tr>
+          <td><strong>tftp</strong></td>
+          <td>Transfer to a tftp server</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="cmd-commands---data-carriers">CMD commands - Data carriers</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CMD commands - Data carriers</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>vol</strong></td>
+          <td>Name and serial number of the data carrier</td>
+      </tr>
+      <tr>
+          <td><strong>format</strong></td>
+          <td>This command allows you to format a data carrier</td>
+      </tr>
+      <tr>
+          <td><strong>chkdsk</strong></td>
+          <td>Checking a data carrier</td>
+      </tr>
+      <tr>
+          <td><strong>diskpart</strong></td>
+          <td>Disk management from the console</td>
+      </tr>
+      <tr>
+          <td><strong>defrag</strong></td>
+          <td>Start the defragmentation of drives</td>
+      </tr>
+      <tr>
+          <td><strong>chkntfs</strong></td>
+          <td>This command allows you to display the disk check when Windows starts</td>
+      </tr>
+      <tr>
+          <td><strong>drivequery</strong></td>
+          <td>Display all installed devices and their properties</td>
+      </tr>
+      <tr>
+          <td><strong>mode</strong></td>
+          <td>Configure devices and interfaces</td>
+      </tr>
+      <tr>
+          <td><strong>mountvol</strong></td>
+          <td>Assign or delete drive letters</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="cmd-commands---file-editing">CMD commands - File editing</h3>
+<table>
+  <thead>
+      <tr>
+          <th>CMD commands - Files</th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>mkdir</strong></td>
+          <td>Create directory</td>
+      </tr>
+      <tr>
+          <td><strong>erase / del</strong></td>
+          <td>Delete a file or files</td>
+      </tr>
+      <tr>
+          <td><strong>copy / xcopy</strong></td>
+          <td>Copy files</td>
+      </tr>
+      <tr>
+          <td><strong>move</strong></td>
+          <td>Move files</td>
+      </tr>
+      <tr>
+          <td><strong>expand</strong></td>
+          <td>Extract/unzip files</td>
+      </tr>
+      <tr>
+          <td><strong>replace</strong></td>
+          <td>Replace files</td>
+      </tr>
+      <tr>
+          <td><strong>rename</strong></td>
+          <td>Rename files</td>
+      </tr>
+      <tr>
+          <td><strong>comp</strong></td>
+          <td>Compare file contents</td>
+      </tr>
+      <tr>
+          <td><strong>tree</strong></td>
+          <td>Display folder structure graphically</td>
+      </tr>
+      <tr>
+          <td><strong>type</strong></td>
+          <td>Display text files (contents)</td>
+      </tr>
+      <tr>
+          <td><strong>fc</strong></td>
+          <td>Display differences between files</td>
+      </tr>
+      <tr>
+          <td><strong>attrib</strong></td>
+          <td>Display file attributes</td>
+      </tr>
+      <tr>
+          <td><strong>compact</strong></td>
+          <td>Display or change the compression of a file</td>
+      </tr>
+      <tr>
+          <td><strong>diskcomp</strong></td>
+          <td>Compare the contents of two disks</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="download-cmd-commands--overview-from-microsoft">Download CMD commands – overview from Microsoft</h2>
+<p>Microsoft provides an alphabetical overview of CMD commands on its support page. You can find this overview here in this Microsoft documentation.</p>
+<blockquote>
+<ul>
+<li><a href="https://docs.microsoft.com/de-de/windows-server/administration/windows-commands/windows-commands" target="_blank" rel="noopener"><strong>-&gt; Go to Microsoft&rsquo;s CMD command list (all officially supported commands)</strong></a></li>
+</ul></blockquote>
+
+
+
+    
+
+
+<div class="alert success">
+    <span><i data-feather="check-circle"></i></span>
+    <span><strong><a href="https://cloud.secure-bits.org/s/cmdbefehlepdf" target="_blank" rel="noopener">-&gt; You also have the option of downloading the complete command set as a PDF file (as of 2025, 2128 pages!)**</a></strong></span>
+</div>
+
+<p><strong>Almost forgot&hellip;</strong>
+Of course, most of the commands presented here also work in <strong>Windows Powershell</strong>. Thought that should be mentioned!</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fwindows%2fcmd-befehle-im-ueberblick%2f&title=All%20CMD%20commands%20for%20Windows%20at%20a%20glance%202025" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=All%20CMD%20commands%20for%20Windows%20at%20a%20glance%202025&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fwindows%2fcmd-befehle-im-ueberblick%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/en/posts/windows/change-windows-password/" title="Change your Windows password now" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Change your Windows password now</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/en/posts/windows/netstat/" title="Netstat under Windows" class="btn filled-button">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Netstat under Windows</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#cmd-commands---not-just-for-nerds">CMD commands - Not just for nerds!</a></li>
+    <li><a href="#all-cmd-commands-to-take-with-you">All CMD commands to take with you</a>
+      <ul>
+        <li><a href="#what-cmd-commands-are-there">What CMD commands are there?</a></li>
+        <li><a href="#cmd-commands--basics">CMD commands – basics</a></li>
+        <li><a href="#cmd-commands---network">CMD commands - Network</a></li>
+        <li><a href="#cmd-commands---data-carriers">CMD commands - Data carriers</a></li>
+        <li><a href="#cmd-commands---file-editing">CMD commands - File editing</a></li>
+      </ul>
+    </li>
+    <li><a href="#download-cmd-commands--overview-from-microsoft">Download CMD commands – overview from Microsoft</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

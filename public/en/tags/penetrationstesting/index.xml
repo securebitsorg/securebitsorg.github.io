@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Penetrationstesting on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/penetrationstesting/</link>
+    <description>Recent content in Penetrationstesting on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 25 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/penetrationstesting/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Man in the Middle Angriffe verstehen</title>
+      <link>http://localhost:1313/en/posts/security/man-in-the-middle/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/man-in-the-middle/</guid>
+      <description>&lt;h2 id=&#34;man-in-the-middle-angriff---definition&#34;&gt;Man in the Middle Angriff - Definition&lt;/h2&gt;
+&lt;p&gt;In dem heutigen Beitrag geht es um das Thema eines &lt;strong&gt;Man in the Middle Angriffs&lt;/strong&gt;. Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert, möchte ich euch gerne in diesem Artikel näher erläutern.&lt;/p&gt;
+&lt;p&gt;Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so hinterlasst einfach einen Kommentar oder kontaktiert mich über das &lt;a href=&#34;https://secure-bits.org/kontakt/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Kontaktformular&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

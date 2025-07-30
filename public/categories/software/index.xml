@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Software on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/software/</link>
+    <description>Recent content in Software on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 08 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/software/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Jetzt einfach Windows Passwort ändern</title>
+      <link>http://localhost:1313/posts/windows/windows-passwort-aendern/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/windows-passwort-aendern/</guid>
+      <description>&lt;h2 id=&#34;passwort-ändern-unter-windows&#34;&gt;Passwort ändern unter Windows&lt;/h2&gt;
+&lt;p&gt;Heute möchte ich euch in diesem Artikel “Windows Passwort ändern” zeigen wie ihr euer Passwort in den Windows 10-Systemeinstellungen, sowie das Ganze auch über die Kommandozeile CMD oder PowerShell ändern könnt. Diese Möglichkeit ist gerade für Administratoren eine schnelle Art und Weise, um schnell und unkompliziert. die Passwörter von Nutzern auf einem Windows-Computer oder auch über eine Domäne hinweg, zu ändern.&lt;/p&gt;
+&lt;h2 id=&#34;möglichkeit-1--windows-passwort-ändern-firmenrechner-in-einer-domäne&#34;&gt;Möglichkeit 1 – Windows Passwort ändern (Firmenrechner in einer Domäne)&lt;/h2&gt;
+&lt;p&gt;Für alle die einen Windows Firmen-Rechner besitzen der Teil einer Domäne ist, kann die Änderung des Passworts wie folgt durchgeführt werden. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows PowerShell installieren</title>
+      <link>http://localhost:1313/posts/windows/windows-powershell/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/windows-powershell/</guid>
+      <description>&lt;p&gt;In diesem Artikel möchte ich euch das neue (so neu ist es nun auch nicht) Kommandozeilen-Tool Windows PowerShell ein bisschen näherbringen und euch die Unterschiede zur klassischen Kommandozeile CMD aufzeigen. Warum zur Administration die PowerShell das Tool eurer Wahl sein sollte, erfahrt ihr in diesem Beitrag. &lt;/p&gt;
+&lt;p&gt;Was es mit dem klassischen Kommandozeilen-Interpreter CMD auf sich hat, dass erfahrt ihr in diesem Artikel: &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CMD-Befehle im Überblick&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;windows-powershell-installieren---ein-mächtiges-tool&#34;&gt;Windows PowerShell installieren - Ein mächtiges Tool&lt;/h2&gt;
+&lt;p&gt;Die &lt;strong&gt;Windows PowerShell&lt;/strong&gt; ist ein Framework, welches für Administratoren und Power-User ein unerlässliches Tool zur Automatisierung und Verwaltung von plattformübergreifenden Systemen darstellt. Dieses Framework besteht aus einem Kommandozeileninterpreter sowie einer Scriptsprache.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

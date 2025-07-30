@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pi-hole on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/posts/pihole/</link>
+    <description>Recent content in Pi-hole on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/pihole/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version</title>
+      <link>http://localhost:1313/posts/pihole/pihole-mit-der-aktuellsten-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-mit-der-aktuellsten-php-version/</guid>
+      <description>&lt;h2 id=&#34;pihole-mit-php-83-auf-dem-raspberry-pi-os-installieren&#34;&gt;Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pihole mit PHP 8.3 installieren&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könE-Hat für Raspberry Pi 5nt.&lt;/p&gt;
+&lt;h3 id=&#34;hintergrund-von-diesem-tutorial&#34;&gt;Hintergrund von diesem Tutorial&lt;/h3&gt;
+&lt;p&gt;Bei einer Testinstallation von &lt;strong&gt;Pihole mit Debian 11&lt;/strong&gt; auf meinem Raspberry Pi, ist mir beim Installationsprozess aufgefallen, dass die Installationsroutine auf dem &lt;strong&gt;Raspberry Pi OS lite, ein PHP-7.4 installiert&lt;/strong&gt;, welches schon seit &lt;strong&gt;Mitte 2023 nicht mehr mit Sicherheitsupdates&lt;/strong&gt; versorgt wird und somit &lt;strong&gt;EOL (End of life)&lt;/strong&gt; ist.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen</title>
+      <link>http://localhost:1313/posts/pihole/pihole-vpn/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-vpn/</guid>
+      <description>&lt;h2 id=&#34;pihole-vpn---keine-werbung-auf-dem-smartphone&#34;&gt;Pihole VPN - Keine Werbung auf dem Smartphone&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;pihole VPN mit Wireguard&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr via die Applikation &amp;lsquo;&lt;strong&gt;PiVPN&lt;/strong&gt;&amp;rsquo;, euren &lt;strong&gt;Pihole&lt;/strong&gt; auf dem &lt;strong&gt;Smartphone, Tablet oder Laptop&lt;/strong&gt; und somit die Vorteile von Pihole , nämlich ohne lästige Werbung zu surfen, von &lt;strong&gt;unterwegs&lt;/strong&gt; aus auch nutzen könnt.&lt;/p&gt;
+&lt;p&gt;Wie das alles funktioniert, zeige ich euch in meinem Video auf meinem YouTube-Kanal!&lt;/p&gt;
+&lt;p&gt;Inhaltsverzeichnis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn-keine-werbung-auf-dem-smartphone&#34;&gt;Pihole VPN - Keine Werbung auf dem Smartphone&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#voraussetzungen-fur-dieses-tutorial&#34;&gt;Voraussetzungen für dieses Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hinweis&#34;&gt;Hinweis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#video-tutorial-zum-thema-pihole-vpn-mit-wireguard&#34;&gt;Video-Tutorial zum Thema &amp;lsquo;pihole VPN mit Wireguard&amp;rsquo;.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#befehle-zum-einrichten-von-pi-hole-pi-vpn-und-wire-guard&#34;&gt;Befehle zum Einrichten von Pi-hole, PiVPN und WireGuard&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#bitte-beachten&#34;&gt;Bitte beachten!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn-installation-der-ufw-firewall&#34;&gt;Pihole VPN - Installation der UFW-Firewall&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn-installation-und-einrichtung-von-pi-vpn-auf-dem-raspberry-pi&#34;&gt;Pihole VPN - Installation und Einrichtung von PiVPN auf dem Raspberry Pi&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pi-vpn-wire-guard-befehlsliste&#34;&gt;PiVPN WireGuard - Befehlsliste&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#zusatzliche-informationen-zum-thema-pi-hole-vpn&#34;&gt;Zusätzliche Informationen zum Thema &amp;lsquo;Pi-hole VPN&amp;rsquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;voraussetzungen-für-dieses-tutorial&#34;&gt;Voraussetzungen für dieses Tutorial&lt;/h3&gt;
+&lt;p&gt;Damit ihr bei der Einrichtung eines VPN-Servers zusammen mit Pi-hole ein leichtes Spiel habt, muss euer Setup die folgenden Voraussetzungen erfüllen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole Unbound jetzt richtig installieren</title>
+      <link>http://localhost:1313/posts/pihole/pihole-unbound/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-unbound/</guid>
+      <description>&lt;h2 id=&#34;pihole-unbound-und-dns-verschlüsselung---für-mehr-sicherheit-im-netzwerk&#34;&gt;Pihole Unbound und DNS-Verschlüsselung - Für mehr Sicherheit im Netzwerk&lt;/h2&gt;
+&lt;p&gt;Im heutigem Video-Tutorial &amp;lsquo;&lt;strong&gt;Pi-hole Unbound&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr mithilfe von dem zusätzlichen Tool &amp;lsquo;&lt;strong&gt;Unbound&lt;/strong&gt;&amp;rsquo;, für mehr Sicherheit bei euren DNS-Anfragen im Netzwerk sorgen könnt.&lt;/p&gt;
+&lt;p&gt;Weiterhin findet ihr alle Befehle die ihr für die Installation und Konfiguration von Unbound neben Pi-hole braucht.&lt;/p&gt;
+&lt;p&gt;Inhaltsverzeichnis zu Pihole Unbound&lt;/p&gt;
+&lt;h3 id=&#34;voraussetzungen-für-pihole-unbound-installation&#34;&gt;Voraussetzungen für Pihole Unbound Installation&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;hinweis&#34;&gt;Hinweis&lt;/h3&gt;
+&lt;p&gt;Diese Anleitung für die Installation und Einrichtung von &lt;strong&gt;Unbound&lt;/strong&gt; ist für &lt;strong&gt;debianbasierte Distributionen wie Debian, Ubuntu, Raspberry Pi OS, etc&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Backup mit Teleporter</title>
+      <link>http://localhost:1313/posts/pihole/pi-hole-backup-mit-teleporter/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pi-hole-backup-mit-teleporter/</guid>
+      <description>&lt;h2 id=&#34;pi-hole-backup-sichern-und-wiederherstellen&#34;&gt;Pi-hole Backup sichern und wiederherstellen&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial &amp;lsquo;Pi-hole Backup - Pi-hole Sichern und Wiederherstellen&amp;rsquo;, zeige ich euch, wie ihr mit der Hilfe von dem Tool &amp;lsquo;Teleporter&amp;rsquo; ein Backup von eurer Pi-hole-Installation durchführen könnt und dieses Backup auf einer anderen Pi-hole Instanz, wiederherstellen könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-pi-hole-backup&#34;&gt;Video-Tutorial Pi-hole Backup&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/JPVtLvRtQE0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Video-Tutorial zum Thema Pi-hole Sichern und Wiederherstellen&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole einrichten / konfigurieren</title>
+      <link>http://localhost:1313/posts/pihole/pihole-basis-konfiguration/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-basis-konfiguration/</guid>
+      <description>&lt;h2 id=&#34;pihole-einrichten---basis-konfiguration&#34;&gt;Pihole einrichten - Basis-Konfiguration&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial &amp;lsquo;Pi-hole Basis-Konfiguration&amp;rsquo; gehe ich mit euch Schritt für Schritt die Einrichtung von dem Pi-hole DNS-Server durch und erkläre euch, was die einzelnen Funktionen / Menüpunkte bedeuten.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/IMYnydNM3rk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Bei Fragen zum Thema schriebt einfach einen Kommentar entweder unter dem Video auf YouTube oder hier unter diesem Blog-Beitrag.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox &#43; Pihole | FritzBox konfigurieren</title>
+      <link>http://localhost:1313/posts/pihole/pihole-fritzbox-konfigurieren/</link>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-fritzbox-konfigurieren/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--pihole---richtig-konfigurieren-dass-alle-geräte-pi-hole-als-dns-server-nutzen&#34;&gt;FritzBox + Pihole - Richtig konfigurieren, dass alle Geräte Pi-hole als DNS-Server nutzen&lt;/h2&gt;
+&lt;p&gt;In diesem Video auf meinem &lt;a href=&#34;https://www.youtube.com/@secure_bits/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YouTube-Kanal&lt;/a&gt; zeige ich euch, wie ihr die &lt;strong&gt;FritzBox&lt;/strong&gt; richtig konfigurieren müsst, dass auch wirklich alle Geräte sowie Software, den &lt;strong&gt;Pi-hole&lt;/strong&gt; als DNS-Server im Netzwerk nutzen und diesen nicht umgehen können.&lt;/p&gt;
+&lt;p&gt;Es gibt sicherlich auch in eurem internen Netzwerk einige Geräte sowie Software, die eine sogenannte fest implementierte IP-Adresse für einen öffentlichen DNS-Server (&lt;strong&gt;hardcoded&lt;/strong&gt;) haben.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>
