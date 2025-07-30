@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tipps-Tutorials on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/tipps-tutorials/</link>
+    <description>Recent content in Tipps-Tutorials on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 15 Feb 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/tipps-tutorials/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>MAC Adresse - Was ist das?</title>
+      <link>http://localhost:1313/posts/security/mac-adresse/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/mac-adresse/</guid>
+      <description>&lt;h2 id=&#34;macadressen&#34;&gt;MAC Adressen &lt;/h2&gt;
+&lt;p&gt;Was ist eine &lt;strong&gt;MAC Adresse&lt;/strong&gt; und wofür wird diese gebraucht? Diese Fragen und weitere Begriffe und Funktion rund um das Thema MAC Adressen möchte ich gerne in diesem Artikel erklären. &lt;/p&gt;
+&lt;h2 id=&#34;was-ist-eine-mac-adresse&#34;&gt;Was ist eine MAC Adresse? &lt;/h2&gt;
+&lt;p&gt;Zur Identifikation eines netzwerkfähigen Geräts (Host) im Netzwerk dient die &lt;strong&gt;MAC Adresse&lt;/strong&gt;. Diese Adresse ist in eigentlich einmalig (dazu später mehr) und stellt die eindeutige Adressierbarkeit eines Geräts sicher.  &lt;/p&gt;
+&lt;h2 id=&#34;aufbau&#34;&gt;Aufbau&lt;/h2&gt;
+&lt;p&gt;Diese Adresse besteht aus einer 48-Bit langen Adresse und sollte weltweit einmalig sein. Diese Adresse wird im OSI-Modell der Sicherungsschicht 2 (Data-Link-Layer) zugeordnet um eine Adressierung im Netzwerk zu gewährleisten.  &lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

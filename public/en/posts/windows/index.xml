@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/posts/windows/</link>
+    <description>Recent content in Windows on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 27 Jul 2025 10:17:10 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/posts/windows/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Netstat under Windows</title>
+      <link>http://localhost:1313/en/posts/windows/netstat/</link>
+      <pubDate>Sun, 27 Jul 2025 10:17:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/netstat/</guid>
+      <description>&lt;h2 id=&#34;display-tcp-connections-and-ports-in-windows-with-netstat&#34;&gt;Display TCP connections and ports in Windows with netstat&lt;/h2&gt;
+&lt;p&gt;In this article, I would like to introduce you to the command/tool &lt;strong&gt;netstat&lt;/strong&gt; in Windows and show you how you can use this command to check or display active TCP connections, open ports, and other statistics such as an IPv4 overview of the Internet protocols IP, TCP, ICMP, and UDP.&lt;/p&gt;
+&lt;h3 id=&#34;what-do-i-use-the-netstat-commands-for&#34;&gt;What do I use the Netstat commands for?&lt;/h3&gt;
+&lt;p&gt;When analyzing the security of an operating system, it is of course important to know which connections the operating system or installed software establishes to services on the Internet. Furthermore, malware can also be quickly detected by displaying listening ports. The netstat command can be used to list these connections and listening ports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ipconfig-command</title>
+      <link>http://localhost:1313/en/posts/windows/ipconfig-command/</link>
+      <pubDate>Wed, 23 Jul 2025 07:50:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/ipconfig-command/</guid>
+      <description>&lt;p&gt;You can find an &lt;strong&gt;overview of all CMD commands&lt;/strong&gt; in &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;this article&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ipconfig-commands-at-a-glance&#34;&gt;ipconfig commands at a glance&lt;/h2&gt;
+&lt;p&gt;If you often make changes to your IP address or DNS resolution, for example because you use multiple DNS servers, you will be familiar with the problem that configuring the network adapter using the standard board tools (GUI) is not exactly convenient. The command line (CMD or Powershell) is ideal for this purpose. This overview shows which commands, including the &lt;strong&gt;ipconfig&lt;/strong&gt; command, are available for the individual actions to change the settings of the network adapters.&lt;br&gt;
+In this overview, the &lt;strong&gt;CMD&lt;/strong&gt; command prompt is used. This command prompt is called up by typing ‘cmd’ in the Windows search field. The fastest way to access the search field is by pressing the &lt;strong&gt;Windows key + R&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>All CMD commands for Windows at a glance 2025</title>
+      <link>http://localhost:1313/en/posts/windows/cmd-befehle-im-ueberblick/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/cmd-befehle-im-ueberblick/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update - News from Microsoft&lt;/strong&gt;
+Microsoft has finally provided comprehensive documentation on how the individual &lt;strong&gt;CMD commands&lt;/strong&gt; work. So, of course, I don&amp;rsquo;t want to keep this from you.
+You can now download the documentation further down in this post.&lt;/p&gt;
+&lt;h2 id=&#34;cmd-commands---not-just-for-nerds&#34;&gt;CMD commands - Not just for nerds!&lt;/h2&gt;
+&lt;p&gt;Many tasks can be performed more easily or exclusively using the CMD command line tool in Windows. In this article, I would like to provide you with an overview of the most important CMD commands for the command line.
+I have divided these commands into different subject areas further down in this article so that you can get a quick overview.
+CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
+I have already introduced some of these commands for working or gathering information on the network in &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;this article&lt;/a&gt;&lt;/strong&gt; or in the article on what you can do with the &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/netstat-unter-windows/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Netstat command&lt;/a&gt;&lt;/strong&gt; can do everything.
+This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tablehttps://cloud.secure-bits.org/s/qnZ2H8FJCFYTsBzs!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Change your Windows password now</title>
+      <link>http://localhost:1313/en/posts/windows/change-windows-password/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/change-windows-password/</guid>
+      <description>&lt;h2 id=&#34;change-your-password-in-windows&#34;&gt;Change your password in Windows&lt;/h2&gt;
+&lt;p&gt;Today, in this article, “Change Windows password,” I would like to show you how to change your password in the Windows 10 system settings, as well as how to do this via the CMD command line or PowerShell. This option is a quick and easy way for administrators to change user passwords on a Windows computer or even across a domain.&lt;/p&gt;
+&lt;h2 id=&#34;option-1--change-windows-password-company-computer-in-a-domain&#34;&gt;Option 1 – Change Windows password (company computer in a domain)&lt;/h2&gt;
+&lt;p&gt;For anyone who has a Windows company computer that is part of a domain, the password can be changed as follows.
+Simply press the following key combination:
+&lt;strong&gt;CTRL + ALT + DEL&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Windows PowerShell</title>
+      <link>http://localhost:1313/en/posts/windows/windows-powershell/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/windows-powershell/</guid>
+      <description>&lt;p&gt;In this article, I would like to introduce you to the new (well, not that new) command line tool Windows PowerShell and show you the differences between it and the classic CMD command line. In this article, you will learn why PowerShell should be your tool of choice for administration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find out what the classic command line interpreter CMD is all about in this article: &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CMD commands at a glance&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Activate Windows Product Key</title>
+      <link>http://localhost:1313/en/posts/windows/windows-product-key-activate/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/windows-product-key-activate/</guid>
+      <description>&lt;blockquote&gt;
+&lt;h3 id=&#34;other-windows-versions&#34;&gt;Other Windows versions&lt;/h3&gt;
+&lt;p&gt;Of course, you can also use this method to change or activate the product key for any other Windows version.
+To activate it, you will need to use your product key instead! The product keys shown in this article are only suitable for use with Windows Insider Preview!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;activate-windows-product-key&#34;&gt;Activate Windows Product Key&lt;/h2&gt;
+&lt;p&gt;When performing an in-place upgrade of Windows 10 Enterprise, you may be prompted to reactivate Windows after the upgrade. When you try to reactivate, the process ends with an error code.  &lt;a href=&#34;windows-key-aktivieren.de.md&#34;&gt;text&lt;/a&gt;
+The following instructions will show you how to change the product key and then activate your Windows 10 Insider Preview or any other version of Windows.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

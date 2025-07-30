@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Hardware” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/hardware/</link>
+    <description>Recent content in “Hardware” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 20 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/hardware/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>UFW Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/ufw-firewall-debian-based/</guid>
+      <description>&lt;h2 id=&#34;installing-ufw-firewall-uncomplicated-firewall-on-a-raspberry-pi&#34;&gt;Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this post, &amp;lsquo;&lt;strong&gt;UFW Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo;, I would like to show you how to install and set up this firewall or command line interface for &lt;strong&gt;iptables&lt;/strong&gt; on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the &lt;strong&gt;Raspberry Pi&lt;/strong&gt;, but can also be used on all other Linux-based distros.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;install-and-set-up-pi-hole-on-a-raspberry-pi&#34;&gt;Install and set up Pi-hole on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;Install Pi-hole on a Raspberry Pi&lt;/strong&gt;’, I will show you how to install the Pi-hole DNS server and set up a recursive DNS server with Unbound.
+The step-by-step installation is fohttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpghtly on a Raspberry Pi in this tutorial.
+In another tutorial here on SecureBits (&lt;a href=&#34;https://secure-bits.org/pi-hole-installation/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/pi-hole-installation/)&lt;/a&gt;, I already showed you how to install it on a Debian system in a virtual machine and explained why and how you should use a Pi-Hole DNS server.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tip - Setting up Fritzbox port forwarding correctly</title>
+      <link>http://localhost:1313/en/posts/fritzbox/fritzbox-portfreigabe/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/fritzbox/fritzbox-portfreigabe/</guid>
+      <description>&lt;h2 id=&#34;setting-up-fritzbox-port-forwarding&#34;&gt;Setting up FritzBox port forwarding&lt;/h2&gt;
+&lt;p&gt;Today&amp;rsquo;s post is about how to set up &lt;strong&gt;FritzBox port forwarding&lt;/strong&gt; correctly, what you can use it for, and what risks arise from using port forwarding.
+Follow the step-by-step instructions below to set up port forwarding in your FritzBox.
+For those of you who would prefer to watch a video tutorial, there is a video entitled “Setting up port forwarding on a FritzBox” on my YouTube channel.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Pi-Hole” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/pi-hole/</link>
+    <description>Recent content in “Pi-Hole” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 27 Feb 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/pi-hole/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Use Pihole VPN with Wireguard in 2024</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-vpn/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-vpn/</guid>
+      <description>&lt;h2 id=&#34;pihole-vpn---no-ads-on-your-smartphone&#34;&gt;Pihole VPN - No ads on your smartphone&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;pihole VPN with Wireguard&lt;/strong&gt;’, I would like to show you how you can use the ‘&lt;strong&gt;PiVPN&lt;/strong&gt;’ application to access your &lt;strong&gt;Pihole&lt;/strong&gt; on your &lt;strong&gt;smartphone, tablet, or laptop&lt;/strong&gt; and thus enjoy the benefits of Pihole, namely surfing without annoying ads, even when you&amp;rsquo;re &lt;strong&gt;on the go&lt;/strong&gt;.
+I&amp;rsquo;ll show you how it all works in my video on my YouTube channel!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Pihole Unbound correctly</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-unbound/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-unbound/</guid>
+      <description>&lt;h2 id=&#34;pihole-unbound-and-dns-encryption---for-more-network-security&#34;&gt;Pihole Unbound and DNS encryption - For more network security&lt;/h2&gt;
+&lt;p&gt;In today&amp;rsquo;s video tutorial, ‘&lt;strong&gt;Pi-hole Unbound&lt;/strong&gt;’, I would like to show you how you can use the additional tool ‘&lt;strong&gt;Unbound&lt;/strong&gt;’ to ensure greater security for your DNS queries on the network.
+You will also find all the commands you need to install and configure Unbound alongside Pi-hole.
+Table of contents for Pihole Unbound&lt;/p&gt;
+&lt;h3 id=&#34;requirements-for-installing-pihole-unbound&#34;&gt;Requirements for installing Pihole Unbound&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;note&#34;&gt;Note&lt;/h3&gt;
+&lt;p&gt;These instructions for installing and setting up &lt;strong&gt;Unbound&lt;/strong&gt; are for &lt;strong&gt;Debian-based distributions such as Debian, Ubuntu, Raspberry Pi OS, etc.&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox &#43; Pihole | Configuring FritzBox</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-fritzbox-setup/</link>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-fritzbox-setup/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--pihole---configure-correctly-so-that-all-devices-use-pi-hole-as-their-dns-server&#34;&gt;FritzBox + Pihole - Configure correctly so that all devices use Pi-hole as their DNS server&lt;/h2&gt;
+&lt;p&gt;In this video on my &lt;a href=&#34;https://www.youtube.com/@secure_bits/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YouTube channel&lt;/a&gt;, I show you how to configure the &lt;strong&gt;FritzBox&lt;/strong&gt; correctly so that all devices and software use the &lt;strong&gt;Pi-hole&lt;/strong&gt; as the DNS server in the network and cannot bypass it.
+There are certainly some devices and software in your internal network that have a so-called hard-coded IP address for a public DNS server (&lt;strong&gt;hardcoded&lt;/strong&gt;).
+In this video, I show you how to get these devices to always use the Pi-hole DNS server.
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/ir5IF-DlHhc?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+Enjoy watching!&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Raspberry Pi Installation</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;install-and-set-up-pi-hole-on-a-raspberry-pi&#34;&gt;Install and set up Pi-hole on a Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;Install Pi-hole on a Raspberry Pi&lt;/strong&gt;’, I will show you how to install the Pi-hole DNS server and set up a recursive DNS server with Unbound.
+The step-by-step installation is fohttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpghtly on a Raspberry Pi in this tutorial.
+In another tutorial here on SecureBits (&lt;a href=&#34;https://secure-bits.org/pi-hole-installation/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/pi-hole-installation/)&lt;/a&gt;, I already showed you how to install it on a Debian system in a virtual machine and explained why and how you should use a Pi-Hole DNS server.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

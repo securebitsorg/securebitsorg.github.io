@@ -1,0 +1,1594 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Nmap (Network Mapper)</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Nmap (Network Mapper) - Comprehensive guide for IT security managers" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-gb"></span>
+        
+        English
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/security/nmap-network-mapper-umfassender-leitfaden">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/security/nmap-network-mapper-umfassender-leitfaden">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/info/"> Information</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/info/information/" title="Information about this blog and YouTube channel">Information about this blog and YouTube channel</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="The Linux IP configuration command &#39;ip&#39;">The Linux IP configuration command &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/der-traceroute-befehl-unter-linux/" title="The traceroute command in Linux with omprehensive instructions and examples">The traceroute command in Linux with omprehensive instructions and examples</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-debian-based/" title="Configuring the UFW Firewall using a Raspberry Pi as an example">Configuring the UFW Firewall using a Raspberry Pi as an example</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/wie-funktioniert-eine-firewall/" title="How do firewalls work and what different types are there?">How do firewalls work and what different types are there?</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/en/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Comprehensive guide for IT security managers">Nmap (Network Mapper) - Comprehensive guide for IT security managers</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle-secure/" title="Protection against man-in-the-middle attacks">Protection against man-in-the-middle attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-mehrere-ports/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-application-profiles/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-basics/" title="UFW Firewall Basics">UFW Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle/" title="Understanding Man-in-the-Middle Attacks">Understanding Man-in-the-Middle Attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/mac-adresse/" title="What is a MAC address and what is it used for?">What is a MAC address and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-ein-proxy-server/" title="What is a proxy server and what is it used for?">What is a proxy server and what is it used for?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/what-is-a-unified-threat-management-firewall/" title="What is a UTM firewall?">What is a UTM firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/was-ist-sniffing/" title="What is network sniffing?">What is network sniffing?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS encryption with DNS over QUIC">AdGuard DNS encryption with DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome Setup – Basic Configuration">AdGuardHome Setup – Basic Configuration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/" title="Configure Fritzbox with AdGuard Home">Configure Fritzbox with AdGuard Home</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="Install AdGuardHome on a Raspberry Pi">Install AdGuardHome on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="Manually update AdGuard Home">Manually update AdGuard Home</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Install Pihole on a Raspberry Pi">Install Pihole on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-basic-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-fritzbox-setup/" title="Pi-hole-/-Fritzbox-configure">Pi-hole-/-Fritzbox-configure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation on Debian-based operating systems">Pihole Installation on Debian-based operating systems</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-product-key-activate/" title="Activate Windows Product Key">Activate Windows Product Key</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/change-windows-password/" title="Change your Windows password easily via the terminal">Change your Windows password easily via the terminal</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/cmd-befehle-im-ueberblick/" title="CMD commands overview for Windows">CMD commands overview for Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/netstat/" title="Netstat on Windows at a glance">Netstat on Windows at a glance</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/ipconfig-command/" title="The ipconfig command overview">The ipconfig command overview</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-dns-server-aendern/" title="Change the public DNS server/resolver on a Fritzbox">Change the public DNS server/resolver on a Fritzbox</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox and AdGuard DNS">Fritzbox and AdGuard DNS</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-portfreigabe/" title="Set up Fritzbox port forwarding">Set up Fritzbox port forwarding</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href=""> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-powershell/" title="Install Windows Powershell on Linux and Windows">Install Windows Powershell on Linux and Windows</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/linux/erstelle%20ein%20bild%20mit%20einem%20computernetzwerk%20und%20der%20%C3%9Cberschrift%20%27nmap-Tutorial%27.jpeg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Tuesday, July 29, 2025 | 6 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Nmap (Network Mapper)</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/network/" class="btn btn-sm btn-info">network</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <p>
+
+
+    
+
+
+<div class="alert danger">
+    <span><i data-feather="alert-octagon"></i></span>
+    <span><strong><h2 id="the-most-important-thing-first">The most important thing first!</h2>
+<p>It is important to note that the use of <strong>nmap</strong>, <strong>outside of its test/laboratory or production environment</strong>, <strong>may only be done with the consent of its owner</strong>!</p></strong></span>
+</div>
+
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+With this article, I hope to give you a clear understanding of the powerful tool ‘<strong>nmap</strong>’ and also provide you with a <strong>PDF download of the most commonly used nmap commands</strong>.
+<strong>Nmap</strong> is ideal for putting your IT infrastructure through its paces and is also the first vector in 99% of cases when penetration testing systems.</p>
+<h2 id="what-is-nmap">What is Nmap?</h2>
+<p><strong>Nmap (Network Mapper)</strong> is an open-source tool for network discovery and security auditing. As an IT security professional, Nmap is one of the most important tools in your arsenal for assessing network security. It is used to discover hosts and services on a computer network by sending packets and analyzing the responses.</p>
+<p><strong>Main purposes of Nmap:</strong></p>
+<ul>
+<li>Real-time information about a network</li>
+<li>Detailed information about all active IPs on the network</li>
+<li>Number of open ports on a network</li>
+<li>Provide a list of active hosts</li>
+<li>Port, OS, and host scanning</li>
+<li></li>
+</ul>
+<h2 id="installing-nmap">Installing Nmap</h2>
+<p>Nmap is available in most Linux distributions and can be easily installed:</p>
+<p><strong>Debian/Ubuntu:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt-get install nmap
+</span></span></code></pre></div><p><strong>CentOS/RedHat:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>yum install nmap
+</span></span></code></pre></div><p><strong>Fedora:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo dnf install nmap
+</span></span></code></pre></div><h2 id="basic-syntax">Basic syntax</h2>
+<p>The basic syntax of Nmap is</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap [scan type(s)] [options] {target specification}
+</span></span></code></pre></div><h3 id="call-nmap-help">Call nmap-help</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -h
+</span></span></code></pre></div><!-- raw HTML omitted -->
+<p><img src="/images/posts/it-security/nmap-help.png" alt="Ausgabe nmap help nmap -h"></p>
+<p><strong>Output nmap -h</strong></p>
+<h2 id="important-scan-techniques-in-detail">Important scan techniques in detail</h2>
+<h3 id="1-tcp-syn-scan--ss---the-stealth-scan">1. TCP SYN scan (-sS) - The “stealth” scan</h3>
+<p>The <strong>TCP SYN scan</strong> is the standard and most popular scan option. It is also known as a “stealth scan” or “half-open scan” because it never establishes complete TCP connections.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -sS 192.168.1.1
+</span></span></code></pre></div><p><strong>How it works:</strong></p>
+<ul>
+<li>Sends SYN packets to target ports</li>
+<li>For open ports: Receives SYN/ACK response</li>
+<li>For closed ports: Receives RST response</li>
+<li>For filtered ports: No response (firewall)
+<strong>Advantages:</strong></li>
+<li>Fast and inconspicuous</li>
+<li>Works against any TCP stack</li>
+<li>Clear distinction between open, closed, and filtered</li>
+</ul>
+<h3 id="2-tcp-connect-scan--st">2. TCP Connect Scan (-sT)</h3>
+<p>The <strong>TCP Connect Scan</strong> performs the complete TCP handshake.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -sT 192.168.1.1
+</span></span></code></pre></div><p><strong>When to use:</strong></p>
+<ul>
+<li>When root privileges are not available</li>
+<li>For more accurate results on certain systems</li>
+</ul>
+<h3 id="3-udp-scan--su">3. UDP Scan (-sU)</h3>
+<p><strong>UDP scanning</strong> is important for services such as DNS, SNMP, and DHCP.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -sU 192.168.1.1
+</span></span></code></pre></div><p>**Special features:**nmap-help aufrufen</p>
+<ul>
+<li>Slower than TCP scans</li>
+<li>More difficult to interpret</li>
+<li>Important for complete security assessment</li>
+</ul>
+<h2 id="operating-system-detection">Operating system detection</h2>
+<p>Nmap can detect remote operating systems through TCP/IP stack fingerprinting.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -O 192.168.1.1
+</span></span></code></pre></div><p><strong>How it works:</strong></p>
+<ul>
+<li>Sends TCP and UDP packets to the target system</li>
+<li>Analyzes virtually every bit in the responses</li>
+<li>Compares results with a database of over 2,600 OS fingerprints
+<strong>Advanced OS detection:</strong></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -O --osscan-guess 192.168.1.1    <span style="color:#080;background-color:#0f140f;font-style:italic"># Aggressive detection</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -O --osscan-limit 192.168.1.1    <span style="color:#080;background-color:#0f140f;font-style:italic"># Only for good targets</span>
+</span></span></code></pre></div><h2 id="nmap-scripting-engine-nse">Nmap Scripting Engine (NSE)</h2>
+<p>The <strong>Nmap Scripting Engine</strong> is one of the most powerful features of Nmap. It allows you to use Lua scripts for advanced tasks.</p>
+<h3 id="script-categories">Script categories:</h3>
+<ul>
+<li><strong>auth</strong> - Authentication scripts</li>
+<li><strong>broadcast</strong> - Broadcast scripts</li>
+<li><strong>default</strong> - Default scripts</li>
+<li><strong>discovery</strong> - Discovery scripts</li>
+<li><strong>dos</strong> - Denial of service scripts</li>
+<li><strong>exploit</strong> - Exploit scripts</li>
+<li><strong>fuzzer</strong> - Fuzzing scripts</li>
+<li><strong>intrusive</strong> - Intrusive scripts</li>
+<li><strong>malware</strong> - Malware detection</li>
+<li><strong>safe</strong> - Safe scripts</li>
+<li><strong>version</strong> - Version detection</li>
+<li><strong>vuln</strong> - Vulnerability scripts</li>
+</ul>
+<h3 id="nse-examples">NSE examples:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -sC 192.168.1.1                    <span style="color:#080;background-color:#0f140f;font-style:italic"># Standard scripts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap --script vuln 192.168.1.1          <span style="color:#080;background-color:#0f140f;font-style:italic"># Vulnerability scripts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>nmap --script http-* 192.168.1.1        <span style="color:#080;background-color:#0f140f;font-style:italic"># All HTTP scripts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap --script smb-vuln-* 192.168.1.1    <span style="color:#080;background-color:#0f140f;font-style:italic"># SMB vulnerability scripts</span>
+</span></span></code></pre></div><h2 id="timing-templates">Timing templates</h2>
+<p>Nmap offers 6 timing templates for different speed and stealth requirements:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Template</th>
+          <th style="text-align: left">Name</th>
+          <th style="text-align: left">Description</th>
+          <th style="text-align: left">Usage</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">-T0</td>
+          <td style="text-align: left">Paranoid</td>
+          <td style="text-align: left">Very slow (5 min delay)</td>
+          <td style="text-align: left">IDS bypass</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">-T1</td>
+          <td style="text-align: left">Sneaky</td>
+          <td style="text-align: left">Slow (15 sec delay)</td>
+          <td style="text-align: left">IDS bypass</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">-T2</td>
+          <td style="text-align: left">Polite</td>
+          <td style="text-align: left">Polite (0.4 sec delay)</td>
+          <td style="text-align: left">Resource conservation</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">-T3</td>
+          <td style="text-align: left">Normal</td>
+          <td style="text-align: left">Standard (parallel)</td>
+          <td style="text-align: left">Standard</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">-T4</td>
+          <td style="text-align: left">Aggressive</td>
+          <td style="text-align: left">Fast</td>
+          <td style="text-align: left">Modern, reliable networks</td>
+      </tr>
+      <tr>
+          <td style="text-align: left">-T5</td>
+          <td style="text-align: left">Insane</td>
+          <td style="text-align: left">Very fast</td>
+          <td style="text-align: left">Local networks, may be inaccurate</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><strong>Recommendations for IT security:</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<ul>
+<li><strong>Internal audits:</strong> -T4 for fast results</li>
+<li>**External penetration tests: -T2 or -T3 for less conspicuousness</li>
+<li>**Stealth assessments: -T0 or -T1</li>
+</ul>
+<h2 id="output-formats">Output formats</h2>
+<p>Nmap supports various output formats for different purposes:</p>
+<h3 id="normal-output--on">Normal output (-oN)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -oN scan_results.txt 192.168.1.0/24
+</span></span></code></pre></div><ul>
+<li>Standard text format</li>
+<li>Easy to read for humans</li>
+<li>Ideal for individual hosts or small networks</li>
+</ul>
+<h3 id="xml-output--ox">XML output (-oX)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -oX scan_results.xml 192.168.1.0/24
+</span></span></code></pre></div><ul>
+<li>Structured, machine-readable format</li>
+<li>Ideal for automation and databases</li>
+<li>Can be converted to HTML</li>
+</ul>
+<h3 id="grepable-output--og">Grepable Output (-oG)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -oG scan_results.grep 192.168.1.0/24
+</span></span></code></pre></div><ul>
+<li>Optimized for Unix tools such as grep, awk, cut</li>
+<li>One host per line</li>
+<li>Ideal for scripting</li>
+</ul>
+<h3 id="all-formats--oa">All formats (-oA)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>nmap -oA complete_scan 192.168.1.0/24
+</span></span></code></pre></div><ul>
+<li>Creates .nmap, .xml, and .grep files simultaneously</li>
+</ul>
+<h2 id="practical-use-cases-for-it-security-managers">Practical use cases for IT security managers</h2>
+<h3 id="1-network-discovery">1. Network discovery</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Find active hosts on the network</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -sn 192.168.1.0/24
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Detailed host information</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap -A 192.168.1.0/24
+</span></span></code></pre></div><h3 id="2-vulnerability-assessment">2. Vulnerability assessment</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Perform vulnerability scan</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap --script vuln 192.168.1.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Specific vulnerability checks</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap --script smb-vuln-ms17-010 192.168.1.100
+</span></span></code></pre></div><h3 id="3-service-inventory">3. Service inventory</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Record all services and versions</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -sV -p- 192.168.1.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Top 1000 ports with service detection</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap -sV --top-ports <span style="color:#0086f7;font-weight:bold">1000</span> 192.168.1.0/24
+</span></span></code></pre></div><h3 id="4-firewall-testing">4. Firewall testing</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Test firewall rules</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -sA 192.168.1.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Combine different scanning techniques</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap -sS -sU -A 192.168.1.100
+</span></span></code></pre></div><h3 id="5-stealth-reconnaissance">5. Stealth reconnaissance</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Inconspicuous reconnaissance</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -T1 -f --source-port <span style="color:#0086f7;font-weight:bold">53</span> 192.168.1.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># With decoy IPs</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>nmap -D RND:10 192.168.1.100
+</span></span></code></pre></div><h2 id="legal-and-ethical-considerations">Legal and ethical considerations</h2>
+<p>As an IT security manager, you should keep the following points in mind:</p>
+<ol>
+<li><strong>Authorization:</strong> Only use Nmap on your own networks or with explicit permission</li>
+<li>**Documentation: Document all scans for compliance purposes</li>
+<li>**Minimal impact: Use appropriate timing templates</li>
+<li>**Test environment: Use scanme.nmap.org for testing</li>
+</ol>
+<h2 id="best-practices-for-it-security-managers">Best practices for IT security managers</h2>
+<h3 id="1-regular-network-audits">1. Regular network audits</h3>
+<ul>
+<li>Weekly discovery scans with <code>-sn</code></li>
+<li>Monthly full port scans with <code>-sV</code></li>
+<li>Quarterly vulnerability assessments with NSE scripts</li>
+</ul>
+<h3 id="2-automation-and-reporting">2. Automation and reporting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Automated scanning with reporting</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>nmap -sV -A --script vuln -oA monthly_audit_<span style="color:#fb660a;font-weight:bold">$(</span>date +%Y%m%d<span style="color:#fb660a;font-weight:bold">)</span> 192.168.1.0/24
+</span></span></code></pre></div><h3 id="3-monitoring-changes">3. Monitoring changes</h3>
+<ul>
+<li>Compare regular scans to detect new services</li>
+<li>Monitor open ports and services</li>
+<li>Document all changes</li>
+</ul>
+<h2 id="conclusion---nmap">Conclusion - nmap</h2>
+<p>Nmap is an indispensable tool for anyone working in IT security and should also be used by every administrator to check the IT landscape they are responsible for. Mastering its many features allows you to perform effective security assessments, identify vulnerabilities, and continuously improve the security posture of your network.
+I sincerely hope that this brief overview has given some of you a good overview of the <strong>nmap</strong> tool and that nothing stands in the way of its future use.</p>
+<h2 id="download--nmap-commands-at-a-glance">Download | nmap commands at a glance</h2>
+<blockquote>
+<p><a href="https://cloud.secure-bits.org/s/pTY58wfpAty2X6R" target="_blank" rel="noopener">DOWNLOAD nmap-PDF</a></p></blockquote>
+<blockquote>
+<h2 id="questions-and-answers">Questions and answers</h2>
+<p>If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Visit the Help-page</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fnmap-network-mapper-umfassender-leitfaden%2f&title=Nmap%20%28Network%20Mapper%29" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Nmap%20%28Network%20Mapper%29&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fnmap-network-mapper-umfassender-leitfaden%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/en/posts/security/wie-funktioniert-eine-firewall/" title="How does a firewall work?" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">How does a firewall work?</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/en/posts/security/man-in-the-middle-secure/" title="Protect yourself against man-in-the-middle attacks" class="btn filled-button">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Protect yourself against man-in-the-middle attacks</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#what-is-nmap">What is Nmap?</a></li>
+    <li><a href="#installing-nmap">Installing Nmap</a></li>
+    <li><a href="#basic-syntax">Basic syntax</a>
+      <ul>
+        <li><a href="#call-nmap-help">Call nmap-help</a></li>
+      </ul>
+    </li>
+    <li><a href="#important-scan-techniques-in-detail">Important scan techniques in detail</a>
+      <ul>
+        <li><a href="#1-tcp-syn-scan--ss---the-stealth-scan">1. TCP SYN scan (-sS) - The “stealth” scan</a></li>
+        <li><a href="#2-tcp-connect-scan--st">2. TCP Connect Scan (-sT)</a></li>
+        <li><a href="#3-udp-scan--su">3. UDP Scan (-sU)</a></li>
+      </ul>
+    </li>
+    <li><a href="#operating-system-detection">Operating system detection</a></li>
+    <li><a href="#nmap-scripting-engine-nse">Nmap Scripting Engine (NSE)</a>
+      <ul>
+        <li><a href="#script-categories">Script categories:</a></li>
+        <li><a href="#nse-examples">NSE examples:</a></li>
+      </ul>
+    </li>
+    <li><a href="#timing-templates">Timing templates</a></li>
+    <li><a href="#output-formats">Output formats</a>
+      <ul>
+        <li><a href="#normal-output--on">Normal output (-oN)</a></li>
+        <li><a href="#xml-output--ox">XML output (-oX)</a></li>
+        <li><a href="#grepable-output--og">Grepable Output (-oG)</a></li>
+        <li><a href="#all-formats--oa">All formats (-oA)</a></li>
+      </ul>
+    </li>
+    <li><a href="#practical-use-cases-for-it-security-managers">Practical use cases for IT security managers</a>
+      <ul>
+        <li><a href="#1-network-discovery">1. Network discovery</a></li>
+        <li><a href="#2-vulnerability-assessment">2. Vulnerability assessment</a></li>
+        <li><a href="#3-service-inventory">3. Service inventory</a></li>
+        <li><a href="#4-firewall-testing">4. Firewall testing</a></li>
+        <li><a href="#5-stealth-reconnaissance">5. Stealth reconnaissance</a></li>
+      </ul>
+    </li>
+    <li><a href="#legal-and-ethical-considerations">Legal and ethical considerations</a></li>
+    <li><a href="#best-practices-for-it-security-managers">Best practices for IT security managers</a>
+      <ul>
+        <li><a href="#1-regular-network-audits">1. Regular network audits</a></li>
+        <li><a href="#2-automation-and-reporting">2. Automation and reporting</a></li>
+        <li><a href="#3-monitoring-changes">3. Monitoring changes</a></li>
+      </ul>
+    </li>
+    <li><a href="#conclusion---nmap">Conclusion - nmap</a></li>
+    <li><a href="#download--nmap-commands-at-a-glance">Download | nmap commands at a glance</a></li>
+    <li><a href="#questions-and-answers">Questions and answers</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

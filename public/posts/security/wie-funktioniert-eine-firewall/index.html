@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Wie funktioniert eine Firewall?</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Wie funktioniert eine Firewall und welche Arten von Firewall gibt es?" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/security/wie-funktioniert-eine-firewall">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/security/wie-funktioniert-eine-firewall">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Donnerstag, 9. August 2018 | 4 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Wie funktioniert eine Firewall?</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="was-ist-eine-und-wie-funktioniert-eine-firewall">Was ist eine und wie funktioniert eine Firewall?</h2>
+<p>In diesem Artikel möchte ich unter anderem mit Hilfe des OSI-Schichten-Modell die Frage „<strong>Wie funktioniert eine Firewall</strong>“ beantworten. Um Sicherheit in einem Netzwerk zu gewährleisten zu können, ist das Verstehen wie eine Firewall funktioniert, natürlich von größter Wichtigkeit. Daher versuche ich in diesem Beitrag, euch die einzelnen Funktionen einer Firewall hoffentlich verständlich zu erklären. Damit ihr den Datenverkehr optimal auf eure Anforderungen hin steuern könnt.</p>
+<p>Wenn wir die Funktionsweise einer Firewall aufzeigen wollen, dann sollten wir uns zunächst einmal das OSI-Schicht-Modell näher ansehen.</p>
+<h3 id="wie-funktioniert-eine-firewall---osi-schicht-modell">Wie funktioniert eine Firewall - OSI-Schicht Modell</h3>
+<p><img src="/images/posts/it-security/osi-modell.jpg" alt="Das OSI-Schichtenmodell"></p>
+<p>OSI-Schichten Modell - Wie funktioniert eine Firewall</p>
+<p><a href="https://de.wikipedia.org/wiki/OSI-Modell" target="_blank" rel="noopener">Das OSI-Modell</a> ist in sieben Sichten unterteilt, wobei hier zum Thema Firewall nur die Schichten 3, 4 und 7 von Bedeutung sind.</p>
+<h3 id="osi-modellschicht-3--vermittlungsschicht-network-layer">OSI-Modell Schicht 3 - Vermittlungsschicht (Network-Layer)</h3>
+<p>Der Network-Layer beziehungsweise die Vermittlungsschicht ist für das Schalten von Verbindungen (leistungsorientierten Diensten) sowie bei paketorientierten Diensten für die Weitervermittlung von Datenpakete zuständig. Wichtig ist hierbei, dass Pakete nicht in andere Schichten gelangen, sondern von Knoten zu Knoten vermittelt werden. Sind “Sender” und “Empfänger” nicht direkt erreichbar, wird den Paketen immer ein neues Zwischenziel (Knoten) zugewiesen, bis das eigentliche Ziel erreicht wurde.</p>
+<p>Die Aufgabe der Vermittlungsschicht ist es, den Paketen eine Adressierung zu geben, Aushandlung und Sicherstellung einer gewissen Dienstgüte, Aktualisierung der Routingtabellen und Aufbau des Routings selbst.</p>
+<h4 id="hardware-die-in-dieser-schicht-genutzt-werden">Hardware die in dieser Schicht genutzt werden:</h4>
+<blockquote>
+<p>Schreibt mir!</p>
+<p>Wenn hierzu noch Fragen habt, euch etwas nicht gefällt oder ihr habt Fehler entdeckt, dann hinterlasst einen Kommentar. Gerne könnt ihr mir auch Fragen über das Kontaktformular zukommen lassen.</p></blockquote>
+<ul>
+<li>
+<p>Router</p>
+</li>
+<li>
+<p>Layer-3-Switch</p>
+</li>
+</ul>
+<h4 id="protokolle-die-in-dieser-schicht-genutzt-werden">Protokolle die in dieser Schicht genutzt werden:</h4>
+<ul>
+<li>IP, IPsec, ICMP, X25 (WAN), CLNP</li>
+</ul>
+<h3 id="osi-modellschicht-4--transportschicht-transport-layer">OSI-Modell Schicht 4 - Transportschicht (Transport-Layer)</h3>
+<p>Die Transportschicht ist für die Segmentierung und Stauvermeidung des Datenstroms zuständig. </p>
+<p>Die Segmente werden Service Data Unit genannt und werden auf der vierten Schichtebene transportiert. Zur Adressierung wird dem Datensegment eine vierte Schicht-Adresse zugeteilt, diese Adresse ist dann der Port. Dieses Datensegment wird dann in ein Datenpaket gekapselt und kommt in die dritte Schicht (Vermittlungsschicht). </p>
+<h4 id="protokolle">Protokolle:</h4>
+<ul>
+<li>TCP, UDP, SCTP, DCCP </li>
+</ul>
+<h3 id="osi-modellschicht-7--anwendungsschicht-application-layer">OSI-Modell Schicht 7 - Anwendungsschicht (Application-Layer)</h3>
+<p>In der Anwendungsschicht werden Funktionen für Anwendungen (dessen Kommunikation) zur Verfügung gestellt. Hier werden dann die Verbindungen zu den unteren Schichten hergestellt, des Weiteren finden hier auch die Dateneingaben sowie Datenausgaben statt. </p>
+<h4 id="anwendungen-apps">Anwendungen (Apps):</h4>
+<ul>
+<li>E-Mail-Programme, Messaging (z.B. Facebook, Twitter, etc.), Browser </li>
+</ul>
+<h2 id="was-ist-eine-firewall">Was ist eine Firewall?</h2>
+<p>Eine Firewall ist ein Sicherungssystem, das anhand von Regeln einen Netzwerkbereich von unautorisierten Zugriffen schützt. Die Firewall ist selbst nicht in der Lage, Angriffe auf das Netzwerk selbstständig zu erkennen, da die Firewall nur regelbasiert arbeitet. </p>
+<h2 id="grundfunktionen-einer-firewall">Grundfunktionen einer Firewall</h2>
+<p>Als Grundfunktion nutzt die Firewall sogenannte Paketfilter. Dieser Paketfilter arbeitet nach statischen Regeln und überprüft jedes Datenpaket einzeln, kann aber keine Verbindungen zu vorherigen Paketen herstellen. </p>
+<p>Eine erweiterte Form der Paketfilterung ist die sogenannte Stateful Inspection. Bei dieser Paketfilterung werden einzelne Beziehungen zu den überwachten Datenpaketen erkannt und überprüft. </p>
+<h2 id="funktionsweise-der-paketfilterung">Funktionsweise der Paketfilterung</h2>
+<p>Bei der Paketfilterung werden die Datenpakete anhand einer Netzwerkadresse identifiziert und wird ihren Zielen entweder zugeführt oder geblockt. Um diese Richtlinien umzusetzen werden bei den einzelnen Datenpaketen die Header-Informationen ausgewertet und nach diesen Informationen regelbasiert behandelt. Die Paketfilterung arbeitet somit in den Schichten Transport-Layer (Schicht 4, Port), Network-Layer (Schicht 3, IP-Adresse) sowie bei manchen Stateful-Firewalls noch die Schicht Application-Layer (Schicht 7, hier die Nutzerdaten) des OSI-Modells. </p>
+<h2 id="funktionsweise-derstatefulinspectionpaketfilterung">Funktionsweise der Stateful Inspection Paketfilterung</h2>
+<p>Stateful Inspection ist eine dynamische Art der Paketfilterung. Hierbei wird jede Verbindungsanfrage genauer konkretisiert. Beziehungen zu angefragten Datenpaketen und abgegebenen Datenpaketen werden hierbei untersucht und somit kann eine genauere Zuordnung der erlaubten Datenpakete getroffen werden. Hierdurch wird sichergestellt, dass nur beteiligte Kommunikationspartner auf die Verbindung zugreifen können. </p>
+<h2 id="wie-funktioniert-eine-firewall--arten-von-firewall">Wie funktioniert eine Firewall - Arten von Firewall</h2>
+<h3 id="personal-firewall">Personal Firewall</h3>
+<p>Die Personal Firewall oder auch Desktop Firewall genannt, ist eine Sicherheits-Software, die die Kommunikation eines einzelnen Computers überwacht. Die Personal Firewall ist einzeln oder in vielen Antiviren-Sicherheitslösungen der bekannten Hersteller enthalten. Ob diese Art von Sicherheitslösung aus der Sicht der Sicherheit eures Computers empfehlenswert ist, bleibt mal dahingestellt. Hierzu habe ich vor einiger Zeit auch mal einen Beitrag geschrieben. In dem</p>
+<h3 id="externe-firewall">Externe Firewall</h3>
+<p>Eine externe Firewall auch Hardware Firewall genannt, überwacht die Kommunikation je nach Ausstattung der Hardware, entweder ein internes Netzwerk (LAN, zum Beispiel Firmennetzwerk) oder mehrere Subnetze gegenüber anderen Netzwerksegmente (WAN, zum Beispiel Internet) gegen unberechtigte Zugriffe.</p>
+<p>Wobei zu Verständlichkeit der Begriff <strong>Hardware Firewall</strong> hier ein wenig irreführend. Denn eine Firewall basiert immer auf eine Software. Hardware Firewall beschreibt nur die Tatsache, dass diese Sicherheits-Software auf einer separaten Hardware untergebracht ist.</p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fwie-funktioniert-eine-firewall%2f&title=Wie%20funktioniert%20eine%20Firewall%3f" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Wie%20funktioniert%20eine%20Firewall%3f&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fwie-funktioniert-eine-firewall%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/security/was-ist-sniffing/" title="Netzwerk Sniffing – Sichere Kommunikation im Netzwerk" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Netzwerk Sniffing – Sichere Kommunikation im Netzwerk</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard Home DNS-Verschlüsselung" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">AdGuard Home DNS-Verschlüsselung</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#was-ist-eine-und-wie-funktioniert-eine-firewall">Was ist eine und wie funktioniert eine Firewall?</a>
+      <ul>
+        <li><a href="#wie-funktioniert-eine-firewall---osi-schicht-modell">Wie funktioniert eine Firewall - OSI-Schicht Modell</a></li>
+        <li><a href="#osi-modellschicht-3--vermittlungsschicht-network-layer">OSI-Modell Schicht 3 - Vermittlungsschicht (Network-Layer)</a></li>
+        <li><a href="#osi-modellschicht-4--transportschicht-transport-layer">OSI-Modell Schicht 4 - Transportschicht (Transport-Layer)</a></li>
+        <li><a href="#osi-modellschicht-7--anwendungsschicht-application-layer">OSI-Modell Schicht 7 - Anwendungsschicht (Application-Layer)</a></li>
+      </ul>
+    </li>
+    <li><a href="#was-ist-eine-firewall">Was ist eine Firewall?</a></li>
+    <li><a href="#grundfunktionen-einer-firewall">Grundfunktionen einer Firewall</a></li>
+    <li><a href="#funktionsweise-der-paketfilterung">Funktionsweise der Paketfilterung</a></li>
+    <li><a href="#funktionsweise-derstatefulinspectionpaketfilterung">Funktionsweise der Stateful Inspection Paketfilterung</a></li>
+    <li><a href="#wie-funktioniert-eine-firewall--arten-von-firewall">Wie funktioniert eine Firewall - Arten von Firewall</a>
+      <ul>
+        <li><a href="#personal-firewall">Personal Firewall</a></li>
+        <li><a href="#externe-firewall">Externe Firewall</a></li>
+      </ul>
+    </li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

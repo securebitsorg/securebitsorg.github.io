@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firewall on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/firewall/</link>
+    <description>Recent content in Firewall on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 25 Jul 2025 05:22:28 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/firewall/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Was ist eine Unified Threat Management Firewall?</title>
+      <link>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</link>
+      <pubDate>Fri, 25 Jul 2025 05:22:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</guid>
+      <description>&lt;h2 id=&#34;unified-threat-management-appliances-utm-firewall&#34;&gt;Unified Threat Management Appliances (UTM-Firewall)&lt;/h2&gt;
+&lt;p&gt;In meinem Beitrag &amp;ldquo;&lt;a href=&#34;https://secure-bits.org/wie-funktioniert-eine-firewall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wie funktioniert eine Firewall?&lt;/a&gt;&amp;rdquo;, habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.&lt;/p&gt;
+&lt;p&gt;In diesem Beitrag möchte ich euch nun die Funktionsweise einer Unified Threat Management (UTM oder UTM-Firewall) näherbringen und euch hier die einzelnen Funktionen sowie Fachbegriffe erklären.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-der-unterschied-zwischen-einer-utm-firewall-und-einer-normalen-firewall&#34;&gt;Was ist der Unterschied zwischen einer UTM-Firewall und einer normalen Firewall?&lt;/h2&gt;
+&lt;p&gt;Hierzu gibt es eine klare Begriffsdefinition, die die Bezeichnung einer Sicherheits-Komponente (Security-Appliance) festlegt. Zum Beispiel wird eine reine Firewall als Specialized Security Appliances (SSA) bezeichnet, da diese Netzwerk-Sicherheitskomponente eine klare definierte Aufgabe im Sicherheitssystem ausführt. In diesem Fall also, Unterbindung von Netzwerkverbindungen nach einem definierten Regelwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Application Profiles erstellen </title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-application-profiles/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-application-profiles/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---profile-für-applikationen-anlegen&#34;&gt;UFW-Firewall - Profile für Applikationen anlegen&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mithilfe eines Application-Profil mehrere Ports für eine Anwendung in einem App-Profil zusammenstellen könnt und somit mehrere Ports mit einer Firewall-Regel anlegen könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/TDKaLgWd12A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Grundlagen | Teil 1</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-basics/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-basics/</guid>
+      <description>&lt;h2 id=&#34;grundlagen-zur-ufw-firewall-installation-und-einrichtung&#34;&gt;Grundlagen zur UFW-Firewall Installation und Einrichtung&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial zeige ich euch, wie ihr die UFW-Firewall (Uncomplicated Firewall) auf eure Linux-Distribution installieren und einrichten könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/BumaXOYey1c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---erweiterte-regeln-für-portbereiche&#34;&gt;UFW-Firewall - Erweiterte Regeln für Portbereiche&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mehrere Ports gleichzeitig, Portbereiche und Dienste freigeben könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Gwbq6F1N3xo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi&#34;&gt;UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;UFW-Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für &lt;strong&gt;iptables&lt;/strong&gt; auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den &lt;strong&gt;Raspberry Pi&lt;/strong&gt; beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.&lt;/p&gt;
+&lt;p&gt;Passend zum Tutorial &amp;lsquo;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AdGuard auf dem Raspberry Pi installieren&lt;/a&gt;&amp;rsquo;. bietet sich natürlich an, dass wir die &lt;a href=&#34;https://wiki.ubuntuusers.de/ufw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall&lt;/a&gt; auch auf den Raspberry Pi mit &lt;strong&gt;AdGuard Home&lt;/strong&gt; drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox DNS Server ändern</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</guid>
+      <description>&lt;h2 id=&#34;video-tutorial---schütze-deine-privatsphäre-mit-der-fritzbox&#34;&gt;Video-Tutorial - Schütze deine Privatsphäre mit der FritzBox&lt;/h2&gt;
+&lt;p&gt;In diesem Video &amp;ldquo;&lt;strong&gt;FritzBox DNS Server ändern&lt;/strong&gt;&amp;rdquo; zeige ich, wie ihr durch die Verwendung von datenschutzkonformen öffentlichen DNS-Server, das Tracken eurer Internetnutzung durch euren Internetprovider verhindern könnt.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Q2b0VrDqluY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Gerne könnt ihr meinen YouTube-Kanal auch gleich Abonnieren und so verpasst ihr keine neuen Inhalte mehr.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Man in the Middle Angriffe verstehen</title>
+      <link>http://localhost:1313/posts/security/man-in-the-middle/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/man-in-the-middle/</guid>
+      <description>&lt;h2 id=&#34;man-in-the-middle-angriff---definition&#34;&gt;Man in the Middle Angriff - Definition&lt;/h2&gt;
+&lt;p&gt;In dem heutigen Beitrag geht es um das Thema eines &lt;strong&gt;Man in the Middle Angriffs&lt;/strong&gt;. Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert, möchte ich euch gerne in diesem Artikel näher erläutern.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so kontaktiert mich über das &lt;a href=&#34;mailto:ticket@secure-bits.org&#34;&gt;Kontaktformular&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MAC Adresse - Was ist das?</title>
+      <link>http://localhost:1313/posts/security/mac-adresse/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/mac-adresse/</guid>
+      <description>&lt;h2 id=&#34;macadressen&#34;&gt;MAC Adressen &lt;/h2&gt;
+&lt;p&gt;Was ist eine &lt;strong&gt;MAC Adresse&lt;/strong&gt; und wofür wird diese gebraucht? Diese Fragen und weitere Begriffe und Funktion rund um das Thema MAC Adressen möchte ich gerne in diesem Artikel erklären. &lt;/p&gt;
+&lt;h2 id=&#34;was-ist-eine-mac-adresse&#34;&gt;Was ist eine MAC Adresse? &lt;/h2&gt;
+&lt;p&gt;Zur Identifikation eines netzwerkfähigen Geräts (Host) im Netzwerk dient die &lt;strong&gt;MAC Adresse&lt;/strong&gt;. Diese Adresse ist in eigentlich einmalig (dazu später mehr) und stellt die eindeutige Adressierbarkeit eines Geräts sicher.  &lt;/p&gt;
+&lt;h2 id=&#34;aufbau&#34;&gt;Aufbau&lt;/h2&gt;
+&lt;p&gt;Diese Adresse besteht aus einer 48-Bit langen Adresse und sollte weltweit einmalig sein. Diese Adresse wird im OSI-Modell der Sicherungsschicht 2 (Data-Link-Layer) zugeordnet um eine Adressierung im Netzwerk zu gewährleisten.  &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wie funktioniert eine Firewall?</title>
+      <link>http://localhost:1313/posts/security/wie-funktioniert-eine-firewall/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/wie-funktioniert-eine-firewall/</guid>
+      <description>&lt;h2 id=&#34;was-ist-eine-und-wie-funktioniert-eine-firewall&#34;&gt;Was ist eine und wie funktioniert eine Firewall?&lt;/h2&gt;
+&lt;p&gt;In diesem Artikel möchte ich unter anderem mit Hilfe des OSI-Schichten-Modell die Frage „&lt;strong&gt;Wie funktioniert eine Firewall&lt;/strong&gt;“ beantworten. Um Sicherheit in einem Netzwerk zu gewährleisten zu können, ist das Verstehen wie eine Firewall funktioniert, natürlich von größter Wichtigkeit. Daher versuche ich in diesem Beitrag, euch die einzelnen Funktionen einer Firewall hoffentlich verständlich zu erklären. Damit ihr den Datenverkehr optimal auf eure Anforderungen hin steuern könnt.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

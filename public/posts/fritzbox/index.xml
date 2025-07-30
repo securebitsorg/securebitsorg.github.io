@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Fritzbox on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/posts/fritzbox/</link>
+    <description>Recent content in Fritzbox on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/fritzbox/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>FritzBox / AdGuard DNS - Werbung, Tracking und Pishing mit blocken</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--adguard-dns-einrichten&#34;&gt;FritzBox / AdGuard DNS einrichten&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://adguard-dns.io/?aid=33604&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/posts/fritzbox/logo_adguard.png&#34; alt=&#34;logo adguard dns&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In diesem Video zeige ich euch wir ihr mit Hilfe von AdGuard DNS, Geräte in eurem Heimnetzwerk vor Werbung, Tracking, Pishing und Malware schützen könnt.&lt;/p&gt;
+&lt;p&gt;Wie ihr AdGuard DNS und eure FritzBox oder auch andere Router richtig konfigurieren müsst, erfahrt ihr in diesem Video-Tutorial.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Obcd2OLgl64?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;was-bietet-fritzbox--adguard-dns&#34;&gt;Was bietet FritzBox / AdGuard DNS?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;AdGuard DNS ist &amp;ldquo;euer persönlicher&amp;rdquo; öffentlicher rekursiver DNS-Server&lt;/strong&gt; den du mit Blocklisten, Application-Control, Kindersicherung und Zeitprofilen an eure individuellen Bedürfnisse anpassen könnt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox DNS Server ändern</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</guid>
+      <description>&lt;h2 id=&#34;video-tutorial---schütze-deine-privatsphäre-mit-der-fritzbox&#34;&gt;Video-Tutorial - Schütze deine Privatsphäre mit der FritzBox&lt;/h2&gt;
+&lt;p&gt;In diesem Video &amp;ldquo;&lt;strong&gt;FritzBox DNS Server ändern&lt;/strong&gt;&amp;rdquo; zeige ich, wie ihr durch die Verwendung von datenschutzkonformen öffentlichen DNS-Server, das Tracken eurer Internetnutzung durch euren Internetprovider verhindern könnt.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Q2b0VrDqluY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Gerne könnt ihr meinen YouTube-Kanal auch gleich Abonnieren und so verpasst ihr keine neuen Inhalte mehr.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tipp - Fritzbox Portfreigabe richtig einrichten</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</guid>
+      <description>&lt;h2 id=&#34;fritzbox-portfreigabe-einrichten&#34;&gt;FritzBox Portfreigabe einrichten&lt;/h2&gt;
+&lt;p&gt;Im heutigen Beitrag geht es darum, wie ihr eine &lt;strong&gt;FritzBox Portfreigabe&lt;/strong&gt; richtig einrichtet, wofür ihr diese verwenden könnt und welche Risiken durch den Einsatz dieser Portfreigabe entstehen.&lt;/p&gt;
+&lt;p&gt;Folge der unteren Schritt für Schritt-Anleitung um eine Portfreigabe in deiner FritzBox einzurichten.&lt;/p&gt;
+&lt;p&gt;Für Alle unter euch, die das Ganze lieber in einer Video-Anleitung anschauen möchten, gibt es das Video &amp;ldquo;FritzBox Portfreigabe einrichten&amp;rdquo; auf meinem YouTube-Kanal.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zum-thema-fritzbox-portfreigabe-einrichten&#34;&gt;Video-Tutorial zum Thema &amp;lsquo;FritzBox Portfreigabe einrichten&amp;rsquo;&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/dUuABciDCWs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;tutorial---fritzbox-portfreigabe-einrichten&#34;&gt;Tutorial - FritzBox Portfreigabe einrichten&lt;/h3&gt;
+&lt;p&gt;In dieser Schritt für Schritt-Anleitungen zeige ich euch, wie ihr eine Portfreigabe bei einer FritzBox einrichtet.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

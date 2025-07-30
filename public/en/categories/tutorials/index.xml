@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorials on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/tutorials/</link>
+    <description>Recent content in Tutorials on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Jul 2025 09:18:12 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/tutorials/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>The traceroute command in Linux</title>
+      <link>http://localhost:1313/en/posts/linux/der-traceroute-befehl-unter-linux/</link>
+      <pubDate>Wed, 30 Jul 2025 09:18:12 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/der-traceroute-befehl-unter-linux/</guid>
+      <description>&lt;h2 id=&#34;the-traceroute-command-in-linux-with-comprehensive-instructions-and-examples&#34;&gt;The traceroute command in Linux with comprehensive instructions and examples&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;traceroute&lt;/code&gt; command is an indispensable network diagnostic tool for IT security managers and system administrators. It allows you to trace the path that data packets take from your system to a destination on the network, helping you to identify and resolve network problems.
+In this article, I would like to give you a closer look at the functionality of &lt;strong&gt;traceroute&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nmap (Network Mapper)</title>
+      <link>http://localhost:1313/en/posts/security/nmap-network-mapper-umfassender-leitfaden/</link>
+      <pubDate>Tue, 29 Jul 2025 12:03:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/nmap-network-mapper-umfassender-leitfaden/</guid>
+      <description>&lt;p&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert danger&#34;&gt;
+    &lt;span&gt;&lt;i data-feather=&#34;alert-octagon&#34;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;strong&gt;&lt;h2 id=&#34;the-most-important-thing-first&#34;&gt;The most important thing first!&lt;/h2&gt;
+&lt;p&gt;It is important to note that the use of &lt;strong&gt;nmap&lt;/strong&gt;, &lt;strong&gt;outside of its test/laboratory or production environment&lt;/strong&gt;, &lt;strong&gt;may only be done with the consent of its owner&lt;/strong&gt;!&lt;/p&gt;&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;
+With this article, I hope to give you a clear understanding of the powerful tool ‘&lt;strong&gt;nmap&lt;/strong&gt;’ and also provide you with a &lt;strong&gt;PDF download of the most commonly used nmap commands&lt;/strong&gt;.
+&lt;strong&gt;Nmap&lt;/strong&gt; is ideal for putting your IT infrastructure through its paces and is also the first vector in 99% of cases when penetration testing systems.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Linux ip command: Instructions for network configuration</title>
+      <link>http://localhost:1313/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</link>
+      <pubDate>Tue, 29 Jul 2025 08:09:53 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</guid>
+      <description>&lt;h2 id=&#34;the-modern-linux-ip-command-for-network-configuration-under-linux&#34;&gt;The modern Linux IP command for network configuration under Linux&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;ip&lt;/code&gt; command is the central tool for network configuration under Linux and has established itself as a modern replacement for outdated commands such as &lt;code&gt;ifconfig&lt;/code&gt;, &lt;code&gt;route&lt;/code&gt;, and &lt;code&gt;arp&lt;/code&gt;. As part of the iproute2 collection, it provides a unified interface for all aspects of network management and is available by default in all modern Linux distributions.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-ip-command&#34;&gt;What is the ip command?&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;ip&lt;/code&gt; command is a versatile network configuration tool from the iproute2 collection, originally developed by Alexey Kuznetsov and now maintained by Stephen Hemminger. It uses the Linux Netlink interface for direct communication with the kernel, providing advanced functionality not available with the classic net tools.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Netstat under Windows</title>
+      <link>http://localhost:1313/en/posts/windows/netstat/</link>
+      <pubDate>Sun, 27 Jul 2025 10:17:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/netstat/</guid>
+      <description>&lt;h2 id=&#34;display-tcp-connections-and-ports-in-windows-with-netstat&#34;&gt;Display TCP connections and ports in Windows with netstat&lt;/h2&gt;
+&lt;p&gt;In this article, I would like to introduce you to the command/tool &lt;strong&gt;netstat&lt;/strong&gt; in Windows and show you how you can use this command to check or display active TCP connections, open ports, and other statistics such as an IPv4 overview of the Internet protocols IP, TCP, ICMP, and UDP.&lt;/p&gt;
+&lt;h3 id=&#34;what-do-i-use-the-netstat-commands-for&#34;&gt;What do I use the Netstat commands for?&lt;/h3&gt;
+&lt;p&gt;When analyzing the security of an operating system, it is of course important to know which connections the operating system or installed software establishes to services on the Internet. Furthermore, malware can also be quickly detected by displaying listening ports. The netstat command can be used to list these connections and listening ports.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>What is a Unified Threat Management Firewall?</title>
+      <link>http://localhost:1313/en/posts/security/what-is-a-unified-threat-management-firewall/</link>
+      <pubDate>Fri, 25 Jul 2025 05:22:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/what-is-a-unified-threat-management-firewall/</guid>
+      <description>&lt;h2 id=&#34;unified-threat-management-appliances-utm-firewall&#34;&gt;Unified Threat Management Appliances (UTM Firewall)&lt;/h2&gt;
+&lt;p&gt;In my article “How does a firewall work?” (&lt;a href=&#34;https://secure-bits.org/wie-funktioniert-eine-firewall/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/wie-funktioniert-eine-firewall/)&lt;/a&gt;, I described how a firewall is structured and the differences between the various types of firewalls.
+In this article, I would like to give you a closer look at how a Unified Threat Management (UTM or UTM firewall) works and explain the individual functions and technical terms.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-difference-between-a-utm-firewall-and-a-normal-firewall&#34;&gt;What is the difference between a UTM firewall and a normal firewall?&lt;/h2&gt;
+&lt;p&gt;There is a clear definition of this term, which specifies the designation of a security component (security appliance). For example, a pure firewall is referred to as a Specialized Security Appliance (SSA), as this network security component performs a clearly defined task in the security system. In this case, it is to prevent network connections according to a defined set of rules.
+UTMA / UTM refers to security network components that combine several security components (Specialized Security Appliances (SSA)) of a network. You can find out what these are in the next paragraph.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Secure Linux SSH</title>
+      <link>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</guid>
+      <description>&lt;h2 id=&#34;securing-linux-ssh-access-correctly&#34;&gt;Securing Linux SSH access correctly&lt;/h2&gt;
+&lt;p&gt;When operating a Linux server, it is usually necessary for administration purposes to establish secure access via SSH.&lt;/p&gt;
+&lt;p&gt;This tutorial is designed to help you successfully protect Linux SSH access against attacks.&lt;/p&gt;
+&lt;p&gt;Of course, securing SSH access is only one way of protecting your server against attacks. You can find more options in the tutorial “Securing Raspberry Pi from A to Z” that I published here in the blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole PHP 8.3 | Pihole always with the latest PHP version</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-with-the-latest-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-with-the-latest-php-version/</guid>
+      <description>&lt;h2 id=&#34;installing-pihole-with-php-83-on-raspberry-pi-os&#34;&gt;Installing Pihole with PHP 8.3 on Raspberry Pi OS&lt;/h2&gt;
+&lt;p&gt;In this tutorial, ‘&lt;strong&gt;Installing Pihole with PHP 8.3&lt;/strong&gt;’, I would like to show you how to securely install a Pihole DNS server with the latest version of PHP on your Raspberry Pi in 2024.&lt;/p&gt;
+&lt;h3 id=&#34;background-to-this-tutorial&#34;&gt;Background to this tutorial&lt;/h3&gt;
+&lt;p&gt;During a test installation of Pihole with Debian 11 on my Raspberry Pi, I noticed during the installation process that the installation routine on the Raspberry Pi OS lite installs PHP 7.4, which has not been provided with security updates since mid-2023 and is therefore EOL (end of life).
+Further information on support for individual PHP versions can be found here:
+&lt;a href=&#34;https://www.php.net/supported-versions.php&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://www.php.net/supported-versions.php&lt;/a&gt;
+Therefore, I thought I would create a new and updated tutorial (&lt;a href=&#34;https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;my last one was from 2022&lt;/a&gt;) so that the PHP installation used is always provided with the latest security updates.
+I will also show you how to install and set up a firewall for the Raspberry Pi. And how to automatically update the system with new updates.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Backup mit Teleporter</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</guid>
+      <description>&lt;h2 id=&#34;backing-up-and-restoring-pi-hole&#34;&gt;Backing up and restoring Pi-hole&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, “Pi-hole Backup – Backing up and restoring Pi-hole,” I show you how to use the Teleporter tool to back up your Pi-hole installation and restore it to another Pi-hole instance.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-pi-hole-backup&#34;&gt;Video tutorial Pi-hole backup&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/JPVtLvRtQE0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;commands-used-in-the-video&#34;&gt;Commands used in the video&lt;/h3&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;1&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#080;background-color:#0f140f;font-style:italic&#34;&gt;# Run Pi-hole backup in the shell&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;2&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;3&lt;/span&gt;&lt;span&gt;pihole -a -t
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;4&lt;/span&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span style=&#34;white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f&#34;&gt;5&lt;/span&gt;&lt;span&gt;&lt;span style=&#34;color:#080;background-color:#0f140f;font-style:italic&#34;&gt;# You will find the backup file in the directory where you are located when you execute the above command.&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole setup</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-basic-setup/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-basic-setup/</guid>
+      <description>&lt;h2 id=&#34;setting-up-pihole--basic-configuration&#34;&gt;Setting up Pihole – Basic configuration&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, “Pi-hole Basic Configuration,” I will walk you through the setup of the Pi-hole DNS server step by step and explain what the individual functions/menu items mean.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/IMYnydNM3rk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;If you have any questions on this topic, just leave a comment either below the video on YouTube or here under this blog post.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole Installation Debian - Protect your home network</title>
+      <link>http://localhost:1313/en/posts/privacy/pihole/pihole-installation-debian/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/privacy/pihole/pihole-installation-debian/</guid>
+      <description>&lt;h2 id=&#34;pihole-installation-debian---protect-your-network-from-tracking-and-advertising&#34;&gt;Pihole Installation Debian - Protect your network from tracking and advertising&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;PLEASE NOTE!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;These instructions refer to the installation of Pihole version &lt;strong&gt;5&lt;/strong&gt; and not the current version &lt;strong&gt;6&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;The differences between VERSION 5 and VERSION 6&lt;/strong&gt; are not really different in terms of the process. Version 6 is no longer based on PHP and does not use a lighthtp instance.&lt;/p&gt;
+&lt;p&gt;I will also publish a tutorial for version 6 of Pihole here soon.
+If you want to declare war on trackers, in-app advertising, and advertising messages on your home network, you should take a look at Pihole.
+Of course, some of you will now think, “I use an ad blocker when surfing, so why do I need an extra device for such services?!” I can understand this question, but the answer is quite simple.
+A Pihole installation Debian / Server protects you centrally from advertising and trackers, as Pi-hole acts as a central DNS server in the network and thus not only protects computers from annoying snooping tools, but also other devices in the network. For example, smart TVs, advertising in apps on your smartphone, and it also functions as a “parental control.” This ensures that your children are protected when surfing the Internet.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Protect yourself against man-in-the-middle attacks</title>
+      <link>http://localhost:1313/en/posts/security/man-in-the-middle-secure/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/man-in-the-middle-secure/</guid>
+      <description>&lt;h2 id=&#34;protection-against-man-in-the-middle-attacks&#34;&gt;Protection against man-in-the-middle attacks&lt;/h2&gt;
+&lt;p&gt;In my last post - &lt;a href=&#34;https://secure-bits.org/man-in-the-middle/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Understanding Man-in-the-Middle Attacks&lt;/a&gt; - I explained what Man-in-the-Middle attacks are and what exactly they mean. In this post, I would like to give you some tips and tricks to help you protect yourself against such attacks.&lt;/p&gt;
+&lt;p&gt;It should be noted that the protective measures presented here cannot be implemented in their entirety by you, as they naturally depend on the infrastructure you use. This means, for example, whether you have your own domain or which hardware components you use in your network.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Change your Windows password now</title>
+      <link>http://localhost:1313/en/posts/windows/change-windows-password/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/change-windows-password/</guid>
+      <description>&lt;h2 id=&#34;change-your-password-in-windows&#34;&gt;Change your password in Windows&lt;/h2&gt;
+&lt;p&gt;Today, in this article, “Change Windows password,” I would like to show you how to change your password in the Windows 10 system settings, as well as how to do this via the CMD command line or PowerShell. This option is a quick and easy way for administrators to change user passwords on a Windows computer or even across a domain.&lt;/p&gt;
+&lt;h2 id=&#34;option-1--change-windows-password-company-computer-in-a-domain&#34;&gt;Option 1 – Change Windows password (company computer in a domain)&lt;/h2&gt;
+&lt;p&gt;For anyone who has a Windows company computer that is part of a domain, the password can be changed as follows.
+Simply press the following key combination:
+&lt;strong&gt;CTRL + ALT + DEL&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Install Windows PowerShell</title>
+      <link>http://localhost:1313/en/posts/windows/windows-powershell/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/windows-powershell/</guid>
+      <description>&lt;p&gt;In this article, I would like to introduce you to the new (well, not that new) command line tool Windows PowerShell and show you the differences between it and the classic CMD command line. In this article, you will learn why PowerShell should be your tool of choice for administration.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;You can find out what the classic command line interpreter CMD is all about in this article: &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CMD commands at a glance&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MAC address – what is it?</title>
+      <link>http://localhost:1313/en/posts/security/mac-adresse/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/mac-adresse/</guid>
+      <description>&lt;h2 id=&#34;mac-addresses&#34;&gt;MAC addresses&lt;/h2&gt;
+&lt;p&gt;What is a &lt;strong&gt;MAC address&lt;/strong&gt; and what is it used for? In this article, I would like to explain these questions and other terms and functions related to MAC addresses.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-a-mac-address&#34;&gt;What is a MAC address?&lt;/h2&gt;
+&lt;p&gt;The &lt;strong&gt;MAC address&lt;/strong&gt; is used to identify a network-enabled device (host) in a network. This address is actually unique (more on this later) and ensures that a device can be addressed unambiguously.&lt;/p&gt;
+&lt;h2 id=&#34;structure&#34;&gt;Structure&lt;/h2&gt;
+&lt;p&gt;This address consists of a 48-bit address and should be unique worldwide. This address is assigned to layer 2 (data link layer) in the OSI model to ensure addressing in the network.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Network Sniffing – Secure Communication in Networks</title>
+      <link>http://localhost:1313/en/posts/security/was-ist-sniffing/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/was-ist-sniffing/</guid>
+      <description>&lt;h2 id=&#34;how-can-you-protect-yourself-against-network-sniffing&#34;&gt;How can you protect yourself against network sniffing?&lt;/h2&gt;
+&lt;p&gt;Most of you have probably read or heard somewhere that everyone is talking about secure communication. But what is secure communication and why can normal communication channels be intercepted (sniffed)? In this article, I would like to address the topic of “sniffing” and show you how you can protect yourself against such sniffing attacks.
+Following Edward Snowden&amp;rsquo;s revelations, you are probably all familiar with the concept of communication channels being tapped. Tapping or sniffing can be done on both a small and large scale. Secret services use entire nodes of our ISPs (Internet Service Providers) for tapping, and on a smaller scale, this can of course also be done in your company or at home.
+There are, of course, several measures that can be taken to compromise a communication channel. In this article, however, I would like to focus on what is known as “sniffing.”&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>How does a firewall work?</title>
+      <link>http://localhost:1313/en/posts/security/wie-funktioniert-eine-firewall/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/wie-funktioniert-eine-firewall/</guid>
+      <description>&lt;h2 id=&#34;what-is-a-firewall-and-how-does-it-work&#34;&gt;What is a firewall and how does it work?&lt;/h2&gt;
+&lt;p&gt;In this article, I would like to answer the question “&lt;strong&gt;How does a firewall work&lt;/strong&gt;” with the help of the OSI layer model, among other things. In order to ensure security in a network, it is of course extremely important to understand how a firewall works. In this article, I will therefore attempt to explain the individual functions of a firewall in a way that is easy to understand. This will enable you to control data traffic optimally according to your requirements.
+If we want to explain how a firewall works, we should first take a closer look at the OSI layer model.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Activate Windows Product Key</title>
+      <link>http://localhost:1313/en/posts/windows/windows-product-key-activate/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/windows-product-key-activate/</guid>
+      <description>&lt;blockquote&gt;
+&lt;h3 id=&#34;other-windows-versions&#34;&gt;Other Windows versions&lt;/h3&gt;
+&lt;p&gt;Of course, you can also use this method to change or activate the product key for any other Windows version.
+To activate it, you will need to use your product key instead! The product keys shown in this article are only suitable for use with Windows Insider Preview!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;activate-windows-product-key&#34;&gt;Activate Windows Product Key&lt;/h2&gt;
+&lt;p&gt;When performing an in-place upgrade of Windows 10 Enterprise, you may be prompted to reactivate Windows after the upgrade. When you try to reactivate, the process ends with an error code.  &lt;a href=&#34;windows-key-aktivieren.de.md&#34;&gt;text&lt;/a&gt;
+The following instructions will show you how to change the product key and then activate your Windows 10 Insider Preview or any other version of Windows.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

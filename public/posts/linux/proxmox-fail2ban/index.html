@@ -1,0 +1,1461 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Proxmox VE mit fail2ban absichern</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Proxmox VE mit fail2ban absichern" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/linux/proxmox-fail2ban">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/linux/proxmox-fail2ban">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/proxmox-fail2ban/proxmox_und_fail2ban.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Dienstag, 18. Februar 2025 | 6 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Proxmox VE mit fail2ban absichern</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/proxmox/" class="btn btn-sm btn-info">proxmox</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="proxmox-ve-basierend-auf-debian-12-mit-fail2ban-absichern">Proxmox VE basierend auf Debian 12 mit fail2ban absichern</h2>
+<p>Eine Möglichkeit einen öffentlichen Proxmox Server gegen Brute Force-Angriffe abzusichern, ist der Einsatz von dem Tool ‚fail2ban‘.</p>
+<p>In diesem kurzen Tutorial zeige ich, wie mit Hilfe von fail2ban, der Zugriff des Service ‚SSH‘ und der Zugriff auf den Port ‚8006‘ des Dashboards, abgesichert wird.
+Ausgangslage</p>
+<p>In diesem Szenario handelt es sich um einen Proxmox-Server der als Dedicated-Server bei Hetzner gehostet wird, und über eine IPv4- sowie IPv6-Adresse über das öffentliche Internet erreichbar ist.</p>
+<p>Generell ist der Einsatz von fail2ban nur als ein Teil von Sicherheitsmaßnahmen zur Serverabsicherung anzusehen. Gerne könnt ihr auch weitere Sicherungsmaßnahmen hier auf meinem Blog zur Rate ziehen.</p>
+<hr>
+<blockquote>
+<p><strong>Gutschein</strong></p>
+<p>Wer auch einen VPS- / Root- / Dedicated-Server betrieben möchte, dem kann ich ein 20 Euro Gutschein anbieten. Um diesen Gutschein zu nutzen, auf den untenstehenden Link klicken.
+Der Gutschein in Höhe von 20 Euro, ist nur bei einer Neuregistrierung auf der Hetzner-Webseite nutzbar!</p>
+<p>Link zum Gutschein: <a href="https://hetzner.cloud/?ref=OBFauh7A1Ru8" target="_blank" rel="noopener">https://hetzner.cloud/?ref=OBFauh7A1Ru8</a></p></blockquote>
+<hr>
+<h2 id="installation-von-fail2ban-unter-debian-12">Installation von fail2ban unter Debian 12</h2>
+<blockquote>
+<p><strong>WICHTIGER HINWEIS!</strong></p>
+<p>Bitte beachten, dass alle weiter ausgeführten Befehle mit erhöhten Privilegien ausgeführt werden!</p>
+<p>Diese Rechte erhaltet ihr wenn ihr einmalig für die bestehende SSH-Sitzung den folgenden Befehl ausführt:</p>
+<p><code>sudo -s</code></p></blockquote>
+<p>Da Proxmox VE ja auf der Distrubution Debian basiert, erfolgt die Installation von fail2ban genauso wie bei einem klassischen Debian-Installation.</p>
+<p>Wir haben zwei Möglichkeiten, um die Einrichtung von fail2ban auf dem Proxmox-System vorzunehmen.</p>
+<ul>
+<li>
+<p><strong>Einrichtung über das Dashboard von Proxmox.</strong></p>
+<p>Für die Einrichtung über dem Dashboard von Proxmox, klickt ihr auf den Proxmox-Node und wählt hier den Punkt ‚Shell‘ aus und gibt hier dann die entsprechenden Eingaben für die Konfiguration ein.</p>
+</li>
+<li>
+<p><strong>Einrichtung via Terminal über eine SSH-Verbindung zum Proxmox-Server.</strong></p>
+<p>In meinem Beispiel werden wir uns über ein Terminal via SSH mit dem Proxmox-Server verbinden. Vorteil ist hierbei der besserer Komfort, wie z.B. bei der Nutzung von Copy &amp; Paste.</p>
+</li>
+</ul>
+<p>Für die Einrichtung über dem Dashboard von Proxmox, klickt ihr auf den Proxmox-Node und wählt hier den Punkt ‚Shell‘ aus und gibt hier dann die entsprechenden Eingaben für die Konfiguration ein.</p>
+<figure><img src="/images/posts/proxmox-fail2ban/dashboard-proxmox.png"
+    alt="Proxmox fail2ban Dashboard"><figcaption>
+      <p>Proxmox Dashboard</p>
+    </figcaption>
+</figure>
+
+<h3 id="ssh-verbindung-via-terminal-mit-dem-proxmox-server">SSH-Verbindung via Terminal mit dem Proxmox-Server</h3>
+<p>Zunächst stellen wir eine Verbindung via SSH mit dem Proxmox-Server her. Hierfür könnt ihr je nach Betriebssystem ein Terminal-Fenster, Putty oder ähnliches nutzen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># SSH-Verbindung aufbauen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ssh root@&lt;IP-Adresse-Proxmox-Server&gt;
+</span></span></code></pre></div><h3 id="aktualisieren-des-betriebssystems-sowie-installation-von-fail2ban">Aktualisieren des Betriebssystems sowie Installation von fail2ban</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># System aktualisieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo apt update &amp;&amp; apt upgrade -y
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Installation von fail2ban</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>sudo apt install fail2ban
+</span></span></code></pre></div><h3 id="anpassung-der-fail2ban-konfiguration-für-proxmox-ve">Anpassung der fail2ban-Konfiguration für Proxmox VE</h3>
+<p>Wie in der Einführung von diesem Tutorial beschreiben, wollen wir den Standard-SSH-Port (22) sowie den Port 8006 für das Dashboard-Interface von Proxmox VE vor Brute Force-Attacken schützen.</p>
+<p>Zunächst legen wir uns dafür eine lokale Jail-Config-Datei im fail2ban-Verzeichnis an, in der wir dann die Anpassung für unser Vorhaben hinterlegen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Zunächst werden wir uns </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Aufrufen des Verzeichnis von fail2ban, in der sich die künftige sowie weitere Konfigurations-Dateien befinden</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>cd /etc/fail2ban
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Anlegen der Config-Datei für fail2ban</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>nano jail.conf
+</span></span></code></pre></div><p>Im nächsten Schritt fügen wir die Konfiguration für die Absicherung des SSH-Verbindung sowie die Absicherung für den <strong>Port 8006</strong> ein.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Konfiguration für fail2ban - Absicherung SSH (Standard-Port 22) und Dashboard-Zugriff Proxmox (Port 8006)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Default-Einstellungen für fail2ban</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>[DEFAULT]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#fb660a">allowipv6</span> = auto
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#fb660a">bantime</span> = <span style="color:#0086f7;font-weight:bold">3600</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#fb660a">backend</span> = systemd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#fb660a">ignoreip</span> = 127.0.0.1/8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Config für SSH</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>[sshd]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#fb660a">mode</span> = aggressive
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#fb660a">port</span> = ssh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#fb660a">logpath</span> = %(sshd_log)s
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#fb660a">banaction</span> = nftables-multiport
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#fb660a">banaction_allports</span> = nftables-allports
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#fb660a">backend</span> = systemd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#fb660a">enabled</span> = true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#fb660a">maxretry</span> = <span style="color:#0086f7;font-weight:bold">2</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#fb660a">findtime</span> = <span style="color:#0086f7;font-weight:bold">3600</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#fb660a">bantime</span> = 3h
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Config für Proxmox</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>[proxmox]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style="color:#fb660a">enabled</span> = true
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span><span style="color:#fb660a">port</span> = https,http,8006
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span><span style="color:#fb660a">filter</span> = proxmox
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#fb660a">backend</span> = systemd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#fb660a">maxretry</span> = <span style="color:#0086f7;font-weight:bold">3</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span><span style="color:#fb660a">findtime</span> = <span style="color:#0086f7;font-weight:bold">3600</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span><span style="color:#fb660a">bantime</span> = 3h
+</span></span></code></pre></div><p>Nun die Config-Datei ‚<strong>jail-local</strong>‘ mit <strong>STRG + O</strong> speichern und mit <strong>STRG + X</strong> den Nano-Editor schließen</p>
+<blockquote>
+<p><strong>Ignore IP</strong></p>
+<p>Unter ‚<strong>ignoreip</strong>‚ habt ihr die Möglichkeit, IP-Adressen, Subnets als Ausnahmen hinzuzufügen, um so zum Beispiel zu verhindern, dass ihr euch selbst aussperrt.</p></blockquote>
+<h2 id="proxmox-filter-für-fail2ban-anlegen">Proxmox-Filter für fail2ban anlegen</h2>
+<p>Eine Filter-Config für SSH ist standardmäßig in fail2ban enthalten. Die Filter-Config für Proxmox müssen wir zunächst erst erstellen.</p>
+<p>Dazu wechseln wir in das Verzeichnis ‚<strong>/etc/fail2ban/filter.d</strong>‘ und legen hier mit ’nano proxmox.conf‘ die Filter-Config für Proxmox an.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Filter-Config proxmox</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>[Definition]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#fb660a">failregex</span> = pvedaemon<span style="color:#0086d2">\[</span>.*authentication failure; <span style="color:#fb660a">rhost</span>=&lt;HOST&gt; <span style="color:#fb660a">user</span>=.* <span style="color:#fb660a">msg</span>=.*
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#fb660a">ignoreregex</span> =
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#fb660a">journalmatch</span> = <span style="color:#fb660a">_SYSTEMD_UNIT</span>=pvedaemon.service
+</span></span></code></pre></div><p>Auch diese Datei mit STRG + O speichern und mit STRG + X den Editor verlassen.</p>
+<h3 id="fail2ban-dienst-starten-und-prüfen">fail2ban-Dienst starten und prüfen</h3>
+<p>Da wir die erforderlichen Config-Dateien nun angelegt haben, können wir nun dazu übergehen und fail2ban auf dem System starten.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># fail2ban Autostart aktivieren, Dienst starten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>systemctl enable fail2ban
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>systemctl start fail2ban
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># fail2ban Status überprüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>systemctl status fail2ban
+</span></span></code></pre></div><p>Ausgabe sollte dann in etwas so aussehen:</p>
+<figure><img src="/images/posts/proxmox-fail2ban/fail2ban-service-status.png"
+    alt="fail2ban status systemctl"><figcaption>
+      <p>fail2ban status systemctl</p>
+    </figcaption>
+</figure>
+
+<h3 id="ein-paar-ergänzende-befehle-für-fail2ban">Ein paar ergänzende Befehle für fail2ban</h3>
+<p>Alternative zu fail2ban</p>
+<p>Eine Alternative zu fail2ban wird mit der Application ‚crowdsec‘ angeboten. Crowdsec funktioniert im Prinzip gleich wie fail2ban, wird aber durch zentral geführte dynamische Listen ergänzt. Nachteil ist aber hierbei, dass eine öffentliche Verbindung zu diesem Dienst etabliert wird.
+Weitere Informationen zu ‚crowdsec‘ findet hier:</p>
+<p><a href="https://www.crowdsec.net/" target="_blank" rel="noopener">https://www.crowdsec.net/</a></p>
+<p>Ich hoffe, dieses Tutorial bringt für manche unter euch einen Mehrwert und hilft bei der Absicherung eurer Proxmox-Server-Instanz!</p>
+<p>Gerne könnt ihr mir auch im Forum oder hier in den Kommentaren ein Feedback hinterlassen.
+Weitere Information zu fail2ban</p>
+<p><a href="https://wiki.ubuntuusers.de/fail2ban/" target="_blank" rel="noopener">https://wiki.ubuntuusers.de/fail2ban/</a></p>
+<p><a href="https://de.wikipedia.org/wiki/Fail2ban" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Fail2ban</a></p>
+<p>Hier noch eine paar Befehle, mit der ihr die Möglichkeit habt, fail2ban zu ’steuern‘.</p>
+<h3 id="anzeigen-der-gebannten-ip-adressen">Anzeigen der gebannten IP-Adressen</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Gebannte IP-Adressen für SSH</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>fail2ban-client status sshd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Gebannte IP-Adressen für Proxmox</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>fail2ban-client status proxmox
+</span></span></code></pre></div><p>Hier eine Beispiel-Ausgabe über die gebannte IP-Adressen, die versucht haben, sich via SSH anzumelden.</p>
+<figure><img src="/images/posts/proxmox-fail2ban/fail2ban-status-sshd.png"
+    alt="fail2ban-client status sshd"><figcaption>
+      <p>fail2ban-client status sshd</p>
+    </figcaption>
+</figure>
+
+<h3 id="gebannte-ip-adresse-aus-der-jail-list-entfernen">Gebannte IP-Adresse aus der jail-list entfernen</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># IP-Adresse von der der Liste der gebannten IP-Adressen entfernen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Für SSH</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>fail2ban-client set sshd unbanip &lt;IP-Adresse&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Für Proxmox</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>fail2ban-client set proxmox unbanip &lt;IP-Adresse&gt;
+</span></span></code></pre></div><h2 id="fazit--proxmox-ve-mit-fail2ban-absichern">Fazit – Proxmox VE mit fail2ban absichern</h2>
+<p>Wie in diesem Tutorial gesehen, ist die Absicherung vor Brute-Force-Angriffe für einen Proxmox-Server eigentlich ziemlich trival und im Betrieb, dadurch eine sehr gute Absicherung.</p>
+<p>Weiterhin ist fail2ban auch für andere betriebenen Dienste wie zum Beispiel nginx, apache2, eigene Bitwarden-Instanz, etc. zur Absicherung genutzt werden oder aber, man erstellt selbst eine filter-Config wie in diesem Tutorial für Proxmox geschehen.</p>
+<blockquote>
+<p><strong>Meine persönliche Meinung zu fail2ban</strong></p>
+<p>Für mich persönlich ist der Einsatz von fail2ban zur Absicherung einer Server-Instanz, ein ganz klares „Muss“ und ergänzt mit dem Einsatz das Sicherheits-Schichten-Prinzip für einen sicheren Betrieb von öffentlichen Diensten.</p></blockquote>
+<h3 id="alternative-zu-fail2ban">Alternative zu fail2ban</h3>
+<p>Eine Alternative zu fail2ban wird mit der Application ‚crowdsec‘ angeboten. Crowdsec funktioniert im Prinzip gleich wie fail2ban, wird aber durch zentral geführte dynamische Listen ergänzt. Nachteil ist aber hierbei, dass eine öffentliche Verbindung zu diesem Dienst etabliert wird.
+Weitere Informationen zu ‚crowdsec‘ findet hier:</p>
+<p><a href="https://www.crowdsec.net/" target="_blank" rel="noopener">https://www.crowdsec.net/</a></p>
+<p>Ich hoffe, dieses Tutorial bringt für manche unter euch einen Mehrwert und hilft bei der Absicherung eurer Proxmox-Server-Instanz!</p>
+<p>Gerne könnt ihr mir auch im Forum oder hier in den Kommentaren ein Feedback hinterlassen.</p>
+<h3 id="weitere-information-zu-fail2ban">Weitere Information zu fail2ban</h3>
+<p><a href="https://wiki.ubuntuusers.de/fail2ban/" target="_blank" rel="noopener">https://wiki.ubuntuusers.de/fail2ban/</a></p>
+<p><a href="https://de.wikipedia.org/wiki/Fail2ban" target="_blank" rel="noopener">https://de.wikipedia.org/wiki/Fail2ban</a></p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fproxmox-fail2ban%2f&title=Proxmox%20VE%20mit%20fail2ban%20absichern" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Proxmox%20VE%20mit%20fail2ban%20absichern&body=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fproxmox-fail2ban%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/info/informationen/" title="Informationen" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Informationen</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#proxmox-ve-basierend-auf-debian-12-mit-fail2ban-absichern">Proxmox VE basierend auf Debian 12 mit fail2ban absichern</a></li>
+    <li><a href="#installation-von-fail2ban-unter-debian-12">Installation von fail2ban unter Debian 12</a>
+      <ul>
+        <li><a href="#ssh-verbindung-via-terminal-mit-dem-proxmox-server">SSH-Verbindung via Terminal mit dem Proxmox-Server</a></li>
+        <li><a href="#aktualisieren-des-betriebssystems-sowie-installation-von-fail2ban">Aktualisieren des Betriebssystems sowie Installation von fail2ban</a></li>
+        <li><a href="#anpassung-der-fail2ban-konfiguration-für-proxmox-ve">Anpassung der fail2ban-Konfiguration für Proxmox VE</a></li>
+      </ul>
+    </li>
+    <li><a href="#proxmox-filter-für-fail2ban-anlegen">Proxmox-Filter für fail2ban anlegen</a>
+      <ul>
+        <li><a href="#fail2ban-dienst-starten-und-prüfen">fail2ban-Dienst starten und prüfen</a></li>
+        <li><a href="#ein-paar-ergänzende-befehle-für-fail2ban">Ein paar ergänzende Befehle für fail2ban</a></li>
+        <li><a href="#anzeigen-der-gebannten-ip-adressen">Anzeigen der gebannten IP-Adressen</a></li>
+        <li><a href="#gebannte-ip-adresse-aus-der-jail-list-entfernen">Gebannte IP-Adresse aus der jail-list entfernen</a></li>
+      </ul>
+    </li>
+    <li><a href="#fazit--proxmox-ve-mit-fail2ban-absichern">Fazit – Proxmox VE mit fail2ban absichern</a>
+      <ul>
+        <li><a href="#alternative-zu-fail2ban">Alternative zu fail2ban</a></li>
+        <li><a href="#weitere-information-zu-fail2ban">Weitere Information zu fail2ban</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

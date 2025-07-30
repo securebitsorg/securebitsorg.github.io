@@ -1,0 +1,1488 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>AdGuard Home Raspberry Pi Installation</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="AdGuard Home Raspberry Pi Installation" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Dienstag, 23. August 2022 | 7 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>AdGuard Home Raspberry Pi Installation</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="mit-adguard-dein-netzwerk-vor-werbung-und-trackern-schützen">Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen</h2>
+<p>Im heutigen Tutorial &lsquo;<strong>AdGuard Raspberry Pi Installation</strong>&rsquo; möchte ich euch zeigen, wir ihr den <strong>AdGuard DNS-Server</strong> auf einen <strong>Raspberry Pi ab Version 3</strong> installieren könnt.</p>
+<p>Mit diesem DNS-Server habt ihr dann ähnlich wie bei dem <strong>pihole DNS-Server</strong> (<a href="https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/" target="_blank" rel="noopener">zum Tutorial hier entlang</a>) die Möglichkeit, die meiste Werbung und Datentracker aus eurem Heimnetzwerk zu verbannen.</p>
+<p>Solltet ihr noch Hardware für euren AdGuard-DNS-Server benötigen, dann schaut am <a href="#hardware">Ende von diesem Beitrag. Dort habe ich eine kleine Liste erstellt.</a></p>
+<h3 id="video-tutorial---adguard-raspberry-pi-home-installation">Video-Tutorial - AdGuard Raspberry Pi Home Installation</h3>
+<p><strong>Wer von euch lieber die einzelnen Schritte zu &lsquo;AdGuard Raspberry Pi Installation&rsquo; als Video-Tutorial schauen möchte, der kann dies auf meinem YouTube-Kanal tun.</strong></p>
+<p><strong>Hierzu einfach auf das untere Bild klicken.</strong></p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/PF2WH2llwSg?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h3 id="alternative-zu-adguard-home-raspberry-pi-installation-gesucht">Alternative zu &lsquo;AdGuard Home Raspberry Pi Installation&rsquo; gesucht?</h3>
+<p>Dann schaut euch doch meine Schritt- für Schritt-Anleitung an, wie ihr den DNS-Server <strong>Pi-hole</strong> auf einen Raspberry PI installieren könnt.</p>
+<p><a href="">Zum Tutorial</a></p>
+<h3 id="hinweis">Hinweis!</h3>
+<p>Bei dem Befehl zum Entpacken der Datei &ldquo;<code>sudo tar xvf AdGuardHome_linux_armv7.tar.gz</code>&rdquo; hatte sich ein Tippfehler eingeschlichen. Bei diesem Befehl fehlte das &ldquo;v&rdquo; bei &ldquo;armv7&rdquo; und daher konnte die Datei natürlich nicht entpackt werden! Vielen Dank an <strong>Sebastian</strong> für diesen Hinweis!</p>
+<h2 id="schritt-für-schritt--adguard-home-raspberry-pi-installation">Schritt für Schritt | AdGuard Home Raspberry Pi Installation</h2>
+<h3 id="schritt-1">Schritt 1:</h3>
+<p>Zunächst müsst ihr die SD-Karte von eurem Raspberry Pi mit dem Raspberry OS bestücken. Hierzu könnt ihr euch auf raspberrypi.com das Tool <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">Raspberry Pi Imager</a> herunterladen. Mit diesem Tool könnt ihr ganz leicht das benötigte Raspberry Pi OS auf die SD-Karte zaubern.</p>
+<h3 id="schritt-2">Schritt 2:</h3>
+<p>Wenn ihr den Raspberry Pi Imager heruntergeladen habt, dann könnt ihr diesen zunächst auf euren Rechner installieren. Nach erfolgreicher Installation und dem Starten des Programms, begrüßt euch wie auf dem Bild zu sehen, das Dashboard des Raspberry Pi OS Imager.</p>
+<h3 id="schritt-3">Schritt 3:</h3>
+<p>Dann klickt ihr auf den Button &lsquo;Auswählen&rsquo;, hier auf &lsquo;Raspberry Pi OS (other)&rsquo; und dann auf das Betriebssystem &lsquo;Raspberry Pi OS Lite (64 bit)&rsquo;.
+<img src="/images/posts/adguard/rpi-imager_vHFGbf8SGe.png" alt="Raspberry OS auswählen"></p>
+<h3 id="schritt-4">Schritt 4:</h3>
+<p>Nach der Auswahl des Raspberry Pi OS Image müsst ihr auf den Button &lsquo;<strong>SD-Karte</strong>&rsquo; klicken und dann eure SD-Karte auswählen, die ihr in eurem SD-Card-Reader stecken habt und für den späteren Betrieb im Raspberry Pi vorgesehen habt.</p>
+<h3 id="schritt-5">Schritt 5:</h3>
+<p>Zu guter Letzt muss noch auf das &lsquo;Zahnrad-Symbol (Einstellungen)&rsquo; geklickt werden, um hier noch einige Einstellungen für das Schreiben des Images auf die SD-Karte vornehmen zu können. Die folgenden Einstellungen anpassen:</p>
+<ul>
+<li>optional Hostnamen vergeben</li>
+<li>SSH aktivieren und sicheres Passwort vergeben</li>
+<li>Spracheinstellungen einstellen</li>
+<li>Telemetry deaktivieren</li>
+<li>Medien nach Beenden auswerfen<br>
+Sind alle Einstellungen vorgenommen worden, dann auf &lsquo;Speichern&rsquo; klicken.</li>
+</ul>
+<h3 id="schritt-6">Schritt 6:</h3>
+<p>Nach dem Abschließen der vorherigen Schritte, könnt ihr nun auf &lsquo;Schreiben&rsquo; klicken und somit das Raspberry Pi OS Image auf die SD-Karte schreiben. Dieser Vorgang kann ein wenig dauern.</p>
+<h3 id="schritt-7">Schritt 7:</h3>
+<p>Nach dem Schreiben des Images auf die SD-Karte könnt ihr die Karte in den ausgeschalteten Raspberry Pi einstecken, das Netzwerkkabel mit eurem Router oder Switch verbinden und dann den Raspberry Pi mit der Spannungsversorgung verbinden. Nach etwa 30 Sekunden sollte der Raspberry Pi gebootet sein.</p>
+<h3 id="schritt-8">Schritt 8:</h3>
+<p>Im nächsten Schritt müssen wir herausfinden, welche IP-Adresse der Raspberry Pi per DHCP bezogen hat. Hier könnt ihr einfach bei eurem Router in den Netzwerkeinstellungen / DHCP-Leases nachsehen. Hier sollte dann das Gerät in der Auflistung angezeigt werden. Ihr solltet das Gerät in eurem DHCP-Server / Router eine statische IP-Adresse vergeben, damit bei der späteren Nutzung des DNS-Servers, keine Probleme bei der DNS-Auflösung im Netzwerk entstehen.</p>
+<p><img src="/images/posts/adguard/Raspberry-Pi-IP-Adresse.png" alt="IP-Adresse des Raspberry Pi herausfinden"></p>
+<h3 id="schritt-9">Schritt 9:</h3>
+<p>Ist die IP-Adresse des Raspberry Pi bekannt, so kann nun ein Terminal-Fenster (in diesem Beispiel unter Windows 11) oder das Tool &lsquo;Putty&rsquo; geöffnet werden. Hier gibt ihr die folgende Anweisung ein: <code>ssh pi@IP-Adresse Raspberry</code><br>
+Beim ersten Verbinden müsst ihr noch den Fingerprint für die SSH-Verbindung bestätigen. Die Frage danach (siehe Bild) beantwortet ihr mit &lsquo;yes&rsquo;. Danach werdet ihr noch nach dem Passwort gefragt, welches ihr bei den Einstellungen im Raspberry Pi OS Imager vergeben habt.</p>
+<p><img src="/images/posts/adguard/SSH-Anmeldung-Raspberry-Pi.png" alt="SSH-Verbindung zum Raspberry Pi herstellen"></p>
+<h3 id="schritt-10">Schritt 10:</h3>
+<p>Der nächste Schritt ist, das Raspberry Pi OS auf einen aktuellen Stand zu bringen. Dieses könnt ihr durch den folgenden Befehl erreichen.<br>
+<code>sudo apt-get update &amp;&amp; apt-get upgrade</code><br>
+Dieser Update-Vorgang kann schon ein wenig dauern. Sollte dieser Hinweis erscheinen, Repository &lsquo;<a href="http://deb.debian.org/debian" target="_blank" rel="noopener">http://deb.debian.org/debian</a> bullseye InRelease&rsquo; changed its &lsquo;Version&rsquo; value from &lsquo;11.3&rsquo; to &lsquo;11.4&rsquo; dann könnt ihr mit dem folgenden Befehl ein Distributions-Upgrade durchführen:<br>
+<code>sudo apt-get dist-upgrade</code><br>
+Wenn der Installationsvorgang abgeschlossen ist, wird das System durch die Eingabe von <code>sudo reboot</code> neugestartet.</p>
+<p><img src="/images/posts/adguard/Update-Raspberry-Pi-OS.png" alt="Raspberry Pi update durchführen"></p>
+<h3 id="schritt-11">Schritt 11:</h3>
+<p>Nach dem Neustart des Raspberry Pi und nach dem Neuverbinden per SSH, können wir endlich AdGuard Home auf den Raspberry Pi installieren. Dafür brauchen wir zunächst das Installationspaket für den AdGuard Home. Dafür gibt ihr den folgenden Befehl in das Terminal-Fenster ein, um das erforderliche Installationspaket herunterzuladen. AdGuard-Installationspaket herunterladen:<br>
+<code>wget https://github.com/AdguardTeam/AdGuardHome/releases/download/v0.107.11/AdGuardHome_linux_armv7.tar.gz</code><br>
+Installationspaket entpacken:<br>
+<code>sudo tar xvf AdGuardHome_linux_armv7.tar.gz</code><br>
+In das AdGuard-Verzeichnis wechseln: <code>cd AdGuardHome</code><br>
+Installation von AdGuard durchführen: <code>sudo ./AdGuardHome -s install</code></p>
+<p><img src="/images/posts/adguard/Installation-AdGuard.png" alt="Installation AdGuardHome auf einen Raspberry Pi"></p>
+<p>Nach erfolgreicher Installation könnt ihr die weitere Konfiguration per Webbrowser vornehmen. Hierzu einfach die IP-Adresse gefolgt von dem Port 3000 in die Adressezeile eures Browsers eingeben. <code>http://IP-Adresse:3000</code><br>
+Dann sollte euch das im Bild gezeigte Willkommens-Dashboard von AdGuard angezeigt werden.</p>
+<h3 id="schritt-12">Schritt 12:</h3>
+<p>Die Admin-Weboberfläche sollte aus Sicherheitsgründen nur über das LAN / Management-Netzwerk aus erreichbar sein. Daher wählt ihr im ersten Pulldown-Menü die Schnittstelle mit der IP-Adresse eures Raspberry Pi aus. Habt ihr mehre Netzwerke, Gast-Netzwerke oder VLAN´s im Betrieb, dann könnt ihr unter dem Punkt &lsquo;DNS-Server&rsquo; das Pulldown-Menü auf &lsquo;Alle Schnittstellen&rsquo; belassen, andernfalls wählt ihr auch hier die Schnittstelle eures Raspberry Pi aus.</p>
+<p><img src="/images/posts/adguard/Installationssetup-AdGuard-Bild-2.png" alt="Setup AdGuardHome"></p>
+<h3 id="schritt-13">Schritt 13:</h3>
+<p>Auf der nächsten Seite des Assistenten müsst ihr einen Benutzernamen sowie ein Passwort für den Zugang zum AdGuard vergeben. Bitte beachten, dass das gewählte Passwort auch ein wirklich sicheres Passwort ist, um so Missbrauch des DNS-Servers zu vermeiden!</p>
+<p><img src="/images/posts/adguard/Installationssetup-AdGuard-Bild-3.png" alt="Benutzer und Passwort für AdGuardHome setzen"></p>
+<h3 id="schritt-14">Schritt 14:</h3>
+<p>Im nächsten Fenster seht ihr dann eine Konfigurationshilfe für verschiedene Geräte und eine Übersicht über die IP-Adressen auf der AdGuard-DNS-Server lauscht. Wenn ihr dann auf &lsquo;Weiter&rsquo; klickt, gelangt ihr zum Anmeldefenster von AdGuard Home.</p>
+<p><img src="/images/posts/adguard/Installationssetup-AdGuard-Bild-4.png" alt="Konfigurationshilfe AdGuardHome"></p>
+<h3 id="schritt-15">Schritt 15:</h3>
+<p>Nach der Eingabe eures Benutzernamens sowie eurem Passwort, wird euch das Dashboard von AdGuard Home angezeigt. Hier habt ihr dann die Möglichkeiten, die Anfragestatistiken des DNS-Servers auszuwerten und natürlich AdGuard weiter zu Konfigurieren.</p>
+<p><img src="assets/images/posts/adguard/Installationssetup-AdGuard-Bild-5.png" alt="AdGuardHome Dashboard"></p>
+<h2 id="zusammenfassung---adguard-raspberry-pi-installation">Zusammenfassung - AdGuard Raspberry Pi Installation</h2>
+<p>Wie ihr sehen konntet, ist die Installation von AdGuard Home auf einem Raspberry Pi eigentlich nicht schwer!</p>
+<p>Natürlich müsst ihr AdGuard noch ein wenig Konfigurieren (DNS over https, Blacklists vergeben, etc.), damit dieser richtig in Aktion treten kann.</p>
+<p>Wie ihr AdGuard konfigurieren könnt, dass zeige ich dann in einem separaten Beitrag oder Video auf meinem YouTube-Kanal.</p>
+<p>Eine Übersicht über gute Blacklists für AdGuard oder pihole, sowie eine Übersicht über öffentliche DNS-Server, die Datenschutz und Sicherheit auf Ihre Fahnen geschrieben haben, findet ihr weiter unten in diesem Beitrag &lsquo;AdGuard Raspberry Pi Installation&rsquo;.</p>
+<p><strong>Sollte euch diese Schritt für Schritt-Anleitung weitergeholfen haben, so würde ich mich sehr darüber freuen, wenn ihr mich durch ein Abo auf meinen <a href="https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q" target="_blank" rel="noopener">YouTube-Kanal</a> unterstützen würdet.</strong></p>
+<h2 id="blacklist-empfehlungen---adguard-raspberry-pi-installation">Blacklist-Empfehlungen - AdGuard Raspberry Pi Installation</h2>
+<p>Mit den vorgestellten Blacklists habe ich bisher sehr gute Erfahrungen gemacht und möchte diese daher gerne weiterempfehlen.</p>
+<h3 id="blacklist-steveblack">Blacklist SteveBlack</h3>
+<p>Diese Liste ist sehr umfassend und hat zurzeit circa 150000 Einträge enthalten.</p>
+<p>Kategorien:</p>
+<ul>
+<li>
+<p>Porn</p>
+</li>
+<li>
+<p>Adware</p>
+</li>
+<li>
+<p>Malware</p>
+</li>
+<li>
+<p>Fakenews</p>
+</li>
+<li>
+<p>Gambling (verdächtige Hosts)</p>
+</li>
+<li>
+<p>Social+</p>
+</li>
+</ul>
+<p><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" target="_blank" rel="noopener">https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts</a></p>
+<h3 id="blacklist-adawayorg">Blacklist adaway.org</h3>
+<p>Werbeblocker</p>
+<p><a href="https://adaway.org/hosts.txt" target="_blank" rel="noopener">https://adaway.org/hosts.txt</a></p>
+<h3 id="blacklist-smarttv-tracking">Blacklist SmartTV-Tracking</h3>
+<p>Name ist Programm</p>
+<p><a href="https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt</a></p>
+<h3 id="blacklist-easyprivacy">Blacklist EasyPrivacy</h3>
+<p>Tracking und Telemetrie</p>
+<p><a href="https://v.firebog.net/hosts/Easyprivacy.txt" target="_blank" rel="noopener">https://v.firebog.net/hosts/Easyprivacy.txt</a></p>
+<h3 id="blacklist-easylist">Blacklist EasyList</h3>
+<p>Werbeblocker</p>
+<p><a href="https://v.firebog.net/hosts/Easylist.txt" target="_blank" rel="noopener">https://v.firebog.net/hosts/Easylist.txt</a></p>
+<h3 id="blacklist-telemetrie-microsoft--windows">Blacklist Telemetrie Microsoft / Windows</h3>
+<p>Vermeidung Telemetrie Erfassung von Microsoft-Produkte</p>
+<p><a href="https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt</a></p>
+<h3 id="weiterführende-links-zum-thema">Weiterführende Links zum Thema</h3>
+<p><strong>Raspberry Pi OS Imager</strong></p>
+<p><a href="https://downloads.raspberrypi.org/imager/imager_latest.exe" target="_blank" rel="noopener">https://downloads.raspberrypi.org/imager/imager_latest.exe</a></p>
+<h2 id="vertrauenswürdige-dns-server---adguard-home-raspberry-pi-installation">Vertrauenswürdige DNS-Server - AdGuard Home Raspberry Pi Installation</h2>
+<p>Hier eine Auflistung von datenschutzkonformen DNS-Server-Provider, die kein Logging betreiben und zensurfrei sind.</p>
+<blockquote>
+<p>Danke an <a href="https://www.privacy-handbuch.de/" target="_blank" rel="noopener">privacy-handbuch.de</a> für die Auflistung der DNS-Server.</p></blockquote>
+<h3 id="freifunk-münchennormales-dns-dns-over-tls-und-dns-over-https">Freifunk München (normales DNS, DNS-over-TLS und DNS-over-HTTPS)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 5.1.66.255
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2001:678:e68:f000::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Servername: dot.ffmuc.net
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv4: 185.150.99.255
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>IPv6: 2001:678:ed0:f000::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Servername: dot.ffmuc.net
+</span></span></code></pre></div><h3 id="digitale-gesellschaft-chdns-over-tls-und-dns-over-https">Digitale Gesellschaft (CH) (DNS-over-TLS und DNS-over-HTTPS!)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 185.95.218.42
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2a05:fc84::42
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Servername: dns.digitale-gesellschaft.ch
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv4: 185.95.218.43
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>IPv6: 2a05:fc84::43
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Servername: dns.digitale-gesellschaft.ch
+</span></span></code></pre></div><h3 id="censurfridns-denmarkaka-uncensoreddns">Censurfridns Denmark (aka. UncensoredDNS)</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 91.239.100.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2001:67c:28a4::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>IPv4: 89.233.43.71
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv6: 2a01:3a0:53:53::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>(mit DNS-over-TLS)
+</span></span></code></pre></div>
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fadguard%2fadguard-home-auf-raspberry-pi-installieren%2f&title=AdGuard%20Home%20Raspberry%20Pi%20Installation" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=AdGuard%20Home%20Raspberry%20Pi%20Installation&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fadguard%2fadguard-home-auf-raspberry-pi-installieren%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">AdGuard Home manuell aktualisieren</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup - Basis-Konfiguration" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">AdGuardHome-Setup - Basis-Konfiguration</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#mit-adguard-dein-netzwerk-vor-werbung-und-trackern-schützen">Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen</a>
+      <ul>
+        <li><a href="#video-tutorial---adguard-raspberry-pi-home-installation">Video-Tutorial - AdGuard Raspberry Pi Home Installation</a></li>
+        <li><a href="#alternative-zu-adguard-home-raspberry-pi-installation-gesucht">Alternative zu &lsquo;AdGuard Home Raspberry Pi Installation&rsquo; gesucht?</a></li>
+        <li><a href="#hinweis">Hinweis!</a></li>
+      </ul>
+    </li>
+    <li><a href="#schritt-für-schritt--adguard-home-raspberry-pi-installation">Schritt für Schritt | AdGuard Home Raspberry Pi Installation</a>
+      <ul>
+        <li><a href="#schritt-1">Schritt 1:</a></li>
+        <li><a href="#schritt-2">Schritt 2:</a></li>
+        <li><a href="#schritt-3">Schritt 3:</a></li>
+        <li><a href="#schritt-4">Schritt 4:</a></li>
+        <li><a href="#schritt-5">Schritt 5:</a></li>
+        <li><a href="#schritt-6">Schritt 6:</a></li>
+        <li><a href="#schritt-7">Schritt 7:</a></li>
+        <li><a href="#schritt-8">Schritt 8:</a></li>
+        <li><a href="#schritt-9">Schritt 9:</a></li>
+        <li><a href="#schritt-10">Schritt 10:</a></li>
+        <li><a href="#schritt-11">Schritt 11:</a></li>
+        <li><a href="#schritt-12">Schritt 12:</a></li>
+        <li><a href="#schritt-13">Schritt 13:</a></li>
+        <li><a href="#schritt-14">Schritt 14:</a></li>
+        <li><a href="#schritt-15">Schritt 15:</a></li>
+      </ul>
+    </li>
+    <li><a href="#zusammenfassung---adguard-raspberry-pi-installation">Zusammenfassung - AdGuard Raspberry Pi Installation</a></li>
+    <li><a href="#blacklist-empfehlungen---adguard-raspberry-pi-installation">Blacklist-Empfehlungen - AdGuard Raspberry Pi Installation</a>
+      <ul>
+        <li><a href="#blacklist-steveblack">Blacklist SteveBlack</a></li>
+        <li><a href="#blacklist-adawayorg">Blacklist adaway.org</a></li>
+        <li><a href="#blacklist-smarttv-tracking">Blacklist SmartTV-Tracking</a></li>
+        <li><a href="#blacklist-easyprivacy">Blacklist EasyPrivacy</a></li>
+        <li><a href="#blacklist-easylist">Blacklist EasyList</a></li>
+        <li><a href="#blacklist-telemetrie-microsoft--windows">Blacklist Telemetrie Microsoft / Windows</a></li>
+        <li><a href="#weiterführende-links-zum-thema">Weiterführende Links zum Thema</a></li>
+      </ul>
+    </li>
+    <li><a href="#vertrauenswürdige-dns-server---adguard-home-raspberry-pi-installation">Vertrauenswürdige DNS-Server - AdGuard Home Raspberry Pi Installation</a>
+      <ul>
+        <li><a href="#freifunk-münchennormales-dns-dns-over-tls-und-dns-over-https">Freifunk München (normales DNS, DNS-over-TLS und DNS-over-HTTPS)</a></li>
+        <li><a href="#digitale-gesellschaft-chdns-over-tls-und-dns-over-https">Digitale Gesellschaft (CH) (DNS-over-TLS und DNS-over-HTTPS!)</a></li>
+        <li><a href="#censurfridns-denmarkaka-uncensoreddns">Censurfridns Denmark (aka. UncensoredDNS)</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

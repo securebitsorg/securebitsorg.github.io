@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hacking on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/hacking/</link>
+    <description>Recent content in Hacking on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Sun, 26 Aug 2018 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/hacking/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Netzwerk Sniffing – Sichere Kommunikation im Netzwerk</title>
+      <link>http://localhost:1313/posts/security/was-ist-sniffing/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-sniffing/</guid>
+      <description>&lt;h2 id=&#34;wie-kannst-du-dich-vor-netzwerk-sniffing-im-netzwerk-schützen&#34;&gt;Wie kannst du dich vor Netzwerk Sniffing im Netzwerk schützen?!&lt;/h2&gt;
+&lt;p&gt;Die meisten von euch haben sicherlich schon irgendwo gelesen oder gehört, dass alle Welt über sichere Kommunikation debattiert. Doch was ist eine sichere Kommunikation und warum können normale Kommunikationswege abgehört (sniffing) werden?! Daher möchte ich mich in diesem Beitrag mit dem Thema „Sniffing / Abhören“ beschäftigen und euch auch zeigen, wie ihr euch gegen solche Sniffing-Angriffe absichern könnt.&lt;/p&gt;
+&lt;p&gt;Nach den Enthüllungen von Edward Snowden ist das Abhören von Kommunikationswegen sicherlich jeden von euch geläufig. Abhören beziehungsweise sniffen kann man in kleinen wie in großen Dimensionen. Geheimdienste nutzen zur Abhörung gleich ganze Knotenpunkte von unseren ISP (Internet Service Provider) und im kleineren Maßstab funktioniert das natürlich auch bei euch in der Firma oder Daheim.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

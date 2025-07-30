@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>UFW-Firewall Raspberry Pi Installation</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="UFW-Firewall Raspberry Pi Installation" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/it-security/Thumbnail-1.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Dienstag, 20. September 2022 | 12 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>UFW-Firewall Raspberry Pi Installation</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi">UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi</h2>
+<p>In diesem Beitrag &lsquo;<strong>UFW-Firewall Raspberry Pi Installation</strong>&rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für <strong>iptables</strong> auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den <strong>Raspberry Pi</strong> beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.</p>
+<p>Passend zum Tutorial &lsquo;<a href="https://secure-bits.org/adguard-raspberry-pi-installation-2022/" target="_blank" rel="noopener">AdGuard auf dem Raspberry Pi installieren</a>&rsquo;. bietet sich natürlich an, dass wir die <a href="https://wiki.ubuntuusers.de/ufw/" target="_blank" rel="noopener">UFW-Firewall</a> auch auf den Raspberry Pi mit <strong>AdGuard Home</strong> drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.</p>
+<h3 id="ufw-firewall-regeln-für-adguard-auf-dem-raspberry-pi">UFW-Firewall-Regeln für AdGuard auf dem Raspberry Pi</h3>
+<p>Das von mir vorgeschlagene Regelwerk für die UFW-Firewall findet ihr weiter unten in diesem Beitrag. Vorab solltet ihr aber unbedingt erst den ganzen Beitrag durchlesen, damit ihr euch nicht vom Raspberry Pi aussperrt.</p>
+<p><a href="#adguard">Zum AdGuard Regelwerk</a></p>
+<h3 id="was-ist-eine-ufw-firewall">Was ist eine UFW-Firewall?</h3>
+<p>Die UFW-Firewall ist eigentlich keine Firewall, sonder bietet eine Schnittstelle um die regelbasierte Firewall &lsquo;iptables&rsquo; leichter per Terminal zu Konfigurieren. Die Firewall ‚iptables‘ ist ein Bestandteil jeder Linux-basierten Distribution.  <br>
+Mit der UFW-Firewall ist es möglich, durch einfache Befehle, Regeln in ‚iptables‘ anzulegen, ändern oder zu löschen.</p>
+<h3 id="gibt-es-eine-grafische-benutzeroberfläche-für-die-ufw-firewall">Gibt es eine grafische Benutzeroberfläche für die UFW-Firewall?</h3>
+<p>Es gibt auch eine grafische Benutzeroberfläche (GUI) für die UFW-Firewall. Diese grafische Benutzeroberfläche heißt &lsquo;gufw&rsquo; und ist auf Ubuntu-Systemen vorinstalliert.<br>
+Angeboten wird diese Erweiterung für die folgenden Distributionen:</p>
+<ul>
+<li>Ubuntu</li>
+<li>Debian</li>
+<li>Linux Mint</li>
+<li>openSuse</li>
+<li>archlinux</li>
+<li>salix</li>
+</ul>
+<h3 id="hinweis-zu-den-aufgeführten-befehlen--ufw-firewall-raspberry-pi">Hinweis zu den aufgeführten Befehlen | UFW-Firewall Raspberry Pi</h3>
+<p>Alle hier aufgeführten Befehle / Kommandos funktionieren nicht nur auf einen Raspberry Pi, sondern auch auf jeder anderen Linux-basierten Distibution wie zum Beispiel Ubuntu, Debian, archLinux und viele andere Systeme.</p>
+<h3 id="grundlegende-behandlungsanweisung-einer-firewall-regel">Grundlegende Behandlungsanweisung einer Firewall-Regel</h3>
+<p>Bei der UFW-Firewall sowie den mir bekannten anderen Firewalls auch, gibt es drei Methoden, die die Verarbeitung von Daten-Pakete im Netzwerkverkehr regelt. Diese Methoden zu verstehen, ist die absolute Grundlage für eine sichere Konfiguration einer Firewall.</p>
+<h4 id="methode-allow-oder-pass">Methode &lsquo;allow oder pass&rsquo;</h4>
+<p>Mit der Methode &lsquo;<strong>allow</strong> oder <strong>pass</strong>&rsquo; werden Daten-Pakete bei Netzwerkanfragen erlaubt. Diese Methode ist zumeist der Standard bei angelegten Regeln für ausgehenden Netzwerkverkehr.</p>
+<p>Eingehender Netzwerkverkehr wird <strong>nur explizit</strong> per &lsquo;allow oder pass&rsquo; freigegeben.</p>
+<h4 id="methode-reject">Methode &lsquo;reject&rsquo;</h4>
+<p>Die Methode &lsquo;<strong>reject</strong>&rsquo; wiederrum, ermöglicht es, Daten-Pakete im Netzwerkverkehr zu verwerfen und gibt den Sender der Netzwerkanfrage direkt darüber auch eine sofortige Rückmeldung.</p>
+<p>Weil die Rückmeldung über die abgelehnte Anfrage an den Sender oft auch für Denial of Service-Angriffe missbraucht werden, ist diese Methode der Behandlung von Anfragen bei einer Firewall eher nicht von Vorteil und wird daher für diesen Zweck nicht genutzt.</p>
+<p>Verwendung findet &lsquo;<strong>reject</strong>&rsquo; zum Beispiel bei der Kommunikation zwischen Netzwerkkomponenten um eine gegebenenfalls hohe Netzwerklast im Netzwerk zu vermeiden.</p>
+<h4 id="methode-deny-oder-drop">Methode &lsquo;deny oder drop&rsquo;</h4>
+<p>Anders wie bei der Methode &lsquo;<strong>reject</strong>&rsquo; wird bei der Methode &lsquo;<strong>deny</strong> <strong>oder drop</strong>&rsquo;, die Netzwerkanfrage zwar auch gleich verworfen, aber der Absender erhält durch diese Methode keine direkte Rückmeldung und die Anfragen verlaufen sozusagen ins Leere.</p>
+<p>Nachteil dieser Methode ist aber, dass dadurch eine höherere Netzwerklast im Netzwerk entstehen kann. <strong>Trotzdem ist diese Methode der Behandlung von Anfragen auf einer Firewall ganz klar den Vorzug zu geben.</strong></p>
+<h2 id="installation-ufw-firewall-raspberry-pi">Installation UFW-Firewall Raspberry Pi</h2>
+<p>Um die Installation der UFW-Firewall beginnen zu können, müsst ihr euch zunächst per SSH-Verbindung im Terminal-Fenster mit dem Raspberry Pi verbinden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># ssh-Verbindung mit dem Raspberry Pi erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>ssh Benutzername@IP-Adresse des Pi
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Als Beispiel: ssh pi@172.16.16.215</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Dann euer vergebenes Passwort eingeben.</span>
+</span></span></code></pre></div><p>Nach der erfolgreichen Anmeldung sollte der Inhalt des Terminal-Fenster wie auf dem folgenden Bild aussehen.</p>
+<p><img src="/images/posts/it-security/Terminal-ssh-Verbindung.png" alt="Terminal SSH-Verbindung"></p>
+<h3 id="ufw-firewall-raspberry-pi-installieren">UFW Firewall Raspberry Pi installieren</h3>
+<p>Mit dem folgenden Befehl könnt ihr die UFW-Firewall auf den Raspberry Pi installieren:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Installation ufw-Firewall</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo apt install ufw
+</span></span></code></pre></div><h3 id="ufw-firewall-dienst-aktivieren">UFW-Firewall-Dienst aktivieren</h3>
+<p>Nach der Installation muss der System-Dienst der Firewall gegebenenfalls noch gestartet werden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># System-Dienst der UFW-Firewall starten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo systemctl enable ufw --now
+</span></span></code></pre></div><h3 id="status-der-firewall-überprüfen---ufw-firewall-raspberry-pi">Status der Firewall überprüfen - UFW-Firewall Raspberry Pi</h3>
+<p>Um den Status der Firewall zu überprüfen, gibt ihr den folgenden Befehl ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Status der Firewall abfragen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ufw status
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ausgabe:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Status: inactive
+</span></span></code></pre></div><blockquote>
+<h3 id="wichtig">Wichtig!</h3>
+<p><strong>Bitte die UFW-Firewall erst am Ende dieses Tutorials aktivieren, ansonsten sperrt ihr auch aus dem Raspberry Pi aus!</strong></p></blockquote>
+<h3 id="grundlegende-eingehende-traffic-verbots-regel-anlegen---ufw-firewall-raspberry-pi">Grundlegende eingehende Traffic-Verbots-Regel anlegen - UFW-Firewall Raspberry Pi</h3>
+<p>Zunächst werden wir den grundlegenden Netzwerkverkehr verbieten, damit nur explizite von uns erstellte Freigaben aktiv sind.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Grundlegenden Netzwerkverkehr verbieten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw default deny incoming
+</span></span></code></pre></div><h3 id="grundlegende-ausgehende-regel-anlegen---ufw-firewall-raspberry-pi">Grundlegende ausgehende Regel anlegen - UFW-Firewall Raspberry Pi</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Grundlegenden ausgehenden Netzwerkverkehr erlauben</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw default allow outgoing
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Natürlich kann der grundlegende ausgehende Netzwerkverkehr auch verboten werden und dann einzelne Ports später freigegeben werden</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw default deny outgoing
+</span></span></code></pre></div><h3 id="regel-für-zugriff-per-ssh-anlegen---ufw-firewall-raspberry-pi">Regel für Zugriff per ssh anlegen - UFW-Firewall Raspberry Pi</h3>
+<p>Damit der Zugriff per ssh auf den Raspberry Pi nach der Aktivierung der UFW-Firewall weiterhin möglich ist, erstellen wir hierfür eine Regel.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Regel für den ssh-Zugriff anlegen. Dies kann entweder über den &#39;Port 22&#39; angegeben werden oder aber ihr welt den Service &#39;ssh&#39; aus. Eine Liste der Services die die UFW-Firewall kennt, findet ihr unter /etc/services </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>sudo ufw allow ssh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Zugriff nur von eurem Netzwerk gestatten </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>sudo ufw allow from IP-Adressbereich to any port <span style="color:#0086f7;font-weight:bold">22</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># So würde die Regel bei meinem Netzwerk aussehen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>sudo ufw allow from 172.16.16.0/24 to any port <span style="color:#0086f7;font-weight:bold">22</span>
+</span></span></code></pre></div><h4 id="ufw-firewall-anmeldeversuche-für-ssh-limitieren">UFW-Firewall Anmeldeversuche für ssh limitieren</h4>
+<p>Um ein Limit für den ssh-Zugang zu definieren und so eine Brut Force-Attacke vorzubeugen (klappt auch bei anderen Ports und Services), kann man eine Regel erstellen, die ein Limit an Anmeldeversuche setzt.</p>
+<p>Bei diesem Limit werden die Anmeldeversuche auf 6 Anmeldungen in 30 Sekunden begrenzt.</p>
+<p>Diese Regel könnt ihr wie folgt anlegen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Limit für Anmeldeversuche am ssh-Port setzen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw limit ssh
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>oder 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw limit 22/tcp
+</span></span></code></pre></div><h3 id="bekannte-services-der-ufw-firewall">Bekannte Services der UFW-Firewall</h3>
+<p>Der UFW-Firewall sind auch von Haus aus einige &lsquo;<strong>Services</strong>&rsquo; bekannt. Services sind zum Beispiel &lsquo;<strong>ssh</strong>&rsquo; für den <strong>Port 22</strong>.</p>
+<p>Diese &lsquo;<strong>Services</strong>&rsquo; können bei dem Anlegen neuer Firewall-Regeln auch direkt angesprochen werden.</p>
+<p>Im unteren Bild seht ihr die Datei in der die Services der UFW-Firewall aufgeführt werden.</p>
+<p>Diese Datei könnt ihr durch den Befehl &lsquo;<strong>nano /etc/services</strong>&rsquo; anschauen.</p>
+<p><img src="/images/posts/it-security/WindowsTerminal_ufw-firewall-services.png" alt="Auflistung der Services unter Debain"></p>
+<h3 id="firewall-regeln-mittels-apps-definieren---ufw-firewall-raspberry-pi">Firewall-Regeln mittels Apps definieren - UFW-Firewall Raspberry Pi</h3>
+<p>Eine weitere Methode Definitionen für das Regelwerk der Firewall zu nutzen, ist es &lsquo;<strong>App</strong>&rsquo; als Definition für die Behandlung von Daten-Pakete zu nutzen.</p>
+<p>&lsquo;<strong>Apps</strong>&rsquo; sind Applikationen die auf eurem System am Laufen sind und bringen und hinterlegen bei dessen Installation sogenannte &lsquo;<strong>Profile</strong>&rsquo;, in diesen Profilen sind die verwendeten Ports der Applikation angegeben.</p>
+<h4 id="liste-der-installierten-app-profile-anzeigen-lassen">Liste der installierten App-Profile anzeigen lassen</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall App-List anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw app list
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Beispielausgabe siehe unteres Bild</span>
+</span></span></code></pre></div><p><img src="/images/posts/it-security/sudo-ufw-app-list.png" alt="APP-Liste der UFW-Firewall"></p>
+<h4 id="app-profil-einer-applikation-in-der-ufw-firewall-anzeigen">App-Profil einer Applikation in der UFW-Firewall anzeigen</h4>
+<p>Wie schon im vorherigen Absatz erwähnt, sind einem App-Profil einer installierten Applikation, die genutzten Ports der Anwendung angegeben. Um dieses Profil anzeigen zu lassen gibt ihr den folgenden Befehl in euer Terminal-Fenster ein.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># App-Profil anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw app info &lt;Name der App&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Beispiel</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw app info IMAPS
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ausgabe: Siehe unteres Bild</span>
+</span></span></code></pre></div><p><img src="/images/posts/it-security/sudo-ufw-app-info.png" alt="App-Profil mittels UFW-Firewall anzeigen"></p>
+<h4 id="firewall-regel-mittels-app-profil-definieren">Firewall-Regel mittels App-Profil definieren</h4>
+<p>Um jetzt eine Firewall-Regel mittels App-Profil zu erstellen, gibt ihr den folgenden Befehl ins Terminal ein.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall-Regel mittels App-Profil definieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw allow/deny APP-Profil
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Beispiel für IMAPS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw allow IMAPS
+</span></span></code></pre></div><h3 id="eigene-firewall-profile-definieren---ufw-firewall-raspberry-pi">Eigene Firewall-Profile definieren - UFW-Firewall Raspberry Pi</h3>
+<p>Es gibt natürlich auch die Möglichkeit eigene APP-Profile anzulegen (so wie bei der OPNsense das &lsquo;Alias&rsquo;) und damit mehrere Ports einem eigenen Profil zuzuweisen. Damit braucht man dann weiteren Verlauf in der Regelerstellung der UFW-Firewall nur dieses Profil benennen.</p>
+<p>Abgespeichert sind diese App-Profile unter folgendem Pfad:</p>
+<p><strong>/etc/ufw/application.d/</strong></p>
+<p>In diesem Beispiel nenne ich das selbsterstellte Profil &rsquo;eigenesprofile&rsquo;.</p>
+<h4 id="ufw-firewall-app-profil-anlegen">UFW-Firewall-App-Profil anlegen</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># In das Verzeichnis wechseln in dem die App-Profile gespeichert sind</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>cd /etc/ufw/application.d/
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Anzeigen der vorhandenen Profile (kann je nach installieren Apps anders bei euch ausschauen)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>ls -l
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ausgabe</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>pi@raspberrypi3:/etc/ufw/applications.d $ ls -l
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>total <span style="color:#0086f7;font-weight:bold">44</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">145</span> Jul  <span style="color:#0086f7;font-weight:bold">2</span> 00:37 openssh-server
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">349</span> Dec <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-bittorent
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">627</span> Mar <span style="color:#0086f7;font-weight:bold">30</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-chat
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">513</span> Mar <span style="color:#0086f7;font-weight:bold">30</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-directoryserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root  <span style="color:#0086f7;font-weight:bold">89</span> Jan <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-dnsserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">358</span> Mar <span style="color:#0086f7;font-weight:bold">30</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-fileserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">212</span> Jan <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-loginserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">524</span> Mar <span style="color:#0086f7;font-weight:bold">30</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-mailserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">131</span> Jan <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-printserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">155</span> Jan <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-proxyserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>-rw-r--r-- <span style="color:#0086f7;font-weight:bold">1</span> root root <span style="color:#0086f7;font-weight:bold">320</span> Jan <span style="color:#0086f7;font-weight:bold">14</span>  <span style="color:#0086f7;font-weight:bold">2018</span> ufw-webserver
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>pi@raspberrypi3:/etc/ufw/applications.d $
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Anlegen eines eigenen Profils</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>sudo nano eigenesprofile
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Im Nano-Editor-Fenster gibt ihr dann folgendes ein (angepasst an eurem Profil)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>[eigenesprofil]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span><span style="color:#fb660a">title</span>=Ports fuer das eigene Profil
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span><span style="color:#fb660a">description</span>=Ports und Portbereiche für das eigene App-Profil
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span><span style="color:#fb660a">ports</span>=443,80,3689/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Abspeichern mit STRG+O und Enter, verlassen mit STRG+X</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Laden der neuen Regel</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>sudo ufw reload
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Aktivieren der angelegten Regel</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>sudo ufw allow eigenesprofil
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Überprüfen der Regeln der UFW-Firewall </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>sudo ufw status verbose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ausgabe siehe unteres Bild</span>
+</span></span></code></pre></div><h4 id="überprüfung-der-ufw-firewall-regeln-nach-anlegung-des-eigenen-profils">Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils</h4>
+<p><img src="/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png" alt="Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils"></p>
+<h3 id="mehrere-ports-als-regel-definieren">Mehrere Ports als Regel definieren</h3>
+<p>Möchte man für gleichzeitig mehrere Ports nach Protokoll-Definition (UDP oder TCP) eine Firewall-Regel anlegen, gibt es dafür zwei Möglichkeiten.</p>
+<p>Erste Möglichkeit ist es, zu regelnde Ports mit einem &lsquo;<strong>,</strong>&rsquo; aneinander zu reihen (zum Beispiel: 22,25,80,443).</p>
+<p>Die zweite Möglichkeit ist es, Portbereiche mittels des Zeichens &lsquo;<strong>:</strong>&lsquo;anzugeben (zum Beispiel: 2000:3000).</p>
+<p>Je nach einer der beiden Möglichkeiten, gibt ihr hierzu den jeweiligen Befehl ins Terminal ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall-Regel für mehrere Ports desselben Protokolls anlegen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw allow 22,25,80,443/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Firewall-Regel mittels Portbereich anlegen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw allow 2000:3000/tcp
+</span></span></code></pre></div><h3 id="regel-kommentar-hinzufügen---ufw-firewall-raspberry-pi">Regel-Kommentar hinzufügen - UFW-Firewall Raspberry Pi</h3>
+<p>Bei einem umfassenden Regelwerk der Firewall ist es gut, wenn den einzelnen Regeln ein Kommentar mit dessen Funktion hinterlegt wird. So behält man bei vielen Regeln oder Ports die nicht eindeutig zugeordnet werden können, den Überblick.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Einer Regel einen Kommentar hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw allow ssh comment <span style="color:#0086d2">&#34;Freigabe ssh-Verbindung&#34;</span>
+</span></span></code></pre></div><h3 id="ufw-firewall-aktivieren-und-deaktivieren">UFW-Firewall Aktivieren und Deaktivieren</h3>
+<p>Die Firewall könnt ihr durch die folgenden Befehle Aktivieren oder Deaktivieren.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Aktivieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw enable
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Deaktivieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw disable
+</span></span></code></pre></div><h3 id="firewall-status-anzeigen">Firewall Status anzeigen</h3>
+<p>Um den Status der UFW-Firewall anzeigen zu lassen, gibt es zwei Möglichkeiten.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Möglichkeit 1, zeigt alle Regeln an:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw status verbose
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Möglichkeit 2, zeigt Regeln mit Nummerierung an:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ufw status numbered
+</span></span></code></pre></div><h3 id="regeln-löschen---ufw-firewall-raspberry-pi">Regeln löschen - UFW-Firewall Raspberry Pi</h3>
+<p>Am einfachsten Regeln zu löschen ist es, wenn ihr wie folgt vorgeht.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Die UFW-Firewall-Regeln nummeriert anzeigen lassen:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>sudo ufw status numbered
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Beispielausgabe:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>pi@raspberrypi3:~ $ sudo ufw status numbered
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>Status: active
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>     To                         Action      From
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>     -- ------ ----
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>[ 1] <span style="color:#0086f7;font-weight:bold">22</span>                         ALLOW IN    172.16.16.0/24
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>[ 2] <span style="color:#0086f7;font-weight:bold">3000</span>                       ALLOW IN    172.16.16.0/24
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>[ 3] 53/tcp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>[ 4] 53/udp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>[ 5] 853/tcp                    ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>[ 6] 853/udp                    ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>[ 7] 67/tcp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>[ 8] 67/udp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>[ 9] 68/tcp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>[10] 68/udp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>[11] 80/tcp                     ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>[12] 443/tcp                    ALLOW IN    Anywhere
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall-Regel löschen. Hier als Beispiel Regel 3:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>sudo ufw delete <span style="color:#0086f7;font-weight:bold">3</span>
+</span></span></code></pre></div><h3 id="ufw-firewall-deinstallieren">UFW-Firewall Deinstallieren</h3>
+<p>Möchtet ihr aus hoffentlich guten Gründen ;) , Die Firewall Deinstallieren, dann nutzt hierzu den folgenden Befehl.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall Deinstallieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo apt remove ufw --purge
+</span></span></code></pre></div><h3 id="regeländerungen-der-ufw-firewall-mitteilen">Regeländerungen der UFW-Firewall mitteilen</h3>
+<p>Wenn ihr Änderungen am Regelwerk der Firewall vorgenommen habt, muss dies der Firewall mitgeteilt werden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Firewall Regeländerungen bekannt geben</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ufw reload
+</span></span></code></pre></div><h2 id="video-tutorial---adguard-absichern-mit-ufw-firewall-auf-raspberry-pi">Video-Tutorial - AdGuard absichern mit UFW-Firewall auf Raspberry Pi</h2>
+<p>Demnächst wird auch ein passendes Video-Tutorial zum Thema &lsquo;AdGuard-Installation auf einen Raspberry Pi mittels UFW-Firewall absichern&rsquo; auf meinem <a href="https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q" target="_blank" rel="noopener">YouTube-Kanal</a> erscheinen.</p>
+<p><a href="https://youtu.be/Dh3A1Idktmg" target="_blank" rel="noopener">https://youtu.be/Dh3A1Idktmg</a></p>
+<p>Also am besten meinen Kanal gleich <a href="https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q" target="_blank" rel="noopener">Abonnieren</a> um kein Video zu verpassen.</p>
+<h2 id="regeln-für-adguard--ufw-firewall-raspberry-pi">Regeln für AdGuard | UFW-Firewall Raspberry Pi</h2>
+<p>Nachdem ihr jetzt hoffentlich einen guten Überblick über das UFW-Firewall-Regelwerk bekommen habt, ist nun die Zeit gekommen, dass wir die Regeln für unseren installierten AdGuard auf dem Raspberry Pi anlegen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Firewall Reset - So setzt ihr die UFW-Firewall auf die ursprüngliche Konfiguration nach der Installation zurück</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>sudo ufw reset
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Grundregeln der Firewall</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># IPv6 deaktivieren - Hierzu müsst ihr in der Datei &#39;/etc/default/ufw&#39; den Eintrag &#39;IPv6=yes&#39; auf &#39;no&#39; umstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Öffnen der Konfigurationsdatei mit dem Nano-Editor</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>sudo nano /etc/default/ufw
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#fb660a">IPv6</span>=no
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Datei speichern mit STRG+O und STRG+X den Nano-Editor verlassen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># UFW-Firewall-Dienst neustarten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>sudo systemctl restart ufw
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Jeden eingehenden Traffic sperren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>sudo ufw default deny incoming 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Jeden ausgehenden Traffic erlauben</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>sudo ufw default allow outgoing 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Der IP-Adressbereich muss natürlich mit eurem Bereich in der der Raspberry läuft, übereinstimmen | Freigabe SSH-Zugriff über den definierten IP-Adressbereich</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>sudo ufw allow from 172.16.16.0/24 to any port <span style="color:#0086f7;font-weight:bold">22</span> 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Port für den Zugriff auf das Dashboard von AdGuard (Hier auch wieder den IP-Adressbereich anpassen)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>sudo ufw allow from 172.16.16.0/24 to any port <span style="color:#0086f7;font-weight:bold">3000</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Port für den DNS-Service</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>sudo ufw allow 53/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>sudo ufw allow 53/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span>sudo ufw allow 853/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>sudo ufw allow 853/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports für DHCP-Service erlauben</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>sudo ufw allow 67/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>sudo ufw allow 67/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>sudo ufw allow 68/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>sudo ufw allow 68/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">50</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">51</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports für https und http </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">52</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">53</span><span>sudo ufw allow 80/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">54</span><span>sudo ufw allow 443/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">55</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">56</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports für DNS over Quic</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">57</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">58</span><span>sudo ufw allow 784/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">59</span><span>sudo ufw allow 8853/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">60</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">61</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports für DNSCrypt</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">62</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">63</span><span>sudo ufw allow 5443/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">64</span><span>sudo ufw allow 5443/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">65</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">66</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports für NTP - Timeserver:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">67</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">68</span><span>sudo ufw allow 37/udp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">69</span><span>sudo ufw allow 37/tcp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">70</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">71</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Firewall-Regeln neu laden</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">72</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">73</span><span>sudo ufw reload
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">74</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">75</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Firewall aktivieren:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">76</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">77</span><span>sudo ufw enable
+</span></span></code></pre></div><h2 id="zusammenfassung---ufw-firewall-raspberry-pi">Zusammenfassung - UFW-Firewall Raspberry Pi</h2>
+<p>In diesem Tutorial &lsquo;UFW Firewall Raspberry Pi&rsquo; haben wir den Raspberry Pi per UFW-Firewall gegen unnötige Zugriffe abgesichert.</p>
+<p>Das Tool UFW-Firewall macht es möglich, auf einfacher Art, die Konfiguration von iptables (Netfilter) durchzuführen und somit mehr Sicherheit auf einen Linux-System zu gewährleisten.</p>
+<p>Wem von euch die Bedienung über das Terminal nicht so liegt, der kann mit der graphischen Benutzeroberfläche &lsquo;gufw&rsquo; das Ganze auch per &ldquo;Klicki-Bunti&rdquo; durchführen, vorausgesetzt natürlich, es ist eine graphische Benutzeroberfläche auf dem System installiert.</p>
+<p>Ich hoffe, der Beitrag hat euch gefallen und den Einen oder Anderen unter euch konnte dieser ein wenig weiterhelfen?!</p>
+<p>Solltet ihr Fragen haben. dann hinterlasst mir bitte einen Kommentar oder schreibt mir eine E-Mail.</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fufw-firewall-debian-basierend%2f&title=UFW-Firewall%20Raspberry%20Pi%20Installation" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=UFW-Firewall%20Raspberry%20Pi%20Installation&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fufw-firewall-debian-basierend%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man-in-the-Middle-Angriffe erhalten" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Schutz vor Man-in-the-Middle-Angriffe erhalten</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall - Application Profiles erstellen " class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">UFW-Firewall - Application Profiles erstellen </div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi">UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi</a>
+      <ul>
+        <li><a href="#ufw-firewall-regeln-für-adguard-auf-dem-raspberry-pi">UFW-Firewall-Regeln für AdGuard auf dem Raspberry Pi</a></li>
+        <li><a href="#was-ist-eine-ufw-firewall">Was ist eine UFW-Firewall?</a></li>
+        <li><a href="#gibt-es-eine-grafische-benutzeroberfläche-für-die-ufw-firewall">Gibt es eine grafische Benutzeroberfläche für die UFW-Firewall?</a></li>
+        <li><a href="#hinweis-zu-den-aufgeführten-befehlen--ufw-firewall-raspberry-pi">Hinweis zu den aufgeführten Befehlen | UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#grundlegende-behandlungsanweisung-einer-firewall-regel">Grundlegende Behandlungsanweisung einer Firewall-Regel</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation-ufw-firewall-raspberry-pi">Installation UFW-Firewall Raspberry Pi</a>
+      <ul>
+        <li><a href="#ufw-firewall-raspberry-pi-installieren">UFW Firewall Raspberry Pi installieren</a></li>
+        <li><a href="#ufw-firewall-dienst-aktivieren">UFW-Firewall-Dienst aktivieren</a></li>
+        <li><a href="#status-der-firewall-überprüfen---ufw-firewall-raspberry-pi">Status der Firewall überprüfen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#wichtig">Wichtig!</a></li>
+        <li><a href="#grundlegende-eingehende-traffic-verbots-regel-anlegen---ufw-firewall-raspberry-pi">Grundlegende eingehende Traffic-Verbots-Regel anlegen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#grundlegende-ausgehende-regel-anlegen---ufw-firewall-raspberry-pi">Grundlegende ausgehende Regel anlegen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#regel-für-zugriff-per-ssh-anlegen---ufw-firewall-raspberry-pi">Regel für Zugriff per ssh anlegen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#bekannte-services-der-ufw-firewall">Bekannte Services der UFW-Firewall</a></li>
+        <li><a href="#firewall-regeln-mittels-apps-definieren---ufw-firewall-raspberry-pi">Firewall-Regeln mittels Apps definieren - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#eigene-firewall-profile-definieren---ufw-firewall-raspberry-pi">Eigene Firewall-Profile definieren - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#mehrere-ports-als-regel-definieren">Mehrere Ports als Regel definieren</a></li>
+        <li><a href="#regel-kommentar-hinzufügen---ufw-firewall-raspberry-pi">Regel-Kommentar hinzufügen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#ufw-firewall-aktivieren-und-deaktivieren">UFW-Firewall Aktivieren und Deaktivieren</a></li>
+        <li><a href="#firewall-status-anzeigen">Firewall Status anzeigen</a></li>
+        <li><a href="#regeln-löschen---ufw-firewall-raspberry-pi">Regeln löschen - UFW-Firewall Raspberry Pi</a></li>
+        <li><a href="#ufw-firewall-deinstallieren">UFW-Firewall Deinstallieren</a></li>
+        <li><a href="#regeländerungen-der-ufw-firewall-mitteilen">Regeländerungen der UFW-Firewall mitteilen</a></li>
+      </ul>
+    </li>
+    <li><a href="#video-tutorial---adguard-absichern-mit-ufw-firewall-auf-raspberry-pi">Video-Tutorial - AdGuard absichern mit UFW-Firewall auf Raspberry Pi</a></li>
+    <li><a href="#regeln-für-adguard--ufw-firewall-raspberry-pi">Regeln für AdGuard | UFW-Firewall Raspberry Pi</a></li>
+    <li><a href="#zusammenfassung---ufw-firewall-raspberry-pi">Zusammenfassung - UFW-Firewall Raspberry Pi</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

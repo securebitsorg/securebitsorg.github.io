@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Cmd</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/tags/cmd/index.xml" title="SecureBits Blog by Marcel Dellmann">
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+     
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-tags kind-term" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/tags/cmd">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/tags/cmd">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  
+  
+    
+  
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/tags" data-filter="all">Tags</a></li>
+            <div class="subtree taxonomy-terms">
+              
+              
+
+
+
+  
+  
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/adguard/" data-taxonomy-term="adguard"><span class="taxonomy-label">Adguard</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term active" href="http://localhost:1313/tags/cmd/" data-taxonomy-term="cmd"><span class="taxonomy-label">Cmd</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/debian/" data-taxonomy-term="debian"><span class="taxonomy-label">Debian</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/firewall/" data-taxonomy-term="firewall"><span class="taxonomy-label">Firewall</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/fritzbox/" data-taxonomy-term="fritzbox"><span class="taxonomy-label">Fritzbox</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/info/" data-taxonomy-term="info"><span class="taxonomy-label">Info</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/it-security/" data-taxonomy-term="it-security"><span class="taxonomy-label">It-Security</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/linux/" data-taxonomy-term="linux"><span class="taxonomy-label">Linux</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/netzwerk/" data-taxonomy-term="netzwerk"><span class="taxonomy-label">Netzwerk</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/pi-hole/" data-taxonomy-term="pi-hole"><span class="taxonomy-label">Pi-Hole</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/pihole/" data-taxonomy-term="pihole"><span class="taxonomy-label">Pihole</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/powershell/" data-taxonomy-term="powershell"><span class="taxonomy-label">Powershell</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/privacy/" data-taxonomy-term="privacy"><span class="taxonomy-label">Privacy</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/proxmox/" data-taxonomy-term="proxmox"><span class="taxonomy-label">Proxmox</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/raspberry-pi/" data-taxonomy-term="raspberry-pi"><span class="taxonomy-label">Raspberry Pi</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/security/" data-taxonomy-term="security"><span class="taxonomy-label">Security</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/software/" data-taxonomy-term="software"><span class="taxonomy-label">Software</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">Tutorials</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/video/" data-taxonomy-term="video"><span class="taxonomy-label">Video</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/tags/windows/" data-taxonomy-term="windows"><span class="taxonomy-label">Windows</span></a></li>
+        
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      
+      
+      
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/windows/netstat/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/windows/netstat-help.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/windows/netstat/" class="post-card-link">
+        <h5 class="card-title">Netstat unter Windows</h5>
+        <p class="card-text post-summary">Mit netstat TCP Verbindungen, Ports unter Windows anzeigen In diesem Artikel möchte ich euch den Befehl / Werkzeug netstat unter Windows vorstellen und euch zeigen wie ihr mit diesem Befehl aktive TCP-Verbindungen, offene Ports sowie andere Statistiken wie zum Beispiel eine IPv4 Übersicht der Internetprotokolle IP, TCP, ICMP und UDP-Protokolle überprüfen beziehungsweise anzeigen lassen.
+Wozu nutze ich die Netstat-Befehle? Für die Analyse der Sicherheit eines Betriebssystems ist es natürlich wichtig zu wissen, welche Verbindungen das Betriebssystem beziehungsweise die installierte Software zu Diensten im Internet aufbaut. Des Weiteren kann mit der Anzeige von lauschenden Ports auch schnell Malware erkannt werden. Um nun diese Verbindungen und lauschenden Ports aufzulisten kann der Befehl netstat genutzt werden.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Sonntag, 27. Juli 2025
+           | 5 Minuten </span>
+      <a
+      href="/posts/windows/netstat/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/windows/ipconfig-befehl/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/windows/ipconfig_all.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/windows/ipconfig-befehl/" class="post-card-link">
+        <h5 class="card-title">ipconfig-befehl</h5>
+        <p class="card-text post-summary">Eine Übersicht aller CMD Befehle findet ihr in** diesem Artikel.
+ipconfig Befehle im Überblick Wer oft Veränderungen an der IP-Adresse oder an der DNS-Auflösung vornimmt, weil zum Beispiel mehrere DNS-Server genutzt werden, der kennt das Problem, dass das Konfigurieren der Netzwerkadapter über die normalen Boardmittel (Gui) nicht gerade komfortabel ist. Hierfür bittet sich die Steuerung per Kommandozeile (CMD oder Powershell) an. Welche Befehle unter anderem der Befehl ipconfig hier für die einzelnen Aktionen zur Veränderung der Einstellungen der Netzwerkadapter vorhanden sind, soll diese Übersicht zeigen.
+In dieser Übersicht wird die Eingabeaufforderung CMD genutzt. Diese Eingabeaufforderung wird durch das Eintippen von ‚cmd‘ im Suchfeld von Windows aufgerufen. Das Suchfeld kann am schnellsten durch die Tatenkombination Windows-Taste + R aufgerufen werden.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Mittwoch, 23. Juli 2025
+           | 2 Minuten </span>
+      <a
+      href="/posts/windows/ipconfig-befehl/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/windows/cmd-befehle-im-ueberblick/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/windows/Eingabeaufforderung_logo.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/windows/cmd-befehle-im-ueberblick/" class="post-card-link">
+        <h5 class="card-title">Jetzt alle CMD-Befehle für Windows im Überblick 2025</h5>
+        <p class="card-text post-summary">Update - Neues von Microsoft | CMD - Befehle PDF
+Microsoft hat jetzt endlich mal selbst eine umfassende Dokumentation über die Funktionsweise der einzelnen CMD Befehle zur Verfügung gestellt. Daher möchte ich euch natürlich diese nicht vorenthalten.
+Weiter unten im Beitrag könnt ihr die Dokumentation nun ebenfalls herunterladen.
+CMD-Befehle - Die Helfer nicht nur für Nerds! Viele Aufgaben lassen sich unter Windows leichter beziehungsweise ausschließlich über das Kommandozeilentool CMD erledigen. In diesem Artikel möchte ich euch einen Überblick über die wichtigsten CMD Befehle für die Kommandozeile zur Verfügung stellen.
+Unterteilt habe ich diese Befehle weiter unten in diesem Beitrag, in verschiedene Themenbereiche, damit ihr gleich einen schnellen Überblick darüber gewinnen könnt.
+Einige dieser Befehle für die Arbeit oder Informationssammlung im Netzwerk habe ich euch ja schon in diesem Artikel vorgestellt, oder in dem Artikel, was ihr mit dem Befehl Netstat alles anstellen könnt.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Mittwoch, 12. März 2025
+           | 4 Minuten </span>
+      <a
+      href="/posts/windows/cmd-befehle-im-ueberblick/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/windows/windows-passwort-aendern/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/windows/passwort-aendern-windows-10.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/windows/windows-passwort-aendern/" class="post-card-link">
+        <h5 class="card-title">Jetzt einfach Windows Passwort ändern</h5>
+        <p class="card-text post-summary">Passwort ändern unter Windows Heute möchte ich euch in diesem Artikel “Windows Passwort ändern” zeigen wie ihr euer Passwort in den Windows 10-Systemeinstellungen, sowie das Ganze auch über die Kommandozeile CMD oder PowerShell ändern könnt. Diese Möglichkeit ist gerade für Administratoren eine schnelle Art und Weise, um schnell und unkompliziert. die Passwörter von Nutzern auf einem Windows-Computer oder auch über eine Domäne hinweg, zu ändern.
+Möglichkeit 1 – Windows Passwort ändern (Firmenrechner in einer Domäne) Für alle die einen Windows Firmen-Rechner besitzen der Teil einer Domäne ist, kann die Änderung des Passworts wie folgt durchgeführt werden. </p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/software/" class="btn btn-sm btn-info">software</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Freitag, 8. Januar 2021
+           | 3 Minuten </span>
+      <a
+      href="/posts/windows/windows-passwort-aendern/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/windows/windows-product-key-aktivieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/windows/Windows%20Product%20Key.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/windows/windows-product-key-aktivieren/" class="post-card-link">
+        <h5 class="card-title">Windows Product Key aktivieren</h5>
+        <p class="card-text post-summary"> Andere Windows Versionen Natürlich könnt ihr auf diese Weise auch bei jeder anderen Windows Version den Product Key ändern beziehungsweise aktivieren.
+Für die Aktivierung müsst ihr stattdessen natürlich euren Product Key dafür nutzen! Die im Artikel gezeigten Product Keys sind nur für die Verwendung der Windows Insider Preview geeignet!
+Windows Product Key aktivieren Bei einem Inplace-Upgrade von Windows 10 Enterprise kann es vorkommen, dass Sie nach dem Upgrade aufgefordert werden, Windows neu zu aktivieren. Bei der erneuten Durchführung der Aktivierung wird diese mit einen Fehlercode beendet.
+Die folgende Anleitung soll euch zeigen wie ihr den Produkt Key ändern und dann eure Windows 10 Insider Preview oder auch jede andere Version von Windows aktivieren könnt.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/cmd/" class="btn btn-sm btn-info">cmd</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Sonntag, 22. Januar 2017
+           | 2 Minuten </span>
+      <a
+      href="/posts/windows/windows-product-key-aktivieren/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+    </div>
+    <div class="paginator">
+      
+    </div>
+  </div>
+</section>
+
+
+      
+       
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

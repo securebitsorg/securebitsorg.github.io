@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Pihole Unbound jetzt richtig installieren</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.f6b26f00359f69d139362842b17c7dfc9ca8494f7098b1bd91f77cba6bc8b679.css" integrity="sha256-9rJvADWfadE5NihCsXx9/JyoSU9wmLG9kfd8umvItnk=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_747a7a60fc165ddd.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und persönlicher Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert." />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_fb1c622aecba328f.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/pihole/pihole-unbound">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/pihole/pihole-unbound">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/pihole/"> Pi-hole</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/" title="Windows">Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/pihole/Video-Pi-hole-und-Unbound.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_2d70f447e066a834.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Donnerstag, 12. Oktober 2023 | 9 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Pihole Unbound jetzt richtig installieren</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/pi-hole/" class="btn btn-sm btn-info">pi-hole</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="pihole-unbound-und-dns-verschlüsselung---für-mehr-sicherheit-im-netzwerk">Pihole Unbound und DNS-Verschlüsselung - Für mehr Sicherheit im Netzwerk</h2>
+<p>Im heutigem Video-Tutorial &lsquo;<strong>Pi-hole Unbound</strong>&rsquo; möchte ich euch gerne zeigen, wie ihr mithilfe von dem zusätzlichen Tool &lsquo;<strong>Unbound</strong>&rsquo;, für mehr Sicherheit bei euren DNS-Anfragen im Netzwerk sorgen könnt.</p>
+<p>Weiterhin findet ihr alle Befehle die ihr für die Installation und Konfiguration von Unbound neben Pi-hole braucht.</p>
+<p>Inhaltsverzeichnis zu Pihole Unbound</p>
+<h3 id="voraussetzungen-für-pihole-unbound-installation">Voraussetzungen für Pihole Unbound Installation</h3>
+<blockquote>
+<h3 id="hinweis">Hinweis</h3>
+<p>Diese Anleitung für die Installation und Einrichtung von <strong>Unbound</strong> ist für <strong>debianbasierte Distributionen wie Debian, Ubuntu, Raspberry Pi OS, etc</strong>.</p>
+<p>Dieses Tutorial bezieht sich auf die vorherigen Tutorials zum Thema &lsquo;Pi-Hole auf einen Raspberry Pi installieren&rsquo; und nimmt diese Konfiguration als Grundlage für diesen Beitrag.</p></blockquote>
+<p>In diesem Tutorial gehe ich von der Basis aus, die ihr nachdem Tutorial &lsquo;<strong><a href="https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/" target="_blank" rel="noopener">Pi-Hole + Firewall auf einen Raspberry Pi installieren</a></strong>&rsquo; auf euren Raspberry Pi nutzt. Sollte das nicht der Fall sein, dann könnt ihr vorab gerne das Tutorial für die Installation durchgehen.</p>
+<p>Natürlich sollte die Installation von <strong>Unbound</strong> auch auf anderen Linux basierten Systemen so funktionieren!</p>
+<h2 id="video-tutorial-zum-thema-pi-hole-unbound-installieren">Video-Tutorial zum Thema &lsquo;Pi-hole Unbound installieren&rsquo;</h2>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/TdL_3iB9SiU?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h2 id="installation-von-unbound">Installation von Unbound</h2>
+<p>Vorab müssen wir immer erstmal das Betriebssystem auf den aktuellen Stand bringen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y
+</span></span></code></pre></div><p>Nach der Aktualisierung sollte das System neu gestartet werden.</p>
+<h3 id="pi-hole-unbound--abrufen-der-roothints">Pi-hole Unbound | Abrufen der root.hints</h3>
+<p>Jetzt kann die Installation von Unbound und der Liste der aktuellen root.hints (Root-Namansserver, diese werden alle 6 Monate aktualisiert) erfolgen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Installation von Unbound</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt install unbound
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Installation der Liste der Root-Namensserver (sollte alle 6 Monate durchgeführt werden)</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo wget -O /etc/unbound/root.hints https://www.internic.net/domain/named.root
+</span></span><span style="display:flex;"><span>sudo wget -O /var/lib/unbound/root.hints https://www.internic.net/domain/named.root
+</span></span></code></pre></div><h3 id="liste-der-root-nameserver-roothints-automatisch-aktualisieren--pi-hole-unbound">Liste der Root-Nameserver (root.hints) automatisch Aktualisieren | Pi-hole Unbound</h3>
+<p>Um die Liste der root.hints automatisch alle 6 Monate zu aktualisieren, legen wir einen Cronjob an, der diese Aufgabe für uns automatisiert. Um diese Automatisierung einzurichten, gehen wir wie folgt vor.</p>
+<h4 id="anlegen-einer-update-datei-mit-allen-befehlen">Anlegen einer Update-Datei mit allen Befehlen</h4>
+<p>Wir legen zunächst eine Datei an, in der wir alle Befehle zum Aktualisieren der root.hints hineinpacken.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Anlegen einer Befehlsdatei für das Update der root.hints</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>nano /root/roothintsupdate
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Im Editorfenster dieser angelegten Datei hinterlegen wir die folgenden Befehle:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span>wget -O root.hints https://www.internic.net/domain/named.root ; 
+</span></span><span style="display:flex;"><span>rm /var/lib/unbound/root.hints
+</span></span><span style="display:flex;"><span>mv root.hints /var/lib/unbound/
+</span></span><span style="display:flex;"><span>service unbound restart
+</span></span></code></pre></div><h4 id="rechte-zur-ausführung-der-angelegten-datei-vergeben">Rechte zur Ausführung der angelegten Datei vergeben</h4>
+<p>Damit die angelegte Update-Datei auch ausgeführt werden kann, müssen wir noch hier die richtigen Berechtigungen vergeben.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Berechtigungen für die Update-Datei vergeben</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod +x /root/roothintsupdate
+</span></span></code></pre></div><h4 id="cronjob-für-das-automatische-update-der-roothints-anlegen">Cronjob für das automatische Update der root.hints anlegen</h4>
+<p>Um unsere Update-Datei automatisch alle sechs Monate auszuführen, legen wir einen Cronjob an, in dem wir die Cronjobs-Config entsprechend unserer Anforderung ergänzen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Öffnen der Cronjob-Config</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>crontab -e
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Hier tragen wir im unteren freien Bereich die folgende Zeile ein:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#ae81ff">0</span> <span style="color:#ae81ff">0</span> <span style="color:#ae81ff">1</span> */6 * /root/roothintsupdate &amp;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uns Speichern die Datei mit STRG + O und Enter und Verlassen das Editor-Fenster mit STRG + X</span>
+</span></span></code></pre></div><h4 id="neustart-den-cronjob-service">Neustart den Cronjob-Service</h4>
+<p>Zu guter Letzt, müssen wir den Service &lsquo;Cronjob&rsquo; noch neu starten und überprüfen im Anschluss, dass der Service auch ordnungsgemäß läuft.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Cronjob-Service neu starten</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>service cronjob restart
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Überprüfen des Status des Cronjob-Service</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>service cronjob status
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ausgabe des Befehls (piholetest ist der Name meines Testrechners):</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>* cron.service - Regular background program processing daemon
+</span></span><span style="display:flex;"><span>     Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/cron.service; enabled; vendor preset: enabled<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     Active: active <span style="color:#f92672">(</span>running<span style="color:#f92672">)</span> since Fri 2024-01-19 06:57:01 UTC; 15s ago
+</span></span><span style="display:flex;"><span>       Docs: man:cron<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   Main PID: <span style="color:#ae81ff">3866</span> <span style="color:#f92672">(</span>cron<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>      Tasks: <span style="color:#ae81ff">1</span> <span style="color:#f92672">(</span>limit: 38127<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     Memory: 340.0K
+</span></span><span style="display:flex;"><span>        CPU: 2ms
+</span></span><span style="display:flex;"><span>     CGroup: /system.slice/cron.service
+</span></span><span style="display:flex;"><span>             <span style="color:#e6db74">`</span>-3866 /usr/sbin/cron -f
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Jan <span style="color:#ae81ff">19</span> 06:57:01 piholetest systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Started Regular background program processing daemon.
+</span></span><span style="display:flex;"><span>Jan <span style="color:#ae81ff">19</span> 06:57:01 piholetest cron<span style="color:#f92672">[</span>3866<span style="color:#f92672">]</span>: <span style="color:#f92672">(</span>CRON<span style="color:#f92672">)</span> INFO <span style="color:#f92672">(</span>pidfile fd <span style="color:#f92672">=</span> 3<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Jan <span style="color:#ae81ff">19</span> 06:57:01 piholetest cron<span style="color:#f92672">[</span>3866<span style="color:#f92672">]</span>: <span style="color:#f92672">(</span>CRON<span style="color:#f92672">)</span> INFO <span style="color:#f92672">(</span>Skipping @reboot jobs -- not system startup<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h3 id="pi-hole-unbound---unbound-config-datei-anlegen">Pi-hole Unbound - Unbound-Config-Datei anlegen</h3>
+<p>Als nächstes müssen wir eine Config-Datei für Unbound anlegen, in der wir dann im nächsten Schritt, die Konfiguration für das Zusammenspiel von Unbound und Pi-hole eintragen.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unbound-Conf-Datei anlegen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># In dieser Datei tragen wir die im nächsten Absatz stehende Konfiguration ein</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># und Speichern die Config-Datei mit STRG+O ab und Verlassen den Editor mit STRG+x</span>
+</span></span></code></pre></div><h3 id="inhalt-der-pi-hole-unbound-config-datei">Inhalt der Pi-hole Unbound Config-Datei</h3>
+<p>Hier findet ihr den Inhalt der Config-Datei dir ihr für den Betrieb von Pi-hole und Unbound eintragen müsst.</p>
+<p>In dieser Config-Datei habe ich einige Anpassungen vorgenommen, damit externe DNS-Anfragen auf verschlüsselter Weise angefragt werden und einige andere Privacy-Einstellungen konfiguriert.</p>
+<p>Beschreibung zu den einzelnen Unbound-Konfigurationen stehen immer als Kommentar über den Anweisungen in der Unbound-Conf-Datei.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unbound-Config-Datei fuer Pi-hole</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>server:
+</span></span><span style="display:flex;"><span>chroot: <span style="color:#e6db74">&#34;&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Versions-Informationen von Unbound nicht anzeigen - Sicherheitsaspekt</span>
+</span></span><span style="display:flex;"><span>server:
+</span></span><span style="display:flex;"><span>   hide-identity: yes
+</span></span><span style="display:flex;"><span>   hide-version: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wenn keine Logdatei angegeben wird, wird syslog verwendet.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>logfile: <span style="color:#e6db74">&#34;/var/log/unbound.log&#34;</span>
+</span></span><span style="display:flex;"><span>verbosity: <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span>log-time-ascii: yes
+</span></span><span style="display:flex;"><span>log-queries: no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Port fuer Pi-hole Custom-DNS 1 angeben:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>port: <span style="color:#ae81ff">5335</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>-ip4: yes
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>-udp: yes
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>-tcp: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Kann auf ja gesetzt werden, wenn du IPv6-Konnektivität hast</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">do</span>-ip6: no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verwende dies nur, wenn du die Liste der primären Root-Server heruntergeladen hast!</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>root-hints: <span style="color:#e6db74">&#34;/var/lib/unbound/root.hints&#34;</span>
+</span></span><span style="display:flex;"><span>tls-cert-bundle: <span style="color:#e6db74">&#34;/etc/ssl/certs/ca-certificates.crt&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Vertraue dem Glue nur, wenn er innerhalb der Autorität des Servers liegt</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>harden-glue: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Erforderliche DNSSEC-Daten für vertrauenswürdige Zonen; wenn diese Daten fehlen, wird die zu Zone BOGUS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>harden-dnssec-stripped: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Verwende keine Großbuchstaben-Randomisierung, da sie bekanntermaßen manchmal DNSSEC-Probleme verursacht</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Siehe https://discourse.pi-hole.net/t/unbound-stubby-or-dnscrypt-proxy/9378 für weitere Details</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>use-caps-for-id: no
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Reduziere die Größe des EDNS-Zusammensetzungspuffers.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># IP-Fragmentierung ist heute im Internet unzuverlässig und kann </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Übertragungsfehler verursachen, wenn große DNS-Nachrichten über UDP gesendet werden. Selbst</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wenn die Fragmentierung funktioniert, ist sie unter Umständen nicht sicher.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Es ist theoretisch möglich, Teile einer fragmentierten DNS-Nachricht zu fälschen, ohne</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># dass der Empfänger es merkt. Kürzlich gab es eine hervorragende Studie</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># &gt;&gt;&gt; Defragmenting DNS - Determining the optimal maximum UDP response size for DNS &lt;&lt;&lt;</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># von Axel Koolhaas, und Tjeerd Slokker (https://indico.dns-oarc.net/event/36/contributions/776/)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># in Zusammenarbeit mit NLnet Labs untersuchten DNS anhand von realen Daten aus den</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># den RIPE Atlas Probes und die Forscher schlugen unterschiedliche Werte für</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># IPv4 und IPv6 und in verschiedenen Szenarien. Sie raten, dass Server so konfiguriert werden sollten</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># DNS-Nachrichten, die über UDP gesendet werden, auf eine Größe zu begrenzen, die keine</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Fragmentierung auf typischen Netzwerkverbindungen auslöst. DNS-Server können</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># von UDP auf TCP umschalten, wenn eine DNS-Antwort zu groß ist, um in diesen begrenzten</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Puffergröße passt. Dieser Wert wurde auch auf dem DNS Flag Day 2020 vorgeschlagen.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>edns-buffer-size: <span style="color:#ae81ff">1232</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># TTL-Grenzen für den Cache</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>cache-min-ttl: <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>cache-max-ttl: <span style="color:#ae81ff">86400</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Prefetching von fast abgelaufenen Nachrichten-Cache-Einträgen durchführen</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Dies gilt nur für Domains, die häufig abgefragt wurden</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>prefetch: yes
+</span></span><span style="display:flex;"><span>prefetch-key: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ein Thread sollte ausreichen, auf leistungsfähigen Maschinen kann er erhöht werden.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>num-threads: <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Anzahl der Slabs im RRset-Cache. Slabs reduzieren die Sperrkonflikte zwischen den</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Threads. Muss auf eine Potenz von 2 in der Nähe von num-threads gesetzt werden.</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>msg-cache-slabs: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>rrset-cache-slabs: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>infra-cache-slabs: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>key-cache-slabs: <span style="color:#ae81ff">2</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Cache-Speicher rrset sollte doppelt so groß sein wie msg</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>msg-cache-size: 50m
+</span></span><span style="display:flex;"><span>rrset-cache-size: 100m
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># mehr ausgehende Verbindungen</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># hängt von der Anzahl der Kerne ab: 1024/Kerne - 50</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>outgoing-range: <span style="color:#ae81ff">450</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># UDP mit Multithreading beschleunigen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>so-reuseport: yes
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sicherstellen, dass der Kernel Buffer groß genug ist, um bei Traffic-Spitzen keine Nachrichten zu verlieren </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># (wird nicht zusammen mit aktiviertem AppArmor verwendet)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># so-rcvbuf: 1m</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Sicherstellung des Datenschutzes für lokale IP-Bereiche</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>private-address: 192.168.0.0/16
+</span></span><span style="display:flex;"><span>private-address: 169.254.0.0/16
+</span></span><span style="display:flex;"><span>private-address: 172.16.0.0/12
+</span></span><span style="display:flex;"><span>private-address: 10.0.0.0/8
+</span></span><span style="display:flex;"><span>private-address: fd00::/8
+</span></span><span style="display:flex;"><span>private-address: fe80::/10
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># !!! Bitte den IP-Adressbereich für euren entsprechend anpassen !!!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># access-control: 192.168.0.0/16 allow </span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Bei mir ist es dieser IP-Adressbereich</span>
+</span></span><span style="display:flex;"><span>access-control: 172.16.0.0/16 allow 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Eine Liste an Upstream-Server die TLS-Anfragen (DoH) unterstuetzen und Anfragen verschluesseln</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>forward-zone:
+</span></span><span style="display:flex;"><span>name: <span style="color:#e6db74">&#34;.&#34;</span>
+</span></span><span style="display:flex;"><span>forward-tls-upstream: yes
+</span></span><span style="display:flex;"><span>forward-addr: 9.9.9.11@853#dns11.quad9.net
+</span></span><span style="display:flex;"><span>forward-addr: 176.9.93.198@853#dnsforge.de
+</span></span><span style="display:flex;"><span>forward-addr: 94.140.14.140@853#unfiltered.adguard-dns.com
+</span></span></code></pre></div><h3 id="anlegen-der-config-datei-für-edns">Anlegen der Config-Datei für EDNS</h3>
+<p>Die Config-Datei für die Bestimmung der maximale &rsquo;edns-buffer-size&rsquo; legen wir mit dem folgenden Befehl an.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Anlegen der EDNS-Config-Datei</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo nano /etc/dnsmasq.d/99-edns.conf
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Und tragen hier den folgenden Parameter ein</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>edns-packet-max<span style="color:#f92672">=</span><span style="color:#ae81ff">1232</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Und speichern die Conf-Datei mit STRG+O und STRG+X ab</span>
+</span></span></code></pre></div><h3 id="unbound-neustarten">Unbound neustarten</h3>
+<p>Wenn die oben genannten Schritte durchgeführt wurden, muss der Unbound-Dienst neu gestartet werden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Unbound-Dienst neu starten</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart unbound.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Status des Unbound-Service überprüfen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl status unbound.service
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Ausgabe sollte wie folgt aussehen (piholetest2 steht nur für System welches ich bei diesem Tutorial genutzt habe und wird bei euch mit dem Namen von eurer Pi-hole-Instanz ersetzt):</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># root@piholetest2:~# sudo systemctl status unbound.service</span>
+</span></span><span style="display:flex;"><span>* unbound.service - Unbound DNS server
+</span></span><span style="display:flex;"><span>     Loaded: loaded <span style="color:#f92672">(</span>/lib/systemd/system/unbound.service; enabled; vendor preset: enabled<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     Active: active <span style="color:#f92672">(</span>running<span style="color:#f92672">)</span> since Fri 2023-10-06 08:29:59 UTC; 1min 9s ago
+</span></span><span style="display:flex;"><span>       Docs: man:unbound<span style="color:#f92672">(</span>8<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Process: <span style="color:#ae81ff">3190</span> ExecStartPre<span style="color:#f92672">=</span>/usr/lib/unbound/package-helper chroot_setup <span style="color:#f92672">(</span>code<span style="color:#f92672">=</span>exited, status<span style="color:#f92672">=</span>0/SUCCESS<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>    Process: <span style="color:#ae81ff">3193</span> ExecStartPre<span style="color:#f92672">=</span>/usr/lib/unbound/package-helper root_trust_anchor_update <span style="color:#f92672">(</span>code<span style="color:#f92672">=</span>exited, status<span style="color:#f92672">=</span>0/SUCCESS<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>   Main PID: <span style="color:#ae81ff">3196</span> <span style="color:#f92672">(</span>unbound<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>      Tasks: <span style="color:#ae81ff">2</span> <span style="color:#f92672">(</span>limit: 38124<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>     Memory: 4.8M
+</span></span><span style="display:flex;"><span>        CPU: 92ms
+</span></span><span style="display:flex;"><span>     CGroup: /system.slice/unbound.service
+</span></span><span style="display:flex;"><span>             <span style="color:#e6db74">`</span>-3196 /usr/sbin/unbound -d -p
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>Oct <span style="color:#ae81ff">06</span> 08:29:59 piholetest2 systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Starting Unbound DNS server...
+</span></span><span style="display:flex;"><span>Oct <span style="color:#ae81ff">06</span> 08:29:59 piholetest2 unbound<span style="color:#f92672">[</span>3196<span style="color:#f92672">]</span>: Oct <span style="color:#ae81ff">06</span> 08:29:59 unbound<span style="color:#f92672">[</span>3196:0<span style="color:#f92672">]</span> error: Could not open logfile /var/log/unbound.&gt;
+</span></span><span style="display:flex;"><span>Oct <span style="color:#ae81ff">06</span> 08:29:59 piholetest2 systemd<span style="color:#f92672">[</span>1<span style="color:#f92672">]</span>: Started Unbound DNS server.
+</span></span><span style="display:flex;"><span>Oct <span style="color:#ae81ff">06</span> 08:29:59 piholetest2 unbound<span style="color:#f92672">[</span>3196<span style="color:#f92672">]</span>: Oct <span style="color:#ae81ff">06</span> 08:29:59 unbound<span style="color:#f92672">[</span>3196:0<span style="color:#f92672">]</span> info: start of service <span style="color:#f92672">(</span>unbound 1.13.1<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>lines 1-17/17 <span style="color:#f92672">(</span>END<span style="color:#f92672">)</span>
+</span></span></code></pre></div><h4 id="unbound-service-automatischen-start-aktivieren">Unbound-Service automatischen Start aktivieren</h4>
+<p>Damit Unbound auch nach einem Neustart wieder gestartet wird, müssen wir noch das folgende Kommando ausführen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Automatischer Start von Unbound nach einem Neustart</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl enable unbound.service
+</span></span></code></pre></div><h3 id="funktion-von-unbound-testen">Funktion von Unbound testen</h3>
+<p>Nach der Konfiguration von Unbound müssen wir noch testen, ob Unbound DNS-Anfragen richtig beantwortet.</p>
+<p>Dieses machen wir durch das folgende Kommando:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Funktion von Unbound testen am Beispiel meiner Domain. Kann auch durch z.B. google.com ersetzt werde</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>dig secure-bits.org @127.0.0.1 -p <span style="color:#ae81ff">5335</span>
+</span></span></code></pre></div><p>Die Ausgabe sollte dann wie auf dem unteren Bild aussehen.</p>
+<p>Bei &lsquo;Status&rsquo; muss &lsquo;NOERROR&rsquo; stehen und natürlich auch die aufgelöste IP-Adresse der angefragten Domain.</p>
+<p><img src="/images/posts/pihole/Unbound-Pi-hole-testen.png" alt="pi-hole unbound testen"></p>
+<h3 id="deaktivieren-des-standard-dns-cache-daemon">Deaktivieren des Standard-DNS-Cache-Daemon</h3>
+<p>Da ja nun Unbound das Caching von DNS-Anfragen übernimmt, werden wir noch den Standard-Cache-Resolver &lsquo;systemd-resolved&rsquo; deaktivieren.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl disable systemd-resolved
+</span></span></code></pre></div><h3 id="log-datei-für-unbound-erstellen">Log-Datei für Unbound erstellen</h3>
+<p>Erstellen der unbound.log-Datei damit, sowie in der Config-Datei angegeben, Unbound hier sein Protokoll schreiben kann.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Log-Datei für Unbound anlegen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo touch /var/log/unbound.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Besitzer / Rechte für die unbound.log-Datei zuweisen</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo chown unbound:unbound /var/log/unbound.log
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Neustart von Unbound</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl restart unbound.service
+</span></span></code></pre></div><h3 id="einrichtung-von-pi-hole-unbound">Einrichtung von Pi-hole Unbound</h3>
+<p>Zu guter Letzt müssen wir Pi-hole noch konfigurieren, dass dieser Unbound als Upstream-DNS-Server nutzt.</p>
+<p>Hierzu meldet ihr euch bei Pi-Hole an und geht hier auf &lsquo;<strong>Settings-&gt;DNS</strong>&rsquo; und tragt bei &lsquo;<strong>Custom 1 (IPv4)</strong>&rsquo; den folgenden Eintrag ein &lsquo;<strong>127.0.0.1#5335</strong>&rsquo;.</p>
+<p>Auf der linken Seite klickt ihr unter &lsquo;<strong>Upstream DNS Servers</strong>&rsquo; die Haken von den bisher genutzten Upstream-DNS-Server weg, da diese nicht mehr gebraucht werden.</p>
+<p><strong>Wichtig!</strong> - Wenn alle Einträge angepasst wurden, bitte nach unten scrollen und mit einem Klick aus &lsquo;<strong>SAVE</strong>&rsquo; die Änderungen speichern.</p>
+<p><img src="/images/posts/pihole/Pi-hole-Unbound-einrichten.png" alt="Pi-hole Unbound einrichten"></p>
+<h4 id="links-zum-thema-unbound">Links zum Thema Unbound</h4>
+<p>Entwickler hinter Unbound und Hintergrund-Informationen zum rekursiven DNS-Server - <a href="https://nlnetlabs.nl/projects/unbound/about/" target="_blank" rel="noopener">https://nlnetlabs.nl/projects/unbound/about/</a></p>
+<p>Dokumentation zu Unbound - <a href="https://unbound.docs.nlnetlabs.nl/en/latest/" target="_blank" rel="noopener">https://unbound.docs.nlnetlabs.nl/en/latest/</a></p>
+<p>Dokumentation von Pi-hole.net zum Thema Unbound</p>
+<p><a href="https://docs.pi-hole.net/guides/dns/unbound/" target="_blank" rel="noopener">https://docs.pi-hole.net/guides/dns/unbound/</a></p>
+<p>Übersichtsbild DNS-Anfrage über einen Root-Nameserver</p>
+<p><a href="https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg" target="_blank" rel="noopener">https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg</a></p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fpihole%2fpihole-unbound%2f&title=Pihole%20Unbound%20jetzt%20richtig%20installieren" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Pihole%20Unbound%20jetzt%20richtig%20installieren http%3a%2f%2flocalhost%3a1313%2fposts%2fpihole%2fpihole-unbound%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Pihole%20Unbound%20jetzt%20richtig%20installieren&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fpihole%2fpihole-unbound%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/pihole/pihole-vpn/" title="Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/pihole/pihole-fritzbox-konfigurieren/" title="FritzBox &#43; Pihole | FritzBox konfigurieren" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">FritzBox &#43; Pihole | FritzBox konfigurieren</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pihole-unbound-und-dns-verschlüsselung---für-mehr-sicherheit-im-netzwerk">Pihole Unbound und DNS-Verschlüsselung - Für mehr Sicherheit im Netzwerk</a>
+      <ul>
+        <li><a href="#voraussetzungen-für-pihole-unbound-installation">Voraussetzungen für Pihole Unbound Installation</a></li>
+        <li><a href="#hinweis">Hinweis</a></li>
+      </ul>
+    </li>
+    <li><a href="#video-tutorial-zum-thema-pi-hole-unbound-installieren">Video-Tutorial zum Thema &lsquo;Pi-hole Unbound installieren&rsquo;</a></li>
+    <li><a href="#installation-von-unbound">Installation von Unbound</a>
+      <ul>
+        <li><a href="#pi-hole-unbound--abrufen-der-roothints">Pi-hole Unbound | Abrufen der root.hints</a></li>
+        <li><a href="#liste-der-root-nameserver-roothints-automatisch-aktualisieren--pi-hole-unbound">Liste der Root-Nameserver (root.hints) automatisch Aktualisieren | Pi-hole Unbound</a></li>
+        <li><a href="#pi-hole-unbound---unbound-config-datei-anlegen">Pi-hole Unbound - Unbound-Config-Datei anlegen</a></li>
+        <li><a href="#inhalt-der-pi-hole-unbound-config-datei">Inhalt der Pi-hole Unbound Config-Datei</a></li>
+        <li><a href="#anlegen-der-config-datei-für-edns">Anlegen der Config-Datei für EDNS</a></li>
+        <li><a href="#unbound-neustarten">Unbound neustarten</a></li>
+        <li><a href="#funktion-von-unbound-testen">Funktion von Unbound testen</a></li>
+        <li><a href="#deaktivieren-des-standard-dns-cache-daemon">Deaktivieren des Standard-DNS-Cache-Daemon</a></li>
+        <li><a href="#log-datei-für-unbound-erstellen">Log-Datei für Unbound erstellen</a></li>
+        <li><a href="#einrichtung-von-pi-hole-unbound">Einrichtung von Pi-hole Unbound</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.078db4cf4ca5e5a2d96c8a4588af6140c4576ab967c200b58241fe0f8ea8fbfd.js" integrity="sha256-B420z0yl5aLZbIpFiK9hQMRXarlnwgC1gkH&#43;D46o&#43;/0=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

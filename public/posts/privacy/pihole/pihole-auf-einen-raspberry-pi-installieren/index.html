@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Pi-hole Raspberry Pi Installation</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Pi-hole Raspberry Pi Installation" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/pihole/pi-hole-installation.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Mittwoch, 30. März 2022 | 9 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Pi-hole Raspberry Pi Installation</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/pi-hole/" class="btn btn-sm btn-info">pi-hole</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="pi-hole-auf-einen-raspberry-pi-installieren-und-einrichten">Pi-hole auf einen Raspberry Pi installieren und einrichten</h2>
+<p>In diesem Tutorial &lsquo;<strong>Pi-hole auf einen Raspberry Pi installieren</strong>&rsquo; zeige ich euch, wie ihr den Pi-hole DNS-Server installieren und mit Unbound einen rekursiven DNS-Server einrichten könnt.</p>
+<p>Die Schritt für Schritt-Installation geschiehttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpght bei diesem Tutorial auf einen Raspberry Pi.</p>
+<p>In einem <a href="https://secure-bits.org/pi-hole-installation/" target="_blank" rel="noopener">anderen Tutorial hier auf SecureBits</a>, habe ich euch ja schon die <strong>Installation auf einem Debian-System in einer virtuellen Maschine</strong> gezeigt und aufgeführt, sowie warum und wofür ihr einen Pi-Hole DNS-Server einsetzen solltet.</p>
+<h2 id="video-tutorial-zum-thema-pi-hole-raspberry-pi">Video-Tutorial zum Thema &lsquo;Pi-hole Raspberry Pi&rsquo;</h2>
+<p>Für alle unter euch die lieber die Installation von Pi-hole auf ein Raspberry Pi als Video-Tutorial anschauen möchten, habe ich ein Installations-Video auf meinem YouTube-Kanal veröffentlicht.</p>
+<p>In diesem Video zeige ich euch auch, wie ihr mithilfe der UFW-Firewall (Uncomplicated Firewall) euren internen DNS-Server &lsquo;Pi-hole&rsquo; richtig absichert.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/PpYwxDCDOc4?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>Voraussetzung für die kommende Schritt für Schritt-Anleitung ist, dass ihr auf euren Raspberry Pi, schon ein aktuelles Raspberry OS installiert habt.</p>
+<p>Für die unter euch, die noch kein Raspberry Pi OS auf eurer kleinen Box haben, habe ich im kommenden Absatz eine Schnell-Anleitung hierzu erstellt.</p>
+<p>Pi-hole auf einen Raspberry Pi zu installieren, geht mit dem <strong>Raspberry Pi Imager</strong> schnell und einfach von der Hand.</p>
+<p>Hierzu braucht ihr nur eine microSD-Karte + einem Dummy-Slot im SD-Karten-Format und einen SD-Kartenleser.</p>
+<p>Den Raspberry Pi Imager könnt ihr euch hier herunterladen:</p>
+<p><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">https://www.raspberrypi.com/software/</a></p>
+<h4 id="pi-hole-auf-einen-raspberry-pi---installationsvorgang-raspberry-os">Pi-hole auf einen Raspberry Pi - Installationsvorgang Raspberry OS</h4>
+<p>Nach dem Download öffnet ihr Raspberry PI Imager (in diesem Beispiel für Windows), steckt eine SD-Karte in euren SD-Reader und wählt im Imager das passende OS für den Raspberry Pi aus. Hier solltet ihr darauf achten, dass ihr hier entweder die Raspberry PI OS Lite in der 64bit- oder 32bit-Variante auswählt. Die Lite-Variante reicht für den Betrieb des Pi-hole vollkommen aus.</p>
+<p>Nach der Auswahl des passenden OS wählt ihr noch die passende SD-Karte für das Image aus und bevor ihr auf Schreiben klickt, klickt ihr noch auf das Zahnrad auf der Oberfläche des Raspberry PI Imager und aktiviert hier den Zugriff via SSH und vergibt ein sicheres Passwort für den Zugriff.</p>
+<p><img src="/images/posts/pihole/Raspberry-OS-installieren-Bild-1.jpg" alt="Installationsvorgang Raspberry OS Bild 1"></p>
+<p><img src="/images/posts/pihole/Raspberry-OS-installieren-Bild-2.jpg" alt="Installationsvorgang Raspberry OS Bild 2">
+<img src="/images/posts/pihole/Raspberry-OS-installieren-Bild-3.jpg" alt="Installationsvorgang Raspberry OS Bild 3"></p>
+<h2 id="pihole-installieren">Pihole installieren</h2>
+<h3 id="pi-hole-auf-einen-raspberry-pi-installieren">Pi-Hole auf einen Raspberry Pi installieren</h3>
+<p>Als Erstes werden wir Pi-hole auf einen Raspberry Pi installieren und einrichten.<br>
+Voraussetzung für dieses Tutorial ist, dass ihr das Raspberry OS auf euren Raspberry Pi schon installiert habt und ihr diesen dann in euer Netzwerk eingebunden habt. Soll heißen, Anschluss an euren Router, Einschalten und dann die IP-Adresse in der Netzwerkübersicht eures Routers herausfinden.<br>
+Diese IP-Adresse brauchen wir später für den Zugriff via SSH auf den Raspberry Pi.</p>
+<h4 id="gerät">Gerät:</h4>
+<ul>
+<li>Für den Betrieb eines Pi-hole-DNS-Server reicht ein Board ab der Baureihe Raspberry Pi 3 Model B+ vollkommen aus</li>
+</ul>
+<h4 id="voraussetzungen">Voraussetzungen:</h4>
+<ul>
+<li>Raspberry Pi mit aktuellem Raspberry OS</li>
+<li>Anschluss des Raspberry Pi an euren Router und Überprüfen welche IP-Adresse dem Raspberry Pi in eurem Netzwerk vergeben wurde.</li>
+</ul>
+<h4 id="schritt-für-schritt-pi-hole-auf-einen-raspberry-pi-installieren">Schritt für Schritt Pi-hole auf einen Raspberry Pi installieren:</h4>
+<h4 id="schritt-1">Schritt 1</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-0.jpg" alt="SSH-Verbindung zum Raspberry Pi"></p>
+<p>Zunächst verbinden wir uns per SSH mit dem Raspberry Pi. Hierzu öffnet ihr zum Beispiel ein Terminal-Fenster (unter Windows nutze ich den Windows Terminal) und gibt den folgenden Befehl ein:<br>
+<code>ssh pi@&lt;IP-Adresse eures Raspberry Pi&gt;</code><br>
+Nun werdet ihr bei der ersten Verbindung per SSH gefragt, ob ihr dem SSH-Key vertrauen wollt und bestätigt diese Frage mit &lsquo;yes&rsquo;.<br>
+Danach müsst ihr noch euer erstelltes Passwort für die Anmeldung eingeben.</p>
+<h4 id="schritt-2">Schritt 2</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-1.jpg" alt="Raspberry OS aktualisieren"></p>
+<p>Als Erstes werden wir uns als root-User dauerhaft für diese Sitzung anmelden.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo su
+</span></span></code></pre></div><p>Dann bringen wir das Raspberry OS mit dem folgendem Befehl auf den aktuellen Stand:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>apt-get update &amp;&amp; apt-get upgrade -y
+</span></span></code></pre></div><h4 id="schritt-3">Schritt 3</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-2.jpg" alt="Pi-hole herunterladen und Installationsprozess starten"></p>
+<p>Die Installation des Pi-hole DNS-Server starten wir mit der Eingabe des folgenden Befehls:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>curl -sSL https://install.pi-hole.net | bash
+</span></span></code></pre></div><h4 id="schritt-4">Schritt 4</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpg" alt="Installationsassistent Pi-hole"></p>
+<p>Wenn die Installation des Pi-hole abgeschlossen ist, werdet ihr von dem Installations-Assistenten begrüßt.<br>
+Hier &lsquo;<strong>OK</strong>&rsquo; auswählen und den Einrichtungs-Dialog starten.</p>
+<h4 id="schritt-5">Schritt 5</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-4.jpg" alt="Feste IP-Adresse Raspberry Pi"></p>
+<p>Solltet ihr euren Raspberry Pi noch keine feste / statische IP-Adresse in eurem Router (FritzBox, Speedport, pfsense, etc.) vergeben haben, könnt ihr das auch noch nach der fertigen Installation machen.<br>
+In diesem Fenster bitte &lsquo;<strong>Yes</strong>&rsquo; auswählen und dann die Eingabe-Taste drücken.</p>
+<h4 id="schritt-6">Schritt 6</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-5.jpg" alt="IP-Adresse des Raspberry Pi / Pi-hole anzeigen lassen"></p>
+<p>Im nächsten Fenster wird euch die IP-Adresse des Pi-hole angezeigt. Diese IP-Adresse müsst ihr dann auch als feste Adresse auf euren Router / DHCP-Server vergeben, damit der Pi-hole DNS-Server später auch erreichbar ist.</p>
+<h4 id="schritt-7">Schritt 7</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-6.jpg" alt="Öffentlichen DNS-Server auswählen"></p>
+<p>Als nächstes wählt ihr einen Upstream-DNS-Provider für das Auflösen der Anfragen aus eurem Netzwerk aus. Hier könnt ihr einen aus der Liste auswählen, in meinem Fall <strong>OpenDNS</strong> der auch <strong>DNSSEC</strong> unterstützt.<br>
+Die Auswahl könnt ihr später jederzeit ändern, was ich euch auch empfehlen würde. Eine Liste von DNS-Servern, die auch Datenschutzfreundlich sind, findet ihr in der Liste weiter unten in diesem Tutorial.</p>
+<h4 id="schritt-8">Schritt 8</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-7.jpg" alt="Pi-hole Blacklist auswählen"></p>
+<p>Im Auswahlfenster um eine <strong>Blacklist (Filterliste) auszuwählen</strong>, wird derzeit nur die <strong>StevenBlack-Blackliste</strong> zur Verfügung gestellt. Diese Filterliste ist aber jeden Fall zu empfehlen, kann aber in der Weboberfläche des Pi-hole geändert beziehungsweise durch weitere Listen ergänzt werden.</p>
+<h4 id="schritt-9">Schritt 9</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-9.jpg" alt="Pi–hole Web-Admin Dashboard installieren"></p>
+<p>Nach einem Klick auf &lsquo;<strong>OK</strong>&rsquo; erscheint das Konfigurationsfenster für die spätere Web-Oberfläche für den Pi-hole. Hier bitte die <strong>voreingestellte Auswahl &lsquo;ON&rsquo; belassen</strong>. So könnt ihr dann später das Ganze im Browser Administrieren.</p>
+<h4 id="schritt-10">Schritt 10</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-9.jpg" alt="Pi-hole lighttpd"></p>
+<p>Um das Web-Interface auch nutzen zu können, bringt Pi-hole mit lighttpd einen eigenen leichtgewichtigen Webserver mit. Auch hier solltet ihr im Normalfall die Voreinstellung belassen und diesen Webserver mitinstallieren.</p>
+<h4 id="schritt-11">Schritt 11</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-10.jpg" alt="Pi-hole Logging aktivieren"></p>
+<p>Im jetzigen Fenster könnt ihr auswählen, ob der Pi-hole Protokolle über Ereignisse anlegen soll. Auch hier würde ich es bei der Vorauswahl belassen.</p>
+<h4 id="schritt-12">Schritt 12</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-11.jpg" alt="Pi-hole Privacy-Einstellungen"></p>
+<p>Beim Auswahl des &lsquo;<strong>Privacy-Mode</strong>&rsquo; müsst ihr für euch Auswählen welcher Modus hier der richtige für euch ist. Ich für meinen Teil nutze den <strong>Modus &lsquo;Show Everything&rsquo; in meinem eigenen Netzwerk</strong>.<br>
+Wollt ihr den Pi-Hole geschäftlich Betrieb nutzen, so würde ich euch bezüglich der DSGVO raten, den &lsquo;<strong>Anonymous-Mode</strong>&rsquo; zu verwenden.</p>
+<h4 id="schritt-13">Schritt 13</h4>
+<p><img src="/images/posts/pihole/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-12.jpg" alt="Erste Anmeldung auf dem Pi-hole"></p>
+<p>Im letzten Schritt der Installationsroutine des Pi-hole, bekommt ihr die wichtigsten Informationen für den späteren Zugriff auf den Pi-hole-DNS-Server.<br>
+Zunächst ist hier die IP-Adresse des Pi-hole-DNS-Server zu sehen. Dann die Adresse, mit der ihr das Web-Interface des Pi-hole erreichen könnt. In meinem Fall ist das <code>**http://172.18.18.62/admin**</code><br>
+Und ganz wichtig, bekommt ihr noch das generierte Passwort angezeigt, welches ihr zur Authentifizierung bei der Anmeldung über die Shell oder dem Web-Interface braucht. Weiter unten in diesem Beitrag findet zeige ich euch, wie ihr das Passwort ändern könnt.</p>
+<h3 id="pi-hole-auf-einen-raspberry-pi---tipps-und-tricks">Pi-hole auf einen Raspberry Pi - Tipps und Tricks</h3>
+<p>Hier habe ich euch mal einige nützliche Tipps zusammengestellt den ihr für euren Alltag oder bei der Einrichtung eures Pi-hole sicherlich gebrauchen könnt.</p>
+<h4 id="update-des-pi-hole---pi-hole-auf-einen-raspberry-pi">Update des Pi-hole - Pi-hole auf einen Raspberry Pi</h4>
+<p>In der Weboberfläche des Pi-hole bekommt ihr unten in der Fußleiste angezeigt, wenn ein neues Update verfügbar ist. Leider kann das Update nur über eine SSH-Verbindung eingespielt werden.</p>
+<p>Um das Update einzuspielen verbindet ihr auch per SSH mit dem Raspberry Pi:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>ssh pi@&amp;&lt;IP-Adresse des Raspberry Pi&gt;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Nach der Eingabe eures Passworts, gibt ihr für die Ausführung des Updates den folgenden Befehl ein:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>pihole -up
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Nach dem Update sollte der Pi-hole rebootet werden</span>
+</span></span></code></pre></div><h4 id="pi-hole-passwort-für-den-login-ändern---pi-hole-auf-einen-raspberry-pi">Pi-hole-Passwort für den Login ändern - Pi-hole auf einen Raspberry Pi</h4>
+<p>Mit dem folgenden Befehl könnt ihr das Passwort für die Anmeldung an eurem Pi-hole-DNS-Server ändern.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Möglichkeit 1: Passwort ändern mit Anzeige des neuen Passworts</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pihole -a -p NeuesPasswort
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Möglickeit 2: Passwort ändern ohne Anzeige</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>pihole -a -p
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Hier kommt dann die Abfrage nach euren neuen Passwort, welches Unix-Typisch bei der Eingabe nicht angezeigt wird.</span>
+</span></span></code></pre></div><h4 id="pi-hole-ip-adresse-ändern---pi-hole-auf-einen-raspberry-pi">Pi-hole IP-Adresse ändern - Pi-hole auf einen Raspberry Pi</h4>
+<p>Um die IP-Adresse des Pi-hole-DNS-Servers im Nachhinein zu ändern, müsst ihr per SSH die dhspsc.conf-Datei bearbeiten.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># per SSH mit dem Pi-hole verbinden und dann, dass folgende Kommando eingeben, um mit dem Nano-Editor die dhcpcd.conf-Datei zu berarbeiten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo nano /etc/dhcpcd.conf
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Im Nano-Editor-Fenster, hier bei &#39;static-ip-address&#39; die neue IP-Adresse abändern und mit STRG+O und ENTER die Eingaben abspeichern und mit STRG+X den Nano-Editor verlassen. Siehe nächstes Bild</span>
+</span></span></code></pre></div><p><img src="/images/posts/pihole/pi-hole-IP-Adresse-aendern.jpg" alt="Raspberry Pi statische IP-Adresse vergeben"></p>
+<h4 id="konfiguration--setup-des-pi-hole-neu-ausführen---pi-hole-auf-einen-raspberry-pi">Konfiguration / Setup des Pi-hole neu ausführen - Pi-hole auf einen Raspberry Pi</h4>
+<p>Um nochmals das Setup der Pi-hole-Installation auszuführen, könnt ihr euch per SSH mit dem Raspberry Pi verbinden und das Setup mit dem folgenden Befehl neustarten</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>pihole -r
+</span></span></code></pre></div><h4 id="deinstallieren-des-pi-hole---pi-hole-auf-einen-raspberry-pi">Deinstallieren des Pi-hole - Pi-hole auf einen Raspberry Pi</h4>
+<p>Ist der Pi-hole-DNS-Server nicht euer Ding, so könnt ihr mit dem folgenden Befehl Pi-hole wieder deinstallieren.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Pi-hole deinstallieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>pihole uninstall
+</span></span></code></pre></div><h3 id="pi-hole-auf-einen-raspberry-pi---blacklist-empfehlung">Pi-hole auf einen Raspberry Pi - Blacklist-Empfehlung</h3>
+<p>Außer der vorinstallierten Blacklist &lsquo;SteveBlack&rsquo; gibt es noch einige andere gute Listen, die euch hier vorstellen möchte.</p>
+<blockquote>
+<h4 id="bitte-beachten">Bitte beachten!</h4>
+<p>Nutzt bitte nicht zu viele Listen. Da die Abarbeitung der Listen sehr zur Lasten der Performance geht und der Raspberry Pi dann in die Knie geht.</p>
+<p>Mit den vorgestellten Blacklists habe ich bisher sehr gute Erfahrungen gemacht und möchte diese daher gerne weiterempfehlen.</p></blockquote>
+<h4 id="blacklist-steveblack">Blacklist SteveBlack</h4>
+<p>Die Blacklist, die wir bei der Installation des Pi-hole schon mitinstalliert haben ist wirklich sehr umfänglich und sollte auch weiterhin genutzt werden. Diese Liste ist sehr umfassend und hat zurzeit circa 150000 Einträge enthalten.</p>
+<p>Enthalten sind hier folgende Host-Kategorien:</p>
+<ul>
+<li>
+<p>Porn</p>
+</li>
+<li>
+<p>Adware</p>
+</li>
+<li>
+<p>Malware</p>
+</li>
+<li>
+<p>Fakenews</p>
+</li>
+<li>
+<p>Gambling (verdächtige Hosts)</p>
+</li>
+<li>
+<p>Social</p>
+</li>
+</ul>
+<p><a href="https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts" target="_blank" rel="noopener">https://raw.githubusercontent.com/StevenBlack/hosts/master/alternates/fakenews-gambling-porn-social/hosts</a></p>
+<h4 id="blacklist-adawayorg">Blacklist adaway.org</h4>
+<p>Werbeblocker</p>
+<p><a href="https://adaway.org/hosts.txt" target="_blank" rel="noopener">https://adaway.org/hosts.txt</a></p>
+<h4 id="blacklist-smarttv-tracking">Blacklist SmartTV-Tracking</h4>
+<p>Name ist Programm</p>
+<p><a href="https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/Perflyst/PiHoleBlocklist/master/SmartTV.txt</a></p>
+<h4 id="blacklist-easyprivacy">Blacklist EasyPrivacy</h4>
+<p>Tracking und Telemetrie</p>
+<p><a href="https://v.firebog.net/hosts/Easyprivacy.txt" target="_blank" rel="noopener">https://v.firebog.net/hosts/Easyprivacy.txt</a></p>
+<h4 id="blacklist-easylist">Blacklist EasyList</h4>
+<p>Werbeblocker</p>
+<p><a href="https://v.firebog.net/hosts/Easylist.txt" target="_blank" rel="noopener">https://v.firebog.net/hosts/Easylist.txt</a></p>
+<h4 id="blacklist-adguarddns">Blacklist AdGuardDNS</h4>
+<p>Diese Blacklist stammt von dem Konkurrent AdGuard und ist ebenfalls sehr umfassend.</p>
+<p><a href="https://v.firebog.net/hosts/AdguardDNS.txt" target="_blank" rel="noopener">https://v.firebog.net/hosts/AdguardDNS.txt</a></p>
+<h4 id="malicious-url-blocklist-von-urlhaus">Malicious URL Blocklist (von URLHaus)</h4>
+<p><a href="https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt" target="_blank" rel="noopener">https://adguardteam.github.io/HostlistsRegistry/assets/filter_11.txt</a></p>
+<h4 id="the-big-list-of-hacked-malware-web-sites">The Big List of Hacked Malware Web Sites</h4>
+<p><a href="https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt" target="_blank" rel="noopener">https://adguardteam.github.io/HostlistsRegistry/assets/filter_9.txt</a></p>
+<h4 id="blacklist-telemetrie-microsoft--windows">Blacklist Telemetrie Microsoft / Windows</h4>
+<p>Vermeidung Telemetrie Erfassung von Microsoft-Produkte</p>
+<p><a href="https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/crazy-max/WindowsSpyBlocker/master/data/hosts/spy.txt</a></p>
+<h3 id="vertrauenswürdige-dns-server---pi-hole-auf-einen-raspberry-pi">Vertrauenswürdige DNS-Server - Pi-hole auf einen Raspberry Pi</h3>
+<p>Hier eine Auflistung von datenschutzkonformen DNS-Server-Provider, die kein Logging betreiben und zensurfrei sind.</p>
+<p><strong>Für mich persönlich kommt momentan nur ein DNS-Server mit DoT aus sicherheitstechnischen Gründen in Frage.</strong></p>
+<p><em>Danke an <a href="https://www.privacy-handbuch.de/" target="_blank" rel="noopener">privacy-handbuch.de</a> für die Auflistung der DNS-Server.</em></p>
+<h4 id="freifunk-münchennormales-dns-dns-over-tls-und-dns-over-https">Freifunk München (normales DNS, DNS-over-TLS und DNS-over-HTTPS)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 5.1.66.255
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2001:678:e68:f000::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Servername: dot.ffmuc.net
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv4: 185.150.99.255
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>IPv6: 2001:678:ed0:f000::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Servername: dot.ffmuc.net
+</span></span></code></pre></div><h4 id="digitale-gesellschaft-chdns-over-tls-und-dns-over-https">Digitale Gesellschaft (CH) (DNS-over-TLS und DNS-over-HTTPS!)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 185.95.218.42
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2a05:fc84::42
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Servername: dns.digitale-gesellschaft.ch
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv4: 185.95.218.43
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>IPv6: 2a05:fc84::43
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Servername: dns.digitale-gesellschaft.ch
+</span></span></code></pre></div><h4 id="censurfridns-denmarkaka-uncensoreddns">Censurfridns Denmark (aka. UncensoredDNS)</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>IPv4: 91.239.100.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>IPv6: 2001:67c:28a4::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>IPv4: 89.233.43.71
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>IPv6: 2a01:3a0:53:53::
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>(mit DNS-over-TLS)
+</span></span></code></pre></div><h2 id="fazit---pi-hole-auf-einen-raspberry-pi">Fazit - Pi-hole auf einen Raspberry Pi</h2>
+<p>Der Einsatz eines Pi-hole-DNS-Server ist eine super und günstige Sache (außer der PI ist wegen Halbleiter-Mangel wie im Moment schwer zu bekommen und daher sehr teuer) sich vor Tracking, Malware und Adware zu schützen.</p>
+<p>Gerade im heimischen Netzwerk kann dieser DNS-Server wunderbar an einem Consumer-Router wie FritzBox, Speedport und andere als Nameserver implementiert werden. So hat man einen wunderbaren Schutz vor Tracking, Werbung, Malware und Pishing auf allen Geräten im Netzwerk. Natürlich ist dieser Schutz nicht hundertprozentig, aber sicherlich besser als nichts für seinen Datenschutz zu unternehmen.</p>
+<p>Gerne könnt ihr mir auch Vorschläge für Blacklists die ihr in Verwendung habt zukommen lassen. Darüber würde ich mich echt freuen!</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fpihole%2fpihole-auf-einen-raspberry-pi-installieren%2f&title=Pi-hole%20Raspberry%20Pi%20Installation" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Pi-hole%20Raspberry%20Pi%20Installation&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fprivacy%2fpihole%2fpihole-auf-einen-raspberry-pi-installieren%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole Backup mit Teleporter" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Pi-hole Backup mit Teleporter</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation Debian - Schütze dein Heimnetzwerk" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Pihole Installation Debian - Schütze dein Heimnetzwerk</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#pi-hole-auf-einen-raspberry-pi-installieren-und-einrichten">Pi-hole auf einen Raspberry Pi installieren und einrichten</a></li>
+    <li><a href="#video-tutorial-zum-thema-pi-hole-raspberry-pi">Video-Tutorial zum Thema &lsquo;Pi-hole Raspberry Pi&rsquo;</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+    <li><a href="#pihole-installieren">Pihole installieren</a>
+      <ul>
+        <li><a href="#pi-hole-auf-einen-raspberry-pi-installieren">Pi-Hole auf einen Raspberry Pi installieren</a></li>
+        <li><a href="#pi-hole-auf-einen-raspberry-pi---tipps-und-tricks">Pi-hole auf einen Raspberry Pi - Tipps und Tricks</a></li>
+        <li><a href="#pi-hole-auf-einen-raspberry-pi---blacklist-empfehlung">Pi-hole auf einen Raspberry Pi - Blacklist-Empfehlung</a></li>
+        <li><a href="#vertrauenswürdige-dns-server---pi-hole-auf-einen-raspberry-pi">Vertrauenswürdige DNS-Server - Pi-hole auf einen Raspberry Pi</a></li>
+      </ul>
+    </li>
+    <li><a href="#fazit---pi-hole-auf-einen-raspberry-pi">Fazit - Pi-hole auf einen Raspberry Pi</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

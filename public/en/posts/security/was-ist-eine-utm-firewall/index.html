@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Unified Threat Management Firewall | UTM-Firewall - Überblick 2021</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.f6b26f00359f69d139362842b17c7dfc9ca8494f7098b1bd91f77cba6bc8b679.css" integrity="sha256-9rJvADWfadE5NihCsXx9/JyoSU9wmLG9kfd8umvItnk=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_747a7a60fc165ddd.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Unified Threat Management Firewall | UTM-Firewall - Überblick 2021" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_fb1c622aecba328f.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-gb"></span>
+        
+        English
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/security/was-ist-eine-utm-firewall">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/security/was-ist-eine-utm-firewall">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-debian-based/" title="Configuring the UFW Firewall using a Raspberry Pi as an example">Configuring the UFW Firewall using a Raspberry Pi as an example</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle-secure/" title="Protection against man-in-the-middle attacks">Protection against man-in-the-middle attacks</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-mehrere-ports/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-application-profiles/" title="UFW Firewall Application Profiles">UFW Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/ufw-firewall-basics/" title="UFW Firewall Basics">UFW Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/man-in-the-middle/" title="Understanding Man-in-the-Middle Attacks">Understanding Man-in-the-Middle Attacks</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS encryption with DNS over QUIC">AdGuard DNS encryption with DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome Setup – Basic Configuration">AdGuardHome Setup – Basic Configuration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/fritzbox-und-adguard-dns-setup/" title="Configure Fritzbox with AdGuard Home">Configure Fritzbox with AdGuard Home</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="Install AdGuardHome on a Raspberry Pi">Install AdGuardHome on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="Manually update AdGuard Home">Manually update AdGuard Home</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Install Pihole on a Raspberry Pi">Install Pihole on a Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-basic-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-fritzbox-setup/" title="Pi-hole-/-Fritzbox-configure">Pi-hole-/-Fritzbox-configure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/windows-product-key-activate/" title="Activate Windows Product Key">Activate Windows Product Key</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/cmd-befehle-im-ueberblick/" title="CMD commands overview for Windows">CMD commands overview for Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/ipconfig-command/" title="The ipconfig command overview">The ipconfig command overview</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-dns-server-aendern/" title="Change the public DNS server/resolver on a Fritzbox">Change the public DNS server/resolver on a Fritzbox</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox and AdGuard DNS">Fritzbox and AdGuard DNS</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/fritzbox-portfreigabe/" title="Set up Fritzbox port forwarding">Set up Fritzbox port forwarding</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_2d70f447e066a834.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Thursday, January 21, 2021 | 5 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Unified Threat Management Firewall | UTM-Firewall - Überblick 2021</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="unified-threat-management-appliances-utm-firewall">Unified Threat Management Appliances (UTM-Firewall)</h2>
+<p>In meinem Beitrag &ldquo;<a href="https://secure-bits.org/wie-funktioniert-eine-firewall/" target="_blank" rel="noopener">Wie funktioniert eine Firewall?</a>&rdquo;, habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.</p>
+<p>In diesem Beitrag möchte ich euch nun die Funktionsweise einer Unified Threat Management (UTM oder UTM-Firewall) näherbringen und euch hier die einzelnen Funktionen sowie Fachbegriffe erklären.</p>
+<h2 id="was-ist-der-unterschied-zwischen-einer-utm-firewall-und-einer-normalen-firewall">Was ist der Unterschied zwischen einer UTM-Firewall und einer normalen Firewall?</h2>
+<p>Hierzu gibt es eine klare Begriffsdefinition, die die Bezeichnung einer Sicherheits-Komponente (Security-Appliance) festlegt. Zum Beispiel wird eine reine Firewall als Specialized Security Appliances (SSA) bezeichnet, da diese Netzwerk-Sicherheitskomponente eine klare definierte Aufgabe im Sicherheitssystem ausführt. In diesem Fall also, Unterbindung von Netzwerkverbindungen nach einem definierten Regelwerk.</p>
+<p>Als UTMA / UTM werden Sicherheits-Netzwerkkomponenten bezeichnet, die mehrere Sicherheitskomponenten (Specialized Security Appliances (SSA)) eines Netzwerks in sich vereinen. Welche das sind, erfahrt ihr im nächsten Absatz.</p>
+<h2 id="was-beinhaltet-ein-unified-threat-management-system">Was beinhaltet ein Unified Threat Management System?</h2>
+<p>Ein Netzwerk-Sicherheitssystem das sich als UTM bezeichnen darf, muss mehrere Eigenschaften beziehungsweise Funktionen aufweisen. Dieser Funktionsumfang wurde von Charles Kolodgy von der International Data Corporation im Jahr 2004 festgelegt.</p>
+<p>Diese Festlegung legt fest, welche Eigenschaften eine Unified Threat Management Appliances (UTMA) beinhalten muss.</p>
+<!-- raw HTML omitted -->
+<ul>
+<li>
+<!-- raw HTML omitted -->
+<p><a href="https://secure-bits.org/wp-content/uploads/2021/01/UTM-Diagramm.png" target="_blank" rel="noopener"><img src="https://secure-bits.org/wp-content/uploads/2021/01/UTM-Diagramm.png" alt="Unified Threat Management"></a></p>
+<!-- raw HTML omitted -->
+<p><strong>Beispielschema Funktionsweise eines Unified Threat Management System oder auch UTM-Firewal</strong>l</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+</li>
+</ul>
+<!-- raw HTML omitted -->
+<h2 id="unified-threat-management---eigenschaften-und-funktionen">Unified Threat Management - Eigenschaften und Funktionen:</h2>
+<ul>
+<li>Internet-Gateway</li>
+<li><a href="https://secure-bits.org/wie-funktioniert-eine-firewall/" target="_blank" rel="noopener">Firewall</a></li>
+<li>Virtual Private Network Gateway (VPN)</li>
+<li>Virus Protection</li>
+<li><a href="https://secure-bits.org/intrusion-prevention-system/" target="_blank" rel="noopener">Intrusion Detection System</a></li>
+<li>Contentfilter</li>
+<li>Spam Protection</li>
+<li>Surf Protection</li>
+<li>Authentifizierung</li>
+<li>Quality of Service (QoS)</li>
+<li>Reporting</li>
+</ul>
+<h3 id="intrusion-detection--sowie-intrusion-protection-system-erklärt">Intrusion Detection- sowie Intrusion Protection System erklärt</h3>
+<h3 id="was-ist-ein-intrusion-detection-system">Was ist ein Intrusion Detection System?</h3>
+<p>Als Intrusion Detection System (IDS) wird ein Angriffserkennungssystem bezeichnet, welches Angriffe im Netzwerk mithilfe von Filtern und Signaturen sowie auch durch statische Analysen erkennt und protokolliert.<br>
+Im Gegensatz zum Intrusion Prevention System (IPS) erkennt das Intrusion Detection System nur die Angriffe auf ein Computernetzwerk und protokolliert diese.<br>
+Bei einem Intrusion Prevention System (IPS) wird wie schon erwähnt, die Angriffe auf das Netzwerk nicht nur erkannt und protokolliert, sondern werden hierbei diese Angriffe auch abgewehrt beziehungsweise geblockt.<br>
+Da beide Systeme auf Grundlage von Filtern und Signaturen ihre Arbeit verrichten, ist der Einsatz eines solche Netzwerk-Sicherheitssystems sehr Ressourcen-Intensiv und setzt je nach größer der zu verarbeiteten Datenmengen, performante Hardware voraus.<br>
+Des Weiteren gibt es auch beide Systemvarianten, die nicht nur per Filter- und Signaturregelwerk ihren Dienst verrichten, sondern auch unbekannte Angriffe per heuristischer Methode überprüfen.<br>
+Bei den meisten Unified Threat Management Systemen werden die IPS- oder IDS-Systeme manuell durch den Administrator aktiviert sowie die Filter administriert.</p>
+<ul>
+<li>Gängig sind drei Arten von IDS Systemen:</li>
+<li>Hybride IDS Systeme</li>
+<li>Netzwerk-basierte IDS Systeme (NIDS)</li>
+<li>Host-basierte IDS Systeme (HIDS)</li>
+</ul>
+<h3 id="surf-protection--web-content-filter">Surf Protection / Web Content Filter</h3>
+<p>Eine weitere Funktion, die eine UTM-Firewall nach der Definition Unified Threat Management Appliance bereitstellen muss, ist die Funktionalität der sogenannte Surf Protection beziehungsweise einen Web Content Filter.</p>
+<h4 id="einfacher-content-filter">Einfacher Content-Filter</h4>
+<p>Hierbei werden Inhalte (Content) bei Internetanfragen nach Regelvorgaben der Surf Protection gefiltert. Diese Filterung geschieht auf verschiedenen Wegen. Im einfachen Sinn werden Zeichenfolgen überprüft, die bestimmte Zeichenfilter (Sex, Hass, etc.) meist über ein Web-Proxy (bei einem zentralen Netzwerk-Content-Filter) vorab überprüfen und erst nach erfolgreicher nicht positiver Überprüfung, an den jeweiligen Client weiterreichen. Weiterhin können auch gewisse Ports gesperrt werden.</p>
+<p>Nachteil dieser Methode ist under anderem, dass auch Inhalte blockiert werden, die einen Teil von diesen Zeichenfolgen in ihrer Zeichenkette beinhalteten. So zum Beispiel bei dem Filterwort &ldquo;Rechts&rdquo; auch Inhalte wie Rechtswissenschaften blockiert werden.</p>
+<h4 id="intelligenter-content-filter">Intelligenter Content-Filter</h4>
+<p>Intelligente Content Filter zeichnen sich dadurch aus, dass diese mit Hilfe der Heuristik und Wägungen, eine bessere Trefferquote erreichen. So durch Prüfung der Plausibilität abwägen, ob es sich bei dem zu durchsuchen Content um eine zum Beispiel sperrbare Webseite handelt. Hier wird dann zum Beispiel unterschieden, dass rechtsextreme Seiten (deren Inhalt) mit Seiten über Rechtswissenschaften gleichzusetzen sind. </p>
+<p>In manchen UTMA-Systemen werden auch durch künstliche Intelligenz unterstützte Verfahren eingesetzt oder als Zusatz-Applikation angeboten.</p>
+<p><strong>Weiterführende Links zu diesem Thema:</strong></p>
+<p><a href="https://de.wikipedia.org/wiki/Contentfilter" target="_blank" rel="noopener">Contentfilter – Wikipedia</a></p>
+<h3 id="internet-gateway">Internet-Gateway</h3>
+<p>Als Internet-Gateway wird die Schnittstelle bezeichnet, die dem internen Netzwerk eine Verbindung mit dem Internet ermöglicht.  </p>
+<p>Hier bieten einige Systeme (UTM-Firewall) eine Modemfunktionalität für diverse Arten von Internetverbindungen an, um diese als Ersatz für Router der Serviceprovider bereitzustellen.  </p>
+<h3 id="virtual-private-network-gateway-vpn">Virtual Private Network Gateway (VPN)</h3>
+<p>Für eine sichere Verbindung von zum Beispiel Fernarbeitsplätze zum Unternehmensnetzwerk, ebenso zum Beispiel zur sicheren Steuerung eurer Smart Home-Infrastruktur Zuhause, ist der Weg über eine sichere Virtual Privat Network-Verbindung unumgänglich.  </p>
+<p>Bei dieser reinen softwarebasierten Technik wird mithilfe eines virtuellen Netzwerkbereichs, ein entferntes Netzwerk in eurem bestehenden Netzwerk eingebunden. Wobei zu beachten ist, dass diese VPN-Verbindung nicht von Haus aus als verschlüsselt betrachtet werden darf. Diese Verschlüsselung kommt erst durch den Einsatz diverser VPN-Protokolle die durch ihre Verwendung, so eine abhörsichere Verbindung zwischen dem VPN-Gateway eurer Unified Threat Management-Firewall und dem Client oder anderen VPN-Gateway gewährleisten. </p>
+<h4 id="meistgenutzte-vpn-protokolle-bei-unified-threat-management-firewalls">Meistgenutzte VPN-Protokolle bei Unified Threat Management-Firewalls:</h4>
+<ul>
+<li>SSL-VPN </li>
+<li>IPsec </li>
+<li>TLS/SSL </li>
+<li>SSH </li>
+<li>Wireguard </li>
+<li>SSTP </li>
+<li>L2TP </li>
+<li>getVPN</li>
+</ul>
+<h3 id="authentifizierung-utm-firewall">Authentifizierung UTM-Firewall</h3>
+<p>Weiterhin gehört zu einem Unified Threat Management / UTM-Firewall auch die Funktionalität einer Authentifizierungs-Möglichkeit dazu. Diese Möglichkeit sich dem System oder dem eingesetzten Dienst gegenüber zu Authentifizieren, bietet somit eine weitere Sicherheitsebene, so das nur bekannte Clients eine Verbindung mit dem Gateway über zum Beispiel einer VPN-Verbindung aufbauen können. </p>
+<p>Als Authentifizierungs-Dienste werden je nach Hersteller verschiedene Möglichkeiten angeboten.  </p>
+<h4 id="hier-eine-auswahl-an-dienste-zur-authentifizierung">Hier eine Auswahl an Dienste zur Authentifizierung:</h4>
+<ul>
+<li>Radius-Server </li>
+<li>Datenbankbasierte Authentifizierung </li>
+<li>LDAP-Authentifizierung </li>
+<li>Active-Directory</li>
+</ul>
+<h3 id="virus-protection">Virus Protection</h3>
+<p>Unter Virus Protection bei einem Unified Threat Management System versteht man, eine Antiviren-Sicherheitslösung die fest in der UTM-Firewall implementiert ist und Datenblöcke mit Hilfe von Signaturen nach Schadcode hin überprüft.</p>
+<p>Bei Open Source-Firewalls wie zum Beispiel <strong>OPNSense</strong>, <strong>IPFire</strong> oder <strong>pfsense</strong> werden hier als Antiviren-Lösung <strong>ClamAV</strong> eingesetzt. Bei Firewall-Distributionen von kostenpflichtigen Anbietern wird hier oft eigene Scan-Engine beziehungsweise Lösungen bekannter Antiviren-Hersteller. So nutzt der Hersteller <strong>Sophos</strong> bei seinem <a href="https://www.sophos.com/de-de/products/unified-threat-management.aspx" target="_blank" rel="noopener">Sophos UTM-Produkt</a> zum einem die Engine seiner eigenen Antiviren-Lösung und als weitere Scan-Lösung die Engine von <strong>Avira</strong>.</p>
+<h1></h1>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fwas-ist-eine-utm-firewall%2f&title=Unified%20Threat%20Management%20Firewall%20%7c%20UTM-Firewall%20-%20%c3%9cberblick%202021" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Unified%20Threat%20Management%20Firewall%20%7c%20UTM-Firewall%20-%20%c3%9cberblick%202021 http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fwas-ist-eine-utm-firewall%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Unified%20Threat%20Management%20Firewall%20%7c%20UTM-Firewall%20-%20%c3%9cberblick%202021&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fwas-ist-eine-utm-firewall%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#unified-threat-management-appliances-utm-firewall">Unified Threat Management Appliances (UTM-Firewall)</a></li>
+    <li><a href="#was-ist-der-unterschied-zwischen-einer-utm-firewall-und-einer-normalen-firewall">Was ist der Unterschied zwischen einer UTM-Firewall und einer normalen Firewall?</a></li>
+    <li><a href="#was-beinhaltet-ein-unified-threat-management-system">Was beinhaltet ein Unified Threat Management System?</a></li>
+    <li><a href="#unified-threat-management---eigenschaften-und-funktionen">Unified Threat Management - Eigenschaften und Funktionen:</a>
+      <ul>
+        <li><a href="#intrusion-detection--sowie-intrusion-protection-system-erklärt">Intrusion Detection- sowie Intrusion Protection System erklärt</a></li>
+        <li><a href="#was-ist-ein-intrusion-detection-system">Was ist ein Intrusion Detection System?</a></li>
+        <li><a href="#surf-protection--web-content-filter">Surf Protection / Web Content Filter</a></li>
+        <li><a href="#internet-gateway">Internet-Gateway</a></li>
+        <li><a href="#virtual-private-network-gateway-vpn">Virtual Private Network Gateway (VPN)</a></li>
+        <li><a href="#authentifizierung-utm-firewall">Authentifizierung UTM-Firewall</a></li>
+        <li><a href="#virus-protection">Virus Protection</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.078db4cf4ca5e5a2d96c8a4588af6140c4576ab967c200b58241fe0f8ea8fbfd.js" integrity="sha256-B420z0yl5aLZbIpFiK9hQMRXarlnwgC1gkH&#43;D46o&#43;/0=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>
