@@ -51,7 +51,7 @@ Um die Powershell-Konsole zu öffnen nutzt ihr auch die Tastenkombination `Windo
 
 ## Übersicht der Funktionen von **netstat**
 
-Eine Übersicht der Funktionen und Parameter von **netstat** erhaltet ihr durch die Eingabe in das Konsolenfenster des folgenden Befehls:
+Eine Übersicht der Funktionen und Parameter von netstat erhaltet ihr durch die Eingabe in das Konsolenfenster des folgenden Befehls:
 
 ```msdos
 netstat help
