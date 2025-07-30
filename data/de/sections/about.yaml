@@ -1,0 +1,96 @@
+# section information
+section:
+  name: Über mich
+  id: about
+  enable: true
+  weight: 1
+  showOnNavbar: true
+  template: sections/about.html
+
+# your designation
+designation: IT-Security-Administrator / IT-Sicherheitsbeauftragter / SOC-Analyst
+# your company information
+company:
+  name: SecureBits
+  url: "https://secure-bits.org"
+
+# your resume. this file path should be relative to you "static" directory
+# resume: "files/Lebenslauf.pdf"
+
+# a summary about you
+summary: 'Ich bin ein leidenschaftlicher IT-Sicherheits-Spezialist mit über 20 Jahren Berufserfahrung. Manchmal arbeite ich an spannenden Projekten wie dem Schreiben von **Bash-Skripten, Ansible, Terraform, Python** und unterstütze Open Source-Projekte. Aber vor allem widme ich mich **meinem Lieblingsprojekt "Helping Hands"**, das Menschen **mit psychischen Problemen hilft**. Ich glaube, dass Technologie nicht nur dazu da ist, Probleme zu lösen, sondern auch dazu, das Leben der Menschen zu verbessern. Deshalb setze ich mich leidenschaftlich dafür ein, meine Fähigkeiten und mein Wissen einzusetzen, um anderen zu helfen und die Welt ein kleines Stück besser zu machen.'
+          
+# your social links
+# give as many as you want. use font-awesome for the icons.
+socialLinks:
+- name: Email
+  icon: "fas fa-envelope"
+  url: "support@secure-bits.org"
+
+- name: Github
+  icon: "fab fa-github"
+  url: "https://www.github.com/securebitsorg"
+
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/securebits/"
+
+- name: YouTube
+  icon: "fab fa-youtube"
+  url: "https://www.youtube.com/@secure_bits"
+
+# Show your badges
+# You can show your verifiable certificates from https://www.credly.com.
+# You can also show a circular bar indicating the level of expertise on a certain skill
+badges:
+
+- type: soft-skill-indicator
+  name: Projektleiter
+  percentage: 95
+  color: blue
+
+- type: soft-skill-indicator
+  name: Network-Security
+  percentage: 90
+  color: yellow
+
+- type: soft-skill-indicator
+  name: Linux
+  percentage: 85
+  color: orange
+
+- type: soft-skill-indicator
+  name: Windows
+  percentage: 80
+  color: green
+
+- type: soft-skill-indicator
+  name: SOC-Analyst
+  percentage: 90
+  color: "#FF2FBC"
+
+- type: soft-skill-indicator
+  name: Bash-Scripting
+  percentage: 80
+  color: "#CC00FF"
+
+- type: soft-skill-indicator
+  name: ISO 27000
+  percentage: 95
+  color: "#0033FF"
+
+- type: soft-skill-indicator
+  name: BSI-Grundschutz
+  percentage: 90
+  color: "#CC00FF"
+
+- type: soft-skill-indicator
+  name: NIST-CSF
+  percentage: 90
+  color: "#CC6600"
+
+# you can also provide color code instead of the color name
+# - type: soft-skill-indicator
+#   name: Example 1
+#   percentage: 75
+#   color: "#00adb5"
