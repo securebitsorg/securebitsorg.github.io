@@ -94,3 +94,11 @@ net user Name NewPassword /Domain
 ```
 ## Additional commands for the Windows command line CMD
 Since many tasks can be performed faster or only via the command line, I have compiled a list of useful CMD commands in the article [**More than 50 CMD commands for Windows at a glance**](/en/posts/windows/cmd-befehle-im-ueberblick/), which you can also download.
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

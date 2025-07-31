@@ -107,3 +107,11 @@ net user Name NeuesPasswort /Domäne
 ## Weitere Befehle für die Windows Kommandozeile CMD
 
 Da viele durchzuführende Arbeiten sich per Kommandozeile schneller beziehungsweise nur über diese durchführen lassen, habe ich euch in dem Beitrag [**Mehr als 50 CMD-Befehle für Windows im Überblick**](/posts/windows/cmd-befehle-im-ueberblick/), viele nützliche Befehle für das CMD zusammengestellt und diese auch für euch zum Download angeboten.
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

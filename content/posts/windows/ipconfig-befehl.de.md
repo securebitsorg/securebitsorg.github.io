@@ -75,3 +75,11 @@ Es gibt für die meisten ipconfig-Befehle auch die Möglichkeiten, die einzelnen
 Eine Übersicht über alle Varianten die mit dem Befehl ipconfig zur Verfügung stehen werden mit den Befehlen **ipconfig /help** oder **ipconfig /?** aufgelistet.
 
 ![ipconfig_help](/images/posts/windows/ipconfig_help.png)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

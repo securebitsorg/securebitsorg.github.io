@@ -247,7 +247,8 @@ To do this, simply log in to your router, provided that it is also responsible f
 However, the newly assigned DNS server will only be used after the DHCP lease has been renewed and will therefore not be noticed by the clients on their own. The easiest way is to disconnect your device from the network and reconnect it. The new configuration will then be loaded and the devices should appear in the device overview in Pi-hole.
 
 
-> **How a domain query works in conjunction with Pi-hole in this example:**
+> **How a domain query works in conjunction with Pi-hole in > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen.  Sie können dort auch gerne Ihre eigene Frage stellen.
+this example:**
 >
 > Client (end device) -> Pi-hole -> Router
 > **INFO**
@@ -285,3 +286,11 @@ You can find illustrated instructions on setting up a FritzBox and configuring o
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
 > [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

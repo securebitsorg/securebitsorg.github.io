@@ -298,3 +298,11 @@ Developers behind Unbound and background information on the recursive DNS server
 [https://docs.pi-hole.net/guides/dns/unbound/](https://docs.pi-hole.net/guides/dns/unbound/)
 - Overview image of DNS query via a root name server
 [https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg](https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg)
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

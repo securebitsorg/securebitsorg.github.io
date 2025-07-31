@@ -435,3 +435,11 @@ Dokumentation von Pi-hole.net zum Thema Unbound
 Übersichtsbild DNS-Anfrage über einen Root-Nameserver
 
 [https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg](https://upload.wikimedia.org/wikipedia/commons/3/3c/DNS-query-to-wikipedia.svg)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen.  Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

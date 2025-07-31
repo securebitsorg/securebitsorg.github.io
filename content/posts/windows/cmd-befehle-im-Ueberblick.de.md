@@ -1,5 +1,6 @@
 ---
 title: Jetzt alle CMD-Befehle für Windows im Überblick 2025
+
 hero: /images/posts/windows/Eingabeaufforderung_logo.jpg
 date: 2025-03-12
 menu:
@@ -103,7 +104,8 @@ Eine Liste mit den wichtigsten CMD-Befehle findet ihr in diesem Beitrag. Weiterh
 | **chkdsk** | Überprüfung eines Datenträger |
 | **diskpart** | Datenträgerverwaltung aus der Konsole heraus |
 | **defrag** | Die Defragmentierung von Laufwärken in Auftrag geben |
-| **chkntfs** | Hiermit könnt ihr veranlassen. dass die Datenträgerüberprüfung beim Start von Windows angezeigt wird |
+| **chkntfs** | Hiermit könnt ihr veranlassen. dass 
+Datenträgerüberprüfung beim Start von Windows angezeigt wird |
 | **drivequery** | Anzeige aller installierten Geräte und deren Eigenschaften |
 | **mode** | Konfiguration von Geräte und Schnittstellen |
 | **mountvol** | Zuweisung oder Löschung von Laufwerkbuchstaben |
@@ -128,15 +130,15 @@ Eine Liste mit den wichtigsten CMD-Befehle findet ihr in diesem Beitrag. Weiterh
 | **compact** | Anzeigen oder ändern der Komprimierung einer Datei |
 | **diskcomp** | Inhalt von zweier Disk vergleichen |
 
-## CMD-Befehle - Übersicht von Microsoft
+## Download CMD-Befehle - Übersicht von Microsoft
 
 Die Firma Microsoft bietet eine alphabetische Übersicht von CMD-Befehle auf ihrer Support-Seite an. Diese Übersicht findet ihr hier in dieser Dokumentation von Microsoft.
 
 > - [**-> Zur CMD-Befehlsliste von Microsoft (wirklich alle offizielen unterstützten Befehle)**](https://docs.microsoft.com/de-de/windows-server/administration/windows-commands/windows-commands)
 >
->
-> - [**-> Weiterhin habt ihr hier auch die Möglichkeit, den kompletten Befehlssatz als PDF-Datei herunterzuladen (sind Stand 2025, 2128 Seiten!)**](/files/windows-server-administration-windows-commands.pdf)
-
+{{< alert type="success" >}}
+-> Weiterhin habt ihr hier auch die Möglichkeit, den [kompletten CMD-Befehlssatz als (PDF-Datei herunterzuladen, sind Stand 2025, 2128 Seiten!)](https://cloud.secure-bits.org/s/cmdbefehlepdf)
+{{< /alert >}}
 
 **Fast vergessen...**  
 

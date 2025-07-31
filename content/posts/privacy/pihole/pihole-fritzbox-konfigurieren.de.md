@@ -60,3 +60,11 @@ Auch hierzu findet ihr hilfreiche Tutorials auf diesem Blog und auch auf meinem 
 - [AdGuard Home DNS-Verschlüsselung](https://secure-bits.org/adguard-home-dns-verschluesselung/)
 
 - [FritzBox – Werbung, Tracking und Pishing mit AdGuard DNS blocken](https://secure-bits.org/fritzbox-werbung-tracking-und-pishing-mit-adguard-dns-blocken/)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

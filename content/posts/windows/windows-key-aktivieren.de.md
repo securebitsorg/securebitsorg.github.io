@@ -52,6 +52,10 @@ Für die Änderung des Produkt-Keys startest du das Kommandozeilentool (CMD) mit
 
 Nach dem Öffnen der Kommandozeile gibst du den folgenden Befehl und den Produkt Key ein:
 
+Im Kommandozeilen-Fenster kannst du dann unter der ausgabe "OA3xOriginalProductKey" den hinterlegten 25-stelligen Produkt Key ansehen.
+
+
+
 ### Product Key Enterprise Version
 
 ```msdos
@@ -85,3 +89,11 @@ slmgr.vbs /ato
 ---
 
 Nach der Eingabe des oben genannten Befehls, wird nach kurzer Zeit Windows aktiviert und nun kannst du durch die Eingabe des Befehls ‚Exit‘ die Kommandokonsole verlassen.
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

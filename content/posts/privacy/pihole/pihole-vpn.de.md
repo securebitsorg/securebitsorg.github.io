@@ -22,6 +22,7 @@ tags:
 description: Pihole VPN jetzt mit Wireguard nutzen | In diesem Tutorial zeige ich euch, wie ihr Pihole mit Hilfe von VPN auch von Unterwegs aus nutzen könnt
 keywords:
   - pihole vpn
+preview: ../../../../assets/images/posts/pihole/pihole-raspberry-vpn.png
 ---
 
 ## Pihole VPN - Keine Werbung auf dem Smartphone
@@ -166,3 +167,11 @@ Für weitere Informationen zu diesem Thema, habe ich hier einige Links zusammeng
 [https://docs.pivpn.io/](https://docs.pivpn.io/)
 
 [https://github.com/pivpn/pivpn](https://github.com/pivpn/pivpn)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

@@ -22,6 +22,7 @@ tags:
 description: Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.
 keywords:
   - pihole vpn
+preview: ../../../../assets/images/posts/pihole/pihole-raspberry-vpn.png
 ---
 ## Pihole VPN - No ads on your smartphone
 In this tutorial, ‘**pihole VPN with Wireguard**’, I would like to show you how you can use the ‘**PiVPN**’ application to access your **Pihole** on your **smartphone, tablet, or laptop** and thus enjoy the benefits of Pihole, namely surfing without annoying ads, even when you're **on the go**.
@@ -102,3 +103,11 @@ For more information on this topic, I have compiled some links here:
 - [https://docs.pivpn.io/](https://docs.pivpn.io/)
 
 - [https://github.com/pivpn/pivpn](https://github.com/pivpn/pivpn)
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

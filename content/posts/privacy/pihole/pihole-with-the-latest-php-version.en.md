@@ -1,6 +1,5 @@
 ---
 title: Pihole PHP 8.3 | Pihole always with the latest PHP version
-descripton: Pihole PHP 8.3 | Pihole always with the latest PHP version | In this tutorial, I will show you how to install Pihole with the latest PHP version.
 hero: /images/posts/pihole/pihole-raspberry-php.png
 date: 2024-03-06
 menu:
@@ -8,19 +7,22 @@ menu:
     name: Pihole always with the latest PHP version
     identifier: pihole-php
     parent: pihole
-categories:   
-    - "Hardware"
-    - "Linux"
-    - "Network"
-    - "Tutorials"
-    - "Video"
-tags:   
-  - "security"
-  - "network"
-  - "pi-hole"
-  - "tutorials"
-  - "video"
-
+categories:
+  - Hardware
+  - Linux
+  - Network
+  - Tutorials
+  - Video
+tags:
+  - security
+  - network
+  - pi-hole
+  - tutorials
+  - video
+description: Pihole PHP 8.3 | Pihole always with the latest PHP version | In this tutorial, I will show you how to install Pihole with the latest PHP version.
+preview: ../../../../assets/images/posts/pihole/pihole-raspberry-php.png
+keywords:
+  - pihole php
 ---
 ## Installing Pihole with PHP 8.3 on Raspberry Pi OS
 In this tutorial, ‘**Installing Pihole with PHP 8.3**’, I would like to show you how to securely install a Pihole DNS server with the latest version of PHP on your Raspberry Pi in 2024.
@@ -154,3 +156,11 @@ Maybe one or two of them will help you with your Pihole project! Just click on t
 [**Creating a Pihole backup**]()
 
 [**Using Pihole on the go on your smartphone**](https://secure-bits.org/pihole-vpn-mit-pivpn-und-wireguard/)
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

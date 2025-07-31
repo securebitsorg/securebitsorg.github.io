@@ -1,6 +1,5 @@
 ---
-title: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version
-descripton: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version | In diesem Tutorial zeige ich, wie ihr, Pihole mit einer aktuellen PHP - Version installiert
+title: Pihole PHP | Pihole immer mit der aktuellsten PHP-Version
 hero: /images/posts/pihole/pihole-raspberry-php.png
 date: 2024-03-06
 menu:
@@ -8,19 +7,22 @@ menu:
     name: Pi-hole mit der aktuellsten PHP-Version installieren
     identifier: pihole-php
     parent: pihole
-categories:   
-    - "Hardware"
-    - "Linux"
-    - "Netzwerk"
-    - "Tutorials"
-    - "Video"
-tags:   
-  - "it-security"
-  - "netzwerk"
-  - "pi-hole"
-  - "tutorials"
-  - "video"
-
+categories:
+  - Hardware
+  - Linux
+  - Netzwerk
+  - Tutorials
+  - Video
+tags:
+  - it-security
+  - netzwerk
+  - pi-hole
+  - tutorials
+  - video
+description: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version | In diesem Tutorial zeige ich, wie ihr, Pihole mit einer aktuellen PHP - Version installiert
+preview: ../../../../assets/images/posts/pihole/pihole-raspberry-php.png
+keywords:
+  - pihole php
 ---
 
 ## Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren
@@ -219,3 +221,11 @@ Vielleicht hilft euch das Eine oder Andere bei eurem Vorhaben mit dem Pihole wei
 [**Pihole Backup erstellen**]()
 
 [**Pihole unterwegs auf dem Smartphone nutzen**](https://secure-bits.org/pihole-vpn-mit-pivpn-und-wireguard/)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

@@ -40,3 +40,11 @@ You can find helpful tutorials on this blog and on my YouTube channel
 - [Configuring AdGuard – Basic Configuration 2022](https://secure-bits.org/adguard-konfigurieren/)
 - [AdGuard Home DNS encryption](https://secure-bits.org/adguard-home-dns-verschluesselung/)
 - [FritzBox – Block advertising, tracking, and phishing with AdGuard DNS](https://secure-bits.org/fritzbox-werbung-tracking-und-pishing-mit-adguard-dns-blocken/)
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+<!-- FM:Snippet:End -->

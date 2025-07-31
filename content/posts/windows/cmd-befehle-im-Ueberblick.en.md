@@ -29,7 +29,7 @@ Many tasks can be performed more easily or exclusively using the CMD command lin
 I have divided these commands into different subject areas further down in this article so that you can get a quick overview.
   CMD-Befehle am Ende dieser Übersicht, als PDF herunterladen.
 I have already introduced some of these commands for working or gathering information on the network in **[this article](https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/)** or in the article on what you can do with the **[Netstat command](https://secure-bits.org/netstat-unter-windows/)** can do everything.
-This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tables!
+This list of commands does not claim to be exhaustive and will therefore be updated by me on an ongoing basis. If you find that any commands for the command line are missing, please leave me a comment and I will add them to the tablehttps://cloud.secure-bits.org/s/qnZ2H8FJCFYTsBzs!
 ## All CMD commands to take with you
 If you often work with the CMD command line, you will of course need a list of the CMD commands presented here to take with you. This way, you can use this CMD command list at work, for example, and don't have to keep coming back to this blog, which I am of course very happy about. So I've created a list of CMD commands for you to download as a PDF. That way, you can always have it with you and access the list. You can also download the command list from Microsoft, which contains all the commands in a PDF document.
 
@@ -101,7 +101,7 @@ You can find a list of the most important CMD commands in this article. You can 
 | **mkdir** | Create directory |
 | **erase / del** | Delete a file or files |
 | **copy / xcopy** | Copy files |
-| **move** | Move files |
+| **move** | Move files |https://cloud.secure-bits.org/s/qnZ2H8FJCFYTsBz
 | **expand** | Extract/unzip files |
 | **replace** | Replace files |
 | **rename** | Rename files |
@@ -112,13 +112,16 @@ You can find a list of the most important CMD commands in this article. You can 
 | **attrib** | Display file attributes |
 | **compact** | Display or change the compression of a file |
 | **diskcomp** | Compare the contents of two disks |
-## CMD commands – overview from Microsoft
+
+## Download CMD commands – overview from Microsoft
 Microsoft provides an alphabetical overview of CMD commands on its support page. You can find this overview here in this Microsoft documentation.
 > - [**-> Go to Microsoft's CMD command list (all officially supported commands)**](https://docs.microsoft.com/de-de/windows-server/administration/windows-commands/windows-commands)
->
->
-> - [**-> You also have the option of downloading the complete command set as a PDF file (as of 2025, 2128 pages!)**](/files/windows-server-administration-windows-commands.pdf)
+
+
+{{< alert type="success" >}}
+[-> You also have the option of downloading the complete command set as a PDF file (as of 2025, 2128 pages!)**](https://cloud.secure-bits.org/s/cmdbefehlepdf)
+{{< /alert >}}
+
 
 **Almost forgot...**
 Of course, most of the commands presented here also work in **Windows Powershell**. Thought that should be mentioned!
-
