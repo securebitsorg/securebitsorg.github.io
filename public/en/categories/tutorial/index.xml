@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/tutorial/</link>
+    <description>Recent content in Tutorial on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 23 Jul 2025 07:50:18 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/tutorial/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>ipconfig-command</title>
+      <link>http://localhost:1313/en/posts/windows/ipconfig-command/</link>
+      <pubDate>Wed, 23 Jul 2025 07:50:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/windows/ipconfig-command/</guid>
+      <description>&lt;p&gt;You can find an &lt;strong&gt;overview of all CMD commands&lt;/strong&gt; in &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;this article&lt;/strong&gt;&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ipconfig-commands-at-a-glance&#34;&gt;ipconfig commands at a glance&lt;/h2&gt;
+&lt;p&gt;If you often make changes to your IP address or DNS resolution, for example because you use multiple DNS servers, you will be familiar with the problem that configuring the network adapter using the standard board tools (GUI) is not exactly convenient. The command line (CMD or Powershell) is ideal for this purpose. This overview shows which commands, including the &lt;strong&gt;ipconfig&lt;/strong&gt; command, are available for the individual actions to change the settings of the network adapters.&lt;br&gt;
+In this overview, the &lt;strong&gt;CMD&lt;/strong&gt; command prompt is used. This command prompt is called up by typing ‘cmd’ in the Windows search field. The fastest way to access the search field is by pressing the &lt;strong&gt;Windows key + R&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

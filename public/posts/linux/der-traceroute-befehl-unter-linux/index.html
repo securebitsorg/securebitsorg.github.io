@@ -1,0 +1,1462 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Der traceroute-Befehl unter Linux</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Der traceroute-Befehl unter Linux: Umfassende Anleitung mit Beispielen" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/linux/der-traceroute-befehl-unter-linux">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/linux/der-traceroute-befehl-unter-linux">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/linux/traceroute.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Mittwoch, 30. Juli 2025 | 4 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Der traceroute-Befehl unter Linux</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="der-traceroute-befehl-unter-linux-mit-umfassende-anleitung-mit-beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</h2>
+<p>Der <code>traceroute</code>-Befehl ist ein unverzichtbares Netzwerk-Diagnosetool für IT-Sicherheitsmanager und Systemadministratoren. Er ermöglicht die Verfolgung des Weges, den Datenpakete von Ihrem System zu einem Ziel im Netzwerk nehmen, und hilft dabei, Netzwerkprobleme zu identifizieren und zu beheben.
+Daher möchte ich euch in diesem Artikel die Funktionalität von <strong>traceroute</strong> ein wenig näher bringen.</p>
+<h2 id="was-ist-traceroute">Was ist traceroute?</h2>
+<p><strong>traceroute</strong> ist ein Kommandozeilen-Tool, das den Transportweg von IP-Datenpaketen zwischen dem lokalen Rechner und einer ausgewählten Gegenstelle ermittelt. Dabei wird die Antwortzeit der durchlaufenen Router gemessen, was bei der Identifizierung von Verzögerungen und Netzwerkproblemen hilft.</p>
+<h2 id="funktionsweise-von-traceroute">Funktionsweise von traceroute</h2>
+<p>Das Tool nutzt das <strong>Time-to-Live (TTL)</strong>-Feld in IP-Paketen auf clevere Weise:</p>
+<ol>
+<li><strong>Erste Sonde</strong>: traceroute sendet ein Paket mit TTL=1 zum Ziel.</li>
+<li><strong>Router-Antwort</strong>: Der erste Router reduziert TTL auf 0 und sendet eine &ldquo;Time Exceeded&rdquo;-Nachricht zurück.</li>
+<li><strong>Identifikation</strong>: traceroute notiert die IP-Adresse dieses Routers.</li>
+<li><strong>Wiederholung</strong>: Der TTL-Wert wird um 1 erhöht und der Vorgang wiederholt sich.</li>
+<li><strong>Zielerreichung</strong>: Dies geschieht solange, bis das Ziel erreicht oder das Maximum von 30 Hops erreicht wird.</li>
+</ol>
+<p>Standardmäßig sendet traceroute <strong>drei Sondenpakete</strong> pro Hop und zeigt die Antwortzeiten in Millisekunden an.</p>
+<h2 id="installation-von-traceroute">Installation von traceroute</h2>
+<p>Traceroute ist nicht auf allen Linux-Distributionen standardmäßig installiert. Die Installation erfolgt über den Paketmanager:</p>
+<h3 id="ubuntudebian-basierte-systeme">Ubuntu/Debian-basierte Systeme:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt update
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo apt install traceroute
+</span></span></code></pre></div><h3 id="centosrhelfedora">CentOS/RHEL/Fedora:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo yum install traceroute
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># oder auf neueren Systemen:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo dnf install traceroute
+</span></span></code></pre></div><h3 id="überprüfung-der-installation">Überprüfung der Installation:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute --version
+</span></span></code></pre></div><h2 id="grundlegende-verwendung">Grundlegende Verwendung</h2>
+<h3 id="einfacher-traceroute-befehl">Einfacher traceroute-Befehl:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute google.com
+</span></span></code></pre></div><p><strong>Beispielausgabe:</strong></p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute to google.com (172.217.23.14), <span style="color:#0086f7;font-weight:bold">30</span> hops max, <span style="color:#0086f7;font-weight:bold">60</span> byte packets
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span> <span style="color:#0086f7;font-weight:bold">1</span>  10.8.8.1 (10.8.8.1)  14.499 ms  15.335 ms  15.956 ms
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span> <span style="color:#0086f7;font-weight:bold">2</span>  h37-220-13-49.host.redstation.co.uk (37.220.13.49)  17.811 ms  18.669 ms/images/posts/linux/traceroute.png  19.346 ms
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span> <span style="color:#0086f7;font-weight:bold">3</span>  92.zone.2.c.dc9.redstation.co.uk (185.20.96.137)  19.096 ms  19.757 ms  20.892 ms
+</span></span></code></pre></div><h3 id="interpretierung-der-ausgabe">Interpretierung der Ausgabe:</h3>
+<ul>
+<li><strong>Erste Zeile</strong>: Zielhost, IP-Adresse, maximale Hops (30), Paketgröße (60 Bytes)</li>
+<li><strong>Jede Hop-Zeile</strong>: Hop-Nummer, Hostname/IP-Adresse, drei Antwortzeiten in Millisekunden</li>
+</ul>
+<h2 id="praktische-anwendungsbeispiele">Praktische Anwendungsbeispiele</h2>
+<h3 id="1-traceroute-mit-ipv4-erzwingen">1. Traceroute mit IPv4 erzwingen:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -4 google.com
+</span></span></code></pre></div><h3 id="2-traceroute-mit-ipv6">2. Traceroute mit IPv6:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -6 google.com
+</span></span></code></pre></div><h3 id="3-icmp-pakete-verwenden-statt-udp">3. ICMP-Pakete verwenden (statt UDP):</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -I google.com
+</span></span></code></pre></div><h3 id="4-tcp-basiertes-traceroute-für-firewall-umgehung">4. TCP-basiertes traceroute (für Firewall-Umgehung):</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -T -p <span style="color:#0086f7;font-weight:bold">80</span> google.com
+</span></span></code></pre></div><h3 id="5-ohne-namensauflösung-schneller">5. Ohne Namensauflösung (schneller):</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -n google.com
+</span></span></code></pre></div><h3 id="6-maximale-hop-anzahl-begrenzen">6. Maximale Hop-Anzahl begrenzen:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -m <span style="color:#0086f7;font-weight:bold">15</span> google.com
+</span></span></code></pre></div><h3 id="7-anzahl-der-sonden-pro-hop-ändern">7. Anzahl der Sonden pro Hop ändern:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -q <span style="color:#0086f7;font-weight:bold">1</span> google.com
+</span></span></code></pre></div><h3 id="8-wartezeit-anpassen">8. Wartezeit anpassen:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -w <span style="color:#0086f7;font-weight:bold">3</span> google.com
+</span></span></code></pre></div><h3 id="9-bestimmtes-interface-verwenden">9. Bestimmtes Interface verwenden:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -i eth0 google.com
+</span></span></code></pre></div><h3 id="10-mtu-erkennung">10. MTU-Erkennung:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute --mtu google.com
+</span></span></code></pre></div><h2 id="unterschiede-zwischen-verschiedenen-traceroute-methoden">Unterschiede zwischen verschiedenen Traceroute-Methoden</h2>
+<h3 id="udp-standard-unter-linux">UDP (Standard unter Linux):</h3>
+<ul>
+<li>Verwendet &ldquo;unwahrscheinliche&rdquo; Ports (33434-33534)</li>
+<li>Zielhost antwortet mit &ldquo;ICMP Port Unreachable&rdquo; bei Erreichen</li>
+</ul>
+<h3 id="icmp-mit--i-option">ICMP (mit -I Option):</h3>
+<ul>
+<li>Verwendet ICMP Echo Request-Pakete</li>
+<li>Ähnlich wie ping, aber mit TTL-Manipulation</li>
+</ul>
+<h3 id="tcp-mit--t-option">TCP (mit -T Option):</h3>
+<ul>
+<li>Verwendet TCP SYN-Pakete</li>
+<li>Nützlich zum Umgehen von Firewalls</li>
+<li>Standard-Port: 80 (HTTP)</li>
+</ul>
+<h2 id="übersicht-aller-traceroute-optionen">Übersicht aller traceroute-Optionen</h2>
+<p><img src="/images/posts/linux/traceroute.png" alt="Übersicht aller verfügbaren traceroute-Optionen mit Beschreibungen und Beispielen"></p>
+<p>Übersicht aller verfügbaren traceroute-Optionen mit Beschreibungen und Beispielen</p>
+<h2 id="fehlerbehebung-und-häufige-probleme">Fehlerbehebung und häufige Probleme</h2>
+<h3 id="asterisk--in-der-ausgabe">Asterisk (*) in der Ausgabe:</h3>
+<ul>
+<li>Bedeutet: Keine Antwort innerhalb der Wartezeit</li>
+<li>Mögliche Ursachen: Firewall, Router-Konfiguration, Überlastung</li>
+</ul>
+<h3 id="zusätzliche-annotationen">Zusätzliche Annotationen:</h3>
+<ul>
+<li><strong>!H</strong>: Host unreachable</li>
+<li><strong>!N</strong>: Network unreachable</li>
+<li><strong>!P</strong>: Protocol unreachable</li>
+<li><strong>!F</strong>: Fragmentation needed</li>
+<li><strong>!X</strong>: Communication administratively prohibited</li>
+</ul>
+<h3 id="performance-optimierung">Performance-Optimierung:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Für stabilere Ergebnisse bei problematischen Verbindungen:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>traceroute -N <span style="color:#0086f7;font-weight:bold">1</span> -w <span style="color:#0086f7;font-weight:bold">5</span> google.com
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Für schnellere Ergebnisse ohne DNS-Auflösung:</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>traceroute -n google.com
+</span></span></code></pre></div><h2 id="unterschiede-zu-windows-tracert">Unterschiede zu Windows tracert</h2>
+<p>Während Linux <code>traceroute</code> standardmäßig <strong>UDP-Pakete</strong> verwendet, nutzt Windows <code>tracert</code> <strong>ICMP-Pakete</strong>. Um unter Linux dasselbe Verhalten wie unter Windows zu erzielen, verwenden Sie:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -I google.com
+</span></span></code></pre></div><h2 id="erweiterte-verwendung-für-it-sicherheit">Erweiterte Verwendung für IT-Sicherheit</h2>
+<h3 id="as-path-lookups-für-routing-analyse">AS-Path Lookups für Routing-Analyse:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -A google.com
+</span></span></code></pre></div><h3 id="firewall-tests-mit-verschiedenen-ports">Firewall-Tests mit verschiedenen Ports:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -T -p <span style="color:#0086f7;font-weight:bold">443</span> bank-website.com  <span style="color:#080;background-color:#0f140f;font-style:italic"># HTTPS</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>traceroute -T -p <span style="color:#0086f7;font-weight:bold">25</span> mail-server.com    <span style="color:#080;background-color:#0f140f;font-style:italic"># SMTP</span>
+</span></span></code></pre></div><h3 id="netzwerk-segmentierung-prüfen">Netzwerk-Segmentierung prüfen:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>traceroute -s 192.168.1.100 internal-server.com
+</span></span></code></pre></div><h2 id="best-practices-für-it-sicherheitsmanager">Best Practices für IT-Sicherheitsmanager</h2>
+<ol>
+<li><strong>Kombinieren Sie traceroute mit anderen Tools</strong>: Nutzen Sie ping und mtr für umfassende Diagnosen</li>
+<li><strong>Dokumentieren Sie Baselines</strong>: Speichern Sie normale traceroute-Ergebnisse für Vergleiche</li>
+<li><strong>Überwachen Sie kritische Pfade</strong>: Regelmäßige traceroute-Tests zu wichtigen Servern</li>
+<li><strong>Beachten Sie Datenschutz</strong>: traceroute kann Netzwerkstrukturen preisgeben</li>
+<li><strong>Verwenden Sie verschiedene Methoden</strong>: TCP, ICMP und UDP für vollständige Sicht</li>
+</ol>
+<h2 id="fazit--traceroute-unter-linux">Fazit | traceroute unter Linux</h2>
+<p>Der traceroute-Befehl ist ein mächtiges Werkzeug für die Netzwerkdiagnose und sollte in jedem IT-Sicherheits-Toolkit vorhanden sein. Mit dem Verständnis seiner verschiedenen Optionen und Anwendungsmöglichkeiten können Sie Netzwerkprobleme effizient identifizieren und beheben.</p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fder-traceroute-befehl-unter-linux%2f&title=Der%20traceroute-Befehl%20unter%20Linux" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Der%20traceroute-Befehl%20unter%20Linux&body=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fder-traceroute-befehl-unter-linux%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Linux SSH-Zugang absichern</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#der-traceroute-befehl-unter-linux-mit-umfassende-anleitung-mit-beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+    <li><a href="#was-ist-traceroute">Was ist traceroute?</a></li>
+    <li><a href="#funktionsweise-von-traceroute">Funktionsweise von traceroute</a></li>
+    <li><a href="#installation-von-traceroute">Installation von traceroute</a>
+      <ul>
+        <li><a href="#ubuntudebian-basierte-systeme">Ubuntu/Debian-basierte Systeme:</a></li>
+        <li><a href="#centosrhelfedora">CentOS/RHEL/Fedora:</a></li>
+        <li><a href="#überprüfung-der-installation">Überprüfung der Installation:</a></li>
+      </ul>
+    </li>
+    <li><a href="#grundlegende-verwendung">Grundlegende Verwendung</a>
+      <ul>
+        <li><a href="#einfacher-traceroute-befehl">Einfacher traceroute-Befehl:</a></li>
+        <li><a href="#interpretierung-der-ausgabe">Interpretierung der Ausgabe:</a></li>
+      </ul>
+    </li>
+    <li><a href="#praktische-anwendungsbeispiele">Praktische Anwendungsbeispiele</a>
+      <ul>
+        <li><a href="#1-traceroute-mit-ipv4-erzwingen">1. Traceroute mit IPv4 erzwingen:</a></li>
+        <li><a href="#2-traceroute-mit-ipv6">2. Traceroute mit IPv6:</a></li>
+        <li><a href="#3-icmp-pakete-verwenden-statt-udp">3. ICMP-Pakete verwenden (statt UDP):</a></li>
+        <li><a href="#4-tcp-basiertes-traceroute-für-firewall-umgehung">4. TCP-basiertes traceroute (für Firewall-Umgehung):</a></li>
+        <li><a href="#5-ohne-namensauflösung-schneller">5. Ohne Namensauflösung (schneller):</a></li>
+        <li><a href="#6-maximale-hop-anzahl-begrenzen">6. Maximale Hop-Anzahl begrenzen:</a></li>
+        <li><a href="#7-anzahl-der-sonden-pro-hop-ändern">7. Anzahl der Sonden pro Hop ändern:</a></li>
+        <li><a href="#8-wartezeit-anpassen">8. Wartezeit anpassen:</a></li>
+        <li><a href="#9-bestimmtes-interface-verwenden">9. Bestimmtes Interface verwenden:</a></li>
+        <li><a href="#10-mtu-erkennung">10. MTU-Erkennung:</a></li>
+      </ul>
+    </li>
+    <li><a href="#unterschiede-zwischen-verschiedenen-traceroute-methoden">Unterschiede zwischen verschiedenen Traceroute-Methoden</a>
+      <ul>
+        <li><a href="#udp-standard-unter-linux">UDP (Standard unter Linux):</a></li>
+        <li><a href="#icmp-mit--i-option">ICMP (mit -I Option):</a></li>
+        <li><a href="#tcp-mit--t-option">TCP (mit -T Option):</a></li>
+      </ul>
+    </li>
+    <li><a href="#übersicht-aller-traceroute-optionen">Übersicht aller traceroute-Optionen</a></li>
+    <li><a href="#fehlerbehebung-und-häufige-probleme">Fehlerbehebung und häufige Probleme</a>
+      <ul>
+        <li><a href="#asterisk--in-der-ausgabe">Asterisk (*) in der Ausgabe:</a></li>
+        <li><a href="#zusätzliche-annotationen">Zusätzliche Annotationen:</a></li>
+        <li><a href="#performance-optimierung">Performance-Optimierung:</a></li>
+      </ul>
+    </li>
+    <li><a href="#unterschiede-zu-windows-tracert">Unterschiede zu Windows tracert</a></li>
+    <li><a href="#erweiterte-verwendung-für-it-sicherheit">Erweiterte Verwendung für IT-Sicherheit</a>
+      <ul>
+        <li><a href="#as-path-lookups-für-routing-analyse">AS-Path Lookups für Routing-Analyse:</a></li>
+        <li><a href="#firewall-tests-mit-verschiedenen-ports">Firewall-Tests mit verschiedenen Ports:</a></li>
+        <li><a href="#netzwerk-segmentierung-prüfen">Netzwerk-Segmentierung prüfen:</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices-für-it-sicherheitsmanager">Best Practices für IT-Sicherheitsmanager</a></li>
+    <li><a href="#fazit--traceroute-unter-linux">Fazit | traceroute unter Linux</a></li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

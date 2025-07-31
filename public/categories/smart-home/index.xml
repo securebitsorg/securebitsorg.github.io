@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Smart-Home on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/smart-home/</link>
+    <description>Recent content in Smart-Home on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Mon, 19 Sep 2022 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/smart-home/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>AdGuardHome-Setup - Basis-Konfiguration 2022</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</guid>
+      <description>&lt;p&gt;Inhaltsverzeichnis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#ad-guard-konfigurieren-um-dein-netzwerk-vor-werbung-und-trackern-zu-schutzen&#34;&gt;AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#video-tutorial-ad-guard-konfigurieren-basis-konfiguration&#34;&gt;Video-Tutorial - AdGuardHome-Setup konfigurieren | Basis-Konfiguration&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#alternative-zu-ad-guard-raspberry-pi-installation-gesucht&#34;&gt;Alternative zu &amp;lsquo;AdGuard Raspberry Pi Installation&amp;rsquo; gesucht?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#schritt-fur-schritt-ad-guard-raspberry-pi-installieren&#34;&gt;Schritt für Schritt | AdGuard Raspberry Pi Installieren&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#installation-ad-guard-auf-einen-raspberry-pi&#34;&gt;Installation AdGuard auf einen Raspberry Pi&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#zusammenfassung-ad-guard-raspberry-pi-installation&#34;&gt;Zusammenfassung - AdGuard Raspberry Pi Installation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-empfehlungen-ad-guard-raspberry-pi-installation&#34;&gt;Blacklist-Empfehlungen - AdGuard Raspberry Pi Installation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-steve-black&#34;&gt;Blacklist SteveBlack&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-adaway-org&#34;&gt;Blacklist adaway.org&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-smart-tv-tracking&#34;&gt;Blacklist SmartTV-Tracking&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-easy-privacy&#34;&gt;Blacklist EasyPrivacy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-easy-list&#34;&gt;Blacklist EasyList&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#blacklist-telemetrie-microsoft-windows&#34;&gt;Blacklist Telemetrie Microsoft / Windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#weiterfuhrende-links-zum-thema&#34;&gt;Weiterführende Links zum Thema&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#vertrauenswurdige-dns-server-ad-guard-raspberry-pi-installation&#34;&gt;Vertrauenswürdige DNS-Server - AdGuard Raspberry Pi Installation&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#freifunk-munchen-normales-dns-dns-over-tls-und-dns-over-https&#34;&gt;Freifunk München (normales DNS, DNS-over-TLS und DNS-over-HTTPS)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#digitale-gesellschaft-ch-dns-over-tls-und-dns-over-https&#34;&gt;Digitale Gesellschaft (CH) (DNS-over-TLS und DNS-over-HTTPS!)&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#censurfridns-denmark-aka-uncensored-dns&#34;&gt;Censurfridns Denmark (aka. UncensoredDNS)&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hardware&#34;&gt;Hardware-Empfehlungen - AdGuard Raspberry Pi Installation&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;adguardhome-setup---konfigurieren-um-dein-netzwerk-vor-werbung-und-trackern-zu-schützen&#34;&gt;AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen&lt;/h2&gt;
+&lt;p&gt;Im heutigen Tutorial &amp;lsquo;&lt;strong&gt;AdGuard konfigurieren&lt;/strong&gt;&amp;rsquo; möchte ich euch zeigen, wir ihr nach der Installation von AdGuard (&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hier zum Anleitung&lt;/a&gt;), die &lt;strong&gt;AdGuard Basis-Konfiguration&lt;/strong&gt; auf euren Raspberry Pi durchführen könnt.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

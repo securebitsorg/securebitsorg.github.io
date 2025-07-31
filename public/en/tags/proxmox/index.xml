@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>“Proxmox” on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/proxmox/</link>
+    <description>Recent content in “Proxmox” on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Tue, 18 Feb 2025 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/proxmox/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Secure Proxmox VE with fail2ban</title>
+      <link>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</guid>
+      <description>&lt;h2 id=&#34;secure-proxmox-ve-based-on-debian-12-with-fail2ban&#34;&gt;Secure Proxmox VE based on Debian 12 with fail2ban&lt;/h2&gt;
+&lt;p&gt;One way to secure a public Proxmox server against brute force attacks is to use the tool ‘fail2ban’.
+In this short tutorial, I will show you how to use fail2ban to secure access to the ‘SSH’ service and port ‘8006’ of the dashboard.
+Starting point
+In this scenario, we are dealing with a Proxmox server that is hosted as a dedicated server at Hetzner and can be reached via the public Internet using an IPv4 and IPv6 address.
+In general, the use of fail2ban should only be considered as part of a set of security measures to secure your server. Feel free to consult further security measures here on my blog.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

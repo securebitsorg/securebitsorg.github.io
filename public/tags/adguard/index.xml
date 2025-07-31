@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Adguard on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/adguard/</link>
+    <description>Recent content in Adguard on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Thu, 12 Jan 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/adguard/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>FritzBox / AdGuard DNS - Werbung, Tracking und Pishing mit blocken</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--adguard-dns-einrichten&#34;&gt;FritzBox / AdGuard DNS einrichten&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://adguard-dns.io/?aid=33604&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/posts/fritzbox/logo_adguard.png&#34; alt=&#34;logo adguard dns&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In diesem Video zeige ich euch wir ihr mit Hilfe von AdGuard DNS, Geräte in eurem Heimnetzwerk vor Werbung, Tracking, Pishing und Malware schützen könnt.&lt;/p&gt;
+&lt;p&gt;Wie ihr AdGuard DNS und eure FritzBox oder auch andere Router richtig konfigurieren müsst, erfahrt ihr in diesem Video-Tutorial.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Obcd2OLgl64?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;was-bietet-fritzbox--adguard-dns&#34;&gt;Was bietet FritzBox / AdGuard DNS?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;AdGuard DNS ist &amp;ldquo;euer persönlicher&amp;rdquo; öffentlicher rekursiver DNS-Server&lt;/strong&gt; den du mit Blocklisten, Application-Control, Kindersicherung und Zeitprofilen an eure individuellen Bedürfnisse anpassen könnt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home DNS-Verschlüsselung</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-dns-over-quic/</link>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-dns-over-quic/</guid>
+      <description>&lt;h2 id=&#34;adguard-home-dns-verschlüsselung-mit-dns-over-quic&#34;&gt;AdGuard Home DNS-Verschlüsselung mit DNS over QUIC&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial auf &lt;a href=&#34;https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;meinem YouTube-Kanal&lt;/strong&gt;&lt;/a&gt; zeige ich euchSchritt für Schritt, wie ihr mithilfe von dem &amp;ldquo;neuen&amp;rdquo; Verschlüsselungs-Protokoll &amp;lsquo;&lt;strong&gt;DNS over QUIC&lt;/strong&gt;&amp;rsquo;, externe DNS-Anfragen von AdGuard Home verschlüsseln könnt.&lt;/p&gt;
+&lt;h3 id=&#34;adguard-home-dns-verschlüsselung---video&#34;&gt;AdGuard Home DNS-Verschlüsselung - Video&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/mog1eFUUc3Y?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;adguard-home-installieren&#34;&gt;AdGuard Home installieren&lt;/h3&gt;
+&lt;p&gt;Wer von euch wissen möchte, wie AdGuard Home zum Beispiel auf einem Raspberry Pi installiert wird, der kann sich diese &lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Anleitung&lt;/strong&gt;&lt;/a&gt; oder dieses &lt;a href=&#34;https://youtu.be/PF2WH2llwSg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Video&lt;/strong&gt;&lt;/a&gt; dazu anschauen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home manuell aktualisieren</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</guid>
+      <description>&lt;h2 id=&#34;wenn-das-automatisches-adguard-home-update-fehlschlägt&#34;&gt;Wenn das automatisches AdGuard Home Update fehlschlägt&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;AdGuard Home manuell aktualisieren&lt;/strong&gt;&amp;rsquo; und dem dazugehörigen Video-Tutorial, zeige ich euch, wie es möglich ist, bei einer AdGuard Home-Instanz ein manuelles Update durchzuführen.&lt;/p&gt;
+&lt;h3 id=&#34;warum-adguard-home-manuell-aktualisieren&#34;&gt;Warum AdGuard Home manuell aktualisieren?&lt;/h3&gt;
+&lt;p&gt;Bei manchen AdGuard Home Updates fällt die automatische Aktualisierung fehl, so zum Beispiel bei der Version &amp;ldquo;&lt;strong&gt;AdGuard Home v0.107.17&lt;/strong&gt;&amp;rdquo;. Daher ist es nötig, hier ein manuelles Update über die Kommandozeile durchzuführen.&lt;/p&gt;
+&lt;h2 id=&#34;video-tutorial-zu-adguard-home-manuell-aktualisieren&#34;&gt;Video-Tutorial zu &amp;lsquo;AdGuard Home manuell aktualisieren&amp;rsquo;&lt;/h2&gt;
+&lt;p&gt;Auf meinen &lt;a href=&#34;https://www.youtube.com/@secure_bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;YouTube-Kanal&lt;/strong&gt;&lt;/a&gt; habe ich auch ein entsprechendes Video-Tutorial veröffentlicht.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox - AdGuard Home einrichten</title>
+      <link>http://localhost:1313/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/</guid>
+      <description>&lt;h2 id=&#34;werbung-und-tracking-mit-adguard-home-blockieren&#34;&gt;Werbung und Tracking mit AdGuard Home blockieren&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr mithilfe eines AdGuard DNS-Server und einer FritzBox (funktioniert auch mit Speedport, etc.) in eurem Heimnetzwerk, Werbung, Tracking und Schadsoftware blockieren und vermeiden könnt.&lt;/p&gt;
+&lt;h3 id=&#34;adguard-home-konfigurieren&#34;&gt;AdGuard Home konfigurieren&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/i4UODIMb65g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;weitere-videos-zum-thema-adguard&#34;&gt;Weitere Videos zum Thema AdGuard&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuardHome-Setup - Basis-Konfiguration</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</guid>
+      <description>&lt;h2 id=&#34;adguardhome-setup---konfigurieren-um-dein-netzwerk-vor-werbung-und-trackern-zu-schützen&#34;&gt;AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen&lt;/h2&gt;
+&lt;p&gt;Im heutigen Tutorial &amp;lsquo;&lt;strong&gt;AdGuard konfigurieren&lt;/strong&gt;&amp;rsquo; möchte ich euch zeigen, wir ihr nach der Installation von AdGuard (&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hier zur Anleitung&lt;/a&gt;), die &lt;strong&gt;AdGuard Basis-Konfiguration&lt;/strong&gt; auf euren Raspberry Pi durchführen könnt.&lt;/p&gt;
+&lt;p&gt;In diesem Tutorial-Video zeige ich euch, wie ihr die folgenden Einstellungen vornehmen könnt.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DNS konfigurieren&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sperrlisten anlegen&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netzwerkweite Sperrung von Applikationen (Soziale Netzwerke und andere Dienste)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Protokolle verstehen&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Und vieles mehr&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/</link>
+      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;mit-adguard-dein-netzwerk-vor-werbung-und-trackern-schützen&#34;&gt;Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen&lt;/h2&gt;
+&lt;p&gt;Im heutigen Tutorial &amp;lsquo;&lt;strong&gt;AdGuard Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch zeigen, wir ihr den &lt;strong&gt;AdGuard DNS-Server&lt;/strong&gt; auf einen &lt;strong&gt;Raspberry Pi ab Version 3&lt;/strong&gt; installieren könnt.&lt;/p&gt;
+&lt;p&gt;Mit diesem DNS-Server habt ihr dann ähnlich wie bei dem &lt;strong&gt;pihole DNS-Server&lt;/strong&gt; (&lt;a href=&#34;https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;zum Tutorial hier entlang&lt;/a&gt;) die Möglichkeit, die meiste Werbung und Datentracker aus eurem Heimnetzwerk zu verbannen.&lt;/p&gt;
+&lt;p&gt;Solltet ihr noch Hardware für euren AdGuard-DNS-Server benötigen, dann schaut am &lt;a href=&#34;#hardware&#34;&gt;Ende von diesem Beitrag. Dort habe ich eine kleine Liste erstellt.&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

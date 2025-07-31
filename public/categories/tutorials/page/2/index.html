@@ -1,0 +1,1306 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Tutorials</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+<link rel="alternate" type="application/rss+xml" href="http://localhost:1313/categories/tutorials/index.xml" title="SecureBits Blog by Marcel Dellmann">
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+     
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-categories kind-term" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/categories/tutorials">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/categories/tutorials">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  
+  
+    
+  
+
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/categories" data-filter="all">Kategorien</a></li>
+            <div class="subtree taxonomy-terms">
+              
+              
+
+
+
+  
+  
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/firewall/" data-taxonomy-term="firewall"><span class="taxonomy-label">Firewall</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/hardware/" data-taxonomy-term="hardware"><span class="taxonomy-label">Hardware</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/info/" data-taxonomy-term="info"><span class="taxonomy-label">Info</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/linux/" data-taxonomy-term="linux"><span class="taxonomy-label">Linux</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/netzwerk/" data-taxonomy-term="netzwerk"><span class="taxonomy-label">Netzwerk</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/privacy/" data-taxonomy-term="privacy"><span class="taxonomy-label">Privacy</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/security/" data-taxonomy-term="security"><span class="taxonomy-label">Security</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/software/" data-taxonomy-term="software"><span class="taxonomy-label">Software</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/tutorial/" data-taxonomy-term="tutorial"><span class="taxonomy-label">Tutorial</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term active" href="http://localhost:1313/categories/tutorials/" data-taxonomy-term="tutorials"><span class="taxonomy-label">Tutorials</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/video/" data-taxonomy-term="video"><span class="taxonomy-label">Video</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/windows/" data-taxonomy-term="windows"><span class="taxonomy-label">Windows</span></a></li>
+        
+          
+            
+          
+          <li><a class="taxonomy-term " href="http://localhost:1313/categories/windows/" data-taxonomy-term="windows"><span class="taxonomy-label">“Windows”</span></a></li>
+        
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content container-fluid" id="content">
+    <div class="container-fluid post-card-holder" id="post-card-holder">
+      
+      
+      
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/pihole/pihole-basis-konfiguration/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/pihole/Video-Pi-hole-Basis-Konfiguration.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/pihole/pihole-basis-konfiguration/" class="post-card-link">
+        <h5 class="card-title">Pihole einrichten / konfigurieren</h5>
+        <p class="card-text post-summary">Pihole einrichten - Basis-Konfiguration In diesem Video-Tutorial &lsquo;Pi-hole Basis-Konfiguration&rsquo; gehe ich mit euch Schritt für Schritt die Einrichtung von dem Pi-hole DNS-Server durch und erkläre euch, was die einzelnen Funktionen / Menüpunkte bedeuten.
+Bei Fragen zum Thema schriebt einfach einen Kommentar entweder unter dem Video auf YouTube oder hier unter diesem Blog-Beitrag.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/pi-hole/" class="btn btn-sm btn-info">pi-hole</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Freitag, 5. Mai 2023
+           | 1 Minute </span>
+      <a
+      href="/posts/privacy/pihole/pihole-basis-konfiguration/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/pihole/Video-Pi-hole-alles-ueber-Pi-hole.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" class="post-card-link">
+        <h5 class="card-title">FritzBox &#43; Pihole | FritzBox konfigurieren</h5>
+        <p class="card-text post-summary">FritzBox + Pihole - Richtig konfigurieren, dass alle Geräte Pi-hole als DNS-Server nutzen In diesem Video auf meinem YouTube-Kanal zeige ich euch, wie ihr die FritzBox richtig konfigurieren müsst, dass auch wirklich alle Geräte sowie Software, den Pi-hole als DNS-Server im Netzwerk nutzen und diesen nicht umgehen können.
+Es gibt sicherlich auch in eurem internen Netzwerk einige Geräte sowie Software, die eine sogenannte fest implementierte IP-Adresse für einen öffentlichen DNS-Server (hardcoded) haben.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/fritzbox/" class="btn btn-sm btn-info">fritzbox</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/pi-hole/" class="btn btn-sm btn-info">pi-hole</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Montag, 6. Februar 2023
+           | 2 Minuten </span>
+      <a
+      href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/fritzbox/fritzbox-adguard-dns/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/fritzbox/Thumbnail-AdGuard-DNS.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/fritzbox/fritzbox-adguard-dns/" class="post-card-link">
+        <h5 class="card-title">FritzBox / AdGuard DNS - Werbung, Tracking und Pishing mit blocken</h5>
+        <p class="card-text post-summary">FritzBox / AdGuard DNS einrichten In diesem Video zeige ich euch wir ihr mit Hilfe von AdGuard DNS, Geräte in eurem Heimnetzwerk vor Werbung, Tracking, Pishing und Malware schützen könnt.
+Wie ihr AdGuard DNS und eure FritzBox oder auch andere Router richtig konfigurieren müsst, erfahrt ihr in diesem Video-Tutorial.
+Was bietet FritzBox / AdGuard DNS? AdGuard DNS ist &ldquo;euer persönlicher&rdquo; öffentlicher rekursiver DNS-Server den du mit Blocklisten, Application-Control, Kindersicherung und Zeitprofilen an eure individuellen Bedürfnisse anpassen könnt.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/fritzbox/" class="btn btn-sm btn-info">fritzbox</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Donnerstag, 12. Januar 2023
+           | 1 Minute </span>
+      <a
+      href="/posts/fritzbox/fritzbox-adguard-dns/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/adguard/adguard-home-dns-over-quic/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/adguard/Video-AdGuard-Raspberry-Pi-Installation.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/adguard/adguard-home-dns-over-quic/" class="post-card-link">
+        <h5 class="card-title">AdGuard Home DNS-Verschlüsselung</h5>
+        <p class="card-text post-summary">AdGuard Home DNS-Verschlüsselung mit DNS over QUIC In diesem Video-Tutorial auf meinem YouTube-Kanal zeige ich euchSchritt für Schritt, wie ihr mithilfe von dem &ldquo;neuen&rdquo; Verschlüsselungs-Protokoll &lsquo;DNS over QUIC&rsquo;, externe DNS-Anfragen von AdGuard Home verschlüsseln könnt.
+AdGuard Home DNS-Verschlüsselung - Video AdGuard Home installieren Wer von euch wissen möchte, wie AdGuard Home zum Beispiel auf einem Raspberry Pi installiert wird, der kann sich diese Anleitung oder dieses Video dazu anschauen.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Dienstag, 27. Dezember 2022
+           | 2 Minuten </span>
+      <a
+      href="/posts/privacy/adguard/adguard-home-dns-over-quic/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/adguard/Thumbnail-AdGuard-Home-Update.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" class="post-card-link">
+        <h5 class="card-title">AdGuard Home manuell aktualisieren</h5>
+        <p class="card-text post-summary">Wenn das automatisches AdGuard Home Update fehlschlägt In diesem Beitrag &lsquo;AdGuard Home manuell aktualisieren&rsquo; und dem dazugehörigen Video-Tutorial, zeige ich euch, wie es möglich ist, bei einer AdGuard Home-Instanz ein manuelles Update durchzuführen.
+Warum AdGuard Home manuell aktualisieren? Bei manchen AdGuard Home Updates fällt die automatische Aktualisierung fehl, so zum Beispiel bei der Version &ldquo;AdGuard Home v0.107.17&rdquo;. Daher ist es nötig, hier ein manuelles Update über die Kommandozeile durchzuführen.
+Video-Tutorial zu &lsquo;AdGuard Home manuell aktualisieren&rsquo; Auf meinen YouTube-Kanal habe ich auch ein entsprechendes Video-Tutorial veröffentlicht.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Montag, 21. November 2022
+           | 4 Minuten </span>
+      <a
+      href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/adguard/AdGuard-FritzBox-DNS-Server.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" class="post-card-link">
+        <h5 class="card-title">FritzBox - AdGuard Home einrichten</h5>
+        <p class="card-text post-summary">Werbung und Tracking mit AdGuard Home blockieren In diesem Video zeige ich euch, wie ihr mithilfe eines AdGuard DNS-Server und einer FritzBox (funktioniert auch mit Speedport, etc.) in eurem Heimnetzwerk, Werbung, Tracking und Schadsoftware blockieren und vermeiden könnt.
+AdGuard Home konfigurieren Weitere Videos zum Thema AdGuard https://secure-bits.org/adguard-raspberry-pi-installation-2022/
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/fritzbox/" class="btn btn-sm btn-info">fritzbox</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Samstag, 22. Oktober 2022
+           | 1 Minute </span>
+      <a
+      href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/security/ufw-firewall-application-profiles/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/security/ufw-firewall-application-profiles/" class="post-card-link">
+        <h5 class="card-title">UFW-Firewall - Application Profiles erstellen </h5>
+        <p class="card-text post-summary">UFW-Firewall - Profile für Applikationen anlegen In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mithilfe eines Application-Profil mehrere Ports für eine Anwendung in einem App-Profil zusammenstellen könnt und somit mehrere Ports mit einer Firewall-Regel anlegen könnt.
+Video-Tutorial zu den Grundlagen der UFW-Firewall Verwendete Terminal-Befehle im Video Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &lsquo;UFW-Firewall Raspberry Pi Installation&rsquo; hier auf SecureBits.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Donnerstag, 6. Oktober 2022
+           | 1 Minute </span>
+      <a
+      href="/posts/security/ufw-firewall-application-profiles/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/security/ufw-firewall-basics/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/security/ufw-firewall-basics/" class="post-card-link">
+        <h5 class="card-title">UFW-Firewall - Grundlagen | Teil 1</h5>
+        <p class="card-text post-summary">Grundlagen zur UFW-Firewall Installation und Einrichtung In diesem Video-Tutorial zeige ich euch, wie ihr die UFW-Firewall (Uncomplicated Firewall) auf eure Linux-Distribution installieren und einrichten könnt.
+Video-Tutorial zu den Grundlagen der UFW-Firewall Verwendete Terminal-Befehle im Video Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &lsquo;UFW-Firewall Raspberry Pi Installation&rsquo; hier auf SecureBits.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Donnerstag, 6. Oktober 2022
+           | 1 Minute </span>
+      <a
+      href="/posts/security/ufw-firewall-basics/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/security/ufw-firewall-mehrere-ports/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/security/ufw-firewall-mehrere-ports/" class="post-card-link">
+        <h5 class="card-title">UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben</h5>
+        <p class="card-text post-summary">UFW-Firewall - Erweiterte Regeln für Portbereiche In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mehrere Ports gleichzeitig, Portbereiche und Dienste freigeben könnt.
+Video-Tutorial zu den Grundlagen der UFW-Firewall Verwendete Terminal-Befehle im Video Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &lsquo;UFW-Firewall Raspberry Pi Installation&rsquo; hier auf SecureBits.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/it-security/" class="btn btn-sm btn-info">it-security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Donnerstag, 6. Oktober 2022
+           | 1 Minute </span>
+      <a
+      href="/posts/security/ufw-firewall-mehrere-ports/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/security/ufw-firewall-debian-basierend/" class="post-card-link">
+        <img class="card-img-top" src='/images/posts/it-security/Thumbnail-1.png' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/security/ufw-firewall-debian-basierend/" class="post-card-link">
+        <h5 class="card-title">UFW-Firewall Raspberry Pi Installation</h5>
+        <p class="card-text post-summary">UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi In diesem Beitrag &lsquo;UFW-Firewall Raspberry Pi Installation&rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für iptables auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den Raspberry Pi beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.
+Passend zum Tutorial &lsquo;AdGuard auf dem Raspberry Pi installieren&rsquo;. bietet sich natürlich an, dass wir die UFW-Firewall auch auf den Raspberry Pi mit AdGuard Home drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Dienstag, 20. September 2022
+           | 12 Minuten </span>
+      <a
+      href="/posts/security/ufw-firewall-debian-basierend/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/adguard/adguard-home-konfigurieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/adguard/adguard-home-konfigurieren/" class="post-card-link">
+        <h5 class="card-title">AdGuardHome-Setup - Basis-Konfiguration</h5>
+        <p class="card-text post-summary">AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen Im heutigen Tutorial &lsquo;AdGuard konfigurieren&rsquo; möchte ich euch zeigen, wir ihr nach der Installation von AdGuard (hier zur Anleitung), die AdGuard Basis-Konfiguration auf euren Raspberry Pi durchführen könnt.
+In diesem Tutorial-Video zeige ich euch, wie ihr die folgenden Einstellungen vornehmen könnt.
+DNS konfigurieren
+Sperrlisten anlegen
+Netzwerkweite Sperrung von Applikationen (Soziale Netzwerke und andere Dienste)
+Protokolle verstehen
+Und vieles mehr
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Montag, 19. September 2022
+           | 2 Minuten </span>
+      <a
+      href="/posts/privacy/adguard/adguard-home-konfigurieren/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+        
+          <div class="post-card">
+  <div class="card">
+    <div class="card-head">
+      <a href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" class="post-card-link">
+        <img class="card-img-top" src='/images/default-hero.jpg' alt="Hero Image">
+      </a>
+    </div>
+    <div class="card-body">
+      <a href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" class="post-card-link">
+        <h5 class="card-title">AdGuard Home Raspberry Pi Installation</h5>
+        <p class="card-text post-summary">Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen Im heutigen Tutorial &lsquo;AdGuard Raspberry Pi Installation&rsquo; möchte ich euch zeigen, wir ihr den AdGuard DNS-Server auf einen Raspberry Pi ab Version 3 installieren könnt.
+Mit diesem DNS-Server habt ihr dann ähnlich wie bei dem pihole DNS-Server (zum Tutorial hier entlang) die Möglichkeit, die meiste Werbung und Datentracker aus eurem Heimnetzwerk zu verbannen.
+Solltet ihr noch Hardware für euren AdGuard-DNS-Server benötigen, dann schaut am Ende von diesem Beitrag. Dort habe ich eine kleine Liste erstellt.
+</p>
+      </a>
+      
+        <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/adguard/" class="btn btn-sm btn-info">adguard</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/raspberry-pi/" class="btn btn-sm btn-info">raspberry pi</a></li>
+    
+  </ul>
+</div>
+
+      
+    </div>
+    <div class="card-footer">
+      <span class="float-start">
+          Dienstag, 23. August 2022
+           | 7 Minuten </span>
+      <a
+      href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/"
+      class="float-end btn btn-outline-info btn-sm">Lesen</a>
+    </div>
+  </div>
+</div>
+
+        
+      
+    </div>
+    <div class="paginator">
+      
+    <ul class="pagination pagination-default">
+      <li class="page-item">
+        <a href="/categories/tutorials/" aria-label="First" class="page-link" role="button"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/categories/tutorials/" aria-label="Previous" class="page-link" role="button"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/categories/tutorials/" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/categories/tutorials/page/3/" aria-label="Page 3" class="page-link" role="button">3</a>
+      </li>
+      <li class="page-item">
+        <a href="/categories/tutorials/page/3/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/categories/tutorials/page/3/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul>
+    </div>
+  </div>
+</section>
+
+
+      
+       
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

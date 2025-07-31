@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pages on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/pages/</link>
+    <description>Recent content in Pages on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Tue, 24 Jan 2017 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/pages/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Kontakt</title>
+      <link>http://localhost:1313/pages/kontakt/</link>
+      <pubDate>Tue, 24 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/pages/kontakt/</guid>
+      <description>&lt;h2 id=&#34;hast-du-eine-frage-oder-ein-feedback-für-mich&#34;&gt;Hast du eine Frage oder ein Feedback für mich?&lt;/h2&gt;
+
+&lt;button id=&#34;zammad-feedback-form&#34;&gt;Feedback&lt;/button&gt;
+
+&lt;script id=&#34;zammad_form_script&#34; src=&#34;https://ticket.secure-bits.org/assets/form/form.js&#34;&gt;&lt;/script&gt;
+
+&lt;script&gt;
+$(function() {
+  $(&#39;#zammad-feedback-form&#39;).ZammadForm({
+    agreementMessage: &#39;Datenschutzerklärung und Nutzungsbedingungen akzeptieren&#39;,
+    messageTitle: &#39;Feedback-Formular&#39;,
+    messageSubmit: &#39;Übermitteln&#39;,
+    messageThankYou: &#39;Vielen Dank für Ihre Anfrage (#%s). Wir melden uns umgehend.&#39;,
+    showTitle: true,
+    modal: true
+  });
+});
+&lt;/script&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

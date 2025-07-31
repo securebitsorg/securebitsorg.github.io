@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>It-Security on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/it-security/</link>
+    <description>Recent content in It-Security on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 06 Mar 2024 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/it-security/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole PHP | Pihole immer mit der aktuellsten PHP-Version</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</guid>
+      <description>&lt;h2 id=&#34;pihole-mit-php-83-auf-dem-raspberry-pi-os-installieren&#34;&gt;Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pihole mit PHP 8.3 installieren&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könE-Hat für Raspberry Pi 5nt.&lt;/p&gt;
+&lt;h3 id=&#34;hintergrund-von-diesem-tutorial&#34;&gt;Hintergrund von diesem Tutorial&lt;/h3&gt;
+&lt;p&gt;Bei einer Testinstallation von &lt;strong&gt;Pihole mit Debian 11&lt;/strong&gt; auf meinem Raspberry Pi, ist mir beim Installationsprozess aufgefallen, dass die Installationsroutine auf dem &lt;strong&gt;Raspberry Pi OS lite, ein PHP-7.4 installiert&lt;/strong&gt;, welches schon seit &lt;strong&gt;Mitte 2023 nicht mehr mit Sicherheitsupdates&lt;/strong&gt; versorgt wird und somit &lt;strong&gt;EOL (End of life)&lt;/strong&gt; ist.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---erweiterte-regeln-für-portbereiche&#34;&gt;UFW-Firewall - Erweiterte Regeln für Portbereiche&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mehrere Ports gleichzeitig, Portbereiche und Dienste freigeben könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Gwbq6F1N3xo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

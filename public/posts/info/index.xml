@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Info on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/posts/info/</link>
+    <description>Recent content in Info on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Sat, 26 Jul 2025 08:01:45 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/info/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Informationen</title>
+      <link>http://localhost:1313/posts/info/informationen/</link>
+      <pubDate>Sat, 26 Jul 2025 08:07:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/info/informationen/</guid>
+      <description>&lt;h2 id=&#34;was-ist-denn-hier-passiert&#34;&gt;Was ist denn hier passiert?!&lt;/h2&gt;
+&lt;p&gt;Diejenigen unter euch, die meinen Blog oder YouTube-Kanal schon länger folgen, werden feststellen, dass sich hier außer das Optische, auch einiges Andere geändert hat.&lt;/p&gt;
+&lt;p&gt;Was sich alles geändert hat, möchte ich euch hier kurz vorstellen und zusammenfassen.&lt;/p&gt;
+&lt;h3 id=&#34;warum-ein-anderes-design&#34;&gt;Warum ein anderes Design?&lt;/h3&gt;
+&lt;p&gt;Wie man zweifellos feststellen kann, hat der Blog ein neues Design. Das liegt daran, dass ich von meinem alten CMS ‚WordPress‘ getrennt habe und nun auf eine statische Website umgestiegen bin, welches ich mit dem Content-Generator &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo.io&lt;/a&gt; ausführe.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

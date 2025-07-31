@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firewall on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/firewall/</link>
+    <description>Recent content in Firewall on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 25 Jul 2025 05:22:28 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/firewall/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Was ist eine Unified Threat Management Firewall?</title>
+      <link>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</link>
+      <pubDate>Fri, 25 Jul 2025 05:22:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</guid>
+      <description>&lt;h2 id=&#34;unified-threat-management-appliances-utm-firewall&#34;&gt;Unified Threat Management Appliances (UTM-Firewall)&lt;/h2&gt;
+&lt;p&gt;In meinem Beitrag &amp;ldquo;&lt;a href=&#34;https://secure-bits.org/wie-funktioniert-eine-firewall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wie funktioniert eine Firewall?&lt;/a&gt;&amp;rdquo;, habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.&lt;/p&gt;
+&lt;p&gt;In diesem Beitrag möchte ich euch nun die Funktionsweise einer Unified Threat Management (UTM oder UTM-Firewall) näherbringen und euch hier die einzelnen Funktionen sowie Fachbegriffe erklären.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-der-unterschied-zwischen-einer-utm-firewall-und-einer-normalen-firewall&#34;&gt;Was ist der Unterschied zwischen einer UTM-Firewall und einer normalen Firewall?&lt;/h2&gt;
+&lt;p&gt;Hierzu gibt es eine klare Begriffsdefinition, die die Bezeichnung einer Sicherheits-Komponente (Security-Appliance) festlegt. Zum Beispiel wird eine reine Firewall als Specialized Security Appliances (SSA) bezeichnet, da diese Netzwerk-Sicherheitskomponente eine klare definierte Aufgabe im Sicherheitssystem ausführt. In diesem Fall also, Unterbindung von Netzwerkverbindungen nach einem definierten Regelwerk.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

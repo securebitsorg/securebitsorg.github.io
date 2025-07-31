@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/posts/linux/</link>
+    <description>Recent content in Linux on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Wed, 30 Jul 2025 09:18:12 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/posts/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>The traceroute command in Linux</title>
+      <link>http://localhost:1313/en/posts/linux/der-traceroute-befehl-unter-linux/</link>
+      <pubDate>Wed, 30 Jul 2025 09:18:12 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/der-traceroute-befehl-unter-linux/</guid>
+      <description>&lt;h2 id=&#34;the-traceroute-command-in-linux-with-comprehensive-instructions-and-examples&#34;&gt;The traceroute command in Linux with comprehensive instructions and examples&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;traceroute&lt;/code&gt; command is an indispensable network diagnostic tool for IT security managers and system administrators. It allows you to trace the path that data packets take from your system to a destination on the network, helping you to identify and resolve network problems.
+In this article, I would like to give you a closer look at the functionality of &lt;strong&gt;traceroute&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>The Linux ip command: Instructions for network configuration</title>
+      <link>http://localhost:1313/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</link>
+      <pubDate>Tue, 29 Jul 2025 08:09:53 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</guid>
+      <description>&lt;h2 id=&#34;the-modern-linux-ip-command-for-network-configuration-under-linux&#34;&gt;The modern Linux IP command for network configuration under Linux&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;ip&lt;/code&gt; command is the central tool for network configuration under Linux and has established itself as a modern replacement for outdated commands such as &lt;code&gt;ifconfig&lt;/code&gt;, &lt;code&gt;route&lt;/code&gt;, and &lt;code&gt;arp&lt;/code&gt;. As part of the iproute2 collection, it provides a unified interface for all aspects of network management and is available by default in all modern Linux distributions.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-ip-command&#34;&gt;What is the ip command?&lt;/h2&gt;
+&lt;p&gt;The &lt;code&gt;ip&lt;/code&gt; command is a versatile network configuration tool from the iproute2 collection, originally developed by Alexey Kuznetsov and now maintained by Stephen Hemminger. It uses the Linux Netlink interface for direct communication with the kernel, providing advanced functionality not available with the classic net tools.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Secure Linux SSH</title>
+      <link>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/linux-ssh-absichern/</guid>
+      <description>&lt;h2 id=&#34;securing-linux-ssh-access-correctly&#34;&gt;Securing Linux SSH access correctly&lt;/h2&gt;
+&lt;p&gt;When operating a Linux server, it is usually necessary for administration purposes to establish secure access via SSH.&lt;/p&gt;
+&lt;p&gt;This tutorial is designed to help you successfully protect Linux SSH access against attacks.&lt;/p&gt;
+&lt;p&gt;Of course, securing SSH access is only one way of protecting your server against attacks. You can find more options in the tutorial “Securing Raspberry Pi from A to Z” that I published here in the blog.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Secure Proxmox VE with fail2ban</title>
+      <link>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/linux/proxmox-fail2ban/</guid>
+      <description>&lt;h2 id=&#34;secure-proxmox-ve-based-on-debian-12-with-fail2ban&#34;&gt;Secure Proxmox VE based on Debian 12 with fail2ban&lt;/h2&gt;
+&lt;p&gt;One way to secure a public Proxmox server against brute force attacks is to use the tool ‘fail2ban’.
+In this short tutorial, I will show you how to use fail2ban to secure access to the ‘SSH’ service and port ‘8006’ of the dashboard.
+Starting point
+In this scenario, we are dealing with a Proxmox server that is hosted as a dedicated server at Hetzner and can be reached via the public Internet using an IPv4 and IPv6 address.
+In general, the use of fail2ban should only be considered as part of a set of security measures to secure your server. Feel free to consult further security measures here on my blog.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tipps-Tutorials on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/tags/tipps-tutorials/</link>
+    <description>Recent content in Tipps-Tutorials on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Thu, 07 Mar 2019 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/tags/tipps-tutorials/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Was ist ein Proxy Server?</title>
+      <link>http://localhost:1313/en/posts/security/was-ist-ein-proxy-server/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/was-ist-ein-proxy-server/</guid>
+      <description>&lt;h2 id=&#34;anonym-im-internet-surfen&#34;&gt;Anonym im Internet surfen&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag versuche ich euch in hoffentlich verständlichen Worten die Frage &amp;ldquo;Was ist ein Proxy Server?&amp;rdquo; zu beantworten.&lt;/p&gt;
+&lt;p&gt;Um anonym im Internet surfen zu können, ist unteranderem der Einsatz eines Proxy Server unumgänglich. In diesem Beitrag erfahrt ihr auf welche Besonderheiten ihr bei der Auswahl eines Proxy Servers achten müsst und woher ihr diesen beziehen könnt.&lt;/p&gt;
+&lt;h2 id=&#34;funktionsweise&#34;&gt;Funktionsweise&lt;/h2&gt;
+&lt;p&gt;Ein Proxy Server kann man als Vermittler oder Zwischenhändler im Netzwerk betrachten. Dieser empfängt die Anfragen eines Proxy-Client (z.B. Desktop) und gibt diese in seinem Namen an den Ziel-Webserver weiter, der vom Proxy-Client angefragt wurde. &lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

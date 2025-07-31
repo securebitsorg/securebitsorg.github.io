@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Allgemein on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/allgemein/</link>
+    <description>Recent content in Allgemein on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language><atom:link href="http://localhost:1313/tags/allgemein/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Hinweise Wiki</title>
+      <link>http://localhost:1313/posts/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/introduction/</guid>
+      <description>&lt;h2 id=&#34;hinweis-zu-diesem-blog--wiki&#34;&gt;Hinweis zu diesem Blog / Wiki&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Zunächst erstmal vielen Dank, dass du diesen Blog / Wiki besuchst!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Immer mal wieder, poste ich hier vermeindliche Tipps oder in meinen Augen nützliche Tutorials für euch, welche in den jeweiligen untenstehenden Kategorien unterteilt sind.
+Ich hoffe, dass diese Art von Blog / Wiki, die Themen übersichtlicher und klarer darstellt.&lt;/p&gt;
+&lt;p&gt;Wer von euch schon länger meinen Blog besucht (sind ja schon einige), dem wird auffallen, dass ich einige Änderungen vorgenommen habe.
+Ich habe diesen Blog nun als statische Seite und nicht mehr als datenbankbasierte Seite (Wordpress) angelegt. Hintergrund ist hierbei einfach, dass diese Webseite in Zukunft, als reine informative &lt;strong&gt;Informationsquelle über mich und informationstechnische Themen&lt;/strong&gt; fungieren soll.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

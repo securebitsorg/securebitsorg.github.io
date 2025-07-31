@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tutorial on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/tutorial/</link>
+    <description>Recent content in Tutorial on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 23 Jul 2025 07:50:18 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/tutorial/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>ipconfig-befehl</title>
+      <link>http://localhost:1313/posts/windows/ipconfig-befehl/</link>
+      <pubDate>Wed, 23 Jul 2025 07:50:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/ipconfig-befehl/</guid>
+      <description>&lt;p&gt;Eine Übersicht aller CMD Befehle findet ihr in** &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;&lt;em&gt;diesem Artikel&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ipconfig-befehle-im-überblick&#34;&gt;ipconfig Befehle im Überblick&lt;/h2&gt;
+&lt;p&gt;Wer oft Veränderungen an der IP-Adresse oder an der DNS-Auflösung vornimmt, weil zum Beispiel mehrere DNS-Server genutzt werden, der kennt das Problem, dass das Konfigurieren der Netzwerkadapter über die normalen Boardmittel (Gui) nicht gerade komfortabel ist. Hierfür bittet sich die Steuerung per Kommandozeile (CMD oder Powershell) an. Welche Befehle unter anderem der Befehl &lt;strong&gt;ipconfig&lt;/strong&gt; hier für die einzelnen Aktionen zur Veränderung der Einstellungen der Netzwerkadapter vorhanden sind, soll diese Übersicht zeigen.&lt;br&gt;
+In dieser Übersicht wird die Eingabeaufforderung &lt;strong&gt;CMD&lt;/strong&gt; genutzt. Diese Eingabeaufforderung wird durch das Eintippen von ‚cmd‘ im Suchfeld von Windows aufgerufen. Das Suchfeld kann am schnellsten durch die Tatenkombination &lt;strong&gt;Windows-Taste + R&lt;/strong&gt; aufgerufen werden.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

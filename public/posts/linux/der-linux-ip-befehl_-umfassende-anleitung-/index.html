@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Der moderne Linux-IP-Befehl zur Netzwerkkonfiguration unter Linux" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/linux/compressed-ip-befehl.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Dienstag, 29. Juli 2025 | 9 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="der-moderne-linux-ip-befehl-zur-netzwerkkonfiguration-unter-linux">Der moderne Linux-IP-Befehl zur Netzwerkkonfiguration unter Linux</h2>
+<p>Der <code>ip</code>-Befehl ist das zentrale Werkzeug zur Netzwerkkonfiguration unter Linux und hat sich als moderner Ersatz für veraltete Befehle wie <code>ifconfig</code>, <code>route</code> und <code>arp</code> etabliert. Als Teil der iproute2-Sammlung bietet er eine einheitliche Schnittstelle für alle Aspekte der Netzwerkverwaltung und ist in allen modernen Linux-Distributionen standardmäßig verfügbar.</p>
+<h2 id="was-ist-der-ip-befehl">Was ist der ip-Befehl?</h2>
+<p>Der <code>ip</code>-Befehl ist ein vielseitiges Netzwerkkonfigurationstool aus der iproute2-Sammlung, das ursprünglich von Alexey Kuznetsov entwickelt und heute von Stephen Hemminger gepflegt wird. Es nutzt die Linux Netlink-Schnittstelle für die direkte Kommunikation mit dem Kernel und bietet damit erweiterte Funktionalitäten, die mit den klassischen net-tools nicht verfügbar sind.</p>
+<h2 id="grundlegende-syntax-und-struktur-des-ip-befehl">Grundlegende Syntax und Struktur des IP-Befehl</h2>
+<h3 id="allgemeine-syntax">Allgemeine Syntax</h3>
+<p>Die grundlegende Syntax des <code>ip</code>-Befehls folgt diesem Schema:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>ip [OPTIONEN] OBJEKT {BEFEHL | help}
+</span></span></code></pre></div><p>Dabei stehen die einzelnen Komponenten für:</p>
+<ul>
+<li><strong>OPTIONEN</strong>: Zusätzliche Parameter zur Modifikation des Befehlsverhaltens</li>
+<li><strong>OBJEKT</strong>: Der Netzwerkbereich, der verwaltet werden soll</li>
+<li><strong>BEFEHL</strong>: Die auszuführende Aktion</li>
+<li><strong>help</strong>: Zeigt Hilfeinformationen an</li>
+</ul>
+<h3 id="wichtthe-linux-ip-configuration-command-ipige-optionen">WichtThe Linux IP configuration command ‘ip’ige Optionen</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Option</th>
+          <th style="text-align: left">Beschreibung</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>-4</code></td>
+          <td style="text-align: left">Nur IPv4-Adressen anzeigen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-6</code></td>
+          <td style="text-align: left">Nur IPv6-Adressen anzeigen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-c</code></td>
+          <td style="text-align: left">Farbige Ausgabe aktivieren</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-s</code></td>
+          <td style="text-align: left">Statistiken anzeigen</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-d</code></td>
+          <td style="text-align: left">Detaillierte Informationen ausgeben</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-j</code></td>
+          <td style="text-align: left">JSON-formatierte Ausgabe</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-h</code></td>
+          <td style="text-align: left">Menschenlesbare Werte verwenden</td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>-br</code></td>
+          <td style="text-align: left">Kurze Ausgabe</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="hauptothe-linux-ip-configuration-command-ipbjekte-des-ip-befehls">HauptoThe Linux IP configuration command ‘ip’bjekte des ip-Befehls</h2>
+<h3 id="address-addr-a---ip-adressverwaltung-mit-dem-ip-befehl">address (addr, a) - IP-Adressverwaltung mit dem IP-Befehl</h3>
+<p>Das <code>address</code>-Objekt verwaltet IPv4- und IPv6-Adressen auf Netzwerkschnittstellen.</p>
+<h4 id="grundlegende-befehle">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">IP-Adressen anzeigen</td>
+          <td style="text-align: left"><code>ip addr show</code> oder <code>ip a</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">IP-Adresse hinzufügen</td>
+          <td style="text-align: left"><code>ip addr add 192.168.1.10/24 dev eth0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">IP-Adresse entfernen</td>
+          <td style="text-align: left"><code>ip addr del 192.168.1.10/24 dev eth0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>flush</code></td>
+          <td style="text-align: left">Alle IP-Adressen eines Interface löschen</td>
+          <td style="text-align: left"><code>ip addr flush dev eth0</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="praktische-beispiele">Praktische Beispiele:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Alle IP-Adressen anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>ip addr show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Nur IPv4-Adressen einer bestimmten Schnittstelle</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>ip -4 addr show dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># IP-Adresse mit Broadcast-Adresse hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>sudo ip addr add 192.168.1.100/24 broadcast 192.168.1.255 dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Temporäre IPv6-Adresse hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>sudo ip -6 addr add 2001:db8::1/64 dev eth0
+</span></span></code></pre></div><h3 id="link-l---netzwerkschnittstellen-management-mit-dem-ip-befehl">link (l) - Netzwerkschnittstellen-Management mit dem IP-Befehl</h3>
+<p>Das <code>link</code>-Objekt verwaltet die physikalischen und virtuellen Netzwerkschnittstellen auf Layer-2-Ebene.</p>
+<h4 id="grundlegende-befehle-1">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">Netzwerk-Interfaces anzeigen</td>
+          <td style="text-align: left"><code>ip link show</code> oder <code>ip l</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>set</code></td>
+          <td style="text-align: left">Interface-Eigenschaften ändern</td>
+          <td style="text-align: left"><code>ip link set eth0 up</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Virtuelles Interface hinzufügen</td>
+          <td style="text-align: left"><code>ip link add veth0 type veth peer name veth1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Interface löschen</td>
+          <td style="text-align: left"><code>ip link del veth0</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="praktische-beispiele-1">Praktische Beispiele:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Alle Netzwerkschnittstellen anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>ip link show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Interface aktivieren/deaktivieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>sudo ip link set eth0 up
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>sudo ip link set eth0 down
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># MTU ändern</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>sudo ip link set eth0 mtu <span style="color:#0086f7;font-weight:bold">1500</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># MAC-Adresse ändern</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>sudo ip link set eth0 address aa:bb:cc:dd:ee:ff
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># VLAN-Interface erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>sudo ip link add link eth0 name eth0.100 type vlan id <span style="color:#0086f7;font-weight:bold">100</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Bridge erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>sudo ip link add name br0 type bridge
+</span></span></code></pre></div><h3 id="route-r---routing-management-mit-dem-ip-befehl">route (r) - Routing-Management mit dem IP-Befehl</h3>
+<p>Das <code>route</code>-Objekt verwaltet die Routing-Tabellen des Systems.</p>
+<h4 id="grundlegende-befehle-2">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">Routing-Tabelle anzeigen</td>
+          <td style="text-align: left"><code>ip route show</code> oder <code>ip r</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Route hinzufügen</td>
+          <td style="text-align: left"><code>ip route add 10.0.0.0/8 via 192.168.1.1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Route entfernen</td>
+          <td style="text-align: left"><code>ip route del 10.0.0.0/8</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>get</code></td>
+          <td style="text-align: left">Route zu bestimmtem Ziel finden</td>
+          <td style="text-align: left"><code>ip route get 8.8.8.8</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="praktische-beispiele-2">Praktische Beispiele:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Tabelle anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>ip route show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Standard-Gateway setzen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>sudo ip route add default via 192.168.1.1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Spezifische Route hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>sudo ip route add 172.16.0.0/16 via 192.168.1.254 dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Route über bestimmtes Interface</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>sudo ip route add 10.0.0.0/8 dev eth1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Blackhole-Route (Traffic verwerfen)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>sudo ip route add blackhole 192.168.100.0/24
+</span></span></code></pre></div><h3 id="neighbour-neigh-n---arpneighbor-verwaltung">neighbour (neigh, n) - ARP/Neighbor-Verwaltung</h3>
+<p>Das <code>neighbour</code>-Objekt verwaltet die ARP-Tabelle (Address Resolution Protocol) und NDISC-Cache.</p>
+<h4 id="grunthe-linux-ip-configuration-command-ipdlegende-befehle">GrunThe Linux IP configuration command ‘ip’dlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">ARP/Neighbor-Tabelle anzeigen</td>
+          <td style="text-align: left"><code>ip neigh show</code> oder <code>ip n</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">ARP-Eintrag hinzufügen</td>
+          <td style="text-align: left"><code>ip neigh add 192.168.1.1 lladdr aa:bb:cc:dd:ee:ff dev eth0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">ARP-Eintrag entfernen</td>
+          <td style="text-align: left"><code>ip neigh del 192.168.1.1 dev eth0</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="praktische-beispiele-mit-dem-ip-befehl">Praktische Beispiele mit dem IP-Befehl:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># ARP-Tabelle anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>ip neigh show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Statischen ARP-Eintrag hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>sudo ip neigh add 192.168.1.10 lladdr 00:11:22:33:44:55 dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># ARP-Cache für Interface leeren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>sudo ip neigh flush dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># IPv6-Neighbor-Discovery anzeigen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>ip -6 neigh show
+</span></span></code></pre></div><h3 id="maddress-maddr-m---multicast-verwaltung">maddress (maddr, m) - Multicast-Verwaltung</h3>
+<p>Das <code>maddress</code>-Objekt verwaltet Multicast-Adressen auf Netzwerkschnittstellen.</p>
+<h4 id="grundlegende-befehle-3">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">Multicast-Adressen anzeigen</td>
+          <td style="text-align: left"><code>ip maddr show</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Multicast-Adresse hinzufügen</td>
+          <td style="text-align: left"><code>ip maddr add 01:00:5e:00:00:01 dev eth0</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Multicast-Adresse entfernen</td>
+          <td style="text-align: left"><code>ip maddr del 01:00:5e:00:00:01 dev eth0</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="rule-ru---policy-routing">rule (ru) - Policy Routing</h3>
+<p>Das <code>rule</code>-Objekt verwaltet Regeln für richtlinienbasiertes Routing.</p>
+<h4 id="grundlegende-befehle-4">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">Policy-Routing-Regeln anzeigen</td>
+          <td style="text-align: left"><code>ip rule show</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Routing-Regel hinzufügen</td>
+          <td style="text-align: left"><code>ip rule add from 192.168.1.0/24 table 100</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Routing-Regel entfernen</td>
+          <td style="text-align: left"><code>ip rule del from 192.168.1.0/24</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="tunnel-t---tunnel-management">tunnel (t) - Tunnel-Management</h3>
+<p>Das <code>tunnel</code>-Objekt verwaltet verschiedene Arten von Netzwerk-Tunneln.</p>
+<h4 id="grundlegende-befehle-5">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>show/list</code></td>
+          <td style="text-align: left">Tunnel anzeigen</td>
+          <td style="text-align: left"><code>ip tunnel show</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Tunnel erstellen</td>
+          <td style="text-align: left"><code>ip tunnel add tun0 mode gre remote 10.0.0.1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Tunnel entfernen</td>
+          <td style="text-align: left"><code>ip tunnel del tun0</code></td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="tunnel-modi">Tunnel-Modi:</h4>
+<ul>
+<li><strong>GRE</strong>: Generic Routing Encapsulation</li>
+<li><strong>IPIP</strong>: IP-in-IP Tunnel</li>
+<li><strong>SIT</strong>: Simple Internet Transition (IPv6-over-IPv4)</li>
+<li><strong>VXLAN</strong>: Virtual extensible Local Area Network</li>
+</ul>
+<h3 id="xfrm-x---ipsec-verwaltung">xfrm (x) - IPSec-Verwaltung</h3>
+<p>Das <code>xfrm</code>-Objekt verwaltet IPSec-Transformationen und -Richtlinien.</p>
+<h4 id="grundlegende-befehle-6">Grundlegende Befehle:</h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>state</code></td>
+          <td style="text-align: left">IPSec-Status anzeigen</td>
+          <td style="text-align: left"><code>ip xfrm state</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>policy</code></td>
+          <td style="text-align: left">IPSec-Policy verwalten</td>
+          <td style="text-align: left"><code>ip xfrm policy</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="weitere-wichtige-objekte">Weitere wichtige Objekte</h3>
+<h4 id="monitor---netzwerk-ereignisse-überwachen-mit-dem-ip-befehl">monitor - Netzwerk-Ereignisse überwachen mit dem IP-Befehl</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Alle Netzwerk-Ereignisse überwachen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip monitor all
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Nur Address-Änderungen überwachen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip monitor address
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Nur Route-Änderungen überwachen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>ip monitor route
+</span></span></code></pre></div><h4 id="netns---network-namespaces">netns - Network Namespaces</h4>
+<p>Network Namespaces ermöglichen die Isolation von Netzwerk-Stacks.</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Befehl</th>
+          <th style="text-align: left">Beschreibung</th>
+          <th style="text-align: left">Beispiel</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left"><code>list</code></td>
+          <td style="text-align: left">Network Namespaces auflisten</td>
+          <td style="text-align: left"><code>ip netns list</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>add</code></td>
+          <td style="text-align: left">Network Namespace erstellen</td>
+          <td style="text-align: left"><code>ip netns add myns</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left"><code>del/delete</code></td>
+          <td style="text-align: left">Network Namespace löschen</td>
+          <td style="text-align: left"><code>ip netns del myns</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="vergleich-des-ip-befehl-mit-klassischen-netzwerktools">Vergleich des IP-Befehl mit klassischen Netzwerktools</h2>
+<h3 id="ip-vs-ifconfig">ip vs. ifconfig</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">AufgabeThe Linux IP configuration command ‘ip’</th>
+          <th style="text-align: left">ip-Befehl</th>
+          <th style="text-align: left">ifconfig-Befehl</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Interfaces anzeigen</td>
+          <td style="text-align: left"><code>ip link show</code></td>
+          <td style="text-align: left"><code>ifconfig</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IP-Adressen anzeigen</td>
+          <td style="text-align: left"><code>ip addr show</code></td>
+          <td style="text-align: left"><code>ifconfig -a</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">IP-Adresse setzen</td>
+          <td style="text-align: left"><code>ip addr add 192.168.1.10/24 dev eth0</code></td>
+          <td style="text-align: left"><code>ifconfig eth0 192.168.1.10/24</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Interface aktivieren</td>
+          <td style="text-align: left"><code>ip link set eth0 up</code></td>
+          <td style="text-align: left"><code>ifconfig eth0 up</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Interface deaktivieren</td>
+          <td style="text-align: left"><code>ip link set eth0 down</code></td>
+          <td style="text-align: left"><code>ifconfig eth0 down</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ip-vs-route">ip vs. route</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aufgabe</th>
+          <th style="text-align: left">ip-Befehl</th>
+          <th style="text-align: left">route-Befehl</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">Routing-Tabelle anzeigen</td>
+          <td style="text-align: left"><code>ip route show</code></td>
+          <td style="text-align: left"><code>route -n</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Standard-Gateway setzen</td>
+          <td style="text-align: left"><code>ip route add default via 192.168.1.1</code></td>
+          <td style="text-align: left"><code>route add default gw 192.168.1.1</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">Route hinzufügen</td>
+          <td style="text-align: left"><code>ip route add 10.0.0.0/8 via 192.168.1.1</code></td>
+          <td style="text-align: left"><code>route add -net 10.0.0.0/8 gw 192.168.1.1</code></td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="ip-vs-arp">ip vs. arp</h3>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: left">Aufgabe</th>
+          <th style="text-align: left">ip-Befehl</th>
+          <th style="text-align: left">arp-Befehl</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: left">ARP-Tabelle anzeigen</td>
+          <td style="text-align: left"><code>ip neigh show</code></td>
+          <td style="text-align: left"><code>arp -na</code></td>
+      </tr>
+      <tr>
+          <td style="text-align: left">ARP-Eintrag hinzufügen</td>
+          <td style="text-align: left"><code>ip neigh add 192.168.1.1 lladdr aa:bb:cc:dd:ee:ff dev eth0</code></td>
+          <td style="text-align: left"><code>arp -s 192.168.1.1 aa:bb:cc:dd:ee:ff</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="erweiterte-funktionen-und-anwendungsfälle-des-ip-befehl">Erweiterte Funktionen und Anwendungsfälle des IP-Befehl</h2>
+<h3 id="vlan-konfiguration-mit-dem-ip-befehl">VLAN-Konfiguration mit dem IP-Befehl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># VLAN-Interface erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ip link add link eth0 name eth0.100 type vlan id <span style="color:#0086f7;font-weight:bold">100</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># IP-Adresse für VLAN zuweisen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>sudo ip addr add 192.168.100.1/24 dev eth0.100
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># VLAN-Interface aktivieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>sudo ip link set eth0.100 up
+</span></span></code></pre></div><h3 id="bridge-konfiguration-mit-dem-ip-befehl">Bridge-Konfiguration mit dem IP-Befehl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Bridge erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ip link add name br0 type bridge
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Ports zur Bridge hinzufügen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>sudo ip link set eth0 master br0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>sudo ip link set eth1 master br0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Bridge aktivieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>sudo ip link set br0 up
+</span></span></code></pre></div><h3 id="quality-of-service-qos-mit-tc">Quality of Service (QoS) mit tc</h3>
+<p>Obwohl <code>tc</code> technisch ein separates Tool ist, wird es oft in Verbindung mit <code>ip</code> verwendet:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Traffic Shaping einrichten</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo tc qdisc add dev eth0 root handle 1: htb default <span style="color:#0086f7;font-weight:bold">30</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo tc class add dev eth0 parent 1: classid 1:1 htb rate 100mbit
+</span></span></code></pre></div><h3 id="network-namespaces-in-der-praxis">Network Namespaces in der Praxis</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Namespace erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ip netns add test-ns
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Interface im Namespace erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>sudo ip netns exec test-ns ip link add veth0 type veth peer name veth1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Befehl im Namespace ausführen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>sudo ip netns exec test-ns ip addr show
+</span></span></code></pre></div><h2 id="tipps-für-it-sicherheitsmanager-unter-verwendung-des-ip-befehl">Tipps für IT-Sicherheitsmanager unter Verwendung des IP-Befehl</h2>
+<h3 id="netzwerksegmentierung-mit-dem-ip-befehl">Netzwerksegmentierung mit dem IP-Befehl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Isolierte Netzwerkbereiche mit VLANs</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ip link add link eth0 name dmz type vlan id <span style="color:#0086f7;font-weight:bold">10</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ip addr add 10.0.10.1/24 dev dmz
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing zwischen Segmenten kontrollieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>sudo ip route add 10.0.20.0/24 via 10.0.10.254 dev dmz
+</span></span></code></pre></div><h3 id="monitoring-und-logging-unter-dem-ip-befehl">Monitoring und Logging unter dem IP-Befehl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Netzwerk-Ereignisse in Echtzeit überwachen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip monitor all &gt; /var/log/network-events.log &amp;
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Tabellen regelmäßig protokollieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>watch -n <span style="color:#0086f7;font-weight:bold">60</span> <span style="color:#0086d2">&#39;ip route show &gt; /var/log/routing-$(date +%Y%m%d-%H%M%S).log&#39;</span>
+</span></span></code></pre></div><h3 id="sicherheitsanalyse-ip-befehl">Sicherheitsanalyse IP-Befehl</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Verdächtige ARP-Einträge identifizieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip neigh show | grep -E <span style="color:#0086d2">&#34;(FAILED|INCOMPLETE)&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Anomalien erkennen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip route show table all | grep -v <span style="color:#0086d2">&#34;dev lo&#34;</span>
+</span></span></code></pre></div><h2 id="fehlerbehebung-und-debugging-für-den-ip-befehl">Fehlerbehebung und Debugging für den IP-Befehl</h2>
+<h3 id="häufige-probleme-und-lösungen">Häufige Probleme und Lösungen</h3>
+<h4 id="konnektivitätsprobleme">Konnektivitätsprobleme</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Route zu einem Ziel prüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip route get 8.8.8.8
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Interface-Status überprüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip -s link show eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># ARP-Probleme diagnostizieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>ip neigh show | grep FAILED
+</span></span></code></pre></div><h4 id="performance-probleme">Performance-Probleme</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Detaillierte Interface-Statistiken</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip -s -s link show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Tabellen-Performance</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>time ip route show table all
+</span></span></code></pre></div><h4 id="konfigurationsfehler-unter-dem-ip-befehl">Konfigurationsfehler unter dem IP-Befehl</h4>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Alle konfigurierten Adressen prüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip addr show | grep -E <span style="color:#0086d2">&#34;inet|inet6&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Konflikte identifizieren</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip route show | sort
+</span></span></code></pre></div><h2 id="best-practices-ip-befehl">Best Practices IP-Befehl</h2>
+<h3 id="persistente-konfiguration">Persistente Konfiguration</h3>
+<p>Da <code>ip</code>-Befehle nur temporäre Änderungen vornehmen, sollten dauerhafte Konfigurationen in den entsprechenden Systemdateien gespeichert werden:</p>
+<ul>
+<li><strong>Debian/Ubuntu</strong>: <code>/etc/network/interfaces</code> oder Netplan</li>
+<li><strong>Red Hat/CentOS</strong>: <code>/etc/sysconfig/network-scripts/</code></li>
+<li><strong>systemd-networkd</strong>: <code>/etc/systemd/network/</code></li>
+</ul>
+<h3 id="sicherheit">Sicherheit</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Administratorrechte nur wenn nötig</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Anzeige-Befehle benötigen meist keine sudo-Rechte</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>ip addr show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>ip route show
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Änderungen immer mit sudo</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo ip link set eth0 up
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>sudo ip route add default via 192.168.1.1
+</span></span></code></pre></div><h3 id="backup-und-wiederherstellung">Backup und Wiederherstellung</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Aktuelle Konfiguration sichern</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>ip addr show &gt; network-config-backup.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>ip route show &gt; routing-backup.txt
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Skript für Wiederherstellung erstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#080;background-color:#0f140f;font-style:italic">#!/bin/bash</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Basiskonfiguration wiederherstellen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>ip addr flush dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>ip addr add 192.168.1.100/24 dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>ip route add default via 192.168.1.1
+</span></span></code></pre></div><h2 id="integration-in-automatisierungsskripte">Integration in Automatisierungsskripte</h2>
+<h3 id="bash-scripting">Bash-Scripting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic">#!/bin/bash
+</span></span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#ff0007;background-color:#0f140f;font-weight:bold;font-style:italic"></span><span style="color:#080;background-color:#0f140f;font-style:italic"># Netzwerk-Health-Check</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Interface-Status prüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#fb660a;font-weight:bold">if</span> ip link show eth0 | grep -q <span style="color:#0086d2">&#34;state UP&#34;</span>; <span style="color:#fb660a;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    echo <span style="color:#0086d2">&#34;Interface eth0 ist aktiv&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span><span style="color:#fb660a;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    echo <span style="color:#0086d2">&#34;WARNUNG: Interface eth0 ist inaktiv&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    exit <span style="color:#0086f7;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span><span style="color:#fb660a;font-weight:bold">fi</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Gateway-Erreichbarkeit prüfen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span><span style="color:#fb660a">GATEWAY</span>=<span style="color:#fb660a;font-weight:bold">$(</span>ip route | grep default | awk <span style="color:#0086d2">&#39;{print $3}&#39;</span><span style="color:#fb660a;font-weight:bold">)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span><span style="color:#fb660a;font-weight:bold">if</span> ping -c <span style="color:#0086f7;font-weight:bold">1</span> <span style="color:#0086d2">&#34;</span><span style="color:#fb660a">$GATEWAY</span><span style="color:#0086d2">&#34;</span> &gt; /dev/null 2&gt;&amp;1; <span style="color:#fb660a;font-weight:bold">then</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>    echo <span style="color:#0086d2">&#34;Gateway </span><span style="color:#fb660a">$GATEWAY</span><span style="color:#0086d2"> ist erreichbar&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#fb660a;font-weight:bold">else</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    echo <span style="color:#0086d2">&#34;FEHLER: Gateway </span><span style="color:#fb660a">$GATEWAY</span><span style="color:#0086d2"> nicht erreichbar&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    exit <span style="color:#0086f7;font-weight:bold">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#fb660a;font-weight:bold">fi</span>
+</span></span></code></pre></div><h3 id="json-ausgabe-für-automation">JSON-Ausgabe für Automation</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># JSON-formatierte Ausgabe für weitere Verarbeitung</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip -j addr show | jq <span style="color:#0086d2">&#39;.[] | select(.ifname==&#34;eth0&#34;) | .addr_info[^0].local&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Alle aktiven Interfaces als JSON</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip -j link show | jq <span style="color:#0086d2">&#39;.[] | select(.operstate==&#34;UP&#34;) | .ifname&#39;</span>
+</span></span></code></pre></div><h2 id="zusammenfassung-der-wichtigsten-befehle">Zusammenfassung der wichtigsten Befehle</h2>
+<h3 id="tägliche-administration">Tägliche Administration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Schneller Überblick über das System</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip -c -br addr show    <span style="color:#080;background-color:#0f140f;font-style:italic"># Alle IP-Adressen (farbig, kurz)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>ip -c -br link show    <span style="color:#080;background-color:#0f140f;font-style:italic"># Alle Interface-Status (farbig, kurz)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>ip route show          <span style="color:#080;background-color:#0f140f;font-style:italic"># Routing-Tabelle</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip neigh show          <span style="color:#080;background-color:#0f140f;font-style:italic"># ARP-Tabelle</span>
+</span></span></code></pre></div><h3 id="troubleshooting">Troubleshooting</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Detaillierte Diagnose</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>ip -s link show eth0           <span style="color:#080;background-color:#0f140f;font-style:italic"># Interface-Statistiken</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>ip route get 8.8.8.8          <span style="color:#080;background-color:#0f140f;font-style:italic"># Route zu spezifischem Ziel</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>ip neigh show dev eth0         <span style="color:#080;background-color:#0f140f;font-style:italic"># ARP-Einträge für Interface</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>ip monitor all                <span style="color:#080;background-color:#0f140f;font-style:italic"># Live-Monitoring</span>
+</span></span></code></pre></div><h3 id="konfiguration">Konfiguration</h3>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Temporäre Änderungen</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>sudo ip addr add 192.168.1.10/24 dev eth0
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>sudo ip link set eth0 up
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>sudo ip route add default via 192.168.1.1
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>sudo ip neigh add 192.168.1.1 lladdr aa:bb:cc:dd:ee:ff dev eth0
+</span></span></code></pre></div><h2 id="weiterführende-ressourcen">Weiterführende Ressourcen</h2>
+<h3 id="dokumentation-ip-befehl">Dokumentation IP-Befehl</h3>
+<ul>
+<li><strong>Manpages</strong>: <code>man ip</code>, <code>man ip-address</code>, <code>man ip-link</code>, <code>man ip-route</code></li>
+<li><strong>Hilfe-System</strong>: <code>ip help</code>, <code>ip addr help</code>, <code>ip link help</code></li>
+<li><strong>Online-Dokumentation</strong>: Linux Foundation iproute2 wiki</li>
+</ul>
+<h3 id="verwandte-tools">Verwandte Tools</h3>
+<ul>
+<li><strong>ss</strong>: Ersatz für <code>netstat</code> zur Socket-Analyse</li>
+<li><strong>tc</strong>: Traffic Control für QoS und Bandwidth-Management</li>
+<li><strong>bridge</strong>: Spezielle Bridge-Verwaltung</li>
+<li><strong>ethtool</strong>: Hardware-spezifische Ethernet-Konfiguration</li>
+</ul>
+<h2 id="fazit--ip-befehl">Fazit | IP-Befehl</h2>
+<p>Der <code>ip</code>-Befehl ist ein mächtiges und vielseitiges Werkzeug, das alle Aspekte der Linux-Netzwerkverwaltung abdeckt. Mit seiner einheitlichen Syntax und den umfangreichen Funktionen ist es unverzichtbar für jeden Systemadministrator und IT-Sicherheitsmanager. Die kontinuierliche Weiterentwicklung und die vollständige IPv6-Unterstützung machen es zur ersten Wahl für moderne Netzwerkkonfiguration unter Linux.</p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fder-linux-ip-befehl_-umfassende-anleitung-%2f&title=Der%20Linux%20ip-Befehl%3a%20Anleitung%20f%c3%bcr%20Netzwerkkonfiguration" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Der%20Linux%20ip-Befehl%3a%20Anleitung%20f%c3%bcr%20Netzwerkkonfiguration&body=http%3a%2f%2flocalhost%3a1313%2fposts%2flinux%2fder-linux-ip-befehl_-umfassende-anleitung-%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/linux/proxmox-fail2ban/" title="Proxmox VE mit fail2ban absichern" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Proxmox VE mit fail2ban absichern</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Der traceroute-Befehl unter Linux</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#der-moderne-linux-ip-befehl-zur-netzwerkkonfiguration-unter-linux">Der moderne Linux-IP-Befehl zur Netzwerkkonfiguration unter Linux</a></li>
+    <li><a href="#was-ist-der-ip-befehl">Was ist der ip-Befehl?</a></li>
+    <li><a href="#grundlegende-syntax-und-struktur-des-ip-befehl">Grundlegende Syntax und Struktur des IP-Befehl</a>
+      <ul>
+        <li><a href="#allgemeine-syntax">Allgemeine Syntax</a></li>
+        <li><a href="#wichtthe-linux-ip-configuration-command-ipige-optionen">WichtThe Linux IP configuration command ‘ip’ige Optionen</a></li>
+      </ul>
+    </li>
+    <li><a href="#hauptothe-linux-ip-configuration-command-ipbjekte-des-ip-befehls">HauptoThe Linux IP configuration command ‘ip’bjekte des ip-Befehls</a>
+      <ul>
+        <li><a href="#address-addr-a---ip-adressverwaltung-mit-dem-ip-befehl">address (addr, a) - IP-Adressverwaltung mit dem IP-Befehl</a></li>
+        <li><a href="#link-l---netzwerkschnittstellen-management-mit-dem-ip-befehl">link (l) - Netzwerkschnittstellen-Management mit dem IP-Befehl</a></li>
+        <li><a href="#route-r---routing-management-mit-dem-ip-befehl">route (r) - Routing-Management mit dem IP-Befehl</a></li>
+        <li><a href="#neighbour-neigh-n---arpneighbor-verwaltung">neighbour (neigh, n) - ARP/Neighbor-Verwaltung</a></li>
+        <li><a href="#maddress-maddr-m---multicast-verwaltung">maddress (maddr, m) - Multicast-Verwaltung</a></li>
+        <li><a href="#rule-ru---policy-routing">rule (ru) - Policy Routing</a></li>
+        <li><a href="#tunnel-t---tunnel-management">tunnel (t) - Tunnel-Management</a></li>
+        <li><a href="#xfrm-x---ipsec-verwaltung">xfrm (x) - IPSec-Verwaltung</a></li>
+        <li><a href="#weitere-wichtige-objekte">Weitere wichtige Objekte</a></li>
+      </ul>
+    </li>
+    <li><a href="#vergleich-des-ip-befehl-mit-klassischen-netzwerktools">Vergleich des IP-Befehl mit klassischen Netzwerktools</a>
+      <ul>
+        <li><a href="#ip-vs-ifconfig">ip vs. ifconfig</a></li>
+        <li><a href="#ip-vs-route">ip vs. route</a></li>
+        <li><a href="#ip-vs-arp">ip vs. arp</a></li>
+      </ul>
+    </li>
+    <li><a href="#erweiterte-funktionen-und-anwendungsfälle-des-ip-befehl">Erweiterte Funktionen und Anwendungsfälle des IP-Befehl</a>
+      <ul>
+        <li><a href="#vlan-konfiguration-mit-dem-ip-befehl">VLAN-Konfiguration mit dem IP-Befehl</a></li>
+        <li><a href="#bridge-konfiguration-mit-dem-ip-befehl">Bridge-Konfiguration mit dem IP-Befehl</a></li>
+        <li><a href="#quality-of-service-qos-mit-tc">Quality of Service (QoS) mit tc</a></li>
+        <li><a href="#network-namespaces-in-der-praxis">Network Namespaces in der Praxis</a></li>
+      </ul>
+    </li>
+    <li><a href="#tipps-für-it-sicherheitsmanager-unter-verwendung-des-ip-befehl">Tipps für IT-Sicherheitsmanager unter Verwendung des IP-Befehl</a>
+      <ul>
+        <li><a href="#netzwerksegmentierung-mit-dem-ip-befehl">Netzwerksegmentierung mit dem IP-Befehl</a></li>
+        <li><a href="#monitoring-und-logging-unter-dem-ip-befehl">Monitoring und Logging unter dem IP-Befehl</a></li>
+        <li><a href="#sicherheitsanalyse-ip-befehl">Sicherheitsanalyse IP-Befehl</a></li>
+      </ul>
+    </li>
+    <li><a href="#fehlerbehebung-und-debugging-für-den-ip-befehl">Fehlerbehebung und Debugging für den IP-Befehl</a>
+      <ul>
+        <li><a href="#häufige-probleme-und-lösungen">Häufige Probleme und Lösungen</a></li>
+      </ul>
+    </li>
+    <li><a href="#best-practices-ip-befehl">Best Practices IP-Befehl</a>
+      <ul>
+        <li><a href="#persistente-konfiguration">Persistente Konfiguration</a></li>
+        <li><a href="#sicherheit">Sicherheit</a></li>
+        <li><a href="#backup-und-wiederherstellung">Backup und Wiederherstellung</a></li>
+      </ul>
+    </li>
+    <li><a href="#integration-in-automatisierungsskripte">Integration in Automatisierungsskripte</a>
+      <ul>
+        <li><a href="#bash-scripting">Bash-Scripting</a></li>
+        <li><a href="#json-ausgabe-für-automation">JSON-Ausgabe für Automation</a></li>
+      </ul>
+    </li>
+    <li><a href="#zusammenfassung-der-wichtigsten-befehle">Zusammenfassung der wichtigsten Befehle</a>
+      <ul>
+        <li><a href="#tägliche-administration">Tägliche Administration</a></li>
+        <li><a href="#troubleshooting">Troubleshooting</a></li>
+        <li><a href="#konfiguration">Konfiguration</a></li>
+      </ul>
+    </li>
+    <li><a href="#weiterführende-ressourcen">Weiterführende Ressourcen</a>
+      <ul>
+        <li><a href="#dokumentation-ip-befehl">Dokumentation IP-Befehl</a></li>
+        <li><a href="#verwandte-tools">Verwandte Tools</a></li>
+      </ul>
+    </li>
+    <li><a href="#fazit--ip-befehl">Fazit | IP-Befehl</a></li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

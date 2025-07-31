@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Firewall on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/en/categories/firewall/</link>
+    <description>Recent content in Firewall on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 25 Jul 2025 05:22:28 +0000</lastBuildDate><atom:link href="http://localhost:1313/en/categories/firewall/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>What is a Unified Threat Management Firewall?</title>
+      <link>http://localhost:1313/en/posts/security/what-is-a-unified-threat-management-firewall/</link>
+      <pubDate>Fri, 25 Jul 2025 05:22:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/en/posts/security/what-is-a-unified-threat-management-firewall/</guid>
+      <description>&lt;h2 id=&#34;unified-threat-management-appliances-utm-firewall&#34;&gt;Unified Threat Management Appliances (UTM Firewall)&lt;/h2&gt;
+&lt;p&gt;In my article “How does a firewall work?” (&lt;a href=&#34;https://secure-bits.org/wie-funktioniert-eine-firewall/%29&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/wie-funktioniert-eine-firewall/)&lt;/a&gt;, I described how a firewall is structured and the differences between the various types of firewalls.
+In this article, I would like to give you a closer look at how a Unified Threat Management (UTM or UTM firewall) works and explain the individual functions and technical terms.&lt;/p&gt;
+&lt;h2 id=&#34;what-is-the-difference-between-a-utm-firewall-and-a-normal-firewall&#34;&gt;What is the difference between a UTM firewall and a normal firewall?&lt;/h2&gt;
+&lt;p&gt;There is a clear definition of this term, which specifies the designation of a security component (security appliance). For example, a pure firewall is referred to as a Specialized Security Appliance (SSA), as this network security component performs a clearly defined task in the security system. In this case, it is to prevent network connections according to a defined set of rules.
+UTMA / UTM refers to security network components that combine several security components (Specialized Security Appliances (SSA)) of a network. You can find out what these are in the next paragraph.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

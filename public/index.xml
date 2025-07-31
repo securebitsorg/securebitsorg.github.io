@@ -1,0 +1,659 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/</link>
+    <description>Recent content on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 30 Jul 2025 09:18:12 +0000</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Der traceroute-Befehl unter Linux</title>
+      <link>http://localhost:1313/posts/linux/der-traceroute-befehl-unter-linux/</link>
+      <pubDate>Wed, 30 Jul 2025 09:18:12 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/der-traceroute-befehl-unter-linux/</guid>
+      <description>&lt;h2 id=&#34;der-traceroute-befehl-unter-linux-mit-umfassende-anleitung-mit-beispielen&#34;&gt;Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;traceroute&lt;/code&gt;-Befehl ist ein unverzichtbares Netzwerk-Diagnosetool für IT-Sicherheitsmanager und Systemadministratoren. Er ermöglicht die Verfolgung des Weges, den Datenpakete von Ihrem System zu einem Ziel im Netzwerk nehmen, und hilft dabei, Netzwerkprobleme zu identifizieren und zu beheben.
+Daher möchte ich euch in diesem Artikel die Funktionalität von &lt;strong&gt;traceroute&lt;/strong&gt; ein wenig näher bringen.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-traceroute&#34;&gt;Was ist traceroute?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;traceroute&lt;/strong&gt; ist ein Kommandozeilen-Tool, das den Transportweg von IP-Datenpaketen zwischen dem lokalen Rechner und einer ausgewählten Gegenstelle ermittelt. Dabei wird die Antwortzeit der durchlaufenen Router gemessen, was bei der Identifizierung von Verzögerungen und Netzwerkproblemen hilft.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Nmap (Network Mapper)</title>
+      <link>http://localhost:1313/posts/security/nmap-network-mapper-umfassender-leitfaden/</link>
+      <pubDate>Tue, 29 Jul 2025 12:03:19 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/nmap-network-mapper-umfassender-leitfaden/</guid>
+      <description>&lt;p&gt;
+
+
+    
+
+
+&lt;div class=&#34;alert danger&#34;&gt;
+    &lt;span&gt;&lt;i data-feather=&#34;alert-octagon&#34;&gt;&lt;/i&gt;&lt;/span&gt;
+    &lt;span&gt;&lt;strong&gt;&lt;h2 id=&#34;das-wichtigste-vorab&#34;&gt;Das Wichtigste vorab!&lt;/h2&gt;
+&lt;p&gt;Es gilt zu beachten, dass der Einsatz von &lt;strong&gt;nmap&lt;/strong&gt;, &lt;strong&gt;außerhalb seiner Test- / Labor- oder Produktivumgebung&lt;/strong&gt;, &lt;strong&gt;nur mit dem Einverständnis dessen Inhabers&lt;/strong&gt; erfolgen darf!&lt;/p&gt;&lt;/strong&gt;&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;!-- raw HTML omitted --&gt;
+&lt;!-- raw HTML omitted --&gt;&lt;/p&gt;
+&lt;p&gt;Mit diesem Artikel möchte ich euch hoffentlich auf verständliche Art und Weise, das mächtige Tool &amp;lsquo;&lt;strong&gt;nmap&lt;/strong&gt;&amp;rsquo; näher bringen und des Weiteren euch ein &lt;strong&gt;PDF mit dem meisten genutzten nmap-Befehlen zum Download&lt;/strong&gt; zur Verfügung zu stellen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</title>
+      <link>http://localhost:1313/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</link>
+      <pubDate>Tue, 29 Jul 2025 08:00:34 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</guid>
+      <description>&lt;h2 id=&#34;der-moderne-linux-ip-befehl-zur-netzwerkkonfiguration-unter-linux&#34;&gt;Der moderne Linux-IP-Befehl zur Netzwerkkonfiguration unter Linux&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;ip&lt;/code&gt;-Befehl ist das zentrale Werkzeug zur Netzwerkkonfiguration unter Linux und hat sich als moderner Ersatz für veraltete Befehle wie &lt;code&gt;ifconfig&lt;/code&gt;, &lt;code&gt;route&lt;/code&gt; und &lt;code&gt;arp&lt;/code&gt; etabliert. Als Teil der iproute2-Sammlung bietet er eine einheitliche Schnittstelle für alle Aspekte der Netzwerkverwaltung und ist in allen modernen Linux-Distributionen standardmäßig verfügbar.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-der-ip-befehl&#34;&gt;Was ist der ip-Befehl?&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;ip&lt;/code&gt;-Befehl ist ein vielseitiges Netzwerkkonfigurationstool aus der iproute2-Sammlung, das ursprünglich von Alexey Kuznetsov entwickelt und heute von Stephen Hemminger gepflegt wird. Es nutzt die Linux Netlink-Schnittstelle für die direkte Kommunikation mit dem Kernel und bietet damit erweiterte Funktionalitäten, die mit den klassischen net-tools nicht verfügbar sind.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Netstat unter Windows</title>
+      <link>http://localhost:1313/posts/windows/netstat/</link>
+      <pubDate>Sun, 27 Jul 2025 10:17:10 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/netstat/</guid>
+      <description>&lt;h2 id=&#34;mit-netstat-tcp-verbindungen-ports-unter-windows-anzeigen&#34;&gt;Mit netstat TCP Verbindungen, Ports unter Windows anzeigen&lt;/h2&gt;
+&lt;p&gt;In diesem Artikel möchte ich euch den Befehl / Werkzeug &lt;strong&gt;netstat&lt;/strong&gt; unter Windows vorstellen und euch zeigen wie ihr mit diesem Befehl aktive TCP-Verbindungen, offene Ports sowie andere Statistiken wie zum Beispiel eine IPv4 Übersicht der Internetprotokolle IP, TCP, ICMP und UDP-Protokolle überprüfen beziehungsweise anzeigen lassen.&lt;/p&gt;
+&lt;h3 id=&#34;wozu-nutze-ich-die-netstat-befehle&#34;&gt;Wozu nutze ich die Netstat-Befehle?&lt;/h3&gt;
+&lt;p&gt;Für die Analyse der Sicherheit eines Betriebssystems ist es natürlich wichtig zu wissen, welche Verbindungen das Betriebssystem beziehungsweise die installierte Software zu Diensten im Internet aufbaut. Des Weiteren kann mit der Anzeige von lauschenden Ports auch schnell Malware erkannt werden. Um nun diese Verbindungen und lauschenden Ports aufzulisten kann der Befehl netstat genutzt werden.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Informationen</title>
+      <link>http://localhost:1313/posts/info/informationen/</link>
+      <pubDate>Sat, 26 Jul 2025 08:07:59 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/info/informationen/</guid>
+      <description>&lt;h2 id=&#34;was-ist-denn-hier-passiert&#34;&gt;Was ist denn hier passiert?!&lt;/h2&gt;
+&lt;p&gt;Diejenigen unter euch, die meinen Blog oder YouTube-Kanal schon länger folgen, werden feststellen, dass sich hier außer das Optische, auch einiges Andere geändert hat.&lt;/p&gt;
+&lt;p&gt;Was sich alles geändert hat, möchte ich euch hier kurz vorstellen und zusammenfassen.&lt;/p&gt;
+&lt;h3 id=&#34;warum-ein-anderes-design&#34;&gt;Warum ein anderes Design?&lt;/h3&gt;
+&lt;p&gt;Wie man zweifellos feststellen kann, hat der Blog ein neues Design. Das liegt daran, dass ich von meinem alten CMS ‚WordPress‘ getrennt habe und nun auf eine statische Website umgestiegen bin, welches ich mit dem Content-Generator &lt;a href=&#34;https://gohugo.io/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo.io&lt;/a&gt; ausführe.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Was ist eine Unified Threat Management Firewall?</title>
+      <link>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</link>
+      <pubDate>Fri, 25 Jul 2025 05:22:28 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-eine-unified-threat-management-firewall/</guid>
+      <description>&lt;h2 id=&#34;unified-threat-management-appliances-utm-firewall&#34;&gt;Unified Threat Management Appliances (UTM-Firewall)&lt;/h2&gt;
+&lt;p&gt;In meinem Beitrag &amp;ldquo;&lt;a href=&#34;https://secure-bits.org/wie-funktioniert-eine-firewall/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wie funktioniert eine Firewall?&lt;/a&gt;&amp;rdquo;, habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.&lt;/p&gt;
+&lt;p&gt;In diesem Beitrag möchte ich euch nun die Funktionsweise einer Unified Threat Management (UTM oder UTM-Firewall) näherbringen und euch hier die einzelnen Funktionen sowie Fachbegriffe erklären.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-der-unterschied-zwischen-einer-utm-firewall-und-einer-normalen-firewall&#34;&gt;Was ist der Unterschied zwischen einer UTM-Firewall und einer normalen Firewall?&lt;/h2&gt;
+&lt;p&gt;Hierzu gibt es eine klare Begriffsdefinition, die die Bezeichnung einer Sicherheits-Komponente (Security-Appliance) festlegt. Zum Beispiel wird eine reine Firewall als Specialized Security Appliances (SSA) bezeichnet, da diese Netzwerk-Sicherheitskomponente eine klare definierte Aufgabe im Sicherheitssystem ausführt. In diesem Fall also, Unterbindung von Netzwerkverbindungen nach einem definierten Regelwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>ipconfig-befehl</title>
+      <link>http://localhost:1313/posts/windows/ipconfig-befehl/</link>
+      <pubDate>Wed, 23 Jul 2025 07:50:18 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/ipconfig-befehl/</guid>
+      <description>&lt;p&gt;Eine Übersicht aller CMD Befehle findet ihr in** &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;&lt;em&gt;diesem Artikel&lt;/em&gt;&lt;/strong&gt;&lt;/a&gt;&lt;strong&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ipconfig-befehle-im-überblick&#34;&gt;ipconfig Befehle im Überblick&lt;/h2&gt;
+&lt;p&gt;Wer oft Veränderungen an der IP-Adresse oder an der DNS-Auflösung vornimmt, weil zum Beispiel mehrere DNS-Server genutzt werden, der kennt das Problem, dass das Konfigurieren der Netzwerkadapter über die normalen Boardmittel (Gui) nicht gerade komfortabel ist. Hierfür bittet sich die Steuerung per Kommandozeile (CMD oder Powershell) an. Welche Befehle unter anderem der Befehl &lt;strong&gt;ipconfig&lt;/strong&gt; hier für die einzelnen Aktionen zur Veränderung der Einstellungen der Netzwerkadapter vorhanden sind, soll diese Übersicht zeigen.&lt;br&gt;
+In dieser Übersicht wird die Eingabeaufforderung &lt;strong&gt;CMD&lt;/strong&gt; genutzt. Diese Eingabeaufforderung wird durch das Eintippen von ‚cmd‘ im Suchfeld von Windows aufgerufen. Das Suchfeld kann am schnellsten durch die Tatenkombination &lt;strong&gt;Windows-Taste + R&lt;/strong&gt; aufgerufen werden.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux SSH-Zugang absichern</title>
+      <link>http://localhost:1313/posts/linux/linux-ssh-absichern/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/linux-ssh-absichern/</guid>
+      <description>&lt;h2 id=&#34;linux-ssh-zugang-richtig-absichern&#34;&gt;Linux SSH Zugang richtig absichern&lt;/h2&gt;
+&lt;p&gt;Das A und O wenn ihr einen Linux-Server betreibt, ist es meistens für die Administration erforderlich, einen sichereren Zugang via SSH zu etablieren.&lt;/p&gt;
+&lt;p&gt;Dieses Tutorial soll euch helfen, den Linux SSH Zugriff erfolgreich gegen Angriffe zu schützen.&lt;/p&gt;
+&lt;p&gt;Natürlich ist das Absichern des SSH-Zugangs nur ein Modul, um euren Server vor Angriffe zu schützen. Weitere Möglichkeiten findet ihr im Tutorial „Raspberry Pi absichern von A-Z“ welches ich hier im Blog veröffentlicht habe.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jetzt alle CMD-Befehle für Windows im Überblick 2025</title>
+      <link>http://localhost:1313/posts/windows/cmd-befehle-im-ueberblick/</link>
+      <pubDate>Wed, 12 Mar 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/cmd-befehle-im-ueberblick/</guid>
+      <description>&lt;p&gt;&lt;strong&gt;Update - Neues von Microsoft | CMD - Befehle PDF&lt;/strong&gt;&lt;br&gt;
+Microsoft hat jetzt endlich mal selbst eine umfassende Dokumentation über die Funktionsweise der einzelnen &lt;strong&gt;CMD Befehle&lt;/strong&gt; zur Verfügung gestellt. Daher möchte ich euch natürlich diese nicht vorenthalten.&lt;br&gt;
+Weiter unten im Beitrag könnt ihr die Dokumentation nun ebenfalls herunterladen.&lt;/p&gt;
+&lt;h2 id=&#34;cmd-befehle---die-helfer-nicht-nur-für-nerds&#34;&gt;CMD-Befehle - Die Helfer nicht nur für Nerds!&lt;/h2&gt;
+&lt;p&gt;Viele Aufgaben lassen sich unter Windows leichter beziehungsweise ausschließlich über das Kommandozeilentool CMD erledigen. In diesem Artikel möchte ich euch einen Überblick über die wichtigsten CMD Befehle für die Kommandozeile zur Verfügung stellen.&lt;br&gt;
+Unterteilt habe ich diese Befehle weiter unten in diesem Beitrag, in verschiedene Themenbereiche, damit ihr gleich einen schnellen Überblick darüber gewinnen könnt.&lt;br&gt;
+Einige dieser Befehle für die Arbeit oder Informationssammlung im Netzwerk habe ich euch ja schon in &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/der-ipconfig-befehl-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;diesem Artikel&lt;/a&gt;&lt;/strong&gt; vorgestellt, oder in dem Artikel, was ihr mit dem &lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/netstat-unter-windows/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Befehl Netstat&lt;/a&gt;&lt;/strong&gt; alles anstellen könnt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Proxmox VE mit fail2ban absichern</title>
+      <link>http://localhost:1313/posts/linux/proxmox-fail2ban/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/proxmox-fail2ban/</guid>
+      <description>&lt;h2 id=&#34;proxmox-ve-basierend-auf-debian-12-mit-fail2ban-absichern&#34;&gt;Proxmox VE basierend auf Debian 12 mit fail2ban absichern&lt;/h2&gt;
+&lt;p&gt;Eine Möglichkeit einen öffentlichen Proxmox Server gegen Brute Force-Angriffe abzusichern, ist der Einsatz von dem Tool ‚fail2ban‘.&lt;/p&gt;
+&lt;p&gt;In diesem kurzen Tutorial zeige ich, wie mit Hilfe von fail2ban, der Zugriff des Service ‚SSH‘ und der Zugriff auf den Port ‚8006‘ des Dashboards, abgesichert wird.
+Ausgangslage&lt;/p&gt;
+&lt;p&gt;In diesem Szenario handelt es sich um einen Proxmox-Server der als Dedicated-Server bei Hetzner gehostet wird, und über eine IPv4- sowie IPv6-Adresse über das öffentliche Internet erreichbar ist.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole PHP | Pihole immer mit der aktuellsten PHP-Version</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</link>
+      <pubDate>Wed, 06 Mar 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/</guid>
+      <description>&lt;h2 id=&#34;pihole-mit-php-83-auf-dem-raspberry-pi-os-installieren&#34;&gt;Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pihole mit PHP 8.3 installieren&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr im Jahr 2024, einen Pihole-DNS-Server sicher mit einer aktuellen PHP-Version auf eurem Raspberry Pi installieren könE-Hat für Raspberry Pi 5nt.&lt;/p&gt;
+&lt;h3 id=&#34;hintergrund-von-diesem-tutorial&#34;&gt;Hintergrund von diesem Tutorial&lt;/h3&gt;
+&lt;p&gt;Bei einer Testinstallation von &lt;strong&gt;Pihole mit Debian 11&lt;/strong&gt; auf meinem Raspberry Pi, ist mir beim Installationsprozess aufgefallen, dass die Installationsroutine auf dem &lt;strong&gt;Raspberry Pi OS lite, ein PHP-7.4 installiert&lt;/strong&gt;, welches schon seit &lt;strong&gt;Mitte 2023 nicht mehr mit Sicherheitsupdates&lt;/strong&gt; versorgt wird und somit &lt;strong&gt;EOL (End of life)&lt;/strong&gt; ist.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole VPN jetzt mit Wireguard im Jahr 2024 nutzen</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-vpn/</link>
+      <pubDate>Tue, 27 Feb 2024 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-vpn/</guid>
+      <description>&lt;h2 id=&#34;pihole-vpn---keine-werbung-auf-dem-smartphone&#34;&gt;Pihole VPN - Keine Werbung auf dem Smartphone&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;pihole VPN mit Wireguard&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr via die Applikation &amp;lsquo;&lt;strong&gt;PiVPN&lt;/strong&gt;&amp;rsquo;, euren &lt;strong&gt;Pihole&lt;/strong&gt; auf dem &lt;strong&gt;Smartphone, Tablet oder Laptop&lt;/strong&gt; und somit die Vorteile von Pihole , nämlich ohne lästige Werbung zu surfen, von &lt;strong&gt;unterwegs&lt;/strong&gt; aus auch nutzen könnt.&lt;/p&gt;
+&lt;p&gt;Wie das alles funktioniert, zeige ich euch in meinem Video auf meinem YouTube-Kanal!&lt;/p&gt;
+&lt;p&gt;Inhaltsverzeichnis&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn---keine-werbung-auf-dem-smartphone&#34;&gt;Pihole VPN - Keine Werbung auf dem Smartphone&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#voraussetzungen-f%c3%bcr-dieses-tutorial&#34;&gt;Voraussetzungen für dieses Tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#hinweis&#34;&gt;Hinweis&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#video-tutorial-zum-thema-pihole-vpn-mit-wireguard&#34;&gt;Video-Tutorial zum Thema &amp;lsquo;pihole VPN mit Wireguard&amp;rsquo;.&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#befehle-zum-einrichten-von-pi-hole-pivpn-und-wireguard&#34;&gt;Befehle zum Einrichten von Pi-hole, PiVPN und WireGuard&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#bitte-beachten&#34;&gt;Bitte beachten!&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn---installation-der-ufw-firewall&#34;&gt;Pihole VPN - Installation der UFW-Firewall&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#pihole-vpn---installation-und-einrichtung-von-pivpn-auf-dem-raspberry-pi&#34;&gt;Pihole VPN - Installation und Einrichtung von PiVPN auf dem Raspberry Pi&lt;/a&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;#pivpn-wireguard---befehlsliste&#34;&gt;PiVPN WireGuard - Befehlsliste&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;#zus%c3%a4tzliche-informationen-zum-thema-pi-hole-vpn&#34;&gt;Zusätzliche Informationen zum Thema &amp;lsquo;Pi-hole VPN&amp;rsquo;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;voraussetzungen-für-dieses-tutorial&#34;&gt;Voraussetzungen für dieses Tutorial&lt;/h3&gt;
+&lt;p&gt;Damit ihr bei der Einrichtung eines VPN-Servers zusammen mit Pi-hole ein leichtes Spiel habt, muss euer Setup die folgenden Voraussetzungen erfüllen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole Unbound jetzt richtig installieren</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-unbound/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-unbound/</guid>
+      <description>&lt;h2 id=&#34;pihole-unbound-und-dns-verschlüsselung---für-mehr-sicherheit-im-netzwerk&#34;&gt;Pihole Unbound und DNS-Verschlüsselung - Für mehr Sicherheit im Netzwerk&lt;/h2&gt;
+&lt;p&gt;Im heutigem Video-Tutorial &amp;lsquo;&lt;strong&gt;Pi-hole Unbound&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr mithilfe von dem zusätzlichen Tool &amp;lsquo;&lt;strong&gt;Unbound&lt;/strong&gt;&amp;rsquo;, für mehr Sicherheit bei euren DNS-Anfragen im Netzwerk sorgen könnt.&lt;/p&gt;
+&lt;p&gt;Weiterhin findet ihr alle Befehle die ihr für die Installation und Konfiguration von Unbound neben Pi-hole braucht.&lt;/p&gt;
+&lt;p&gt;Inhaltsverzeichnis zu Pihole Unbound&lt;/p&gt;
+&lt;h3 id=&#34;voraussetzungen-für-pihole-unbound-installation&#34;&gt;Voraussetzungen für Pihole Unbound Installation&lt;/h3&gt;
+&lt;blockquote&gt;
+&lt;h3 id=&#34;hinweis&#34;&gt;Hinweis&lt;/h3&gt;
+&lt;p&gt;Diese Anleitung für die Installation und Einrichtung von &lt;strong&gt;Unbound&lt;/strong&gt; ist für &lt;strong&gt;debianbasierte Distributionen wie Debian, Ubuntu, Raspberry Pi OS, etc&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Backup mit Teleporter</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</link>
+      <pubDate>Tue, 12 Sep 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pi-hole-backup-mit-teleporter/</guid>
+      <description>&lt;h2 id=&#34;pi-hole-backup-sichern-und-wiederherstellen&#34;&gt;Pi-hole Backup sichern und wiederherstellen&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial &amp;lsquo;Pi-hole Backup - Pi-hole Sichern und Wiederherstellen&amp;rsquo;, zeige ich euch, wie ihr mit der Hilfe von dem Tool &amp;lsquo;Teleporter&amp;rsquo; ein Backup von eurer Pi-hole-Installation durchführen könnt und dieses Backup auf einer anderen Pi-hole Instanz, wiederherstellen könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-pi-hole-backup&#34;&gt;Video-Tutorial Pi-hole Backup&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/JPVtLvRtQE0?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Video-Tutorial zum Thema Pi-hole Sichern und Wiederherstellen&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole einrichten / konfigurieren</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-basis-konfiguration/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-basis-konfiguration/</guid>
+      <description>&lt;h2 id=&#34;pihole-einrichten---basis-konfiguration&#34;&gt;Pihole einrichten - Basis-Konfiguration&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial &amp;lsquo;Pi-hole Basis-Konfiguration&amp;rsquo; gehe ich mit euch Schritt für Schritt die Einrichtung von dem Pi-hole DNS-Server durch und erkläre euch, was die einzelnen Funktionen / Menüpunkte bedeuten.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/IMYnydNM3rk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Bei Fragen zum Thema schriebt einfach einen Kommentar entweder unter dem Video auf YouTube oder hier unter diesem Blog-Beitrag.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox &#43; Pihole | FritzBox konfigurieren</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-fritzbox-konfigurieren/</link>
+      <pubDate>Mon, 06 Feb 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-fritzbox-konfigurieren/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--pihole---richtig-konfigurieren-dass-alle-geräte-pi-hole-als-dns-server-nutzen&#34;&gt;FritzBox + Pihole - Richtig konfigurieren, dass alle Geräte Pi-hole als DNS-Server nutzen&lt;/h2&gt;
+&lt;p&gt;In diesem Video auf meinem &lt;a href=&#34;https://www.youtube.com/@secure_bits/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;YouTube-Kanal&lt;/a&gt; zeige ich euch, wie ihr die &lt;strong&gt;FritzBox&lt;/strong&gt; richtig konfigurieren müsst, dass auch wirklich alle Geräte sowie Software, den &lt;strong&gt;Pi-hole&lt;/strong&gt; als DNS-Server im Netzwerk nutzen und diesen nicht umgehen können.&lt;/p&gt;
+&lt;p&gt;Es gibt sicherlich auch in eurem internen Netzwerk einige Geräte sowie Software, die eine sogenannte fest implementierte IP-Adresse für einen öffentlichen DNS-Server (&lt;strong&gt;hardcoded&lt;/strong&gt;) haben.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox / AdGuard DNS - Werbung, Tracking und Pishing mit blocken</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</link>
+      <pubDate>Thu, 12 Jan 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-adguard-dns/</guid>
+      <description>&lt;h2 id=&#34;fritzbox--adguard-dns-einrichten&#34;&gt;FritzBox / AdGuard DNS einrichten&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://adguard-dns.io/?aid=33604&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;img src=&#34;http://localhost:1313/images/posts/fritzbox/logo_adguard.png&#34; alt=&#34;logo adguard dns&#34;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;In diesem Video zeige ich euch wir ihr mit Hilfe von AdGuard DNS, Geräte in eurem Heimnetzwerk vor Werbung, Tracking, Pishing und Malware schützen könnt.&lt;/p&gt;
+&lt;p&gt;Wie ihr AdGuard DNS und eure FritzBox oder auch andere Router richtig konfigurieren müsst, erfahrt ihr in diesem Video-Tutorial.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Obcd2OLgl64?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;was-bietet-fritzbox--adguard-dns&#34;&gt;Was bietet FritzBox / AdGuard DNS?&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;AdGuard DNS ist &amp;ldquo;euer persönlicher&amp;rdquo; öffentlicher rekursiver DNS-Server&lt;/strong&gt; den du mit Blocklisten, Application-Control, Kindersicherung und Zeitprofilen an eure individuellen Bedürfnisse anpassen könnt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home DNS-Verschlüsselung</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-dns-over-quic/</link>
+      <pubDate>Tue, 27 Dec 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-dns-over-quic/</guid>
+      <description>&lt;h2 id=&#34;adguard-home-dns-verschlüsselung-mit-dns-over-quic&#34;&gt;AdGuard Home DNS-Verschlüsselung mit DNS over QUIC&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial auf &lt;a href=&#34;https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;meinem YouTube-Kanal&lt;/strong&gt;&lt;/a&gt; zeige ich euchSchritt für Schritt, wie ihr mithilfe von dem &amp;ldquo;neuen&amp;rdquo; Verschlüsselungs-Protokoll &amp;lsquo;&lt;strong&gt;DNS over QUIC&lt;/strong&gt;&amp;rsquo;, externe DNS-Anfragen von AdGuard Home verschlüsseln könnt.&lt;/p&gt;
+&lt;h3 id=&#34;adguard-home-dns-verschlüsselung---video&#34;&gt;AdGuard Home DNS-Verschlüsselung - Video&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/mog1eFUUc3Y?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;adguard-home-installieren&#34;&gt;AdGuard Home installieren&lt;/h3&gt;
+&lt;p&gt;Wer von euch wissen möchte, wie AdGuard Home zum Beispiel auf einem Raspberry Pi installiert wird, der kann sich diese &lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Anleitung&lt;/strong&gt;&lt;/a&gt; oder dieses &lt;a href=&#34;https://youtu.be/PF2WH2llwSg&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Video&lt;/strong&gt;&lt;/a&gt; dazu anschauen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home manuell aktualisieren</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</link>
+      <pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-manuell-aktualisieren/</guid>
+      <description>&lt;h2 id=&#34;wenn-das-automatisches-adguard-home-update-fehlschlägt&#34;&gt;Wenn das automatisches AdGuard Home Update fehlschlägt&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;AdGuard Home manuell aktualisieren&lt;/strong&gt;&amp;rsquo; und dem dazugehörigen Video-Tutorial, zeige ich euch, wie es möglich ist, bei einer AdGuard Home-Instanz ein manuelles Update durchzuführen.&lt;/p&gt;
+&lt;h3 id=&#34;warum-adguard-home-manuell-aktualisieren&#34;&gt;Warum AdGuard Home manuell aktualisieren?&lt;/h3&gt;
+&lt;p&gt;Bei manchen AdGuard Home Updates fällt die automatische Aktualisierung fehl, so zum Beispiel bei der Version &amp;ldquo;&lt;strong&gt;AdGuard Home v0.107.17&lt;/strong&gt;&amp;rdquo;. Daher ist es nötig, hier ein manuelles Update über die Kommandozeile durchzuführen.&lt;/p&gt;
+&lt;h2 id=&#34;video-tutorial-zu-adguard-home-manuell-aktualisieren&#34;&gt;Video-Tutorial zu &amp;lsquo;AdGuard Home manuell aktualisieren&amp;rsquo;&lt;/h2&gt;
+&lt;p&gt;Auf meinen &lt;a href=&#34;https://www.youtube.com/@secure_bits&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;YouTube-Kanal&lt;/strong&gt;&lt;/a&gt; habe ich auch ein entsprechendes Video-Tutorial veröffentlicht.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox - AdGuard Home einrichten</title>
+      <link>http://localhost:1313/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/</link>
+      <pubDate>Sat, 22 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/</guid>
+      <description>&lt;h2 id=&#34;werbung-und-tracking-mit-adguard-home-blockieren&#34;&gt;Werbung und Tracking mit AdGuard Home blockieren&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr mithilfe eines AdGuard DNS-Server und einer FritzBox (funktioniert auch mit Speedport, etc.) in eurem Heimnetzwerk, Werbung, Tracking und Schadsoftware blockieren und vermeiden könnt.&lt;/p&gt;
+&lt;h3 id=&#34;adguard-home-konfigurieren&#34;&gt;AdGuard Home konfigurieren&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/i4UODIMb65g?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;weitere-videos-zum-thema-adguard&#34;&gt;Weitere Videos zum Thema AdGuard&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Application Profiles erstellen </title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-application-profiles/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-application-profiles/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---profile-für-applikationen-anlegen&#34;&gt;UFW-Firewall - Profile für Applikationen anlegen&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mithilfe eines Application-Profil mehrere Ports für eine Anwendung in einem App-Profil zusammenstellen könnt und somit mehrere Ports mit einer Firewall-Regel anlegen könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/TDKaLgWd12A?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Grundlagen | Teil 1</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-basics/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-basics/</guid>
+      <description>&lt;h2 id=&#34;grundlagen-zur-ufw-firewall-installation-und-einrichtung&#34;&gt;Grundlagen zur UFW-Firewall Installation und Einrichtung&lt;/h2&gt;
+&lt;p&gt;In diesem Video-Tutorial zeige ich euch, wie ihr die UFW-Firewall (Uncomplicated Firewall) auf eure Linux-Distribution installieren und einrichten könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/BumaXOYey1c?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall - Mehrere Ports, Portbereiche und Dienste freigeben</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</link>
+      <pubDate>Thu, 06 Oct 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-mehrere-ports/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall---erweiterte-regeln-für-portbereiche&#34;&gt;UFW-Firewall - Erweiterte Regeln für Portbereiche&lt;/h2&gt;
+&lt;p&gt;In diesem Video zeige ich euch, wie ihr bei der UFW-Firewall mehrere Ports gleichzeitig, Portbereiche und Dienste freigeben könnt.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zu-den-grundlagen-der-ufw-firewall&#34;&gt;Video-Tutorial zu den Grundlagen der UFW-Firewall&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Gwbq6F1N3xo?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;verwendete-terminal-befehle-im-video&#34;&gt;Verwendete Terminal-Befehle im Video&lt;/h3&gt;
+&lt;p&gt;Alle in diesem Video-Tutorial verwendeten Terminal-Befehle findet ihr im Beitrag &amp;lsquo;&lt;strong&gt;&lt;a href=&#34;https://secure-bits.org/ufw-firewall-raspberry-pi/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall Raspberry Pi Installation&lt;/a&gt;&lt;/strong&gt;&amp;rsquo; hier auf SecureBits.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>UFW-Firewall Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</link>
+      <pubDate>Tue, 20 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/ufw-firewall-debian-basierend/</guid>
+      <description>&lt;h2 id=&#34;ufw-firewall-uncomplicated-firewall-installieren-auf-einen-raspberry-pi&#34;&gt;UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag &amp;lsquo;&lt;strong&gt;UFW-Firewall Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch gerne zeigen, wie ihr diese Firewall beziehungsweise Befehlszeilenschnittstelle für &lt;strong&gt;iptables&lt;/strong&gt; auf einen Raspberry Pi oder jeder anderen Linux-basierenden Distribution installieren und einrichten könnt. Soll heißen, dass die hier aufgeführten Befehle nicht alleine auf den &lt;strong&gt;Raspberry Pi&lt;/strong&gt; beschränkt sind, sondern auch auf allen anderen Linux-basierten Distros angewendet werden können.&lt;/p&gt;
+&lt;p&gt;Passend zum Tutorial &amp;lsquo;&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;AdGuard auf dem Raspberry Pi installieren&lt;/a&gt;&amp;rsquo;. bietet sich natürlich an, dass wir die &lt;a href=&#34;https://wiki.ubuntuusers.de/ufw/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;UFW-Firewall&lt;/a&gt; auch auf den Raspberry Pi mit &lt;strong&gt;AdGuard Home&lt;/strong&gt; drauf, installieren. So schützen wir diesen AdGuard DNS-Server vor unberechtigten Zugriffen aus dem Netzwerk.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuardHome-Setup - Basis-Konfiguration</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</link>
+      <pubDate>Mon, 19 Sep 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-konfigurieren/</guid>
+      <description>&lt;h2 id=&#34;adguardhome-setup---konfigurieren-um-dein-netzwerk-vor-werbung-und-trackern-zu-schützen&#34;&gt;AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen&lt;/h2&gt;
+&lt;p&gt;Im heutigen Tutorial &amp;lsquo;&lt;strong&gt;AdGuard konfigurieren&lt;/strong&gt;&amp;rsquo; möchte ich euch zeigen, wir ihr nach der Installation von AdGuard (&lt;a href=&#34;https://secure-bits.org/adguard-raspberry-pi-installation-2022/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;hier zur Anleitung&lt;/a&gt;), die &lt;strong&gt;AdGuard Basis-Konfiguration&lt;/strong&gt; auf euren Raspberry Pi durchführen könnt.&lt;/p&gt;
+&lt;p&gt;In diesem Tutorial-Video zeige ich euch, wie ihr die folgenden Einstellungen vornehmen könnt.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;DNS konfigurieren&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Sperrlisten anlegen&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Netzwerkweite Sperrung von Applikationen (Soziale Netzwerke und andere Dienste)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Protokolle verstehen&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Und vieles mehr&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>AdGuard Home Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/</link>
+      <pubDate>Tue, 23 Aug 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;mit-adguard-dein-netzwerk-vor-werbung-und-trackern-schützen&#34;&gt;Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen&lt;/h2&gt;
+&lt;p&gt;Im heutigen Tutorial &amp;lsquo;&lt;strong&gt;AdGuard Raspberry Pi Installation&lt;/strong&gt;&amp;rsquo; möchte ich euch zeigen, wir ihr den &lt;strong&gt;AdGuard DNS-Server&lt;/strong&gt; auf einen &lt;strong&gt;Raspberry Pi ab Version 3&lt;/strong&gt; installieren könnt.&lt;/p&gt;
+&lt;p&gt;Mit diesem DNS-Server habt ihr dann ähnlich wie bei dem &lt;strong&gt;pihole DNS-Server&lt;/strong&gt; (&lt;a href=&#34;https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;zum Tutorial hier entlang&lt;/a&gt;) die Möglichkeit, die meiste Werbung und Datentracker aus eurem Heimnetzwerk zu verbannen.&lt;/p&gt;
+&lt;p&gt;Solltet ihr noch Hardware für euren AdGuard-DNS-Server benötigen, dann schaut am &lt;a href=&#34;#hardware&#34;&gt;Ende von diesem Beitrag. Dort habe ich eine kleine Liste erstellt.&lt;/a&gt;&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>FritzBox DNS Server ändern</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</link>
+      <pubDate>Mon, 20 Jun 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-dns-server-aendern/</guid>
+      <description>&lt;h2 id=&#34;video-tutorial---schütze-deine-privatsphäre-mit-der-fritzbox&#34;&gt;Video-Tutorial - Schütze deine Privatsphäre mit der FritzBox&lt;/h2&gt;
+&lt;p&gt;In diesem Video &amp;ldquo;&lt;strong&gt;FritzBox DNS Server ändern&lt;/strong&gt;&amp;rdquo; zeige ich, wie ihr durch die Verwendung von datenschutzkonformen öffentlichen DNS-Server, das Tracken eurer Internetnutzung durch euren Internetprovider verhindern könnt.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/Q2b0VrDqluY?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;Gerne könnt ihr meinen YouTube-Kanal auch gleich Abonnieren und so verpasst ihr keine neuen Inhalte mehr.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pi-hole Raspberry Pi Installation</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</link>
+      <pubDate>Wed, 30 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/</guid>
+      <description>&lt;h2 id=&#34;pi-hole-auf-einen-raspberry-pi-installieren-und-einrichten&#34;&gt;Pi-hole auf einen Raspberry Pi installieren und einrichten&lt;/h2&gt;
+&lt;p&gt;In diesem Tutorial &amp;lsquo;&lt;strong&gt;Pi-hole auf einen Raspberry Pi installieren&lt;/strong&gt;&amp;rsquo; zeige ich euch, wie ihr den Pi-hole DNS-Server installieren und mit Unbound einen rekursiven DNS-Server einrichten könnt.&lt;/p&gt;
+&lt;p&gt;Die Schritt für Schritt-Installation geschiehttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpght bei diesem Tutorial auf einen Raspberry Pi.&lt;/p&gt;
+&lt;p&gt;In einem &lt;a href=&#34;https://secure-bits.org/pi-hole-installation/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;anderen Tutorial hier auf SecureBits&lt;/a&gt;, habe ich euch ja schon die &lt;strong&gt;Installation auf einem Debian-System in einer virtuellen Maschine&lt;/strong&gt; gezeigt und aufgeführt, sowie warum und wofür ihr einen Pi-Hole DNS-Server einsetzen solltet.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Tipp - Fritzbox Portfreigabe richtig einrichten</title>
+      <link>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</link>
+      <pubDate>Sat, 19 Mar 2022 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/fritzbox/fritzbox-portfreigabe/</guid>
+      <description>&lt;h2 id=&#34;fritzbox-portfreigabe-einrichten&#34;&gt;FritzBox Portfreigabe einrichten&lt;/h2&gt;
+&lt;p&gt;Im heutigen Beitrag geht es darum, wie ihr eine &lt;strong&gt;FritzBox Portfreigabe&lt;/strong&gt; richtig einrichtet, wofür ihr diese verwenden könnt und welche Risiken durch den Einsatz dieser Portfreigabe entstehen.&lt;/p&gt;
+&lt;p&gt;Folge der unteren Schritt für Schritt-Anleitung um eine Portfreigabe in deiner FritzBox einzurichten.&lt;/p&gt;
+&lt;p&gt;Für Alle unter euch, die das Ganze lieber in einer Video-Anleitung anschauen möchten, gibt es das Video &amp;ldquo;FritzBox Portfreigabe einrichten&amp;rdquo; auf meinem YouTube-Kanal.&lt;/p&gt;
+&lt;h3 id=&#34;video-tutorial-zum-thema-fritzbox-portfreigabe-einrichten&#34;&gt;Video-Tutorial zum Thema &amp;lsquo;FritzBox Portfreigabe einrichten&amp;rsquo;&lt;/h3&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/dUuABciDCWs?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;h3 id=&#34;tutorial---fritzbox-portfreigabe-einrichten&#34;&gt;Tutorial - FritzBox Portfreigabe einrichten&lt;/h3&gt;
+&lt;p&gt;In dieser Schritt für Schritt-Anleitungen zeige ich euch, wie ihr eine Portfreigabe bei einer FritzBox einrichtet.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Pihole Installation Debian - Schütze dein Heimnetzwerk</title>
+      <link>http://localhost:1313/posts/privacy/pihole/pihole-installation-debian/</link>
+      <pubDate>Sun, 07 Mar 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/privacy/pihole/pihole-installation-debian/</guid>
+      <description>&lt;h2 id=&#34;pihole-installation-debian---schütze-dein-netzwerk-vor-tracking-und-werbung&#34;&gt;Pihole Installation Debian - Schütze dein Netzwerk vor Tracking und Werbung&lt;/h2&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;BITTE BEACHTEN!!!&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Diese Anleitung bezieht sich auf die Installation von Pihole in der Version bis &lt;strong&gt;5&lt;/strong&gt; und nicht auf die aktuelle Version &lt;strong&gt;6&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Die Unterschiede von VERSION 5 zu VERSION 6&lt;/strong&gt; sind vom Prozess her, nicht wirklich anders. Version 6 basiert halt nicht mehr auf PHP und nutzt auch keine lighthtp-Instanz.&lt;/p&gt;
+&lt;p&gt;Demnächst werde ich auch für die Version 6 von Pihole hier ein Tutorial veröffentlichen.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Schutz vor Man-in-the-Middle-Angriffe erhalten</title>
+      <link>http://localhost:1313/posts/security/man-in-the-middle-schutz/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/man-in-the-middle-schutz/</guid>
+      <description>&lt;h2 id=&#34;schutz-vor-man-in-the-middle-angriffe&#34;&gt;Schutz vor Man-in-the-Middle-Angriffe&lt;/h2&gt;
+&lt;p&gt;In meinem letzten Beitrag - &lt;a href=&#34;https://secure-bits.org/man-in-the-middle/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Man in the Middle Angriffe verstehen&lt;/a&gt; - habe ich euch erklärt, was es mit Man-in-the-Middle-Angriffe auf sich und was damit genau gemeint ist. Daher möchte ich euch in diesem Beitrag Tipps und Tricks mit an die Hand geben, die helfen sollen, euch vor solchen Angriffen zu schützen.&lt;/p&gt;
+&lt;p&gt;Zu den hier vorgestellten Schutzmaßnahmen ist anzumerken, dass diese Maßnahmen nicht komplett von euch im Einzelnen umzusetzen sind, da es hier natürlich auf die von euch genutzte Infrastruktur ankommt. Soll heißen, ob ihr zum Beispiel eine eigene Domäne eurer eigen nennen könnt beziehungsweise, welche Hardware-Komponenten ihr in eurem Netzwerk einsetzt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Man in the Middle Angriffe verstehen</title>
+      <link>http://localhost:1313/posts/security/man-in-the-middle/</link>
+      <pubDate>Mon, 25 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/man-in-the-middle/</guid>
+      <description>&lt;h2 id=&#34;man-in-the-middle-angriff---definition&#34;&gt;Man in the Middle Angriff - Definition&lt;/h2&gt;
+&lt;p&gt;In dem heutigen Beitrag geht es um das Thema eines &lt;strong&gt;Man in the Middle Angriffs&lt;/strong&gt;. Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert, möchte ich euch gerne in diesem Artikel näher erläutern.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Sollte etwas nicht verständlich sein oder ihr habt weitere Fragen zu diesem Thema, so kontaktiert mich über das &lt;a href=&#34;mailto:ticket@secure-bits.org&#34;&gt;Kontaktformular&lt;/a&gt;.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Jetzt einfach Windows Passwort ändern</title>
+      <link>http://localhost:1313/posts/windows/windows-passwort-aendern/</link>
+      <pubDate>Fri, 08 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/windows-passwort-aendern/</guid>
+      <description>&lt;h2 id=&#34;passwort-ändern-unter-windows&#34;&gt;Passwort ändern unter Windows&lt;/h2&gt;
+&lt;p&gt;Heute möchte ich euch in diesem Artikel “Windows Passwort ändern” zeigen wie ihr euer Passwort in den Windows 10-Systemeinstellungen, sowie das Ganze auch über die Kommandozeile CMD oder PowerShell ändern könnt. Diese Möglichkeit ist gerade für Administratoren eine schnelle Art und Weise, um schnell und unkompliziert. die Passwörter von Nutzern auf einem Windows-Computer oder auch über eine Domäne hinweg, zu ändern.&lt;/p&gt;
+&lt;h2 id=&#34;möglichkeit-1--windows-passwort-ändern-firmenrechner-in-einer-domäne&#34;&gt;Möglichkeit 1 – Windows Passwort ändern (Firmenrechner in einer Domäne)&lt;/h2&gt;
+&lt;p&gt;Für alle die einen Windows Firmen-Rechner besitzen der Teil einer Domäne ist, kann die Änderung des Passworts wie folgt durchgeführt werden. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows PowerShell installieren</title>
+      <link>http://localhost:1313/posts/windows/windows-powershell/</link>
+      <pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/windows-powershell/</guid>
+      <description>&lt;p&gt;In diesem Artikel möchte ich euch das neue (so neu ist es nun auch nicht) Kommandozeilen-Tool Windows PowerShell ein bisschen näherbringen und euch die Unterschiede zur klassischen Kommandozeile CMD aufzeigen. Warum zur Administration die PowerShell das Tool eurer Wahl sein sollte, erfahrt ihr in diesem Beitrag. &lt;/p&gt;
+&lt;p&gt;Was es mit dem klassischen Kommandozeilen-Interpreter CMD auf sich hat, dass erfahrt ihr in diesem Artikel: &lt;a href=&#34;https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;CMD-Befehle im Überblick&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;windows-powershell-installieren---ein-mächtiges-tool&#34;&gt;Windows PowerShell installieren - Ein mächtiges Tool&lt;/h2&gt;
+&lt;p&gt;Die &lt;strong&gt;Windows PowerShell&lt;/strong&gt; ist ein Framework, welches für Administratoren und Power-User ein unerlässliches Tool zur Automatisierung und Verwaltung von plattformübergreifenden Systemen darstellt. Dieses Framework besteht aus einem Kommandozeileninterpreter sowie einer Scriptsprache.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Was ist ein Proxy Server?</title>
+      <link>http://localhost:1313/posts/security/was-ist-ein-proxy-server/</link>
+      <pubDate>Thu, 07 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-ein-proxy-server/</guid>
+      <description>&lt;h2 id=&#34;anonym-im-internet-surfen&#34;&gt;Anonym im Internet surfen&lt;/h2&gt;
+&lt;p&gt;In diesem Beitrag versuche ich euch in hoffentlich verständlichen Worten die Frage &amp;ldquo;Was ist ein Proxy Server?&amp;rdquo; zu beantworten.&lt;/p&gt;
+&lt;p&gt;Um anonym im Internet surfen zu können, ist unteranderem der Einsatz eines Proxy Server unumgänglich. In diesem Beitrag erfahrt ihr auf welche Besonderheiten ihr bei der Auswahl eines Proxy Servers achten müsst und woher ihr diesen beziehen könnt.&lt;/p&gt;
+&lt;h2 id=&#34;funktionsweise&#34;&gt;Funktionsweise&lt;/h2&gt;
+&lt;p&gt;Ein Proxy Server kann man als Vermittler oder Zwischenhändler im Netzwerk betrachten. Dieser empfängt die Anfragen eines Proxy-Client (z.B. Desktop) und gibt diese in seinem Namen an den Ziel-Webserver weiter, der vom Proxy-Client angefragt wurde. &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>MAC Adresse - Was ist das?</title>
+      <link>http://localhost:1313/posts/security/mac-adresse/</link>
+      <pubDate>Fri, 15 Feb 2019 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/mac-adresse/</guid>
+      <description>&lt;h2 id=&#34;macadressen&#34;&gt;MAC Adressen &lt;/h2&gt;
+&lt;p&gt;Was ist eine &lt;strong&gt;MAC Adresse&lt;/strong&gt; und wofür wird diese gebraucht? Diese Fragen und weitere Begriffe und Funktion rund um das Thema MAC Adressen möchte ich gerne in diesem Artikel erklären. &lt;/p&gt;
+&lt;h2 id=&#34;was-ist-eine-mac-adresse&#34;&gt;Was ist eine MAC Adresse? &lt;/h2&gt;
+&lt;p&gt;Zur Identifikation eines netzwerkfähigen Geräts (Host) im Netzwerk dient die &lt;strong&gt;MAC Adresse&lt;/strong&gt;. Diese Adresse ist in eigentlich einmalig (dazu später mehr) und stellt die eindeutige Adressierbarkeit eines Geräts sicher.  &lt;/p&gt;
+&lt;h2 id=&#34;aufbau&#34;&gt;Aufbau&lt;/h2&gt;
+&lt;p&gt;Diese Adresse besteht aus einer 48-Bit langen Adresse und sollte weltweit einmalig sein. Diese Adresse wird im OSI-Modell der Sicherungsschicht 2 (Data-Link-Layer) zugeordnet um eine Adressierung im Netzwerk zu gewährleisten.  &lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Netzwerk Sniffing – Sichere Kommunikation im Netzwerk</title>
+      <link>http://localhost:1313/posts/security/was-ist-sniffing/</link>
+      <pubDate>Sun, 26 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/was-ist-sniffing/</guid>
+      <description>&lt;h2 id=&#34;wie-kannst-du-dich-vor-netzwerk-sniffing-im-netzwerk-schützen&#34;&gt;Wie kannst du dich vor Netzwerk Sniffing im Netzwerk schützen?!&lt;/h2&gt;
+&lt;p&gt;Die meisten von euch haben sicherlich schon irgendwo gelesen oder gehört, dass alle Welt über sichere Kommunikation debattiert. Doch was ist eine sichere Kommunikation und warum können normale Kommunikationswege abgehört (sniffing) werden?! Daher möchte ich mich in diesem Beitrag mit dem Thema „Sniffing / Abhören“ beschäftigen und euch auch zeigen, wie ihr euch gegen solche Sniffing-Angriffe absichern könnt.&lt;/p&gt;
+&lt;p&gt;Nach den Enthüllungen von Edward Snowden ist das Abhören von Kommunikationswegen sicherlich jeden von euch geläufig. Abhören beziehungsweise sniffen kann man in kleinen wie in großen Dimensionen. Geheimdienste nutzen zur Abhörung gleich ganze Knotenpunkte von unseren ISP (Internet Service Provider) und im kleineren Maßstab funktioniert das natürlich auch bei euch in der Firma oder Daheim.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Wie funktioniert eine Firewall?</title>
+      <link>http://localhost:1313/posts/security/wie-funktioniert-eine-firewall/</link>
+      <pubDate>Thu, 09 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/wie-funktioniert-eine-firewall/</guid>
+      <description>&lt;h2 id=&#34;was-ist-eine-und-wie-funktioniert-eine-firewall&#34;&gt;Was ist eine und wie funktioniert eine Firewall?&lt;/h2&gt;
+&lt;p&gt;In diesem Artikel möchte ich unter anderem mit Hilfe des OSI-Schichten-Modell die Frage „&lt;strong&gt;Wie funktioniert eine Firewall&lt;/strong&gt;“ beantworten. Um Sicherheit in einem Netzwerk zu gewährleisten zu können, ist das Verstehen wie eine Firewall funktioniert, natürlich von größter Wichtigkeit. Daher versuche ich in diesem Beitrag, euch die einzelnen Funktionen einer Firewall hoffentlich verständlich zu erklären. Damit ihr den Datenverkehr optimal auf eure Anforderungen hin steuern könnt.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Windows Product Key aktivieren</title>
+      <link>http://localhost:1313/posts/windows/windows-product-key-aktivieren/</link>
+      <pubDate>Sun, 22 Jan 2017 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/windows/windows-product-key-aktivieren/</guid>
+      <description>&lt;blockquote&gt;
+&lt;h3 id=&#34;andere-windows-versionen&#34;&gt;Andere Windows Versionen&lt;/h3&gt;
+&lt;p&gt;Natürlich könnt ihr auf diese Weise auch bei jeder anderen Windows Version den Product Key ändern beziehungsweise aktivieren.&lt;br&gt;
+Für die Aktivierung müsst ihr stattdessen natürlich euren Product Key dafür nutzen! Die im Artikel gezeigten Product Keys sind nur für die Verwendung der Windows Insider Preview geeignet!&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;windows-product-key-aktivieren&#34;&gt;Windows Product Key aktivieren&lt;/h2&gt;
+&lt;p&gt;Bei einem Inplace-Upgrade von Windows 10 Enterprise kann es vorkommen, dass Sie nach dem Upgrade aufgefordert werden, Windows neu zu aktivieren. Bei der erneuten Durchführung der Aktivierung wird diese mit einen Fehlercode beendet.&lt;br&gt;
+Die folgende Anleitung soll euch zeigen wie ihr den Produkt Key ändern und dann eure Windows 10 Insider Preview oder auch jede andere Version von Windows aktivieren könnt.&lt;/p&gt;</description>
+    </item>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <item>
+      <title>Datenschutzerklärung</title>
+      <link>http://localhost:1313/sites/datenschutz/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/datenschutz/</guid>
+      <description>&lt;p&gt;Datenschutzerklärung&lt;/p&gt;
+&lt;p&gt;Personenbezogene Daten (nachfolgend zumeist nur „Daten“ genannt) werden von uns nur im Rahmen der Erforderlichkeit sowie zum Zwecke der Bereitstellung eines funktionsfähigen und nutzerfreundlichen Internetauftritts, inklusive seiner Inhalte und der dort angebotenen Leistungen, verarbeitet.&lt;/p&gt;
+&lt;p&gt;Gemäß Art. 4 Ziffer 1. der Verordnung (EU) 2016/679, also der Datenschutz-Grundverordnung (nachfolgend nur „DSGVO“ genannt), gilt als „Verarbeitung“ jeder mit oder ohne Hilfe automatisierter Verfahren ausgeführter Vorgang oder jede solche Vorgangsreihe im Zusammenhang mit personenbezogenen Daten, wie das Erheben, das Erfassen, die Organisation, das Ordnen, die Speicherung, die Anpassung oder Veränderung, das Auslesen, das Abfragen, die Verwendung, die Offenlegung durch Übermittlung, Verbreitung oder eine andere Form der Bereitstellung, den Abgleich oder die Verknüpfung, die Einschränkung, das Löschen oder die Vernichtung.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Impressum</title>
+      <link>http://localhost:1313/sites/impressum/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/impressum/</guid>
+      <description>&lt;p&gt;Lindental 8d
+94032 Passau&lt;/p&gt;
+&lt;p&gt;Telefon: 0851 20 95 50 63
+E-Mail: &lt;a href=&#34;mailto:ticktet@secure-bits.org&#34;&gt;ticktet@secure-bits.org&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Verantwortlich für den Inhalt (gem. § 55 Abs. 2 RStV):
+Marcel Dellmann, Lindental 8d, 94032 Passau&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Bildrechte:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;pixabay.com&lt;/p&gt;
+&lt;h3 id=&#34;hinweis-auf-eu-streitschlichtung&#34;&gt;Hinweis auf EU-Streitschlichtung&lt;/h3&gt;
+&lt;p&gt;Zur außergerichtlichen Beilegung von verbraucherrechtlichen Streitigkeiten hat die Europäische Union eine Online-Plattform (“OS-Plattform”) eingerichtet, an die Sie sich wenden können. Die Plattform finden Sie unter &lt;a href=&#34;https://ec.europa.eu/consumers/odr/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;https://ec.europa.eu/consumers/odr/&lt;/a&gt;. Unsere Emailadresse lautet: &lt;a href=&#34;mailto:support@secure-bits.org&#34;&gt;support@secure-bits.org&lt;/a&gt;
+Disclaimer – rechtliche Hinweise&lt;/p&gt;
+&lt;h3 id=&#34;-1-warnhinweis-zu-inhalten&#34;&gt;§ 1 Warnhinweis zu Inhalten&lt;/h3&gt;
+&lt;p&gt;Die kostenlosen und frei zugänglichen Inhalte dieser Webseite wurden mit größtmöglicher Sorgfa&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Privacy-Police</title>
+      <link>http://localhost:1313/sites/privacy/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/sites/privacy/</guid>
+      <description>&lt;p&gt;Privacy Policy&lt;/p&gt;
+&lt;p&gt;Personal data (usually referred to just as „data“ below) will only be processed by us to the extent necessary and for the purpose of providing a functional and user-friendly website, including its contents, and the services offered there.&lt;/p&gt;
+&lt;p&gt;Per Art. 4 No. 1 of Regulation (EU) 2016/679, i.e. the General Data Protection Regulation (hereinafter referred to as the „GDPR“), „processing“ refers to any operation or set of operations such as collection, recording, organization, structuring, storage, adaptation, alteration, retrieval, consultation, use, disclosure by transmission, dissemination, or otherwise making available, alignment, or combination, restriction, erasure, or destruction performed on personal data, whether by automated means or not.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

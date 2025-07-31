@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Penetrationstesting on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/tags/penetrationstesting/</link>
+    <description>Recent content in Penetrationstesting on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 27 Jan 2021 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/tags/penetrationstesting/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Jetzt Schutz vor Man-in-the-Middle-Angriffe erhalten 2021</title>
+      <link>http://localhost:1313/posts/security/man-in-the-middle/</link>
+      <pubDate>Wed, 27 Jan 2021 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/security/man-in-the-middle/</guid>
+      <description>&lt;h2 id=&#34;schutz-vor-man-in-the-middle-angriffe&#34;&gt;Schutz vor Man-in-the-Middle-Angriffe&lt;/h2&gt;
+&lt;p&gt;In meinem letzten Beitrag - &lt;a href=&#34;https://secure-bits.org/man-in-the-middle/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Man in the Middle Angriffe verstehen&lt;/a&gt; - habe ich euch erklärt, was es mit Man-in-the-Middle-Angriffe auf sich und was damit genau gemeint ist. Daher möchte ich euch in diesem Beitrag Tipps und Tricks mit an die Hand geben, die helfen sollen, euch vor solchen Angriffen zu schützen.&lt;/p&gt;
+&lt;p&gt;Zu den hier vorgestellten Schutzmaßnahmen ist anzumerken, dass diese Maßnahmen nicht komplett von euch im Einzelnen umzusetzen sind, da es hier natürlich auf die von euch genutzte Infrastruktur ankommt. Soll heißen, ob ihr zum Beispiel eine eigene Domäne eurer eigen nennen könnt beziehungsweise, welche Hardware-Komponenten ihr in eurem Netzwerk einsetzt.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

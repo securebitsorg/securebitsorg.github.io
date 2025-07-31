@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Netzwerk Sniffing – Sichere Kommunikation im Netzwerk</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="In diesem Beitrag beschreibe ich, was Netzwerk-Sniffing ist und wie man sich davor schützen kann." />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/security/was-ist-sniffing">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/security/was-ist-sniffing">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/default-hero.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Sonntag, 26. August 2018 | 5 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Netzwerk Sniffing – Sichere Kommunikation im Netzwerk</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="wie-kannst-du-dich-vor-netzwerk-sniffing-im-netzwerk-schützen">Wie kannst du dich vor Netzwerk Sniffing im Netzwerk schützen?!</h2>
+<p>Die meisten von euch haben sicherlich schon irgendwo gelesen oder gehört, dass alle Welt über sichere Kommunikation debattiert. Doch was ist eine sichere Kommunikation und warum können normale Kommunikationswege abgehört (sniffing) werden?! Daher möchte ich mich in diesem Beitrag mit dem Thema „Sniffing / Abhören“ beschäftigen und euch auch zeigen, wie ihr euch gegen solche Sniffing-Angriffe absichern könnt.</p>
+<p>Nach den Enthüllungen von Edward Snowden ist das Abhören von Kommunikationswegen sicherlich jeden von euch geläufig. Abhören beziehungsweise sniffen kann man in kleinen wie in großen Dimensionen. Geheimdienste nutzen zur Abhörung gleich ganze Knotenpunkte von unseren ISP (Internet Service Provider) und im kleineren Maßstab funktioniert das natürlich auch bei euch in der Firma oder Daheim.</p>
+<p>Um einen Kommunikationsweg zu kompromittieren gibt es natürlich mehrere Maßnahmen. In diesen Beitrag möchte ich aber auf das sogenannte „Sniffen“ eingehen.</p>
+<h2 id="was-ist-sniffing">Was ist Sniffing?</h2>
+<p>Als Sniffing wird das Abhören oder Mitschneiden von Datenpaketen in einer Kommunikationsverbindung bezeichnet. Hierbei werden zum Beispiel die Clients von einer der beiden Gesprächspartner mit einer Malware die ein Sniffing-Tool enthält kompromittiert und dann die versendeten sowie verschickten Datenpakete mitgeschnitten.</p>
+<p>Diese Datenpakete können, wenn diese unverschlüsselt übertragen werden, natürlich auch Passwörter enthalten, die dann im Klartext übertragen werden und somit dann für den Angreifer lesbar sowie verwendbar sind.</p>
+<blockquote>
+<p><strong>Bitte beachten!</strong> Alle hier gezeigten Maßnahmen bieten keine absoluten 100 % Schutz vor Angriffen!</p></blockquote>
+<h2 id="welche-maßnahmen-helfen-gegen-netzwerk-sniffing">Welche Maßnahmen helfen gegen Netzwerk Sniffing?</h2>
+<h3 id="netzwerkkomponenten">Netzwerkkomponenten</h3>
+<p>Zunächst ist es wichtig ein Netzwerk in seine Bestandteile (Netzwerkkomponenten) zu unterteilen um für diese Netzwerkkomponenten geeignete Schutzmaßnahmen vorzunehmen.</p>
+<p>Die Netzwerkkomponenten werden in zwei Gruppen unterteilt:</p>
+<ul>
+<li><strong>Aktive Netzwerkkomponenten</strong></li>
+<li><strong>Passive Netzwerkkomponenten</strong></li>
+</ul>
+<h2 id="was-sind-aktive-netzwerkkomponenten">Was sind aktive Netzwerkkomponenten?</h2>
+<p>Als <strong>aktive Netzwerkkomponenten</strong> zählen solche Geräte, die aktiv Signale verarbeiten sowie diese verstärken und eine Spannungsversorgung hierfür benötigen.<br>
+<strong>Zu den aktiven Netzwerkkomponenten zählen:</strong> </p>
+<ul>
+<li><a href="https://secure-bits.org/die-funktionsweise-einer-firewall/" target="_blank" rel="noopener"><strong>Firewalls</strong></a></li>
+<li><strong>Switches</strong></li>
+<li><strong>Hub´s</strong></li>
+<li><strong>Router</strong></li>
+<li><strong>Access Points</strong></li>
+<li><strong>Netzwerkkarte</strong></li>
+<li><strong>ISDN-Karte</strong></li>
+<li><strong>usw.</strong></li>
+</ul>
+<h2 id="was-sind-passive-netzwerkkomponenten">Was sind passive Netzwerkkomponenten?</h2>
+<p>Als passive Netzwerkkomponenten zählen Bauteile im Netzwerk die ohne Spannungsversorgung auskommen.</p>
+<p><strong>Zu den passiven Netzwerkkomponenten zählen:</strong></p>
+<ul>
+<li><strong>Netzwerkverkabelung</strong></li>
+<li><strong>Patchkabel</strong></li>
+<li><strong>Netzwerkanschlussdosen</strong></li>
+<li><strong>usw.</strong></li>
+</ul>
+<h2 id="maßnahmen-zur-absicherung-aktiver-netzwerkkomponenten-vor-netzwerk-sniffing-angriffe">Maßnahmen zur Absicherung aktiver Netzwerkkomponenten vor Netzwerk Sniffing Angriffe</h2>
+<h4 id="zugangskontrolle">Zugangskontrolle</h4>
+<p>Um aktive Netzwerkkomponenten zu schützen, sollte der Zugriff auf die Administrationsoberfläche (SSH oder Webbrowser) sicher geschützt werden, nicht genutzte Ports sollten bei managend Switches abgeschaltet werden. Zum Beispiel unbenutzte Ports an einem Switch durch Fremdeinwirkung vor unbefugten Zugriffen zu schützen.</p>
+<h3 id="überwachung-der-endpunkte-im-netzwerk-client-und-server">Überwachung der Endpunkte im Netzwerk (Client und Server)</h3>
+<p>Hohe Priorität für den Schutz gegen Sniffing ist vor allem, dass die Endpunkte im Netzwerk durch geeignete Überwachungs-Tools (Schutz gegen Malware durch Antiviren-Software, IPS, etc.) geschützt werden. Gerade auf den Endpunkten ist das mitlesen des Netzwerk-Traffic´s durch Sniffing-Tools am gefährlichsten, da hier auf den Endpunkten einer Daten-Verbindung die Verschlüsselung durch zum Beispiel des Protokolls „https - Hypertext Transfer <strong>Protocol</strong> Secure“ leicht aufzuhebeln ist (End-to-End – Verschlüsselung).</p>
+<p>Weiterhin kann man es nicht genug betonen, dass ein zeitnahes einspielen von Sicherheitspatches für das genutzte Betriebssystem sowie für genutzte Software unabdingbar ist und auch wirklich gewissenhaft durchgeführt werden sollte. Für Angreifer ist es ein leichtes die Kontrolle durch den Einsatz von Exploits und andere Scripte über ein mit Sicherheitslücken durchspicktes System zu übernehmen! Daher möchte ich es unbedingt hervorheben:</p>
+<p><strong>Bitte beachten!</strong> Bitte spielt immer herausgegebene Sicherheitsupdates für euer Betriebssystem und eurer genutzten Software ein! Diese Vorgehensweise kann man nicht genug zitieren!</p>
+<p>Des Weiteren solltet ihr nicht mit administrativen Privilegien arbeiten, sondern für die tägliche Arbeit am eurem PC eingeschränkte Nutzerrechte vergeben. Dieses könnt ihr zum Beispiel unter Windows durch das nutzen eines Standardbenutzer-Konto gewährleisten. Somit ist die Gefahr des versehentlichen installieren von schadhaften Programmen minimiert.</p>
+<h2 id="netzwerk-sniffing---verschlüsselung-der-kommunikation">Netzwerk Sniffing - Verschlüsselung der Kommunikation</h2>
+<p>Eine wirklich wichtige und absolut empfehlenswerte Sicherheitsmaßnahme ist, wenn irgendwie möglich, die Nutzung von verschlüsselten Verbindungen. Diese verschlüsselten Verbindungen wie zum Beispiel <strong>„https“</strong>, <strong>„sftp“</strong>, <strong>„SSH“</strong> sowie die Nutzung von VPN-Verbindungen in öffentlichen WLAN-Netzwerken, schützen dich vor Angriffen durch das <strong>Sniffing</strong> und genauso vor <strong>Man-in-the-Middle-Angriffe</strong>. Hierbei ist aber zu erwähnen das die Sicherheit nur bei End-to-End-Verschlüsselung gewährleistet ist, also von zum Beispiel Computer zu Computer oder Computer zu Server.</p>
+<p>Der Schutz durch End-to-End-Verschlüsselung sollte genauso bei Messengern genutzt werden, damit auch hier kein abhören durch Dritte möglich ist. Die Messenger von <strong>Signal</strong>, <strong>Wire</strong> und <strong>Threema</strong> (<strong>Telegram</strong> verschlüsselt nur bedingt „sicheren Chats“) nutzten den Verbindungsschutz End-to-End-Verschlüsselung, daher sind diese Messenger für eine sichere Kommunikation, den Konkurrenten wie <strong>WhatsApp</strong> oder ähnlichen als Standard-Messenger-App ganz klar den Vorzug zu geben!</p>
+<p>Des Weiteren solltet ihr bei der Auswahl von WLAN-Netzwerken auch auf einen sicheren Verschlüsselung-Standard achten.</p>
+<h2 id="maßnahmen-zur-absicherung-passiver-netzwerkkomponenten-vor-netzwerk-sniffing-angriffe">Maßnahmen zur Absicherung passiver Netzwerkkomponenten vor Netzwerk Sniffing Angriffe</h2>
+<p>Um passive Netzwerkkomponenten abzusichern, solltet ihr zum Beispiel in Unternehmen einen Zugangsschutz zum Serverraum sicherstellen, damit dieser Raum nur durch autorisiertes Personal betreten wird. Auch Netzwerkverteiler-Schränke in anderen Gebäudeteilen sollten abschließbar und vor unbefugten Zugriff abgesichert werden.</p>
+<p>Nicht genutzte Netzwerkanschlüsse können durch mechanische Sperren gesichert werden, sogenannte Port-Schlösser (z.B. <a href="https://amzn.to/2wr1YQ9" target="_blank" rel="noopener">diese hier von der Firma Lindy</a>).</p>
+<p>Generell empfiehlt es sich bei Netzwerken in Unternehmen, nur sogenannte managend Switches für die Verteilung von Datenpakete zu verwenden, da hier durch das abschalten nicht genutzter Netzwerk-Ports, ein Zugriff durch nicht autorisierte Zugriffe durch Dritte aktiv unterbunden werden kann. </p>
+<h2 id="fazit---netzwerk-sniffing-angriffe">Fazit - Netzwerk Sniffing Angriffe</h2>
+<p>Wenn ihr die Sicherheitstipps, die ich euch in diesem Beitrag aufgeführt habe befolgt und umsetzt, sollte hierdurch die Gefahr des Ausspähens und Mithören / Mitlesen eurer Datenverbindungen minimiert werden. </p>
+<p>Die größte Gefahr in einem IT-Netzwerk ist und bleibt aber der Nutzer selbst. Durch unachtsames Handeln entstehen die meisten Angriffe auf ein Computernetzwerk. Diese Gefahr lässt sich nur durch Aufklärung der Nutzer minimieren und sollte einen großen Stellenwert beim ausschließen von Gefahrenquellen in der Infrastruktur eures Computernetzwerk haben. Ein gutes Beispiel ist hier der berühmte herrenlose USB-Stick der mal eben schnell in den Computer gesteckt wird. Sensibilisierung für dieses Thema ist das erste Gebot in einer sicheren IT-Umgebung.  </p>
+<p>Eines sollte hier aber bitte klar sein, einen absoluten Schutz gibt es natürlich nicht!</p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fwas-ist-sniffing%2f&title=Netzwerk%20Sniffing%20%e2%80%93%20Sichere%20Kommunikation%20im%20Netzwerk" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Netzwerk%20Sniffing%20%e2%80%93%20Sichere%20Kommunikation%20im%20Netzwerk&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fsecurity%2fwas-ist-sniffing%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine Unified Threat Management Firewall?" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Was ist eine Unified Threat Management Firewall?</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktioniert eine Firewall?" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Wie funktioniert eine Firewall?</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#wie-kannst-du-dich-vor-netzwerk-sniffing-im-netzwerk-schützen">Wie kannst du dich vor Netzwerk Sniffing im Netzwerk schützen?!</a></li>
+    <li><a href="#was-ist-sniffing">Was ist Sniffing?</a></li>
+    <li><a href="#welche-maßnahmen-helfen-gegen-netzwerk-sniffing">Welche Maßnahmen helfen gegen Netzwerk Sniffing?</a>
+      <ul>
+        <li><a href="#netzwerkkomponenten">Netzwerkkomponenten</a></li>
+      </ul>
+    </li>
+    <li><a href="#was-sind-aktive-netzwerkkomponenten">Was sind aktive Netzwerkkomponenten?</a></li>
+    <li><a href="#was-sind-passive-netzwerkkomponenten">Was sind passive Netzwerkkomponenten?</a></li>
+    <li><a href="#maßnahmen-zur-absicherung-aktiver-netzwerkkomponenten-vor-netzwerk-sniffing-angriffe">Maßnahmen zur Absicherung aktiver Netzwerkkomponenten vor Netzwerk Sniffing Angriffe</a>
+      <ul>
+        <li></li>
+        <li><a href="#überwachung-der-endpunkte-im-netzwerk-client-und-server">Überwachung der Endpunkte im Netzwerk (Client und Server)</a></li>
+      </ul>
+    </li>
+    <li><a href="#netzwerk-sniffing---verschlüsselung-der-kommunikation">Netzwerk Sniffing - Verschlüsselung der Kommunikation</a></li>
+    <li><a href="#maßnahmen-zur-absicherung-passiver-netzwerkkomponenten-vor-netzwerk-sniffing-angriffe">Maßnahmen zur Absicherung passiver Netzwerkkomponenten vor Netzwerk Sniffing Angriffe</a></li>
+    <li><a href="#fazit---netzwerk-sniffing-angriffe">Fazit - Netzwerk Sniffing Angriffe</a></li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

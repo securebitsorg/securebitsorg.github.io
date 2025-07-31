@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Linux on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/posts/linux/</link>
+    <description>Recent content in Linux on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Wed, 30 Jul 2025 09:18:12 +0000</lastBuildDate><atom:link href="http://localhost:1313/posts/linux/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Der traceroute-Befehl unter Linux</title>
+      <link>http://localhost:1313/posts/linux/der-traceroute-befehl-unter-linux/</link>
+      <pubDate>Wed, 30 Jul 2025 09:18:12 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/der-traceroute-befehl-unter-linux/</guid>
+      <description>&lt;h2 id=&#34;der-traceroute-befehl-unter-linux-mit-umfassende-anleitung-mit-beispielen&#34;&gt;Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;traceroute&lt;/code&gt;-Befehl ist ein unverzichtbares Netzwerk-Diagnosetool für IT-Sicherheitsmanager und Systemadministratoren. Er ermöglicht die Verfolgung des Weges, den Datenpakete von Ihrem System zu einem Ziel im Netzwerk nehmen, und hilft dabei, Netzwerkprobleme zu identifizieren und zu beheben.
+Daher möchte ich euch in diesem Artikel die Funktionalität von &lt;strong&gt;traceroute&lt;/strong&gt; ein wenig näher bringen.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-traceroute&#34;&gt;Was ist traceroute?&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;traceroute&lt;/strong&gt; ist ein Kommandozeilen-Tool, das den Transportweg von IP-Datenpaketen zwischen dem lokalen Rechner und einer ausgewählten Gegenstelle ermittelt. Dabei wird die Antwortzeit der durchlaufenen Router gemessen, was bei der Identifizierung von Verzögerungen und Netzwerkproblemen hilft.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Der Linux ip-Befehl: Anleitung für Netzwerkkonfiguration</title>
+      <link>http://localhost:1313/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</link>
+      <pubDate>Tue, 29 Jul 2025 08:00:34 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/</guid>
+      <description>&lt;h2 id=&#34;der-moderne-linux-ip-befehl-zur-netzwerkkonfiguration-unter-linux&#34;&gt;Der moderne Linux-IP-Befehl zur Netzwerkkonfiguration unter Linux&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;ip&lt;/code&gt;-Befehl ist das zentrale Werkzeug zur Netzwerkkonfiguration unter Linux und hat sich als moderner Ersatz für veraltete Befehle wie &lt;code&gt;ifconfig&lt;/code&gt;, &lt;code&gt;route&lt;/code&gt; und &lt;code&gt;arp&lt;/code&gt; etabliert. Als Teil der iproute2-Sammlung bietet er eine einheitliche Schnittstelle für alle Aspekte der Netzwerkverwaltung und ist in allen modernen Linux-Distributionen standardmäßig verfügbar.&lt;/p&gt;
+&lt;h2 id=&#34;was-ist-der-ip-befehl&#34;&gt;Was ist der ip-Befehl?&lt;/h2&gt;
+&lt;p&gt;Der &lt;code&gt;ip&lt;/code&gt;-Befehl ist ein vielseitiges Netzwerkkonfigurationstool aus der iproute2-Sammlung, das ursprünglich von Alexey Kuznetsov entwickelt und heute von Stephen Hemminger gepflegt wird. Es nutzt die Linux Netlink-Schnittstelle für die direkte Kommunikation mit dem Kernel und bietet damit erweiterte Funktionalitäten, die mit den klassischen net-tools nicht verfügbar sind.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Linux SSH-Zugang absichern</title>
+      <link>http://localhost:1313/posts/linux/linux-ssh-absichern/</link>
+      <pubDate>Sat, 05 Jul 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/linux-ssh-absichern/</guid>
+      <description>&lt;h2 id=&#34;linux-ssh-zugang-richtig-absichern&#34;&gt;Linux SSH Zugang richtig absichern&lt;/h2&gt;
+&lt;p&gt;Das A und O wenn ihr einen Linux-Server betreibt, ist es meistens für die Administration erforderlich, einen sichereren Zugang via SSH zu etablieren.&lt;/p&gt;
+&lt;p&gt;Dieses Tutorial soll euch helfen, den Linux SSH Zugriff erfolgreich gegen Angriffe zu schützen.&lt;/p&gt;
+&lt;p&gt;Natürlich ist das Absichern des SSH-Zugangs nur ein Modul, um euren Server vor Angriffe zu schützen. Weitere Möglichkeiten findet ihr im Tutorial „Raspberry Pi absichern von A-Z“ welches ich hier im Blog veröffentlicht habe.&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>Proxmox VE mit fail2ban absichern</title>
+      <link>http://localhost:1313/posts/linux/proxmox-fail2ban/</link>
+      <pubDate>Tue, 18 Feb 2025 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/linux/proxmox-fail2ban/</guid>
+      <description>&lt;h2 id=&#34;proxmox-ve-basierend-auf-debian-12-mit-fail2ban-absichern&#34;&gt;Proxmox VE basierend auf Debian 12 mit fail2ban absichern&lt;/h2&gt;
+&lt;p&gt;Eine Möglichkeit einen öffentlichen Proxmox Server gegen Brute Force-Angriffe abzusichern, ist der Einsatz von dem Tool ‚fail2ban‘.&lt;/p&gt;
+&lt;p&gt;In diesem kurzen Tutorial zeige ich, wie mit Hilfe von fail2ban, der Zugriff des Service ‚SSH‘ und der Zugriff auf den Port ‚8006‘ des Dashboards, abgesichert wird.
+Ausgangslage&lt;/p&gt;
+&lt;p&gt;In diesem Szenario handelt es sich um einen Proxmox-Server der als Dedicated-Server bei Hetzner gehostet wird, und über eine IPv4- sowie IPv6-Adresse über das öffentliche Internet erreichbar ist.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>

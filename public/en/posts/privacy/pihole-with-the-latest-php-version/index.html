@@ -1,0 +1,974 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Pihole PHP 8.3 | Pihole always with the latest PHP version</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.f6b26f00359f69d139362842b17c7dfc9ca8494f7098b1bd91f77cba6bc8b679.css" integrity="sha256-9rJvADWfadE5NihCsXx9/JyoSU9wmLG9kfd8umvItnk=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_747a7a60fc165ddd.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and personal blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Pihole PHP 8.3 | Pihole always with the latest PHP version" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_fb1c622aecba328f.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/security/" title="IT-Security">IT-Security</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/privacy/"> Privacy</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS encryption with DNS over QUIC">AdGuard DNS encryption with DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="Manually update AdGuard Home">Manually update AdGuard Home</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole-basis-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pihole-fritzbox-setup/" title="Pi-hole-/-Fritzbox-configure">Pi-hole-/-Fritzbox-configure</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/privacy/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/en/posts/privacy/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/" title="Windows">Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/fritzbox/" title="Fritzbox">Fritzbox</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/pihole/pihole-raspberry-php.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_2d70f447e066a834.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Wednesday, March 6, 2024 | 6 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Pihole PHP 8.3 | Pihole always with the latest PHP version</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/network/" class="btn btn-sm btn-info">network</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/pi-hole/" class="btn btn-sm btn-info">pi-hole</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="installing-pihole-with-php-83-on-raspberry-pi-os">Installing Pihole with PHP 8.3 on Raspberry Pi OS</h2>
+<p>In this tutorial, ‘<strong>Installing Pihole with PHP 8.3</strong>’, I would like to show you how to securely install a Pihole DNS server with the latest version of PHP on your Raspberry Pi in 2024.</p>
+<h3 id="background-to-this-tutorial">Background to this tutorial</h3>
+<p>During a test installation of Pihole with Debian 11 on my Raspberry Pi, I noticed during the installation process that the installation routine on the Raspberry Pi OS lite installs PHP 7.4, which has not been provided with security updates since mid-2023 and is therefore EOL (end of life).
+Further information on support for individual PHP versions can be found here:
+<a href="https://www.php.net/supported-versions.php" target="_blank" rel="noopener">https://www.php.net/supported-versions.php</a>
+Therefore, I thought I would create a new and updated tutorial (<a href="https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/" target="_blank" rel="noopener">my last one was from 2022</a>) so that the PHP installation used is always provided with the latest security updates.
+I will also show you how to install and set up a firewall for the Raspberry Pi. And how to automatically update the system with new updates.</p>
+<h2 id="video-on-the-topic-installing-pihole-in-2024">Video on the topic ‘Installing Pihole in 2024’</h2>
+<p>As usual, I have also published a video tutorial on this topic on my YouTube channel. Feel free to check it out and subscribe.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/OwFPGSXQMj0?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<h2 id="installing-pihole-on-a-raspberry-pi">Installing Pihole on a Raspberry Pi</h2>
+<p>First, here is a list of the requirements we need for the installation:</p>
+<ul>
+<li><strong>Raspberry Pi with power supply, SD card, and case</strong></li>
+<li><strong>SD card reader</strong></li>
+<li><strong>SD card with adapter</strong></li>
+<li><strong>The ‘Raspberry Pi Imager’ software</strong></li>
+</ul>
+<h3 id="installing-raspberry-pi-imager">Installing Raspberry Pi Imager</h3>
+<p>First, we need to provide our Raspberry Pi with a current Raspberry Pi OS, so the first step is to write the Raspberry Pi OS image to an SD card using the Raspberry Pi Imager.</p>
+<p><strong><a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener">Download Raspberry Pi OS Imager</a></strong></p>
+<p>After downloading the latest Raspberry Pi Imager, you can easily install the application on your system.
+The Imager is available for Windows, macOS, Ubuntu, or can be installed on an existing Raspberry Pi OS with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install Raspberry Pi Imager on Raspberry Pi OS (I have not tested this yet)</span>
+</span></span><span style="display:flex;"><span>sudo apt install rpi-imager
+</span></span></code></pre></div><h3 id="write-raspberry-pi-os-to-the-sd-card">Write Raspberry Pi OS to the SD card</h3>
+<p>The GIF below shows the configuration of the Raspberry Pi Imager for a Raspberry Pi OS on a Raspberry Pi 3. Always select the Raspberry Pi OS 32-bit lite version for writing to the SD card! This will install a minimal version of the OS, which is sufficient for running Pihole.</p>
+<blockquote>
+<h3 id="a-little-tip-for-raspberry-pi-3b-models">A little tip for Raspberry Pi 3B models</h3>
+<p><strong>If you want to install Debian 12 “bookworm” with PHP 8.2 included on your Raspberry Pi 3B, please select Raspberry Pi 4 under ‘Raspberry Pi model’. Here you can then select Raspberry OS based on Debian 12. According to Raspberry Pi, Debian 12 is compatible with model 3B, and I can confirm this.</strong></p>
+<p><strong>When selecting the model, only Debian version 11 “bullseye” is listed under the Raspberry Pi 3B model.</strong></p>
+<h3 id="please-note">Please note!</h3>
+<p>Instead of SSH authentication via password, you should prefer login via key pair. You can also set this up after installation. <strong>For more information, see the article Securing Raspberry Pi from A to Z</strong>.</p>
+<p><a href="https://secure-bits.org/raspberry-pi-absichern-von-a-z-2023/" target="_blank" rel="noopener"><strong>Go to the tutorial Securing Raspberry Pi</strong></a></p></blockquote>
+<h4 id="after-completing-the-image-writing-of-raspberry-pi-os">After completing the image writing of Raspberry Pi OS</h4>
+<p>Once the SD card has been written, remove the card and insert it into your Raspberry Pi.
+After inserting the network cable into the Raspberry Pi and, in this example, into the Fritzbox, power up the Raspberry Pi.
+The Raspberry Pi will now boot up and after a short time, you will be able to see the device in the Fritzbox under Network Connections.</p>
+<h3 id="connecting-to-the-raspberry-pi-via-ssh">Connecting to the Raspberry Pi via SSH</h3>
+<p>To establish a connection with the Raspberry Pi, I am using Microsoft Terminal for the SSH connection in this example. Of course, you can also use Putty or, on macOS and Linux, the familiar terminal.
+To establish an SSH connection, we log in to the Raspberry Pi via SSH with the following commands.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Command to establish the SSH connection</span>
+</span></span><span style="display:flex;"><span>sudo ssh username@IP address <span style="color:#f92672">(</span>from the Pi<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># When connecting for the first time, you must accept the fingerprint.</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Confirm this with ‘yes’</span>
+</span></span></code></pre></div><h3 id="update-raspberry-pi-os">Update Raspberry Pi OS</h3>
+<p>Before we can start installing PHP 8.3, we first need to update the Raspberry OS to the latest version. We do this with the following command.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Check Raspberry OS for new packages</span>
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update available packages and dependency changes</span>
+</span></span><span style="display:flex;"><span>sudo apt full-upgrade -y
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The installation may take some time!</span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After the update is complete, the system must be restarted</span>
+</span></span><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><blockquote>
+<h3 id="important-for-php-installation">Important for PHP installation</h3>
+<p>It is important that PHP 8.3 is installed before installing Pihole (especially on Debian 11), otherwise PHP 7.4 will be installed with the Pihole installation, which we want to avoid.</p></blockquote>
+<h3 id="pihole-php--installing-php-83-on-the-raspberry-os">Pihole PHP | Installing PHP 8.3 on the Raspberry OS</h3>
+<p>Now we can start installing PHP 8.3 on the Raspberry Pi.
+To do this, we first need to install a package and add a repository to the sources.list.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install required package</span>
+</span></span><span style="display:flex;"><span>sudo apt -y install lsb-release apt-transport-https ca-certificates
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install security key for the “Sury repository”</span>
+</span></span><span style="display:flex;"><span>sudo wget -O /etc/apt/trusted.gpg.d/php.gpg https://packages.sury.org/php/apt.gpg
+</span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install the package for PHP 8.3</span>
+</span></span><span style="display:flex;"><span>sudo echo “deb https://packages.sury.org/php/ <span style="color:#66d9ef">$(</span>lsb_release -sc<span style="color:#66d9ef">)</span> main” | tee /etc/apt/sources.list.d/php.list
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Update available packages</span>
+</span></span><span style="display:flex;"><span>sudo apt update
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Install PHP 8.3</span>
+</span></span><span style="display:flex;"><span>sudo apt install php8.3 -y
+</span></span></code></pre></div><h4 id="installing-sqlite3-for-php-83">Installing sqlite3 for PHP 8.3</h4>
+<p>After installing PHP 8.3, we still need to install the additional module sqlite3 so that Pihole will work properly under PHP 8.3 later on.
+To install the PHP module ‘sqlite3’ on our Raspberry Pi OS, enter the following command in the Bash:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Installation of the PHP module sqlite3 for running Pihole</span>
+</span></span><span style="display:flex;"><span>sudo apt install php8.3-sqlite3
+</span></span></code></pre></div><h4 id="follow-up-work-after-installing-php-83-for-pihole">Follow-up work after installing PHP 8.3 for Pihole</h4>
+<p>Before we can continue with the installation of Pihole, we first need to get rid of the web server ‘apache2’ that was installed along with it. The reason for this is that Pihole uses the slim web server ‘lightptd’ for the admin web interface, so we do not need the Apache web server, which would also cause errors as it would already occupy port 80.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Stop the Apache2 service</span>
+</span></span><span style="display:flex;"><span>sudo systemctl stop apache2
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Uninstall Apache2</span>
+</span></span><span style="display:flex;"><span>sudo apt purge apache2
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># After uninstalling, the operating system must be restarted</span>
+</span></span><span style="display:flex;"><span>sudo reboot
+</span></span></code></pre></div><h2 id="pihole-php--installing-pihole-with-php-83">Pihole PHP | Installing Pihole with PHP 8.3</h2>
+<blockquote>
+<h3 id="note">Note</h3>
+<p>I <strong>have described the installation of Pihole on a Raspberry Pi</strong> <strong>in great detail in my other tutorial</strong>. Therefore, I will skip the individual steps here and <strong>refer you to my previous tutorial or to my video on this post</strong> here:</p>
+<p><a href="https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/#pihole-installieren" target="_blank" rel="noopener">Installing Pihole on Raspberry Pi’</a></p></blockquote>
+<h3 id="more-videos-and-tutorials-on-pihole">More videos and tutorials on Pihole</h3>
+<p>I have published many other posts and videos on the topic of ‘Pihole’ here and on YouTube.
+Maybe one or two of them will help you with your Pihole project! Just click on the links!
+<strong><a href="https://secure-bits.org/pi-hole-einrichten-konfigurieren/" target="_blank" rel="noopener">Setting up Pihole</a></strong></p>
+<p><strong><a href="https://secure-bits.org/pi-hole-unbound-jetzt-richtig-installieren-in-2023/" target="_blank" rel="noopener">Pihole and Unbound</a></strong></p>
+<p><a href=""><strong>Creating a Pihole backup</strong></a></p>
+<p><a href="https://secure-bits.org/pihole-vpn-mit-pivpn-und-wireguard/" target="_blank" rel="noopener"><strong>Using Pihole on the go on your smartphone</strong></a></p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fprivacy%2fpihole-with-the-latest-php-version%2f&title=Pihole%20PHP%208.3%20%7c%20Pihole%20always%20with%20the%20latest%20PHP%20version" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Pihole%20PHP%208.3%20%7c%20Pihole%20always%20with%20the%20latest%20PHP%20version http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fprivacy%2fpihole-with-the-latest-php-version%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Pihole%20PHP%208.3%20%7c%20Pihole%20always%20with%20the%20latest%20PHP%20version&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fprivacy%2fpihole-with-the-latest-php-version%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/en/posts/privacy/pi-hole-backup-mit-teleporter/" title="Pi-hole Backup mit Teleporter" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Prev</div>
+        <div class="next-prev-text">Pi-hole Backup mit Teleporter</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/en/posts/windows/" title="Windows" class="btn filled-button">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Windows</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#installing-pihole-with-php-83-on-raspberry-pi-os">Installing Pihole with PHP 8.3 on Raspberry Pi OS</a>
+      <ul>
+        <li><a href="#background-to-this-tutorial">Background to this tutorial</a></li>
+      </ul>
+    </li>
+    <li><a href="#video-on-the-topic-installing-pihole-in-2024">Video on the topic ‘Installing Pihole in 2024’</a></li>
+    <li><a href="#installing-pihole-on-a-raspberry-pi">Installing Pihole on a Raspberry Pi</a>
+      <ul>
+        <li><a href="#installing-raspberry-pi-imager">Installing Raspberry Pi Imager</a></li>
+        <li><a href="#write-raspberry-pi-os-to-the-sd-card">Write Raspberry Pi OS to the SD card</a></li>
+        <li><a href="#a-little-tip-for-raspberry-pi-3b-models">A little tip for Raspberry Pi 3B models</a></li>
+        <li><a href="#please-note">Please note!</a></li>
+        <li><a href="#connecting-to-the-raspberry-pi-via-ssh">Connecting to the Raspberry Pi via SSH</a></li>
+        <li><a href="#update-raspberry-pi-os">Update Raspberry Pi OS</a></li>
+        <li><a href="#important-for-php-installation">Important for PHP installation</a></li>
+        <li><a href="#pihole-php--installing-php-83-on-the-raspberry-os">Pihole PHP | Installing PHP 8.3 on the Raspberry OS</a></li>
+      </ul>
+    </li>
+    <li><a href="#pihole-php--installing-pihole-with-php-83">Pihole PHP | Installing Pihole with PHP 8.3</a>
+      <ul>
+        <li><a href="#note">Note</a></li>
+        <li><a href="#more-videos-and-tutorials-on-pihole">More videos and tutorials on Pihole</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.078db4cf4ca5e5a2d96c8a4588af6140c4576ab967c200b58241fe0f8ea8fbfd.js" integrity="sha256-B420z0yl5aLZbIpFiK9hQMRXarlnwgC1gkH&#43;D46o&#43;/0=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

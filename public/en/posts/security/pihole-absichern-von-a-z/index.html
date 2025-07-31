@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Raspberry Pi absichern von A-Z | 2023</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.f6b26f00359f69d139362842b17c7dfc9ca8494f7098b1bd91f77cba6bc8b679.css" integrity="sha256-9rJvADWfadE5NihCsXx9/JyoSU9wmLG9kfd8umvItnk=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_747a7a60fc165ddd.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio and personal blog of Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Raspberry Pi absichern von A-Z | 2023" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/en">
+      
+        <img src="/images/logo_header_hu_fb1c622aecba328f.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/en#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#about">About</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#accomplishments">Certifications</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#projects">Projekte</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/en#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/en/posts">Posts</a>
+          </li>
+        
+        
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Contact</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-gb"></span>
+        
+        English
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/security/pihole-absichern-von-a-z">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/security/pihole-absichern-von-a-z">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_fb1c622aecba328f.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/en/search">
+          <input type="text" name="keyword" value="" placeholder="Search" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/en/posts/" data-filter="all">Posts</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/en/posts/security/"> IT-Security</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/en/posts/security/pihole-absichern-von-a-z/" title="Secure Raspberry Pi from A - Z">Secure Raspberry Pi from A - Z</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/proxmox-fail2ban/" title="Proxmox and fail2ban">Proxmox and fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/linux/linux-ssh-absichern/" title="Secure Linux SSH">Secure Linux SSH</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/en/posts/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/pihole/pihole-unbound/" title="Install Pi-hole and Unbound">Install Pi-hole and Unbound</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/pihole/pihole-basis-setup/" title="Pi-hole setup">Pi-hole setup</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/pihole/pihole-vpn/" title="Pi-hole with WireGuard and piVPN">Pi-hole with WireGuard and piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup with teleporter">Pi-hole-Backup with teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/pihole/pihole-with-the-latest-php-version/" title="Pihole always with the latest PHP version">Pihole always with the latest PHP version</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/en/posts/windows/" title="Windows">Windows</a></li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/pihole/Video-Raspberry-Pi-absichern-von-A-Z.png);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_2d70f447e066a834.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Wednesday, February 8, 2023 | 17 minutes</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Raspberry Pi absichern von A-Z | 2023</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/en/tags/firewall/" class="btn btn-sm btn-info">firewall</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/linux/" class="btn btn-sm btn-info">linux</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/netzwerk/" class="btn btn-sm btn-info">netzwerk</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/security/" class="btn btn-sm btn-info">security</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/tipps-tutorials/" class="btn btn-sm btn-info">tipps-tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/en/tags/video/" class="btn btn-sm btn-info">video</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <h2 id="securing-raspberry-pi--operating-raspberry-pi-securely">Securing Raspberry Pi – Operating Raspberry Pi securely</h2>
+<p>In this new video on my <a href="https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q" target="_blank" rel="noopener"><strong>YouTube channel</strong></a>, I show you how you can operate your Raspberry Pi securely with the help of various adjustments and thus protect it from attacks.</p>
+<p>We keep reading and hearing about hacking attacks on IoT devices. This is mostly because IoT devices are poorly protected against attacks of any kind.</p>
+<p>The Raspberry Pi is often used as the basic platform for IoT applications.</p>
+<p>It&rsquo;s not without reason that it&rsquo;s one of the most popular single-board computers and, with its wide range of applications, ensures that this device can be used flexibly for many different IoT scenarios.</p>
+<p>Unfortunately, many manufacturers of such products don&rsquo;t take the security of their products very seriously! Although it&rsquo;s easy to secure the Raspberry Pi OS or other Linux variants used.</p>
+<p>You can find out how to secure your Raspberry Pi in this video tutorial:</p>
+<h2 id="video-tutorial-on-securing-raspberry-pi">Video tutorial on securing Raspberry Pi</h2>
+<p>As this topic is very comprehensive, I have divided the tutorial into several videos. This means that more videos will be added from time to time.</p>
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+      <iframe allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen" loading="eager" referrerpolicy="strict-origin-when-cross-origin" src="https://www.youtube-nocookie.com/embed/_Xk0bDeitgt0j?autoplay=0&amp;controls=1&amp;end=0&amp;loop=0&amp;mute=0&amp;start=0" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" title="YouTube video"></iframe>
+    </div>
+
+<p>Playlist of the video series | Securing/hardening Linux servers</p>
+<h2 id="commands-used-in-this-video">Commands used in this video</h2>
+<p>All commands I used in the video tutorial ‘Securing Raspberry Pi’ are listed here in chronological order.</p>
+<h3 id="prerequisites">Prerequisites</h3>
+<p>The following prerequisites should/must be met so that you can carry out the individual configurations on the Raspberry Pi:</p>
+<ul>
+<li><strong>User = pi (or replace the listed commands with your username accordingly)</strong></li>
+<li><strong>Access via SSH to the Raspberry Pi is possible</strong></li>
+<li><strong>SSH client (Putty, Terminal)</strong></li>
+</ul>
+<h3 id="step-1-secure-raspberry-pi--log-in-via-ssh-and-update-raspberry-pi-os">Step 1 Secure Raspberry Pi | Log in via SSH and update Raspberry Pi OS:</h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Establish SSH connection</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>ssh pi@IP address of the Pi
+</span></span></code></pre></div><h4 id="update-raspberry-os">Update Raspberry OS:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Update Raspberry Pi OS</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo apt update <span style="color:#f92672">&amp;&amp;</span> apt upgrade -y
+</span></span></code></pre></div><h3 id="step-2-secure-raspberry-pi--change-root-user-password">Step 2 Secure Raspberry Pi | Change root user password</h3>
+<p>Of course, it is highly recommended to secure the default user password with a truly secure password. Even though we will disable the default user ‘pi’ in the next step, I still recommend assigning a secure password here first. It can happen quickly that the default user is reactivated for some reason or that old systems are used (here, the default password was ‘raspberry’), and then it is easy to gain access to the system.</p>
+<p><strong>In my opinion, logging in with a public key is even more secure. I will publish a tutorial on this in the near future and link to it here.</strong></p>
+<h4 id="changing-the-root-user-password-to-a-secure-password">Changing the root user password to a secure password.</h4>
+<p>It is best to use a password generator from a password manager you trust, such as <a href="https://keepass.info/download.html" target="_blank" rel="noopener"><strong>KeePass</strong></a> or <a href="https://bitwarden.com/de-DE/" target="_blank" rel="noopener"><strong>Bitwarden</strong></a>, to generate the password and save the generated password in this password manager.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Renew password</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>passwd
+</span></span></code></pre></div><h3 id="step-3-secure-raspberry-pi--change-default-user-pi">Step 3 Secure Raspberry Pi | Change default user Pi</h3>
+<p>If you did not change the default user ‘pi’ when creating the Raspberry Pi OS with the <a href="https://www.raspberrypi.com/software/" target="_blank" rel="noopener"><strong>Raspberry Pi Imager</strong></a>, then this default user should definitely be replaced with a new user and the user ‘pi’ should be deactivated later on.</p>
+<h4 id="install-the-sudo-program">Install the sudo program</h4>
+<p>To add a new user to the ‘sudo’ group and thus grant them root privileges, we must first install the ‘sudo’ program .</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e"># Install the sudo program</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt install sudo
+</span></span></code></pre></div><h4 id="create-a-new-user">Create a new user:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo adduser NewUserName
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### Add the new user to the administrators group:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo gpasswd -a NewUserName adm
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e">#### Add the new user to the superuser group:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo gpasswd -a NewUserName sudo
+</span></span></code></pre></div><p>Before deactivating the user ‘pi’, first check that the new user has all the necessary rights!</p>
+<p>You will find out how to do this in step 4.</p>
+<h3 id="step-4-secure-raspberry-pi--test-the-new-user-account">Step 4 Secure Raspberry Pi | Test the new user account</h3>
+<p>Before the old standard account ‘pi’ can be deactivated, we first check its rights.</p>
+<p>To do this, open a separate terminal instance (terminal window). Log in with the newly created user and check the permissions with the following commands.</p>
+<h4 id="check-which-permissions-the-newly-created-user-has">Check which permissions the newly created user has:</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo whoami
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Then enter the assigned user password</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># The answer must be ‘root’</span>
+</span></span></code></pre></div><h4 id="deactivate-the-old-user-account-pi">Deactivate the old user account ‘pi’:</h4>
+<p>After successfully checking the permissions of the new username, the user ‘pi’ can now be deactivated, meaning that it is no longer possible to log in with this username.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo passwd -l pi
+</span></span></code></pre></div><h3 id="secure-ssh-access">Secure SSH access</h3>
+<p>Securing access via SSH is an absolute must when securing a Linux server!</p>
+<p>I have written a detailed tutorial on this topic here on SecureBits:</p>
+<p>Learn how to set up secure SSH access to your remote server.</p>
+<p><a href="https://secure-bits.org/tutorial-linux-ssh-absichern-hardening-in-2024/" target="_blank" rel="noopener">Linux SSH absichern | SecureBits</a></p>
+<h3 id="step-5-secure-raspberry-pi--firewall-installation-and-configuration">Step 5 Secure Raspberry Pi | Firewall: Installation and configuration</h3>
+<p>In this example, we will use the UFW firewall (Uncomplicated Firewall) as an easy-to-use firewall.</p>
+<p>In this tutorial, I will only briefly describe the configuration of the UFW firewall using the example of a firewall rule for SSH access.</p>
+<p>I have published a detailed tutorial on this topic here on SecureBits, and I have also created several video tutorials on this topic. In these tutorials, you will learn how to configure additional rules for access to the server.</p>
+<h3 id="securing-raspberry-pi--blog-posts-about-the-ufw-firewall">Securing Raspberry Pi | Blog posts about the UFW firewall:</h3>
+<ul>
+<li><a href="https://secure-bits.org/ufw-firewall-raspberry-pi/" target="_blank" rel="noopener"><strong>UFW firewall installation on a Raspberry Pi</strong></a></li>
+<li><a href="https://secure-bits.org/ufw-firewall-grundlagen/" target="_blank" rel="noopener"><strong>UFW firewall basics</strong></a></li>
+<li><a href="https://secure-bits.org/ufw-firewall-mehrere-ports-portbereiche-und-dienste-freigeben/" target="_blank" rel="noopener"><strong>UFW firewall – Multiple ports, ports and services</strong></a></li>
+<li><a href="https://secure-bits.org/ufw-firewall-application-profiles-erstellen-teil-3-uncomplicated-firewall/" target="_blank" rel="noopener"><strong>UFW firewall – Creating application profiles</strong></a></li>
+</ul>
+<h3 id="securing-raspberry-pi--video-posts-on-my-youtube-channel">Securing Raspberry Pi | Video posts on my YouTube channel</h3>
+<ul>
+<li><a href="https://youtu.be/Dh3A1Idktmg" target="_blank" rel="noopener"><strong>UFW firewall installation on a Raspberry Pi</strong></a></li>
+<li><a href="https://youtu.be/BumaXOYey1c" target="_blank" rel="noopener"><strong>UFW firewall basics</strong></a></li>
+<li><a href="https://youtu.be/Gwbq6F1N3xo" target="_blank" rel="noopener"><strong>UFW firewall – Opening multiple ports, ports, and services</strong></a></li>
+<li><a href="https://youtu.be/TDKaLgWd12A" target="_blank" rel="noopener"><strong>UFW firewall – Creating application profiles</strong></a></li>
+</ul>
+<h4 id="install-ufw-firewall">Install UFW firewall</h4>
+<p>The Uncomplicated Firewall is installed by entering the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install ufw
+</span></span></code></pre></div><h4 id="create-firewall-rule-for-ssh-access">Create firewall rule for SSH access</h4>
+<p>After successfully installing the UFW firewall, it is inactive.</p>
+<p><strong>Before the firewall can be activated</strong>, <strong>you must</strong> first <strong>create a firewall rule for SSH access</strong>, otherwise you will no longer have access to the Raspberry Pi via SSH when you activate the firewall!</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo ufw allow 22/tcp comment “SSH”
+</span></span></code></pre></div><h4 id="further-restrict-ssh-access">Further restrict SSH access</h4>
+<p>You can also further restrict access via SSH connection.</p>
+<p>For example, you can restrict access to a specific IP address range:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo ufw allow from &lt;example range<span style="color:#f92672">=</span>192.168.178.0/24&gt; to any port <span style="color:#ae81ff">22</span>
+</span></span></code></pre></div><p>Or you can restrict access to a single IP address (from a computer or a public static IP address):</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo ufw allow from &lt;fixed IP address<span style="color:#f92672">=</span>192.168.178.30&gt; to any port <span style="color:#ae81ff">22</span>
+</span></span></code></pre></div><p>Please make sure that you specify the correct IP address range or the correct fixed IP address when assigning addresses. Otherwise, you will lock yourself out!</p>
+<h5 id="ssh-access--limit-login-attempts-for-incorrect-logins">SSH access – limit login attempts for incorrect logins</h5>
+<p>You can also limit incorrect logins via SSH access using a firewall rule or use the Fail2Ban service, which I will show you how to configure later in this tutorial.</p>
+<p>First, I will show you how this works using a UFW firewall rule. The default setting is 6 failed logins within 30 seconds.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo ufw limit 22/tcp
+</span></span></code></pre></div><h4 id="enable-ufw-firewall-and-display-activated-rules">Enable UFW firewall and display activated rules</h4>
+<p>Once you have created the rules for the ‘SSH’ service, you can now activate the firewall.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw enable
+</span></span></code></pre></div><p>To get an overview of the UFW rules you have created, you can use this command</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo ufw status verbose
+</span></span></code></pre></div><h3 id="step-6-secure-raspberry-pi--configure-automatic-installation-of-important-updates">Step 6 Secure Raspberry Pi – Configure automatic installation of important updates</h3>
+<p>Almost every day, you can read in the news about hacker attacks on servers on the Internet! This is usually because security vulnerabilities are exploited for attacks, even though security updates have been available for some time, but these updates have not been installed on the system.</p>
+<p>With Linux, it is easy to install these security updates automatically, for example every night, and thus close any security gaps in the system. And all this without the administrator having to do anything each time!</p>
+<h4 id="installing-the-service-for-automatic-updates">Installing the service for automatic updates</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo apt install unattended-upgrades -y
+</span></span></code></pre></div><h4 id="configuring-automatic-updates">Configuring automatic updates</h4>
+<p>First, we need to configure the ‘unattended-upgrades’ config file and adapt this service to the Raspberry Pi OS.</p>
+<h5 id="open-the-50unattended-upgrades-config-file-with-the-nano-editor">Open the ‘50unattended-upgrades-config’ file with the Nano editor</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo nano /etc/apt/apt.conf.d/50unattended-upgrades
+</span></span></code></pre></div><p>The following output should be displayed in the Nano editor window:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>// Unattended-Upgrade::Origins-Pattern controls which packages are
+</span></span><span style="display:flex;"><span>// upgraded.
+</span></span><span style="display:flex;"><span>//
+</span></span><span style="display:flex;"><span>// Lines below have the format <span style="color:#e6db74">&#34;keyword=value,...&#34;</span>.  A
+</span></span><span style="display:flex;"><span>// package will be upgraded only <span style="color:#66d9ef">if</span> the values in its metadata match
+</span></span><span style="display:flex;"><span>// all the supplied keywords in a line.  <span style="color:#f92672">(</span>In other words, omitted
+</span></span><span style="display:flex;"><span>// keywords are wild cards.<span style="color:#f92672">)</span> The keywords originate from the Release
+</span></span><span style="display:flex;"><span>// file, but several aliases are accepted.  The accepted keywords are:
+</span></span><span style="display:flex;"><span>//   a,archive,suite <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;stable&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//   c,component     <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;main&#34;</span>, <span style="color:#e6db74">&#34;contrib&#34;</span>, <span style="color:#e6db74">&#34;non-free&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//   l,label         <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;Debian&#34;</span>, <span style="color:#e6db74">&#34;Debian-Security&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//   o,origin        <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;Debian&#34;</span>, <span style="color:#e6db74">&#34;Unofficial Multimedia Packages&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//   n,codename      <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;jessie&#34;</span>, <span style="color:#e6db74">&#34;jessie-updates&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//     site          <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;http.debian.net&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>// The available values on the system are printed by the command
+</span></span><span style="display:flex;"><span>// <span style="color:#e6db74">&#34;apt-cache policy&#34;</span>, and can be debugged by running
+</span></span><span style="display:flex;"><span>// <span style="color:#e6db74">&#34;unattended-upgrades -d&#34;</span> and looking at the log file.
+</span></span><span style="display:flex;"><span>//
+</span></span><span style="display:flex;"><span>// Within lines unattended-upgrades allows <span style="color:#ae81ff">2</span> macros whose values are
+</span></span><span style="display:flex;"><span>// derived from /etc/debian_version:
+</span></span><span style="display:flex;"><span>//   <span style="color:#e6db74">${</span>distro_id<span style="color:#e6db74">}</span>            Installed origin.
+</span></span><span style="display:flex;"><span>//   <span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span>      Installed codename <span style="color:#f92672">(</span>eg, <span style="color:#e6db74">&#34;buster&#34;</span><span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>Unattended-Upgrade::Origins-Pattern <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>        // Codename based matching:
+</span></span><span style="display:flex;"><span>        // This will follow the migration of a release through different
+</span></span><span style="display:flex;"><span>        // archives <span style="color:#f92672">(</span>e.g. from testing to stable and later oldstable<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>        // Software will be the latest available <span style="color:#66d9ef">for</span> the named release,
+</span></span><span style="display:flex;"><span>        // but the Debian release itself will not be automatically upgraded.
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">-updates&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">-proposed-updates&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Debian&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Debian-Security&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">-security,label=Debian-Security&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        // Archive or Suite based matching:
+</span></span><span style="display:flex;"><span> // Note that this will silently match a different release after
+</span></span><span style="display:flex;"><span>        // migration to the specified archive <span style="color:#f92672">(</span>e.g. testing becomes the
+</span></span><span style="display:flex;"><span>        // new stable<span style="color:#f92672">)</span>.
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;o=Debian,a=stable&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;o=Debian,a=stable-updates&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;o=Debian,a=proposed-updates&#34;</span>;
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;o=Debian Backports,a=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">-backports,l=Debian Backports&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Python regular expressions, matching packages to exclude from upgrading
+</span></span><span style="display:flex;"><span>Unattended-Upgrade::Package-Blacklist <span style="color:#f92672">{</span>
+</span></span><span style="display:flex;"><span>    // The following matches all packages starting with linux-
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;linux-&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    // Use $ to explicitely define the end of a package name. Without
+</span></span><span style="display:flex;"><span>    // the $, <span style="color:#e6db74">&#34;libc6&#34;</span> would match all of them.
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;libc6</span>$<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;libc6-dev</span>$<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;libc6-i686</span>$<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    // Special characters need escaping
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;libstdc++6</span>$<span style="color:#e6db74">&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    // The following matches packages like xen-system-amd64, xen-utils-4.1,
+</span></span><span style="display:flex;"><span>    // xenstore-utils and libxenstore3.0
+</span></span><span style="display:flex;"><span>//  <span style="color:#e6db74">&#34;(lib)?xen(store)?&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    // For more information about Python regular expressions, see
+</span></span><span style="display:flex;"><span>    // https://docs.python.org/3/howto/regex.html
+</span></span><span style="display:flex;"><span><span style="color:#f92672">}</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// This option allows you to control <span style="color:#66d9ef">if</span> on a unclean dpkg exit
+</span></span><span style="display:flex;"><span>// unattended-upgrades will automatically run
+</span></span><span style="display:flex;"><span>//   dpkg --force-confold --configure -a
+</span></span><span style="display:flex;"><span>// The default is true, to ensure updates keep getting installed
+</span></span><span style="display:flex;"><span>//Unattended-Upgrade::AutoFixInterruptedDpkg <span style="color:#e6db74">&#34;true&#34;</span>;
+</span></span><span style="display:flex;"><span>// Split the upgrade into the smallest possible chunks so that
+</span></span><span style="display:flex;"><span>// they can be interrupted with SIGTERM. This makes the upgrade
+</span></span><span style="display:flex;"><span>// a bit slower but it has the benefit that shutdown <span style="color:#66d9ef">while</span> a upgrade
+</span></span><span style="display:flex;"><span>// is running is possible <span style="color:#f92672">(</span>with a small delay<span style="color:#f92672">)</span>
+</span></span><span style="display:flex;"><span>//Unattended-Upgrade::MinimalSteps <span style="color:#e6db74">&#34;true&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>// Install all updates when the machine is shutting down
+</span></span><span style="display:flex;"><span>// instead of doing it in the background <span style="color:#66d9ef">while</span> the machine is running.
+</span></span><span style="display:flex;"><span>// This will <span style="color:#f92672">(</span>obviously<span style="color:#f92672">)</span> make shutdown slower.
+</span></span><span style="display:flex;"><span>// Unattended-upgrades increases logind<span style="color:#e6db74">&#39;s InhibitDelayMaxSec to 30s.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// This allows more time for unattended-upgrades to shut down gracefully
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// or even install a few packages in InstallOnShutdown mode, but is still a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// big step back from the 30 minutes allowed for InstallOnShutdown previously.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Users enabling InstallOnShutdown mode are advised to increase
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// InhibitDelayMaxSec even further, possibly to 30 minutes.
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::InstallOnShutdown &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Send email to this address for problems or packages upgrades
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// If empty or unset then no email is sent, make sure that you
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// have a working mail setup on your system. A package that provides
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// &#39;</span>mailx<span style="color:#e6db74">&#39; must be installed. E.g. &#34;user@example.com&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::Mail &#34;&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Set this value to one of:
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//    &#34;always&#34;, &#34;only-on-error&#34; or &#34;on-change&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// If this is not set, then any legacy MailOnlyOnError (boolean) value
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// is used to chose between &#34;only-on-error&#34; and &#34;on-change&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::MailReport &#34;on-change&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Remove unused automatically installed kernel-related packages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// (kernel images, kernel headers and kernel version locked tools).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::Remove-Unused-Kernel-Packages &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Do automatic removal of newly unused dependencies after the upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::Remove-New-Unused-Dependencies &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Remove unused automatically installed kernel-related packages
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// (kernel images, kernel headers and kernel version locked tools).
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::Remove-Unused-Kernel-Packages &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Do automatic removal of newly unused dependencies after the upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Unattended-Upgrade::Remove-New-Unused-Dependencies &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//      Do automatic removal of unused packages after the upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//      (equivalent to apt-get autoremove)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//      Unattended-Upgrade::Remove-Unused-Dependencies &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Automatically reboot *WITHOUT CONFIRMATION* if
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//  the file /var/run/reboot-required is found after the upgrade
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//        Unattended-Upgrade::Automatic-Reboot &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Automatically reboot even if there are users currently logged in
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// when Unattended-Upgrade::Automatic-Reboot is set to true
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//      Unattended-Upgrade::Automatic-Reboot-WithUsers &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// If automatic reboot is enabled and needed, reboot at the specific
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// time instead of immediately
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//  Default: &#34;now&#34;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//      Unattended-Upgrade::Automatic-Reboot-Time &#34;02:00&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Use apt bandwidth limit feature, this example limits the download
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// speed to 70kb/sec
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">//Acquire::http::Dl-Limit &#34;70&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Enable logging to syslog. Default is False
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::SyslogEnable &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Specify syslog facility. Default is daemon
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::SyslogFacility &#34;daemon&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Download and install upgrades only on AC power
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// (i.e. skip or gracefully stop updates on battery)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Download and install upgrades only on AC power
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// (i.e. skip or gracefully stop updates on battery)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::OnlyOnACPower &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Download and install upgrades only on non-metered connection
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// (i.e. skip or gracefully stop updates on a metered connection)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::Skip-Updates-On-Metered-Connections &#34;true&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Verbose logging
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::Verbose &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Print debugging information both in unattended-upgrades and
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// in unattended-upgrade-shutdown
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::Debug &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Allow package downgrade if Pin-Priority exceeds 1000
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// Unattended-Upgrade::Allow-downgrade &#34;false&#34;;
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// When APT fails to mark a package to be upgraded or installed try adjusting
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// candidates of related packages to help APT&#39;</span>s resolver in finding a solution
+</span></span><span style="display:flex;"><span>// where the package can be upgraded or installed.
+</span></span><span style="display:flex;"><span>// This is a workaround <span style="color:#66d9ef">until</span> APT<span style="color:#e6db74">&#39;s resolver is fixed to always find a
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// solution if it exists. (See Debian bug #711128.)
+</span></span></span><span style="display:flex;"><span><span style="color:#e6db74">// The fallback is enabled by default, except on Debian&#39;</span>s sid release because
+</span></span><span style="display:flex;"><span>// uninstallable packages are frequent there.
+</span></span><span style="display:flex;"><span>// Disabling the fallback speeds up unattended-upgrades when there are
+</span></span><span style="display:flex;"><span>// uninstallable packages at the expense of rarely keeping back packages which
+</span></span><span style="display:flex;"><span>// could be upgraded or installed.
+</span></span><span style="display:flex;"><span>// Unattended-Upgrade::Allow-APT-Mark-Fallback <span style="color:#e6db74">&#34;true&#34;</span>;
+</span></span></code></pre></div><h5 id="edit-the-50unattended-upgrades-config-file">Edit the ‘50unattended-upgrades-config’ file</h5>
+<h6 id="first-we-need-to-replace-the-following-two-lines-so-that-updates-from-the-release-channel-for--raspberry-os-are-updated-and-downloaded">First, we need to replace the following two lines so that updates from the release channel for -Raspberry OS are updated and downloaded.</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#75715e">#Entfernen der folgenden Zeile:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>//      <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Debian&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># Wird ersetzt durch:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;origin=Raspbian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Raspbian&#34;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#34;origin=Raspberry Pi Foundation,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Raspberry Pi Foundation&#34;</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># und die &#39;//&#39; werden vor den hinzugefügten sowie von folgenden Zeilen für Security-Updates entfernt:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">,label=Debian-Security&#34;</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#e6db74">&#34;origin=Debian,codename=</span><span style="color:#e6db74">${</span>distro_codename<span style="color:#e6db74">}</span><span style="color:#e6db74">-security,label=Debian-Security&#34;</span>;
+</span></span></code></pre></div><p>Once all changes have been made to the config file, you can save the changes using the following key combinations and exit the editor:</p>
+<p><strong>CTRL+O</strong>, confirm with <strong>Y</strong>, and exit the editor with <strong>CTRL+X</strong>.</p>
+<h5 id="enable-automatic-updates">Enable automatic updates</h5>
+<p>To activate the service and ensure that it runs daily, we need to check the ‘20auto-upgrades’ configuration file and enter the following instructions if it does not exist.</p>
+<h6 id="open-the-20auto-upgrades-configuration-file-in-the-editor">Open the ‘20auto-upgrades’ configuration file in the editor</h6>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo nano /etc/apt/apt.conf.d/20auto-upgrades
+</span></span></code></pre></div><p>Add the following entries</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>APT::Periodic::Update-Package-Lists “1”;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>APT::Periodic::Unattended-Upgrade “1”;
+</span></span></code></pre></div><p>Then save the changes with the above key combinations and exit the editor.</p>
+<h3 id="step-7-secure-the-raspberry-pi--disable-unnecessary-services">Step 7 Secure the Raspberry Pi | Disable unnecessary services</h3>
+<p>To achieve greater security on the system, services that are not required for operation should be disabled. Which services should be disabled here depends, of course, on the application you want to use the Raspberry Pi.</p>
+<p>In this example, we will disable the WiFi service.</p>
+<h4 id="display-active-services-on-the-raspberry-pi">Display active services on the Raspberry Pi</h4>
+<p>With the following command, you can display all active services on the Raspberry Pi OS and then look for services that are not required for the operation of your Raspberry Pi server.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>systemctl --type<span style="color:#f92672">=</span>service --state<span style="color:#f92672">=</span>active
+</span></span></code></pre></div><p>Example output of the command ‘systemctl &ndash;type=service &ndash;state=active’</p>
+<pre tabindex="0"><code class="language-init" data-lang="init"> UNIT                                                        LOAD   ACTIVE SUB     DESCRIPTION
+  alsa-restore.service                                        loaded active exited  Save/Restore Sound Card State
+  avahi-daemon.service                                        loaded active running Avahi mDNS/DNS-SD Stack
+  bluetooth.service                                           loaded active running Bluetooth service
+  bthelper@hci0.service                                       loaded active exited  Raspberry Pi bluetooth helper
+  console-setup.service                                       loaded active exited  Set console font and keymap
+  cron.service                                                loaded active running Regular background program processi&gt;
+  dbus.service                                                loaded active running D-Bus System Message Bus
+  dhcpcd.service                                              loaded active running DHCP Client Daemon
+  dphys-swapfile.service                                      loaded active exited  dphys-swapfile - set up, mount/unmo&gt;
+  fake-hwclock.service                                        loaded active exited  Restore / save the current clock
+  getty@tty1.service                                          loaded active running Getty on tty1
+  hciuart.service                                             loaded active running Configure Bluetooth Modems connecte&gt;
+  ifupdown-pre.service                                        loaded active exited  Helper to synchronize boot up for i&gt;
+  keyboard-setup.service                                      loaded active exited  Set the console keyboard layout
+  kmod-static-nodes.service                                   loaded active exited  Create list of static device nodes &gt;
+  ModemManager.service                                        loaded active running Modem Manager
+  networking.service                                          loaded active exited  Raise network interfaces
+  polkit.service                                              loaded active running Authorization Manager
+  raspi-config.service                                        loaded active exited  LSB: Switch to ondemand cpu governo&gt;
+  rc-local.service                                            loaded active exited  /etc/rc.local Compatibility
+  rng-tools-debian.service                                    loaded active running LSB: rng-tools (Debian variant)
+  rpi-eeprom-update.service                                   loaded active exited  Check for Raspberry Pi EEPROM updat&gt;
+  rsyslog.service                                             loaded active running System Logging Service
+  ssh.service                                                 loaded active running OpenBSD Secure Shell server
+  systemd-fsck-root.service                                   loaded active exited  File System Check on Root Device
+  systemd-fsck@dev-disk-byx2dpartuuid-4fc4c4a7x2d01.service loaded active exited  File System Check on /dev/disk/by-p&gt;
+  systemd-journal-flush.service                               loaded active exited  Flush Journal to Persistent Storage
+  systemd-journald.service                                    loaded active running Journal Service
+  systemd-logind.service                                      loaded active running User Login Management
+  systemd-modules-load.service                                loaded active exited  Load Kernel Modules
+  systemd-random-seed.service                                 loaded active exited  Load/Save Random Seed
+  systemd-remount-fs.service                                  loaded active exited  Remount Root and Kernel File Systems
+  systemd-sysctl.service                                      loaded active exited  Apply Kernel Variables
+  systemd-sysusers.service                                    loaded active exited  Create System Users
+  systemd-timesyncd.service                                   loaded active running Network Time Synchronization
+  systemd-tmpfiles-setup-dev.service                          loaded active exited  Create Static Device Nodes in /dev
+  systemd-tmpfiles-setup.service                              loaded active exited  Create Volatile Files and Directori&gt;
+  systemd-udev-trigger.service                                loaded active exited  Coldplug All udev Devices
+  systemd-udevd.service                                       loaded active running Rule-based Manager for Device Event&gt;
+  systemd-update-utmp.service                                 loaded active exited  Update UTMP about System Boot/Shutd&gt;
+  systemd-user-sessions.service                               loaded active exited  Permit User Sessions
+  triggerhappy.service                                        loaded active running triggerhappy global hotkey daemon
+  user-runtime-dir@1000.service                               loaded active exited  User Runtime Directory /run/user/10&gt;
+  user@1000.service                                           loaded active running User Manager for UID 1000
+  wpa_supplicant.service                                      loaded active running WPA supplicant
+
+LOAD   = Reflects whether the unit definition was properly loaded.
+ACTIVE = The high-level unit activation state, i.e. generalization of SUB.
+SUB    = The low-level unit activation state, values depend on unit type.
+45 loaded units listed.
+</code></pre><h4 id="disable-raspberry-pi-wifi-service">Disable Raspberry Pi WiFi service</h4>
+<p>To disable the WiFi service ‘wpa_supplicant’, enter the following command in the terminal window:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl disable --now wpa_supplicant.service
+</span></span></code></pre></div><h3 id="secure-raspberry-pi--allow-ssh-access-only-for-a-specific-user">Secure Raspberry Pi | Allow SSH access only for a specific user</h3>
+<p>We also have the option of restricting SSH access to one or more users. To do this, we edit the ‘sshd_config file’ to specify the user or users.</p>
+<h5 id="open-and-edit-the-sshd_config-file">Open and edit the ‘sshd_config file’</h5>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo nano /etc/ssh/sshd_config
+</span></span></code></pre></div><p>Now add the following entry to the editor:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>AllowUsers &lt;username you want to allow&gt;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># You can allow multiple users as follows:</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>AllowUsers user1 user2
+</span></span></code></pre></div><p>Then save the changes in the editor with CTRL+O and Y and close the editor with CTRL+X.</p>
+<h5 id="restart-the-ssh-service">Restart the SSH service</h5>
+<p>After changing the ‘sshd_config’ file, the SSH service must be restarted to apply the changes.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl restart ssh
+</span></span></code></pre></div><h3 id="secure-raspberry-pi--defend-against-brute-force-attacks-with-fail2ban">Secure Raspberry Pi | Defend against brute force attacks with Fail2Ban</h3>
+<p>Especially for devices connected to the Internet (web services, smart home, etc.) it is highly advisable to protect the device against brute force attacks.</p>
+<p>The ‘fail2ban’ application has proven very effective for this purpose. This application is ideal for monitoring login attempts and banning the accessing IP address after too many failed login attempts.</p>
+<p>In my example, we will monitor logins to the SSH server. Of course, you can also use fail2ban for other access points such as sftp, https, and many other services.</p>
+<h4 id="installing-fail2ban-on-a-raspberry-pi">Installing fail2ban on a Raspberry Pi</h4>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo apt install fail2ban -y
+</span></span></code></pre></div><p>To edit/create the configuration file ‘jail.local’ in the Nano editor, execute the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo nano /etc/fail2ban/jail.local
+</span></span></code></pre></div><p>To ban invalid login attempts via SSH connection, create the following entries in the editor window</p>
+<blockquote>
+<p><strong>Access Denied</strong></p>
+<h3 id="debian-12-und-fail2ban">Debian 12 und fail2ban**</h3>
+<p>Starting with Debian version 12, the log file <strong>/var/log/auth.log</strong> is no longer supported by the OS, as Debian 12 uses Journald for logging. Therefore, I have entered <strong>‘systemd’</strong> as the backend in <strong>jail.local</strong>.</p></blockquote>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#f92672">[</span>DEFAULT<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>bantime <span style="color:#f92672">=</span> <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>backend <span style="color:#f92672">=</span> systemd
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">[</span>sshd<span style="color:#f92672">]</span>
+</span></span><span style="display:flex;"><span>enabled   <span style="color:#f92672">=</span> true
+</span></span><span style="display:flex;"><span>filter    <span style="color:#f92672">=</span> sshd
+</span></span><span style="display:flex;"><span>banaction <span style="color:#f92672">=</span> ufw
+</span></span><span style="display:flex;"><span>backend   <span style="color:#f92672">=</span> systemd
+</span></span><span style="display:flex;"><span>maxretry  <span style="color:#f92672">=</span> <span style="color:#ae81ff">3</span>
+</span></span><span style="display:flex;"><span>findtime  <span style="color:#f92672">=</span> <span style="color:#ae81ff">600</span>
+</span></span><span style="display:flex;"><span>bantime   <span style="color:#f92672">=</span> <span style="color:#ae81ff">3600</span>
+</span></span><span style="display:flex;"><span>ignoreip  <span style="color:#f92672">=</span> 127.0.0.1/8
+</span></span></code></pre></div><p>Once the entries have been made, call up the save dialog as usual with CTRL+O, confirm with Y and exit the editor with CTRL-X.</p>
+<h4 id="activate-the-fail2ban-service-on-the-raspberry-pi">Activate the fail2ban service on the Raspberry Pi</h4>
+<p>Now that the configuration for banning IP addresses in the event of incorrect login via SSH connection is complete, fail2ban can be activated.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span><span style="color:#75715e"># Activate fail2ban</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>sudo systemctl enable --now fail2ban
+</span></span></code></pre></div><h4 id="restart-the-sshd-service">Restart the SSHD service</h4>
+<p>Finally, the SSHD service must also be restarted so that fail2ban can perform its task. To do this, enter the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>sudo systemctl restart sshd
+</span></span></code></pre></div><h2 id="securing-the-raspberry-pi--summary">Securing the Raspberry Pi | Summary</h2>
+<p>With all the previous configurations, we have set up the Raspberry Pi for secure operation and have a secure system that is updated daily thanks to the automatic updates.</p>
+<p>I hope this tutorial on ‘Securing Raspberry Pi’ has helped you a little with your plans to run a secure Raspberry Pi.</p>
+<p>If you notice any errors or have any additions to this guide, please feel free to leave me a comment.</p>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Share on:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fpihole-absichern-von-a-z%2f&title=Raspberry%20Pi%20absichern%20von%20A-Z%20%7c%202023" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+                 <a class="btn icon-button bg-whatsapp" href="https://api.whatsapp.com/send?text=Raspberry%20Pi%20absichern%20von%20A-Z%20%7c%202023 http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fpihole-absichern-von-a-z%2f" target="_blank">
+                  <i class="fab fa-whatsapp"></i>
+                </a>
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Raspberry%20Pi%20absichern%20von%20A-Z%20%7c%202023&body=http%3a%2f%2flocalhost%3a1313%2fen%2fposts%2fsecurity%2fpihole-absichern-von-a-z%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+  
+      
+      
+      <div class="col-md-12 next-article">
+        <a href="/en/posts/linux/proxmox-fail2ban/" title="“Secure Proxmox VE with fail2ban”" class="btn filled-button">
+          <div>Next <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">“Secure Proxmox VE with fail2ban”</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Table of Contents</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#securing-raspberry-pi--operating-raspberry-pi-securely">Securing Raspberry Pi – Operating Raspberry Pi securely</a></li>
+    <li><a href="#video-tutorial-on-securing-raspberry-pi">Video tutorial on securing Raspberry Pi</a></li>
+    <li><a href="#commands-used-in-this-video">Commands used in this video</a>
+      <ul>
+        <li><a href="#prerequisites">Prerequisites</a></li>
+        <li><a href="#step-1-secure-raspberry-pi--log-in-via-ssh-and-update-raspberry-pi-os">Step 1 Secure Raspberry Pi | Log in via SSH and update Raspberry Pi OS:</a></li>
+        <li><a href="#step-2-secure-raspberry-pi--change-root-user-password">Step 2 Secure Raspberry Pi | Change root user password</a></li>
+        <li><a href="#step-3-secure-raspberry-pi--change-default-user-pi">Step 3 Secure Raspberry Pi | Change default user Pi</a></li>
+        <li><a href="#step-4-secure-raspberry-pi--test-the-new-user-account">Step 4 Secure Raspberry Pi | Test the new user account</a></li>
+        <li><a href="#secure-ssh-access">Secure SSH access</a></li>
+        <li><a href="#step-5-secure-raspberry-pi--firewall-installation-and-configuration">Step 5 Secure Raspberry Pi | Firewall: Installation and configuration</a></li>
+        <li><a href="#securing-raspberry-pi--blog-posts-about-the-ufw-firewall">Securing Raspberry Pi | Blog posts about the UFW firewall:</a></li>
+        <li><a href="#securing-raspberry-pi--video-posts-on-my-youtube-channel">Securing Raspberry Pi | Video posts on my YouTube channel</a></li>
+        <li><a href="#step-6-secure-raspberry-pi--configure-automatic-installation-of-important-updates">Step 6 Secure Raspberry Pi – Configure automatic installation of important updates</a></li>
+        <li><a href="#step-7-secure-the-raspberry-pi--disable-unnecessary-services">Step 7 Secure the Raspberry Pi | Disable unnecessary services</a></li>
+        <li><a href="#secure-raspberry-pi--allow-ssh-access-only-for-a-specific-user">Secure Raspberry Pi | Allow SSH access only for a specific user</a></li>
+        <li><a href="#secure-raspberry-pi--defend-against-brute-force-attacks-with-fail2ban">Secure Raspberry Pi | Defend against brute force attacks with Fail2Ban</a></li>
+        <li><a href="#debian-12-und-fail2ban">Debian 12 und fail2ban**</a></li>
+      </ul>
+    </li>
+    <li><a href="#securing-the-raspberry-pi--summary">Securing the Raspberry Pi | Summary</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#about">About</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#accomplishments">Certifications</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#projects">Projekte</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/en/#recent-posts">Recent Posts</a>
+                </li>
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/privacy">Privacy</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Contact</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Contact me:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.47c108ce8f82c7a10c04786adbc3ba6f37a5e0522e6fb379c1b728368f45fe57.js" integrity="sha256-R8EIzo&#43;Cx6EMBHhq28O6bzel4FIub7N5wbcoNo9F/lc=" defer></script>
+
+
+    
+     
+
+    
+</body>
+</html>

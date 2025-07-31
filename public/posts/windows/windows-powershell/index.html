@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <title>Windows PowerShell installieren</title>
+    <meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+<link rel="stylesheet" href="/application.c7def075cdfcdceee4102d40e4b28906db4e9ecd2b16eb0ac0b842be0b2aa140.css" integrity="sha256-x97wdc383O7kEC1A5LKJBttOns0rFusKwLhCvgsqoUA=" />
+
+
+
+
+
+  
+
+  
+  
+  
+    
+  
+  
+
+  <link rel="icon" type="image/png" href="/images/favicon_hu_66814ce56ef195be.png" />
+
+
+
+
+
+
+
+
+
+
+<meta property="og:title" content="SecureBits Blog by Marcel Dellmann"/>
+<meta property="og:type" content="website"/>
+<meta property="og:description" content="Portfolio und Blog von Marcel Dellmann."/>
+<meta property="og:image" content="/images/author.jpg">
+<meta property="og:url" content="http://localhost:1313/">
+
+    
+<meta name="description" content="Windows Powershell installieren unter Windows, macOS und Linux" />
+
+
+
+    
+
+
+
+
+
+    <script integrity="sha256-DO4ugzEwhTW1Id1UIWn0gUJWaebCYOypeTit6LW4QB4=">
+     let theme = localStorage.getItem('theme-scheme') || localStorage.getItem('darkmode:color-scheme') || 'light'
+if (theme === 'system') {
+  if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    theme = 'dark'
+  } else {
+    theme = 'light'
+  }
+}
+document.documentElement.setAttribute('data-theme', theme)
+
+    </script>
+    
+  </head>
+
+  <body class="type-posts kind-page" data-bs-spy="scroll" data-bs-target="#TableOfContents" data-bs-offset="80">
+    <div class="container-fluid bg-secondary wrapper">
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+  
+  
+    
+  
+  
+
+
+
+  
+  
+    
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+
+
+
+
+  
+
+
+<nav class="navbar navbar-expand-xl top-navbar shadow " id="top-navbar">
+  <div class="container">
+    
+    <button class="navbar-toggler navbar-light" id="sidebar-toggler" type="button">
+      <i data-feather="sidebar"></i>
+    </button>
+    
+    <a class="navbar-brand" href="/">
+      
+        <img src="/images/logo_header_hu_55859a06528af13.png" id="logo" alt="Logo">
+      SecureBits Blog by Marcel Dellmann</a>
+    <button
+      class="navbar-toggler navbar-light"
+      id="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#top-nav-items"
+      aria-label="menu"
+    >
+      <i data-feather="menu"></i>
+    </button>
+
+    <div class="collapse navbar-collapse dynamic-navbar" id="top-nav-items">
+      <ul class="nav navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/#home">Home</a>
+        </li>
+        
+          
+          
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#about">Über mich</a>
+                </li>
+              
+            
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#projects">Projekte</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#featured-posts">Beliebt</a>
+                </li>
+              
+            
+            
+              
+              
+                <li class="nav-item">
+                  <a class="nav-link" href="/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+            
+            
+          
+        
+        
+          <div id="top-navbar-divider"></div>
+        
+        
+          <li class="nav-item">
+            <a class="nav-link" id="blog-link" href="/posts">Beiträge</a>
+          </li>
+        
+        
+        
+            
+        
+            
+        
+            
+              <li class="nav-item">
+                <a class="nav-link" href="mailto:ticket@secure-bits.org">Kontakt</a>
+              </li>
+            
+        
+        
+          
+
+  
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        
+            
+            <span class="fi fi-de"></span>
+        
+        Deutsch
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        
+        <a class="dropdown-item nav-link languages-item" href="/posts/windows/windows-powershell">
+            
+                
+                <span class="fi fi-de"></span>
+            
+            Deutsch
+        </a>
+        
+        <a class="dropdown-item nav-link languages-item" href="/en/posts/windows/windows-powershell">
+            
+                
+                <span class="fi fi-gb"></span>
+            
+            English
+        </a>
+        
+    </div>
+    </li>
+
+        
+        
+          
+
+
+
+  
+  
+
+
+<li class="nav-item dropdown">
+<a class="nav-link dropdown-toggle"  href="#" id="themeSelector" role="button"
+  data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+  <img id="navbar-theme-icon-svg" class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+</a>
+<div id="themeMenu" class="dropdown-menu dropdown-menu-icons-only" aria-labelledby="themeSelector">
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="light">
+    <img class="theme-icon" src="/icons/sun-svgrepo-com.svg" width=20 alt="Light Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="dark">
+    <img class="theme-icon" src="/icons/moon-svgrepo-com.svg" width=20 alt="Dark Theme">
+  </a>
+  
+  
+  <a class="dropdown-item nav-link" href="#" data-scheme="system">
+    <img class="theme-icon" src="/icons/computer-svgrepo-com.svg" width=20 alt="System Theme">
+  </a>
+  
+</div>
+</li>
+
+        
+      </ul>
+    </div>
+  </div>
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="main-logo" alt="Logo">
+  
+  
+    <img src="/images/logo_header_hu_55859a06528af13.png" class="d-none" id="inverted-logo" alt="Inverted Logo">
+  
+  
+</nav>
+
+
+
+      
+      
+  <section class="sidebar-section" id="sidebar-section">
+    <div class="sidebar-holder">
+      <div class="sidebar" id="sidebar">
+        <form class="mx-auto" method="get" action="/search">
+          <input type="text" name="keyword" value="" placeholder="Suchen" data-search="" id="search-box" />
+        </form>
+        <div class="sidebar-tree">
+          <ul class="tree" id="tree">
+            <li id="list-heading"><a href="/posts/" data-filter="all">Beiträge</a></li>
+            <div class="subtree">
+                
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/info/"> Informationen</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/info/informationen/" title="Informationen zu diesem Blog und YouTube-Kanal">Informationen zu diesem Blog und YouTube-Kanal</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/linux/"> Linux</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/proxmox-fail2ban/" title="Proxmox und fail2ban">Proxmox und fail2ban</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-linux-ip-befehl_-umfassende-anleitung-/" title="Der Linux IP-Konfigurations-Befehl &#39;ip&#39;">Der Linux IP-Konfigurations-Befehl &#39;ip&#39;</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/der-traceroute-befehl-unter-linux/" title="Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen">Der traceroute-Befehl unter Linux mit Umfassende Anleitung mit Beispielen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/linux/linux-ssh-absichern/" title="Linux SSH-Zugang absichern">Linux SSH-Zugang absichern</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/security/"> IT-Security</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle/" title="Man in the Middle-Attacken richtig verstehen">Man in the Middle-Attacken richtig verstehen</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/nmap-network-mapper-umfassender-leitfaden/" title="Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager">Nmap (Network Mapper) - Umfassender Leitfaden für IT-Sicherheitsmanager</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/man-in-the-middle-schutz/" title="Schutz vor Man in the Middle-Attacken">Schutz vor Man in the Middle-Attacken</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-debian-basierend/" title="UFW Firewall konfigurieren am Beispiel eines Raspberry Pi">UFW Firewall konfigurieren am Beispiel eines Raspberry Pi</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-application-profiles/" title="UFW-Firewall Application Profiles">UFW-Firewall Application Profiles</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-basics/" title="UFW-Firewall Basics">UFW-Firewall Basics</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/ufw-firewall-mehrere-ports/" title="UFW-Firewall Portbereiche und Dienste">UFW-Firewall Portbereiche und Dienste</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-ein-proxy-server/" title="Was ist ein Proxy-Server und wofür wird dieser verwendet?">Was ist ein Proxy-Server und wofür wird dieser verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/mac-adresse/" title="Was ist eine MAC-Adresse und wofür wird diese verwendet?">Was ist eine MAC-Adresse und wofür wird diese verwendet?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-eine-unified-threat-management-firewall/" title="Was ist eine UTM-Firewall?">Was ist eine UTM-Firewall?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/was-ist-sniffing/" title="Was ist Netzwek-Sniffing?">Was ist Netzwek-Sniffing?</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/security/wie-funktioniert-eine-firewall/" title="Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?">Wie funktionieren Firewalls und welche verschiedenen Arten gibt es?</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/"> Privacy</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/adguard/"> AdGuard</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-dns-over-quic/" title="AdGuard DNS-Verschluesslung mit DNS over QUIC">AdGuard DNS-Verschluesslung mit DNS over QUIC</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-manuell-aktualisieren/" title="AdGuard Home manuell aktualisieren">AdGuard Home manuell aktualisieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/" title="AdGuardHome auf einen Raspberry Pi installieren">AdGuardHome auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/adguard-home-konfigurieren/" title="AdGuardHome-Setup – Basis-Konfiguration">AdGuardHome-Setup – Basis-Konfiguration</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/adguard/fritzbox-und-adguard-dns-einrichten/" title="Fritxbox zusammen mit AdGuard Home konfigurieren">Fritxbox zusammen mit AdGuard Home konfigurieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/privacy/pihole/"> Pi-hole</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-basis-konfiguration/" title="Pi-hole konfigurieren">Pi-hole konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-mit-der-aktuellsten-php-version/" title="Pi-hole mit der aktuellsten PHP-Version installieren">Pi-hole mit der aktuellsten PHP-Version installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-vpn/" title="Pi-hole mit WireGuard und piVPN">Pi-hole mit WireGuard und piVPN</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-unbound/" title="Pi-hole und unbound installieren">Pi-hole und unbound installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-fritzbox-konfigurieren/" title="Pi-hole-/-Fritzbox-konfigurieren">Pi-hole-/-Fritzbox-konfigurieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pi-hole-backup-mit-teleporter/" title="Pi-hole-Backup mit Teleporter">Pi-hole-Backup mit Teleporter</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/" title="Pihole auf einen Raspberry Pi installieren">Pihole auf einen Raspberry Pi installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/privacy/pihole/pihole-installation-debian/" title="Pihole Installation  unter debian-basierende Betriebssysteme">Pihole Installation  unter debian-basierende Betriebssysteme</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li>
+      <i data-feather="minus-circle"></i><a class="active list-link" href="/posts/windows/"> Windows</a>
+      
+      <ul class="active">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/cmd-befehle-im-ueberblick/" title="CMD-Befehle Übersicht für Windows">CMD-Befehle Übersicht für Windows</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/ipconfig-befehl/" title="Der ipconfig-Befehl in der Übersicht">Der ipconfig-Befehl in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/netstat/" title="Netstat unter Windows in der Übersicht">Netstat unter Windows in der Übersicht</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-passwort-aendern/" title="Windows Passwort einfach über das Terminal ändern">Windows Passwort einfach über das Terminal ändern</a></li>
+  
+
+  
+  
+  
+  
+    
+    
+  
+  
+    
+    <li><a class="active list-link" href="/posts/windows/windows-powershell/" title="Windows Powershell unter Linux und Windows installieren">Windows Powershell unter Linux und Windows installieren</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren">Windows Product Key aktivieren</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li>
+      <i data-feather="plus-circle"></i><a class=" list-link" href="/posts/fritzbox/"> Fritzbox</a>
+      
+      <ul class="">
+        
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-dns-server-aendern/" title="Fritzbox den öffentlichen DNS-Server / Resolver ändern">Fritzbox den öffentlichen DNS-Server / Resolver ändern</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-portfreigabe/" title="Fritzbox Portfreigabe einrichten">Fritzbox Portfreigabe einrichten</a></li>
+  
+
+  
+  
+  
+  
+  
+    
+    <li><a class=" list-link" href="/posts/fritzbox/fritzbox-adguard-dns/" title="Fritzbox und AdGuard DNS">Fritzbox und AdGuard DNS</a></li>
+  
+
+
+      </ul>
+    </li>
+  
+
+
+            </div>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+      
+      
+<section class="content-section" id="content-section">
+  <div class="content">
+    <div class="container p-0 read-area">
+      
+      <div class="hero-area col-sm-12" id="hero-area" style='background-image: url(/images/posts/windows/Windows-PowerShell-Batch.jpg);'>
+      </div>
+
+      
+      <div class="page-content">
+        
+        <div class="author-profile ms-auto align-self-lg-center">
+          <img class="rounded-circle" src='/images/author_hu_70de09e990a306d7.jpg' alt="Author Image">
+          <h5 class="author-name">Marcel Dellmann</h5>
+          <p class="text-muted">Donnerstag, 7. November 2019 | 10 Minuten</p>
+        </div>
+        
+
+        <div class="title">
+          <h1>Windows PowerShell installieren</h1>
+        </div>
+
+        
+
+        
+          <div class="tags">
+  <ul style="padding-left: 0;">
+    
+    
+    <li class="rounded"><a href="/tags/tutorials/" class="btn btn-sm btn-info">tutorials</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/windows/" class="btn btn-sm btn-info">windows</a></li>
+    
+    
+    <li class="rounded"><a href="/tags/powershell/" class="btn btn-sm btn-info">powershell</a></li>
+    
+  </ul>
+</div>
+
+        
+        <div class="post-content" id="post-content">
+          <p>In diesem Artikel möchte ich euch das neue (so neu ist es nun auch nicht) Kommandozeilen-Tool Windows PowerShell ein bisschen näherbringen und euch die Unterschiede zur klassischen Kommandozeile CMD aufzeigen. Warum zur Administration die PowerShell das Tool eurer Wahl sein sollte, erfahrt ihr in diesem Beitrag. </p>
+<p>Was es mit dem klassischen Kommandozeilen-Interpreter CMD auf sich hat, dass erfahrt ihr in diesem Artikel: <a href="https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/" target="_blank" rel="noopener"><strong>CMD-Befehle im Überblick</strong></a></p>
+<h2 id="windows-powershell-installieren---ein-mächtiges-tool">Windows PowerShell installieren - Ein mächtiges Tool</h2>
+<p>Die <strong>Windows PowerShell</strong> ist ein Framework, welches für Administratoren und Power-User ein unerlässliches Tool zur Automatisierung und Verwaltung von plattformübergreifenden Systemen darstellt. Dieses Framework besteht aus einem Kommandozeileninterpreter sowie einer Scriptsprache.</p>
+<p>Diese Windows-Befehlszeilenshell setzt auf der .NET Framework Common Language Runtime (CLR) und auf .NET Framework auf und nutzt das Konzept eines Cmdlets („Command-let“ ausgesprochen).</p>
+<p>Diese einzelnen Cmdlets (zum Beispiel für Azure-Dienste und Office 365) können miteinander kombiniert werden und sind hierdurch sehr leistungsfähig, um komplexe Aufgaben auszuführen zu können.</p>
+<h3 id="windows-powershell-versionen">Windows PowerShell Versionen</h3>
+<p>Windows PowerShell gibt es in zwei verschiedenen Versionen. Die erste Version PowerShell „Legacy“ basiert auf dem aktuellen .Net-Framework und ist aktuell in der Build-Version 5.1 mit vollem Befehlssatz erhältlich.</p>
+<p>Die zweite Version wird als PowerShell „Core“ bezeichnet und ist plattformunabhängig und basiert auf .Net-Core und hat aber einen eingeschränkten Befehlssatz. Hier ist die aktuelle Build-Version 6.1 (zum Zeitpunkt von diesem Beitrag) erhältlich.</p>
+<h3 id="unterschied-windows-powershell-und-cmd">Unterschied Windows PowerShell und CMD</h3>
+<p>Der Unterschied, der gleich auffällt, wenn die beiden Eingabeaufforderungen gestartet werden, ist die unterschiedliche Farbe im Hintergrund. Hier hat die PowerShell-Eingabeaufforderung einen blauen Hintergrund und die gute alte CMD-Kommandozeile einen schwarzen Hintergrund. So weiß man gleich bei der Nutzung beider, in welcher Kommandozeile man sich aktuell befindet. </p>
+<p><img src="/images/posts/windows/CMD-Batch.jpg" alt="CMD-Batch"></p>
+<p>CMD-Batch</p>
+<p><img src="/images/posts/windows/Windows-PowerShell-Batch.jpg" alt="Windows-PowerShell-"></p>
+<p>Windows-PowerShell-Batch</p>
+<h3 id="warum-eine-neue-kommandozeile">Warum eine neue Kommandozeile?</h3>
+<p>Die PowerShell wird in Zukunft die Kommandozeile CMD ersetzen da diese auch über einen größeren Funktionsumfang verfügt beziehungsweise um diesen erweitert werden kann (Cmdlets). </p>
+<p>Die PowerShell ist generell zur Administration von Systemen unerlässlich, da gewisse Einstellungen generell nur über die Nutzung der Shell zu realisieren sind. So zum Beispiel bei der Administration von größeren Office 365 Bereitstellungen (Anlegen von Nutzern über CSV, etc.). </p>
+<p>Anders wie die meisten Befehlszeilen Shells, die Text akzeptieren und zurückgeben, akzeptiert die Windows PowerShell .NET-Framework-Objekte und setzt hier auf das .NET-Framework Common Language Runtime (CLR) sowie auf das .NET-Framework auf. Diese Änderung hat zufolge, dass für diesen Einsatz ein neues Befehlszeilentool nötig wurde und so entstand dann die Windows PowerShell. </p>
+<p>Durch die Kombination der Cmdlets hat diese Shell einen sehr mächtigen Funktionsumfang und kann durch die Nutzung der Windows PowerShell-Version Core auch systemübergreifend genutzt werden, um zum Beispiel auch Linux zu bedienen. </p>
+<h2 id="cmd-befehle-in-der-übersicht">CMD-Befehle in der Übersicht</h2>
+<p>In diesem Beitrag beschäftige ich mich mit dem Kommandozeilen-Tool &ldquo;CMD&rdquo; und stelle hier eine Übersicht der meistgenutzten und wichtigsten Befehle für die Konsole zur Verfügung. Natürlich auch als PDF-Download für euch zum herunterladen.<br>
+Einfach mal reinschauen&hellip;</p>
+<p><a href="/posts/windows/cmd-befehle-im-ueberblick/">Beitrag lesen</a></p>
+<hr>
+<h2 id="installieren-der-windows-powershell">Installieren der Windows PowerShell</h2>
+<p>Auf den meisten Betriebssystemen unter Windows (ab Windows 7 SP1 und Windows Server 2008 R2 SP1) ist eine Version der Windows PowerShell schon vorhanden, diese wird auch per Windows-Update aktualisiert oder es kann manuell ein Update per Kommandozeile angestoßen werden (wie das funktioniert, findest du weiter unten in diesem Beitrag).</p>
+<h3 id="aufrufen-der-windows-powershell">Aufrufen der Windows PowerShell</h3>
+<p>Das Aufrufen der PowerShell ist in allen Versionen der Windows-Desktop-Variante einfach. Hier müsst ihr nur auf das Windows-Logo oder Lupen-Symbol auf eurem Desktop klicken und im Suchfeld “PowerShell” eingeben.</p>
+<p>Um den Windows-Script-Editor “PowerShell ISE&quot; aufrufen zu können, müsst ihr ebenfalls auf das Windows-Logo oder Lupen-Symbol klicken und im Suchfeld “ISE” eingeben. </p>
+<h3 id="aufrufen-der-windows-powershell-unter-windows-server-und-windows-server-core">Aufrufen der Windows PowerShell unter Windows Server und Windows Server Core</h3>
+<p>In der Server-Core Variante gibt ihr einfach nach der Anmeldung am Server in das Eingabefenster “powershell” ein und bestätigt mit der Taste Eingabe / Return / Enter. Um das Konsolenfenster zu schließen, gibt ihr “exit” ein. </p>
+<h2 id="installation-windows-powershell-core-unter-windows">Installation Windows PowerShell Core unter Windows</h2>
+<p>Wichtig!  <br>
+Windows PowerShell installieren - Folgende Vorrausetzungen müssen vor der Installation erfüllt sein. <br>
+Auf allen Systemen vor Windows 10 muss die Universal C-Runtime installiert sein. Diese kann über das Update oder direkt per Download installiert werden. <br>
+Bei Systemen wie Windows 7 und Windows Server 2008 R2 (welches hoffentlich nicht mehr genutzt wird, da Supportende), installiert ihr Windows Management Framework (WMF) 4.0 oder höher. <br>
+Eine Übersicht der WMF findet ihr hier: <a href="https://docs.microsoft.com/de-de/powershell/wmf/overview" target="_blank" rel="noopener">WMF-Übersicht</a></p>
+<h3 id="installation-via-msi-paket">Installation via MSI-Paket</h3>
+<p>Die folgende Installation funktioniert für Client-Systeme ab Windows 7 SP1 und Windows Server 2008 R2 SP1. </p>
+<p>Das aktuelle PowerShell-MSI-Paket könnt ihr unter <a href="https://github.com/PowerShell/PowerShell/releases" target="_blank" rel="noopener"><strong>GitHub hier</strong></a> herunterladen. Wenn ihr die Seite aufgerufen habt, dann wählt ihr den Abschnitt “Assets” aus und ladet euch das MSI-Paket herunter. Die MSI-Datei erkennt ihr unter der folgenden Bezeichnung: </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>PowerShell-&lt;version&gt;-win-&lt;os-arch&gt;.msi 
+</span></span></code></pre></div><p>Die Installation von diesem Paket könnt ihr nach dem Download mit einem Doppelklick starten. </p>
+<p>Die PowerShell könnt ihr dann wie weiter oben beschrieben starten. </p>
+<h3 id="windows-powershell-installieren-über-die-befehlszeile">Windows PowerShell installieren über die Befehlszeile</h3>
+<p>Natürlich könnt ihr die Installation auch per Befehlszeile vornehmen. So könnt ihr die Installation ohne Benutzerinteraktion vornehmen. Die Befehlszeile, die ihr für eine mit allen aktivierten Installationsoptionen nutzen müsst, ist die folgende: </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>msiexec.exe /package PowerShell-&lt;version&gt;-win-&lt;os-arch&gt;.msi /quiet ADD_EXPLORER_CONTEXT_MENU_OPENPOWERSHELL=<span style="color:#0086f7;font-weight:bold">1</span> ENABLE_PSREMOTING=<span style="color:#0086f7;font-weight:bold">1</span> REGISTER_MANIFEST=<span style="color:#0086f7;font-weight:bold">1</span> 
+</span></span></code></pre></div><p>Eine vollständige Liste der Befehlszeilenoptionen für „Msiexec.exe“ finden ihr unter <a href="https://docs.microsoft.com/de-de/windows/desktop/Msi/command-line-options" target="_blank" rel="noopener"><strong>Befehlszeilenoptionen</strong></a>. </p>
+<h2 id="installieren-von-windows-powershell-core-unter-linux">Installieren von Windows PowerShell Core unter Linux</h2>
+<p>Wie Anfangs schon erwähnt, kann die PowerShell C## Video-Tutorial zu PowerShell auf Udemy</p>
+<p>Ich kann euch wärmstens den Kurs von Tom Wechsler auf der Udemy-Plattform empfehlen. Das soll jetzt keine Werbung für Affiliate-Links sein, aber die Kurse von ihm sind echt super.<br>
+Tipp! Öfter mal dort reinschauen, da es bei Udemy oft Rabatt-Aktionen gibt und ihr euch so einen Kurs für ein paar Euro schnappen könnt.</p>
+<p><a href="https://secure-bits.org/ssgo" target="_blank" rel="noopener">Zum Video-Tutorial</a>ore-Version mit eingeschränkten Funktionsumfang auch unter Linux genutzt werden. Daher darf hier eine Installationsanleitung natürlich nicht fehlen.  </p>
+<p>In diesem Beispiel werde ich euch zeigen, wie ihr die Core-Version unter den drei folgenden Linux-Systemen installieren könnt: </p>
+<p><strong>Ubuntu 18.04 oder neuer, Debain 9 oder neuer und Kali Linux</strong> </p>
+<p>Info:<br>
+Es werden auch noch eine Menge anderer Distributionen unterstützt, aber hier jede einzelne Installationsanweisung aufzuführen, wäre zu viel des Guten. <br>
+Ihr findet Hilfe zu den anderen Plattformen hier auf <a href="https://docs.microsoft.com/de-de/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6" target="_blank" rel="noopener">dieser Seite von Microsoft.</a> </p>
+<h3 id="windows-powershell-installieren---installation-unter-ubuntu-1804-oder-höher">Windows PowerShell installieren - Installation unter Ubuntu 18.04 oder höher</h3>
+<p>Die Installation der PowerShell Core-Applikation erfolgt via Paketrepositorys und ist auch die bevorzugte Methode. Hierzu öffnet ihr als SuperUser ein Terminal-Instanz und dann läuft die Installation wie folgt ab: </p>
+<p>Den Anfang machen der Download und die Installation der Microsoft GPG-Keys </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Download the Microsoft repository GPG keys </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>wget -q https://packages.microsoft.com/config/ubuntu/18.04/packages-microsoft-prod.deb 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Register the Microsoft repository GPG keys </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>sudo dpkg -i packages-microsoft-prod.deb 
+</span></span></code></pre></div><p>Nun folgt die eigentliche Installation&hellip; </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Update the list of products </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>sudo apt-get update 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Enable the &#34;universe&#34; repositories </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>sudo add-apt-repository universe 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Install PowerShell </span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>sudo apt-get install -y powershell 
+</span></span></code></pre></div><p>Nachdem du das Paket installiert hast, führe bitte “pwsh” über das Terminal aus. </p>
+<h3 id="deinstallation-unter-ubuntu-1804-oder-höher">Deinstallation unter Ubuntu 18.04 oder höher</h3>
+<p>Zur Deinstallation der PowerShell Core unter Ubuntu 18.04 gibt ihr die folgende Anweisung in das Terminal-Fenster ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt-get remove powershell
+</span></span></code></pre></div><h3 id="installation-unter-debian-10-oder-höher">Installation unter Debian 10 oder höher</h3>
+<p>Genau wie unter Ubuntu öffnet ihr als Superuser eine Terminal-Instanz und führt die Installation durch die Eingabe der folgenden Anweisungen aus:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Install system components</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>sudo apt-get update
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>sudo apt-get install -y curl gnupg apt-transport-https
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Import the public repository GPG keys</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Register the Microsoft Product feed## Video-Tutorial zu PowerShell auf Udemy</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>Ich kann euch wärmstens den Kurs von Tom Wechsler auf der Udemy-Plattform empfehlen. Das soll jetzt keine Werbung für Affiliate-Links sein, aber die Kurse von ihm sind echt super.  
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>Tipp! Öfter mal dort reinschauen, da es bei Udemy oft Rabatt-Aktionen gibt und ihr euch so einen Kurs für ein paar Euro schnappen könnt.
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>[Zum Video-Tutorial](https://secure-bits.org/ssgo)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>sudo sh -c <span style="color:#0086d2">&#39;echo &#34;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main&#34; &gt; /etc/apt/sources.list.d/microsoft.list&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Update the list of products</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>sudo apt-get update
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Install PowerShell</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>sudo apt-get install -y powershell
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Start PowerShell</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>pwsh
+</span></span></code></pre></div><p>Nach Abschluss der Installation führt ihr die PowerShell durch die Eingabe des Befehls &ldquo;pwsh&rdquo; aus.</p>
+<h3 id="deinstallation-unter-debian-10-oder-höher">Deinstallation unter Debian 10 oder höher</h3>
+<p>Zur Deinstallation der PowerShell Core unter Debian 9 gibt ihr die folgende Anweisung in das Terminal-Fenster ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>sudo apt-get remove powershell
+</span></span></code></pre></div><h3 id="installation-unter-kali-linux">Installation unter Kali Linux</h3>
+<p>Zu guter letzt noch die Installation unter Kali Linux.</p>
+<p>Ihr startet wieder eine Terminal-Instanz als SuperUser und gibt die folgenden Anweisungen ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Download &amp; Install prerequisites</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>wget http://ftp.us.debian.org/debian/pool/main/i/icu/libicu57_57.1-6+deb9u2_amd64.deb
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>dpkg -i libicu57_57.1-6+deb9u2_amd64.deb
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>apt-get update &amp;&amp; apt-get install -y curl gnupg apt-transport-https
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Add Microsoft public repository key to APT</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Add Microsoft package repository to the source list</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>echo <span style="color:#0086d2">&#34;deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main&#34;</span> | tee /etc/apt/sources.list.d/powershell.list
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Install PowerShell package</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>apt-get update &amp;&amp; apt-get install -y powershell
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Start PowerShell</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>pwsh
+</span></span></code></pre></div><h3 id="deinstallation-unter-kali">Deinstallation unter Kali</h3>
+<p>Zur Deinstallation der PowerShell Core unter Kali Linux gibt ihr die folgende Anweisung in das Terminal-Fenster ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#080;background-color:#0f140f;font-style:italic"># Uninstall PowerShell package</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>apt-get remove -y powershell
+</span></span></code></pre></div><h2 id="windows-powershell-installieren---installation-powershell-core-unter-macos">Windows PowerShell installieren - Installation PowerShell Core unter macOS</h2>
+<p>Die Installation der Core-Version unter macOS ist natürlich auch möglich, aber bedarf ein wenig Vorbereitung und ist erst ab der macOS-Version 10.12 möglich. </p>
+<h3 id="vorbereitung-zur-installation-der-core-version-unter-macos">Vorbereitung zur Installation der Core-Version unter macOS</h3>
+<p>Um die Installation unter macOS vornehmen zu können, ist es notwendig, vorab den Packet-Manager Homebrew auf dem System zu installieren, wenn dieser nicht auf eurem System installiert ist. Um herauszufinden ob sich der Paket-Manager auf eurem System befindet, könnt ihr dieses ganz einfach durch die Eingabe des Befehls “brew” in eurem Terminal-Fenster erledigen. Wird dieser Befehl nicht gefunden, so müsst ihr zuerst diesen Paket-Manager installieren. </p>
+<h4 id="paket-manager-homebrew-installieren-optional-wenn-nicht-vorhanden">Paket-Manager Homebrew installieren (optional, wenn nicht vorhanden)</h4>
+<p>Die Installation von Homebrew ist recht simpel. Ihr müsst nur die folgende Anweisung in euer Terminal-Fenster eingeben und dann den Anweisungen folgen.</p>
+<p>Nähere Informationen findet ihr auf der <a href="https://brew.sh/index_de" target="_blank" rel="noopener"><strong>Seite von Homebrew</strong></a>. </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>/usr/bin/ruby -e <span style="color:#0086d2">&#34;</span><span style="color:#fb660a;font-weight:bold">$(</span>curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install<span style="color:#fb660a;font-weight:bold">)</span><span style="color:#0086d2">&#34;</span>
+</span></span></code></pre></div><h3 id="nun-kann-die-installation-auf-macos-beginnen">Nun kann die Installation auf macOS beginnen</h3>
+<p>Nach der erfolgreichen Installation von Homebrew auf euren Mac, können wir nun mit der Installation von Windows PowerShell Core beginnen. Hierfür gibt ihr in euer Terminal-Fenster die folgenden Anweisungen ein: </p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew cask install powershell
+</span></span></code></pre></div><p>Ist die Installation durchgelaufen, solltet ihr jetzt die Installation auf Funktion testen. Daher startet die Windows PowerShell Core Installation durch den Befehl &ldquo;pwsh&rdquo;.</p>
+<p>Wollt ihr auf eine neuere Version umsteigen, dann könnt ihr das durch Eingabe der folgenden Anweisung durchführen:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew update
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>brew cask upgrade powershell
+</span></span></code></pre></div><h3 id="abhängigkeiten-für-die-powershell-installation-installieren">Abhängigkeiten für die PowerShell Installation installieren</h3>
+<p>Zum Abschluss müssen noch alle Abhängigkeiten die für die PowerShell-Installation notwendig sind, aktualisiert werden.</p>
+<h4 id="xcode-befehslzeilentools">XCode-Befehslzeilentools</h4>
+<p>Zuerst beginnen wir damit, dass wir die XCode-Befehslzeilentools auf euer System installieren.</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>xcode-select --install
+</span></span></code></pre></div><h4 id="openssl-installieren">OpenSSL installieren</h4>
+<p>Danach kommt die Installation von OpenSSL dran. Das machen wir wieder über Brew</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew install openssl
+</span></span></code></pre></div><p>Damit sind wir mit der Installation unter macOS durch und haben auch alle Abhängigkeiten hergestellt.</p>
+<p>Möchtet ihr die PowerShell Core Installation wieder deinstallieren, dann geht wie folgt vor.</p>
+<h3 id="deinstallation-powershell-core-unter-macos">Deinstallation PowerShell Core unter macOS</h3>
+<p>Zur Deinstallation gibt ihr die folgende Anweisung in Brew ein:</p>
+<div class="highlight"><pre tabindex="0" style="color:#fff;background-color:#111;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>brew cask uninstall powershell
+</span></span></code></pre></div><p>Damit ist PowerShell Core von eurem System verschwunden. Mit dem Befehl &ldquo;sudo rm&rdquo; könnt ihr dann noch die Pfade deinstallieren.</p>
+<p>Die Pfade findet ihr beziehungsweise sind hier:</p>
+<ul>
+<li><code>$PSHOME</code> ist <code>/usr/local/microsoft/powershell/6.2.0/</code>.</li>
+<li>Benutzerprofile werden über <code>~/.config/powershell/profile.ps1</code> gelesen.</li>
+<li>Standardprofile werden über <code>$PSHOME/profile.ps1</code> gelesen.</li>
+<li>Benutzermodule werden über <code>~/.local/share/powershell/Modules</code> gelesen.</li>
+<li>Freigegebene Module werden über <code>/usr/local/share/powershell/Modules</code> gelesen.</li>
+<li>Standardmodule werden über <code>$PSHOME/Modules</code> gelesen.</li>
+<li>Der Verlauf von „PSReadline“ wird in <code>~/.local/share/powershell/PSReadLine/ConsoleHost_history.txt</code> aufgezeichnet.</li>
+</ul>
+<p> ## Resümee</p>
+<p>Hoffe der Beitrag kann euch bei eurem Vorhaben gut unterstützen!</p>
+<p>Natürlich werde ich das Thema in weiteren Artikeln noch vertiefen und werde dann auf die Bedienung, Funktionen und verfügbare Befehle weiter eingehen. Sebstverständlich werden wir uns auch den Script-Editor ansehen und wie das Arbeiten damit funktioniert.</p>
+<blockquote>
+<h2 id="fragen-und-antworten">Fragen und Antworten</h2>
+<p>Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.</p>
+<p><a href="https://ticket.secure-bits.org/help" target="_blank" rel="noopener"><strong>Zur Hilfeseite</strong></a></p></blockquote>
+
+        </div>
+
+        
+        <div class="row ps-3 pe-3">
+        
+          <div class="col-md-6 share-buttons">
+          
+            <strong>Teilen auf:</strong>
+            
+            
+            
+            
+            
+            
+                <a class="btn icon-button bg-linkedin" href="https://www.linkedin.com/shareArticle?url=http%3a%2f%2flocalhost%3a1313%2fposts%2fwindows%2fwindows-powershell%2f&title=Windows%20PowerShell%20installieren" target="_blank">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+            
+            
+             
+            
+            
+                <a class="btn icon-button" href="mailto:?subject=Windows%20PowerShell%20installieren&body=http%3a%2f%2flocalhost%3a1313%2fposts%2fwindows%2fwindows-powershell%2f" target="_blank">
+                  <i class="fas fa-envelope-open-text"></i>
+                </a>
+            
+          
+          </div>
+
+        
+        
+        </div>
+
+
+
+      
+      <hr />
+        
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+    
+    
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+  
+  
+
+
+<div class="row next-prev-navigator">
+  
+    <div class="col-md-6 previous-article">
+      <a href="/posts/windows/windows-passwort-aendern/" title="Jetzt einfach Windows Passwort ändern" class="btn filled-button">
+        <div><i class="fas fa-chevron-circle-left"></i> Zurück</div>
+        <div class="next-prev-text">Jetzt einfach Windows Passwort ändern</div>
+      </a>
+    </div>
+  
+  
+      
+      
+        
+      
+      <div class="col-md-6 next-article">
+        <a href="/posts/windows/windows-product-key-aktivieren/" title="Windows Product Key aktivieren" class="btn filled-button">
+          <div>Vor <i class="fas fa-chevron-circle-right"></i></div>
+          <div class="next-prev-text">Windows Product Key aktivieren</div>
+        </a>
+      </div>
+    
+</div>
+
+      <hr />
+
+      
+      
+
+      
+      
+
+      </div>
+    </div>
+  </div>
+  
+  <a id="scroll-to-top" class="btn" type="button" data-bs-toggle="tooltip" data-bs-placement="left" title="Scroll to top">
+    <i class="fas fa-chevron-circle-up"></i>
+  </a>
+</section>
+
+
+      
+      
+  <section class="toc-section" id="toc-section">
+    
+    <div class="toc-holder">
+      <h5 class="text-center ps-3">Inhaltsverzeichnis</h5>
+      <hr>
+      <div class="toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li><a href="#windows-powershell-installieren---ein-mächtiges-tool">Windows PowerShell installieren - Ein mächtiges Tool</a>
+      <ul>
+        <li><a href="#windows-powershell-versionen">Windows PowerShell Versionen</a></li>
+        <li><a href="#unterschied-windows-powershell-und-cmd">Unterschied Windows PowerShell und CMD</a></li>
+        <li><a href="#warum-eine-neue-kommandozeile">Warum eine neue Kommandozeile?</a></li>
+      </ul>
+    </li>
+    <li><a href="#cmd-befehle-in-der-übersicht">CMD-Befehle in der Übersicht</a></li>
+    <li><a href="#installieren-der-windows-powershell">Installieren der Windows PowerShell</a>
+      <ul>
+        <li><a href="#aufrufen-der-windows-powershell">Aufrufen der Windows PowerShell</a></li>
+        <li><a href="#aufrufen-der-windows-powershell-unter-windows-server-und-windows-server-core">Aufrufen der Windows PowerShell unter Windows Server und Windows Server Core</a></li>
+      </ul>
+    </li>
+    <li><a href="#installation-windows-powershell-core-unter-windows">Installation Windows PowerShell Core unter Windows</a>
+      <ul>
+        <li><a href="#installation-via-msi-paket">Installation via MSI-Paket</a></li>
+        <li><a href="#windows-powershell-installieren-über-die-befehlszeile">Windows PowerShell installieren über die Befehlszeile</a></li>
+      </ul>
+    </li>
+    <li><a href="#installieren-von-windows-powershell-core-unter-linux">Installieren von Windows PowerShell Core unter Linux</a>
+      <ul>
+        <li><a href="#windows-powershell-installieren---installation-unter-ubuntu-1804-oder-höher">Windows PowerShell installieren - Installation unter Ubuntu 18.04 oder höher</a></li>
+        <li><a href="#deinstallation-unter-ubuntu-1804-oder-höher">Deinstallation unter Ubuntu 18.04 oder höher</a></li>
+        <li><a href="#installation-unter-debian-10-oder-höher">Installation unter Debian 10 oder höher</a></li>
+        <li><a href="#deinstallation-unter-debian-10-oder-höher">Deinstallation unter Debian 10 oder höher</a></li>
+        <li><a href="#installation-unter-kali-linux">Installation unter Kali Linux</a></li>
+        <li><a href="#deinstallation-unter-kali">Deinstallation unter Kali</a></li>
+      </ul>
+    </li>
+    <li><a href="#windows-powershell-installieren---installation-powershell-core-unter-macos">Windows PowerShell installieren - Installation PowerShell Core unter macOS</a>
+      <ul>
+        <li><a href="#vorbereitung-zur-installation-der-core-version-unter-macos">Vorbereitung zur Installation der Core-Version unter macOS</a></li>
+        <li><a href="#nun-kann-die-installation-auf-macos-beginnen">Nun kann die Installation auf macOS beginnen</a></li>
+        <li><a href="#abhängigkeiten-für-die-powershell-installation-installieren">Abhängigkeiten für die PowerShell Installation installieren</a></li>
+        <li><a href="#deinstallation-powershell-core-unter-macos">Deinstallation PowerShell Core unter macOS</a></li>
+      </ul>
+    </li>
+    <li><a href="#fragen-und-antworten">Fragen und Antworten</a></li>
+  </ul>
+</nav>
+      </div>
+    </div>
+    
+  </section>
+
+    </div>
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+  
+
+  
+  
+    
+    
+      
+    
+  
+
+
+  
+  
+  
+
+  
+  
+  
+
+  
+  
+  
+    
+  
+  
+
+  
+  
+  
+
+  <footer id="footer" class="container-fluid text-center align-content-center footer pb-2">
+    <div class="container pt-5">
+      <div class="row text-start">
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Navigation</h5>
+          
+          <ul>
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#about">Über mich</a>
+                </li>
+              
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#projects">Projekte</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#featured-posts">Beliebt</a>
+                </li>
+              
+              
+                
+                
+                  
+                
+                <li class="nav-item">
+                  <a class="smooth-scroll" href="http://localhost:1313/#accomplishments">Zertifizierungen</a>
+                </li>
+              
+              
+            
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/impressum">Impressum</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="/sites/datenschutz">Datenschutz</a>
+                    </li>
+                
+              
+                
+                    <li class="nav-item">
+                      <a class="smooth-scroll" href="mailto:ticket@secure-bits.org">Kontakt</a>
+                    </li>
+                
+              
+            
+          </ul>
+          
+        </div>
+        
+        
+        <div class="col-md-4 col-sm-12">
+          <h5>Kontaktieren Sie mich:</h5>
+          <ul>
+            
+              
+                <li><a href=mailto:ticket@secure-bits.org target="_blank" rel="noopener">
+                  <span><i class="fas fa-envelope"></i></span> <span>ticket@secure-bits.org</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://github.com/securebitsorg target="_blank" rel="noopener">
+                  <span><i class="fab fa-github"></i></span> <span>securebitsorg</span>
+                </a></li>
+              
+            
+              
+                <li><a href=https://www.linkedin.com/in/securebits target="_blank" rel="noopener">
+                  <span><i class="fab fa-linkedin"></i></span> <span>Marcel Dellmann</span>
+                </a></li>
+              
+            
+              
+                <li><a href=tel:&#43;49152%2059422774 target="_blank" rel="noopener">
+                  <span><i class="fas fa-phone-alt"></i></span> <span>&#43;49152 59422774</span>
+                </a></li>
+              
+            
+          </ul>
+        </div>
+        
+        
+        
+      </div>
+    </div>
+    
+    
+  </footer>
+
+
+    <script src="/application.202fbd9f1f0b8fe445cab2740de250c2eb9d0ee87436d38df7b5c71c323beb4d.js" integrity="sha256-IC&#43;9nx8Lj&#43;RFyrJ0DeJQwuudDuh0NtON97XHHDI7600=" defer></script>
+
+
+    
+     
+
+    
+    
+        
+        
+        
+            <script src='https://storage.ko-fi.com/cdn/scripts/overlay-widget.js'></script>
+            <script>
+            kofiWidgetOverlay.draw('securebits57389', {
+                'type': 'floating-chat',
+                'floating-chat.donateButton.text': 'Support me',
+                'floating-chat.donateButton.text-color': '#f9fafc',
+                'floating-chat.donateButton.background-color': '#248aaa',
+            });
+            </script>
+        
+        
+        
+        
+    
+
+</body>
+</html>

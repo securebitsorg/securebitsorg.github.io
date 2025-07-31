@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Network on SecureBits Blog by Marcel Dellmann</title>
+    <link>http://localhost:1313/categories/network/</link>
+    <description>Recent content in Network on SecureBits Blog by Marcel Dellmann</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>de</language>
+    <lastBuildDate>Fri, 05 May 2023 00:00:00 +0000</lastBuildDate><atom:link href="http://localhost:1313/categories/network/index.xml" rel="self" type="application/rss+xml" /><item>
+      <title>Pihole setup</title>
+      <link>http://localhost:1313/posts/pihole/pihole-basis-konfiguration/</link>
+      <pubDate>Fri, 05 May 2023 00:00:00 +0000</pubDate>
+      
+      <guid>http://localhost:1313/posts/pihole/pihole-basis-konfiguration/</guid>
+      <description>&lt;h2 id=&#34;setting-up-pihole--basic-configuration&#34;&gt;Setting up Pihole – Basic configuration&lt;/h2&gt;
+&lt;p&gt;In this video tutorial, “Pi-hole Basic Configuration,” I will walk you through the setup of the Pi-hole DNS server step by step and explain what the individual functions/menu items mean.&lt;/p&gt;
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+      &lt;iframe allow=&#34;accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share; fullscreen&#34; loading=&#34;eager&#34; referrerpolicy=&#34;strict-origin-when-cross-origin&#34; src=&#34;https://www.youtube-nocookie.com/embed/IMYnydNM3rk?autoplay=0&amp;amp;controls=1&amp;amp;end=0&amp;amp;loop=0&amp;amp;mute=0&amp;amp;start=0&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; title=&#34;YouTube video&#34;&gt;&lt;/iframe&gt;
+    &lt;/div&gt;
+
+&lt;p&gt;If you have any questions on this topic, just leave a comment either below the video on YouTube or here under this blog post.&lt;/p&gt;</description>
+    </item>
+    
+    
+  </channel>
+</rss>
