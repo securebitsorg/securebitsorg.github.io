@@ -1,0 +1,49 @@
+# section information
+section:
+  name: Projekte
+  id: projects
+  enable: true
+  weight: 7
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Volunteer work
+  filter: "voluntarily"
+- name: Coding
+  filter: "coding"
+- name: Hobby
+  filter: "hobby"
+
+# your projects
+projects:
+- name: Helping Hands
+  #logo: /images/sections/projects/kubernetes.png
+  role: Founder / Administrator
+  timeline: "Mai 2025 - present"
+  # repo: https://helping-hands.me # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  url: "https://helping-hands.me"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: Together with two friends, we run/develop the **website “helping-hands.me”** (**Currently under development**). This website is a point of contact for **people with mental health problems and their families and friends**.
+  tags: ["voluntarily", "coding", "hobby"]
+
+- name: Community-Templates
+  # logo: /images/sections/projects/tensorflow.png
+  role: Developer
+  timeline: "April 2025 - present"
+  #repo: https://github.com/securebitsorg/community-templates
+  url: "https://github.com/securebitsorg/community-templates"
+  summary: My personal open source template collections for Ansible, Bash-Scripting, Terraform, opentofu, etc. which I use to configure various tools and applications.
+  tags: ["professionel", "linux", "coding"]
+
+- name: Ansible Desktop / Server Autoinstaller
+  # logo: /images/sections/projects/tensorflow.png
+  role: Developer
+  timeline: "August 2024 - present"
+  #repo: https://github.com/securebitsorg/ansible-desktop-server-auto-install-config
+  url: "https://github.com/securebitsorg/ansible-desktop-server-auto-install-config"
+  summary: Ansible / Terraform / opentofu scripting for automatic configuration and deployment of servers, workstations, and laptops.        
+  tags: ["professionel", "linux", "coding"]
