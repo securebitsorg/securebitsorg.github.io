@@ -188,7 +188,7 @@ params:
   anchor: Smart
   bgColor: '#ffffff'
   hint: photo
-  quality: 75
+  quality: 75 
   resampleFilter: box
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
