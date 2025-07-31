@@ -1,0 +1,49 @@
+# section information
+section:
+  name: Projekte
+  id: projects
+  enable: true
+  weight: 5
+  showOnNavbar: true
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# filter buttons
+buttons:
+- name: All
+  filter: "all"
+- name: Ehrenamtlich
+  filter: "ehrenamtlich"
+- name: Coding
+  filter: "coding"
+- name: Hobby
+  filter: "hobby"
+ 
+# your projects
+projects:
+- name: Helping Hands
+  logo: /images/sections/projects/kubernetes.png
+  role: Gründer / Administrator
+  timeline: "Mai 2025 - Heute"
+  # repo: https://helping-hands.me # If your project is a public repo on GitHub, then provide this link. it will show star count.
+  url: "https://helping-hands.me"  # If your project is not a public repo but it has a website or any external details url then provide it here. don't provide "repo" and "url" simultaneously.
+  summary: Zusammen mit zwei Freunden betreiben / entwickeln wir die **Website „helping-hands.me”**. Diese Webseite ist eine Anlaufstelle für **Menschen mit psychischen Problemen sowie für ihre Familien und Freunde**.
+  tags: ["ehrenamtlich", "coding", "hobby"]
+
+- name: Code / Konfigurations-Templates
+  # logo: /images/sections/projects/tensorflow.png
+  role: Developer
+  timeline: "April 2025 - Heute"
+  #repo: https://github.com/securebitsorg/community-templates
+  url: "https://github.com/securebitsorg/community-templates"
+  summary: Meine persönlichen Open-Source Template-Sammlung für Ansible, Bash-Scripting, Terraform, opentofu usw., die ich zur Konfiguration verschiedener Tools und Anwendungen verwende.
+  tags: ["professional", "linux", "coding"]
+
+- name: Ansible Desktop / Server Autoinstaller
+  # logo: /images/sections/projects/tensorflow.png
+  role: Developer
+  timeline: "August 2024 - Heute"
+  #repo: https://github.com/securebitsorg/ansible-desktop-server-auto-install-config
+  url: "https://github.com/securebitsorg/ansible-desktop-server-auto-install-config"
+  summary: Ansible / opentofu / Terraform-Scripting zur automatischen Konfiguration und Bereitstellung von Server, Workstations und Laptop's.
+  tags: ["professional", "linux", "coding"]

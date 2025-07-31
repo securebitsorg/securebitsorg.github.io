@@ -1,0 +1,284 @@
+baseURL:  "https://secure-bits.org/"
+
+languageCode: de
+title: "SecureBits Blog by Marcel Dellmann"
+
+
+caches:
+  images:
+    dir: :cacheDir/images
+  assets:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  getcsv:
+    dir: :cacheDir/:project
+    maxAge: -1
+  getjson:
+    dir: :cacheDir/:project
+    maxAge: -1
+  getresource:
+    dir: :cacheDir/:project
+    maxAge: -1
+  images:
+    dir: :resourceDir/_gen
+    maxAge: -1
+  misc:
+    dir: :cacheDir/:project
+    maxAge: -1
+  modules:
+    dir: :cacheDir/modules
+    maxAge: -1
+# Use Hugo modules to add theme
+
+module:
+  imports:
+  - path: github.com/hugo-toha/toha/v4
+  mounts:
+  - source: static/files
+    target: static/files
+  - source: ./node_modules/flag-icon/flags
+    target: static/flags
+  - source: ./node_modules/@fontsource/mulish/files
+    target: static/files
+  - source: ./node_modules/katex/dist/fonts
+    target: static/fonts
+  - source: assets
+    target: assets
+  - source: static
+    target: assets
+
+flags:
+  enable: true
+  flagsOverride:
+    - languageCode: en
+      countryCode: GB
+      flag: gb
+
+  # Use the flag icons from flag-icon-css
+
+enableEmoji: true
+
+# media types
+image/gif:
+    delimiter: .
+    suffixes:
+    - gif
+
+# Manage languages
+# For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
+languages:
+  de:
+    languageName: Deutsch
+    languageCode: de
+    weight: 1
+  en:
+    languageName: English
+    languageCode: en
+    weight: 2
+
+# Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
+DefaultContentLanguage: de
+# Security headers
+security:
+  enableInlineShortcodes: false
+  exec:
+    allow:
+    - ^(dart-)?sass(-embedded)?$
+    - ^go$
+    - ^git$
+    - ^npx$
+    - ^postcss$
+    - ^tailwindcss$
+    osEnv:
+    - (?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE)$
+  funcs:
+    getenv:
+    - ^HUGO_
+    - ^CI$
+  http:
+    mediaTypes: null
+    methods:
+    - (?i)GET|POST
+    urls:
+    - .*
+
+  
+# permalink
+permalinks:
+  section: /:section/:title/
+  post: /:section/:year/:month/:day/:slug/
+  page: /:section/:title/
+
+
+
+privacy:
+  youTube:
+    disable: false
+    privacyEnhanced: true
+
+# Allow raw html in markdown file
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+
+markup:
+  goldmark:
+    parser:
+      attribute:
+        block: true
+
+markup:
+  highlight:
+    codeFences: true
+    style: fruity # dracula # catppuccin-mocha 
+    lineNos: true
+    lineNumbersInTable: false
+    wrapperclass: highlight
+    guessSyntax: true
+
+
+# At least HTML and JSON are required for the main HTML content and
+# client-side JavaScript search
+outputs:
+  home:
+  - HTML
+  - RSS
+  - JSON
+
+imaging:
+  anchor: Smart
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
+
+lazyload:
+  enable: true
+  # Use the native lazy loading feature of the browser
+  native: true
+  # Use the native lazy loading feature of the browser for images
+  images:
+    native: true
+    # Use the native lazy loading feature of the browser for iframes
+    iframes: true
+  # Use the native lazy loading feature of the browser for videos
+  videos:
+    native: true
+
+
+# Site parameters
+
+params:
+
+  # Background image of the landing page
+  background: "images/back.jpg"
+  anchor: Smart
+  bgColor: '#ffffff'
+  hint: photo
+  quality: 75
+  resampleFilter: box
+  # Background image of the landing page for dark theme
+  #darkBackground: /images/site/background.jpg
+
+  analytics:
+    enabled: false
+    services:
+      matomo:
+        instance: https://analytics.securebits.org
+        siteID: 1
+        
+
+  # Provide logos for your site. The inverted logo will be used in the initial
+  # transparent navbar and the main logo will be used in the non-transparent navbar.
+  logo:
+    main: /images/logo_header.png
+    inverted: /images/logo_header.png
+    favicon: /images/favicon.png
+
+
+  # GitHub repo URL of your site
+  #gitRepo: https://github.com/securebitsorg/securebits.github.io
+  
+  
+  
+  features:
+    # Configure theme color settings
+    theme:
+      enable: true
+      services:
+        light: true # enable light theme. default "true"
+        dark: true # enable dark theme. default "true"
+        default: system # can be either light, dark or system. default "system"
+
+    # Enable portfolio section
+    portfolio:
+      enable: true
+
+    # Enable blog posts
+    blog:
+      enable: trueresources/_gen/images/images/author.jpg
+      showAuthor: true
+      shareButtons:
+        linkedin: true
+        youtube: true
+        email: true
+        whatsapp: true
+
+    notes:
+      enable: false
+
+    
+
+    
+# Site parameters
+
+    
+
+# Site parameters
+          # Enable Table of contents in reading page
+    copyCodeButton:
+      enable: true
+
+    # Enable reading time support in post cards and in post pages
+    readingTime:
+      enable: true
+
+    # Number of posts to show to each page. Default is "12"
+    pagination:
+      maxPostsPerPage: 12
+    toc:
+      enable: true
+  
+    sitemap:
+      changeFreq: "daily"
+      disable: false
+      filename: sitemap.xml
+      priority: 0.5
+
+
+    tags:
+      enable: true
+      on_card: true
+
+    
+
+  # Configure footer
+  footer:
+    enable: true
+
+    template: footer.html
+
+    navigation:
+      enable: true
+
+    contactMe:
+      enable: true
+
+    credentials:
+      enable: false
+
+    newsletter:
+      enable: false
+
+    

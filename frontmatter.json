@@ -1,0 +1,195 @@
+{
+  "$schema": "https://frontmatter.codes/frontmatter.schema.json",
+  "frontMatter.taxonomy.contentTypes": [
+    {
+      "name": "default",
+      "pageBundle": false,
+      "previewPath": null,
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Description",
+          "name": "description",
+          "type": "string"
+        },
+        {
+          "title": "Publishing date",
+          "name": "date",
+          "type": "datetime",
+          "default": "{{now}}",
+          "isPublishDate": true
+        },
+        {
+          "title": "Content preview",
+          "name": "preview",
+          "type": "image"
+        },
+        {
+          "title": "Is in draft",
+          "name": "draft",
+          "type": "draft"
+        },
+        {
+          "title": "Tags",
+          "name": "tags",
+          "type": "tags"
+        },
+        {
+          "title": "Categories",
+          "name": "categories",
+          "type": "categories"
+        },
+        {
+          "title": "hero",
+          "name": "hero",
+          "type": "string"
+        },
+        {
+          "title": "menu",
+          "name": "menu",
+          "type": "fields",
+          "fields": [
+            {
+              "title": "sidebar",
+              "name": "sidebar",
+              "type": "fields",
+              "fields": [
+                {
+                  "title": "name",
+                  "name": "name",
+                  "type": "string"
+                },
+                {
+                  "title": "identifier",
+                  "name": "identifier",
+                  "type": "string"
+                },
+                {
+                  "title": "parent",
+                  "name": "parent",
+                  "type": "string"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "title": "keywords",
+          "name": "keywords",
+          "type": "choice",
+          "choices": [
+            "ipconfig"
+          ]
+        },
+        {
+          "title": "lastmode",
+          "name": "lastmode",
+          "type": "datetime"
+        }
+      ]
+    }
+  ],
+  "frontMatter.framework.id": "hugo",
+  "frontMatter.content.publicFolder": {
+    "path": "assets/images",
+    "relative": true
+  },
+  "frontMatter.media.contentTypes": [
+    {
+      "name": "default",
+      "fileTypes": [
+        "png",
+        "jpg",
+        "jpeg",
+        "gif"
+      ],
+      "fields": [
+        {
+          "title": "Title",
+          "name": "title",
+          "type": "string"
+        },
+        {
+          "title": "Author",
+          "name": "author",
+          "type": "string"
+        },
+        {
+          "title": "Alt text",
+          "name": "alt",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "frontMatter.preview.host": "http://localhost:1313",
+  "frontMatter.git.enabled": false,
+  "frontMatter.content.pageFolders": [
+    {
+      "title": "archetypes",
+      "path": "[[workspace]]/archetypes"
+    },
+    {
+      "title": "sites",
+      "path": "[[workspace]]/content/sites"
+    },
+    {
+      "title": "windows",
+      "path": "[[workspace]]/content/posts/windows"
+    },
+    {
+      "title": "privacy",
+      "path": "[[workspace]]/content/posts/privacy"
+    },
+    {
+      "title": "security",
+      "path": "[[workspace]]/content/posts/security"
+    },
+    {
+      "title": "linux",
+      "path": "[[workspace]]/content/posts/linux"
+    },
+    {
+      "title": "fritzbox",
+      "path": "[[workspace]]/content/posts/fritzbox"
+    },
+    {
+      "title": "pihole",
+      "path": "[[workspace]]/content/posts/privacy/pihole"
+    },
+    {
+      "title": "AdGuard",
+      "path": "[[workspace]]/content/posts/privacy/AdGuard"
+    }
+  ],
+  "frontMatter.website.host": "https://secure-bits.org",
+  "frontMatter.git.commitMessage": "update new md",
+  "frontMatter.content.snippets": {
+    "Visit Help-page": {
+      "description": "",
+      "body": [
+        "> ## Questions and answers",
+        "> ",
+        "> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.",
+        ">",
+        "> [**Visit the Help-page**](https://ticket.secure-bits.org/help)"
+      ],
+      "fields": []
+    },
+    "Help deutsch": {
+      "description": "",
+      "body": [
+        "> ## Fragen und Antworten",
+        ">",
+        "> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.",
+        ">",
+        "> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)"
+      ],
+      "fields": []
+    }
+  }
+}

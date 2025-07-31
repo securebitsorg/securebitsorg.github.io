@@ -1,0 +1,39 @@
+# section information
+section:
+  name: Fähigkeiten
+  id: skills
+  enable: true
+  weight: 2
+  showOnNavbar: false
+  # Can optionally hide the title in sections
+  # hideTitle: true
+
+# Your Skills.
+# Give a summary of you each skill in the summary section.
+skills:
+- name: Linux - Server / Desktop
+  #logo: /images/skills/linux.png
+  summary: "- Die Fähigkeit, **Linux-Server und Linux-Desktops sicher zu verwalten** - **Automatisierung von IT-Umgebungen** mit **Ansible**, **Terraform** und **openTofu** - **Konfigurationsmanagement** und **Automatisierung** von **Linux-Systemen** - Schreiben von Skripten zur Automatisierung von Aufgaben und Verwaltung der Infrastruktur"
+  
+
+- name: Windows - Server / Desktop
+  #logo: /images/skills/Microsoft.svg
+  summary: "- Die Fähigkeit zur **sicheren Administration von Windows-Server und Windows Desktop** - **Active Directory** / **Domain-Controller** / **DNS** / **Gruppenrichtlinien**, etc."
+
+- name: Scripting
+  #logo: /images/skills/bash.svg
+  summary: "- **Bash-Skripting** / **Ansible** / **Terraform** / **openTofu** / **Python-Skripting** – **Skripting für Automatisierung und Konfigurationsmanagement** – Schreiben von Skripten zur Automatisierung von Aufgaben und Verwaltung der Infrastruktur – Verwendung von Skriptsprachen zur Verbesserung der Systemadministration"
+
+- name: Cloud Computing
+  #logo: /images/skills/cloud.png
+  summary: "- **Virtualisierung** und **Containerisierung** mit **Proxmox** – Containerisierung mit **Docker** / **Podman** – **Cloud Computing** mit **Hetzner Cloud**, **Azure** usw. – **Konfigurationsmanagement** – Kontinuierliche Integration und kontinuierliche Bereitstellung (**CI/CD**) – **Serverloses Computing** – **Cloud-Sicherheit** – **Cloud-Netzwerke** – **Cloud-Speicherlösungen** – **Multi-Cloud-Strategien**"
+
+- name: Networks
+  # logo: /images/skills/git.png
+  summary: "- Netzwerkadministration (**Firewall**, **Switches**, **IPS/IDS** usw.) – **SD-WAN** – **VPN** – **ZeroTrust** – **SSO** – **Radius** – **Planung der Netzwerkinfrastruktur** – **Netzwerküberwachung** – **Optimierung der Netzwerkleistung** – **Netzwerksicherheit** – **Netzwerkfehlerbehebung** – **Netzwerkdokumentation** – **Netzwerkdesign und -architektur** – Netzwerkprotokolle (**TCP/IP, DNS, DHCP** usw.) – Drahtlose Netzwerke (**Wi-Fi**) – **LAN/WAN-Technologien** – **VLANs und Subnetting** – **IP-Adressierung und Routing** – Netzwerkzugangskontrolle (**NAC**) – Quality of Service (**QoS**) – Lastenausgleich und Failover – Netzwerkkonformität und -standards (**ISO, NIST** usw.)"
+
+
+
+- name: IT-Security
+  # logo: /images/skills/python.svg
+  summary: "- **CIA**-Triade - **IPAM** - **SOAR** - **Pentesting** - **Blue Team** - **Purple Team** - **Threat Hunting** - **Vulnerability Management** - **Incident Response** - **Threat Intelligence** - **Security Awareness Training** - Security Operations Center (**SOC**) - Security Information und Event Management (**SIEM**) - Endpoint Detection und Response (**EDR**) - Extended Detection und Response (**XDR**) - Mobile Device Management (**MDM**) - Identity und Access Management (**IAM**) - Public Key Infrastructure (**PKI**) - Data Loss Prevention (**DLP**) - Network Security Monitoring (**NSM**) - **Cloud Security**"

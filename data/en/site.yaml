@@ -1,0 +1,18 @@
+# Copyright Notice
+copyright: © 2017 - 2025 Copyright by SecureBits.
+
+# Footer Custom Menu
+
+customMenus:
+- name: Privacy
+  url: /sites/privacy
+  hideFromNavbar: true
+  showOnFooter: true
+
+- name: Contact
+  url: mailto:ticket@secure-bits.org
+  hideFromNavbar: false
+  showOnFooter: true
+
+# Meta description for your site.  This will help the search engines to find your site.
+description: Portfolio and blog of Marcel Dellmann.
