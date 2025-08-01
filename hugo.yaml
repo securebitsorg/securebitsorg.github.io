@@ -79,28 +79,7 @@ languages:
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
 DefaultContentLanguage: de
 # Security headers
-security:
-  enableInlineShortcodes: false
-  exec:
-    allow:
-    - ^(dart-)?sass(-embedded)?$
-    - ^go$
-    - ^git$
-    - ^npx$
-    - ^postcss$
-    - ^tailwindcss$
-    osEnv:
-    - (?i)^((HTTPS?|NO)_PROXY|PATH(EXT)?|APPDATA|TE?MP|TERM|GO\w+|(XDG_CONFIG_)?HOME|USERPROFILE|SSH_AUTH_SOCK|DISPLAY|LANG|SYSTEMDRIVE)$
-  funcs:
-    getenv:
-    - ^HUGO_
-    - ^CI$
-  http:
-    mediaTypes: null
-    methods:
-    - (?i)GET|POST
-    urls:
-    - .*
+
 
   
 # permalink
@@ -183,11 +162,12 @@ params:
   #darkBackground: /images/site/background.jpg
 
   analytics:
-    enabled: false
+    enabled: true
     services:
-      matomo:
-        instance: https://analytics.securebits.org
-        siteID: 1
+      umami:
+        scheme: https
+        instance: 396c6de1-1262-4153-91ad-40d7adfa3b3f
+        invisible: 1
         
 
   # Provide logos for your site. The inverted logo will be used in the initial
