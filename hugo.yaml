@@ -167,7 +167,7 @@ params:
 
       umami:
         scheme: https
-        instance: analytics.eu.umami.is
+        instance: eu.umami.is
         id: 396c6de1-1262-4153-91ad-40d7adfa3b3f
         
 
