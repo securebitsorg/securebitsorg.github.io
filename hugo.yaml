@@ -166,8 +166,8 @@ params:
     services:
       umami:
         scheme: https
-        instance: 396c6de1-1262-4153-91ad-40d7adfa3b3f
-        invisible: 1
+        instance: analytics.eu.umami.is
+        id: 396c6de1-1262-4153-91ad-40d7adfa3b3f
         
 
   # Provide logos for your site. The inverted logo will be used in the initial
