@@ -190,6 +190,44 @@
         "> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)"
       ],
       "fields": []
+    },
+    "Info": {
+      "description": "Info Alert",
+      "body": [
+        "{{< alert type=\"info\" >}}",
+        "This is sample alert with `type=\"info\"`.",
+        "{{< /alert >}}"
+      ],
+      "fields": []
+    },
+    "Warning": {
+      "description": "Warning alert",
+      "body": [
+        "{{< alert type=\"warning\" >}}",
+        "This is sample alert with `type=\"warning\"`.",
+        "{{< /alert >}}"
+      ],
+      "fields": []
+    },
+    "Danger": {
+      "description": "Danger alert",
+      "body": [
+        "{{< alert type=\"danger\" >}}",
+        "This is sample alert with `type=\"danger\"`.",
+        "{{< /alert >}}",
+        ""
+      ],
+      "fields": []
+    },
+    "Success": {
+      "description": "Success Alert",
+      "body": [
+        "{{< alert type=\"success\" >}}",
+        "This is sample alert with `type=\"success\"`.",
+        "{{< /alert >}}",
+        ""
+      ],
+      "fields": []
     }
   }
 }
