@@ -156,7 +156,7 @@ params:
     # Enable Umami analytics
       umami:
         scheme: https
-        instance: cloud.umami.is
+        instance: analytics.eu.umami.is
         id: 1076f380-33de-4ef4-a7ee-4e3648dcb8fa
       
 
@@ -167,7 +167,7 @@ params:
   hint: photo
   quality: 75
   resampleFilter: box
-  
+
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
 
