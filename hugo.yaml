@@ -167,6 +167,7 @@ params:
   hint: photo
   quality: 75
   resampleFilter: box
+  
   # Background image of the landing page for dark theme
   #darkBackground: /images/site/background.jpg
 
