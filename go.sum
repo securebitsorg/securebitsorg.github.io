@@ -1,2 +1,4 @@
 github.com/hugo-toha/toha/v4 v4.9.0 h1:FX5i3I7eP/lpAQZv4SjnKw5jw0aowCFBGjc+pW1W6PA=
 github.com/hugo-toha/toha/v4 v4.9.0/go.mod h1:TU/6WXz7fJ3BSrTS+K/sVctzUMF4pB4ZwKWzFBFra8g=
+github.com/hugomods/umami-analytics v0.3.1 h1:C4B1oKRBvCRamH3muiWK+QNbehmxd+7DiK80jHCdMJo=
+github.com/hugomods/umami-analytics v0.3.1/go.mod h1:nlZGLPH5L+H25+HwmuzHsEfM869+tMTUTcSUBcOQEm4=
