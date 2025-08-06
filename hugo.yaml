@@ -124,7 +124,7 @@ outputs:
   home:
   - HTML
   - RSS
-  - JSON- path: github.com/hugomods/umami-analytics
+  - JSON
 
 imaging:
   anchor: Smart
