@@ -150,6 +150,12 @@ lazyload:
 # Site parameters
 
 params:
+  services:
+    umami:
+      enable: true
+    
+      websiteId: 1076f380-33de-4ef4-a7ee-4e3648dcb8fa
+      script_url: https://cloud.umami.is/script.js
 
   # Background image of the landing page
   background: "images/back.jpg"
@@ -202,11 +208,6 @@ params:
 
     notes:
       enable: false
-
-    
-
-    
-# Site parameters
 
     
 
