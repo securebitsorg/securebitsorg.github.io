@@ -151,12 +151,7 @@ lazyload:
 # Site parameters
 
 params:
-  services:
-    umami_analytics:
-      id: 1076f380-33de-4ef4-a7ee-4e3648dcb8fa
-      # URL of your Umami Analytics instance
-      script_url: https://cloud.umami.is/script.js
-      # Site ID for your Umami Analytics instance
+  
       
       
 
@@ -195,6 +190,16 @@ params:
         light: true # enable light theme. default "true"
         dark: true # enable dark theme. default "true"
         default: system # can be either light, dark or system. default "system"
+
+    analytics:
+      enable: true
+      # Enable Umami Analytics
+      services:
+        umami:
+          scheme: https
+          instance: cloud.umami.is
+          id: 1076f380-33de-4ef4-a7ee-4e3648dcb8fa
+      
 
     # Enable portfolio section
     portfolio:
