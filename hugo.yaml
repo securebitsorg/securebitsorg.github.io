@@ -55,7 +55,7 @@ flags:
       countryCode: GB
       flag: gb
 
-  # Use the flag icons from flag-icon-css
+ 
 
 enableEmoji: true
 
