@@ -195,10 +195,10 @@ params:
       enable: true
       # Enable Umami Analytics
       services:
-        umami:
-          scheme: https
-          instance: cloud.umami.is
-          id: 1076f380-33de-4ef4-a7ee-4e3648dcb8fa
+        matomo:
+          
+          instance: analytics.secure-bits.org/matomo/
+          id: 1
       
 
     # Enable portfolio section
