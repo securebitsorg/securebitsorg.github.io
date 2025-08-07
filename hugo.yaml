@@ -193,10 +193,10 @@ params:
 
     analytics:
       enable: true
-      # Enable Umami Analytics
+      
       services:
         matomo:
-          
+          scheme: https
           instance: analytics.secure-bits.org/matomo/
           id: 2
       
