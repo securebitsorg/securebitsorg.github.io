@@ -6,6 +6,12 @@ menu:
     name: Privacy
     identifier: privacy
     weight: 200
-tags: ["pihole", "linux", "video", "privacy"]
-categories: ["Tutorials", "Video", "Privacy"]
+tags:
+  - linux
+  - privacy
+  - video
+categories:
+  - Tutorials
+  - Video
+  - Privacy
 ---

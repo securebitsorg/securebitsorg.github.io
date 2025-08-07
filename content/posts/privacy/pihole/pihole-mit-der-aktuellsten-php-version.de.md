@@ -14,7 +14,6 @@ categories:
   - Tutorials
   - Video
 tags:
-  - it-security
   - netzwerk
   - pi-hole
   - tutorials

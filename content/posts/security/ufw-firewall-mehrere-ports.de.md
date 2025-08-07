@@ -16,12 +16,11 @@ categories:
   - Video
 tags:
   - firewall
-  - it-security
   - linux
   - netzwerk
+  - raspberry pi
   - tutorials
   - video
-  - raspberry pi
 keywords:
   - ufw portbereich
 ---

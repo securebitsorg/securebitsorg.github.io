@@ -9,7 +9,7 @@ categories:
 tags:
   - linux
   - netzwerk
-  - pihole
+  - pi-hole
   - privacy
   - tutorials
 keywords:
