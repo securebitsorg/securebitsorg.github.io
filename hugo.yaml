@@ -198,7 +198,7 @@ params:
         matomo:
           scheme: https
           instance: analytics.secure-bits.org/matomo/
-          id: 2
+          siteId: 2
       
 
     # Enable portfolio section
