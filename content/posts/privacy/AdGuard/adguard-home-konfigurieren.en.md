@@ -15,12 +15,12 @@ categories:
 - “Tutorials”
 - “Video”
 tags:
-- “adguard”
-- “linux”
-- “network”
-- “security”
-- ‘tutorials’
-- “video”
+- adguard
+- linux
+- network
+- security
+- tutorials
+- video
 ---
 ## AdGuardHome Setup - Configure to protect your network from ads and trackers
 In today's tutorial, ‘**Configuring AdGuard**’, I would like to show you how to perform the **basic AdGuard configuration** on your Raspberry Pi after installing AdGuard ([here for instructions](https://secure-bits.org/adguard-raspberry-pi-installation-2022/)).

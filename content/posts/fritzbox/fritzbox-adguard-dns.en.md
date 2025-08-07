@@ -9,17 +9,17 @@ menu:
         identifier: fritzbox-adguarddns
         parent: fritzbox
 categories:
-- “Network”
-- “Security” 
-- “Tutorials”
-- “Video”
+    - “Network”
+    - “Security”
+    - “Tutorials”
+    - “Video”
 tags:
-- “adguard”
-- “fritzbox”
-- “network”
-- “security”
-- ‘tutorials’
-- “video”
+    - adguard
+    - fritzbox
+    - network
+    - privacy
+    - tutorials
+    - video
 ---
 ## Setting up FritzBox / AdGuard DNS
 

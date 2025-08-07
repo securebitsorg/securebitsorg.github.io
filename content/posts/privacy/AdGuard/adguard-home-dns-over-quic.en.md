@@ -15,11 +15,11 @@ categories:
 - “tutorials” 
 - “video”
 tags:
-- “adguard”
-- “network”
-- “security”
-- ‘tutorials’
-- “video”
+- adguard
+- network
+- security
+- tutorials
+- video
 ---
 ## AdGuard Home DNS encryption with DNS over QUIC
 In this video tutorial on [**my YouTube channel**](https://www.youtube.com/channel/UCr-cuwB555JmAm4F412KZ2Q), I show you step by step how you can encrypt external DNS requests from AdGuard Home using the “new” encryption protocol ‘**DNS over QUIC**’.
