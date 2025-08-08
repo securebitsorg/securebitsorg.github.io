@@ -134,18 +134,7 @@ imaging:
   
  
 
-lazyload:
-  enable: true
-  # Use the native lazy loading feature of the browser
-  native: true
-  # Use the native lazy loading feature of the browser for images
-  images:
-    native: true
-    # Use the native lazy loading feature of the browser for iframes
-    iframes: true
-  # Use the native lazy loading feature of the browser for videos
-  videos:
-    native: true
+
 
 
 # Site parameters
@@ -218,8 +207,27 @@ params:
     notes:
       enable: false
 
-    
+    lazyload:
+      enable: true
+  # Use the native lazy loading feature of the browser
+      native: true
+  # Use the native lazy loading feature of the browser for images
+    images:
+      native: true
+    # Use the native lazy loading feature of the browser for iframes
+      iframes: true
+  # Use the native lazy loading feature of the browser for videos
+    videos:
+      native: true
 
+    support:
+      enable: true
+      services:
+        kofi:
+          user: securebits
+          text: "Support me"
+          textColor: "#000000"
+          backgroundColor: "#33FF00"
 # Site parameters
           # Enable Table of contents in reading page
     copyCodeButton:
