@@ -25,7 +25,7 @@ keywords:
 ---
 > **Wer unter euch seinen Raspberry Pi absichern möchte, der findet hier die entsprechende Anleitung:**
 >
-> https://secure-bits.org/raspberry-pi-absichern-von-a-z-2023/
+> http://localhost:1313/posts/privacy/pihole/pihole-absichern-von-a-z/
 
 <!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
