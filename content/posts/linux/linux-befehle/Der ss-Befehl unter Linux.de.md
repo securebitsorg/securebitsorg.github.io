@@ -461,3 +461,12 @@ ss --cgroup -antp
 Der ss-Befehl ist die moderne, leistungsstarke Alternative zu netstat mit deutlich besserer Performance und erweiterten Funktionen. Für IT-Sicherheitsmanager bietet ss umfassende Möglichkeiten zur Netzwerkanalyse, Forensik und Überwachung. Die mächtigen Filterfunktionen, detaillierten Informationen über TCP-Interna und die Möglichkeit zur Socket-Manipulation machen ss zu einem unverzichtbaren Werkzeug in der modernen Netzwerkdiagnose.
 
 Während netstat aufgrund seiner weiten Verbreitung und Vertrautheit noch verwendet wird, sollten Sie auf ss umsteigen, um von der besseren Performance und den erweiterten Funktionen zu profitieren.
+
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org/help)
+<!-- FM:Snippet:End -->

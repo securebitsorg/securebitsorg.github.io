@@ -317,3 +317,10 @@ Da netstat als veraltet gilt, sollten Sie auch moderne Alternativen kennen:
 Der netstat-Befehl bleibt trotz seines veralteten Status ein nützliches Werkzeug für die Netzwerkdiagnose und Sicherheitsanalyse unter Linux. Die umfangreichen Optionen ermöglichen eine detaillierte Analyse von Netzwerkverbindungen, Routing-Tabellen und Schnittstellen-Statistiken. Für IT-Sicherheitsmanager ist es besonders wertvoll zur Identifikation verdächtiger Netzwerkaktivitäten und zur Überwachung offener Ports.
 
 
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/help)
+<!-- FM:Snippet:End -->

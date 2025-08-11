@@ -1,6 +1,6 @@
 ---
 hero: /images/posts/linux/traceroute.png
-preview: ../../../assets/images/posts/linux/traceroute.png
+preview: ../../../../assets/images/posts/linux/traceroute.png
 title: Der traceroute-Befehl unter Linux
 description: "Der traceroute-Befehl unter Linux: Umfassende Anleitung mit Beispielen"
 menu:
@@ -271,5 +271,5 @@ Der traceroute-Befehl ist ein mächtiges Werkzeug für die Netzwerkdiagnose und 
 >
 > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
 >
-> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+> [**Zur Hilfeseite**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->

@@ -2,7 +2,7 @@
 title: "The Linux ip command: Instructions for network configuration"
 description: The modern Linux IP command for network configuration under Linux.
 date: 2025-07-29T08:09:53.919Z
-preview: ../../../assets/images/posts/linux/compressed-ip-befehl.png
+preview: ../../../../assets/images/posts/linux/compressed-ip-befehl.png
 tags:
     - linux
     - tutorials
@@ -69,7 +69,7 @@ sudo ip addr add 192.168.1.100/24 broadcast 192.168.1.255 dev eth0
 sudo ip -6 addr add 2001:db8::1/64 dev eth0
 ```
 ### link (l) - Network interface management with the IP command
-The `link` object manages the physical and virtual network interfaces at Layer 2 level.
+The `link` object manages the physical and virtual network interfaces at Layer 2 le/images/posts/linux/compressed-ip-befehl.pngvel.
 #### Basic commands:
 | Command       | Description                    | Example                                      |
 |:------------ |:------------------------------- |:--------------------------------------------- |
@@ -395,5 +395,5 @@ The `ip` command is a powerful and versatile tool that covers all aspects of Lin
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->

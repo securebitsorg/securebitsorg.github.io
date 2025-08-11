@@ -1,6 +1,6 @@
 ---
 hero: /images/posts/linux/traceroute.png
-preview: ../../../assets/images/posts/linux/traceroute.png
+preview: ../../../../assets/images/posts/linux/traceroute.png
 title: The traceroute command in Linux
 description: The traceroute command in Linux | Comprehensive guide with examples
 menu:
@@ -197,6 +197,6 @@ The traceroute command is a powerful tool for network diagnostics and should be 
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->
 

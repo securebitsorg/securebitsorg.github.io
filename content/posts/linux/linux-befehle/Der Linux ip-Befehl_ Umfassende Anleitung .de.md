@@ -16,7 +16,7 @@ menu:
         parent: linux-befehle
 keywords:
     - IP-Befehl
-preview: ../../../assets/images/posts/linux/compressed-ip-befehl.png
+preview: ../../../../assets/images/posts/linux/compressed-ip-befehl.png
 hero: /images/posts/linux/compressed-ip-befehl.png
 lastmode: 2025-07-29T08:00:02.443Z
 date: 2025-07-29T08:00:34.125Z
@@ -543,5 +543,5 @@ Der `ip`-Befehl ist ein mächtiges und vielseitiges Werkzeug, das alle Aspekte d
 >
 > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
 >
-> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+> [**Zur Hilfeseite**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->
