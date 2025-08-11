@@ -7,7 +7,7 @@ menu:
     sidebar:
         name: The traceroute command in Linux with omprehensive instructions and examples
         identifier: traceroute
-        parent: linux
+        parent: linux-commands
 date: 2025-07-30T09:18:12.930Z
 lastmode: 2025-07-30T09:18:16.581Z
 keywords:

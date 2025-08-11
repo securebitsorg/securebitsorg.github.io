@@ -13,7 +13,7 @@ menu:
     sidebar:
         name: Der Linux IP-Konfigurations-Befehl 'ip'
         identifier: ip
-        parent: linux
+        parent: linux-befehle
 keywords:
     - IP-Befehl
 preview: ../../../assets/images/posts/linux/compressed-ip-befehl.png

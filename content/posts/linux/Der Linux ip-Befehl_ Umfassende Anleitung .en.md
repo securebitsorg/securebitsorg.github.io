@@ -16,7 +16,7 @@ menu:
     sidebar:
         name: The Linux IP configuration command 'ip'
         identifier: ip-en
-        parent: linux
+        parent: linux-commands
 lastmode: 2025-07-29T08:11:29.722Z
 keywords:
     - ip command
