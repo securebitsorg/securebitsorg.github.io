@@ -23,7 +23,7 @@ hero: /images/posts/linux/linux-commands/ss-befehl-linux.webp
 ---
 In diesem Überblick möchte ich euch eine Anleitung zum Befehl `ss` geben, die einzelnen **Parameter** zu `ss` erklären und wie ihr diese in eurer Linux-Umgebung verwenden könnt.
 
-## Was ist der netstat-Befehl und wofür nutzt man diesen?
+## Was ist der ss-Befehl und wofür nutzt man diesen?
 Der **ss**-Befehl (Socket Statistics) ist ein modernes, leistungsstarkes Kommandozeilen-Tool unter Linux zur Anzeige detaillierter Netzwerk- und Socket-Statistiken. Als offizieller Nachfolger des veralteten **`netstat`-Befehls** bietet ss eine schnellere Performance, erweiterte Funktionen und umfassendere Informationen über Netzwerkverbindungen.
 
 ## Installation und Verfügbarkeit
