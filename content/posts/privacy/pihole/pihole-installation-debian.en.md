@@ -70,7 +70,7 @@ In this HowTo, I will show you how to install the Pi-hole DNS server on a virtua
 ### Prerequisites - Pihole Installation Debian
 The prerequisite for this is a virtual instance of Debian 11 or 12 in a virtual environment, in my case on a Proxmox server. Other virtualizations such as VMWare, Virtual-Box, etc. work just as well.
 **You can find out how to install Pi-Hole on a Raspberry Pi in this tutorial:**
-[Go to tutorial](/posts/privacy/pihole/install-pihole-on-a-raspberry-pi/)
+[Go to tutorial]([/posts/privacy/pihole/install-pihole-on-a-raspberry-pi/](https://secure-bits.org/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/))
 #### Required tools and prerequisites:
 - putty or other SSH client
 - Debian-based OS
@@ -285,12 +285,6 @@ You can find illustrated instructions on setting up a FritzBox and configuring o
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 
 <!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
-> ## Questions and answers
-> 
-> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
->
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
-<!-- FM:Snippet:End -->

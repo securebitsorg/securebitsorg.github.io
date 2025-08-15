@@ -37,8 +37,16 @@ Eine Liste mit von mir genutzten Blocklisten findet ihr in diesem Beitrag von mi
 
 ### Pihole einrichten - Weitere Videos zum Thema Pihole und Raspberry Pi
 
-[FritzBox + Pi-hole | FritzBox konfigurieren | SecureBits (secure-bits.org)](https://secure-bits.org/fritzbox-pi-hole-fritzbox-konfigurieren/)
+[FritzBox + Pi-hole | FritzBox konfigurieren | SecureBits](https://secure-bits.org/posts/privacy/pihole/pihole-fritzbox-konfigurieren/)
 
-[Raspberry Pi absichern von A-Z | 2023 | SecureBits (secure-bits.org)](https://secure-bits.org/raspberry-pi-absichern-von-a-z-2023/)
+[Raspberry Pi absichern von A-Z | 2023 | SecureBits (secure-bits.org)]
 
-[Unbound + Pi-hole und DNS-Verschlüsselung einrichten](https://secure-bits.org/pihole-unbound-jetzt-richtig-installieren-in-2023/)
+[Unbound + Pi-hole und DNS-Verschlüsselung einrichten](https://secure-bits.org/posts/privacy/pihole/pihole-unbound/)
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
+<!-- FM:Snippet:End -->

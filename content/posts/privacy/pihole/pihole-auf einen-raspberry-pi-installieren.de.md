@@ -2,35 +2,36 @@
 title: Pi-hole Raspberry Pi Installation
 date: 2022-03-30
 hero: /images/posts/pihole/pi-hole-installation.png
-descripton: Pi-hole Raspberry Pi | In diesem Tutorial installieren wir Pihole auf einem Raspberry Pi
 menu:
   sidebar:
     name: Pihole auf einen Raspberry Pi installieren
     identifier: pihole-raspberry
     parent: pihole
-categories: 
-  - "Hardware"
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-tags: 
-  - "security"
-  - "linux"
-  - "netzwerk"
-  - "pi-hole"
-  - "raspberry pi"
-  - "tutorials"
-  - "video"
+categories:
+  - Hardware
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+tags:
+  - security
+  - linux
+  - netzwerk
+  - pi-hole
+  - raspberry pi
+  - tutorials
+  - video
+description: Pi-hole Raspberry Pi | In diesem Tutorial installieren wir Pihole auf einem Raspberry Pi
+preview: ../../../../assets/images/posts/pihole/pi-hole-installation-beendet.jpg
 ---
 
 ## Pi-hole auf einen Raspberry Pi installieren und einrichten
 
 In diesem Tutorial '**Pi-hole auf einen Raspberry Pi installieren**' zeige ich euch, wie ihr den Pi-hole DNS-Server installieren und mit Unbound einen rekursiven DNS-Server einrichten könnt.
 
-Die Schritt für Schritt-Installation geschiehttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpght bei diesem Tutorial auf einen Raspberry Pi.
+Die Schritt für Schritt-Installation geschieht bei diesem Tutorial auf einen Raspberry Pi.
 
-In einem [anderen Tutorial hier auf SecureBits](https://secure-bits.org/pi-hole-installation/), habe ich euch ja schon die **Installation auf einem Debian-System in einer virtuellen Maschine** gezeigt und aufgeführt, sowie warum und wofür ihr einen Pi-Hole DNS-Server einsetzen solltet.
+In einem [anderen Tutorial hier auf SecureBits](https://secure-bits.org/posts/privacy/pihole/pihole-installation-debian/), habe ich euch ja schon die **Installation auf einem Debian-System in einer virtuellen Maschine** gezeigt und aufgeführt, sowie warum und wofür ihr einen Pi-Hole DNS-Server einsetzen solltet.
 
 ## Video-Tutorial zum Thema 'Pi-hole Raspberry Pi'
 
@@ -370,3 +371,11 @@ Der Einsatz eines Pi-hole-DNS-Server ist eine super und günstige Sache (außer 
 Gerade im heimischen Netzwerk kann dieser DNS-Server wunderbar an einem Consumer-Router wie FritzBox, Speedport und andere als Nameserver implementiert werden. So hat man einen wunderbaren Schutz vor Tracking, Werbung, Malware und Pishing auf allen Geräten im Netzwerk. Natürlich ist dieser Schutz nicht hundertprozentig, aber sicherlich besser als nichts für seinen Datenschutz zu unternehmen.
 
 Gerne könnt ihr mir auch Vorschläge für Blacklists die ihr in Verwendung habt zukommen lassen. Darüber würde ich mich echt freuen!
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
+<!-- FM:Snippet:End -->

@@ -1,6 +1,5 @@
 ---
 title: Tip - Setting up Fritzbox port forwarding correctly
-descripton: Setting up port forwarding correctly on Fritzbox | In this video, I show you how to configure port forwarding on Fritzbox.
 hero: /images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 date: 2022-03-19
 menu:
@@ -9,17 +8,19 @@ menu:
     identifier: fritzbox-port
     parent: fritzbox
 categories:
-- “Hardware”
-- “Network”
-- “Security”
-- “Tutorials”
-- ‘Video’
+  - “Hardware”
+  - “Network”
+  - “Security”
+  - “Tutorials”
+  - ‘Video’
 tags:
-- “fritzbox”
-- “network”
-- “security”
-- ‘tutorials’
-- “video”
+  - “fritzbox”
+  - “network”
+  - “security”
+  - ‘tutorials’
+  - “video”
+description: Setting up port forwarding correctly on Fritzbox | In this video, I show you how to configure port forwarding on Fritzbox.
+preview: ../../../assets/images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 ---
 ## Setting up FritzBox port forwarding
 Today's post is about how to set up **FritzBox port forwarding** correctly, what you can use it for, and what risks arise from using port forwarding.
@@ -91,5 +92,10 @@ What is port forwarding / port sharing?
 
 [https://de.wikipedia.org/wiki/Portweiterleitung](https://de.wikipedia.org/wiki/Portweiterleitung)
 
-### Other topics related to FritzBox configuration
-FritzBox [Set up guest access](https://secure-bits.org/fritzbox-gastzugang-einrichten-aktivieren/)
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->

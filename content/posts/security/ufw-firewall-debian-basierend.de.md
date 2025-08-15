@@ -1,6 +1,5 @@
 ---
 title: UFW-Firewall Raspberry Pi Installation
-descripton: UFW-Firewall Raspberry Pi | In diesem Tutorial zeige ich euch, wie ihr euren Raspberry Pi mit der UFW-Firewall absichern könnt.
 hero: /images/posts/it-security/Thumbnail-1.png
 menu:
   sidebar:
@@ -8,20 +7,22 @@ menu:
     identifier: ufw-firewall-raspberry
     parent: security
 date: 2022-09-20
-categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-  - "Hardware"
-tags: 
-  - "raspberry pi"
-  - "firewall"
-  - "linux"
-  - "security"
-  - "tutorials"
-  - "video"
+categories:
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
+  - Hardware
+tags:
+  - raspberry pi
+  - firewall
+  - linux
+  - security
+  - tutorials
+  - video
+description: UFW-Firewall Raspberry Pi | In diesem Tutorial zeige ich euch, wie ihr euren Raspberry Pi mit der UFW-Firewall absichern könnt.
+preview: ../../../assets/images/posts/it-security/Thumbnail-1.png
 ---
 
 ## UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi
@@ -543,3 +544,11 @@ Wem von euch die Bedienung über das Terminal nicht so liegt, der kann mit der g
 Ich hoffe, der Beitrag hat euch gefallen und den Einen oder Anderen unter euch konnte dieser ein wenig weiterhelfen?!
 
 Solltet ihr Fragen haben. dann hinterlasst mir bitte einen Kommentar oder schreibt mir eine E-Mail.
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
+<!-- FM:Snippet:End -->

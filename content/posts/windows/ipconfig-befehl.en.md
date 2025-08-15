@@ -22,7 +22,7 @@ menu:
         identifier: ipconfig
         name: The ipconfig command overview
 ---
-You can find an **overview of all CMD commands** in **[**this article**](https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/)**
+You can find an **overview of all CMD commands** in **[**this article**](https://secure-bits.org/en/posts/windows/cmd-befehle-im-ueberblick/)**
 ## ipconfig commands at a glance
 If you often make changes to your IP address or DNS resolution, for example because you use multiple DNS servers, you will be familiar with the problem that configuring the network adapter using the standard board tools (GUI) is not exactly convenient. The command line (CMD or Powershell) is ideal for this purpose. This overview shows which commands, including the **ipconfig** command, are available for the individual actions to change the settings of the network adapters.  
 In this overview, the **CMD** command prompt is used. This command prompt is called up by typing ‘cmd’ in the Windows search field. The fastest way to access the search field is by pressing the **Windows key + R**.
@@ -57,6 +57,6 @@ An overview of all variants available with the ipconfig command is listed with t
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->
 

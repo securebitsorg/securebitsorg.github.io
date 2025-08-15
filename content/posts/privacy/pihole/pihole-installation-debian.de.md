@@ -95,7 +95,7 @@ Vorgabe ist hierfür eine virtuelle Instanz von Debian 11 oder 12 in einer virtu
 
 **Wie ihr Pi-Hole auf einen Raspberry Pi installieren könnt, erfahrt ihr in diesem Tutorial:**
 
-[Zum Tutorial](/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/)
+[Zum Tutorial](https://secure-bits.org/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/)
 
 #### Benötigte Tools und Voraussetzungen:
 
@@ -308,5 +308,5 @@ Eine bebilderte Anleitung über die Einrichtung einer FritzBox und auch die Konf
 >
 > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
 >
-> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->

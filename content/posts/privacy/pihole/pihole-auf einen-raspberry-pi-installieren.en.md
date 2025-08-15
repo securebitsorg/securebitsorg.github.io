@@ -2,30 +2,32 @@
 title: Pi-hole Raspberry Pi Installation
 date: 2022-03-30
 hero: /images/posts/pihole/pi-hole-installation.png
-descripton: Pi-hole Raspberry Pi | In this tutorial, we will install Pihole on a Raspberry Pi
 menu:
   sidebar:
     name: Install Pihole on a Raspberry Pi
     identifier: pihole-raspberry
     parent: pihole
-categories: 
-- “Hardware”
-- “Linux”
-- “Network”
-- “Security”
-- “Tutorials”
+categories:
+  - “Hardware”
+  - “Linux”
+  - “Network”
+  - “Security”
+  - “Tutorials”
 tags:
-- “security”
-- “linux”
-- ‘network’
-- “pi-hole” 
-- “raspberry pi”
-- "tutorials"
-- “video”
+  - “security”
+  - “linux”
+  - ‘network’
+  - “pi-hole”
+  - “raspberry pi”
+  - tutorials
+  - “video”
+description: Pi-hole Raspberry Pi | In this tutorial, we will install Pihole on a Raspberry Pi
 ---
 ## Install and set up Pi-hole on a Raspberry Pi
 In this tutorial, ‘**Install Pi-hole on a Raspberry Pi**’, I will show you how to install the Pi-hole DNS server and set up a recursive DNS server with Unbound.
-The step-by-step installation is fohttps://secure-bits.org/wp-content/uploads/2022/03/Pi-hole-auf-Raspberry-Pi-installieren-Schritt-3.jpghtly on a Raspberry Pi in this tutorial.
+The step-by-step installation is on a Raspberry Pi in this tutorial.
+
+
 In another tutorial here on SecureBits (https://secure-bits.org/pi-hole-installation/), I already showed you how to install it on a Debian system in a virtual machine and explained why and how you should use a Pi-Hole DNS server.
 ## Video tutorial on ‘Pi-hole Raspberry Pi’
 For those of you who would prefer to watch a video tutorial on installing Pi-hole on a Raspberry Pi, I have published an installation video on my YouTube channel.
@@ -40,9 +42,11 @@ You can download the Raspberry Pi Imager here:
 #### Pi-hole on a Raspberry Pi – installation process Raspberry OS
 After downloading, open Raspberry PI Imager (in this example for Windows), insert an SD card into your SD reader and select the appropriate OS for the Raspberry Pi in the Imager. Make sure that you select either the 64-bit or 32-bit version of Raspberry PI OS Lite. The Lite version is sufficient for operating Pi-hole.
 After selecting the appropriate OS, select the appropriate SD card for the image and, before clicking Write, click on the gear icon on the Raspberry PI Imager interface, enable access via SSH, and assign a secure password for access.
+
 ![Installation process Raspberry OS Image 1](/images/posts/pihole/Raspberry-OS-installieren-Bild-1.jpg)
 ![Raspberry OS installation process image 2](/images/posts/pihole/Raspberry-OS-installieren-Bild-2.jpg)
 ![Raspberry OS installation process image 3](/images/posts/pihole/Raspberry-OS-installieren-Bild-3.jpg)
+
 ## Install Pihole
 ### Install Pi-Hole on a Raspberry Pi
 First, we will install and set up Pi-hole on a Raspberry Pi.
@@ -158,6 +162,8 @@ sudo nano /etc/dhcpcd.conf
 # In the Nano editor window, change the new IP address here under ‘static-ip-address’, save your entries with CTRL+O and ENTER, and exit the Nano editor with CTRL+X. See next image
 ```
 ![Assign static IP address to Raspberry Pi](/images/posts/pihole/pi-hole-IP-Adresse-aendern.jpg)
+
+
 #### Reconfigure/set up Pi-hole - Pi-hole on a Raspberry Pi
 To run the Pi-hole installation setup again, you can connect to the Raspberry Pi via SSH and restart the setup with the following command
 ```sh
@@ -243,3 +249,11 @@ IPv6: 2a01:3a0:53:53::
 Using a Pi-hole DNS server is a great and inexpensive way (except that the PI is currently difficult to obtain due to a semiconductor shortage and therefore very expensive) to protect yourself from tracking, malware, and adware.
 Especially in your home network, this DNS server can be implemented wonderfully as a name server on a consumer router such as FritzBox, Speedport, and others. This provides excellent protection against tracking, advertising, malware, and phishing on all devices in the network. Of course, this protection is not 100% effective, but it is certainly better than doing nothing to protect your data privacy.
 Feel free to send me any suggestions for blacklists that you use. I would really appreciate it!
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->

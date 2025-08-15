@@ -32,10 +32,19 @@ If you have any questions on this topic, just leave a comment either below the v
 
 ### Block lists/ad lists for Pihole
 You can find a list of block lists I use in this post:
-**[Installing Pi-hole on a Raspberry Pi](https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/)**
+**[Installing Pi-hole on a Raspberry Pi](https://secure-bits.org/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/)**
 ### Setting up Pihole - More videos on Pihole and Raspberry Pi
-[FritzBox + Pi-hole | Configuring FritzBox | SecureBits (secure-bits.org)](https://secure-bits.org/fritzbox-pi-hole-fritzbox-konfigurieren/)
+[FritzBox + Pi-hole | Configuring FritzBox | SecureBits (secure-bits.org)](https://secure-bits.org/en/posts/privacy/pihole/pihole-fritzbox-setup/)
 
 [Securing Raspberry Pi from A to Z | 2023 | SecureBits](secure-bits.org)
 
-[Setup Unbound + Pi-hole and DNS encryption](https://secure-bits.org/pihole-unbound-jetzt-richtig-installieren-in-2023/)
+[Setup Unbound + Pi-hole and DNS encryption](https://secure-bits.org/en/posts/privacy/pihole/pihole-unbound/)
+
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->

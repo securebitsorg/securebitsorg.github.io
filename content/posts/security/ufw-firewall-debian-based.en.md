@@ -1,6 +1,5 @@
 ---
 title: UFW Firewall Raspberry Pi Installation
-descripton: UFW Firewall Raspberry Pi | In this tutorial, I will show you how to secure your Raspberry Pi with the UFW firewall.
 hero: /images/posts/it-security/Thumbnail-1.png
 menu:
     sidebar:
@@ -8,26 +7,30 @@ menu:
         identifier: ufw-firewall-raspberry
         parent: security
 date: 2022-09-20
-categories: 
-- “Linux”
-- “Network”
-- “Security”
-- ‘Tutorials’
-- “Video” 
-- “Hardware”
+categories:
+    - “Linux”
+    - “Network”
+    - “Security”
+    - ‘Tutorials’
+    - “Video”
+    - “Hardware”
 tags:
-- “raspberry pi”
-- “firewall”
-- “linux”
-- “security”
-- "tutorials"
-- “video”
+    - “raspberry pi”
+    - “firewall”
+    - “linux”
+    - “security”
+    - tutorials
+    - “video”
+description: UFW Firewall Raspberry Pi | In this tutorial, I will show you how to secure your Raspberry Pi with the UFW firewall.
+preview: ../../../assets/images/posts/it-security/Thumbnail-1.png
+keywords:
+    - ufw raspberry pi
 ---
 ## Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi
 
 In this post, '**UFW Firewall Raspberry Pi Installation**', I would like to show you how to install and set up this firewall or command line interface for **iptables** on a Raspberry Pi or any other Linux-based distribution. This means that the commands listed here are not limited to the **Raspberry Pi**, but can also be used on all other Linux-based distros.
 
-In keeping with the tutorial ‘Installing AdGuard on the Raspberry Pi’ (https://secure-bits.org/adguard-raspberry-pi-installation-2022/)', it makes sense to install the [UFW firewall](https://wiki.ubuntuusers.de/ufw/) on the Raspberry Pi with **AdGuard Home**. This will protect the AdGuard DNS server from unauthorized access from the network.
+In keeping with the tutorial ‘Installing AdGuard on the Raspberry Pi’ (https://secure-bits.org/en/posts/privacy/adguard/adguard-home-auf-raspberry-pi-installieren/)', it makes sense to install the [UFW firewall](https://wiki.ubuntuusers.de/ufw/) on the Raspberry Pi with **AdGuard Home**. This will protect the AdGuard DNS server from unauthorized access from the network.
 ### UFW firewall rules for AdGuard on the Raspberry Pi
 You can find the rules I suggest for the UFW firewall further down in this post. But first, make sure you read the whole post so you don't lock yourself out of the Raspberry Pi.
 [To the AdGuard rules](#adguard)
@@ -328,7 +331,7 @@ sudo ufw allow 853/udp
 # Allow ports for DHCP service
 sudo ufw allow 67/tcp
 sudo ufw allow 67/udp
-sudo ufw allow 68/tcp![Überprüfung der UFW-Firewall-Regeln nach Anlegung des eigenen Profils](/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png)
+sudo ufw allow 68/tcp![Überprüfung der UFW-Firewall-Regeln nach 
 sudo ufw allow 68/udp
 # Ports for https and http
 sudo ufw allow 80/tcp
@@ -347,9 +350,18 @@ sudo ufw reload
 # Activate firewall:
 sudo ufw enable
 ```
+[Anlegung des eigenen Profils](/images/posts/it-security/Eigenes-App-Profil-ueberpruefen.png)
 ## Summary - UFW firewall Raspberry Pi
 In this tutorial, ‘UFW firewall Raspberry Pi’, we have secured the Raspberry Pi against unnecessary access using the UFW firewall.
 The UFW firewall tool makes it easy to configure iptables (Netfilter) and thus ensure greater security on a Linux system.
 If you're not comfortable using the terminal, you can also use the graphical user interface ‘gufw’ to do everything with a few clicks, provided, of course, that a graphical user interface is installed on your system.
 I hope you enjoyed this post and that it helped some of you a little bit!
 If you have any questions, please leave me a comment or send me an email.
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->

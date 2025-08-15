@@ -40,7 +40,7 @@ Inhaltsverzeichnis zu Pihole Unbound
 >
 > Dieses Tutorial bezieht sich auf die vorherigen Tutorials zum Thema 'Pi-Hole auf einen Raspberry Pi installieren' und nimmt diese Konfiguration als Grundlage für diesen Beitrag.
 
-In diesem Tutorial gehe ich von der Basis aus, die ihr nachdem Tutorial '**[Pi-Hole + Firewall auf einen Raspberry Pi installieren](https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/)**' auf euren Raspberry Pi nutzt. Sollte das nicht der Fall sein, dann könnt ihr vorab gerne das Tutorial für die Installation durchgehen.
+In diesem Tutorial gehe ich von der Basis aus, die ihr nachdem Tutorial '**[Pi-Hole + Firewall auf einen Raspberry Pi installieren](https://secure-bits.org/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/)**' auf euren Raspberry Pi nutzt. Sollte das nicht der Fall sein, dann könnt ihr vorab gerne das Tutorial für die Installation durchgehen.
 
 Natürlich sollte die Installation von **Unbound** auch auf anderen Linux basierten Systemen so funktionieren!
 
@@ -157,7 +157,7 @@ Jan 19 06:57:01 piholetest cron[3866]: (CRON) INFO (Skipping @reboot jobs -- not
 Als nächstes müssen wir eine Config-Datei für Unbound anlegen, in der wir dann im nächsten Schritt, die Konfiguration für das Zusammenspiel von Unbound und Pi-hole eintragen.
 
 ```bash
-# Unbound-Conf-Datei anlegen
+# Unbound-Conf-Datei anlegenhttps://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/
 
 sudo nano /etc/unbound/unbound.conf.d/pi-hole.conf
 
@@ -197,7 +197,7 @@ port: 5335
 do-ip4: yes
 do-udp: yes
 do-tcp: yes
-Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert und konfiguriert.
+Pihole Unbound jetzt richtig installieren | In diesen Tutorial zeige ich euch, wie ihr Unbound richtig für Pihole installiert https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/und konfiguriert.
 # Kann auf ja gesetzt werden, wenn du IPv6-Konnektivität hast
 
 do-ip6: no
@@ -441,5 +441,5 @@ Dokumentation von Pi-hole.net zum Thema Unbound
 >
 > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen.  Sie können dort auch gerne Ihre eigene Frage stellen.
 >
-> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+> [**Zur Hilfeseite**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->

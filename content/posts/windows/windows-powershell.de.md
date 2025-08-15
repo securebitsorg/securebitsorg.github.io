@@ -23,7 +23,7 @@ hero: /images/posts/windows/Windows-PowerShell-Batch.jpg
 
 In diesem Artikel möchte ich euch das neue (so neu ist es nun auch nicht) Kommandozeilen-Tool Windows PowerShell ein bisschen näherbringen und euch die Unterschiede zur klassischen Kommandozeile CMD aufzeigen. Warum zur Administration die PowerShell das Tool eurer Wahl sein sollte, erfahrt ihr in diesem Beitrag. 
 
-Was es mit dem klassischen Kommandozeilen-Interpreter CMD auf sich hat, dass erfahrt ihr in diesem Artikel: [**CMD-Befehle im Überblick**](https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/)
+Was es mit dem klassischen Kommandozeilen-Interpreter CMD auf sich hat, dass erfahrt ihr in diesem Artikel: [**CMD-Befehle im Überblick**](https://secure-bits.org/posts/windows/cmd-befehle-im-ueberblick/)
 
 ## Windows PowerShell installieren - Ein mächtiges Tool
 
@@ -191,12 +191,6 @@ sudo apt-get install -y curl gnupg apt-transport-https
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
 
-# Register the Microsoft Product feed## Video-Tutorial zu PowerShell auf Udemy
-
-Ich kann euch wärmstens den Kurs von Tom Wechsler auf der Udemy-Plattform empfehlen. Das soll jetzt keine Werbung für Affiliate-Links sein, aber die Kurse von ihm sind echt super.  
-Tipp! Öfter mal dort reinschauen, da es bei Udemy oft Rabatt-Aktionen gibt und ihr euch so einen Kurs für ein paar Euro schnappen könnt.
-
-[Zum Video-Tutorial](https://secure-bits.org/ssgo)
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
 
 # Update the list of products
@@ -336,12 +330,12 @@ Die Pfade findet ihr beziehungsweise sind hier:
 
 Hoffe der Beitrag kann euch bei eurem Vorhaben gut unterstützen!
 
-Natürlich werde ich das Thema in weiteren Artikeln noch vertiefen und werde dann auf die Bedienung, Funktionen und verfügbare Befehle weiter eingehen. Sebstverständlich werden wir uns auch den Script-Editor ansehen und wie das Arbeiten damit funktioniert.
+
 
 <!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
 > ## Fragen und Antworten
 >
 > Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
 >
-> [**Zur Hilfeseite**](https://ticket.secure-bits.org/help)
+> [**Zur Hilfeseite**](https://help.secure-bits.org/)
 <!-- FM:Snippet:End -->

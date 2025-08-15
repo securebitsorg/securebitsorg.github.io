@@ -25,7 +25,7 @@ slug: was-ist-eine-unified-threat-management-firewall
 
 ## Unified Threat Management Appliances (UTM-Firewall)
 
-In meinem Beitrag "[Wie funktioniert eine Firewall?](https://secure-bits.org/wie-funktioniert-eine-firewall/)", habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.
+In meinem Beitrag "[Wie funktioniert eine Firewall?](https://secure-bits.org/posts/security/wie-funktioniert-eine-firewall/)", habe ich euch beschrieben wie eine Firewall aufgebaut ist und welche Unterschiede bei den einzelnen Firewall-Arten bestehen.
 
 In diesem Beitrag möchte ich euch nun die Funktionsweise einer Unified Threat Management (UTM oder UTM-Firewall) näherbringen und euch hier die einzelnen Funktionen sowie Fachbegriffe erklären.
 
@@ -46,10 +46,10 @@ Diese Festlegung legt fest, welche Eigenschaften eine Unified Threat Management 
 ## Unified Threat Management - Eigenschaften und Funktionen:
 
 - Internet-Gateway
-- [Firewall](https://secure-bits.org/wie-funktioniert-eine-firewall/)
+- [Firewall](https://secure-bits.org/posts/security/wie-funktioniert-eine-firewall/)
 - Virtual Private Network Gateway (VPN)
 - Virus Protection
-- [Intrusion Detection System](https://secure-bits.org/intrusion-prevention-system/)
+- Intrusion Detection System
 - Contentfilter
 - Spam Protection
 - Surf Protection
@@ -135,4 +135,10 @@ Unter Virus Protection bei einem Unified Threat Management System versteht man, 
 
 Bei Open Source-Firewalls wie zum Beispiel **OPNSense**, **IPFire** oder **pfsense** werden hier als Antiviren-Lösung **ClamAV** eingesetzt. Bei Firewall-Distributionen von kostenpflichtigen Anbietern wird hier oft eigene Scan-Engine beziehungsweise Lösungen bekannter Antiviren-Hersteller. So nutzt der Hersteller **Sophos** bei seinem [Sophos UTM-Produkt](https://www.sophos.com/de-de/products/unified-threat-management.aspx) zum einem die Engine seiner eigenen Antiviren-Lösung und als weitere Scan-Lösung die Engine von **Avira**.
 
-# 
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org/help)
+<!-- FM:Snippet:End -->

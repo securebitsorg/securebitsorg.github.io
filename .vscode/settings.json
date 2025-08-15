@@ -13,5 +13,6 @@
         },
         "editor.minimap.enabled": false
     },
-    "frontMatter.panel.openOnSupportedFile": true
+    "frontMatter.panel.openOnSupportedFile": true,
+    "window.autoDetectColorScheme": true
 }

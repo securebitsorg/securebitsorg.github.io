@@ -32,7 +32,7 @@ Table of contents for Pihole Unbound
 > These instructions for installing and setting up **Unbound** are for **Debian-based distributions such as Debian, Ubuntu, Raspberry Pi OS, etc.**.
 >
 > This tutorial refers to the previous tutorials on ‘Installing Pi-Hole on a Raspberry Pi’ and uses this configuration as the basis for this article.
-In this tutorial, I will start from the basics that you will have learned after completing the tutorial '**[Installing Pi-Hole + Firewall on a Raspberry Pi](https://secure-bits.org/pi-hole-auf-einen-raspberry-pi-installieren/)**' on your Raspberry Pi. If this is not the case, please feel free to go through the installation tutorial first.
+In this tutorial, I will start from the basics that you will have learned after completing the tutorial '**[Installing Pi-Hole + Firewall on a Raspberry Pi](https://secure-bits.org/en/posts/privacy/pihole/pihole-auf-einen-raspberry-pi-installieren/)**' on your Raspberry Pi. If this is not the case, please feel free to go through the installation tutorial first.
 Of course, the installation of **Unbound** should also work on other Linux-based systems!
 ## Video tutorial on ‘Installing Pihole Unbound’
 {{< youtube TdL_3iB9SiU >}}
@@ -304,5 +304,5 @@ Developers behind Unbound and background information on the recursive DNS server
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org/help)
 <!-- FM:Snippet:End -->

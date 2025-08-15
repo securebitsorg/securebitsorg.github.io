@@ -23,7 +23,7 @@ hero: /images/posts/windows/Windows-PowerShell-Batch.jpg
 ---
 In this article, I would like to introduce you to the new (well, not that new) command line tool Windows PowerShell and show you the differences between it and the classic CMD command line. In this article, you will learn why PowerShell should be your tool of choice for administration.
  
-> You can find out what the classic command line interpreter CMD is all about in this article: [**CMD commands at a glance**](https://secure-bits.org/cmd-befehle-unter-windows-im-ueberblick/)
+> You can find out what the classic command line interpreter CMD is all about in this article: [**CMD commands at a glance**](https://secure-bits.org/en/posts/windows/cmd-befehle-im-ueberblick/)
 
 
 ## Installing Windows PowerShell – A powerful tool
@@ -49,7 +49,7 @@ The combination of cmdlets gives this shell a very powerful range of functions a
 ## CMD commands at a glance
 In this article, I will discuss the command line tool “CMD” and provide an overview of the most commonly used and most important commands for the console. Of course, this is also available as a PDF download for you.
 Just take a look...
-[Read article](/posts/windows/cmd-commands-at-a-glance/)
+[Read article](/posts/windows/cmd-befehle-im-ueberblick/)
 * * *
 ## Installing Windows PowerShell
 Most Windows operating systems (Windows 7 SP1 and Windows Server 2008 R2 SP1 or later) already have a version of Windows PowerShell installed. This is updated via Windows Update, or you can manually trigger an update via the command line (see below for instructions).
@@ -91,7 +91,7 @@ I highly recommend Tom Wechsler's course on the Udemy platform. This is not mean
 In this example, I will show you how to install the core version on the following three Linux systems:
 **Ubuntu 18.04 or newer, Debian 10 or newer, and Kali Linux**
 Info:
-Many other distributions are also supported, but listing every single installation instruction here would be too much.
+Many other distributions are also supported, but listing every /posts/windows/cmd-commands-at-a-glance/single installation instruction here would be too much.
 Help for other platforms can be found here on [this Microsoft page.](https://docs.microsoft.com/de-de/powershell/scripting/install/installing-powershell-core-on-linux?view=powershell-6)
  
 ### Installing Windows PowerShell – Installation on Ubuntu 18.04 or higher
@@ -126,10 +126,7 @@ sudo apt-get update
 sudo apt-get install -y curl gnupg apt-transport-https
 # Import the public repository GPG keys
 curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
-# Register the Microsoft product feed## Video tutorial on PowerShell on Udemy
-I highly recommend Tom Wechsler's course on the Udemy platform. This isn't meant to be an affiliate link, but his courses are really great.  
-Tip! Check back often, as Udemy often has discount promotions and you can grab a course for just a few dollars.
-[To the video tutorial](https://secure-bits.org/ssgo)
+
 sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/microsoft-debian-stretch-prod stretch main" > /etc/apt/sources.list.d/microsoft.list'
 # Update the list of products
 sudo apt-get update
@@ -225,5 +222,5 @@ I will, of course, explore this topic in more depth in future articles, where I 
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->

@@ -23,7 +23,7 @@ description: In this article, you will learn what a Unified Threat Management Fi
 slug: what-is-a-unified-threat-management-firewall
 ---
 ## Unified Threat Management Appliances (UTM Firewall)
-In my article “How does a firewall work?” (https://secure-bits.org/wie-funktioniert-eine-firewall/), I described how a firewall is structured and the differences between the various types of firewalls.
+In my article “[How does a firewall work?](https://secure-bits.org/en/posts/security/wie-funktioniert-eine-firewall/)", I described how a firewall is structured and the differences between the various types of firewalls.
 In this article, I would like to give you a closer look at how a Unified Threat Management (UTM or UTM firewall) works and explain the individual functions and technical terms.
 ## What is the difference between a UTM firewall and a normal firewall?
 There is a clear definition of this term, which specifies the designation of a security component (security appliance). For example, a pure firewall is referred to as a Specialized Security Appliance (SSA), as this network security component performs a clearly defined task in the security system. In this case, it is to prevent network connections according to a defined set of rules.
@@ -36,10 +36,10 @@ This definition specifies the features that a unified threat management applianc
 ![UTM diagram](/images/posts/it-security/UTM-Diagramm.png)
 ## Unified Threat Management – Features and functions:
 - Internet gateway
-- [Firewall](https://secure-bits.org/wie-funktioniert-eine-firewall/)
+- [Firewall](https://secure-bits.org/en/posts/security/wie-funktioniert-eine-firewall/)
 - Virtual Private Network Gateway (VPN)
 - Virus protection
-- [Intrusion Detection System](https://secure-bits.org/intrusion-prevention-system/)
+- Intrusion Detection System
 - Content filter
 - Spam protection
 - Surf protection
@@ -98,3 +98,11 @@ Depending on the manufacturer, various authentication services are available.
 Virus protection in a Unified Threat Management System refers to an antivirus security solution that is permanently implemented in the UTM firewall and checks data blocks for malicious code using signatures.
 Open source firewalls such as **OPNSense**, **IPFire**, or **pfsense** use **ClamAV** as their antivirus solution. Firewall distributions from paid providers often use their own scan engine or solutions from well-known antivirus manufacturers.
  For example, the manufacturer Sophos uses its own antivirus solution engine in its [Sophos UTM product](https://www.sophos.com/de-de/products/unified-threat-management.aspx) and the engine from Avira as an additional scanning solution.
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/help)
+<!-- FM:Snippet:End -->

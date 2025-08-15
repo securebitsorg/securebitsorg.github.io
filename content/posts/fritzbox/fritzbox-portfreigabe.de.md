@@ -1,6 +1,5 @@
 ---
 title: Tipp - Fritzbox Portfreigabe richtig einrichten
-descripton: Fritzbox Portfreigabe richtig einrichten | In diesem Video zeige ich, wie ihr eine Freigabe / Portweiterleitung in der Fritzbox konfiguriert.
 hero: /images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 date: 2022-03-19
 menu:
@@ -8,18 +7,20 @@ menu:
     name: Fritzbox Portfreigabe einrichten
     identifier: fritzbox-port
     parent: fritzbox
-categories: 
-  - "Hardware"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
-tags: 
-  - "fritzbox"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+categories:
+  - Hardware
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
+tags:
+  - fritzbox
+  - netzwerk
+  - security
+  - tutorials
+  - video
+description: Fritzbox Portfreigabe richtig einrichten | In diesem Video zeige ich, wie ihr eine Freigabe / Portweiterleitung in der Fritzbox konfiguriert.
+preview: ../../../assets/images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
 ---
 
 ## FritzBox Portfreigabe einrichten
@@ -134,6 +135,10 @@ Was ist eine Portweiterleitung / Portfreigabe
 
 [https://de.wikipedia.org/wiki/Portweiterleitung](https://de.wikipedia.org/wiki/Portweiterleitung)
 
-### Andere Themen zur FritzBox-Konfiguration
-
-FritzBox [Gastzugang einrichten](https://secure-bits.org/fritzbox-gastzugang-einrichten-aktivieren/)
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->

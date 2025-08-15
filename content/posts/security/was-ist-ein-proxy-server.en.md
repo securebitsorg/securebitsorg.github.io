@@ -27,8 +27,6 @@ In order to surf anonymously on the Internet, the use of a proxy server is essen
 A proxy server can be viewed as an intermediary or middleman in a network. It receives requests from a proxy client (e.g., desktop) and forwards them on its behalf to the target web server requested by the proxy client.
 
 
-![Proxy-Listen.de](/images/posts/it-security/proxy_listen_de.jpg)
-
 
 To simplify this process, I will use the following scenario:
 
@@ -70,5 +68,5 @@ To surf the Internet anonymously, you will of course need a free proxy server. A
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->

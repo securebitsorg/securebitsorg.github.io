@@ -27,10 +27,12 @@ slug: windows-product-key-activate
 > Of course, you can also use this method to change or activate the product key for any other Windows version.
 To activate it, you will need to use your product key instead! The product keys shown in this article are only suitable for use with Windows Insider Preview!
 ## Activate Windows Product Key
-When performing an in-place upgrade of Windows 10 Enterprise, you may be prompted to reactivate Windows after the upgrade. When you try to reactivate, the process ends with an error code.  [text](windows-key-aktivieren.de.md)
+When performing an in-place upgrade of Windows 10 Enterprise, you may be prompted to reactivate Windows after the upgrade. When you try to reactivate, the process ends with an error code. 
+
 The following instructions will show you how to change the product key and then activate your Windows 10 Insider Preview or any other version of Windows.
 ## Read out the Windows product key
 You can easily read out the product key via the command line (CMD). To do this, start the command line or PowerShell with administrator rights as described below in this article and then enter the following command.
+
 ```msdos
 wmic path softwarelicensingservice get OA3xOriginalProductKey
 ```
@@ -72,5 +74,5 @@ After entering the above command, Windows will be activated after a short time a
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->

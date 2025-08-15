@@ -100,5 +100,5 @@ Since many tasks can be performed faster or only via the command line, I have co
 > 
 > If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
 >
-> [**Visit the Help-page**](https://ticket.secure-bits.org/help)
+> [**Visit the Help-page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->
