@@ -108,15 +108,29 @@ markup:
       attribute:
         block: true
 
+#markup:
+#  highlight:
+#    codeFences: true
+#   style: fruity # dracula # catppuccin-mocha 
+#    lineNos: false
+#    lineNumbersInTable: false
+#    wrapperclass: highlight
+#    guessSyntax: false
 markup:
   highlight:
+    anchorLineNos: false
     codeFences: true
-    style: fruity # dracula # catppuccin-mocha 
-    lineNos: true
-    lineNumbersInTable: false
-    wrapperclass: highlight
-    guessSyntax: true
-
+    guessSyntax: false
+    hl_Lines: ""
+    hl_inline: false
+    lineAnchors: ""
+    lineNoStart: 1
+    lineNos: false
+    lineNumbersInTable: true
+    noClasses: true
+    style: fruity
+    tabWidth: 4
+    wrapperClass: highlight
 
 # At least HTML and JSON are required for the main HTML content and
 # client-side JavaScript search
