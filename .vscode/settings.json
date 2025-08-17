@@ -14,5 +14,9 @@
         "editor.minimap.enabled": false
     },
     "frontMatter.panel.openOnSupportedFile": true,
-    "window.autoDetectColorScheme": true
+    "window.autoDetectColorScheme": false,
+    "workbench.colorTheme": "Monokai",
+    "workbench.editor.autoLockGroups": {
+        "mainThreadWebview-markdown.preview": true
+    }
 }
