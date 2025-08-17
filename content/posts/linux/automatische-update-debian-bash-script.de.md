@@ -15,8 +15,10 @@ menu:
     identifier: debian-update
     parent: linux
 keywords:
-  - debian update script
+  - bash-update-script
 draft: false
+preview: ../../../assets/images/posts/linux/bash-update-script-debian.webp
+hero: /images/posts/linux/bash-update-script-debian.webp
 ---
 ## Updates auf debian-basierenden Systemen automatisieren mit einem Bash-Script
 
