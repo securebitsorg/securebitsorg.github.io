@@ -13,7 +13,7 @@ menu:
   sidebar:
     name: Bash-Script für automatische Updates unter Debian
     identifier: debian-update
-    parent: linux
+    parent: linux-scripting
 keywords:
   - bash-update-script
 draft: false

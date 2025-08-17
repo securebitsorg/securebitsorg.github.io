@@ -13,7 +13,7 @@ menu:
   sidebar:
     name: Bash-Script für automatische Updates auf RHEL-Systemen
     identifier: rhel-update
-    parent: linux
+    parent: linux-scripting
 keywords:
   - rhel-update
 draft: false
