@@ -51,7 +51,7 @@ Dafür gibt es auch wieder mehrere Gründe, die ich euch nicht vorenthalten möc
  
 Zu Zeit ist hier nichts geplant, dass es hier auf diesem Blog, wieder ein Forum in dieser Art geben wird.
 
-> **Aber** es wird weiterhin ein Austausch für alle Interessierten unter euch in einer anderen Form geben. Hierfür nutze ich ein selbstgehostetes Ticket-System ( [Zammad](https://zammad.org/) ) welches auch eine **Q&A-Seite** bietet und euch so Fragen und die passenden Antworten dazu öffentlich zur Verfügung stehen.
+> **Aber** es wird weiterhin ein Austausch für alle Interessierten unter euch in einer anderen Form geben. Hierfür nutze ich ein selbstgehostetes Q&A-System welches auch eine **Q&A-Seite** bietet und euch so Fragen und die passenden Antworten dazu öffentlich zur Verfügung stehen.
 
 Hier habt ihr dann auch die Möglichkeit, eigene Tickets via E-Mail oder Web-Formular zu erstellen und die Antworten zu den Fragen werden dann in anonymisierter Form veröffentlicht. 
 
@@ -82,4 +82,4 @@ Ich hoffe wirklich, dass euch diese Webseite hoffentlich weiterhin einen Mehrwer
 
 > ### Das "Q & A - Seite" findet ihr heir:
 >
-> Die [**Q & A - SEITE BESUCHEN**](https://ticket.secure-bits.org/help)
+> Die [**Q & A - SEITE BESUCHEN**](https://help.secure-bits.org/)

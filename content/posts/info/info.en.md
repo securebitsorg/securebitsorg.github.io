@@ -42,7 +42,7 @@ There are several reasons for this, which I would like to share with you.
 #### Will there be another community forum?
 At the moment, there are no plans to bring back a forum of this kind on this blog.
 
-> **However**, there will still be a place for all of you who are interested to exchange ideas in a different form. For this purpose, I am using a self-hosted ticket system ( [Zammad](https://zammad.org/) ) which also offers a **Q&A page** where you can publicly ask questions and find the answers you are looking for.
+> **However**, there will still be a place for all of you who are interested to exchange ideas in a different form. For this purpose, I am using a self-hosted Q&A system which also offers a **Q&A page** where you can publicly ask questions and find the answers you are looking for.
 Here you also have the option of creating your own tickets via email or web form, and the answers to the questions will then be published in anonymized form.
 This also makes life easier for me, as I don't have to answer some questions ten times ;) .
 
@@ -65,4 +65,4 @@ I really hope that this website will continue to offer you added value and help 
 **In any case, I hope you continue to enjoy visiting this blog and that my tutorials are helpful to you!**
 > ### You can find the “Q & A page” here:
 >
-> The [**Q & A PAGE**](https://ticket.secure-bits.org/help)
+> The [**Q & A PAGE**](https://help.secure-bits.org/)
