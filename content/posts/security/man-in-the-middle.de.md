@@ -9,12 +9,12 @@ menu:
     identifier: man-in-the-middle
     parent: security
 categories: 
-  - "Netzwerk"
-  - "Security"
+  - Netzwerk
+  - Security
 tags: 
-  - "firewall"
-  - "netzwerk"
-  - "security"
+  - firewall
+  - netzwerk
+  - security
 
 ---
 

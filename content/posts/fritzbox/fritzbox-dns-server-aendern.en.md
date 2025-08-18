@@ -9,17 +9,10 @@ menu:
     parent: fritzbox
 date: 2022-06-20
 categories:
-- “Network”
-- ‘Security’
-- “Tutorials” 
-- “Video”
+  - “Network”
+  - “Tutorials”
 tags:
-- “firewall”
-- “fritzbox”
-- “network”
-- “security”
-- "tutorials"
-- “video”
+  - tutorials
 ---
 ## Video tutorial - Protect your privacy with the FritzBox
 In this video, “**Change FritzBox DNS server**,” I show you how you can prevent your internet provider from tracking your internet usage by using public DNS servers that comply with data protection regulations.

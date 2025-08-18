@@ -9,8 +9,13 @@ menu:
     identifier: proxmox-fail2ban
     parent: linux
     weight: 10
-tags: [“linux”, “security”, “proxmox”, “video”]
-categories: [“Tutorials”, “Linux”, ‘Video’, “Security”]
+tags:
+  - linux
+  - security
+  - tutorials
+categories:
+  - Linux
+  - Security
 ---
 ## Secure Proxmox VE based on Debian 12 with fail2ban
 One way to secure a public Proxmox server against brute force attacks is to use the tool ‘fail2ban’.

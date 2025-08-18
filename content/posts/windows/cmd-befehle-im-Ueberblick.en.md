@@ -9,14 +9,13 @@ menu:
     identifier: cmd
     parent: windows
 categories:
-  - “Tutorials”
-  - “Windows”
   - Network
+  - Tutorials
+  - Windows
 tags:
-  - “cmd”
-  - “powershell”
-  - ‘tutorials’
-  - “windows”
+  - cmd
+  - tutorials
+  - windows
 keywords:
   - cmd
 preview: ../../../assets/images/posts/windows/Eingabeaufforderung_logo.jpg

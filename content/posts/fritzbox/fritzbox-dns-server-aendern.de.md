@@ -9,17 +9,17 @@ menu:
     parent: fritzbox
 date: 2022-06-20
 categories: 
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "firewall"
-  - "fritzbox"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - firewall
+  - fritzbox
+  - netzwerk
+  - security
+  - tutorials
+  - video
 ---
 
 ## Video-Tutorial - Schütze deine Privatsphäre mit der FritzBox

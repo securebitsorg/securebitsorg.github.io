@@ -9,12 +9,12 @@ menu:
     parent: security
 date: 2021-01-27
 categories: 
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
+  - Netzwerk
+  - Security
+  - Tutorials
 tags: 
-  - "security"
-  - "tutorials"
+  - security
+  - tutorials
 ---
 
 ## Schutz vor Man-in-the-Middle-Angriffe

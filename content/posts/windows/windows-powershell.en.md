@@ -6,10 +6,11 @@ categories:
   - Windows
   - Linux
 tags:
+  - linux
+  - powershell
   - tutorials
   - windows
-  - powershell
-  - linux
+  - cmd
 description: Install Windows Powershell on Windows, macOS, and Linux
 preview: ../../../assets/images/posts/windows/Windows-PowerShell-Batch.jpg
 menu:

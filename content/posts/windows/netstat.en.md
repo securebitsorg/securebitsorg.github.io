@@ -2,14 +2,14 @@
 title: Netstat under Windows
 date: 2025-07-27T10:17:10.288Z
 categories:
-- Network
-- Tutorials
-- Windows
+  - Network
+  - Tutorials
+  - Windows
 tags:
-- cmd
-- network
-- tutorials
-- windows
+  - cmd
+  - network
+  - tutorials
+  - windows
 description: How does Netstat work on Windows? Netstat commands explained simply.
 menu:
   sidebar:

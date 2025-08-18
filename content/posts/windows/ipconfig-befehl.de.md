@@ -1,6 +1,6 @@
 ---
 title: ipconfig-befehl
-description: In diesem Tutorial zeicge ich euch, wie ihr den ipconfig Befehl nutzen könnt. 
+description: In diesem Tutorial zeicge ich euch, wie ihr den ipconfig Befehl nutzen könnt.
 hero: /images/posts/windows/ipconfig_all.png
 date: 2025-07-23T07:50:18.409Z
 menu:
@@ -16,9 +16,8 @@ tags:
   - windows
   - tutorials
 categories:
-  - Windows
-  - Tutorial
   - Netzwerk
+  - Windows
 preview: ../../../assets/images/posts/windows/ipconfig_all.png
 keywords:
   - ipconfig

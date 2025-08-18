@@ -8,19 +8,12 @@ menu:
     identifier: pihole-raspberry
     parent: pihole
 categories:
-  - “Hardware”
-  - “Linux”
-  - “Network”
-  - “Security”
-  - “Tutorials”
+  - Network
+  - Security
+  - Tutorials
 tags:
-  - “security”
-  - “linux”
-  - ‘network’
-  - “pi-hole”
-  - “raspberry pi”
   - tutorials
-  - “video”
+  - pi-hole
 description: Pi-hole Raspberry Pi | In this tutorial, we will install Pihole on a Raspberry Pi
 ---
 ## Install and set up Pi-hole on a Raspberry Pi

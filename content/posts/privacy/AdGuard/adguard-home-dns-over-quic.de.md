@@ -9,17 +9,17 @@ menu:
     identifier: adguard-dns-over-quic
     parent: adguard
 categories: 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - linux
+  - netzwerk
+  - security
+  - tutorials
+  - video
 tags: 
-  - "adguard"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - adguard
+  - netzwerk
+  - security
+  - tutorials
+  - video
 ---
 
 ## AdGuard Home DNS-Verschlüsselung mit DNS over QUIC

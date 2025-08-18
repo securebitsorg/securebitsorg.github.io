@@ -9,18 +9,18 @@ menu:
     identifier: adguard-config
     parent: adguard
 categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "adguard"
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - adguard
+  - linux
+  - netzwerk
+  - security
+  - tutorials
+  - video
 ---
 ## AdGuardHome-Setup - Konfigurieren um dein Netzwerk vor Werbung und Trackern zu schützen
 

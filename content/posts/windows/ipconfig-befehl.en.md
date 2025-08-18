@@ -5,22 +5,20 @@ date: 2025-07-23T07:50:18.409Z
 preview: ../../../assets/images/posts/windows/ipconfig_all.png
 draft: false
 tags:
-    - windows
-    - cmd
-    - powershell
-    - tutorial
+  - cmd
+  - powershell
+  - windows
 categories:
-    - Tutorial
-    - Windows
-    - Network
+  - Network
+  - Windows
 hero: /images/posts/windows/ipconfig_all.png
 keywords: ipconfig
 slug: ipconfig-command
 menu:
-    sidebar:
-        parent: windows
-        identifier: ipconfig
-        name: The ipconfig command overview
+  sidebar:
+    parent: windows
+    identifier: ipconfig
+    name: The ipconfig command overview
 ---
 You can find an **overview of all CMD commands** in **[**this article**](https://secure-bits.org/en/posts/windows/cmd-befehle-im-ueberblick/)**
 ## ipconfig commands at a glance

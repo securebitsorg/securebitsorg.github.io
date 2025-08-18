@@ -10,18 +10,18 @@ menu:
     parent: adguard
 categories: 
 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "adguard"
-  - "fritzbox"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - adguard
+  - fritzbox
+  - netzwerk
+  - security
+  - tutorials
+  - video
 ---
 
 ## Werbung und Tracking mit AdGuard Home blockieren

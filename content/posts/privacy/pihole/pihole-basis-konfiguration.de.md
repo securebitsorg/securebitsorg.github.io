@@ -9,16 +9,16 @@ menu:
     identifier: pihole-konfigurieren
     parent: pihole
 categories: 
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "netzwerk"
-  - "pi-hole"
-  - "security"
-  - "tutorials"
-  - "video"
+  - netzwerk
+  - pi-hole
+  - security
+  - tutorials
+  - video
 ---
 
 ## Pihole einrichten - Basis-Konfiguration

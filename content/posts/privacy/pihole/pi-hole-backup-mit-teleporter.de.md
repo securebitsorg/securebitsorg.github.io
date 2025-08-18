@@ -9,15 +9,15 @@ menu:
     identifier: pihole-backup
     parent: pihole
 categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Tutorials"
-  - "Video"
+  - Linux
+  - Netzwerk
+  - Tutorials
+  - Video
 tags: 
-  - "linux"
-  - "pi-hole"
-  - "tutorials"
-  - "video"
+  - linux
+  - pi-hole
+  - tutorials
+  - video
 
 ---
 

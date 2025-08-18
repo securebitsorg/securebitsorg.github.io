@@ -9,18 +9,16 @@ menu:
     identifier: adguard-raspberry-pi
     parent: adguard
 categories:
-- “Linux”
-- “Network”
-- “Security”
-- “Tutorials”
-- “Video”
+  - Network
+  - Security
+  - Tutorials
 tags:
-- adguard
-- network
-- security
-- tutorials
-- video
-- raspberry pi
+  - adguard
+  - network
+  - security
+  - tutorials
+  - video
+  - raspberry pi
 ---
 ## Protect your network from ads and trackers with AdGuard
 In today's tutorial, ‘**AdGuard Raspberry Pi Installation**’, I would like to show you how to install the **AdGuard DNS server** on a **Raspberry Pi version 3 or higher**.

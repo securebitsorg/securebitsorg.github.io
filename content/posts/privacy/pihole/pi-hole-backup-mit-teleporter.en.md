@@ -9,14 +9,14 @@ menu:
     identifier: pihole-backup
     parent: pihole
 categories: 
-  - "linux"
-  - "tutorials"
-  - "video"
+  - Linux
+  - Tutorials
+  - Video
 tags: 
-  - "linux"
-  - "pi-hole"
-  - "tutorials"
-  - "video"
+  - linux
+  - pi-hole
+  - tutorials
+  - video
 ---
 
 ## Backing up and restoring Pi-hole

@@ -10,17 +10,17 @@ menu:
     identifier: adguard-home-manuel-update
     parent: adguard
 categories: 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "adguard"
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "video"
+  - adguard
+  - linux
+  - netzwerk
+  - security
+  - video
 ---
 
 ## Wenn das automatisches AdGuard Home Update fehlschlägt

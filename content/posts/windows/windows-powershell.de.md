@@ -2,13 +2,13 @@
 title: Windows PowerShell installieren
 date: 2019-11-07
 categories:
-  - Software
   - Tutorials
   - Windows
 tags:
   - tutorials
   - windows
   - powershell
+  - cmd
 description: Windows Powershell installieren unter Windows, macOS und Linux
 preview: ../../../assets/images/posts/windows/Windows-PowerShell-Batch.jpg
 menu:

@@ -9,18 +9,18 @@ menu:
     identifier: adguard-raspberry-pi
     parent: adguard
 categories: 
-  - "Linux"
-  - "Netzwerk"
-  - "Security"
-  - "Tutorials"
-  - "Video"
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "adguard"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
-  - "raspberry pi"
+  - adguard
+  - netzwerk
+  - security
+  - tutorials
+  - video
+  - raspberry pi
 ---
 ## Mit AdGuard dein Netzwerk vor Werbung und Trackern schützen
 

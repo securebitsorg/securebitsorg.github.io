@@ -9,19 +9,11 @@ menu:
     identifier: ufw-firewall-part-3
     parent: security
 categories:
-- “Linux”
-- ‘Network’
-- “Security” 
-- “Tutorials”
-- “Video”
+  - Security
+  - Tutorials
 tags:
-- “firewall”
-- “linux”
-- “network”
-- “security”
-- "tutorials"
-- “video”
-- "raspberry pi"
+  - raspberry pi
+  - tutorials
 ---
 ## UFW Firewall - Creating Profiles for Applications
 In this video, I will show you how to use an application profile in the UFW firewall to combine multiple ports for an application in an app profile, allowing you to create multiple ports with a single firewall rule.

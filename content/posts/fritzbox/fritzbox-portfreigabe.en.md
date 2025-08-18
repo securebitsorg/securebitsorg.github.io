@@ -8,19 +8,14 @@ menu:
     identifier: fritzbox-port
     parent: fritzbox
 categories:
-  - “Hardware”
-  - “Network”
-  - “Security”
-  - “Tutorials”
-  - ‘Video’
-tags:
-  - “fritzbox”
-  - “network”
-  - “security”
-  - ‘tutorials’
-  - “video”
+  - Network
+  - Security
+  - Tutorials
 description: Setting up port forwarding correctly on Fritzbox | In this video, I show you how to configure port forwarding on Fritzbox.
 preview: ../../../assets/images/posts/fritzbox/Video-FritzBox-Portfreigabe.png
+tags:
+  - fritzbox
+  - tutorials
 ---
 ## Setting up FritzBox port forwarding
 Today's post is about how to set up **FritzBox port forwarding** correctly, what you can use it for, and what risks arise from using port forwarding.

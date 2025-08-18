@@ -10,12 +10,11 @@ menu:
     identifier: man-in-the-middle
     parent: security
 categories:
-- “Network”
-- “Security”
+  - Network
+  - Security
 tags:
-- “firewall”
-- "network"
-- “security”
+  - network
+  - security
 ---
 
 ## Man-in-the-middle attack – definition

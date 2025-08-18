@@ -5,13 +5,13 @@ date: 2017-01-22
 preview: ../../../assets/images/posts/windows/Windows Product Key.jpg
 draft: false
 tags:
-- cmd 
-- powershell
-- windows
-- tutorials
+  - cmd
+  - powershell
+  - windows
+  - tutorials
 categories:
-- Tutorials
-- “Windows”
+  - Tutorials
+  - Windows
 hero: /images/posts/windows/Windows Product Key.jpg
 menu:
   sidebar:
@@ -19,7 +19,7 @@ menu:
     identifier: windows-key
     parent: windows
 keywords:
-- windows product key
+  - windows product key
 slug: windows-product-key-activate
 ---
 > ### Other Windows versions

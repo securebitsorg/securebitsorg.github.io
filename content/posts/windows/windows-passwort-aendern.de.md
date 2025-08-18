@@ -2,9 +2,8 @@
 title: Jetzt einfach Windows Passwort ändern
 date: 2021-01-08
 categories:
-  - software
-  - tutorials
-  - windows
+  - Tutorials
+  - Windows
 tags:
   - cmd
   - software

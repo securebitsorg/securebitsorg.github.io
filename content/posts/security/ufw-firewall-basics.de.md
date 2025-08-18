@@ -9,19 +9,19 @@ menu:
     identifier: ufw-firewall-teil-1
     parent: security
 categories: 
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - Linux
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "firewall"
-  - "linux"
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
-  - "raspberry pi"
+  - firewall
+  - linux
+  - netzwerk
+  - security
+  - tutorials
+  - video
+  - raspberry pi
 ---
 
 ## Grundlagen zur UFW-Firewall Installation und Einrichtung

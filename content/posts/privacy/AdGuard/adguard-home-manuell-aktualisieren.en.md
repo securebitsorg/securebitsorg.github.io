@@ -2,7 +2,6 @@
 title: Update AdGuard Home manually
 description: Update AdGuard Home manually | In this tutorial, I will show you how to update AdGuard Home manually.
 hero: /images/posts/adguard/Thumbnail-AdGuard-Home-Update.png
-description:
 date: 2022-11-21
 menu:
   sidebar:
@@ -10,17 +9,17 @@ menu:
     identifier: adguard-home-manual-update
     parent: adguard
 categories:
-- “linux”
-- “network”
-- “security”
-- “tutorials”
-- “video”
+  - Linux
+  - Network
+  - Security
+  - Tutorials
+  - Video
 tags:
-- “adguard”
-- “linux”
-- “network”
-- ‘security’
-- “video”
+  - adguard
+  - linux
+  - network
+  - security
+  - video
 ---
 ## If the automatic AdGuard Home update fails
 In this post, ‘**Update AdGuard Home manually**’, and the accompanying video tutorial, I will show you how to perform a manual update on an AdGuard Home instance.

@@ -9,16 +9,14 @@ menu:
     identifier: pihole-fritzbox
     parent: pihole
 categories:
-- “Network”
-- “Security”
-- “Tutorials”
-- ‘Video’
+  - Network
+  - Security
+  - Tutorials
 tags:
-- “fritzbox”
-- “pi-hole”
-- “Security”
-- “Tutorials”
-- ‘Video’
+  - fritzbox
+  - network
+  - pi-hole
+  - tutorials
 ---
 ## FritzBox + Pihole - Configure correctly so that all devices use Pi-hole as their DNS server
 In this video on my [YouTube channel](https://www.youtube.com/@secure_bits/), I show you how to configure the **FritzBox** correctly so that all devices and software use the **Pi-hole** as the DNS server in the network and cannot bypass it.

@@ -11,7 +11,7 @@ tags:
   - tutorials
 categories:
   - Tutorials
-  - “Windows”
+  - Windows
 hero: /images/posts/windows/Windows Product Key.jpg
 menu:
   sidebar:

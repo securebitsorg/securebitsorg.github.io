@@ -9,18 +9,11 @@ menu:
     identifier: ufw-firewall-part-2
     parent: security
 categories:
-  - “Linux”
-  - “Network”
-  - “Security”
-  - “Tutorials”
-  - “Video”
+  - Network
+  - Security
+  - Tutorials
 tags:
-  - “firewall”
-  - “it-security”
-  - “linux”
   - network
-  - “tutorials”
-  - “video”
   - raspberry pi
 keywords:
   - ufw application

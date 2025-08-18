@@ -4,23 +4,21 @@ date: 2023-10-12
 description: Install Pihole Unbound correctly | In this tutorial, I will show you how to install and configure Unbound correctly for Pihole.
 hero: /images/posts/pihole/Video-Pi-hole-und-Unbound.png
 menu:
-   sidebar:
-      name: Install Pi-hole and Unbound
-      identifier: pihole-unbound
-      parent: pihole
+  sidebar:
+    name: Install Pi-hole and Unbound
+    identifier: pihole-unbound
+    parent: pihole
 categories:
-   - “Linux”
-   - ‘Network’
-   - “Security”
-   - “Tutorials” - “Video”
+  - Security
+  - Tutorials
+  - Video
 tags:
-   - “network”
-   - “pi-hole”
-   - “security”
-   - ‘tutorials’
-   - “video”
+  - pi-hole
+  - privacy
+  - tutorials
+  - video
 keywords:
-   - pihole unbound
+  - pihole unbound
 ---
 ## Pihole Unbound and DNS encryption - For more network security
 In today's video tutorial, ‘**Pi-hole Unbound**’, I would like to show you how you can use the additional tool ‘**Unbound**’ to ensure greater security for your DNS queries on the network.

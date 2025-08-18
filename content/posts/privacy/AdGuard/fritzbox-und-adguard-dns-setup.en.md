@@ -9,11 +9,9 @@ menu:
     identifier: fritzbox-adguardhome
     parent: adguard
 categories:
-  - “linux”
-  - “network”
-  - “security”
-  - “tutorials”
-  - “video”
+  - Linux
+  - Network
+  - Security
 tags:
   - adguard
   - fritzbox

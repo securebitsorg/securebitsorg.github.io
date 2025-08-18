@@ -8,17 +8,14 @@ menu:
     identifier: pihole-vpn
     parent: pihole
 categories:
-  - “Linux”
-  - ‘Network’
-  - “Security”
-  - “Tutorials”
-  - “Video”
+  - Security
+  - Tutorials
+  - Video
 tags:
-  - “linux”
-  - “pi-hole”
-  - “security”
-  - ‘tutorials’
-  - “video”
+  - network
+  - pi-hole
+  - privacy
+  - tutorials
 description: Use Pihole VPN with Wireguard | In this tutorial, I will show you how you can use Pihole on the go with the help of VPN.
 keywords:
   - pihole vpn

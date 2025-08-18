@@ -9,16 +9,16 @@ menu:
     identifier: pihole-fritzbox
     parent: pihole
 categories: 
-  - "netzwerk"
-  - "security"
-  - "tutorials"
-  - "video"
+  - Netzwerk
+  - Security
+  - Tutorials
+  - Video
 tags: 
-  - "fritzbox"
-  - "pi-hole"
-  - "security"
-  - "tutorials"
-  - "video"
+  - fritzbox
+  - pi-hole
+  - security
+  - tutorials
+  - video
 ---
 
 ## FritzBox + Pihole - Richtig konfigurieren, dass alle Geräte Pi-hole als DNS-Server nutzen

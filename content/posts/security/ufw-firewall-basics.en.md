@@ -8,20 +8,13 @@ menu:
     name: UFW Firewall Basics
     identifier: ufw-firewall-part-1
     parent: security
-categories: 
-- “linux”
-- “network”
-- “security”
-- “tutorials”
-- “video”
+categories:
+  - Linux
+  - Network
+  - Security
 tags:
-- “firewall”
-- ‘linux’
-- “network”
-- “security”
-- "tutorials"
-- “video”
-- "raspberry pi"
+  - raspberry pi
+  - tutorials
 ---
 ## Basics of UFW Firewall Installation and Setup
 In this video tutorial, I will show you how to install and set up the UFW firewall (Uncomplicated Firewall) on your Linux distribution.
