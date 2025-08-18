@@ -16,7 +16,7 @@ menu:
     parent: linux-scripting
 keywords:
   - rhel-update
-draft: false
+draft: true
 preview: ../../../../assets/images/posts/linux/bash-update-script-rhel.webp
 hero: /images/posts/linux/bash-update-script-rhel.webp
 ---
