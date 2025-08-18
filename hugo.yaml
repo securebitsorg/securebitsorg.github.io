@@ -47,7 +47,7 @@ module:
     target: assets
   - source: static
     target: assets
-siteId: 1
+
 flags:
   enable: true
   flagsOverride:
@@ -107,6 +107,9 @@ markup:
     parser:
       attribute:
         block: true
+
+
+
 
 #markup:
 #  highlight:
