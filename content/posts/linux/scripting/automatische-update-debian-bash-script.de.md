@@ -17,7 +17,7 @@ menu:
 keywords:
   - bash-update-script
 draft: false
-preview: ../../../assets/images/posts/linux/bash-update-script-debian.webp
+preview: ../../../../assets/images/posts/linux/bash-update-script-debian.webp
 hero: /images/posts/linux/bash-update-script-debian.webp
 ---
 ## Updates auf debian-basierenden Systemen automatisieren mit einem Bash-Script

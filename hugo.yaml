@@ -1,5 +1,5 @@
 baseURL:  "https://secure-bits.org/"
-
+# theme: ["hugo-shortcode-roneo-button-icon-badge"] 
 languageCode: de
 title: "SecureBits Blog by Marcel Dellmann"
 
