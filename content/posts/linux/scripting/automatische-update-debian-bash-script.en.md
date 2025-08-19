@@ -17,7 +17,7 @@ menu:
 keywords:
   - bash-update-script
 draft: true
-preview: ../../../assets/images/posts/linux/bash-update-script-debian.webp
+preview: ../../../../assets/images/posts/linux/bash-update-script-debian.webp
 hero: /images/posts/linux/bash-update-script-debian.webp
 ---
 ## Updates auf debian-basierenden Systemen automatisieren mit einem Bash-Script
@@ -97,9 +97,9 @@ nano ~/simple_update_debian_script.sh
 ```
 Im nun offnen Editor-Fenster der Datei `simple_update_debian_script.sh`, gibt ihr in der ersten Zeile, das folgende ein:
 
-`/bin/bash`
+`#!/bin/bash`
 
-> Mit dieser ersten Zeile `/bin/bash` weisen wir aus, das es sich hier um ein Bash-Script handelt und so weiß das Betriebssystem, mit welchem Interpreter (Shell) unser Script ausgeführt werden soll.
+> Mit dieser ersten Zeile `#!/bin/bash` weisen wir aus, das es sich hier um ein Bash-Script handelt und so weiß das Betriebssystem, mit welchem Interpreter (Shell) unser Script ausgeführt werden soll.
 
 ### Schritt 2 - Bash-Script Kommentare und Anweisungen einfügen
 #### Warum Kommentare und Anweisungen erstellen?
@@ -116,6 +116,8 @@ Den einzelnen auszuführenden Befehle im Bash-Script, füge ich auch noch eine k
 **Im folgendem sieht das dann so aus:**
 
 ```bash
+#!/bin/bash
+
 # Version: 1.0
 
 # Hinweis:

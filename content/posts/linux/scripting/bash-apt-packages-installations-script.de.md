@@ -1,5 +1,5 @@
 ---
-title: "Bash-Script für die automatische Installation von Apps "
+title: "Bash-Script | Automatische Installation von apt-packages "
 date: 2025-08-18T11:11:41.499Z
 description: In diesem Tutorial zeige ich, wie ihr mit einem Bash-Script automatisch eure Lieblings-Apps installieren könnt,
 draft: true
@@ -14,17 +14,55 @@ categories:
     - Linux
 menu:
     sidebar:
-        name: Bash-Script für App-Installation
+        name: Bash-Installations-Script für APT-Packages
         identifier: bash-app
         parent: linux-scripting
 keywords:
-    - bash-scripting debian
+    - bash-installations-script
 ---
 ## Bash-Installations-Script für Standard-Apps unter Debian
 
 In diesem Tutorial möchte ich euch zeigen wie ihr ein Bash-Script erstellt, mit dessen Hilfe, ihr eure Standard-Anwendungen auf neue Debian-Systeme automatisiert installieren lassen könnt.
 
 Wir gehen das Bash-Script Schritt für Schritt zusammen durch, damit ihr es auch nach euren Vorlieben anpassen könnt.
+
+### Warum ein Bash-Script für eine automatisierte Installation?
+
+Das Bash-Installations-Script kann hervorragend dazu verwendet werden, um zum Beispiel immer die gleichen Anwendungen auf mehrere Endgeräte automatisiert installieren zu lassen. Weiterhin gibt es auch die Möglichkeit mit der Automatisierungslösung **Ansible**, das erstellte Bash-installations-Script, für die Verwaltung umfangreicher Deployment-Umgebungen einzusetzen.
+
+## Aufbau des Bash-Installations-Script für den `apt-paketmanager`
+
+Wie auch schon in meinem letzten Tutorial ['Automatische Updates mit einem Bash-Script'](https://secure-bits.org/posts/linux/scripting/automatische-update-debian-bash-script/), baue ich meine Scripts immer zuerst mit einem **Informationsbereich über die Version, Art, Funktionalität und Verwendung** auf, **damit die Verwendung / Einsatzzweck für jeden klar erkennbar** ist.
+Diese herangehensweise hat sich für mich in der Praxis immer gut bewährt und daher werde ich das Script auch hier in diesem Tutorial so aufbauen.
+<!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
+{{< alert type="info" >}}
+**Optional:**
+
+
+Weiterhin zeige ich euch auch, wie ihr z.B. Anwendungen installieren könnt, bei der Credentials mit einer `.env`-Datei an die Installations-Script übergeben werden kann, um so z.B. keine Passwörter, Tokens, etc. im Script angeben zu müssen.
+{{< /alert >}}
+<!-- FM:Snippet:End -->
+### Schritt 1 - Anlegen des Bash-Installations-Scripts
+
+Als erstes müssen wir erstmal eine Bash-Script-Datei anlegen, um diese dann mit unseren Anweisungen befüllen zu können.
+Dazu gehen wir wie folgt vor:
+
+```sh
+# In diesem Beispiel werden wir die Datei im root-Wurzelverzeichnis anlegen
+
+sudo touch ~/bash_apt_installations_script.sh
+
+```
+<!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
+{{< alert type="info" >}}
+In diesem Tutorial nutze ich als Text-Editor im Terminal den `nano-editor`. Dieser ist auf den allermeisten Debian-basierenden Betriebssystemen vorinstalliert und einfach zu handhaben.
+
+Gerne könnt ihr auch**jeden anderen Text-Editor mit Syntax-Highligthing dafür nutzen!**
+{{< /alert >}}
+<!-- FM:Snippet:End -->
+
+### Schritt 2 - öffnen des Bash-Installations-Scripts und den Infobereich einfügen
+Wie weiter oben in diesem Artikel erwähnt, werden wir den Infomartionsbereich sowie die Anweisung für den Interpreter `#!/bin/bash` einfügen.
 
 ```bash
 #!/bin/bash
