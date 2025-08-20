@@ -44,6 +44,7 @@ socialLinks:
 # You can also show a circular bar indicating the level of expertise on a certain skill
 badges:
 
+
 - type: soft-skill-indicator
   name: Projektleiter
   percentage: 95

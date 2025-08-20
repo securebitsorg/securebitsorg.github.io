@@ -2,7 +2,7 @@
 title: "Bash-Script | Automatische Installation von apt-packages "
 date: 2025-08-18T11:11:41.499Z
 description: In diesem Tutorial zeige ich, wie ihr mit einem Bash-Script automatisch eure Lieblings-Apps installieren könnt,
-draft: true
+draft: false
 tags:
     - bash
     - linux
@@ -63,6 +63,42 @@ Gerne könnt ihr auch**jeden anderen Text-Editor mit Syntax-Highligthing dafür 
 
 ### Schritt 2 - öffnen des Bash-Installations-Scripts und den Infobereich einfügen
 Wie weiter oben in diesem Artikel erwähnt, werden wir den Infomartionsbereich sowie die Anweisung für den Interpreter `#!/bin/bash` einfügen.
+
+Dazu öffnen wir mit dem **nano-Editor** unsere erstellte Bash-Script-Datei `bash_apt_installations_script.sh`.
+
+```sh
+sudo nano bash_apt_installations_script.sh
+```
+
+
+
+
+```bash
+#!/bin/bash
+
+# Version: 1
+
+# Hinweis:
+# Dieses Script ist für Debian-basierende Betriebssysteme gedacht!
+# Es ermöglicht die automatisierte Installation von Anwendungen via dem apt-Paketmanager.
+# Es ist wichtig das dieses Script als root-user ausgeführt wird!
+
+
+# Anwendung:
+# sudo chmod =x automatic_install_apps.sh
+# sudo ./automatic_install_apps.sh oder sudo sh automatic_install-apps.sh
+
+# Note:
+# This script is intended for Debian-based operating systems!
+# It enables the automated installation of applications via the apt package manager.
+# It is important that this script is executed as root user!
+
+
+# Usage:
+# sudo chmod =x automatic_install_apps.sh
+# sudo ./automatic_install_apps.sh or sudo sh automatic_install-apps.sh
+
+```
 
 ```bash
 #!/bin/bash
