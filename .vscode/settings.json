@@ -15,7 +15,7 @@
     },
     "frontMatter.panel.openOnSupportedFile": true,
     "window.autoDetectColorScheme": false,
-    "workbench.colorTheme": "Monokai",
+    "workbench.colorTheme": "Default Dark Modern",
     "workbench.editor.autoLockGroups": {
         "mainThreadWebview-markdown.preview": true
     }

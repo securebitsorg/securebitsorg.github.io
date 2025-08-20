@@ -1,10 +1,10 @@
 # section information
 section:
-  name: Fähigkeiten
+  name: Skills
   id: skills
   enable: true
   weight: 2
-  showOnNavbar: false
+  showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
@@ -18,7 +18,7 @@ skills:
 
 - name: Windows - Server / Desktop
   #logo: /images/skills/Microsoft.svg
-  summary: "- Die Fähigkeit zur **sicheren Administration von Windows-Server und Windows Desktop** - **Active Directory** / **Domain-Controller** / **DNS** / **Gruppenrichtlinien**, etc."
+  summary: "- Die Fähigkeit zur **sicheren Administration von Windows-Server und Windows Desktop** - **Active Directory** / **Domain-Controller** / **DNS** / **Gruppenrichtlinien**, **Azure AD** / **Azure AD Connect** / **Azure AD Domain Services**, etc."
 
 - name: Scripting
   #logo: /images/skills/bash.svg

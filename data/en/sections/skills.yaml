@@ -4,7 +4,7 @@ section:
   id: skills
   enable: true
   weight: 2
-  showOnNavbar: false
+  showOnNavbar: true
   # Can optionally hide the title in sections
   # hideTitle: true
 
@@ -21,7 +21,7 @@ skills:
 
 - name: Windows - Server / Endpoints
  # logo: /images/skills/Microsoft.svg
-  summary: "- The skill to **safely manage Windows Server and Windows Desktop** - **Active Directory** / **Domain Controller** / **DNS** / **Group Policy**, etc."
+  summary: "- The skill to **safely manage Windows Server and Windows Desktop** - **Active Directory** / **Domain Controller** / **DNS** / **Group Policy**, **Azure AD** / **Azure AD Connect** / **Azure AD Domain Services**, etc."
 
 - name: Scripting
 #  logo: /images/skills/bash.svg
