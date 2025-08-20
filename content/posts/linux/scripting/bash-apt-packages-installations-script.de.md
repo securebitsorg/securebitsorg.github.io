@@ -2,7 +2,7 @@
 title: "Bash-Script | Automatische Installation von apt-packages "
 date: 2025-08-18T11:11:41.499Z
 description: In diesem Tutorial zeige ich, wie ihr mit einem Bash-Script automatisch eure Lieblings-Apps installieren könnt,
-draft: false
+draft: true
 tags:
     - bash
     - linux

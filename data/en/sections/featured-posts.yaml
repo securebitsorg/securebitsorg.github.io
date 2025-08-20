@@ -3,13 +3,14 @@
 section:
   name: Popular # Title of section (default: "")
   id: featured-posts # url id/slug of section *Required*
-  enable: false # Boolean to determine if this section is enabled (default: false)
-  weight: 10 # Order to display section in (default: alphabetical followed by weight)
+  enable: true # Boolean to determine if this section is enabled (default: false)
+  weight: 6 # Order to display section in (default: alphabetical followed by weight)
   showOnNavbar: true # Boolean to determine if a link should be shown for this section on the navbar
   hideTitle: false # Can optionally hide the title in sections (default: false)
 
 # posts to feature
-# posts:
-  #- linux-ssh
-  # - proxmox-fail2ban
+posts:
+  - linux-ssh-absichern.en.md
+  - proxmox-fail2ban.en.md
+  - Nmap Network Mapper Umfassender Leitfaden.en.md
   

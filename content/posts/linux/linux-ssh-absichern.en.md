@@ -5,7 +5,7 @@ hero: /images/posts/linux-ssh/SSH-absichern.png
 menu:
   sidebar:
     name: Secure Linux SSH
-    identifier: linux-ssh
+    identifier: linux-ssh-en
     parent: linux
     weight: 10
 tags:
