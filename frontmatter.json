@@ -228,6 +228,11 @@
         ""
       ],
       "fields": []
+    },
+    "Vertical Space": {
+      "description": "",
+      "body": "{{< vs 3>}}",
+      "fields": []
     }
   }
 }

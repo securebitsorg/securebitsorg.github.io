@@ -192,7 +192,16 @@ Damit wird überprüft, ob das Kommando `dnf` im System verfügbar ist.
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
-### Schritt 4 - Bash-Anweisung (RHEL-Paketquellen aktualisieren und Update durchführen)
+### Schritt 4 - Bash-Anweisung (Cache des Paketmanger leeren)
+Um alle verfügbaren Aktualisierungen für den `dnf`-Paketmanger zu erhalten, leeren wir zunächst erstmal mit dem folgendem Befehl den Cache des `dnf`-Paketmanger.
+
+```bash
+# Paketdatenbank bereinigen / Clean up cached package data
+echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
+dnf clean all
+```
+
+### Schritt 5 - Bash-Anweisung (dnf-Aktualisierung ausführen)
 In diesem Schritt geben wir zunächst die Ausgabe (`echo`) in das Terminal, dass die Paketquellen aktualisiert werden.
 Dann wird der Befehl `dnf update -y` ausgeführt um die angekündigte Aktualisierung der Paketquellen durchzuführen und bei vorhandenen neueren Paketen das System zu aktualisieren.
 
@@ -202,22 +211,13 @@ echo "Aktualisiere Paketquellen / Ausführung Upgrade | Update package sources /
 dnf update -y
 ```
 
-### Schritt 5 - Bash-Anweisung (unnötige dnf-Pakete entfernen)
+### Schritt 6 - Bash-Anweisung (unnötige dnf-Pakete entfernen)
 Als nächstes werden wir noch eine Anweisung einbauen, um unnötige / nicht mehr benötigte `dnf`-Pakete automatisch zu löschen.
 
 ```bash
 # Nicht mehr benötigte Pakete entfernen / Remove unused packages
 echo "Entferne nicht mehr benötigte Pakete / Remove unused packages"
 dnf autoremove -y
-```
-
-### Schritt 6 - Bash-Anweisung (dnf-cache leeren)
-Zu guter Letzt werden wir noch eine letzte Anweisung für den Update-Prozess einfügen, um den Cache des Paketmanager zu leeren.
-
-```bash
-# Paketdatenbank bereinigen / Clean up cached package data
-echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
-dnf clean all
 ```
 
 ### Schritt 7 - Bash-Anweisung (echo-Ausgabe Update-Prozess abgeschlossen)
@@ -242,6 +242,8 @@ fi
 
 #### Bash-Update-Script abspeichern
 > Nach einer letzten Überprüfung von unserem Script müssen wir dieses natürlich nach abspeichern!
+> 
+> Das machen wir mit den Tastenkombinationen `STRG + o (mit Enter bestätigen)` und `STRG + x (Editor schließen)` 
 
 ## Fertiges RHEL-Update Bash-Script
 Hier nun das fertige Bash-Script um automatisiert Update-Routinen auf RHEL-Systemen durchlaufen zu lassen.
@@ -307,6 +309,10 @@ if ! command -v dnf >/dev/null 2>&1; then
   exit 2
 fi
 
+# Paketdatenbank bereinigen / Clean up cached package data
+echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
+dnf clean all
+
 # Paketquellen aktualisieren / Update package sources
 echo "Aktualisiere Paketquellen und Installation von Updates/ Update package sources and update packges"
 dnf update -y
@@ -314,10 +320,6 @@ dnf update -y
 # Nicht mehr benötigte Pakete entfernen / Remove unused packages
 echo "Entferne nicht mehr benötigte Pakete / Remove unused packages"
 dnf autoremove -y
-
-# Paketdatenbank bereinigen / Clean up cached package data
-echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
-dnf clean all
 
 echo "================================================================="
 echo "      System-Update abgeschlossen / System update completed"

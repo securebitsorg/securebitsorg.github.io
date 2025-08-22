@@ -139,9 +139,13 @@ markup:
 # client-side JavaScript search
 outputs:
   home:
-  - HTML
-  - RSS
-  - JSON
+  - html
+  - rss
+  - json
+  blog:
+  - html
+  - rss
+  - json
 
 imaging:
   anchor: Smart
@@ -150,7 +154,6 @@ imaging:
   quality: 75
   
  
-
 
 
 
@@ -217,9 +220,10 @@ params:
       showAuthor: true
       shareButtons:
         linkedin: true
-        youtube: true
+        
         email: true
         whatsapp: true
+        
 
     notes:
       enable: false
