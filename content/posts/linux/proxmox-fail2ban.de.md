@@ -91,7 +91,7 @@ Zunächst legen wir uns dafür eine lokale Jail-Config-Datei im fail2ban-Verzeic
 # Aufrufen des Verzeichnis von fail2ban, in der sich die künftige sowie weitere Konfigurations-Dateien befinden
 cd /etc/fail2ban
 # Anlegen der Config-Datei für fail2ban
-nano jail.conf
+nano jail.local
 ```
 
 Im nächsten Schritt fügen wir die Konfiguration für die Absicherung des SSH-Verbindung sowie die Absicherung für den **Port 8006** ein.
@@ -241,3 +241,12 @@ Gerne könnt ihr mir auch im Forum oder hier in den Kommentaren ein Feedback hin
 <https://wiki.ubuntuusers.de/fail2ban/>
 
 <https://de.wikipedia.org/wiki/Fail2ban>
+
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn du Fragen oder Feedback zu diesem Bl/posts/linux/scripting/automatische-update-rhel-bash-script/og oder YouTube-Kanal hast, dann nutze bitte meine Hilfeseite. Dort findest du Fragen und Antworten zu den verschiedenen Beiträgen. Du kannst dort auch gerne deine eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
+<!-- FM:Snippet:End -->

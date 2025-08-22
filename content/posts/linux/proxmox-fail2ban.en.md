@@ -75,7 +75,7 @@ First, we create a local jail config file in the fail2ban directory, in which we
 # call up the fail2ban directory, where the future and other configuration files are located
 cd /etc/fail2ban
 # Create the configuration file for fail2ban
-nano jail.conf
+nano jail.local
 ```
 In the next step, we add the configuration for securing the SSH connection and securing **port 8006**.
 
@@ -183,3 +183,12 @@ Feel free to leave me feedback in the forum or here in the comments.
 <https://wiki.ubuntuusers.de/fail2ban/>
 
 <https://de.wikipedia.org/wiki/Fail2ban>
+
+
+<!-- FM:Snippet:Start data:{"id":"Visit Help-page","fields":[]} -->
+> ## Questions and answers
+> 
+> If you have any questions or feedback about this blog or YouTube channel, please use my help page. Here you will find questions and answers about the various posts. You are also welcome to ask your own question here.
+>
+> [**Visit the Help-page**](https://help.secure-bits.org/)
+<!-- FM:Snippet:End -->
