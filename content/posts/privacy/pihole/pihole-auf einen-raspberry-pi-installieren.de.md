@@ -258,6 +258,15 @@ Außer der vorinstallierten Blacklist 'SteveBlack' gibt es noch einige andere gu
 > Nutzt bitte nicht zu viele Listen. Da die Abarbeitung der Listen sehr zur Lasten der Performance geht und der Raspberry Pi dann in die Knie geht.
 >
 > Mit den vorgestellten Blacklists habe ich bisher sehr gute Erfahrungen gemacht und möchte diese daher gerne weiterempfehlen.
+>
+#### Hagezi - DNS-Blocklists
+Eine der besten Blocklist-Sammlungen findet ihr auf der GitHub-Seite von **Hagezi**. Diese Listen sind absolut umfangreich und können feingranular ausgewählt werden, aber mann muss sich mit der Konfiguration ein wenig auseinandersetzen.
+
+Die Nutzung der jeweiligen Blocklisten ist sehr gut beschrieben.
+
+[**Zu den Hagezi-Blocklists (Dokumewntation)**](https://github.com/hagezi/dns-blocklists?tab=readme-ov-file)
+
+> Achtet bitte darauf, dass ihr die richtigen Blocklists für pihole nutzt!
 
 #### Blacklist SteveBlack
 
