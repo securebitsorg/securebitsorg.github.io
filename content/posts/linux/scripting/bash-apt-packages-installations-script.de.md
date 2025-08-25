@@ -19,6 +19,8 @@ menu:
         parent: linux-scripting
 keywords:
     - bash-installations-script
+preview: ../../../../assets/images/posts/linux/bash-update-script-install-apt-packagesl.webp
+hero: /images/posts/linux/bash-update-script-install-apt-packagesl.webp
 ---
 ## Bash-Installations-Script für Standard-Apps unter Debian
 
@@ -53,11 +55,14 @@ Dazu gehen wir wie folgt vor:
 sudo touch ~/bash_apt_installations_script.sh
 
 ```
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
 <!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
 In diesem Tutorial nutze ich als Text-Editor im Terminal den `nano-editor`. Dieser ist auf den allermeisten Debian-basierenden Betriebssystemen vorinstalliert und einfach zu handhaben.
 
-Gerne könnt ihr auch**jeden anderen Text-Editor mit Syntax-Highligthing dafür nutzen!**
+Gerne könnt ihr auch**jeden and/images/posts/linux/bash-update-script-install-apt-packagesl.webperen Text-Editor mit Syntax-Highligthing dafür nutzen!**
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
@@ -70,8 +75,16 @@ Dazu öffnen wir mit dem **nano-Editor** unsere erstellte Bash-Script-Datei `bas
 sudo nano bash_apt_installations_script.sh
 ```
 
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
+
+**und fügen hier die folgenden Kommentare hinzu:**
 
 
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
 
 ```bash
 #!/bin/bash
@@ -89,7 +102,7 @@ sudo nano bash_apt_installations_script.sh
 # sudo ./automatic_install_apps.sh oder sudo sh automatic_install-apps.sh
 
 # Note:
-# This script is intended for Debian-based operating systems!
+# This script is intended for D/images/posts/linux/bash-update-script-install-apt-packagesl.webpebian-based operating systems!
 # It enables the automated installation of applications via the apt package manager.
 # It is important that this script is executed as root user!
 
@@ -97,8 +110,67 @@ sudo nano bash_apt_installations_script.sh
 # Usage:
 # sudo chmod =x automatic_install_apps.sh
 # sudo ./automatic_install_apps.sh or sudo sh automatic_install-apps.sh
-
 ```
+## Fertiges `apt-packages-Installations-Bash-Script`
+Hier findet ihr das ferige Bash-Script, um automatisiert, Applikationen über den `apt-Paketmanager` zu installieren.
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
+```bash
+# //// Example - Add the Netbird repository
+
+# # Netbird is a secure, open-source VPN solution.
+# # This section installs Netbird and sets it up with a setup key.
+
+# # Make sure to set the setupkey for Netbird in the .env file
+
+# # Example .env file content:
+# # setupkey=your_setup_key_here
+
+# Load environment variables from .env file
+
+if [ -f .env ]; then
+    export $(grep -v '^#' .env | xargs)
+else
+    echo ".env file not found. Please create a .env file with the required variables."
+    exit 1
+fi
+
+echo "Install ca-certificats, curl, gnupg, add netbird sources..."
+sudo apt update
+sudo apt install ca-certificates curl gnupg -y
+
+echo "Adding netbird repository..."
+curl -fsSL https://pkgs.netbird.io/install.sh | sh
+
+echo "Install netbird... "
+sudo apt update
+sudo apt install netbird -y
+
+echo "Set Netbird-Domain: ${netbird_domain} and register"
+netbird up --management-url ${netbird_domain} --setup-key ${setupkey}
+
+echo "Enable netbird service..."
+sudo systemctl enable netbird
+echo "Starting netbird service..."
+sudo systemctl start netbird
+
+echo "Netbird installation and setup complete."
+```
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
+
+<!-- FM:Snippet:Start data:{"id":"Success","fields":[]} -->
+{{< alert type="success" >}}
+Optional ist hier auch die Funktion eingefügt, um zunächst ein App-Repository einer Anwendung welche nicht im Standard `apt-Paketmanager` vorhanden ist einzufügen und diese mit Hilfe eines Token (Secret) der in einer angelegten `.env`-Datei hinterlegt ist, zu installieren.
+{{< /alert >}}
+
+<!-- FM:Snippet:End -->
+
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
 
 ```bash
 #!/bin/bash
@@ -123,12 +195,7 @@ sudo nano bash_apt_installations_script.sh
 
 # Usage:
 # sudo chmod =x automatic_install_apps.sh
-# sudo ./automatic_install_apps.sh or sudo sh automatic_install-apps.sh
-
-
-echo "================================================================="
-
-echo "     Automatisches App-Installation / Automatic App-Installation"
+# sudo ./automatic_install_apps.sh or sudo sh automatic_install-apps.sh/images/posts/linux/bash-update-script-install-apt-packagesl.webp
 
 echo "        (Debian/Ubuntu/Mint)"
 
@@ -211,3 +278,13 @@ echo "Installation of custom base packages completed successfully."
 echo "You can now use the installed packages."
 
 ```
+
+
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+> ## Fragen und Antworten
+>
+> Wenn du Fragen oder Feedback zu diesem Bl/posts/linux/scripting/automatische-update-rhel-bash-script/og oder YouTube-Kanal hast, dann nutze bitte meine Hilfeseite. Dort findest du Fragen und Antworten zu den verschiedenen Beiträgen. Du kannst dort auch gerne deine eigene Frage stellen.
+>
+> [**Zur Hilfeseite**](https://help.secure-bits.org)
+<!-- FM:Snippet:End -->
