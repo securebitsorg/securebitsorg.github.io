@@ -335,7 +335,7 @@ fi
 
 ```
 
-## Schritt 11 - Bash-Update-Script ausführbar machen
+### Schritt 11 - Bash-Update-Script ausführbar machen
 Damit wir das Bash-Update-Script auch nutzen / ausführen können, muss das Script noch mit dem entsprechenden Rechten versehen werden.
 
 **Script-Rechte anpassen**
@@ -359,6 +359,77 @@ sudo sh simple_update_RHEL_script.sh
 sudo ./simple_update_RHEL_script.sh
 
 ```
+
+---
+<!-- FM:Snippet:Start data:{"id":"Vertical Space","fields":[]} -->
+{{< vs 3>}}
+<!-- FM:Snippet:End -->
+
+<!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
+
+
+> ## Bücher zum Thema Bash (Shell)-Scripting
+> ---
+> **Zwei wirklich gut Bücher zum Thema Shell-Scripting kann ich euch hier empfehlen und besitze diese beiden Bücher auch selbst.**
+> 
+> Das sind beides super Nachschlage- / Übungs-Bücher und ihr bekommt für **5€ Aufpreis**, dass passende **E-Book dazu** (*nur bei der Bestellung direkt beim Rheinwerk-Verlag*)!
+>
+> 
+>> *Hinweis: Beide Links sind Affiliate-Links, kostet aber für euch keinen 'Cent' mehr und ihr unterstützt automatisch diesen Blog.* 
+
+{{< vs 3>}}
+
+{{< split 6 6 >}}
+
+
+**Scripting | Das Praxisbuch für Administratoren und DevOps-Teams**
+
+![Scripting](/images/affiliate/Scripting.webp)
+
+[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/shell-programmierung-das-umfassende-handbuch/?GPP=securebits)
+
+**Aus dem Inhalt:**
+
+
+   - Bash, ZSH und die Linux-Toolbox
+   - PowerShell und CmdLets
+   - Python und Pip
+   - SSH, VSCode, Git, Curl: Werkzeugenkasten für moderne Scripts
+   - Scripts automatisch ausführen: Cron und Task Scheduler
+   - Backups automatisieren
+   - Bilder verarbeiten
+   - Monitoring: Logging-Dateien auswerten
+   - Web-Scraping und -Mining
+   - Scripting in der AWS-Cloud
+   - Scripte in Docker-Containern
+
+---
+**Shell-Programmierung | Das umfassende Handbuch**
+
+![Shell-Programmierung](/images/affiliate/Shell-Programmierung.webp)
+
+[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/scripting-das-praxisbuch-fuer-administratoren-und-devops-teams/?GPP=securebits)
+
+
+
+**Aus dem Inhalt:**
+
+  -  Einführung in die Shells
+  -  Variablen, Parameter und Argumente
+  -  Kontrollstrukturen, Funktionen und Signale
+  -  Ein/Ausgabe im Terminal
+  -  Fehlersuche und Debugging
+  -  Reguläre Ausdrücke und grep
+  -  Der Stream-Editor sed
+  -  Programmieren mit awk
+  -  GUIs mit zenity
+  -  Shell-Befehle im Überblick
+  -  Scripts u. a. für die Systemadministration, Backup
+
+{{< /split >}}
+
+---
+{{< vs 3>}}
 
 ## Fazit zum Bash-Scripting
 Wer effizient mehrere Linux-Server zu administrieren hat, kommt an Bash- / oder Python-Scripting meiner Meinung nicht vorbei.
