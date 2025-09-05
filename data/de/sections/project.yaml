@@ -28,6 +28,7 @@ projects:
   repo: https://github.com/securebitsorg/bash-script-maker
   #url: "https://github.com/securebitsorg/bash-script-maker"
   summary: Erstellung einer GUI-App für die Erstellung von Bash-Scripts mit einem Drag and Drop-Interface.
+  tags: ["coding", "hobby"]
 
 - name: Helping Hands
   # logo: /images/sections/projects/kubernetes.png
