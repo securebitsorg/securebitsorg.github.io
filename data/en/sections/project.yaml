@@ -21,6 +21,14 @@ buttons:
 
 # your projects
 projects:
+- name: Programming the Bash Script Maker
+  # logo: /images/sections/projects/bash-script-maker.png
+  role: Developer
+  timeline: "September 2025 - present"
+  repo: https://github.com/securebitsorg/bash-script-maker
+  #url: "https://github.com/securebitsorg/bash-script-maker"
+  summary: Creation of a GUI-App for the creation of Bash-Scripts with a Drag and Drop-Interface.
+
 - name: Helping Hands
   #logo: /images/sections/projects/kubernetes.png
   role: Founder / Administrator
