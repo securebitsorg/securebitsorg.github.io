@@ -57,7 +57,7 @@ flags:
 
  
 
-enableEmoji: true
+enableEmoji: false
 
 # media types
 image/gif:
