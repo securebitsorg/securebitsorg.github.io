@@ -1,6 +1,6 @@
 ---
 title: FritzBox / AdGuard DNS - Werbung, Tracking und Pishing blocken
-descripton: FritzBox / AdGuard DNS | In diesem Video zeige ich, wie ihr euren eigenen öffentlichen DNS-Server (AdGuard DNS) betreiben könnt
+description: FritzBox / AdGuard DNS | In diesem Video zeige ich, wie ihr euren eigenen öffentlichen DNS-Server (AdGuard DNS) betreiben könnt
 hero: /images/posts/fritzbox/Thumbnail-AdGuard-DNS.png
 date: 2023-01-12
 menu:

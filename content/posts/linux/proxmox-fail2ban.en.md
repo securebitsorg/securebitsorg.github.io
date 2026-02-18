@@ -1,7 +1,7 @@
 ---
 title: Secure Proxmox VE with fail2ban
 date: 2025-02-18
-descripton: Learn how to secure your Debian 12-based Proxmox VE instance against brute force attacks with fail2ban in this tutorial.
+description: Learn how to secure your Debian 12-based Proxmox VE instance against brute force attacks with fail2ban in this tutorial.
 hero: /images/posts/proxmox-fail2ban/proxmox_und_fail2ban.png
 menu:
   sidebar:

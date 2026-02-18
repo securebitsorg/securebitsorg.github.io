@@ -21,7 +21,7 @@ tags:
   - security
   - tutorials
   - video
-descripton: UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren
+description: UFW-Firewall - Application Profiles  | Applikations Profile anlegen und konfigurieren
 keywords:
   - ufw application
 ---

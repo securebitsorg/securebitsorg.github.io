@@ -1,6 +1,6 @@
 ---
 title: Pi-hole Backup mit Teleporter
-descripton: Pi-hole Backup mit Teleporter | In diesem Tutorial-Video zeige ich, wie man mithilfe von Teleporter ein Pihole-Backup erstellt.
+description: Pi-hole Backup mit Teleporter | In diesem Tutorial-Video zeige ich, wie man mithilfe von Teleporter ein Pihole-Backup erstellt.
 date: 2023-09-12
 hero: /images/posts/pihole/Video-Pi-hole-Backup.png
 menu:

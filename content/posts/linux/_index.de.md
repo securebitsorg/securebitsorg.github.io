@@ -1,6 +1,6 @@
 ---
 title: Linux
-descripton: Tutorials rund um das Thema Linux
+description: Tutorials rund um das Thema Linux
 menu:
   sidebar:
     name: Linux

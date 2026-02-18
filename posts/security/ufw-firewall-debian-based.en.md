@@ -1,6 +1,6 @@
 ---
 title: UFW Firewall Raspberry Pi Installation
-descripton: UFW Firewall Raspberry Pi | In this tutorial, I will show you how to secure your Raspberry Pi with the UFW firewall.
+description: UFW Firewall Raspberry Pi | In this tutorial, I will show you how to secure your Raspberry Pi with the UFW firewall.
 hero: /images/posts/it-security/Thumbnail-1.png
 menu:
     sidebar:

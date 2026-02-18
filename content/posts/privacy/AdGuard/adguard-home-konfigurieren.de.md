@@ -1,6 +1,6 @@
 ---
 title: AdGuardHome-Setup - Basis-Konfiguration
-descripton: AdGuardHome-Setup | AdGuardHome richtig konfigurieren und einrichten um dein Netzwerk zu schützen.
+description: AdGuardHome-Setup | AdGuardHome richtig konfigurieren und einrichten um dein Netzwerk zu schützen.
 hero: /images/posts/adguard/Thumbnail.png
 date: 2022-09-19
 menu:

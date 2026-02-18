@@ -1,6 +1,6 @@
 ---
 title: Pi-hole
-descripton: Tutorials rund um das Thema Pi-hole
+description: Tutorials rund um das Thema Pi-hole
 menu:
   sidebar:
     name: Pi-hole

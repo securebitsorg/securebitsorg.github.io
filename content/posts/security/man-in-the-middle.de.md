@@ -1,6 +1,6 @@
 ---
 title: Man in the Middle Angriffe verstehen
-descripton: Man in the Middle Angriff - Definition | Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert?
+description: Man in the Middle Angriff - Definition | Oft wird diese Angriffstaktik in der Presse und auf anderen Publikationen erwähnt. Doch was genau das ist und wie dieser funktioniert?
 hero: /images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg
 date: 2021-01-25
 menu:
