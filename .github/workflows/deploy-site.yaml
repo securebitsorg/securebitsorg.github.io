@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.152.0
+      HUGO_VERSION: 0.155.3
       HUGO_ENVIRONMENT: production
       TZ: Europe/Berlin
     steps:
@@ -45,7 +45,7 @@ jobs:
       - name: Install Node.js dependencies
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Cache Restore
-        id: cache-restorebc:24:11:46:f2:0e 
+        id: cache-restore
         uses: actions/cache/restore@v4
         with:
           path: |
