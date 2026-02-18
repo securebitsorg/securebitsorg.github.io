@@ -4,30 +4,6 @@ languageCode: de
 title: "SecureBits Blog by Marcel Dellmann"
 
 
-caches:
-  images:
-    dir: :cacheDir/images
-  assets:
-    dir: :resourceDir/_gen
-    maxAge: -1
-  getcsv:
-    dir: :cacheDir/:project
-    maxAge: -1
-  getjson:
-    dir: :cacheDir/:project
-    maxAge: -1
-  getresource:
-    dir: :cacheDir/:project
-    maxAge: -1
-  images:
-    dir: :resourceDir/_gen
-    maxAge: -1
-  misc:
-    dir: :cacheDir/:project
-    maxAge: -1
-  modules:
-    dir: :cacheDir/modules
-    maxAge: -1
 # Use Hugo modules to add theme
 
 module:
@@ -57,7 +33,7 @@ flags:
 
  
 
-enableEmoji: true
+enableEmoji: false
 
 # media types
 image/gif:
