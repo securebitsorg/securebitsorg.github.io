@@ -101,25 +101,9 @@ markup:
   goldmark:
     renderer:
       unsafe: true
-
-markup:
-  goldmark:
     parser:
       attribute:
         block: true
-
-
-
-
-#markup:
-#  highlight:
-#    codeFences: true
-#   style: fruity # dracula # catppuccin-mocha 
-#    lineNos: false
-#    lineNumbersInTable: false
-#    wrapperclass: highlight
-#    guessSyntax: false
-markup:
   highlight:
     anchorLineNos: false
     codeFences: true
@@ -216,7 +200,7 @@ params:
 
     # Enable blog posts
     blog:
-      enable: trueresources/_gen/images/images/author.jpg
+      enable: true
       showAuthor: true
       shareButtons:
         linkedin: true
