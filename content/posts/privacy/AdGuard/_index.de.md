@@ -1,6 +1,6 @@
 ---
 title: AdGuard
-descripton: Tutorials rund um das Thema AdGuard
+description: Tutorials rund um das Thema AdGuard
 menu:
   sidebar:
     name: AdGuard

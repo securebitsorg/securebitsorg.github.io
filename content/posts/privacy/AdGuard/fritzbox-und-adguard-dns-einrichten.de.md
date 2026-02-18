@@ -1,6 +1,6 @@
 ---
 title: FritzBox - AdGuard Home einrichten
-descripton: AdGuard Home und Fritzbox konfigurieren | In diesem Video zeige ich euch, wie ihr AdGuard Home zusammen mit einer Fritzbox einrichtet.
+description: AdGuard Home und Fritzbox konfigurieren | In diesem Video zeige ich euch, wie ihr AdGuard Home zusammen mit einer Fritzbox einrichtet.
 hero: /images/posts/adguard/AdGuard-FritzBox-DNS-Server.png
 date: 2022-10-22
 menu:

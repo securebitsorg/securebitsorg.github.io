@@ -1,7 +1,7 @@
 ---
 title: Schutz vor Man-in-the-Middle-Angriffe erhalten
 hero: /images/posts/it-security/Man-in-the-Middle-Angriffe-abwehren.jpg
-descripton: Einfache Tipps und Tricks, wie du dich gegen Man in the middle-Attacken schützen kannst.
+description: Einfache Tipps und Tricks, wie du dich gegen Man in the middle-Attacken schützen kannst.
 menu:
   sidebar:
     name: Schutz vor Man in the Middle-Attacken

@@ -1,6 +1,6 @@
 ---
 title: Fritzbox
-descripton: Tutorials rund um das Thema Fritzbox
+description: Tutorials rund um das Thema Fritzbox
 menu:
   sidebar:
     name: Fritzbox

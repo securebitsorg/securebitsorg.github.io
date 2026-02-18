@@ -1,6 +1,6 @@
 ---
 title: Privacy
-descripton: Tutorials on the topic of Privacy
+description: Tutorials on the topic of Privacy
 menu:
   sidebar:
     name: Privacy

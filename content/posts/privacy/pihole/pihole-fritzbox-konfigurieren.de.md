@@ -1,6 +1,6 @@
 ---
 title: FritzBox + Pihole | FritzBox konfigurieren
-descripton: Fritzbox + Pihole richtig konfigurieren, damit alle Endgeräte über einen internen DNS-Server (Pihole, AdGuardHome,...) bedient werden.
+description: Fritzbox + Pihole richtig konfigurieren, damit alle Endgeräte über einen internen DNS-Server (Pihole, AdGuardHome,...) bedient werden.
 date: 2023-02-06
 hero: /images/posts/pihole/Video-Pi-hole-alles-ueber-Pi-hole.png
 menu:
