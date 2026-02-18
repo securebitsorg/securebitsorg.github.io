@@ -6,7 +6,7 @@ greeting: "Hi, I am Marcel an i am a nerd and my nickname is"
 image: "images/author.webp"
 # give your some contact information. they will be used in the footer
 contactInfo:
-  email: "ticket@secure-bits.org"
+  email: "support@secure-bits.org"
 #  phone: "+49152 59422774"
   github: securebitsorg
   linkedin: securebits

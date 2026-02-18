@@ -24,15 +24,11 @@ summary: I am a passionate IT security specialist with over 20 years of professi
 socialLinks:
 - name: Email
   icon: "fas fa-envelope"
-  url: "ticket@secure-bits.org"
+  url: "support@secure-bits.org"
 
 - name: Github
   icon: "fab fa-github"
   url: "https://www.github.com/securebitsorg"
-
-- name: LinkedIn
-  icon: "fab fa-linkedin"
-  url: "https://www.linkedin.com/in/securebits/"
 
 - name: YouTube
   icon: "fab fa-youtube"
@@ -67,7 +63,9 @@ badges:
   name: SOC-Analyst
   percentage: 90
   color: "#FF2FBC"
-
+- name: LinkedIn
+  icon: "fab fa-linkedin"
+  url: "https://www.linkedin.com/in/securebits/"
 - type: soft-skill-indicator
   name: Bash-Scripting
   percentage: 80

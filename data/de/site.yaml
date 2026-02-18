@@ -1,5 +1,5 @@
 # Copyright Notice
-copyright: © 2017 - 2025 Copyright SecureBits.
+copyright: © 2017 - 2026 Copyright SecureBits.
 
 customMenus:
 - name: Impressum
@@ -13,7 +13,7 @@ customMenus:
   showOnFooter: true
 
 - name: Kontakt
-  url: mailto:ticket@secure-bits.org
+  url: mailto:support@secure-bits.org
   hideFromNavbar: false
   showOnFooter: true
 # Meta description for your site.  This will help the search engines to find your site.

@@ -31,9 +31,6 @@ socialLinks:
   icon: "fab fa-github"
   url: "https://www.github.com/securebitsorg"
 
-- name: LinkedIn
-  icon: "fab fa-linkedin"
-  url: "https://www.linkedin.com/in/securebits/"
 
 - name: YouTube
   icon: "fab fa-youtube"

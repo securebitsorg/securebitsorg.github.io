@@ -1,5 +1,5 @@
 # Copyright Notice
-copyright: © 2017 - 2025 Copyright by SecureBits.
+copyright: © 2017 - 2026 Copyright by SecureBits.
 
 # Footer Custom Menu
 
@@ -10,7 +10,7 @@ customMenus:
   showOnFooter: true
 
 - name: Contact
-  url: mailto:ticket@secure-bits.org
+  url: mailto:support@secure-bits.org
   hideFromNavbar: false
   showOnFooter: true
 
