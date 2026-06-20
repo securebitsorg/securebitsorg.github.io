@@ -25,7 +25,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.161.1
+      HUGO_VERSION: 0.163.3
       HUGO_ENVIRONMENT: production
       TZ: Europe/Berlin
     steps:
@@ -92,4 +92,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
