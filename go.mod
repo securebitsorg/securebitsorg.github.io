@@ -1,8 +1,8 @@
 module github.com/securebitsorg/securebitsorg.github.io
 
-go 1.26.4
+go 1.26.5
 
 require (
-	github.com/hugo-toha/toha/v4 v4.15.0 // indirect
+	github.com/hugo-toha/toha/v4 v4.16.0 // indirect
 	
 )
