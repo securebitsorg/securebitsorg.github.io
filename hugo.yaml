@@ -1,6 +1,6 @@
 baseURL:  "https://secure-bits.org/"
 # theme: ["hugo-shortcode-roneo-button-icon-badge"] 
-languageCode: de
+locale: de
 title: "SecureBits Blog by Marcel Dellmann"
 
 
@@ -45,12 +45,12 @@ image/gif:
 # For any more details, you can check the official documentation: https://gohugo.io/content-management/multilingual/
 languages:
   de:
-    languageName: Deutsch
-    languageCode: de
+    label: Deutsch
+    locale: de
     weight: 1
   en:
-    languageName: English
-    languageCode: en
+    label: English
+    locale: en
     weight: 2
 
 # Force a locale to be use, really useful to develop the application ! Should be commented in production, the "weight" should rocks.
@@ -99,10 +99,6 @@ markup:
 # client-side JavaScript search
 outputs:
   home:
-  - html
-  - rss
-  - json
-  blog:
   - html
   - rss
   - json
