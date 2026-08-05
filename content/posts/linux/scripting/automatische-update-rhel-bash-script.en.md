@@ -1,6 +1,6 @@
 ---
-title: Automatische Updates von RHEL-Systemen mit einem Bash-Script
-description: Automatisierte Updates auf einem RHEL-basierenden OS mit einem Bash-Script
+title: Automatic updates of RHEL systems with a Bash script
+description: Automated updates on a RHEL-based OS with a Bash script
 date: 2025-08-17T13:34:19.769Z
 tags:
   - bash
@@ -11,52 +11,51 @@ categories:
   - Tutorials
 menu:
   sidebar:
-    name: Bash-Script für automatische Updates auf RHEL-Systemen
+    name: Bash script for automatic updates on RHEL systems
     identifier: rhel-update
     parent: linux-scripting
 keywords:
   - rhel-update
-draft: true
 preview: ../../../../assets/images/posts/linux/bash-update-script-rhel.webp
 hero: /images/posts/linux/bash-update-script-rhel.webp
 ---
-## Updates auf RHEL-basierenden Systemen automatisieren mit einem Bash-Script
+## Automating updates on RHEL-based systems with a Bash script
 
-In diesem kleinen Tutorial möchte ich zeigen, wie ihr mit Hilfe eines Bash-Script, RHEL-basierende Server-Systeme automatisch aktualisieren lassen könnt.
+In this short tutorial, I would like to show you how you can use a Bash script to update RHEL-based server systems automatically.
 
-## Warum ein Bash-Script nutzen
+## Why use a Bash script?
 
-Ich denke jeder Administrator weiß die Vorzüge der Verwendung von Scripte zur Automatierung von immer wiederkehrenden Aufgaben zu schätzen und kann so seine produktive Arbeit effizienter gestalten.
+I think every administrator appreciates the benefits of using scripts to automate recurring tasks, which makes their productive work far more efficient.
 
-Daher habe ich mir gedacht, dass ich euch in diesem Tutorial das Bash-Scripting ein wenig näher bringe und euch anhand eines Beispiels, dass Scripting in der Shell zeige.
-Als Beispiel schreibe ich ein Script mit dessen Hilfe, Updates von RHEL-basierenden Betriebssystemen, vollkommen automatisiert ablaufen.
+That is why I thought I would introduce you to Bash scripting a little in this tutorial and show you scripting in the shell using an example.
+As an example, I will write a script that lets updates of RHEL-based operating systems run completely automatically.
 
-## Erstellung des Bash-Scripts für automatische Updates
+## Creating the Bash script for automatic updates
 
 <!-- FM:Snippet:Start data:{"id":"Warning","fields":[]} -->
 {{< alert type="warning" >}}
-**Warnung**
+**Warning**
 
-Bitte Bash-Scripte immer erst auf **Test-Systeme** vorab Testen und dann auf Produktiv-Systemen ausrollen!!!
+Please always test Bash scripts on **test systems** first and only then roll them out on production systems!!!
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
-## Zum Aufbau von diesem Beispiel-Script
-Zunächst werde ich in diesem Beispiel-Script euch die **einzelnen Befehls-Abschnitte** des Bash-Scripts nacheinander deren Bedeutung und Funktionsweise erklären und weiter unten in diesem Artikel findet ihr dann das fertige Update-Script zur eurer freien Verfügung.
+## About the structure of this example script
+First, I will explain the **individual command sections** of the Bash script one after the other, along with their meaning and how they work. Further down in this article you will then find the finished update script, free for you to use.
 <!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
-In meinem GitHub-Repository findet ihr noch viele praktische Scripte für die Bash oder das Scripting mit Phyton.
+In my GitHub repository you will find many more practical scripts for Bash or for scripting with Python.
 
-[**--> Hier geht es zum Repository**](https://github.com/securebitsorg/community-templates)
+[**--> Click here for the repository**](https://github.com/securebitsorg/community-templates)
 
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
-#### Was braucht ihr für die Erstellung eines Bash-Scripts?!
-Für das Erstellen eines Bash-Scripts braucht es eigentlich nur einen einfachen Text-Editor. 
-Besser jedoch ist es, wenn ihr einen Editor nutzt, der auch das Syntax-Highlighting der Bash-Scripting beherrscht. So ist einfacher, die richtige Formatierung für das Script einzuhalten und sorgt auch für eine bessere Übersicht.
+#### What do you need to create a Bash script?
+All you really need to create a Bash script is a simple text editor.
+It is better, however, to use an editor that also supports syntax highlighting for Bash scripting. That makes it easier to keep the correct formatting for the script and also gives you a better overview.
 
-##### Hier eine kleine Auswahl an Editoren unter Linux:
+##### Here is a small selection of editors for Linux:
 - KWrite
 - VSCode
 - nano
@@ -65,77 +64,67 @@ Besser jedoch ist es, wenn ihr einen Editor nutzt, der auch das Syntax-Highlight
 - Kate
 
 
-### Erstellung der Bash-Script-Datei
-Bevor mit dem Erstellen des Bash-Scripts für unser Update-Script anfangen können, brauchen wir zunächst eine Script-Datei. 
-Um diese zu Bash-Script-Datei zu erstellen, erstellt ihr eine neue Datei mit der Endung **`.sh`** mit dem **nano-Editor** oder dem Editor eurer Wahl.
+### Creating the Bash script file
+Before we can start writing the Bash script for our update routine, we first need a script file.
+To create this Bash script file, create a new file with the extension **`.sh`** using the **nano editor** or the editor of your choice.
 
-**In diesem Beispiel erstellen wir das Script im Wurzelverzeichnis des `root-users`**
+**In this example we create the script in the home directory of the `root user`**
 
 >
-> #### Installieren des **nano-Editor**
-> 
-> Bei den meisten Distros ist der **nano-Editor** schon vorinstalliert. Sollte das nicht der Fall sein, könnt ihr einfach die Installation mit diesen Befehl nachholen.
+> #### Installing the **nano editor**
+>
+> On most distros the **nano editor** is already pre-installed. If that is not the case, you can simply install it afterwards with this command.
 >
 >```sh
-># Installation des nano-Editor
+># Installing the nano editor
 >
 >sudo dnf update
 >
 >sudo dnf install nano
 >```
-### Schritt 1 - Erstellung einer Bash-Script-Datei
-In diesem Beispiel nutze ich einfachshalber den `nano-editor` im Terminal, da dieser einfach zu Bedienen ist und auch für alle Distros (meines Wissens) verfügbar ist.
+### Step 1 - Creating a Bash script file
+In this example I am using the `nano editor` in the terminal for simplicity's sake, since it is easy to operate and is available for all distros (as far as I know).
 
 ```sh
-# Solltet ihr als nicht root-user angemeldet sein, könnt ihr euch mit dem folgenden Befehl als root-user anmelden
+# If you are not logged in as root user, you can log in as root user with the following command
 
 sudo -s
 
-# Erstellen der Script-Datei im root-Verzeichnis
+# Create the script file in the root directory
 touch ~/simple_update_RHEL_script.sh
 
-# Bearbeiten der Script-Datei 
+# Edit the script file
 nano ~/simple_update_RHEL_script.sh
 ```
-Im nun offnen Editor-Fenster der Datei `simple_update_RHEL_script.sh`, gibt ihr in der ersten Zeile, das folgende ein:
+In the editor window for the file `simple_update_RHEL_script.sh` that is now open, enter the following in the first line:
 
 `#!/bin/bash`
 
-> Mit dieser ersten Zeile `#!/bin/bash` weisen wir aus, das es sich hier um ein Bash-Script handelt und so weiß das Betriebssystem, mit welchem Interpreter (Shell) unser Script ausgeführt werden soll.
+> With this first line `#!/bin/bash` we declare that this is a Bash script, so the operating system knows which interpreter (shell) should be used to execute our script.
 
-### Schritt 2 - Bash-Script Kommentare und Anweisungen einfügen
-#### Warum Kommentare und Anweisungen erstellen?
-Generell sollte man sich von Anfang angewöhnen, die erstellten Bash-Scripte gut zu Dokumentieren.
+### Step 2 - Adding Bash script comments and instructions
+#### Why create comments and instructions?
+In general, you should get into the habit of documenting the Bash scripts you create right from the start.
 
-Erstens hilft es einem Selbst, wenn man eine Vielzahl an Bash-Scripte in seinem Werkzeugkasten hat, um sich auch später noch daran erinnern zu können, welche Funktionalität mit dem Script bereitgestellt wird.
+Firstly, it helps you yourself: once you have a large number of Bash scripts in your toolbox, it lets you remember later on what functionality a given script provides.
 
-Zweitens ist natürlich von Vorteil, dass auch Andere mit dem Bash-Script etwas anfangen können, wenn ihr eure Scripte zum Beispiel intern oder auf GitHub etc. mit anderen Usern teilt.
-#### Einfügen von Kommentare oder Anweisungen
-Ich für meinen Teil schreibe am Anfang meiner Scripte immer erst die Versionsnummer (für den Versionsverlauf), eine Beschreibung wofür dieses Script gedacht ist und Anweisungen für die Nutzung des Scripts.
+Secondly, it is of course an advantage that others can make sense of the Bash script as well, if you share your scripts internally or on GitHub etc. with other users.
+#### Inserting comments or instructions
+For my part, I always write the version number (for the version history) at the beginning of my scripts, along with a description of what the script is intended for and instructions on how to use it.
 
-Den einzelnen auszuführenden Befehle im Bash-Script, füge ich auch noch eine kurze Beschriftung sowie Funktionsart hinzu, wenn ich diese mit Dritten teile.
+I also add a short label and the type of function to the individual commands executed in the Bash script whenever I share them with third parties.
 
-**Im folgendem sieht das dann so aus:**
+**This is what it looks like:**
 
 ```bash
 #!/bin/bash
 
 # Version: 1.0
 
-# Hinweis:
-# Dieses Script ist für RHEL-basierte Systeme gedacht.
-# Es aktualisiert das System und entfernt nicht mehr benötigte Pakete.
-# Es überprüft, ob ein Neustart des Systems erforderlich ist und startet es gegebenenfalls SOFORT neu.
-# Es ist wichtig, dass das Script als root ausgeführt wird.
-
-# Anwendung:
-# sudo chmod +x simple_update_RHEL_script.sh
-# sudo ./simple_update_RHEL_script.sh
-
 # Info:
 # This script is intended for RHEL-based systems.
 # It updates the system and removes unused packages.
-# It checks if a system restart is required and restarts the system if necessary.
+# It checks if a system restart is required and restarts the system IMMEDIATELY if necessary.
 # It is important that the script is run as root.
 
 # Using:
@@ -144,40 +133,41 @@ Den einzelnen auszuführenden Befehle im Bash-Script, füge ich auch noch eine k
 
 
 
-# Automatisches Update-Script für RHEL-basierte Systeme / Automatic update script for RHEL-based systems
+# Automatic update script for RHEL-based systems
 ```
 
-### Schritt 3 - `echo` Ausgabe im Terminalfenster
-Um dem Anwender des Bash-Scripts eine Rückmeldung zu geben, was gerade bei der Ausführung des Scripts ausgeführt wird, gibt es den Befehl `echo` für den Ausdruck im Terminal.
+### Step 3 - `echo` output in the terminal window
+To give the user of the Bash script feedback about what is currently being carried out while the script runs, there is the `echo` command for printing to the terminal.
 
-In unserem Beispiel-Script nutzen wir den Befehl `echo` zum ersten Mal, um dem Anwender eine Nachricht im Terminal zu übergeben, welche darüber informiert, was nun durch dieses Script auf dem System durchgeführt wird.
+In our example script we use the `echo` command for the first time to pass a message to the user in the terminal, informing them what this script is now going to do on the system.
 
 ```bash
 echo "================================================================="
-echo "     Automatisches System-Update / Automatic system update"
-echo "        (RHEL/Fedora/CentOS)"
+echo "                    Automatic system update"
+echo "                     (RHEL/Fedora/CentOS)"
 echo "================================================================="
 ```
-### Schritt 4 - Bash-Anweisung `if, then, fi` (root-Berechtigung überprüfen)
-Unsere erste Anweisung die wir in unser Bash-Update-Script einfügen werden, ist die Überprüfung, ob wir die `root - Rechte` haben, um die Befehle auf dem System ausführen zu können.
+### Step 4 - Bash statement `if, then, fi` (check root privileges)
+The first statement we are going to add to our Bash update script is the check for whether we have `root privileges` to execute the commands on the system.
 
 ```bash
-# Prüfen, ob root-Rechte vorhanden sind / Check if root privileges are present
+# Check if root privileges are present
 if [ "$EUID" -ne 0 ]; then
-  echo "Bitte führen Sie dieses Script als root aus (sudo) / Please run this script as root (sudo)."
+  echo "Please run this script as root (sudo)."
   exit 1
 fi
 ```
-Hierzu bedienen wir uns der `if, then, fi` -Anweisung. 
-Im Klarnamen heißt das, **'wenn (`if`)' "nicht gleich Benutzer-ID + 0 `[ "$EUID" -ne 0 ];` ist (root-User)", 'dann (`then`)' gebe eine Ausgabe im Terminal (`echo`) ab "Bitte führen Sie dieses Script als root aus (sudo) / Please run this script as root (sudo)." und beende das Script (`exit 1` (steht für "Script wurde mit Fehler oder besonderem Status beendet")). Der Befehl `fi` beendet die Anweisung. 
 
-### Schritt 5 - Bash-Anweisung (Überprüfung Paketmanager)
-In diesem Schritt werden wir eine weitere Systemprüfung durchführen, um zu Überprüfen, ob der Paketmanager `dnf` auf dem System vorhanden ist.
+For this we use the `if, then, fi` statement.
+In plain words this means: **'if (`if`)' "the user ID is not equal to 0 `[ "$EUID" -ne 0 ];` (root user)", 'then (`then`)' print a message in the terminal (`echo`) saying "Please run this script as root (sudo)." and terminate the script (`exit 1`, which stands for "script terminated with an error or a special status"). The command `fi` ends the statement.
+
+### Step 5 - Bash statement (check package manager)
+In this step we perform another system check to verify whether the package manager `dnf` is present on the system.
 
 ```bash
-# Prüfen, ob apt verfügbar ist / Check if apt is available
+# Check if dnf is available
 if ! command -v dnf >/dev/null 2>&1; then
-  echo "Kein 'dnf'-Paketmanager gefunden. Dieses Script funktioniert nur auf RHEL-basierten Systemen / No 'dnf' package manager found. This script only works on RHEL-based systems."
+  echo "No 'dnf' package manager found. This script only works on RHEL-based systems."
   exit 2
 fi
 ```
@@ -185,101 +175,87 @@ fi
 
 <!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
-```bash 
+```bash
 if ! command -v dnf >/dev/null 2>&1;
-``` 
-Damit wird überprüft, ob das Kommando `dnf` im System verfügbar ist.
+```
+This checks whether the `dnf` command is available on the system.
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
-### Schritt 4 - Bash-Anweisung (RHEL-Paketquellen aktualisieren und Update durchführen)
-In diesem Schritt geben wir zunächst die Ausgabe (`echo`) in das Terminal, dass die Paketquellen aktualisiert werden.
-Dann wird der Befehl `dnf update -y` ausgeführt um die angekündigte Aktualisierung der Paketquellen durchzuführen und bei vorhandenen neueren Paketen das System zu aktualisieren.
+### Step 6 - Bash statement (clear the package manager cache)
+In order to receive all available updates for the `dnf` package manager, we first clear the cache of the `dnf` package manager with the following command.
 
 ```bash
-# Paketquellen aktualisieren / Update package sources
-echo "Aktualisiere Paketquellen / Ausführung Upgrade | Update package sources / "
-dnf update -y
-```
-
-### Schritt 5 - Bash-Anweisung (unnötige dnf-Pakete entfernen)
-Als nächstes werden wir noch eine Anweisung einbauen, um unnötige / nicht mehr benötigte `dnf`-Pakete automatisch zu löschen.
-
-```bash
-# Nicht mehr benötigte Pakete entfernen / Remove unused packages
-echo "Entferne nicht mehr benötigte Pakete / Remove unused packages"
-dnf autoremove -y
-```
-
-### Schritt 6 - Bash-Anweisung (dnf-cache leeren)
-Zu guter Letzt werden wir noch eine letzte Anweisung für den Update-Prozess einfügen, um den Cache des Paketmanager zu leeren.
-
-```bash
-# Paketdatenbank bereinigen / Clean up cached package data
-echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
+# Clean up cached package data
+echo "Clean up cached package data"
 dnf clean all
 ```
 
-### Schritt 7 - Bash-Anweisung (echo-Ausgabe Update-Prozess abgeschlossen)
-Da der Update-Prozess nach den letzten Anweisungen fertiggestellt ist, geben wir noch eine Mitteilung an den User im Terminal, dass der Update-Prozess zu Ende ist.
+### Step 7 - Bash statement (run the dnf update)
+In this step we first print output (`echo`) to the terminal stating that the package sources are being updated.
+Then the command `dnf update -y` is executed to carry out the announced update of the package sources and to update the system if newer packages are available.
+
+```bash
+# Update package sources and install available updates
+echo "Update package sources and install available updates"
+dnf update -y
+```
+
+### Step 8 - Bash statement (remove unnecessary dnf packages)
+Next we add a statement to automatically delete unnecessary `dnf` packages that are no longer needed.
+
+```bash
+# Remove unused packages
+echo "Remove unused packages"
+dnf autoremove -y
+```
+
+### Step 9 - Bash statement (echo output: update process completed)
+Since the update process is finished after the previous statements, we send one more message to the user in the terminal to say that the update process has come to an end.
 
 ```bash
 echo "================================================================="
-echo "      System-Update abgeschlossen / System update completed"
+echo "                   System update completed"
 echo "================================================================="
 ```
 
-### Schritt 10 - Bash-Anweisung (Erforderliches Reboot überprüfen)
-Da zum Beispiel einige Aktualisierungen (z.B. Änderung am Kernel) einen Neustart des Betriebssystem benötigen, werden wir noch eine letzte Anweisung hinzufügen, um dieses zu überprüfen und gegebenfalls einen Neustart auslösen.
+### Step 10 - Bash statement (check whether a reboot is required)
+Since some updates (for example changes to the kernel) require a restart of the operating system, we add one final statement to check for this and trigger a restart if necessary.
 
 ```bash
-# Überprüfen ob ein Neustart des Systems erforderlich ist / Check if a system restart is required
+# Check if a system restart is required
 if [ -f /var/run/reboot-required ]; then
-  echo "Ein Neustart des Systems ist erforderlich. Das System wird jetzt neu gestartet / A system restart is required. The system will now restart."
+  echo "A system restart is required. The system will now restart."
   reboot
 fi
 ```
 
-#### Bash-Update-Script abspeichern
-> Nach einer letzten Überprüfung von unserem Script müssen wir dieses natürlich nach abspeichern!
+#### Saving the Bash update script
+> After a final check of our script we of course have to save it!
+>
+> We do this with the key combinations `CTRL + o (confirm with Enter)` and `CTRL + x (close the editor)`
 
-## Fertiges RHEL-Update Bash-Script
-Hier nun das fertige Bash-Script um automatisiert Update-Routinen auf RHEL-Systemen durchlaufen zu lassen.
+## The finished RHEL update Bash script
+Here is the finished Bash script for running update routines on RHEL systems automatically.
 
-Diese könnt ihr dann wie cronjob automatisiert auf den Linux-Systemen laufen lassen.
+You can then have it run automatically on your Linux systems as a cron job.
 
 <!-- FM:Snippet:Start data:{"id":"Success","fields":[]} -->
 {{< alert type="success" >}}
-Gerade wenn ihr eine Vielzahl an Linux-Server zum Beispiel auf einen Proxmox VE-Server laufen habt, erleichtern euch solche Bash-Scripte enorm die Arbeit.
+Especially if you have a large number of Linux servers running on a Proxmox VE server, for example, Bash scripts like this make your work enormously easier.
 {{< /alert >}}
 
-<!-- FM:Snippet:End -->## Schritt 11 - Bash-Update-Script ausführbar machen
-Damit wir das Bash-Update-Script auch nutzen / ausführen können, muss das Script noch mit dem entsprechenden Rechten versehen werden.
-
-```sh
-sudo chmod +x simple_update_RHEL_script.sh
-```
-
+<!-- FM:Snippet:End -->
 
 ```bash
 #!/bin/bash
 
 # Version: 1.0
 
-# Hinweis:
-# Dieses Script ist für RHEL-basierte Systeme gedacht.
-# Es aktualisiert das System und entfernt nicht mehr benötigte Pakete.
-# Es überprüft, ob ein Neustart des Systems erforderlich ist und startet es gegebenenfalls SOFORT neu.
-# Es ist wichtig, dass das Script als root ausgeführt wird.
-
-# Anwendung:
-# sudo chmod +x simple_update_RHEL_script.sh
-# sudo ./simple_update_RHEL_script.sh
-
 # Info:
 # This script is intended for RHEL-based systems.
 # It updates the system and removes unused packages.
-# It checks if a system restart is required and restarts the system if necessary.
+# It checks if a system restart is required and restarts the system IMMEDIATELY if necessary.
 # It is important that the script is run as root.
 
 # Using:
@@ -288,71 +264,71 @@ sudo chmod +x simple_update_RHEL_script.sh
 
 
 
-# Automatisches Update-Script für RHEL-basierte Systeme / Automatic update script for RHEL-based systems
+# Automatic update script for RHEL-based systems
 
 echo "================================================================="
-echo "     Automatisches System-Update / Automatic system update"
-echo "        (RHEL/Fedora/CentOS)"
+echo "                    Automatic system update"
+echo "                     (RHEL/Fedora/CentOS)"
 echo "================================================================="
 
-# Prüfen, ob root-Rechte vorhanden sind / Check if root privileges are present
+# Check if root privileges are present
 if [ "$EUID" -ne 0 ]; then
-  echo "Bitte führen Sie dieses Script als root aus (sudo) / Please run this script as root (sudo)."
+  echo "Please run this script as root (sudo)."
   exit 1
 fi
 
-# Prüfen, ob apt verfügbar ist / Check if apt is available
+# Check if dnf is available
 if ! command -v dnf >/dev/null 2>&1; then
-  echo "Kein 'dnf'-Paketmanager gefunden. Dieses Script funktioniert nur auf RHEL-basierten Systemen / No 'dnf' package manager found. This script only works on RHEL-based systems."
+  echo "No 'dnf' package manager found. This script only works on RHEL-based systems."
   exit 2
 fi
 
-# Paketquellen aktualisieren / Update package sources
-echo "Aktualisiere Paketquellen und Installation von Updates/ Update package sources and update packges"
-dnf update -y
-
-# Nicht mehr benötigte Pakete entfernen / Remove unused packages
-echo "Entferne nicht mehr benötigte Pakete / Remove unused packages"
-dnf autoremove -y
-
-# Paketdatenbank bereinigen / Clean up cached package data
-echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
+# Clean up cached package data
+echo "Clean up cached package data"
 dnf clean all
 
+# Update package sources and install available updates
+echo "Update package sources and install available updates"
+dnf update -y
+
+# Remove unused packages
+echo "Remove unused packages"
+dnf autoremove -y
+
 echo "================================================================="
-echo "      System-Update abgeschlossen / System update completed"
+echo "                   System update completed"
 echo "================================================================="
 
-# Überprüfen ob ein Neustart des Systems erforderlich ist / Check if a system restart is required
+# Check if a system restart is required
 if [ -f /var/run/reboot-required ]; then
-  echo "Ein Neustart des Systems ist erforderlich. Das System wird jetzt neu gestartet / A system restart is required. The system will now restart."
+  echo "A system restart is required. The system will now restart."
   reboot
 fi
 
-# Ende des Scripts / End of script
+# End of script
 
 ```
 
-### Schritt 11 - Bash-Update-Script ausführbar machen
-Damit wir das Bash-Update-Script auch nutzen / ausführen können, muss das Script noch mit dem entsprechenden Rechten versehen werden.
+### Step 11 - Making the Bash update script executable
+In order to use / execute the Bash update script, the script still has to be given the appropriate permissions.
 
-**Script-Rechte anpassen**
+**Adjust the script permissions**
 
 ```sh
-# Sript-Rechte anpassen
+# Adjust the script permissions
 
 sudo chmod +x simple_update_RHEL_script.sh
 
 ```
 
-**Bash-Update-Script ausführen**
+**Running the Bash update script**
 
 ```sh
-# Möglichkeit 1: Ausführen des Bash-Scripts
+# Option 1: Executing the Bash script
 
 sudo sh simple_update_RHEL_script.sh
 
-# Möglichkeit 2: Ausführung des Scripts
+# Option 2: Executing the script
 
 sudo ./simple_update_RHEL_script.sh
 
@@ -366,14 +342,15 @@ sudo ./simple_update_RHEL_script.sh
 <!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
 
 
-> ## Bücher zum Thema Bash (Shell)-Scripting
+> ## Books on Bash (shell) scripting
 > ---
-> **Zwei wirklich gut Bücher zum Thema Shell-Scripting kann ich euch hier empfehlen und besitze diese beiden Bücher auch selbst.**
-> 
-> Das sind beides super Nachschlage- / Übungs-Bücher und ihr bekommt für **5€ Aufpreis**, dass passende **E-Book dazu** (*nur bei der Bestellung direkt beim Rheinwerk-Verlag*)!
+> **I can recommend two really good books on shell scripting here, and I own both of them myself.**
 >
-> 
->> *Hinweis: Beide Links sind Affiliate-Links, kostet aber für euch keinen 'Cent' mehr und ihr unterstützt automatisch diesen Blog.* 
+> Both are great reference and practice books, and for **an extra 5 €** you get the matching **e-book as well** (*only when ordering directly from Rheinwerk-Verlag*)!
+>
+> *Please note: both books are written in German.*
+>
+>> *Note: both links are affiliate links, but they do not cost you a 'cent' more and you automatically support this blog.*
 
 {{< vs 3>}}
 
@@ -384,63 +361,60 @@ sudo ./simple_update_RHEL_script.sh
 
 ![Scripting](/images/affiliate/Scripting.webp)
 
-[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/shell-programmierung-das-umfassende-handbuch/?GPP=securebits)
+[Take a look at Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/shell-programmierung-das-umfassende-handbuch/?GPP=securebits)
 
-**Aus dem Inhalt:**
+**From the contents:**
 
 
-   - Bash, ZSH und die Linux-Toolbox
-   - PowerShell und CmdLets
-   - Python und Pip
-   - SSH, VSCode, Git, Curl: Werkzeugenkasten für moderne Scripts
-   - Scripts automatisch ausführen: Cron und Task Scheduler
-   - Backups automatisieren
-   - Bilder verarbeiten
-   - Monitoring: Logging-Dateien auswerten
-   - Web-Scraping und -Mining
-   - Scripting in der AWS-Cloud
-   - Scripte in Docker-Containern
+   - Bash, ZSH and the Linux toolbox
+   - PowerShell and cmdlets
+   - Python and Pip
+   - SSH, VSCode, Git, Curl: the toolbox for modern scripts
+   - Running scripts automatically: cron and Task Scheduler
+   - Automating backups
+   - Processing images
+   - Monitoring: evaluating log files
+   - Web scraping and mining
+   - Scripting in the AWS cloud
+   - Scripts in Docker containers
 
 ---
 **Shell-Programmierung | Das umfassende Handbuch**
 
 ![Shell-Programmierung](/images/affiliate/Shell-Programmierung.webp)
 
-[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/scripting-das-praxisbuch-fuer-administratoren-und-devops-teams/?GPP=securebits)
+[Take a look at Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/scripting-das-praxisbuch-fuer-administratoren-und-devops-teams/?GPP=securebits)
 
 
 
-**Aus dem Inhalt:**
+**From the contents:**
 
-  -  Einführung in die Shells
-  -  Variablen, Parameter und Argumente
-  -  Kontrollstrukturen, Funktionen und Signale
-  -  Ein/Ausgabe im Terminal
-  -  Fehlersuche und Debugging
-  -  Reguläre Ausdrücke und grep
-  -  Der Stream-Editor sed
-  -  Programmieren mit awk
-  -  GUIs mit zenity
-  -  Shell-Befehle im Überblick
-  -  Scripts u. a. für die Systemadministration, Backup
+  -  Introduction to the shells
+  -  Variables, parameters and arguments
+  -  Control structures, functions and signals
+  -  Input/output in the terminal
+  -  Troubleshooting and debugging
+  -  Regular expressions and grep
+  -  The stream editor sed
+  -  Programming with awk
+  -  GUIs with zenity
+  -  Overview of shell commands
+  -  Scripts for system administration, backup and more
 
 {{< /split >}}
 
 ---
 {{< vs 3>}}
 
-## Fazit zum Bash-Scripting
-Wer effizient mehrere Linux-Server zu administrieren hat, kommt an Bash- / oder Python-Scripting meiner Meinung nicht vorbei.
+## Conclusion on Bash scripting
+In my opinion, anyone who has to administer several Linux servers efficiently cannot get around Bash or Python scripting.
 
-Natürlich gibt es zum Beispiel auch mächtige Tools wie [**Ansible**](https://docs.ansible.com/ansible/latest/index.html) für die Automatisierung von Deployment, Wartung, etc., aber ist das Lernen einer Script-Sprache in meinen Augen der beste Anfang.
+Of course there are also powerful tools such as [**Ansible**](https://docs.ansible.com/ansible/latest/index.html) for automating deployment, maintenance and so on, but learning a scripting language is in my view the best place to start.
 
 <!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
-> ## Fragen und Antworten
+> ## Questions and answers
 >
-> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+> If you have questions or feedback about this blog or the YouTube channel, please use my help page. There you will find questions and answers about the various articles. You are also welcome to post your own question there.
 >
-> [**Zur Hilfeseite**](https://help.secure-bits.org)
+> [**Go to the help page**](https://help.secure-bits.org)
 <!-- FM:Snippet:End -->
-
-
-

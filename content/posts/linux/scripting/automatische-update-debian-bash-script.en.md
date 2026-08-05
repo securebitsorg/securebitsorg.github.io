@@ -11,39 +11,40 @@ categories:
   - Tutorials
 menu:
   sidebar:
-    name: Bash script for automatic updates under Debiann
+    name: Bash script for automatic updates under Debian
     identifier: debian-update
-    parent: linux
+    parent: linux-scripting
 keywords:
   - bash-update-script
-draft: true
 preview: ../../../../assets/images/posts/linux/bash-update-script-debian.webp
 hero: /images/posts/linux/bash-update-script-debian.webp
 ---
 ## Automating updates on Debian-based systems with a Bash script
 
-In this short tutorial, I would like to show you how you can use a Bash script to automatically update Debian-based server systems.
+In this short tutorial, I would like to show you how you can use a Bash script to update Debian-based server systems automatically.
 
 ## Why use a Bash script?
 
-I think every administrator knows (e.g., with Ubuntu minimal server installation) and I will show you how to script in the shell using an example.
-As an example, I will write a script that allows updates of Debian-based operating systems to run completely automatically.
+I think every administrator appreciates the benefits of using scripts to automate recurring tasks, which makes their productive work far more efficient.
+
+That is why I thought I would introduce you to Bash scripting a little in this tutorial and show you scripting in the shell using an example.
+As an example, I will write a script that lets updates of Debian-based operating systems run completely automatically.
 
 ## Creating the Bash script for automatic updates
 
-<!-- FM:Snippet:Start data:{“id”:‘Warning’,“fields”:[]} -->
+<!-- FM:Snippet:Start data:{"id":"Warning","fields":[]} -->
 {{< alert type="warning" >}}
 **Warning**
 
-Please always test Bash scripts on **test systems** first and then roll them out on production systems!!!
+Please always test Bash scripts on **test systems** first and only then roll them out on production systems!!!
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
 ## About the structure of this example script
-First, I will explain the meaning and functionality of the **individual command sections** of the Bash script one after the other in this example script. Further down in this article, you will find the finished update script, which you are free to use.
-<!-- FM:Snippet:Start data:{“id”:‘Info’,“fields”:[]} -->
+First, I will explain the **individual command sections** of the Bash script one after the other, along with their meaning and how they work. Further down in this article you will then find the finished update script, free for you to use.
+<!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
-In my GitHub repository, you will find many more practical scripts for Bash or scripting with Python.
+In my GitHub repository you will find many more practical scripts for Bash or for scripting with Python.
 
 [**--> Click here for the repository**](https://github.com/securebitsorg/community-templates)
 
@@ -51,8 +52,8 @@ In my GitHub repository, you will find many more practical scripts for Bash or s
 <!-- FM:Snippet:End -->
 
 #### What do you need to create a Bash script?
-All you really need to create a Bash script is a simple text editor. 
-However, it's better to use an editor that also supports syntax highlighting for Bash scripting. This makes it easier to maintain the correct formatting for the script and also provides a better overview.
+All you really need to create a Bash script is a simple text editor.
+It is better, however, to use an editor that also supports syntax highlighting for Bash scripting. That makes it easier to keep the correct formatting for the script and also gives you a better overview.
 
 ##### Here is a small selection of editors for Linux:
 - KWrite
@@ -61,18 +62,18 @@ However, it's better to use an editor that also supports syntax highlighting for
 - VIM
 - NEOvim
 - Kate
-(e.g., for Ubuntu minimal server installation)
+
 
 ### Creating the Bash script file
-Before we can start creating the Bash script for our update script, we first need a script file. 
+Before we can start writing the Bash script for our update routine, we first need a script file.
 To create this Bash script file, create a new file with the extension **`.sh`** using the **nano editor** or the editor of your choice.
 
-**In this example, we will create the script in the root directory of the `root user`**
+**In this example we create the script in the home directory of the `root user`**
 
 >
 > #### Installing the **nano editor**
-> 
-> On Debian-based distros, the **nano editor** is usually pre-installed. If this is not the case (e.g., with a minimal Ubuntu server installation), you can simply install it with this command.
+>
+> On Debian-based distros the **nano editor** is pre-installed in most cases. If that is not the case (for example with a minimal Ubuntu server installation), you can simply install it afterwards with this command.
 >
 >```sh
 ># Installing the nano editor
@@ -81,37 +82,37 @@ To create this Bash script file, create a new file with the extension **`.sh`** 
 >
 >sudo apt install nano
 >```
-Step 1 - Creating a Bash script file
-In this example, for simplicity's sake, I am using the `nano editor` in the terminal, as it is easy to use and available for all distros (to my knowledge).
+### Step 1 - Creating a Bash script file
+In this example I am using the `nano editor` in the terminal for simplicity's sake, since it is easy to operate and is available for all distros (as far as I know).
 
 ```sh
-# If you are not logged in as a root user, you can log in as a root user with the following command
+# If you are not logged in as root user, you can log in as root user with the following command
 
 sudo -s
-(e.g., for Ubuntu minimal server installation)
+
 # Create the script file in the root directory
 touch ~/simple_update_debian_script.sh
 
-# Edit the script file 
+# Edit the script file
 nano ~/simple_update_debian_script.sh
 ```
-In the editor window that is now open for the file `simple_update_debian_script.sh`, enter the following in the first line:
+In the editor window for the file `simple_update_debian_script.sh` that is now open, enter the following in the first line:
 
 `#!/bin/bash`
 
-> With this first line `#!/bin/bash`, we indicate that this is a Bash script, so the operating system knows which interpreter (shell) to use to execute our script.
+> With this first line `#!/bin/bash` we declare that this is a Bash script, so the operating system knows which interpreter (shell) should be used to execute our script.
 
-### Step 2 - Insert Bash script comments and instructions
+### Step 2 - Adding Bash script comments and instructions
 #### Why create comments and instructions?
-In general, you should get into the habit of documenting the Bash scripts you create from the outset.
+In general, you should get into the habit of documenting the Bash scripts you create right from the start.
 
-Firstly, if you have a large number of Bash scripts in your toolbox, it helps you to remember later on what functionality the script provides.
+Firstly, it helps you yourself: once you have a large number of Bash scripts in your toolbox, it lets you remember later on what functionality a given script provides.
 
-Secondly, it is of course advantageous that others can also use the Bash script if you share your scripts internally or on GitHub, etc. with other users.
+Secondly, it is of course an advantage that others can make sense of the Bash script as well, if you share your scripts internally or on GitHub etc. with other users.
 #### Inserting comments or instructions
-For my part, I always start my scripts by writing the version number (for the version history), a description of what the script is for, and instructions for using the script.
+For my part, I always write the version number (for the version history) at the beginning of my scripts, along with a description of what the script is intended for and instructions on how to use it.
 
-I also add a short label and function type to the individual commands to be executed in the Bash script when I share them with third parties.
+I also add a short label and the type of function to the individual commands executed in the Bash script whenever I share them with third parties.
 
 **This is what it looks like:**
 
@@ -120,20 +121,10 @@ I also add a short label and function type to the individual commands to be exec
 
 # Version: 1.0
 
-# Note:
-# This script is intended for Debian-based systems.
-# It updates the system and removes packages that are no longer needed.
-# It checks whether a system restart is necessary and restarts it IMMEDIATELY if necessary.
-# It is important that the script is run as root.
-
-# Using:
-# sudo chmod +x simple_update_debian_script.sh
-# sudo ./simple_update_debian_script.sh
-
 # Info:
 # This script is intended for Debian-based systems.
 # It updates the system and removes unused packages.
-# It checks if a system restart is required and restarts the system if necessary.
+# It checks if a system restart is required and restarts the system IMMEDIATELY if necessary.
 # It is important that the script is run as root.
 
 # Using:
@@ -145,154 +136,142 @@ I also add a short label and function type to the individual commands to be exec
 # Automatic update script for Debian-based systems
 ```
 
-Step 3 - `echo` output in the terminal window
-To give the user of the Bash script feedback on what is currently being executed when running the script, there is the `echo` command for printing to the terminal.
+### Step 3 - `echo` output in the terminal window
+To give the user of the Bash script feedback about what is currently being carried out while the script runs, there is the `echo` command for printing to the terminal.
 
-In our example script, we use the `echo` command for the first time to send the user a message in the terminal informing them what is now being performed on the system by this script.
+In our example script we use the `echo` command for the first time to pass a message to the user in the terminal, informing them what this script is now going to do on the system.
 
 ```bash
-echo “=================================================================”
-echo “     Automatic system update”
-echo “        (Debian/Ubuntu/Mint)”
-echo “=================================================================”
+echo "================================================================="
+echo "                    Automatic system update"
+echo "                     (Debian/Ubuntu/Mint)"
+echo "================================================================="
 ```
 ### Step 4 - Bash statement `if, then, fi` (check root privileges)
-The first statement we will add to our Bash update script is to check whether we have `root privileges` to execute the commands on the system.
+The first statement we are going to add to our Bash update script is the check for whether we have `root privileges` to execute the commands on the system.
 
 ```bash
 # Check if root privileges are present
-if [ “$EUID” -ne 0 ]; then
-  echo “Please run this script as root (sudo).”
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script as root (sudo)."
   exit 1
 fi
 ```
-To do this, we use the `if, then, fi` statement. 
-In plain language, this means **‘if (`if`)’ “not equal to user ID + 0 `[ ”$EUID“ -ne 0 ];` (root user)”, ‘then (`then`)’ output “Please run this script as root (sudo)” in the terminal (`echo`) and terminate the script (`exit 1` (stands for “Script terminated with error or special status”)). The command `fi` terminates the statement. 
+
+For this we use the `if, then, fi` statement.
+In plain words this means: **'if (`if`)' "the user ID is not equal to 0 `[ "$EUID" -ne 0 ];` (root user)", 'then (`then`)' print a message in the terminal (`echo`) saying "Please run this script as root (sudo)." and terminate the script (`exit 1`, which stands for "script terminated with an error or a special status"). The command `fi` ends the statement.
 
 ### Step 5 - Bash statement (check package manager)
-In this step, we will perform another system check to verify that the package manager `apt` is present on the system.
+In this step we perform another system check to verify whether the package manager `apt` is present on the system.
 
 ```bash
 # Check if apt is available
 if ! command -v apt >/dev/null 2>&1; then
-  echo "No ‘apt’ package manager found. This script only works on Debian-based systems."
+  echo "No 'apt' package manager found. This script only works on Debian-based systems."
   exit 2
 fi
 ```
 
 
-<!-- FM:Snippet:Start data:{“id”:‘Info’,“fields”:[]} -->
+<!-- FM:Snippet:Start data:{"id":"Info","fields":[]} -->
 {{< alert type="info" >}}
-```bash 
+```bash
 if ! command -v apt >/dev/null 2>&1;
-``` 
-This checks whether the apt command is available in the system.
+```
+This checks whether the `apt` command is available on the system.
 {{< /alert >}}
 <!-- FM:Snippet:End -->
 
-### Step 4 - Bash command (update package sources)
-In this step, we first enter the output (`echo`) into the terminal that the package sources are being updated.
-Then the command `apt update -y` is executed to perform the announced update of the package sources.
+### Step 6 - Bash statement (update package sources)
+In this step we first print output (`echo`) to the terminal stating that the package sources are being updated.
+Then the command `apt update -y` is executed to carry out the announced update of the package sources.
 
 ```bash
 # Update package sources
-echo “Update package sources”
+echo "Update package sources"
 apt update -y
 ```
-### Step 5 - Bash command (update Debian system)
-Now use the `echo` command again to display the following output in the terminal: “Install available updates” followed by the terminal command `apt upgrade -y` to update the Debian system.
+
+### Step 7 - Bash statement (update the Debian system)
+Now we use the `echo` statement again to show the following output in the terminal: "Install available updates", followed by the terminal command `apt upgrade -y` to update the Debian system.
 
 ```bash
-# Install upgrades / Install available updates
-echo “Install available updates”
+# Install available updates
+echo "Install available updates"
 apt upgrade -y
 ```
-### Step 6 - Bash command (update dependencies)
-To also resolve dependencies during the upgrade process, for example, when jumping to a new version, also execute the following terminal command in our Bash update script.
+
+### Step 8 - Bash statement (resolve dependencies)
+To also resolve dependencies during the upgrade process – for example when moving up to a new version – we run the following terminal command in our Bash update script as well.
 
 ```bash
 # Optional full upgrade (including removals/reinstallations)
-echo “Run full upgrade”
+echo "Run full upgrade"
 apt full-upgrade -y
 ```
-### Step 7 - Bash command (remove unnecessary apt packages)
-Next, we will add a command to automatically delete unnecessary/unused `apt` packages.
+
+### Step 9 - Bash statement (remove unnecessary apt packages)
+Next we add a statement to automatically delete unnecessary `apt` packages that are no longer needed.
 
 ```bash
 # Remove unused packages
-echo “Remove unused packages”
+echo "Remove unused packages"
 apt autoremove -y
 ```
 
-### Step 8 - Bash command (clear apt-cache)
-Last but not least, we will add one final command to the update process to clear the package manager's cache.
+### Step 10 - Bash statement (clear the apt cache)
+Last but not least, we add one final statement to the update process to clear the package manager's cache.
 
 ```bash
 # Clean up cached package data
-echo “Clean up cached package data”
+echo "Clean up cached package data"
 apt clean
 ```
 
-### Step 9 - Bash command (echo output update process complete)
-Since the update process is complete after the last commands, we will display a message to the user in the terminal that the update process is finished.
+### Step 11 - Bash statement (echo output: update process completed)
+Since the update process is finished after the previous statements, we send one more message to the user in the terminal to say that the update process has come to an end.
 
 ```bash
-echo “=================================================================”
-echo “      System update completed”
-echo “=================================================================”
+echo "================================================================="
+echo "                   System update completed"
+echo "================================================================="
 ```
 
-Step 10 - Bash command (check if a reboot is required)
-Since some updates (e.g., changes to the kernel) require a reboot of the operating system, we will add one last command to check for this and trigger a reboot if necessary.
+### Step 12 - Bash statement (check whether a reboot is required)
+Since some updates (for example changes to the kernel) require a restart of the operating system, we add one final statement to check for this and trigger a restart if necessary.
 
 ```bash
 # Check if a system restart is required
 if [ -f /var/run/reboot-required ]; then
-  echo “A system restart is required. The system will now restart.”
+  echo "A system restart is required. The system will now restart."
   reboot
 fi
 ```
 
-#### Save the Bash update script
-> After a final check of our script, we must of course save it!
+#### Saving the Bash update script
+> After a final check of our script we of course have to save it!
 
-## Finished Debian update Bash script
-Here is the finished Bash script for automatically running update routines on Debian systems.
+## The finished Debian update Bash script
+Here is the finished Bash script for running update routines on Debian systems automatically.
 
-You can then run this automatically as a cron job on Linux systems.
+You can then have it run automatically on your Linux systems as a cron job.
 
-<!-- FM:Snippet:Start data:{“id”:‘Success’,“fields”:[]} -->
+<!-- FM:Snippet:Start data:{"id":"Success","fields":[]} -->
 {{< alert type="success" >}}
-Especially if you have a large number of Linux servers running on a Proxmox VE server, for example, such Bash scripts make your work much easier.
+Especially if you have a large number of Linux servers running on a Proxmox VE server, for example, Bash scripts like this make your work enormously easier.
 {{< /alert >}}
 
-<!-- FM:Snippet:End -->## Step 11 - Make the Bash update script executable
-In order to use/execute the Bash update script, the script must be given the appropriate permissions.
-
-```sh
-sudo chmod +x simple_update_debian_script.sh
-```
-
+<!-- FM:Snippet:End -->
 
 ```bash
 #!/bin/bash
 
 # Version: 1.0
 
-# Note:
-# This script is intended for Debian-based systems.
-# It updates the system and removes packages that are no longer needed.
-# It checks whether a system restart is necessary and restarts it IMMEDIATELY if necessary.
-# It is important that the script is executed as root.
-
-# Application:
-# sudo chmod +x simple_update_debian_script.sh
-# sudo ./simple_update_debian_script.sh
-
 # Info:
 # This script is intended for Debian-based systems.
 # It updates the system and removes unused packages.
-# It checks if a system restart is required and restarts the system if necessary.
+# It checks if a system restart is required and restarts the system IMMEDIATELY if necessary.
 # It is important that the script is run as root.
 
 # Using:
@@ -303,166 +282,77 @@ sudo chmod +x simple_update_debian_script.sh
 
 # Automatic update script for Debian-based systems
 
-echo “=================================================================”
-echo “     Automatic system update”
-echo “        (Debian/Ubuntu/Mint)”
-echo “=================================================================”
+echo "================================================================="
+echo "                    Automatic system update"
+echo "                     (Debian/Ubuntu/Mint)"
+echo "================================================================="
 
 # Check if root privileges are present
-if [ “$EUID” -ne 0 ]; then
-  echo “Please run this script as root (sudo).”
+if [ "$EUID" -ne 0 ]; then
+  echo "Please run this script as root (sudo)."
   exit 1
 fi
 
 # Check if apt is available
 if ! command -v apt >/dev/null 2>&1; then
-  echo “No ‘apt’ package manager found. This script only works on Debian-based systems.”
+  echo "No 'apt' package manager found. This script only works on Debian-based systems."
   exit 2
 fi
 
 # Update package sources
-echo “Update package sources”
+echo "Update package sources"
 apt update -y
 
 # Install available updates
-echo “Install available updates”
+echo "Install available updates"
 apt upgrade -y
 
 # Optional full upgrade (including removals/reinstallations)
-echo “Run full upgrade”
+echo "Run full upgrade"
 apt full-upgrade -y
 
 # Remove unused packages
-echo “Remove unused packages”
+echo "Remove unused packages"
 apt autoremove -y
 
-
-# Clean up package database ## Usage
-
-### Start program
-```bash
-# Start Bash Script Maker
-
-python bash_script_maker.py
-```
-
-### Script erstellen
-1. Wähle die gewünschten Befehlsbausteine aus der linken Palette
-2. Klicke auf einen Baustein, um ihn in den Editor einzufügen
-3. Bearbeite die Parameter nach Bedarf
-4. Speicher das Script
-5. Teste das erstellte Script mit der Ausführen-Funktion
-
-### Vorhandenes Script bearbeiten
-1. Klicke auf den Button 'Öffnen'
-2. Im Dialogfenster die Shell-Script-Datei auswählen
-3. Mit einem Klick auf 'Öffnen' bestätigen
-4. Das geöffnete Shell-Script wird im Script-Editor angezeigt
-
-### Tastenkombinationen
-- `Ctrl+N`: Neues Script
-- `Ctrl+O`: Script öffnen
-- `Ctrl+S`: Script speichern
-- `Ctrl+Shift+S`: Script speichern unter
-- `Ctrl+Q`: Programm beenden
-- `F5`: Script ausführen
-- `Ctrl+Z`: Rückgängig
-- `Ctrl+Y`: Wiederholen
-
-### Editor-Tastenkombinationen
-- `Tab`: Einrücken (aktuelle Zeile oder Auswahl)
-- `Shift+Tab`: Ausrücken (aktuelle Zeile oder Auswahl)
-- `Ctrl+A`: Alles auswählen
-- `Ctrl+D`: Zeile duplizieren
-- `Ctrl+/`: Kommentar umschalten
-- `Ctrl+Space`: Autovervollständigung anzeigen
-- `Ctrl+Tab`: Alternative für Autovervollständigung
-- `Enter`: Automatische Einrückung in neuen Zeilen
-- `Backspace`: Intelligente Ausrückung bei Tab-Stops
-- `Escape`: Vorschlagsliste schließen
-
-### Automatische Formatierung
-Der Editor erkennt automatisch Bash-Strukturen und passt die Einrückung an:
-- Nach `if`, `then`, `else`, `for`, `while`, `case`, `function` wird eingerückt
-- Nach `fi`, `done`, `esac` wird ausgerückt
-- Einrückung mit 4 Leerzeichen (Bash-Standard)
-
-### Autovervollständigung
-Die intelligente Autovervollständigung bietet kontextabhängige Vorschläge:
-
-#### Unterstützte Vorschlagstypen
-- **Bash-Befehle**: ls, cp, mv, grep, sed, awk, find, etc.
-- **Bash-Schlüsselwörter**: if, then, else, fi, for, while, function, etc.
-- **Variablen**: $HOME, $PATH, $PWD, $USER, benutzerdefinierte Variablen
-- **Datei- und Pfadvervollständigung**: Automatische Vervollständigung von Pfaden
-- **Befehlsoptionen**: Häufig verwendete Optionen für bekannte Befehle
-
-#### Navigation in Vorschlägen
-- `↑/↓`: Zwischen Vorschlägen navigieren
-- `Enter/Tab`: Vorschlag übernehmen
-- `Escape`: Vorschlagsliste schließen
-- `Mausrad`: Durch Liste scrollen
-
-#### Kontextabhängige Vorschläge
-- **Am Zeilenanfang**: Alle verfügbaren Befehle und Schlüsselwörter
-- **Bei $**: Variablen-Vorschläge
-- **Bei Pfaden**: Datei- und Verzeichnisvervollständigung
-- **Nach bekannten Befehlen**: Relevante Optionen
-
-## Feedback
----
-### Vorschlag für eine neue / fehlende Funktion?!
-Fehlt euch eine Funktion, dann habt ihr die Möglichkeit, eure Wünsche als [**Feature-Request auf GitHub**](https://github.com/securebitsorg/Bash-Script-Maker/issues) vorzuschlagen.
-
-### Einen Fehler entdeckt?!
-Habt ihr einen Fehler entdeckt, dann könnt ihr auch diesen auf [**GitHub posten**](https://github.com/securebitsorg/Bash-Script-Maker/issues).
-
-### Sicherheitsprobleme entdeckt?!
-<!-- FM:Snippet:Start data:{"id":"Danger","fields":[]} -->
-{{< alert type="danger" >}}
-
-Solltet ihr Hinweise auf Bugs haben die die Sicherheit der App betreffen, dann könnt ihr [--> hier auf GitHub mir die Informationen zukommen lassen.](https://github.com/securebitsorg/Bash-Script-Maker/security/advisories)
-{{< /alert >}}
-
-<!-- FM:Snippet:End -->
- cached package data
-echo "Bereinige zwischengespeicherte Paketdaten / Clean up cached package data"
+# Clean up cached package data
+echo "Clean up cached package data"
 apt clean
 
 echo "================================================================="
-echo "      System-Update abgeschlossen / System update completed"
+echo "                   System update completed"
 echo "================================================================="
 
-# Überprüfen ob ein Neustart des Systems erforderlich ist / Check if a system restart is required
+# Check if a system restart is required
 if [ -f /var/run/reboot-required ]; then
-  echo "Ein Neustart des Systems ist erforderlich. Das System wird jetzt neu gestartet / A system restart is required. The system will now restart."
+  echo "A system restart is required. The system will now restart."
   reboot
 fi
 
-# Ende des Scripts / End of script
+# End of script
 
 ```
 
-### Schritt 11 - Bash-Update-Script ausführbar machen
-Damit wir das Bash-Update-Script auch nutzen / ausführen können, muss das Script noch mit dem entsprechenden Rechten versehen werden.
+### Step 13 - Making the Bash update script executable
+In order to use / execute the Bash update script, the script still has to be given the appropriate permissions.
 
-**Script-Rechte anpassen**
+**Adjust the script permissions**
 
 ```sh
-# Sript-Rechte anpassen
+# Adjust the script permissions
 
 sudo chmod +x simple_update_debian_script.sh
 
 ```
 
-**Bash-Update-Script ausführen**
+**Running the Bash update script**
 
 ```sh
-# Möglichkeit 1: Ausführen des Bash-Scripts
+# Option 1: Executing the Bash script
 
 sudo sh simple_update_debian_script.sh
 
-# Möglichkeit 2: Ausführung des Scripts
+# Option 2: Executing the script
 
 sudo ./simple_update_debian_script.sh
 
@@ -476,14 +366,15 @@ sudo ./simple_update_debian_script.sh
 <!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
 
 
-> ## Bücher zum Thema Bash (Shell)-Scripting
+> ## Books on Bash (shell) scripting
 > ---
-> **Zwei wirklich gut Bücher zum Thema Shell-Scripting kann ich euch hier empfehlen und besitze diese beiden Bücher auch selbst.**
-> 
-> Das sind beides super Nachschlage- / Übungs-Bücher und ihr bekommt für **5€ Aufpreis**, dass passende **E-Book dazu** (*nur bei der Bestellung direkt beim Rheinwerk-Verlag*)!
+> **I can recommend two really good books on shell scripting here, and I own both of them myself.**
 >
-> 
->> *Hinweis: Beide Links sind Affiliate-Links, kostet aber für euch keinen 'Cent' mehr und ihr unterstützt automatisch diesen Blog.* 
+> Both are great reference and practice books, and for **an extra 5 €** you get the matching **e-book as well** (*only when ordering directly from Rheinwerk-Verlag*)!
+>
+> *Please note: both books are written in German.*
+>
+>> *Note: both links are affiliate links, but they do not cost you a 'cent' more and you automatically support this blog.*
 
 {{< vs 3>}}
 
@@ -494,63 +385,60 @@ sudo ./simple_update_debian_script.sh
 
 ![Scripting](/images/affiliate/Scripting.webp)
 
-[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/shell-programmierung-das-umfassende-handbuch/?GPP=securebits)
+[Take a look at Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/shell-programmierung-das-umfassende-handbuch/?GPP=securebits)
 
-**Aus dem Inhalt:**
+**From the contents:**
 
 
-   - Bash, ZSH und die Linux-Toolbox
-   - PowerShell und CmdLets
-   - Python und Pip
-   - SSH, VSCode, Git, Curl: Werkzeugenkasten für moderne Scripts
-   - Scripts automatisch ausführen: Cron und Task Scheduler
-   - Backups automatisieren
-   - Bilder verarbeiten
-   - Monitoring: Logging-Dateien auswerten
-   - Web-Scraping und -Mining
-   - Scripting in der AWS-Cloud
-   - Scripte in Docker-Containern
+   - Bash, ZSH and the Linux toolbox
+   - PowerShell and cmdlets
+   - Python and Pip
+   - SSH, VSCode, Git, Curl: the toolbox for modern scripts
+   - Running scripts automatically: cron and Task Scheduler
+   - Automating backups
+   - Processing images
+   - Monitoring: evaluating log files
+   - Web scraping and mining
+   - Scripting in the AWS cloud
+   - Scripts in Docker containers
 
 ---
 **Shell-Programmierung | Das umfassende Handbuch**
 
 ![Shell-Programmierung](/images/affiliate/Shell-Programmierung.webp)
 
-[Hier anschauen beim Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/scripting-das-praxisbuch-fuer-administratoren-und-devops-teams/?GPP=securebits)
+[Take a look at Rheinwerk-Verlag](https://www.rheinwerk-verlag.de/scripting-das-praxisbuch-fuer-administratoren-und-devops-teams/?GPP=securebits)
 
 
 
-**Aus dem Inhalt:**
+**From the contents:**
 
-  -  Einführung in die Shells
-  -  Variablen, Parameter und Argumente
-  -  Kontrollstrukturen, Funktionen und Signale
-  -  Ein/Ausgabe im Terminal
-  -  Fehlersuche und Debugging
-  -  Reguläre Ausdrücke und grep
-  -  Der Stream-Editor sed
-  -  Programmieren mit awk
-  -  GUIs mit zenity
-  -  Shell-Befehle im Überblick
-  -  Scripts u. a. für die Systemadministration, Backup
+  -  Introduction to the shells
+  -  Variables, parameters and arguments
+  -  Control structures, functions and signals
+  -  Input/output in the terminal
+  -  Troubleshooting and debugging
+  -  Regular expressions and grep
+  -  The stream editor sed
+  -  Programming with awk
+  -  GUIs with zenity
+  -  Overview of shell commands
+  -  Scripts for system administration, backup and more
 
 {{< /split >}}
 
 ---
 {{< vs 3>}}
 
-## Fazit zum Bash-Scripting
-Wer effizient mehrere Linux-Server zu administrieren hat, kommt an Bash- / oder Python-Scripting meiner Meinung nicht vorbei.
+## Conclusion on Bash scripting
+In my opinion, anyone who has to administer several Linux servers efficiently cannot get around Bash or Python scripting.
 
-Natürlich gibt es zum Beispiel auch mächtige Tools wie [**Ansible**](https://docs.ansible.com/ansible/latest/index.html) für die Automatisierung von Deployment, Wartung, etc., aber ist das Lernen einer Script-Sprache in meinen Augen der beste Anfang.
+Of course there are also powerful tools such as [**Ansible**](https://docs.ansible.com/ansible/latest/index.html) for automating deployment, maintenance and so on, but learning a scripting language is in my view the best place to start.
 
 <!-- FM:Snippet:Start data:{"id":"Help deutsch","fields":[]} -->
-> ## Fragen und Antworten
+> ## Questions and answers
 >
-> Wenn Sie Fragen oder Feedback zu diesem Blog oder YouTube-Kanal haben, nutzen Sie bitte meine Hilfeseite. Dort finden Sie Fragen und Antworten zu den verschiedenen Beiträgen. Sie können dort auch gerne Ihre eigene Frage stellen.
+> If you have questions or feedback about this blog or the YouTube channel, please use my help page. There you will find questions and answers about the various articles. You are also welcome to post your own question there.
 >
-> [**Zur Hilfeseite**](https://forum.secure-bits.org)
+> [**Go to the help page**](https://forum.secure-bits.org)
 <!-- FM:Snippet:End -->
-
-
-

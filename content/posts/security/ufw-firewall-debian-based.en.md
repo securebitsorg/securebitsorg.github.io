@@ -19,6 +19,7 @@ description: UFW Firewall Raspberry Pi | In this tutorial, I will show you how t
 preview: ../../../assets/images/posts/it-security/Thumbnail-1.png
 keywords:
   - ufw raspberry pi
+translationKey: ufw-firewall-raspberry-pi
 ---
 ## Installing UFW Firewall (Uncomplicated Firewall) on a Raspberry Pi
 

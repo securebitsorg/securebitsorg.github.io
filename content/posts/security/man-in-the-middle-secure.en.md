@@ -15,6 +15,7 @@ categories:
 tags: 
 - security
 - tutorials
+translationKey: man-in-the-middle-schutz
 ---
 
 ## Protection against man-in-the-middle attacks

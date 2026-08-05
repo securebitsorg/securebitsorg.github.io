@@ -23,6 +23,7 @@ description: Pihole PHP 8.3 | Pihole always with the latest PHP version | In thi
 preview: ../../../../assets/images/posts/pihole/pihole-raspberry-php.png
 keywords:
   - pihole php
+translationKey: pihole-php-version
 ---
 ## Installing Pihole with PHP 8.3 on Raspberry Pi OS
 In this tutorial, ‘**Installing Pihole with PHP 8.3**’, I would like to show you how to securely install a Pihole DNS server with the latest version of PHP on your Raspberry Pi in 2024.

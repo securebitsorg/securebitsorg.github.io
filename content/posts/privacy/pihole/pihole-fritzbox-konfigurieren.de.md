@@ -19,6 +19,7 @@ tags:
   - security
   - tutorials
   - video
+translationKey: pihole-fritzbox
 ---
 
 ## FritzBox + Pihole - Richtig konfigurieren, dass alle Geräte Pi-hole als DNS-Server nutzen

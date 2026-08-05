@@ -19,6 +19,7 @@ tags:
   - security
   - tutorials
   - video
+translationKey: fritzbox-adguard-home
 ---
 ## Block advertising and tracking with AdGuard Home
 In this video, I'll show you how you can block and avoid advertising, tracking, and malware in your home network using an AdGuard DNS server and a FritzBox (also works with Speedport, etc.).

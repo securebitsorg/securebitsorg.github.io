@@ -23,6 +23,7 @@ lastmode: 2025-08-05T05:23:27.216Z
 keywords:
   - Linux server absichern
 draft: true
+translationKey: linux-server-absichern
 ---
 > **Wer unter euch seinen Raspberry Pi absichern möchte, der findet hier die entsprechende Anleitung:**
 >

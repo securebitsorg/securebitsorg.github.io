@@ -23,6 +23,7 @@ tags:
   - video
 description: UFW-Firewall Raspberry Pi | In diesem Tutorial zeige ich euch, wie ihr euren Raspberry Pi mit der UFW-Firewall absichern könnt.
 preview: ../../../assets/images/posts/it-security/Thumbnail-1.png
+translationKey: ufw-firewall-raspberry-pi
 ---
 
 ## UFW-Firewall (Uncomplicated Firewall) installieren auf einen Raspberry Pi

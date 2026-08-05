@@ -1,0 +1,41 @@
+{{- /*
+  Override of the theme's navigators/lang-selector.html (hugo-toha v4).
+
+  Upstream builds the target URL by stripping the current language prefix and
+  prepending the target one. That only works while a page has the same path in
+  every language -- as soon as a page carries a different `slug` or lives in a
+  differently named file per language, the generated link points at a path that
+  does not exist and the language switch 404s.
+
+  Instead we resolve the page's actual translations and link those. When a page
+  has no translation in a given language we fall back to that language's home
+  page, which always exists, rather than to a guessed path that cannot.
+*/ -}}
+{{- $page := . -}}
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="languageSelector" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {{ if ne site.Params.features.flags.enable false }}
+            {{ $countryCode := partial "helpers/country-code.html" . }}
+            <span class="fi fi-{{$countryCode}}"></span>
+        {{ end }}
+        {{ site.Language.Label }}
+    </a>
+    <div class="dropdown-menu" aria-labelledby="languageSelector">
+        {{ range site.Home.AllTranslations }}
+        {{- $lang := .Language.Lang -}}
+        {{- $href := .RelPermalink -}}
+        {{- range $page.AllTranslations -}}
+            {{- if eq .Language.Lang $lang -}}
+                {{- $href = .RelPermalink -}}
+            {{- end -}}
+        {{- end -}}
+        <a class="dropdown-item nav-link languages-item" href="{{ $href }}">
+            {{ if ne site.Params.features.flags.enable false }}
+                {{ $countryCode := partial "helpers/country-code.html" . }}
+                <span class="fi fi-{{$countryCode}}"></span>
+            {{ end }}
+            {{ .Language.Label }}
+        </a>
+        {{ end }}
+    </div>
+    </li>

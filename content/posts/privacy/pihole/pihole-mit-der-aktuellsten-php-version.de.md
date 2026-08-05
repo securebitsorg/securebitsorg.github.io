@@ -22,6 +22,7 @@ description: Pihole PHP 8.3 | Pihole immer mit der aktuellsten PHP-Version | In 
 preview: ../../../../assets/images/posts/pihole/pihole-raspberry-php.png
 keywords:
   - pihole php
+translationKey: pihole-php-version
 ---
 
 ## Pihole mit PHP 8.3 auf dem Raspberry Pi OS installieren

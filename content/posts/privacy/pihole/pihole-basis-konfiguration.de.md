@@ -19,6 +19,7 @@ tags:
   - security
   - tutorials
   - video
+translationKey: pihole-basis-konfiguration
 ---
 
 ## Pihole einrichten - Basis-Konfiguration

@@ -21,6 +21,7 @@ tags:
 description: Setup / configure Pihole | In this video, I show you how to set up and configure Pihole correctly.
 keywords:
   - pihole setup
+translationKey: pihole-basis-konfiguration
 ---
 
 ## Setting up Pihole – Basic configuration

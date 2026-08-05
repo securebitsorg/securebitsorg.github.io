@@ -22,6 +22,7 @@ tags:
   - security
   - tutorials
   - video
+translationKey: fritzbox-adguard-home
 ---
 
 ## Werbung und Tracking mit AdGuard Home blockieren
