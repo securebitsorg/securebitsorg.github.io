@@ -257,7 +257,9 @@ Sämtliche Einstellungen kommen aus der `.env` – die [`.env.example`](https://
 
 Der **Core** ist unter der **Mozilla Public License 2.0 (MPL-2.0)** quelloffen und kostenlos. Ohne Lizenz läuft die Plattform vollständig – ohne Fehlermeldungen und ohne Sperren.
 
-Darüber hinaus gibt es zwei kostenpflichtige Add-ons: **Business** als Jahresabo, gestaffelt nach Mitarbeiterzahl, und **Enterprise** als Upgrade auf Business mit 40 % Aufschlag.
+Darüber hinaus gibt es zwei kostenpflichtige Add-ons: **Business** ab 10 € pro Mitarbeiter und Jahr als Jahresabo, gestaffelt nach Mitarbeiterzahl (Mindestabnahme 25 Personen), und **Enterprise** ab 14 € pro Mitarbeiter und Jahr – ein Upgrade auf Business mit 40 % Aufschlag.
+
+Die vollständige Staffelung mit allen Preisstufen findet ihr auf der **[Preisseite von SentryMail](https://sentrymail.de/de/preise)** (Nettopreise, zzgl. USt.).
 
 ### Business-Add-on
 
@@ -372,7 +374,7 @@ Ja – aber nur mit Autorisierung. Eine Phishing-Simulation verarbeitet personen
 
 ### Was kostet SentryMail?
 
-Der Core ist unter der **Mozilla Public License 2.0 kostenlos** und deckt den kompletten Kampagnen-Zyklus ab. Ohne Lizenz läuft die Plattform ohne Fehlermeldungen und ohne Sperren. Kostenpflichtig sind nur die optionalen Add-ons: **Business** als Jahresabo, gestaffelt nach Mitarbeiterzahl, und **Enterprise** als Upgrade auf Business mit 40 % Aufschlag.
+Der Core ist unter der **Mozilla Public License 2.0 kostenlos** und deckt den kompletten Kampagnen-Zyklus ab. Ohne Lizenz läuft die Plattform ohne Fehlermeldungen und ohne Sperren. Kostenpflichtig sind nur die optionalen Add-ons: **Business ab 10 €** und **Enterprise ab 14 €** pro Mitarbeiter und Jahr, jeweils als Jahresabo mit einer Mindestabnahme von 25 Personen. Der Preis je Person sinkt mit der Mitarbeiterzahl – die komplette Staffelung steht auf der [Preisseite](https://sentrymail.de/de/preise).
 
 ### Welche Daten erfasst eine Phishing-Simulation mit SentryMail?
 
@@ -431,7 +433,7 @@ Sie unterstützt die Nachweisführung. NIS2 (Art. 21) verlangt Schulungen zur Cy
           "name": "Was kostet SentryMail?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Der Core ist unter der Mozilla Public License 2.0 kostenlos und deckt den kompletten Kampagnen-Zyklus ab. Ohne Lizenz läuft die Plattform ohne Fehlermeldungen und ohne Sperren. Kostenpflichtig sind nur die optionalen Add-ons: Business als Jahresabo, gestaffelt nach Mitarbeiterzahl, und Enterprise als Upgrade auf Business mit 40 Prozent Aufschlag."
+            "text": "Der Core ist unter der Mozilla Public License 2.0 kostenlos und deckt den kompletten Kampagnen-Zyklus ab. Ohne Lizenz läuft die Plattform ohne Fehlermeldungen und ohne Sperren. Kostenpflichtig sind nur die optionalen Add-ons: Business ab 10 Euro und Enterprise ab 14 Euro pro Mitarbeiter und Jahr, jeweils als Jahresabo mit einer Mindestabnahme von 25 Personen. Der Preis je Person sinkt mit der Mitarbeiterzahl."
           }
         },
         {

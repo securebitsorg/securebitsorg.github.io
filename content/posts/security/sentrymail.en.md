@@ -257,7 +257,9 @@ All settings come from the `.env` – see [`.env.example`](https://github.com/se
 
 The **core** is open source under the **Mozilla Public License 2.0 (MPL-2.0)** and free. Without a license the platform runs in full – no errors, no lockouts.
 
-On top of that there are two paid add-ons: **Business** as an annual subscription tiered by headcount, and **Enterprise** as an upgrade on Business with a 40 % surcharge.
+On top of that there are two paid add-ons: **Business** from €10 per employee per year as an annual subscription tiered by headcount (minimum 25 users), and **Enterprise** from €14 per employee per year – an upgrade on Business with a 40 % surcharge.
+
+The complete tier table with every price band is on the **[SentryMail pricing page](https://sentrymail.de/en/preise)** (net prices, excluding VAT).
 
 ### Business add-on
 
@@ -372,7 +374,7 @@ Yes – but only with authorization. A phishing simulation processes personal da
 
 ### How much does SentryMail cost?
 
-The core is **free under the Mozilla Public License 2.0** and covers the complete campaign cycle. Without a license the platform runs with no errors and no lockouts. Only the optional add-ons are paid: **Business** as an annual subscription tiered by headcount, and **Enterprise** as an upgrade on Business with a 40 % surcharge.
+The core is **free under the Mozilla Public License 2.0** and covers the complete campaign cycle. Without a license the platform runs with no errors and no lockouts. Only the optional add-ons are paid: **Business from €10** and **Enterprise from €14** per employee per year, each as an annual subscription with a minimum of 25 users. The per-person price drops as headcount grows – the full tier table is on the [pricing page](https://sentrymail.de/en/preise).
 
 ### What data does a phishing simulation with SentryMail collect?
 
@@ -431,7 +433,7 @@ They support your evidence trail. NIS2 (Art. 21) requires cyber hygiene training
           "name": "How much does SentryMail cost?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "The core is free under the Mozilla Public License 2.0 and covers the complete campaign cycle. Without a license the platform runs with no errors and no lockouts. Only the optional add-ons are paid: Business as an annual subscription tiered by headcount, and Enterprise as an upgrade on Business with a 40 percent surcharge."
+            "text": "The core is free under the Mozilla Public License 2.0 and covers the complete campaign cycle. Without a license the platform runs with no errors and no lockouts. Only the optional add-ons are paid: Business from 10 euros and Enterprise from 14 euros per employee per year, each as an annual subscription with a minimum of 25 users. The per-person price drops as headcount grows."
           }
         },
         {
